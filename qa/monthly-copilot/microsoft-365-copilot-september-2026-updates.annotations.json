@@ -219,7 +219,11 @@
       "spec": "annot-b4",
       "scale": 1.6,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Type /app, then tab",
+        "It claims it connects to data"
+      ]
     },
     "lab-s62-add-plugin.webp": {
       "disposition": "annotated",
@@ -228,7 +232,11 @@
       "spec": "annot-b5",
       "scale": 1.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Sideload a .ZIP or a folder",
+        "Only add plugins you trust"
+      ]
     },
     "lab-s62-cowork-plugins.webp": {
       "disposition": "annotated",
@@ -237,7 +245,11 @@
       "spec": "annot-b12",
       "scale": 1.5,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Plugins, Skills, Preferences",
+        "Installed, all off"
+      ]
     },
     "lab-s63-plugins-mobile.webp": {
       "disposition": "annotated",
@@ -246,7 +258,12 @@
       "spec": "annot-b11",
       "scale": 1.8,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Plug-ins and Skills, now on mobile",
+        "Dynamics plug-ins ship off",
+        "Third-party MCP connectors"
+      ]
     },
     "lab-s64-brand-kit-nav.webp": {
       "disposition": "annotated",
@@ -255,7 +272,11 @@
       "spec": "annot-b5",
       "scale": 1.5,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Hidden behind More...",
+        "The switch lives here"
+      ]
     },
     "lab-s65-edit-details-no-checkbox.webp": {
       "disposition": "annotated",
@@ -264,7 +285,10 @@
       "spec": "annot-b5",
       "scale": 2.4,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "No note checkbox here on 14 September 2026"
+      ]
     },
     "lab-s66-choose-skills-menu.webp": {
       "disposition": "annotated",
@@ -273,7 +297,10 @@
       "spec": "annot-b12",
       "scale": 3.0,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Choose skills, in the + menu"
+      ]
     },
     "lab-s66-create-skills-folder.webp": {
       "disposition": "annotated",
@@ -282,7 +309,11 @@
       "spec": "annot-b12",
       "scale": 3.4,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Off until you create it",
+        "Creates the OneDrive folder"
+      ]
     },
     "lab-s66-custom-skills-off.webp": {
       "disposition": "annotated",
@@ -291,7 +322,11 @@
       "spec": "annot-b12",
       "scale": 3.4,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Custom skills, off",
+        "The rest ship on"
+      ]
     },
     "lab-s66-onedrive-skills-folder.webp": {
       "disposition": "annotated",
@@ -300,7 +335,11 @@
       "spec": "annot-b11",
       "scale": 2.0,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The path is the trick",
+        "One folder per skill"
+      ]
     },
     "lab-s66-upload-skill.webp": {
       "disposition": "annotated",
@@ -309,7 +348,10 @@
       "spec": "annot-b5",
       "scale": 2.6,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Upload just writes to that folder"
+      ]
     },
     "lab-s66-visualize-after.webp": {
       "disposition": "annotated",
@@ -318,7 +360,11 @@
       "spec": "annot-b5",
       "scale": 1.3,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Bullets became cards",
+        "A closing line to land it"
+      ]
     },
     "lab-s66-visualize-before.webp": {
       "disposition": "annotated",
@@ -327,7 +373,10 @@
       "spec": "annot-b5",
       "scale": 1.3,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Too much text, and it overflows"
+      ]
     },
     "lab-s67-translate-reasoning.webp": {
       "disposition": "annotated",
@@ -336,7 +385,11 @@
       "spec": "annot-b11",
       "scale": 2.8,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Image slides can't be translated",
+        "It resizes text so it still fits"
+      ]
     },
     "lab-s67-translated-slide.webp": {
       "disposition": "annotated",
@@ -345,7 +398,10 @@
       "spec": "annot-b6",
       "scale": 1.5,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "German runs longer, and it still fits"
+      ]
     },
     "lab-s68-chevron-reply.webp": {
       "disposition": "annotated",
@@ -354,7 +410,10 @@
       "spec": "annot-b6",
       "scale": 2.6,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It says it fell back to the theme"
+      ]
     },
     "lab-s68-chevron-result.webp": {
       "disposition": "annotated",
@@ -363,7 +422,11 @@
       "spec": "annot-b6",
       "scale": 1.5,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "An anchor, then five steps",
+        "Colour deepens left to right"
+      ]
     },
     "lab-s68-prompt-left-right.webp": {
       "disposition": "annotated",
@@ -372,7 +435,10 @@
       "spec": "annot-b11",
       "scale": 3.4,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "One plain-English follow-up"
+      ]
     },
     "lab-s68-shapes-reasoning.webp": {
       "disposition": "annotated",
@@ -381,7 +447,11 @@
       "spec": "annot-b11",
       "scale": 2.8,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Shapes, not real SmartArt",
+        "It places each element itself"
+      ]
     },
     "lab-s68-smartart-result.webp": {
       "disposition": "annotated",
@@ -390,7 +460,10 @@
       "spec": "annot-b6",
       "scale": 1.5,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Plain shapes, not SmartArt"
+      ]
     },
     "lab-s69-generated-slide.webp": {
       "disposition": "annotated",
@@ -399,7 +472,11 @@
       "spec": "annot-b6",
       "scale": 1.6,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The palette it proposed earlier",
+        "Specific, not filler"
+      ]
     },
     "lab-s69-prompt-locating-email.webp": {
       "disposition": "annotated",
@@ -408,7 +485,11 @@
       "spec": "annot-b11",
       "scale": 2.8,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Just name the email in the ask",
+        "It finds the email itself"
+      ]
     },
     "lab-s69-style-options.webp": {
       "disposition": "annotated",
@@ -417,7 +498,12 @@
       "spec": "annot-b11",
       "scale": 3.0,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It asks before it builds",
+        "Your brand kit is the default",
+        "Three looks, or write your own"
+      ]
     },
     "lab-s70-coach-mark.webp": {
       "disposition": "annotated",
@@ -426,7 +512,10 @@
       "spec": "annot-b6",
       "scale": 2.6,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The presenter never sees this"
+      ]
     },
     "lab-s70-explain-button.webp": {
       "disposition": "annotated",
@@ -435,7 +524,10 @@
       "spec": "annot-b6",
       "scale": 2.8,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It appears where you released"
+      ]
     },
     "lab-s70-teams-live-explain-annotated.webp": {
       "disposition": "annotated_at_capture",
@@ -448,7 +540,11 @@
       "spec": "annot-b12",
       "scale": 1.5,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "This is the web app",
+        "First button, ahead of blank"
+      ]
     },
     "lab-s73-audience-depth.webp": {
       "disposition": "annotated",
@@ -457,7 +553,11 @@
       "spec": "annot-b12",
       "scale": 3.4,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It asks who it's for",
+        "Each with a slide count"
+      ]
     },
     "lab-s73-deck-quote-attributed.webp": {
       "disposition": "annotated",
@@ -466,7 +566,10 @@
       "spec": "annot-b7",
       "scale": 1.8,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Credited on the slide"
+      ]
     },
     "lab-s73-web-source-chip.webp": {
       "disposition": "annotated",
@@ -475,7 +578,11 @@
       "spec": "annot-b11",
       "scale": 2.8,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The link becomes a source chip",
+        "Paste the link in the ask"
+      ]
     },
     "lab-s75-chart-not-readable.webp": {
       "disposition": "annotated",
@@ -484,7 +591,10 @@
       "spec": "annot-b7",
       "scale": 2.6,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It says it could not see the labels"
+      ]
     },
     "lab-s75-embedded-chart.webp": {
       "disposition": "annotated",
@@ -493,7 +603,11 @@
       "spec": "annot-b7",
       "scale": 2.8,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Values printed on every bar",
+        "Every category is named"
+      ]
     },
     "lab-s78-model-menu-claude.webp": {
       "disposition": "annotated",
@@ -502,7 +616,11 @@
       "spec": "annot-b8",
       "scale": 2.6,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Auto is still the default",
+        "Two Claude models, not one"
+      ]
     },
     "lab-s79-formulas-not-python.webp": {
       "disposition": "annotated",
@@ -511,7 +629,11 @@
       "spec": "annot-b8",
       "scale": 3.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Mean, z-score, outliers",
+        "All in Excel formulas, no Python"
+      ]
     },
     "lab-s80-audit-trail-reasoning.webp": {
       "disposition": "annotated",
@@ -520,7 +642,11 @@
       "spec": "annot-b8",
       "scale": 2.8,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Its own words: audit trail",
+        "It flags its own blind spot"
+      ]
     },
     "lab-s80-change-summary.webp": {
       "disposition": "annotated",
@@ -529,7 +655,11 @@
       "spec": "annot-b8",
       "scale": 2.6,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The person and the AI, together",
+        "Charts are not tracked"
+      ]
     },
     "lab-s81-chat-history.webp": {
       "disposition": "annotated",
@@ -538,7 +668,11 @@
       "spec": "annot-b8",
       "scale": 2.4,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "History now lives in Excel",
+        "A week-old chat, still here"
+      ]
     },
     "lab-s82-agent-picker.webp": {
       "disposition": "annotated",
@@ -547,7 +681,11 @@
       "spec": "annot-b9",
       "scale": 2.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "One character opens them",
+        "Name and description on every row"
+      ]
     },
     "lab-s83-confirm-list.webp": {
       "disposition": "annotated",
@@ -556,7 +694,11 @@
       "spec": "annot-b9",
       "scale": 2.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Every affected message, named",
+        "Nothing moved until I confirmed"
+      ]
     },
     "lab-s83-done-result.webp": {
       "disposition": "annotated",
@@ -565,7 +707,11 @@
       "spec": "annot-b9",
       "scale": 3.0,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It created the folder",
+        "And counted what it moved"
+      ]
     },
     "lab-s84-classic-prompt-annotated.webp": {
       "disposition": "annotated_at_capture",
@@ -578,7 +724,12 @@
       "spec": "annot-b9",
       "scale": 3.0,
       "callouts": 3,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "It checked working locations",
+        "Both attendees ticked",
+        "A Send button, not a sent meeting"
+      ]
     },
     "lab-s85-tone-options.webp": {
       "disposition": "annotated",
@@ -587,7 +738,11 @@
       "spec": "annot-b9",
       "scale": 2.4,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "No instruction, just the draft",
+        "Each rewrite labelled by tone"
+      ]
     },
     "lab-s85-writing-improvements.webp": {
       "disposition": "annotated",
@@ -596,7 +751,11 @@
       "spec": "annot-b9",
       "scale": 2.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Coaching I did not ask for",
+        "Each change explained"
+      ]
     },
     "lab-s86-prep-brief-classic.webp": {
       "disposition": "annotated",
@@ -605,7 +764,12 @@
       "spec": "annot-b9",
       "scale": 3.0,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It shows its working",
+        "It says the material was thin",
+        "Every claim cites its source"
+      ]
     },
     "lab-s89-task-created.webp": {
       "disposition": "annotated",
@@ -614,7 +778,12 @@
       "spec": "annot-b10",
       "scale": 2.0,
       "callouts": 3,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "A priority I never asked for",
+        "Friday, resolved to a date",
+        "And it said where it went"
+      ]
     },
     "lab-s89-task-verified.webp": {
       "disposition": "annotated",
@@ -623,7 +792,12 @@
       "spec": "annot-b10",
       "scale": 1.3,
       "callouts": 3,
-      "boxes": 2
+      "boxes": 2,
+      "callout_texts": [
+        "Fields hidden because it is private",
+        "Important, in the record too",
+        "The due date, as saved"
+      ]
     },
     "lab-s90-planner-agent-priority.webp": {
       "disposition": "annotated",
@@ -632,7 +806,13 @@
       "spec": "annot-b10",
       "scale": 3.0,
       "callouts": 4,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The reasoning, expandable",
+        "All medium, so no top of the list",
+        "Each one links to the task",
+        "It noticed the dates had passed"
+      ]
     },
     "lab-s91-meetings-tab.webp": {
       "disposition": "annotated",
@@ -641,7 +821,11 @@
       "spec": "annot-b10",
       "scale": 2.0,
       "callouts": 2,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "Meetings, a tab of its own",
+        "And a search box over them"
+      ]
     },
     "lab-s92-onedrive-starters.webp": {
       "disposition": "annotated",
@@ -650,7 +834,12 @@
       "spec": "annot-b10",
       "scale": 3.0,
       "callouts": 3,
-      "boxes": 2
+      "boxes": 2,
+      "callout_texts": [
+        "Five of the six are about finding",
+        "Find it by the meeting it was in",
+        "And the box asks for a question"
+      ]
     },
     "official-01-model-picker-gpt-6-astra.webp": {
       "disposition": "annotated",
@@ -784,7 +973,11 @@
       "spec": "annot-b3b",
       "scale": 2.0,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Developer agent adoption, measured",
+        "Which models the spend goes to"
+      ]
     },
     "official-28-ai-cost-dashboard.webp": {
       "disposition": "annotated",
@@ -793,7 +986,11 @@
       "spec": "annot-b3b",
       "scale": 1.4,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Coverage is still limited",
+        "Credits, users and sessions in one row"
+      ]
     },
     "official-28-usage-intensity.webp": {
       "disposition": "annotated",
@@ -802,7 +999,11 @@
       "spec": "annot-b3b",
       "scale": 1.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Top 1% burn 65% of all credits",
+        "That is 100 people"
+      ]
     },
     "official-29-copilot-studio-new-home.webp": {
       "disposition": "annotated",
@@ -811,7 +1012,12 @@
       "spec": "annot-b3b",
       "scale": 1.0,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Credits are on the front door",
+        "Harness is now a build choice",
+        "Licence or credits, per agent"
+      ]
     },
     "official-30-agent-harness-choice.webp": {
       "disposition": "annotated",
@@ -820,7 +1026,11 @@
       "spec": "annot-b3b",
       "scale": 0.52,
       "callouts": 2,
-      "boxes": 2
+      "boxes": 2,
+      "callout_texts": [
+        "Both say 'Agent'",
+        "The pill is the difference"
+      ]
     },
     "official-30-harness-benchmark.webp": {
       "disposition": "microsoft_artwork",
@@ -837,7 +1047,10 @@
       "spec": "annot-b3b",
       "scale": 2.2,
       "callouts": 1,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "Building spends credits too"
+      ]
     },
     "official-34-environment-capacity.webp": {
       "disposition": "annotated",
@@ -846,7 +1059,13 @@
       "spec": "annot-b4",
       "scale": 1.0,
       "callouts": 4,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Allocation, not a rule",
+        "TenantPool",
+        "PayGo",
+        "Alert"
+      ]
     },
     "official-36-single-agent-limits.webp": {
       "disposition": "annotated",
@@ -855,7 +1074,12 @@
       "spec": "annot-b4",
       "scale": 1.25,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Says 'message limit'",
+        "but the field is credits",
+        "The per-agent hard stop"
+      ]
     },
     "official-38-agent-designer.webp": {
       "disposition": "annotated",
@@ -864,7 +1088,12 @@
       "spec": "annot-b11",
       "scale": 1.6,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Build, preview, evaluate, monitor",
+        "Work IQ, in Copilot Studio",
+        "Tools where you build"
+      ]
     },
     "official-39-agent-review-tool.webp": {
       "disposition": "annotated",
@@ -873,7 +1102,11 @@
       "spec": "annot-b11",
       "scale": 1.4,
       "callouts": 2,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "Review, map, and cost",
+        "A config score, not answer quality"
+      ]
     },
     "official-58-cowork-effort-slider.webp": {
       "disposition": "annotated",
@@ -882,7 +1115,11 @@
       "spec": "annot-b4",
       "scale": 1.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Five levels, Light to Max",
+        "Model and effort, two dials"
+      ]
     },
     "official-59-cost-skill.webp": {
       "disposition": "annotated",
@@ -891,7 +1128,11 @@
       "spec": "annot-b4",
       "scale": 1.2,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "What this task cost",
+        "Can you afford the next one"
+      ]
     },
     "official-60-cowork-automations.webp": {
       "disposition": "annotated",
@@ -900,7 +1141,10 @@
       "spec": "annot-b4",
       "scale": 2.2,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "This tab was called Scheduled"
+      ]
     },
     "official-64-brand-kit-restrictions.webp": {
       "disposition": "annotated",
@@ -909,7 +1153,10 @@
       "spec": "annot-b5",
       "scale": 1.0,
       "callouts": 1,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "Off until you turn it on"
+      ]
     },
     "official-65-brand-kit-note-instructions-annotated.webp": {
       "disposition": "annotated",
@@ -918,7 +1165,10 @@
       "spec": "annot-b11",
       "scale": 1.0,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "Slide notes now steer Copilot"
+      ]
     },
     "official-74-word-adds-hyperlink--focus.webp": {
       "disposition": "annotated",
@@ -927,7 +1177,10 @@
       "spec": "annot-b7",
       "scale": 1.5,
       "callouts": 1,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "It inserted the link"
+      ]
     },
     "official-75-word-reference-visuals.webp": {
       "disposition": "annotated",
@@ -936,7 +1189,11 @@
       "spec": "annot-b7",
       "scale": 1.8,
       "callouts": 2,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The infographic it placed",
+        "It names the source file"
+      ]
     },
     "official-76-word-changed-words.webp": {
       "disposition": "annotated",
@@ -945,7 +1202,10 @@
       "spec": "annot-b7",
       "scale": 1.9,
       "callouts": 1,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "Blue words are the ones it changed"
+      ]
     },
     "official-80-excel-what-changed.webp": {
       "disposition": "annotated",
@@ -954,7 +1214,11 @@
       "spec": "annot-b8",
       "scale": 1.5,
       "callouts": 2,
-      "boxes": 1
+      "boxes": 1,
+      "callout_texts": [
+        "Numbered, named, dated",
+        "Two people and a time range"
+      ]
     },
     "official-87-teams-recap-language.webp": {
       "disposition": "annotated",
@@ -963,7 +1227,11 @@
       "spec": "annot-b10",
       "scale": null,
       "callouts": 2,
-      "boxes": 2
+      "boxes": 2,
+      "callout_texts": [
+        "A Language menu on the recap",
+        "And a list to pick from"
+      ]
     },
     "official-88-planner-agent-status-report--focus.webp": {
       "disposition": "annotated",
@@ -972,7 +1240,12 @@
       "spec": "annot-b10",
       "scale": null,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The prompt named the sections",
+        "Frontier preview, and it says so",
+        "A verdict with numbers behind it"
+      ]
     },
     "official-92-onedrive-business-review.webp": {
       "disposition": "annotated",
@@ -981,7 +1254,12 @@
       "spec": "annot-b10",
       "scale": null,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "The prompt asked for a document",
+        "It made the file, with 7 charts",
+        "And the new file, just now"
+      ]
     },
     "official-93-create-personal-skill.webp": {
       "disposition": "annotated",
@@ -990,7 +1268,12 @@
       "spec": "annot-b10",
       "scale": 1.8,
       "callouts": 3,
-      "boxes": 0
+      "boxes": 0,
+      "callout_texts": [
+        "A built-in skill makes your skill",
+        "Nothing saved until I said yes",
+        "And then it is yours"
+      ]
     }
   }
 }

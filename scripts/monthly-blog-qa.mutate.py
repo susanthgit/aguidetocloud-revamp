@@ -34,6 +34,7 @@ import tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
 TOOL = HERE / "monthly-blog-qa.py"
+ANNOTATOR = HERE / "annotate_screenshot.py"
 SUITE = HERE / "monthly-blog-qa.test.py"
 
 # (name, find, replace) - `replace` should disable the guard, not break syntax.
@@ -204,7 +205,64 @@ MUTATIONS = [
      '            if False:'),
     ("an exempt image needs a written reason",
      '        elif blank_text(v.get("reason")):', '        elif False:'),
+    # The callout_texts backstop. Worth mutating precisely because the gate
+    # went green the moment it was added - the real post already satisfied it,
+    # so a green run proves nothing about whether the check runs at all.
+    ("the alt must quote the callout drawn on the image",
+     '            for t in texts:\n', '            for t in []:\n'),
+    ("a callout count that disagrees with its texts is caught",
+     '            if declared != len(texts):',
+     '            if False:'),
+    ("alt comparison decodes HTML entities before matching",
+     'html.unescape(s).lower())', 's.lower())'),
+    ("callout_texts must be a list",
+     '            if not isinstance(ct, list):', '            if False:'),
+    ("a blank callout text is refused",
+     '            elif any(blank_text(t) for t in ct):',
+     '            elif False:'),
+    # Gate B findings. Each of these guards replaced a version that was
+    # correct on the real data and wrong on the next record, so a green run is
+    # no evidence they are running.
+    ("callout matching respects word boundaries",
+     '    return bool(re.search(rf"(?<![a-z0-9]){re.escape(n)}s?(?![a-z0-9])",\n'
+     '                          alt_flat))',
+     '    return n in alt_flat'),
+    ("a callout normalising to nothing never matches",
+     '    n = alt_norm(text)\n    if not n:\n        return False',
+     '    n = alt_norm(text)\n    if False:\n        return False'),
+    ("an empty callout_texts is refused",
+     '            elif not ct:', '            elif False:'),
+    ("a callout text that cannot be normalised is named",
+     '                if blind:', '                if False:'),
+    ("callout_texts needs a whole-number count to check against",
+     '                elif not isinstance(v.get("callouts"), int) or \\',
+     '                elif False or \\'),
 ]
+
+# The annotator is the other half of the mechanism. The gate can only check
+# callout text that something recorded, and the annotator is the only place
+# that text is known for certain - so if its manifest write rots, the gate
+# goes quietly back to checking nothing. These mutations are what stops that
+# being discovered a month later (Rule #14b).
+ANNOTATOR_MUTATIONS = [
+    ("the manifest is written at all",
+     'man = os.path.splitext(spec_path)[0] + ".manifest.json"',
+     'man = os.path.splitext(spec_path)[0] + ".manifest-disabled.json"'),
+    ("callout text is recorded",
+     '        if texts:\n            rec["callout_texts"] = texts',
+     '        if False:\n            rec["callout_texts"] = texts'),
+    ("hand-wrapped newlines are folded out of callout text",
+     'texts.append(" ".join(str(op.get("text", "")).split()))',
+     'texts.append(str(op.get("text", "")))'),
+    ("the source hash is the source, not the output",
+     '            rec["source_sha256"] = _sha256(src)',
+     '            rec["source_sha256"] = _sha256(dest)'),
+    ("callouts are counted",
+     '               "callouts": counts.get("callout", 0),',
+     '               "callouts": 0,'),
+]
+
+TARGETS = [(TOOL, MUTATIONS), (ANNOTATOR, ANNOTATOR_MUTATIONS)]
 
 
 def _fs_case_insensitive() -> bool:
@@ -223,38 +281,49 @@ CONDITIONS = {"CASE_BLIND_FS": _fs_case_insensitive()}
 
 
 def main() -> int:
-    original = TOOL.read_text(encoding="utf-8")
     env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
+    # Read every target up front and restore every one at the end, so a
+    # failure part-way through a later target cannot leave an earlier one
+    # mutated on disk.
+    originals = {path: path.read_text(encoding="utf-8") for path, _ in TARGETS}
     bad = 0
     skipped = 0
+    count = 0
     try:
-        for mutation in MUTATIONS:
-            name, find, repl = mutation[0], mutation[1], mutation[2]
-            cond = mutation[3] if len(mutation) > 3 else None
-            if cond and not CONDITIONS[cond]:
-                print(f"  n/a    {name}: not observable on this platform ({cond})")
-                skipped += 1
-                continue
-            hits = original.count(find)
-            if hits != 1:
-                print(f"  SKIP   {name}: anchor matched {hits}x, expected 1")
-                bad += 1
-                continue
-            TOOL.write_text(original.replace(find, repl), encoding="utf-8")
-            r = subprocess.run([sys.executable, str(SUITE)],
-                               capture_output=True, text=True, env=env)
-            if r.returncode == 0:
-                print(f"  MISS   {name}: guard broken, suite still green")
-                bad += 1
-            else:
-                named = [l.strip() for l in r.stdout.splitlines()
-                         if l.strip().startswith("-")]
-                why = named[0][:66] if named else "raised"
-                print(f"  caught {name}  ->  {why}")
+        for path, mutations in TARGETS:
+            original = originals[path]
+            if mutations:
+                print(f"\n{path.name}")
+            for mutation in mutations:
+                count += 1
+                name, find, repl = mutation[0], mutation[1], mutation[2]
+                cond = mutation[3] if len(mutation) > 3 else None
+                if cond and not CONDITIONS[cond]:
+                    print(f"  n/a    {name}: not observable on this platform ({cond})")
+                    skipped += 1
+                    continue
+                hits = original.count(find)
+                if hits != 1:
+                    print(f"  SKIP   {name}: anchor matched {hits}x, expected 1")
+                    bad += 1
+                    continue
+                path.write_text(original.replace(find, repl), encoding="utf-8")
+                r = subprocess.run([sys.executable, str(SUITE)],
+                                   capture_output=True, text=True, env=env)
+                if r.returncode == 0:
+                    print(f"  MISS   {name}: guard broken, suite still green")
+                    bad += 1
+                else:
+                    named = [l.strip() for l in r.stdout.splitlines()
+                             if l.strip().startswith("-")]
+                    why = named[0][:66] if named else "raised"
+                    print(f"  caught {name}  ->  {why}")
+                path.write_text(original, encoding="utf-8")
     finally:
-        TOOL.write_text(original, encoding="utf-8")
+        for path, text in originals.items():
+            path.write_text(text, encoding="utf-8")
 
-    total = len(MUTATIONS) - skipped
+    total = count - skipped
     print(f"\n{total - bad}/{total} mutations caught"
           + (f" ({skipped} n/a on this platform)" if skipped else ""))
     if bad:

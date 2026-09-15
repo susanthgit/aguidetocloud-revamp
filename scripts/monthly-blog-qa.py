@@ -36,6 +36,7 @@ from __future__ import annotations
 import argparse
 import functools
 import hashlib
+import html
 import json
 import re
 import sys
@@ -1018,6 +1019,72 @@ CALLOUT_ALT_RE = re.compile(rf"\b(?:{_ANNOT_NOUN})\b|\b(?:{_ANNOT_VERB})\b", re.
 # happens to contain one of those passes without describing the mark. That is
 # a missed detection on one image. The alternative, a tighter list, is what
 # rejected 9 of 10 correct alts. Permissive on purpose.
+#
+# That hole is real and it has been hit twice, both times on this post:
+# lab-s89 passed on "a red exclamation mark" and lab-s67 on "red spell-check
+# underlines" - product elements standing in for our callout, in alts that
+# never mentioned the callout at all. Neither was caught by this regex, and
+# neither could be: it asks whether the alt sounds like it describes an
+# annotation, which is a question about vocabulary.
+#
+# callout_texts below is the backstop, and it asks a different question -
+# whether the alt contains the words actually drawn on the image. That is
+# content-bound rather than keyword-bound, so it cannot be satisfied by
+# writing for the linter. It only covers images whose annotator run recorded
+# the text, which is why the permissive regex stays as the floor for the rest.
+
+
+def alt_norm(s: str) -> str:
+    """Flatten text so a callout can be compared to an alt fairly.
+
+    The two sides are written in different places and never match literally:
+    the alt is authored HTML carrying entities and curly quotes, while the
+    callout is the plain string handed to the annotator. Unescaping first and
+    then keeping only letters, digits and single spaces makes "can&rsquo;t",
+    "can't" and "can't" all read as "cant".
+
+    Punctuation is dropped rather than normalised because the difference is
+    never meaningful here and is usually deliberate: a drawn label is
+    shortened to fit its box, so "More..." on the image is written "More" in
+    prose. Comparing those raw produced a failure on correct alt text.
+
+    Apostrophes are removed before the rest, not turned into a space, so a
+    contraction stays one word: "can't" reads as "cant" rather than "can t".
+    Both sides would split identically either way, so this is about the
+    normalised form being a word rather than two.
+    """
+    s = re.sub(r"['\u2018\u2019\u02bc\u00b4`]", "", html.unescape(s).lower())
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", s).split())
+
+
+def callout_in_alt(text: str, alt_flat: str) -> bool:
+    """True when `alt_flat` says what a callout says, on word boundaries.
+
+    The obvious implementation is `alt_norm(text) in alt_flat`, and it is
+    wrong in a way that quietly readmits the failure this check exists to
+    close. Normalising has just turned every boundary into a space, so plain
+    containment matches inside longer words: a callout reading "Share" is
+    satisfied by "the SharePoint library", "Ask" by "the Tasks list", "Plan"
+    by "the Planner tab". Those are among the densest words in this blog's
+    vocabulary, and three real callouts are single words already.
+
+    That is the same defect one layer down - the product's own vocabulary
+    standing in for our annotation - so it is matched on boundaries instead.
+    A trailing "s" is allowed because a label is drawn singular and written
+    plural in prose ("Agent" against "the Agents button"); anything longer is
+    a different word.
+
+    Under the old substring match an empty normalisation matched everything.
+    Boundaries narrow that to an alt that is itself empty once flattened, but
+    "narrower" is not "safe": it still certifies a callout nobody read. It is
+    refused here as well as at load time.
+    """
+    n = alt_norm(text)
+    if not n:
+        return False
+    return bool(re.search(rf"(?<![a-z0-9]){re.escape(n)}s?(?![a-z0-9])",
+                          alt_flat))
+
 
 _POST_DATE_RE = re.compile(r"^date\s*[:=]\s*[\"']?(\d{4})-(\d{1,2})\b", re.M)
 
@@ -1089,6 +1156,50 @@ def load_annotations(slug: str) -> tuple[dict, list[str]]:
         elif blank_text(v.get("reason")):
             fail(f"is '{d}' and needs a written reason saying why it carries "
                  "no callouts of ours")
+
+        # Deliberately outside the disposition branches above. callout_texts
+        # is the only durable copy of what a callout actually says, and it is
+        # meaningful on annotated_at_capture too - that image also carries a
+        # callout we are responsible for describing. Validating it only for
+        # 'annotated' left the field consumed everywhere but checked in one
+        # place, so a bare string on any other disposition was iterated one
+        # CHARACTER at a time, every character trivially appeared in the alt,
+        # and the record passed while verifying nothing.
+        ct = v.get("callout_texts")
+        if ct is not None:
+            if not isinstance(ct, list):
+                fail("has a 'callout_texts' that is not a list - it holds the "
+                     "drawn text of each callout, in order")
+            elif not ct:
+                # [] is the one value that switched BOTH halves of the check
+                # off at once: falsy, so the texts were skipped, and the count
+                # cross-check lived inside that same branch. It is also the
+                # natural way to write "this callout draws no text", which is
+                # not a thing - the annotator omits the field instead.
+                fail("has an empty 'callout_texts' - that is not 'no "
+                     "callouts', it is an unverifiable record; omit the field")
+            elif any(blank_text(t) for t in ct):
+                fail("has a blank entry in 'callout_texts' - a callout that "
+                     "draws no text is not a callout")
+            else:
+                # A label made only of symbols - "...", an arrow, "?!" - or in
+                # a script with no ASCII letters normalises to the empty
+                # string, and "" is a substring of everything, so it would be
+                # certified without being read. Named here so the author is
+                # told it cannot be verified rather than being passed.
+                blind = [t for t in ct if not alt_norm(t)]
+                if blind:
+                    fail(f"has a callout whose text cannot be checked against "
+                         f"alt: {blind[0]!r} normalises to nothing")
+                elif not isinstance(v.get("callouts"), int) or \
+                        isinstance(v.get("callouts"), bool):
+                    # The cross-check is worthless if the count it compares
+                    # against may be absent, a string or a bool - and bools
+                    # are ints in Python, which produced the message "record
+                    # says True callout(s)".
+                    fail("lists callout_texts but has no whole-number "
+                         "'callouts' to check them against")
+
         if not bad:
             out[k] = dict(v)
     return out, errs
@@ -1221,6 +1332,27 @@ def annotation_findings(post: Path, imgs: list[dict]) -> tuple[list[str], str]:
         if kind in ANNOTATED_KINDS and not CALLOUT_ALT_RE.search(alt):
             errs.append(f"§{r['section']} {name}: classified '{kind}' but its "
                         "alt never says what the annotation points at")
+
+        # The content-bound version of the check above, for the images whose
+        # annotator run recorded what it drew. Optional by design: 21 of the
+        # 92 annotated images on this post predate the recording and carry no
+        # texts, and inventing them from memory to satisfy a linter is exactly
+        # the fabrication Rule #19 forbids. Absent means unverifiable, not
+        # passing - the regex above still applies to every one of them.
+        texts = rec.get("callout_texts") or []
+        if texts:
+            declared = rec.get("callouts")
+            if declared != len(texts):
+                errs.append(f"§{r['section']} {name}: record says {declared} "
+                            f"callout(s) but lists {len(texts)} - one of the "
+                            "two was edited without the other")
+            alt_flat = alt_norm(alt)
+            for t in texts:
+                if not callout_in_alt(t, alt_flat):
+                    errs.append(f"§{r['section']} {name}: the callout drawn on "
+                                f"this image reads {t!r}, and the alt never "
+                                "says so - a screen reader gets the screenshot "
+                                "without the point being made about it")
 
     kinds = Counter(ann[n]["disposition"] for n in sorted(recorded & used))
     status = "  ".join(f"{k} {kinds.get(k, 0)}" for k in sorted(ANNOTATION_KINDS))

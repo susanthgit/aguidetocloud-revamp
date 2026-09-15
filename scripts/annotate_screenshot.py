@@ -38,6 +38,7 @@ CLI (declarative — preferred, keeps annotations reviewable in git):
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import sys
@@ -292,20 +293,77 @@ class Shot:
 
 
 # ------------------------------------------------------------------- CLI ---
+def _sha256(path: str) -> str | None:
+    """Hex digest of a file, or None if it is not readable."""
+    try:
+        with open(path, "rb") as fh:
+            h = hashlib.sha256()
+            for chunk in iter(lambda: fh.read(1 << 20), b""):
+                h.update(chunk)
+        return h.hexdigest()
+    except OSError:
+        return None
+
+
 def run_spec(spec_path: str):
-    """Declarative mode. See annotate-spec.example.json."""
+    """Declarative mode. See annotate-spec.example.json.
+
+    Also writes `<spec>.manifest.json`, which is everything the QA sidecar
+    (`qa/monthly-copilot/<slug>.annotations.json`) needs about this run: both
+    hashes, the op counts, and the literal text of each callout.
+
+    The manifest exists because that text was previously recorded nowhere. It
+    lived in the spec, specs live in session-state, and session-state is gone
+    the next time anyone opens a terminal - so the gate could check that an
+    alt *sounds* annotated but never that it quotes what the image actually
+    says. Two real accessibility bugs shipped through that gap on the
+    September 2026 issue. Writing it here is the only place the text is known
+    for certain, and it costs one file per run rather than anyone remembering
+    to copy strings by hand (Rule #14b).
+    """
     with open(spec_path, encoding="utf-8") as fh:
         spec = json.load(fh)
+    records = {}
     for item in spec["images"]:
         print(f"[{item.get('src') or 'blank canvas ' + str(item.get('canvas'))}]")
-        s = Shot(item.get("src"), scale=item.get("scale", 1.0),
+        src = item.get("src")
+        s = Shot(src, scale=item.get("scale", 1.0),
                  canvas=item.get("canvas"))
+        texts, counts = [], {}
         for op in item.get("ops", []):
             # keys starting with "_" are spec comments, not arguments
             op = {k: v for k, v in op.items() if not k.startswith("_")}
             kind = op.pop("kind")
+            counts[kind] = counts.get(kind, 0) + 1
+            if kind == "callout":
+                # Newlines are a layout decision - the box is wrapped by hand
+                # to fit - so they are not part of what the callout says.
+                texts.append(" ".join(str(op.get("text", "")).split()))
             getattr(s, kind)(**op)
-        s.save(item["dest"], quality=item.get("quality", 88))
+        dest = item["dest"]
+        s.save(dest, quality=item.get("quality", 88))
+        rec = {"disposition": "annotated",
+               "spec": os.path.basename(spec_path),
+               "scale": item.get("scale", 1.0),
+               "callouts": counts.get("callout", 0),
+               "boxes": counts.get("box", 0) + counts.get("ring", 0)}
+        if src:
+            rec["source_sha256"] = _sha256(src)
+        rec["output_sha256"] = _sha256(dest)
+        if texts:
+            rec["callout_texts"] = texts
+        records[os.path.basename(dest)] = rec
+
+    man = os.path.splitext(spec_path)[0] + ".manifest.json"
+    with open(man, "w", encoding="utf-8") as fh:
+        json.dump({"_README": "Sidecar-ready records for this annotator run. "
+                              "Merge into qa/monthly-copilot/<slug>."
+                              "annotations.json; callout_texts is what the "
+                              "alt text has to quote.",
+                   "spec": os.path.basename(spec_path),
+                   "images": records}, fh, indent=2, ensure_ascii=False)
+        fh.write("\n")
+    print(f"  manifest {man}  ({len(records)} image(s))")
 
 
 if __name__ == "__main__":

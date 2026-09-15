@@ -1239,7 +1239,7 @@ ANNOT_HASHLESS = {"disposition": "annotated_at_capture",
 def annots(*, alt="A red callout points to the Share response button",
            record=None, date="2026-09-21", sidecar=True, extra=None,
            post_image=True, second_src=None, filename=None, date_line=None,
-           orphan=False, src=None):
+           orphan=False, src=None, record_extra=None):
     """Drive the real annotation gate inside a synthetic repo root.
 
     The date matters and is deliberately explicit: the gate grandfathers any
@@ -1287,6 +1287,12 @@ def annots(*, alt="A red callout points to the Share response button",
                     "source_sha256": "a" * 64,
                     "output_sha256": sha,
                     "spec": "annot-b1", "scale": 2.0, "callouts": 1, "boxes": 0}
+                # record= replaces the record outright, which cannot express
+                # "the real thing, plus one field" - the output hash is only
+                # known in here. record_extra merges instead, so a test can
+                # add callout_texts without hand-forging a hash.
+                if record_extra:
+                    rec = {**rec, **record_extra}
                 imgs = {} if rec is False else {"example.webp": rec}
                 imgs.update(extra or {})
                 (qa / f"{mbq.slug_of(p)}.annotations.json").write_text(
@@ -1380,6 +1386,122 @@ for _alt in ["The Share button is circled in black.",
              "A black callout points to the toggle."]:
     check(f"a stale black caption is still caught: {_alt[:34]}...",
           bool(mbq.BLACK_ANNOTATION_RE.search(_alt)), _alt)
+
+# callout_texts. The content-bound backstop to CALLOUT_ALT_RE above, which is
+# a vocabulary check and was passed twice on this post by alt text describing
+# the PRODUCT's red - "a red exclamation mark", "red spell-check underlines" -
+# while never mentioning our callout at all. Both were real bugs; neither was
+# findable by asking whether the alt sounds annotated.
+_e, _s = annots(alt="A callout reads Tools where you build, beside the pane.",
+                record_extra={"callout_texts": ["Tools where you build"]})
+check("an alt quoting the drawn callout passes", _e == [], f"{_e}")
+
+_e, _s = annots(alt="A red callout points to the Share response button",
+                record_extra={"callout_texts": ["Tools where you build"]})
+check("an alt that never says what the callout says is caught",
+      has(_e, "the alt never") and has(_e, "Tools where you build"), f"{_e}")
+
+# The exact false positive this normalisation exists to avoid. A drawn label
+# is shortened to fit its box, so "More..." on the image is written "More" in
+# prose. Comparing raw strings failed on correct alt text.
+_e, _s = annots(alt="A callout reads More, where the command is hidden.",
+                record_extra={"callout_texts": ["More..."]})
+check("punctuation on a drawn label is not a mismatch", _e == [], f"{_e}")
+
+# The alt is authored HTML and the callout is the plain string handed to the
+# annotator, so these never match literally.
+_e, _s = annots(alt="A callout reads Image slides can&rsquo;t be translated.",
+                record_extra={"callout_texts": ["Image slides can't be translated"]})
+check("an HTML entity in the alt still matches the callout", _e == [], f"{_e}")
+
+check("alt_norm flattens entities, case and punctuation alike",
+      mbq.alt_norm("Can&rsquo;t — More...") == mbq.alt_norm("cant more"),
+      mbq.alt_norm("Can&rsquo;t — More..."))
+
+# Two fields describing one thing drift apart silently. This is the cheap
+# cross-check that caught nothing on the real post - all 71 agreed - which is
+# what makes it worth keeping: it is asserting a property, not fixing a bug.
+_e, _s = annots(alt="A callout reads One and a callout reads Two.",
+                record_extra={"callouts": 3, "callout_texts": ["One", "Two"]})
+check("a callout count that disagrees with the listed texts is caught",
+      has(_e, "one of the"), f"{_e}")
+
+# Absent is not passing. 21 of the 92 annotated images on the real post
+# predate the recording, and inventing their text to satisfy a linter is the
+# fabrication Rule #19 forbids - so the permissive regex stays the floor.
+_e, _s = annots(alt="A red callout points to the Share response button")
+check("a record with no callout_texts still passes on the regex alone",
+      _e == [], f"{_e}")
+_e, _s = annots(alt="A screenshot of the Copilot pane.")
+check("a record with no callout_texts is still held to the regex",
+      has(_e, "never says what the annotation points at"), f"{_e}")
+
+_e, _s = annots(record_extra={"callout_texts": "Tools where you build"})
+check("callout_texts must be a list, not a bare string",
+      has(_e, "not a list"), f"{_e}")
+_e, _s = annots(record_extra={"callout_texts": ["Share response", "  "]})
+check("a blank callout text is refused", has(_e, "blank entry"), f"{_e}")
+
+# Gate B findings (15 Sep 2026). All five were latent - correct on the real
+# data, wrong on the next record - and none had a test, which is why 195 green
+# and 60/60 mutations caught did not surface them.
+
+# 1. Substring matching flattened word boundaries, so a short label was
+# satisfied by any longer word containing it. That is the SAME failure the
+# check exists to close, one layer down: the product's vocabulary standing in
+# for our annotation. These are the densest words in this blog.
+for _t, _alt in [("Share", "The SharePoint library opens in a new tab."),
+                 ("Ask", "A callout: the Tasks list is circled."),
+                 ("Plan", "A ring marks the Planner tab."),
+                 ("Agent", "The Agentic workflow pane, boxed in red.")]:
+    _e, _s = annots(alt=_alt, record_extra={"callout_texts": [_t]})
+    check(f"a callout is not satisfied by a longer word containing it: {_t}",
+          has(_e, "the alt never"), f"{_t} / {_e}")
+
+# ...while the plural and possessive a writer actually uses must still pass.
+for _t, _alt in [("Agent", "A callout points at the Agents button."),
+                 ("Copilot", "A callout sits on Copilot&rsquo;s pane."),
+                 ("Tools where you build",
+                  "A callout reads Tools where you build, beside the pane.")]:
+    _e, _s = annots(alt=_alt, record_extra={"callout_texts": [_t]})
+    check(f"a drawn label still matches its plural or possessive: {_t[:20]}",
+          _e == [], f"{_t} / {_e}")
+
+# 2. The field was consumed on every disposition but validated only on
+# 'annotated'. A bare string on any other one was iterated CHARACTER by
+# character, every character appeared in the alt, and the record passed while
+# checking nothing.
+_e, _s = annots(record={"disposition": "annotated_at_capture",
+                        "reason": "Arrived annotated at capture.",
+                        "callout_texts": "Share response"})
+check("callout_texts is validated on exempt dispositions too",
+      has(_e, "not a list"), f"{_e}")
+
+# 3. [] switched off BOTH halves at once - falsy, so the texts were skipped,
+# and the count cross-check lived inside that same branch.
+_e, _s = annots(record_extra={"callouts": 3, "callout_texts": []})
+check("an empty callout_texts is refused rather than silently skipped",
+      has(_e, "empty"), f"{_e}")
+
+# 4. A symbol-only label normalises to "", and "" is a substring of
+# everything, so it was certified without being read.
+for _t in ["...", "\u2192", "?!"]:
+    _e, _s = annots(record_extra={"callout_texts": [_t]})
+    check(f"a callout that normalises to nothing is refused: {_t!r}",
+          has(_e, "normalises to nothing"), f"{_t} / {_e}")
+check("callout_in_alt refuses an empty normalisation outright",
+      not mbq.callout_in_alt("\u2192", ""), "")
+check("...including against a whitespace-only alt",
+      not mbq.callout_in_alt("...", " "), "")
+
+# 5. The cross-check was opt-in on a field nobody validated, so a string, a
+# float or a missing count skipped it entirely. Bools are ints in Python,
+# which produced the message "record says True callout(s)".
+for _c in ["2", 2.0, None, True]:
+    _e, _s = annots(record_extra={"callouts": _c,
+                                  "callout_texts": ["One", "Two"]})
+    check(f"a callout count of {_c!r} is refused, not silently skipped",
+          has(_e, "whole-number"), f"{_c!r} / {_e}")
 
 # The gate's own first bug, now a permanent test. Every one of the 92 real
 # 'annotated' records was reported as missing a written reason, because the
@@ -1494,6 +1616,83 @@ for _f in (HERE / "annotate_screenshot.py",
 _e, _s = annots(alt="We hovered over the required credit, as predicted")
 check("words merely CONTAINING 'red' do not satisfy the gate",
       has(_e, "never says what the annotation points at"), f"{_e}")
+
+# The annotator's manifest. This is the SOURCE of callout_texts, so if it
+# stops recording them the gate above quietly reverts to the permissive regex
+# that already let two real defects through - a silent fail-open, which is the
+# worst shape a guard can take. Behavioural rather than source-level on
+# purpose: asserting that run_spec still "contains the right lines" would pass
+# on a manifest that writes the wrong thing.
+_ANNOTATOR = HERE / "annotate_screenshot.py"
+try:
+    from PIL import Image as _PILImage
+except ImportError:                                    # pragma: no cover
+    # Loud, not silent. A skipped test that prints nothing is indistinguishable
+    # from a passing one, which is the vacuous-fixture trap this suite already
+    # warns about elsewhere.
+    print("WARNING: Pillow missing - annotator manifest test did NOT run")
+else:
+    import subprocess as _sp
+    with tempfile.TemporaryDirectory() as _td:
+        _d = Path(_td)
+        _src = _d / "shot.png"
+        _PILImage.new("RGB", (900, 500), (245, 245, 245)).save(_src)
+        _spec = {"images": [{
+            "src": str(_src), "dest": str(_d / "out.webp"), "scale": 1.0,
+            "ops": [
+                {"kind": "pad", "top": 160},
+                # A "_"-prefixed key is a spec comment and must not reach the
+                # drawing call, and must not be mistaken for the text either.
+                {"kind": "callout", "_why": "comment", "at": [40, 20],
+                 "target": [300, 260], "text": "Tools where you\nbuild"},
+                {"kind": "callout", "at": [480, 20], "target": [700, 260],
+                 "text": "Publish when ready"},
+                {"kind": "box", "bbox": [100, 300, 400, 380]}]}]}
+        _sf = _d / "s.json"
+        _sf.write_text(json.dumps(_spec), encoding="utf-8")
+        _r = _sp.run([sys.executable, str(_ANNOTATOR), str(_sf)],
+                     capture_output=True, text=True)
+        _mf = _d / "s.manifest.json"
+        check("running a spec writes a manifest beside it",
+              _r.returncode == 0 and _mf.exists(),
+              f"rc={_r.returncode} {_r.stderr[-300:]}")
+        if _mf.exists():
+            _rec = json.loads(_mf.read_text(encoding="utf-8"))["images"]["out.webp"]
+            check("the manifest records what each callout says",
+                  _rec.get("callout_texts") == ["Tools where you build",
+                                                "Publish when ready"],
+                  f"{_rec.get('callout_texts')}")
+            # A line break in a callout is a layout decision - the box is
+            # wrapped by hand to fit - so it is not part of what it says, and
+            # keeping it would never match the alt text written in prose.
+            check("a wrapped callout is recorded as one line of text",
+                  "\n" not in "".join(_rec.get("callout_texts") or ["\n"]),
+                  f"{_rec.get('callout_texts')}")
+            check("the manifest counts callouts and boxes separately",
+                  _rec.get("callouts") == 2 and _rec.get("boxes") == 1,
+                  f"callouts={_rec.get('callouts')} boxes={_rec.get('boxes')}")
+            # These are the fields the gate compares against the live bytes,
+            # and equal hashes are how it detects an annotation that drew
+            # nothing - so a manifest reporting them wrongly would certify an
+            # untouched screenshot.
+            _live = mbq.sha256_file(_d / "out.webp")
+            check("the manifest's output hash is the file it just wrote",
+                  _rec.get("output_sha256") == _live, f"{_rec.get('output_sha256')}")
+            check("the manifest hashes the source separately from the output",
+                  mbq.HEX64_RE.fullmatch(_rec.get("source_sha256") or "")
+                  and _rec["source_sha256"] != _rec["output_sha256"],
+                  f"{_rec.get('source_sha256')}")
+            check("the manifest record is sidecar-ready",
+                  _rec.get("disposition") == "annotated"
+                  and _rec.get("spec") == "s.json", f"{_rec}")
+            # The whole point: paste it into a sidecar and the gate accepts it.
+            _e, _s = annots(alt="A callout reads Tools where you build, and "
+                                "another reads Publish when ready.",
+                            record_extra={"callouts": 2,
+                                          "callout_texts": _rec["callout_texts"]})
+            check("a manifest's texts satisfy the gate when the alt quotes them",
+                  _e == [], f"{_e}")
+
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")
     for f in _failures:
