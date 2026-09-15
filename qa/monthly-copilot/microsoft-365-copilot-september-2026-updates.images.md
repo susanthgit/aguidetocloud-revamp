@@ -681,6 +681,16 @@ notebook proposing what to make next, and the Quick Create row shows the formats
 
 **Annotated 15 September 2026 (house style, batch 2):** 420 px of white canvas added on the **left**; one callout, **“Copilot suggests what to make next”**, leading to a red dot on the top-left border of the **Suggested content** card — the single element the section is about. First render put the dot on the **“S” of “Suggested content”**, obscuring the very label it names; corrected by moving it down onto the card border and re-verified by viewing the render. The callout deliberately states only what is visible and does **not** repeat the section's “one more than Microsoft shows” comparison — counting this image, Microsoft's own screenshot also carries **seven** pills (two of them labelled Document). The difference between the two tenants is *composition*, not count.
 
+
+> **Corrected 15 September 2026 — miscounted a duplicate label.** The Quick Create rail was originally
+> read as six buttons: Audio Overview, Mind map, Study guide, Infographic, Document, Presentation. It is
+> **seven**. Two adjacent buttons both read **Document** — the first with a green Excel icon, the second
+> with a blue Word icon — and the repeated word made the pair read as one. This mattered beyond the
+> observation: the body of §14 had built a claim on it, saying my tenant showed "one more than Microsoft's
+> own screenshot" and that the official image "leaves out" the Excel option. Both were wrong. The counts
+> match; only the label differs, because my tenant names the green button **Workbook**. Body prose and both
+> alt texts corrected. **Lesson: count icons, not labels — repeated text hides adjacent controls.** The
+> image itself is unchanged; the hash above stands.
 ## §58 — You can choose how hard Cowork thinks
 `a703c51cee3668533a5db5765671587378d96f35e09ea5a0126456ed64587574`
 

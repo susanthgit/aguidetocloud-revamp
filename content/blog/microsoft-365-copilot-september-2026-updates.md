@@ -449,16 +449,18 @@ the Copilot side, so the sync is not something I have watched work.
 
 Notebooks gained **proactive artifact recommendations**. Drawing on Work IQ and what is already in the notebook, Copilot suggests generating a Word document, an Excel workbook or a PowerPoint deck from the material you have collected.
 
-**What I found on 14 September 2026.** The palette in my tenant has **seven** options, one more than
-Microsoft's own screenshot shows.
+**What I found on 14 September 2026.** The palette in my tenant has **seven** options, and so does
+Microsoft's own screenshot — but they are not labelled the same way.
 
 <img src="/images/blog/copilot-september-2026/lab-s14-quick-create.webp" alt="A close crop of a Copilot Notebook in my own tenant. A Quick Create row offers seven buttons, each with a coloured icon: Audio overview, Mind map, Study guide, Infographic, Workbook, Document and Presentation. Below a divider, a Key Insights section is headed Partner Selection Tradeoffs and contains three sub-headings. Coverage Versus Capability notes that 310 stores give one partner the broadest reach but that coverage is offset by weaker category management, logistics and reporting. Commercial Framework Tension notes an exclusivity request for twelve months on the core product and that granting it could materially affect launch economics. Meridian Capability Advantage notes an existing relationship and operational readiness, and integrated logistics with live EDI connectivity and cold-chain support. Every bullet ends with one or two small numbered citation chips." loading="lazy" decoding="async" />
 
-<p class="img-caption"><em>My own tenant, 14 September 2026. Quick Create, with Workbook present between Infographic and Document.</em></p>
+<p class="img-caption"><em>My own tenant, 14 September 2026. Quick Create — the green Excel button is named Workbook here.</em></p>
 
-Microsoft's image shows six: audio overview, mind map, study guide, infographic, document and presentation.
-Mine also has **Workbook**, which is the Excel one the description promises but the official screenshot leaves
-out. Small thing, but it is the difference between "we said spreadsheets" and "there is a button".
+Microsoft's image has the same seven buttons, but two of them both read **Document** — the first with a green
+Excel icon, the second with a blue Word icon. Mine names the green one **Workbook**, which is what it actually
+makes. So the Excel option was never missing; it was sitting there wearing the wrong name. A tiny thing, and
+easy to miss, but it is the difference between a menu you can read and one you have to guess at. I cannot tell
+whether Microsoft's screenshot simply predates the fix or whether the label varies by tenant.
 
 Now the honest half. The headline here is *proactive* recommendations, and Microsoft's image shows that
 properly: a Suggested content card putting forward a specific artifact, named and reasoned, with citations.
@@ -476,7 +478,7 @@ Worth noticing regardless: every bullet in Key Insights carries a numbered citat
 <p><strong>Why this matters:</strong> Research collapses at the point where notes have to become a deliverable. A prompt at that exact moment — here is what this could become — is well placed, though it will live or die on whether the suggestions are any good.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/official-14-notebooks-suggested-content.webp" alt="Official Microsoft image of a Copilot Notebook overview page dated 18 August 2026, headed Summary, Global Telecommunications Transformation. A Suggested content card offers a Telecom Opportunity Matrix, described as a traceable framework for comparing telecommunications opportunity hypotheses and prioritising further validation, citing two references. A Quick Create rail on the right offers Audio Overview, Mind map, Study guide, Infographic, Document and Presentation. Below, a Key Insights section lists Adoption Trails Network Coverage, noting 2.2 billion people remain offline despite near-universal mobile broadband coverage, 5G Reaches Commercial Scale, noting 2.9 billion subscriptions generating 48 percent of mobile data traffic by the end of 2025, and Infrastructure Supports Economic Expansion, noting mobile generated 7.6 trillion dollars in 2025 with a forecast of 11.3 trillion by 2030. Each insight carries numbered citations." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/official-14-notebooks-suggested-content.webp" alt="Official Microsoft image of a Copilot Notebook overview page dated 18 August 2026, headed Summary, Global Telecommunications Transformation. A Suggested content card offers a Telecom Opportunity Matrix, described as a traceable framework for comparing telecommunications opportunity hypotheses and prioritising further validation, citing two references. A Quick Create rail on the right offers Audio Overview, Mind map, Study guide, Infographic, then two buttons that both read Document — the first with a green Excel icon, the second with a blue Word icon — and Presentation. Below, a Key Insights section lists Adoption Trails Network Coverage, noting 2.2 billion people remain offline despite near-universal mobile broadband coverage, 5G Reaches Commercial Scale, noting 2.9 billion subscriptions generating 48 percent of mobile data traffic by the end of 2025, and Infrastructure Supports Economic Expansion, noting mobile generated 7.6 trillion dollars in 2025 with a forecast of 11.3 trillion by 2030. Each insight carries numbered citations." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
