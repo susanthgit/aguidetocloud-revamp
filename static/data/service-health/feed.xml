@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Sep 2026 04:48:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 11:38:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1472181</link>
+      <description>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1472181</guid>
+      <pubDate>Tue, 15 Sep 2026 07:18:03 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Purview] Some admins may receive failures creating or updating Communications Compliance policies in Microsoft Purview</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1471821</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1456866</guid>
       <pubDate>Mon, 17 Aug 2026 23:38:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Microsoft 365 Copilot in Excel</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1456911</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot in Excel.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1456911</guid>
-      <pubDate>Mon, 17 Aug 2026 19:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

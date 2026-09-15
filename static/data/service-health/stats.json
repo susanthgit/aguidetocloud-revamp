@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-15T04:48:16.434019+00:00",
+  "generated_at": "2026-09-15T11:38:29.531904+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 23,
+      "total_incidents": 22,
       "active_incidents": 1,
-      "avg_duration_minutes": 10569,
+      "avg_duration_minutes": 11047,
       "last_incident": "2026-09-04T02:53:00+00:00",
       "classifications": {
-        "advisory": 16,
+        "advisory": 15,
         "incident": 7
       }
     },
@@ -55,6 +55,18 @@
       }
     },
     {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 6,
+      "active_incidents": 0,
+      "avg_duration_minutes": 9481,
+      "last_incident": "2026-09-15T07:18:03.133000+00:00",
+      "classifications": {
+        "advisory": 6
+      }
+    },
+    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -91,18 +103,6 @@
       "classifications": {
         "advisory": 2,
         "incident": 3
-      }
-    },
-    {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 11366,
-      "last_incident": "2026-08-31T04:15:00+00:00",
-      "classifications": {
-        "advisory": 5
       }
     },
     {
@@ -207,8 +207,8 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 19,
-      "services_affected": 7
+      "incident_count": 20,
+      "services_affected": 8
     },
     {
       "month": "2026-08",
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 26,
+      "incident_count": 25,
       "services_affected": 8
     }
   ]
