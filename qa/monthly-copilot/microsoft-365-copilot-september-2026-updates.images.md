@@ -418,6 +418,13 @@ says it added "a link to the official … support page", which is exactly the ca
 .
 
 
+
+> **Corrected 15 September 2026 — alt text described the uncropped original.** It claimed the Copilot pane sits "on the right", quoted a prompt line, and described Done and Undo buttons above a "Describe what you would like to edit" box — none of which are in the crop, which shows only the document section and the reply block beneath it. Re-checked
+> against the published crop and rewritten to describe only what is in the frame. This was the third
+> instance of one defect class: all three `official-*--focus` images had alt text verified against
+> Microsoft's full screenshot rather than the crop we actually publish, so a screen reader would have
+> announced interface that is not there. **Rule: alt text is verified against the image as published,
+> never against the source it was cropped from.** The image itself is unchanged; the hash above stands.
 ## §87 — Teams can translate a meeting recap after the fact
 `8d68ccf61d6f15f50c6ca059e95a245c36c69fb23697436424687619bb1518a9`
 
@@ -453,9 +460,16 @@ fix; flagging only so no later edit treats either date as real.
 **Flag checked and closed:** the screenshot labels this a Frontier preview / experimental capability
 via the Frontier early access program. §25's "For:" line already reads "Planner Agent · Frontier
 Program · Rolled out August 2026" and the alt text already states the preview label, so body and
-image agree. No change needed. Every figure asserted in the alt text (14 days, 28 July 2026,
-14–28 July window, At risk, 23%, 44 overdue, 136 of 190, the four workstream names) was re-read at
-full size and matches.
+image agree.
+
+> **Corrected 15 September 2026.** This note previously claimed that "every figure asserted in the alt
+> text (… 136 of 190, the four workstream names) was re-read at full size and matches". That was the
+> wrong test: those figures appear in Microsoft's **full original**, not in the crop we actually
+> publish. The alt text was describing content a reader of this page cannot see — a real accessibility
+> defect, since a screen reader would announce a completed-task count and four risk categories that are
+> not in the frame. Re-checked against the published crop: it ends at the "At risk · 23% overdue (44
+> tasks)" line. The alt text has been rewritten to describe only the crop. **Lesson: alt text must be
+> verified against the image as published, never against the source it was cropped from.**
 
 **Annotated 15 September 2026 (house style, verified on the render):** padded 640 px right and 120 px bottom, with three callouts. *"The prompt named the sections"* points at the right edge of the prompt bubble; *"Frontier preview, and it says so"* points at the end of the preview line; *"A verdict with numbers behind it"* drops into the bottom pad and points back at the risk verdict line. The prompt bubble's right edge was located by pixel scan at x 1385 — its grey fill is light enough (level 246) to be invisible to an ordinary ink threshold, which is exactly the trap that makes eyeballing unreliable here. All three leaders run horizontally through measured clear bands.
 
@@ -555,6 +569,13 @@ contact sheet in the harvest pass, where the sub-labels were unreadable):
 2. "Sonnet 5, Efficient **model** for everyday tasks" → the UI says **"Efficient for everyday
    tasks"**. Corrected.
 
+
+> **Corrected 15 September 2026 — alt text described the uncropped original.** It claimed a "Hi Elvia, how can I help" greeting, a left rail listing New task, My tasks, Automations and Customize, and an account line reading Microsoft 365 Premium — none of which are in the crop, which begins at the task box. The model list itself was accurate. Re-checked
+> against the published crop and rewritten to describe only what is in the frame. This was the third
+> instance of one defect class: all three `official-*--focus` images had alt text verified against
+> Microsoft's full screenshot rather than the crop we actually publish, so a screen reader would have
+> announced interface that is not there. **Rule: alt text is verified against the image as published,
+> never against the source it was cropped from.** The image itself is unchanged; the hash above stands.
 ## §4 — You can select part of a Copilot answer
 `a67abb645f8c6811c3080365ad3b3abc46e16dd8a581dbf4e629e12660ed5214`
 
@@ -1914,11 +1935,19 @@ states it.
 **SHA256:** `e3cc1423a6f532213d52750cff751f3c9c4d18415943253395a44bf860fbfeb2`
 **Source:** My own Caldova tenant, 14 September 2026. Outlook web, Copilot pane.
 
-**Observed while viewing:** The Copilot side pane in Outlook. Most of the pane is a bordered list of
-individual email messages, each row carrying a small envelope icon and a subject line that begins
-**"Your scheduled prompt is complete"** followed by a different topic on each row. Roughly twenty rows
-are visible. Beneath the list sit two buttons, **Confirm** and **Cancel**. Nothing has been moved at
-this point — this is a proposal awaiting approval.
+**Observed while viewing:** The Copilot side pane in Outlook. Most of the pane is a **plain bulleted
+list** of individual email messages — round bullets, no border and no icons — each row a subject line
+that begins **"Your scheduled prompt is complete"**. Roughly seventeen rows are visible, and they cycle
+through only **four distinct subjects** (RFP Action Review, Vendor Performance Watchlist Analysis,
+Weekly Email Action Table, Pharma Sourcing Briefing), which repeat because these are recurring
+notification emails. Beneath the list sit two buttons, **Confirm** (filled blue) and **Cancel**
+(outlined). Nothing has been moved at this point — this is a proposal awaiting approval.
+
+> **Corrected 15 September 2026.** This block originally read "a bordered list… each row carrying a
+> small envelope icon… followed by a different topic on each row". Re-checked against the pixels during
+> the annotation pass: there is no border, there are no envelope icons, and the subjects repeat. The
+> post's alt text carried the same three errors and was corrected with it. The image itself is
+> unchanged, so the recorded hash still stands.
 
 **Verdict:** ✅ MATCH — the section's claim is that Copilot enumerated every affected message and waited
 for confirmation rather than acting immediately. The list and the Confirm/Cancel pair are exactly that,
