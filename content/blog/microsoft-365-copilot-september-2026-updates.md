@@ -479,12 +479,14 @@ Worth noticing regardless: every bullet in Key Insights carries a numbered citat
 
 **Multimodal capture** brings audio, images and notes into one experience, automatically structured into notes and summaries.
 
-One detail decides whether this is new for you at all: Microsoft scopes this month's rollout to **Android**, and notes that multimodal capture is already available in the OneNote app on **iPhone and iPad**. So this is a phone feature, and on iOS it is not new.
+One detail decides whether this is new for you at all: Microsoft scopes this month's rollout to **Android**, and notes that multimodal capture is already available in the OneNote app on **iOS and iPad**. So this is a phone feature, and on iOS it is not new.
 
 **What I found on 14 September 2026.** Not yet in my tenant, and the gap is a specific one. Adding a
 **meeting** as a source worked. Adding an **.mp3** or a **.jpg** did not — the picker would not take them.
-That may well be the wrong place to have looked, though — if the rollout is the Android OneNote app, a
-notebook on the desktop was never going to be in scope for it. I will retest for October.
+That may well be the wrong place to have looked, though. There is a separate Windows entry on the
+roadmap — 566322 — but on 14 September it still read **In development** against a September general
+availability month, so a desktop notebook was not yet in scope for what I was testing. I will retest for
+October.
 
 One thing worth pulling apart, because the words are so nearly the same. A notebook can already *produce*
 audio — that is the audio overview in [section 14](#14-notebooks-suggest-what-to-make-next), and it works. Taking audio *in* as a source is the new
@@ -494,7 +496,7 @@ half, and that is the half I could not reproduce.
 <p><strong>Why this matters:</strong> This is the closest Microsoft has come to the way people actually capture things — a photo of a whiteboard, a voice memo walking to the car, three lines typed in a meeting. Making that one input rather than three is the useful part.</p>
 </blockquote>
 
-📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960) · [AI at Work Roadmap 559095](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559095) — note this is the **iPhone** entry, which shipped in May 2026; I could not find a separate roadmap item covering the Android rollout
+📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960) · [AI at Work Roadmap 567895](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567895) — the **Android** entry that matches this month's rollout (Rolling out, preview August 2026, general availability September 2026) · [Roadmap 566322](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566322) — the **Windows** entry, still In development on 14 September · [Roadmap 559095](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559095) — the **iPhone** entry, which shipped back in May 2026
 
 ### 16. Power BI grounding went worldwide
 
@@ -979,7 +981,7 @@ I had built a Brand Kit earlier that same day — it is [section 31](#31-powerpo
 
 ### 36. PowerPoint can build a deck from an email
 
-*For: Copilot in PowerPoint · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
+*For: Copilot in PowerPoint (Windows) · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 You can **reference an email** when asking Copilot to create a presentation. The thread becomes the source material for the deck.
 
@@ -1070,7 +1072,7 @@ Everything in the next section was built here, in the browser, which is the othe
 
 ### 40. Presentations can be grounded in web sources
 
-*For: Copilot in PowerPoint · Generally available 11 August 2026 · Tested in my tenant 14 September 2026*
+*For: Copilot in PowerPoint (Web, Windows and Mac) · Generally available 11 August 2026 · Tested in my tenant 14 September 2026*
 
 You can **reference web sources** when asking Copilot to create a presentation, so the deck can draw on material outside your tenant.
 
@@ -1839,7 +1841,7 @@ The existing arrangement continues for the other two: Microsoft 365 Copilot lice
 
 The part that is easiest to miss — and Microsoft has now put it beyond doubt. The [billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) says it in a heading: *"**Billing starts when you start building**: Unlike the standard harness, which starts billing after publish, the GitHub Copilot harness charges credits from the moment you start building. Experiences such as creating an automated solution with natural language, previewing and testing the agent, and generating and creating agent evaluations all consume credits."*
 
-Note what is and is not being said. Microsoft names **activities** — natural-language authoring, preview and test, generating evaluations — not the act of opening the designer. The scope clause is broad, though: *"Copilot credits are charged for large language model (LLM) tokens, tools (including knowledge and MCPs), and the harness itself. Any experience that uses one of these consumes credits."* So the safe reading is that anything invoking the model bills, whether or not it happens in the editor.
+Note what is and is not being said. Microsoft names **activities** — natural-language authoring, preview and test, generating evaluations — not the act of opening the designer. The scope clause is broad, though: *"Copilot Credits are charged for large language model (LLM) tokens, tools (including knowledge and MCPs), and the harness itself. Any experience that uses one of these consumes credits."* So the safe reading is that anything invoking the model bills, whether or not it happens in the editor.
 
 The enforcement documentation confirms it from the other direction, by listing what stops when credits run out: *"**Makers**: You can't use natural language to author solutions, preview and test agents, or generate and create agent evaluations."*
 
