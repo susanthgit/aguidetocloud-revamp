@@ -19,6 +19,75 @@ the post says the same thing again in plain words. None of them depicts a user i
 
 Verdicts: ✅ MATCH · ⚠️ PARTIAL · ❌ MISMATCH
 
+## Red-box recolour — 15 September 2026 (2 SHAs changed)
+
+Two images carried a **black** annotation where every other annotated image in this issue carries
+house red. Sush asked whether we drew them. We did not, and the evidence is threefold rather than a
+recollection:
+
+1. `scripts/screenshot-annotator/annotate_lib.py` hardcodes `RED = (207, 38, 38)`. There is no code
+   path in the annotator that can emit a black stroke.
+2. A pixel scan found **zero** reddish pixels in either image, while the two other
+   `annotated_at_capture` images from the same day (`official-65…`, `lab-s70…`) do carry red. The
+   tooling was working that day; these two were simply never drawn by it.
+3. No un-annotated original exists anywhere on the machine — Pictures, Downloads, OneDrive, session
+   state or the asset folder. They arrived already marked, at capture time, on 14 September.
+
+Both have now been recoloured to house red `#CF2626`, stroke-exact. Isolating a 2px annotation from
+2px UI glyphs defeated erosion, so the stroke was found by **fill ratio** instead: a closed outline
+has a large bounding box and very low fill, where glyphs are small-box/high-fill and chrome such as
+a scrollbar is high-fill. Each image yielded exactly one qualifying component with a 33× margin over
+the runner-up. Anti-aliasing was preserved by blending white→red in proportion to each pixel's
+original darkness, and the write was guarded by asserting the detected bounding box matched the
+expected one. Originals are backed up; UI text, icons and the scrollbar are untouched.
+
+This changed the image bytes, so both observations below are **new**, written while viewing the
+recoloured files. The alt text for both said *"circled in black"* and has been corrected in the post.
+
+| # | Image (SHA-256 head) | Stroke found | Pixels recoloured | Verdict |
+|---|---|---|---|---|
+| 1 | `lab-s06…` `2fcffd15ab48cc62` | Rounded rect, bbox 265×55 at x34–298 y24–78, 8.4% fill | 1,285 (1,224 core + fringe) | ✅ MATCH |
+| 2 | `lab-s12…` `d9604c0acbd980e4` | Ellipse, bbox 46×40 at x253–298 y0–39, 12.4% fill | 288 (228 core + fringe) | ✅ MATCH |
+
+## §6 — Individual responses can be shared on their own *(image 1 of 2, recoloured)*
+
+**File:** `lab-s06-share-response-menu-annotated.webp` (334×381, 10.5 KB) — native size, annotation recoloured to house red
+**SHA256:** `2fcffd15ab48cc62df3548ae2ebcf2dd735867c3ef85ca868ba7389f3c71d8a7`
+**Source:** My own Caldova tenant, 14 September 2026. Per-response overflow menu in Copilot Chat. Supersedes
+`d1cb0671…`, which was identical but for the stroke colour.
+
+**Observed while viewing:** A dropdown menu on a light background with five items, top to bottom:
+**Share response (Frontier)** with a small link glyph — now enclosed in a **red** rounded rectangle —
+then **Edit in Pages** with a submenu chevron, **Export to** with a submenu chevron, **Read aloud**,
+and **Schedule this prompt**. Below the menu sits the response's own control row: thumbs up, thumbs
+down, a retry glyph, and a highlighted ellipsis indicating the menu's origin. The red follows the
+original stroke exactly; no glyph, chevron or icon has been overpainted and there is no colour bleed
+into the surrounding menu. No personal names and no email addresses are visible.
+
+**Verdict:** ✅ MATCH — unchanged in substance from the superseded observation. The *(Frontier)* suffix
+is still legible and is the basis for the section's statement that this reaches early-access tenants
+first; the four sibling menu items named in the prose are all present and readable.
+
+## §12 — Copilot Chat sits beside Copilot Search *(recoloured)*
+
+**File:** `lab-s12-search-in-rail-annotated.webp` (337×301, 7.8 KB) — native size, annotation recoloured to house red
+**SHA256:** `d9604c0acbd980e4e59f359c3a54a94e4f2741e1ff1aa41c91dbc86529fddaa1`
+**Source:** My own Caldova tenant, 14 September 2026. Expanded left rail of Microsoft 365 Copilot. Supersedes
+`972a73bd…`, which was identical but for the stroke colour.
+
+**Observed while viewing:** The **Copilot** wordmark at the top left, with three icons to its right —
+an app-grid glyph, a checkbox-style glyph, and a pane-toggle glyph now enclosed in a **red** ellipse.
+Below, a two-part pill switch reads **Chat | Cowork** with *Chat* selected. Beneath that, four rail
+entries stacked vertically, each with a leading icon: **New chat**, **Search**, **Library**,
+**Notebooks**. The grey scrollbar at the right edge is unaffected — it was the highest-fill component
+in the image and was correctly excluded by the fill-ratio test rather than mistaken for a stroke. No
+personal names and no email addresses are visible.
+
+**Verdict:** ⚠️ PARTIAL — unchanged in substance from the superseded observation, and the section states
+this limitation itself. The image proves **Search is a first-class rail entry one click from chat**,
+which is what the prose claims from it. It does **not** show Microsoft's headline behaviour, chat
+available in a side pane *while search results are open*, because a live search was never captured.
+
 ## Annotation pass — batch 1 of 8, 15 September 2026 (11 SHAs changed)
 
 Rule #8 as written only ever asked *"does this image match its section?"*. It never asked
