@@ -169,25 +169,34 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 
 ## §66 — You can now author your own PowerPoint skills *(image 1 of 7)*
-`52119ae4170e4cc6156d0b681b3265f69890c06e5d889fa8e93e96b645bb2209`
+`f56ff3299f673ee8fc12b23c8293400e1c85c5e1cf50856807e5cacbfa5b5517`
 
 **Observed:** My own tenant. The Copilot pane in PowerPoint. Header "Let's edit your presentation", sub-line "Copilot can edit your presentation directly.", an **Allow editing** dropdown, and a prompt box reading "Create a presentation about" with **+**, microphone and send icons. An open menu sits above the prompt box listing: Add work content (focused), Upload images and files, Designer, Select brand, **Choose skills**, Change data sources.
 
 **Verdict:** ✅ MATCH — the section's new navigation steps say the way in is PowerPoint → Copilot pane → + → Choose skills. This image shows that menu open with Choose skills in it.
 
+**Annotated 15 September 2026 (house style, verified on the render):** One callout on a 3.0× render of a 387px-wide crop, with a 700px right pad. **"Choose skills, in the + menu"** runs a horizontal leader to a dot immediately right of the "Choose skills" row, clear of the menu card's right edge. A second callout naming the **+** button itself was **planned and dropped**: the ink-run scan showed it boxed in on its row by the microphone icon at src x565 and the orange send button at x645, leaving no leader path that would not cross a control. Precedent for annotating a crop this small was checked rather than guessed — the smallest already-annotated source in this post is 325×619.
+
+
 ## §66 — You can now author your own PowerPoint skills *(image 2 of 7)*
-`e6bde20e34e52ab7ffa916c77277ddbd00193a9490fd75c426884fea3bb9f9bf`
+`ca2f36cbaecccafe2c0332a6b0dc7c9592d60634bcfd4957489d771ce2f7dfa1`
 
 **Observed:** My own tenant. A pane headed **Skills**, then **Skills & plugins** — "Control which skills Copilot can use automatically, and manage their access to external data." First row: **Custom skills**, toggle **off** (grey), with a right chevron. Below it five rows each with a toggle **on** (red/accent): Visualize this slide, Review this presentation, Prepare for questions, Explain this presentation, Sharpen slide titles.
 
 **Verdict:** ✅ MATCH — the text claims Custom skills sat above the built-ins and was switched off while the five built-ins were on. That is exactly what is pictured, and the toggle states are legible.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 3.4× render of a 334px-wide crop, with a 700px right pad. **"Custom skills, off"** uses a **shallow diagonal leader** rather than a horizontal one: a straight run at the toggle's own height would have passed through the row chevron the ink scan found at src [295-300], so the box was raised and the leader's y solved at the obstacle's x to prove it passes above it. The render confirms it clears. **"The rest ship on"** points past the "Sharpen slide titles" toggle. The pairing is the point of the image and it reads instantly on the render — one grey toggle called out as off, five red ones called out as on.
+
+
 ## §66 — You can now author your own PowerPoint skills *(image 3 of 7)*
-`9d5413e0aa1b1d12a0ef3cfc8239fdf42988bd6db8d58b81cc2d8c7749eb5ff8`
+`2259bb223199972fbae75c1438eaabeb7b3a9021ac97f087dd5c45d855abbaed`
 
 **Observed:** My own tenant. A back arrow beside "Skills & plugins" and a close X. Heading **Custom skills** with its toggle **off**. Body text: "Custom skills let you extend Copilot with your own skill files. To get started, create a skills folder in your OneDrive." Then an underlined link "Read detailed instructions." and a filled button reading **+ Create skills folder**.
 
 **Verdict:** ✅ MATCH — the section quotes this sentence verbatim and describes this button as the mechanism. Both are in the image.
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 3.4× render of a 340px-wide crop, with a 700px right pad. **"Off until you create it"** lands its dot on the right edge of the grey toggle — the ink-run scan read that toggle as a short run at src [249-262], narrower than the ON toggles elsewhere in this section, which is exactly the visual difference the label is pointing at. **"Creates the OneDrive folder"** lands beyond the filled "Create skills folder" button, which the scan read as one solid run at src [19-187] because a filled button reads as continuous ink rather than as letters. Both leaders are horizontal and cross only empty card fill.
+
 
 ## §66 — You can now author your own PowerPoint skills *(image 4 of 7)*
 `35eaf1ec2e35bec9e3140cf0ea3ff9510d68d788120990bd7c4d3a2931c40d29`
@@ -359,11 +368,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — this carries the full claim in one frame: a live meeting, an attendee selection, an auto-composed prompt, and an answer in a side pane rather than on the shared stage. The prose claims Copilot wrote the prompt and imposed the one-to-three-sentence limit, and both are visible verbatim in the pane. Participant tiles are demo-tenant lab profiles, confirmed with Sush on 14 September 2026.
 
 ## §72 — You can create a presentation from the PowerPoint web app *(image 1 of 1)*
-`27499e5d4506e371dee8d2bb62e0c4538b185217b2072ec5aa33ecac2402bc39`
+`bc1a76ccbc7b9fb99a73fbd601ef8e631cb6f670243071a31c9352fc4e63b074`
 
 **Observed:** The PowerPoint start page in the web app. A welcome heading sits above three buttons in a row: "Create with Copilot" first and visually primary, then "Create blank presentation", then "Upload a file". A "Jump back in" row of recent presentation thumbnails appears below, and left navigation runs down the side.
 
 **Verdict:** ✅ MATCH — the section claims Copilot-based creation works in the PowerPoint web app. The image is unmistakably the web app rather than the desktop client, and it supports the stronger point the prose actually makes: the entry point leads the page rather than hiding in a menu.
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 1.5× render with pads on three sides. **"This is the web app"** drops from the top pad to a dot on the address bar just past `powerpoint.cloud.microsoft` — the URL is the only thing in frame that proves this is the browser build rather than the desktop app, which is the whole claim the surrounding text makes. **"First button, ahead of blank"** runs in from the left pad to a dot on the orange "Create with Copilot" button, with "Create blank presentation" plainly second to its right. The first render **wrapped that label onto three lines with "blank" orphaned**; rather than reword it, the image scale was reduced from 1.8× to 1.5× so the same pad width bought proportionally more room, and it now breaks cleanly after "First button,". The long horizontal leader crosses src y208, which the ink scan showed carries nothing but the window border at [0-2].
+
 
 ## §73 — Presentations can be grounded in web sources *(image 1 of 2)*
 `d8c398fcc895fa53cc8c1538cd0801f6621ba9e1309c19966b0f8731f675d58a`
@@ -376,11 +388,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 
 ## §73 — Presentations can be grounded in web sources *(image 2 of 2)*
-`8960c57b859c3491eb60d15a1fedecf306f449241f1ec5f41103543a66ca77f8`
+`8341b5d0c20aace2dc38562fa8d9045e79adc9619a820c3006a939c87053ea7f`
 
 **Observed:** A Copilot prompt card headed "Who is this deck for, and how deep should it go?" with radio options: "Team enablement" marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks, roughly 8-10 slides; "Exec overview", short value-focused briefing, roughly 5-6 slides; "Hands-on deep dive", detailed walkthrough of sources, limits and workflows, roughly 10-12 slides; and "Enter another option". Confirm and Skip all buttons sit at the bottom.
 
 **Verdict:** ✅ MATCH — supports the prose claim that this run asked about audience and depth rather than look and feel, and that each option carried a slide count. The option text is specific to Copilot Notebooks, which is the source material used in this test, supporting the claim that the questions are generated rather than fixed.
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 3.4× render of a 336px-wide crop, with a 700px right pad. **"It asks who it's for"** lands just past the "Who is it going to?" line and **"Each with a slide count"** just past the "~8-10 slides" option, both measured from OCR word boxes rather than read off the image, and both verified on the render to clear the final character. Together they carry the section's argument — that the new flow asks about audience before it asks about content, and prices each depth choice in slides.
+
 
 ## §73 — Presentations can be grounded in web sources *(image 3 of 3)*
 `ab5a1bfeaa248f71bd111e46dc9dbfe325b67269cb365b714588163b5d8c606f`
@@ -2519,10 +2534,13 @@ H
 ## §62 — lab-s62-cowork-plugins.webp
 
 - **File:** `lab-s62-cowork-plugins.webp` (1417×1386, 57.3 KB)
-- **SHA-256:** `def79455fe757ff68c4b40692be416a7445687afdef9db7d8b8e88106cd3f6a6`
+- **SHA-256:** `336b7536bf75fa54af068cba82e8668d52dd79e9efefb62b5119ee5d098a60a7`
 - **Observed while viewing (14 September 2026):** Cowork Customize page. Tabs Plugins / Skills / Preferences. Installed: Fabric IQ, Dynamics 365 Sales, Dynamics 365 ERP apps, all toggles off, Show more. Discover: Adobe Journey Optimizer, Ahrefs, an AI meeting notes plugin, Aiwyn Tax, AllTrails, Apify, each with a padlock.
 - **Cross-reference:** Context only. Shows where plugins are managed; does NOT show a file being passed to a plugin, which is developer-facing and has no UI. The prose says this in plain terms.
 - **Verdict:** ⚠️ PARTIAL
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 1.5× render with a 320px top pad and a 700px right pad. **"Plugins, Skills, Preferences"** sits in the top pad and drops a long near-vertical leader to a dot just right of the "Preferences" tab — the ink-run scan put the tab row's last ink at src x452, so the dot clears the final letter with room to spare. **"Installed, all off"** runs a horizontal leader in from the right pad to a dot beyond the Fabric IQ row's chevron; verified on the render that all three toggles below read grey, so the label matches what is actually visible. A third callout naming the Discover catalogue was **planned and dropped**: every horizontal path into it crossed either the search and filter icons at src x1186/x1237 or ran along the card border at x229, and the render confirms those icons sit exactly where the scan said.
+
 
 ## §62 — lab-s62-add-plugin.webp
 
