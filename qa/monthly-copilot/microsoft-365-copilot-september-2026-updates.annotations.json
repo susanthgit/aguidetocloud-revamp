@@ -1,0 +1,996 @@
+{
+ "_README": [
+  "Annotation disposition per image for this issue. EVERY image referenced in the post",
+  "must appear exactly once, so an issue where the annotation pass was skipped fails",
+  "loudly instead of being silently exempt.",
+  "",
+  "Dispositions: annotated | created_asset | microsoft_artwork | annotated_at_capture",
+  "",
+  "'annotated' records the pre-annotation source hash, the hash of the bytes now on the",
+  "page, and the batch spec that produced them. Coverage CANNOT be detected by counting",
+  "red pixels: a thin border scored 24 (false negative) while six untouched screenshots",
+  "scored 912-3561 on native red UI (false positive). Hashes are the only sound test.",
+  "",
+  "Every non-'annotated' entry needs a real reason. This file is NOT for silencing a",
+  "defect in the issue you are writing - fix the image instead."
+ ],
+ "slug": "microsoft-365-copilot-september-2026-updates",
+ "images": {
+  "created-s11-copilot-app-rename-and-url.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s16-power-bi-grounding-worldwide.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s18-industry-connectors.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s19-work-iq-apis-ga.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s20-connector-crawling-parallel.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s21-servicenow-role-permissions.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s22-proactive-push-cancelled.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s23-interactive-agents-cancelled.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s25-grok-spacexai-terms.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s33-iscliagent-property.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s35-credit-allocation-scope.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s37-credit-consumption-report.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s40-sharepoint-metadata-harness.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s41-work-iq-used-licensed-controlled.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s42-dataverse-knowledge-source.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s43-azure-sql-knowledge-source.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s44-sharepoint-lists-knowledge-source.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s45-agent-node-workflow-step.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s46-human-approval-tool-calls.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s47-credential-oversharing.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s48-maker-provided-credentials.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s49-agent-readiness.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s50-agent-evaluation-explanations.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s51-connectors-by-conversation.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s52-no-release-wave-2.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s53-release-planner-retirement.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s54-saved-views-not-carried.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s55-content-migration-window.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "created-s56-dataverse-in-m365-copilot.webp": {
+   "disposition": "created_asset",
+   "reason": "Diagram we authored for this issue; it is already explanatory, so drawing callouts on it would be redundant."
+  },
+  "lab-s03-work-iq-button.webp": {
+   "disposition": "annotated",
+   "source_sha256": "e860eecb3146448255876eb67d4561072e44ff170e941de8784acd517ce5a729",
+   "output_sha256": "7e14e2e99f3ad09e331a73fdedec7d62357025ed412f577eece38ad1c7efca54",
+   "spec": "annot-b1",
+   "scale": 2.0,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s06-share-response-dialog.webp": {
+   "disposition": "annotated",
+   "source_sha256": "a7ccbed2d8ca79bf68144c1e36a5a5c3c1d6076a92547a4c8d504408fbd7c67c",
+   "output_sha256": "bb2d17cbf83892225a7e94e5efde9e16e7c7cfcd7748dc036d949dd542525c8b",
+   "spec": "annot-b1",
+   "scale": 1.6,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s06-share-response-menu-annotated.webp": {
+   "disposition": "annotated_at_capture",
+   "reason": "Ships with an annotation baked in at capture time and has no clean source; re-annotating would double-mark it."
+  },
+  "lab-s08-mobile-email-draft.webp": {
+   "disposition": "annotated",
+   "source_sha256": "31955ccc60226b912cbf382a303974d5bec5f9c5e3b365c8bfa9541f96f3e0fb",
+   "output_sha256": "4398b0977ba4604551122414a6821f6acce8b87e0f4f218c6f9329ea3f467031",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s09-email-in-chat.webp": {
+   "disposition": "annotated",
+   "source_sha256": "71febfa39028977b1053711b5393a7381d13635067f2bfe974bbc818cb565f16",
+   "output_sha256": "b2778f8964ecd50bc2298bd00310f5598a2c12db539b282b788af58dadbd3ada",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s12-chat-pane.webp": {
+   "disposition": "annotated",
+   "source_sha256": "3bb76b9b70daac0ab73c98763d48e08063ff9e0af7fad655f518bc69a37ada1d",
+   "output_sha256": "d1d1e32fab67efa4f251046c785c283086865f2dd7386b51dc501673f381bab8",
+   "spec": "annot-b1",
+   "scale": 1.8,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s12-search-answer.webp": {
+   "disposition": "annotated",
+   "source_sha256": "4b41fdecba42acb9950221d5255a04177b60910ea40c87cf25db04f230c46d6b",
+   "output_sha256": "006ee859ea08f0bb05a09555a9bee0bb2a7c25cb6c051bac6f2beb5097f1412e",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s12-search-in-rail-annotated.webp": {
+   "disposition": "annotated_at_capture",
+   "reason": "Ships with an annotation baked in at capture time and has no clean source; re-annotating would double-mark it."
+  },
+  "lab-s13-notebook-anatomy.webp": {
+   "disposition": "annotated",
+   "source_sha256": "d7f1f69cae922340670d6784ebaaf7585c636acf9f3cd070af6d1ac6f0dedd3d",
+   "output_sha256": "45954a68bb7fd2d4fc71a37b5da5d7c5cd2dd39b38ab8d0020b584517f46ecac",
+   "spec": "annot-b2",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s14-quick-create.webp": {
+   "disposition": "annotated",
+   "source_sha256": "45bbd4e055e88b469fed931f82ab02cb11c8f23bd429d93df14bb631ba0d03f2",
+   "output_sha256": "3f93a8b5d496dc48b8e69da7f8bd947a4ff9a6c02652185eb55a3aea5a45f0be",
+   "spec": "annot-b2",
+   "scale": 2.0,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s57-app-skill-slash.webp": {
+   "disposition": "annotated",
+   "source_sha256": "52af254d6d7eae0a67940537b61dd3f6b592f659f5f962076068cb1711f98e25",
+   "output_sha256": "2bd37a86a1b4fdca38c0c9865dae377cff788283429b0c5d216f24cf6be9c4cd",
+   "spec": "annot-b4",
+   "scale": 1.6,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s62-add-plugin.webp": {
+   "disposition": "annotated",
+   "source_sha256": "c2b04f4b76236ab1f3ad861f05c6c3e7242a153cf07677c3ef32b95bf13de35f",
+   "output_sha256": "a457adeb5d411465b3efaa6514429a73df3cb61c528adbd94136a776afcca5f5",
+   "spec": "annot-b5",
+   "scale": 1.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s62-cowork-plugins.webp": {
+   "disposition": "annotated",
+   "source_sha256": "def79455fe757ff68c4b40692be416a7445687afdef9db7d8b8e88106cd3f6a6",
+   "output_sha256": "336b7536bf75fa54af068cba82e8668d52dd79e9efefb62b5119ee5d098a60a7",
+   "spec": "annot-b12",
+   "scale": 1.5,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s63-plugins-mobile.webp": {
+   "disposition": "annotated",
+   "source_sha256": "5731bdd63dc0ad07376b60be1e152aa880f58106211ab6b2b601402c7993963c",
+   "output_sha256": "822633be4842a10acc34c2d26f9574e4fd5a3d1d15fc1dbd41883afb8f715215",
+   "spec": "annot-b11",
+   "scale": 1.8,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "lab-s64-brand-kit-nav.webp": {
+   "disposition": "annotated",
+   "source_sha256": "3072c5cf061f3ec1d764aefb54f7bcafbf6b28adbf505b3e40adbff34493dedb",
+   "output_sha256": "89f090c2d8201949a2128ce74f0a02cd1da5cc70e527f0c6b0fb3753528813a6",
+   "spec": "annot-b5",
+   "scale": 1.5,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s65-edit-details-no-checkbox.webp": {
+   "disposition": "annotated",
+   "source_sha256": "3d642b9bd92c6e403a0802a4ee542aedeadb80a4f258e4a965b37adda3aa6574",
+   "output_sha256": "44dfa783a5262813f176dd61171b7486e15f3668d3ace7a03e5a03f12e663a9e",
+   "spec": "annot-b5",
+   "scale": 2.4,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s66-choose-skills-menu.webp": {
+   "disposition": "annotated",
+   "source_sha256": "52119ae4170e4cc6156d0b681b3265f69890c06e5d889fa8e93e96b645bb2209",
+   "output_sha256": "f56ff3299f673ee8fc12b23c8293400e1c85c5e1cf50856807e5cacbfa5b5517",
+   "spec": "annot-b12",
+   "scale": 3.0,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s66-create-skills-folder.webp": {
+   "disposition": "annotated",
+   "source_sha256": "9d5413e0aa1b1d12a0ef3cfc8239fdf42988bd6db8d58b81cc2d8c7749eb5ff8",
+   "output_sha256": "2259bb223199972fbae75c1438eaabeb7b3a9021ac97f087dd5c45d855abbaed",
+   "spec": "annot-b12",
+   "scale": 3.4,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s66-custom-skills-off.webp": {
+   "disposition": "annotated",
+   "source_sha256": "e6bde20e34e52ab7ffa916c77277ddbd00193a9490fd75c426884fea3bb9f9bf",
+   "output_sha256": "ca2f36cbaecccafe2c0332a6b0dc7c9592d60634bcfd4957489d771ce2f7dfa1",
+   "spec": "annot-b12",
+   "scale": 3.4,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s66-onedrive-skills-folder.webp": {
+   "disposition": "annotated",
+   "source_sha256": "acbe40e8b310f2b06b52cde39edcf8b79fcfc4869acec06518fc371d0cdfa0e4",
+   "output_sha256": "35eaf1ec2e35bec9e3140cf0ea3ff9510d68d788120990bd7c4d3a2931c40d29",
+   "spec": "annot-b11",
+   "scale": 2.0,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s66-upload-skill.webp": {
+   "disposition": "annotated",
+   "source_sha256": "d9ebd5a6fa1311b95e4170b00765379eb44c0b80a897166b3a3208e6ea70da20",
+   "output_sha256": "2609404857e9b474d590afc3f1dba943a7092850137d68cc36961d70622365d3",
+   "spec": "annot-b5",
+   "scale": 2.6,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s66-visualize-after.webp": {
+   "disposition": "annotated",
+   "source_sha256": "5c89949d5908d1d2ac512dd867e6b9778503319cc40883c0de82b64a8e9e6705",
+   "output_sha256": "996e449edb7490c083cf799c2e344e8bacbf482a9b8b96e828133f8140415061",
+   "spec": "annot-b5",
+   "scale": 1.3,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s66-visualize-before.webp": {
+   "disposition": "annotated",
+   "source_sha256": "b88d134e9f264a1800467379f37db3720782c3a6eaee25944483b60bc8c2a827",
+   "output_sha256": "23ec8c1e8b47d4ab99e5ae237211311d5d3b417d03b7182f7e3e4c0ee44ce6c0",
+   "spec": "annot-b5",
+   "scale": 1.3,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s67-translate-reasoning.webp": {
+   "disposition": "annotated",
+   "source_sha256": "6bf6c3e946e7a08e724d0e70bb5cc4845f7a81528c6c665f31c5fc27fb9a35d6",
+   "output_sha256": "4a9805d96b96f9fd59c19c14dbcac694e9ea455ea0aee6cff0de6bcba4c3dab9",
+   "spec": "annot-b11",
+   "scale": 2.8,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s67-translated-slide.webp": {
+   "disposition": "annotated",
+   "source_sha256": "9187a7ca00225e2953b661898e21d827d1ae3106ea072a047994a5300767c667",
+   "output_sha256": "2d3b4346b351926a7b3ccb7af5ba7988571e52dc409fb07fab5c9ccfee015066",
+   "spec": "annot-b6",
+   "scale": 1.5,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s68-chevron-reply.webp": {
+   "disposition": "annotated",
+   "source_sha256": "ef1ecb7de57bb7eb5ff59ef36310885ba848e63b64c53f6f975930015c8a526e",
+   "output_sha256": "5fc4802a3ed76b1f7ee75ea5538fbc1a0f23c25354a40ae0babd8feabb0d422d",
+   "spec": "annot-b6",
+   "scale": 2.6,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s68-chevron-result.webp": {
+   "disposition": "annotated",
+   "source_sha256": "780f499ed2b0509394b828c297eb68c24a01f0b78640b61b2a7ce0933ff6254b",
+   "output_sha256": "cc0a1e942a69e80f248f6b90d94dad650dec3060afc5fbdc7f29a48cc4173d75",
+   "spec": "annot-b6",
+   "scale": 1.5,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s68-prompt-left-right.webp": {
+   "disposition": "annotated",
+   "source_sha256": "5ad38229f3fe8cf0629b6ee4d99a3c6c7206afd7feaac0627b9dae342b022364",
+   "output_sha256": "7961f76414b1c70312e466d64a79b03778e713d5ffe5b8ef35208aeef9b36367",
+   "spec": "annot-b11",
+   "scale": 3.4,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s68-shapes-reasoning.webp": {
+   "disposition": "annotated",
+   "source_sha256": "9566e1d829387564b4f3fe0a24125074b520883a6c79450dcfcd261b2bcd3023",
+   "output_sha256": "1004e72d33cd45b9668f656f77e4fbc9c1a9ec1f961c1d3f534be79b0319d8f4",
+   "spec": "annot-b11",
+   "scale": 2.8,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s68-smartart-result.webp": {
+   "disposition": "annotated",
+   "source_sha256": "e247fcedad9997ea9d86a3fea22d3eae69382ce7350c681029145d65c0950134",
+   "output_sha256": "8c5f688244a6ba2da66a1bb5007e8645f30d37977ced99c757ab231839717f5a",
+   "spec": "annot-b6",
+   "scale": 1.5,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s69-generated-slide.webp": {
+   "disposition": "annotated",
+   "source_sha256": "22cb1454b80ba88148c68af7c692f48722f32d235629b3a847d9fa1e48bc2b8b",
+   "output_sha256": "8b861abba3bf928ebaca116ed53ad70d4fe1c35e34b8ff37874dd370b36bd89a",
+   "spec": "annot-b6",
+   "scale": 1.6,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s69-prompt-locating-email.webp": {
+   "disposition": "annotated",
+   "source_sha256": "0000311628d906e5c6068439fe344c37b35949b41e1fefee82331ce8563bba3b",
+   "output_sha256": "eb41c6b9d56e1eb8af5a1e4703ddc7ac4074db177be3620b018afac0e8af37de",
+   "spec": "annot-b11",
+   "scale": 2.8,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s69-style-options.webp": {
+   "disposition": "annotated",
+   "source_sha256": "5ee3ce8d7d0afdf2a9c06cf3bf9ad40dc02b39f246d788c8f3eada1ed94df98a",
+   "output_sha256": "6920f044b4f42d55d3201857e772a86ccc948d96603ab09bd03a175e7a3517a2",
+   "spec": "annot-b11",
+   "scale": 3.0,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "lab-s70-coach-mark.webp": {
+   "disposition": "annotated",
+   "source_sha256": "86f3f7da9ba9617aaf6923bced5a53b6e893da21a4e94e34fc413249cf1a9526",
+   "output_sha256": "f8b238b5192d9ae8683eb92deec266f488b0f7907ccf816102a50e35909ccfd1",
+   "spec": "annot-b6",
+   "scale": 2.6,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s70-explain-button.webp": {
+   "disposition": "annotated",
+   "source_sha256": "7ed0670b361b9089921225227c79c7eb1024bb133cb76fb8b30cfc6a7298a5f0",
+   "output_sha256": "f8468243d307f19fa8eb40f6df80f05ded7a6c2a203eadfb0ba0b2bfe4bb81f6",
+   "spec": "annot-b6",
+   "scale": 2.8,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s70-teams-live-explain-annotated.webp": {
+   "disposition": "annotated_at_capture",
+   "reason": "Ships with an annotation baked in at capture time and has no clean source; re-annotating would double-mark it."
+  },
+  "lab-s72-web-create-with-copilot.webp": {
+   "disposition": "annotated",
+   "source_sha256": "27499e5d4506e371dee8d2bb62e0c4538b185217b2072ec5aa33ecac2402bc39",
+   "output_sha256": "bc1a76ccbc7b9fb99a73fbd601ef8e631cb6f670243071a31c9352fc4e63b074",
+   "spec": "annot-b12",
+   "scale": 1.5,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s73-audience-depth.webp": {
+   "disposition": "annotated",
+   "source_sha256": "8960c57b859c3491eb60d15a1fedecf306f449241f1ec5f41103543a66ca77f8",
+   "output_sha256": "8341b5d0c20aace2dc38562fa8d9045e79adc9619a820c3006a939c87053ea7f",
+   "spec": "annot-b12",
+   "scale": 3.4,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s73-deck-quote-attributed.webp": {
+   "disposition": "annotated",
+   "source_sha256": "369969dad5eb9abd562473fcfb28a474c16f68f9b65e4aeeccc6c9279e9a5684",
+   "output_sha256": "ab5a1bfeaa248f71bd111e46dc9dbfe325b67269cb365b714588163b5d8c606f",
+   "spec": "annot-b7",
+   "scale": 1.8,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s73-web-source-chip.webp": {
+   "disposition": "annotated",
+   "source_sha256": "215af01dd9456157396dd2193539c573e48e7ff4c6abc24df5fdf3e993e3143f",
+   "output_sha256": "d8c398fcc895fa53cc8c1538cd0801f6621ba9e1309c19966b0f8731f675d58a",
+   "spec": "annot-b11",
+   "scale": 2.8,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s75-chart-not-readable.webp": {
+   "disposition": "annotated",
+   "source_sha256": "518ea16871dcaf238fffe1279ad8133d3556f40c1657f9d65576e8d17d71d0e1",
+   "output_sha256": "a43ec938b8ec5f60fe739b4f7de8107b33d743d0b6a8957fb4efb07b29b8a201",
+   "spec": "annot-b7",
+   "scale": 2.6,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "lab-s75-embedded-chart.webp": {
+   "disposition": "annotated",
+   "source_sha256": "da884ad7e945b7584f631a971a6ea13bfb20dce33f7173aa45125552299dd440",
+   "output_sha256": "2eab2d2d5131b6ddeb459afe550800bd1b214b8c49f6fb91c2c663f14c6cecbb",
+   "spec": "annot-b7",
+   "scale": 2.8,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s78-model-menu-claude.webp": {
+   "disposition": "annotated",
+   "source_sha256": "8c35fe4af71f881780f787517cc3d46821ba9e75a1b1881a93d86ed4ce62de07",
+   "output_sha256": "4f042b46f2ef96b493c2935589e2bda4a7bdf017431ca065eac50cb6b95297a8",
+   "spec": "annot-b8",
+   "scale": 2.6,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s79-formulas-not-python.webp": {
+   "disposition": "annotated",
+   "source_sha256": "8c4d2b03337815c63ea9e9c19e21484ab0db17ce926a9ce1b91846a95c05fe1d",
+   "output_sha256": "39c08411af4b08957b02f067dce6e848de6cdbe30e899f4ceb33364e6a8411c7",
+   "spec": "annot-b8",
+   "scale": 3.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s80-audit-trail-reasoning.webp": {
+   "disposition": "annotated",
+   "source_sha256": "6a1c16ee7b06b23f298629f5370897f0d19a18251120fd611dc58413c5640e33",
+   "output_sha256": "39f4126d514f548109109877be3129184c5b4970f73dd266ddd4ee1e6e8663f0",
+   "spec": "annot-b8",
+   "scale": 2.8,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s80-change-summary.webp": {
+   "disposition": "annotated",
+   "source_sha256": "048244d4189b3561d4a73b473205b0064ca87b02ed6d73cba935ca00a627eb23",
+   "output_sha256": "c1f33ccdcd1ea6707ae16fddb050d6170357e9f00180c30e7770ef105ff40256",
+   "spec": "annot-b8",
+   "scale": 2.6,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s81-chat-history.webp": {
+   "disposition": "annotated",
+   "source_sha256": "027866dd5007b10e154d0d892a5e6a19c2839f189a7dc80ce33ba2d792c57cc8",
+   "output_sha256": "07fab1f8ba784085bdd992d5e7641f974365383173abe4682f711bae45f9eb1f",
+   "spec": "annot-b8",
+   "scale": 2.4,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s82-agent-picker.webp": {
+   "disposition": "annotated",
+   "source_sha256": "b979f606bbd62f667009a4b7e77858f3f8c885c8f4bdf3b7ae01804ad502e61f",
+   "output_sha256": "b21d941a9a36c9641ad01457e6fa49419af0802853419ea4869308c693993d38",
+   "spec": "annot-b9",
+   "scale": 2.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s83-confirm-list.webp": {
+   "disposition": "annotated",
+   "source_sha256": "d7d2b3a39db5809f20e1677bc84e2d4cfe94e96f1b282909b16bc5ed6d22f917",
+   "output_sha256": "e3cc1423a6f532213d52750cff751f3c9c4d18415943253395a44bf860fbfeb2",
+   "spec": "annot-b9",
+   "scale": 2.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s83-done-result.webp": {
+   "disposition": "annotated",
+   "source_sha256": "d963af89a2ff71fd92cf75fb9e899ec20da4c3bdea03c5199bae2b180d4a9e46",
+   "output_sha256": "e8a80cb2913c676175947d8b1bb7f1099a80c33f8571252f97dece9ea7354fcf",
+   "spec": "annot-b9",
+   "scale": 3.0,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s84-classic-prompt-annotated.webp": {
+   "disposition": "annotated_at_capture",
+   "reason": "Ships with an annotation baked in at capture time and has no clean source; re-annotating would double-mark it."
+  },
+  "lab-s84-invite-proposed.webp": {
+   "disposition": "annotated",
+   "source_sha256": "9896b20dcfd738944e70b4e9f8a6ada2e4712a5cde6fc1053ca000aab100c927",
+   "output_sha256": "e890e54087c16d408596995d81bfcfdd2b00593bf0d3d72844d1aeb93781e244",
+   "spec": "annot-b9",
+   "scale": 3.0,
+   "callouts": 3,
+   "boxes": 1
+  },
+  "lab-s85-tone-options.webp": {
+   "disposition": "annotated",
+   "source_sha256": "60f4288666fe2bc6fbb73058fcf42b0323373c703a7eb9adf21e4df2d8363d82",
+   "output_sha256": "50f8d42a46cfd4ee0bb07e4fe497060681f29439159f0bbd4f209c769d6344a9",
+   "spec": "annot-b9",
+   "scale": 2.4,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s85-writing-improvements.webp": {
+   "disposition": "annotated",
+   "source_sha256": "45acdd0c50a8072a20fc2021c8158c43c88208194f0e7f0d2c268cc3ca9dc38a",
+   "output_sha256": "8032f2b8debc231320fc6fe450ee2bdfad819afbc19ecbdb50bc1b87ca43f870",
+   "spec": "annot-b9",
+   "scale": 2.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "lab-s86-prep-brief-classic.webp": {
+   "disposition": "annotated",
+   "source_sha256": "7bc29254f5488f36f463f43b9b1aa10e8bed522bddcd29c80f1bbb3da980db17",
+   "output_sha256": "fc1adc4fea6fd02b59f10258df738c18001b79890b480e5751c80534c2f8ae1e",
+   "spec": "annot-b9",
+   "scale": 3.0,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "lab-s89-task-created.webp": {
+   "disposition": "annotated",
+   "source_sha256": "0af90f943a6e505f5d73eb72cb7e156ca7256a3c5ab61312c118a875693b5e45",
+   "output_sha256": "dc9e438a91b4fd5f060273de790195b3ccddabcccab7a3f74f594eebd42362c1",
+   "spec": "annot-b10",
+   "scale": 2.0,
+   "callouts": 3,
+   "boxes": 1
+  },
+  "lab-s89-task-verified.webp": {
+   "disposition": "annotated",
+   "source_sha256": "10fb412bccd4046989454e7d3ddbea743491f82e33abfda31bd6c314f1a7eb2a",
+   "output_sha256": "91a462c28e78b242d3d5492185fee0d8a1c737689cf2b7224442435f6df1332e",
+   "spec": "annot-b10",
+   "scale": 1.3,
+   "callouts": 3,
+   "boxes": 2
+  },
+  "lab-s90-planner-agent-priority.webp": {
+   "disposition": "annotated",
+   "source_sha256": "c5bd2c3734a7bd5c12a6015b89c48546319cabf259cf5de651286650f1e89709",
+   "output_sha256": "6b7e458839d9e9145be9bc1ed3130703476ff198129c6c188e0db31495b8dbaa",
+   "spec": "annot-b10",
+   "scale": 3.0,
+   "callouts": 4,
+   "boxes": 0
+  },
+  "lab-s91-meetings-tab.webp": {
+   "disposition": "annotated",
+   "source_sha256": "cac667df3d81042e4a61fc1a99ae0e4ac7125d7a019137c5814460adb8272a0c",
+   "output_sha256": "e2cff4615416f7b715856d110dc01f4df9a3ae96f718136af746f09c6a00445f",
+   "spec": "annot-b10",
+   "scale": 2.0,
+   "callouts": 2,
+   "boxes": 1
+  },
+  "lab-s92-onedrive-starters.webp": {
+   "disposition": "annotated",
+   "source_sha256": "5435a014906eca3ee896f0406f614e9a1084b527d544c70d865f6161c0cdeabb",
+   "output_sha256": "09461101e7b63aff9a69160da9ba115cd8d3b5b315214b8e768f0d890c3411da",
+   "spec": "annot-b10",
+   "scale": 3.0,
+   "callouts": 3,
+   "boxes": 2
+  },
+  "official-01-model-picker-gpt-6-astra.webp": {
+   "disposition": "annotated",
+   "source_sha256": "78ece1db30f05f4fd57cac1919154a5c2f67e2c72deef4534e8927486b8d03b7",
+   "output_sha256": "37ad56ff34713ee3373975a7e977786266a2c36664b11b8a5039acf527b9b2ef",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-02-cowork-model-list--focus.webp": {
+   "disposition": "annotated",
+   "source_sha256": "f01292c7c944cd9f3b997ada05b5675feaf5918f6288e1477d956cec34ac9393",
+   "output_sha256": "265f8faf741f621641ae76ddeee68b99bcef45541e7aa63c2e0b176bf73964ad",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-04-select-part-of-answer.webp": {
+   "disposition": "annotated",
+   "source_sha256": "6c98a2497f6dc5fe9f438a94c71a8b622f8b69ba264ba5ea5b4ff11db5668054",
+   "output_sha256": "a67abb645f8c6811c3080365ad3b3abc46e16dd8a581dbf4e629e12660ed5214",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-05-share-whole-chat.webp": {
+   "disposition": "annotated",
+   "source_sha256": "781d0572fd565f9b543fe29e1df4d506fa008b5488f9093f068509688a52d45f",
+   "output_sha256": "fb41455ebbba0c5c3702f6caa40fe8b910e92549e64e469af7bc93a8b160b1db",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-07-answer-card-weather.webp": {
+   "disposition": "annotated",
+   "source_sha256": "932bfc770277c91e7230f268c28b56735094ff51addf6fced7177ed1b7371dc8",
+   "output_sha256": "093ca7d09c9017248e43f0b262e3c0b68cfab21269cf81b7febfd69df2ae01d9",
+   "spec": "annot-b1",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-13-notebooks-zava-marketing.webp": {
+   "disposition": "annotated",
+   "source_sha256": "8076400d931f1030e155d3e3c2a099c53f636b32fcc3ac44b10dc04a7a8c4b95",
+   "output_sha256": "bd15fd170af55f0c39f4d22f03e9d175a525c8c9771233bee197279962ae4ea2",
+   "spec": "annot-b2",
+   "scale": 1.6,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-14-notebooks-suggested-content.webp": {
+   "disposition": "annotated",
+   "source_sha256": "38070500718b0fc7cf5d4ef8850593f42653f87ecabb8fe6cb2b10dd0e573e91",
+   "output_sha256": "ddbb8f0ff602c6ca303ec913b7f401f349b32d945a2298b14a4b3a5d9a4f12d5",
+   "spec": "annot-b2",
+   "scale": null,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-24-web-grounding-transparency.webp": {
+   "disposition": "annotated",
+   "source_sha256": "f67154692668ad86ef94e45e76a9f9f99784174544cda545210463d7d097eed4",
+   "output_sha256": "ed49e5c279fbf5dc4496e5a920f997b65a07ec4b5765b5ff4f1bc8717004b0ef",
+   "spec": "annot-b3a",
+   "scale": 1.6,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-26-hours-and-value-calculator.webp": {
+   "disposition": "annotated",
+   "source_sha256": "18ecd196c79ed638ae761f12b85b8298288684206f2cd864ab4af81342ceac97",
+   "output_sha256": "e59a703ba4d1a45c9a2bc53dc2bdb5d05ccc7377d9701ff6bf69246d31baa85e",
+   "spec": "annot-b3a",
+   "scale": 1.5,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-26-metrics-to-task-value.webp": {
+   "disposition": "microsoft_artwork",
+   "reason": "Microsoft-authored infographic or chart reproduced as published. House style must not be drawn over another party's artwork."
+  },
+  "official-26-task-category-time-values.webp": {
+   "disposition": "microsoft_artwork",
+   "reason": "Microsoft-authored infographic or chart reproduced as published. House style must not be drawn over another party's artwork."
+  },
+  "official-27-agent-365-export-dialog.webp": {
+   "disposition": "annotated",
+   "source_sha256": "ef0b4741eaede740d7f5bdb77fa0972d6e867cc9dfd89b0fce7dbb7ad4b8785e",
+   "output_sha256": "7e4fdc8c104a8a57029da5866009972d08be9dc755de30ffcc799121366a4179",
+   "spec": "annot-b3a",
+   "scale": null,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-27-agent-metrics-export-callout.webp": {
+   "disposition": "annotated",
+   "source_sha256": "7bcd39074e85492a7d20939fb1f2597359cede0f4c2ba23d0f5a9a046904fa38",
+   "output_sha256": "033093acf7bd6d0794711f2b925694390204d2a785cb16cb2f1ddda3a6f4c0fa",
+   "spec": "annot-b3a",
+   "scale": null,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-27-copilot-dashboard-export-modal.webp": {
+   "disposition": "annotated",
+   "source_sha256": "176e045fce9b50132ce6f67debcbdab420e4b991b7c594a3a226452a78d9ea59",
+   "output_sha256": "260a80bfbda29b270366d32827e373fde39bc0d134ae842f03dc1a9c12e67a6c",
+   "spec": "annot-b3a",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-27-exported-csv.webp": {
+   "disposition": "annotated",
+   "source_sha256": "508bfba871fa5de3c5c07fba09ca361bbbc0dd5e7283be25838080676917bb1e",
+   "output_sha256": "5a57d6ce461d01a7ba5928617f16bd6e37c16e318b39f54076e8fadacd0180db",
+   "spec": "annot-b3a",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 2
+  },
+  "official-28-ai-cost-dashboard-github-usage.webp": {
+   "disposition": "annotated",
+   "source_sha256": "7e2764f6338324b96697357e7369f169e3fd8fac848a85312305124fd5cd1690",
+   "output_sha256": "c2defb3d1d8e67b45388160e3988c4a25b8b4172320b9a8c2b97f2dfea05cbb4",
+   "spec": "annot-b3b",
+   "scale": 2.0,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-28-ai-cost-dashboard.webp": {
+   "disposition": "annotated",
+   "source_sha256": "b15ddc52a0701f5013f7aaeb270314bd86464fcc8675299b8ead630687139322",
+   "output_sha256": "f239b9746b11407d10fc05773c9928507f2ab801062276340090e4cd26992a72",
+   "spec": "annot-b3b",
+   "scale": 1.4,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-28-usage-intensity.webp": {
+   "disposition": "annotated",
+   "source_sha256": "4559fa9e055d0231fef2802ef28195acb4599ec7828dab6cd131493a01c68df0",
+   "output_sha256": "01fae0b0adb2f1a30112688c44202c15a0c882880189a0c2d12fb28e50aa903a",
+   "spec": "annot-b3b",
+   "scale": 1.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-29-copilot-studio-new-home.webp": {
+   "disposition": "annotated",
+   "source_sha256": "2cb2ea0f5f0514f531d6bb16ed83891ffa1179b28d3e50b6041ff954b688ec79",
+   "output_sha256": "f6283166fce81a6df052b894688f790f26f05c55dcad227544e2fb3b07c7e5d9",
+   "spec": "annot-b3b",
+   "scale": 1.0,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "official-30-agent-harness-choice.webp": {
+   "disposition": "annotated",
+   "source_sha256": "f92d974b79ed01b5733acb5bbd1518c76afa5ccfb4734cfc6a46c40b06d8e423",
+   "output_sha256": "bfd5d06df9259be7ab413701c8e6f0a20b04514c7482269a799ab6e1f6ba1586",
+   "spec": "annot-b3b",
+   "scale": 0.52,
+   "callouts": 2,
+   "boxes": 2
+  },
+  "official-30-harness-benchmark.webp": {
+   "disposition": "microsoft_artwork",
+   "reason": "Microsoft-authored infographic or chart reproduced as published. House style must not be drawn over another party's artwork."
+  },
+  "official-31-agent-scenario-credits.webp": {
+   "disposition": "microsoft_artwork",
+   "reason": "Microsoft-authored infographic or chart reproduced as published. House style must not be drawn over another party's artwork."
+  },
+  "official-32-credits-exhausted.webp": {
+   "disposition": "annotated",
+   "source_sha256": "7ebf940a8dcf30f950d4a97617d84c1b22d8dcdbb432e34bbf27b35357a6aa0b",
+   "output_sha256": "1d31bb9169c7c4e553a2d6430a7efdf63a413f9a878e91d64fce473c7585c28f",
+   "spec": "annot-b3b",
+   "scale": 2.2,
+   "callouts": 1,
+   "boxes": 1
+  },
+  "official-34-environment-capacity.webp": {
+   "disposition": "annotated",
+   "source_sha256": "be4ebef8ec1135d9f50d92d9cfc2a0af616cb75d0b83eee51236c1d8f3647cac",
+   "output_sha256": "23c7676420f2730bc9754f085e4437f7f55d32a28099ea1c129a469f1993a472",
+   "spec": "annot-b4",
+   "scale": 1.0,
+   "callouts": 4,
+   "boxes": 0
+  },
+  "official-36-single-agent-limits.webp": {
+   "disposition": "annotated",
+   "source_sha256": "7d3bd2394a98b4b82ef73729354a3901cccd006724b49554dbf3b5a666a2a342",
+   "output_sha256": "53cc2d7262851a89193f2d5fc301bf3fa42b54e7be8db8abee66be031e33240c",
+   "spec": "annot-b4",
+   "scale": 1.25,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "official-38-agent-designer.webp": {
+   "disposition": "annotated",
+   "source_sha256": "6d8cfd54ef3009baffebbe96886b0bdc6e9e18bc9c356a9e5fbdef0e7fe40707",
+   "output_sha256": "50c67f9d0f7e39be9f9b58592db9a4b2b5f0208d04de4b891cd9ad4e70ebdaee",
+   "spec": "annot-b11",
+   "scale": 1.6,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "official-39-agent-review-tool.webp": {
+   "disposition": "annotated",
+   "source_sha256": "984d94ef69ffae3f24d6a09d50853b1a81cb2854d6f08c03fe656d1c983ed54d",
+   "output_sha256": "ae6b7626ef7efafa993810593acfdcd75b1360e63e35e05cc86c0e5b010f3857",
+   "spec": "annot-b11",
+   "scale": 1.4,
+   "callouts": 2,
+   "boxes": 1
+  },
+  "official-58-cowork-effort-slider.webp": {
+   "disposition": "annotated",
+   "source_sha256": "9e3bf829911b0b73897700446cb18bdcebcabc078e85fc32c81f6f8a6af7d3c8",
+   "output_sha256": "a703c51cee3668533a5db5765671587378d96f35e09ea5a0126456ed64587574",
+   "spec": "annot-b4",
+   "scale": 1.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-59-cost-skill.webp": {
+   "disposition": "annotated",
+   "source_sha256": "7dc77caa814737a0a2605110d25fcc2169a2b2eda7c0b05d48e7f3116616c3e9",
+   "output_sha256": "7cfffcc60c206bbf528d8f7d78f510c1c6c9ce60b8f1fcb33ab685264945582c",
+   "spec": "annot-b4",
+   "scale": 1.2,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-60-cowork-automations.webp": {
+   "disposition": "annotated",
+   "source_sha256": "792682aa9a861e0379f3b811409d78962204124870d6b80aa6cb50af8ac66074",
+   "output_sha256": "72a0ec4d6fca7113bc7ab99bb0266baf0889b58cd5bd186748d3b8597dc45977",
+   "spec": "annot-b4",
+   "scale": 2.2,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-64-brand-kit-restrictions.webp": {
+   "disposition": "annotated",
+   "source_sha256": "fde67c57ce4bbef2e985244515137702907c543901940daabc93824c49600285",
+   "output_sha256": "f931282029cff1d55891172df855c4e4b6af454fad168db31ed5ca5cc78f548c",
+   "spec": "annot-b5",
+   "scale": 1.0,
+   "callouts": 1,
+   "boxes": 1
+  },
+  "official-65-brand-kit-note-instructions-annotated.webp": {
+   "disposition": "annotated",
+   "source_sha256": "b570ef9246ea13dd74fa10bec5b3fea5dd670f541cc295dfb90009adbe07601e",
+   "output_sha256": "054b8a41391f5d3b2a1cf7083b8e5eac8e027234aa763a1dbab3c3bb09f5a645",
+   "spec": "annot-b11",
+   "scale": 1.0,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-74-word-adds-hyperlink--focus.webp": {
+   "disposition": "annotated",
+   "source_sha256": "b3d65d6c012008d233d91cf6e454a083d15505c8e80f384cb0da48a0b512c4cd",
+   "output_sha256": "e51054f8e43906e24484077c74343da7f0a77cd2569e9fe05a55a87b6f6ba88a",
+   "spec": "annot-b7",
+   "scale": 1.5,
+   "callouts": 1,
+   "boxes": 0
+  },
+  "official-75-word-reference-visuals.webp": {
+   "disposition": "annotated",
+   "source_sha256": "c9bb716f0f4738842d1f4fedde1a7a3a30a75a32427b95ac310ca758c992edad",
+   "output_sha256": "9acac8599bcdba22330bb9d12e95c1991706f39046b80e90f1c36b9cae8f8076",
+   "spec": "annot-b7",
+   "scale": 1.8,
+   "callouts": 2,
+   "boxes": 0
+  },
+  "official-76-word-changed-words.webp": {
+   "disposition": "annotated",
+   "source_sha256": "fda072935ae9c3a2b1eb70495adbf835e49d22d394da2c2bd702ef64abd0b2d4",
+   "output_sha256": "5cef1db4456776da24daf1712df5e2a102892b962611f9587798f35aae1e0dab",
+   "spec": "annot-b7",
+   "scale": 1.9,
+   "callouts": 1,
+   "boxes": 1
+  },
+  "official-80-excel-what-changed.webp": {
+   "disposition": "annotated",
+   "source_sha256": "e51d14c47506ef39ed79b0d6b2d3c74b8088f3e7f7199b065cc0c441cf2d4289",
+   "output_sha256": "e9f09da667b56c8dbc6930d6a07158f6651336099b6cc791ad8c8bb1fba70d85",
+   "spec": "annot-b8",
+   "scale": 1.5,
+   "callouts": 2,
+   "boxes": 1
+  },
+  "official-87-teams-recap-language.webp": {
+   "disposition": "annotated",
+   "source_sha256": "32266c10be67e1660ab8200175df50e59be02f3413e3c4963165cf28f1940db1",
+   "output_sha256": "8d68ccf61d6f15f50c6ca059e95a245c36c69fb23697436424687619bb1518a9",
+   "spec": "annot-b10",
+   "scale": null,
+   "callouts": 2,
+   "boxes": 2
+  },
+  "official-88-planner-agent-status-report--focus.webp": {
+   "disposition": "annotated",
+   "source_sha256": "da9fed843f980ea9b3372e29fb79f397f4da4e88b8ca1f1a8fa7b409d3cf6e91",
+   "output_sha256": "222f9ac79c9d1cdee23edb76d5582344dedd365641ced9a7950033075f5cc5c1",
+   "spec": "annot-b10",
+   "scale": null,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "official-92-onedrive-business-review.webp": {
+   "disposition": "annotated",
+   "source_sha256": "3a9c6dc59e1d9df383d7d2f73f8b7ab5463f354bb77ac4cd2445e76bcddea54c",
+   "output_sha256": "49c44ee8234d0d7b317c4a7544cca410c7c3a193365b81e52b92562e6a3860ab",
+   "spec": "annot-b10",
+   "scale": null,
+   "callouts": 3,
+   "boxes": 0
+  },
+  "official-93-create-personal-skill.webp": {
+   "disposition": "annotated",
+   "source_sha256": "0169aa389c1a0e964f8fb5ea057a93aab1be13a355c761c6947473596ee4c595",
+   "output_sha256": "bcefa48954d29f48e3a3a7c3efe2639feae2b49d29a979e96153cc9318aa06e4",
+   "spec": "annot-b10",
+   "scale": 1.8,
+   "callouts": 3,
+   "boxes": 0
+  }
+ }
+}
