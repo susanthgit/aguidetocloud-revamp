@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Sep 2026 16:53:41 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 21:16:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page</title>
@@ -48,7 +48,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1470554</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1470554</guid>
       <pubDate>Fri, 11 Sep 2026 03:45:00 +0000</pubDate>
     </item>
