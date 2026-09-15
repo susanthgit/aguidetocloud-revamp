@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Sep 2026 23:06:10 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 04:48:17 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Purview] Some admins may receive failures creating or updating Communications Compliance policies in Microsoft Purview</title>
@@ -60,15 +60,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1469885</guid>
       <pubDate>Wed, 09 Sep 2026 20:49:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1469836</link>
-      <description>[Microsoft 365 suite] Admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1469836</guid>
-      <pubDate>Wed, 09 Sep 2026 17:57:58 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to access https://m365.cloud.microsoft and receive an error</title>
@@ -240,6 +231,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1463378</guid>
       <pubDate>Fri, 28 Aug 2026 23:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1469836</link>
+      <description>[Microsoft 365 suite] Admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1469836</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to access or manage some Microsoft Teams channels features</title>
