@@ -2054,8 +2054,9 @@ something Copilot said out loud.
 Copilot offers **coaching feedback in chat** while you draft, edit and format an email — tone, clarity and structure, as you write rather than after you send.
 
 **What I found on 14 September 2026.** I pasted a deliberately graceless draft into Copilot chat in Outlook
-— *"Hi — need the Q3 numbers by tomorrow. This has been late twice already and it's holding everyone up.
-Please sort it."* — and attached **no instruction at all**. No *fix this*, no *coach me*. Just the draft.
+— *"hi karin Hi — need the Q3 numbers by tomorrow. This has been late twice already and it's holding everyone
+up. Please sort it."* — and attached **no instruction at all**. No *fix this*, no *coach me*. Just the draft,
+stray false start and all.
 
 It worked out what I was doing on its own: *"It looks like you want to send a follow-up to Karin about
 overdue Q3 numbers."* Then it offered the same message at three settings — **Professional and Direct**,
