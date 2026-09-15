@@ -1,28 +1,28 @@
 {
-  "generated": "2026-09-14T10:49:54.552149+00:00",
+  "generated": "2026-09-15T10:13:22.049651+00:00",
   "total": 52,
-  "active": 24,
-  "passed": 28,
-  "action_required": 23,
+  "active": 22,
+  "passed": 30,
+  "action_required": 21,
   "urgency": {
-    "critical": 19,
+    "critical": 17,
     "warning": 4,
     "watch": 1
   },
   "categories": {
-    "azure": 13,
+    "azure": 11,
     "office-apps": 3,
     "exchange": 2,
     "entra": 1,
     "windows": 5
   },
   "types": {
-    "end-of-support": 10,
-    "retirement": 14
+    "retirement": 13,
+    "end-of-support": 9
   },
   "next_deadline": {
-    "title": "Azure Functions 1.x Runtime Deprecation",
-    "deadline": "2026-09-14",
+    "title": "Azure Maps Gen1 Price Tier Retirement",
+    "deadline": "2026-09-15",
     "days_remaining": 0,
     "urgency": "critical"
   },
