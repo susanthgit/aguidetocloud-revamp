@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Sep 2026 11:38:30 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 16:53:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page</title>
@@ -30,7 +30,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MO1471241</link>
       <description>[Microsoft 365 suite] Admins' usage reports may contain stale data in Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1471241</guid>
       <pubDate>Sun, 13 Sep 2026 04:56:15 +0000</pubDate>
     </item>
