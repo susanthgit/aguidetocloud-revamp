@@ -131,9 +131,8 @@ Copilot Chat brought web and work into **one chat experience**, with a dedicated
 
 **What I found on 14 September 2026.** The toggle is gone.
 
-<img src="/images/blog/copilot-september-2026/lab-s03-work-iq-button.webp" alt="The top of Microsoft 365 Copilot Chat in my own tenant. On the left is the Copilot wordmark with an app-grid icon, a new-item icon and a pane-toggle icon, below which a pill switch offers Chat and Cowork with Chat selected, and a plus New chat link. On the right of the chat pane sit two controls: a rounded grey button labelled Work IQ, and a model picker reading Auto with a chevron. There is no Web or Work toggle anywhere." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. One chat, a Work IQ button, and a model picker set to Auto.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s03-work-iq-button.webp" alt="The top of Microsoft 365 Copilot Chat in my own tenant. On the left is the Copilot wordmark with an app-grid icon, a new-item icon and a pane-toggle icon, below which a pill switch offers Chat and Cowork with Chat selected, and a plus New chat link. On the right of the chat pane sit two controls: a rounded grey button labelled Work IQ, and a model picker reading Auto with a chevron. There is no Web or Work toggle anywhere." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. One chat, a Work IQ button, and a model picker set to Auto.</em></p>
 
 There is no web or work switch left in the interface. In its place, at the top of the chat pane, there is a
 single button marked **Work IQ** with the model picker sitting next to it on *Auto*. The left rail has changed
@@ -191,18 +190,16 @@ A single response can be shared by link from the **More options** menu, without 
 
 **What I found on 14 September 2026.** It is there, and it carries a label worth noticing.
 
-<img src="/images/blog/copilot-september-2026/lab-s06-share-response-menu-annotated.webp" alt="The More options menu opened under a single Copilot response in my own tenant, with the first item circled in black. The items read: Share response, followed by the word Frontier in brackets; Edit in Pages with a submenu arrow; Export to with a submenu arrow; Read aloud; and Schedule this prompt. Below the menu are the thumbs up, thumbs down, retry and more options controls that belong to the response itself." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The per-response menu, with the share item circled.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s06-share-response-menu-annotated.webp" alt="The More options menu opened under a single Copilot response in my own tenant, with the first item circled in black. The items read: Share response, followed by the word Frontier in brackets; Edit in Pages with a submenu arrow; Export to with a submenu arrow; Read aloud; and Schedule this prompt. Below the menu are the thumbs up, thumbs down, retry and more options controls that belong to the response itself." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The per-response menu, with the share item circled.</em></p>
 
 Hover a single answer, open the three dots beneath it, and the first item reads **Share response (Frontier)**.
 That bracket matters. Frontier is the early access programme tenants opt into, so this arrives there first
 rather than everywhere at once. If you cannot see it, that is the likeliest reason. The rest of the menu is
 worth a look on its own: edit in Pages, export, read aloud, and schedule this prompt.
 
-<img src="/images/blog/copilot-september-2026/lab-s06-share-response-dialog.webp" alt="The Share Response dialog in my own tenant. A preview card shows one exchange: a grey prompt bubble asking for a follow-up to Karin about overdue Q3 numbers, then the answer offering versions in different tones, with the heading Option 1: Professional and Direct and a draft beginning Hi Karin. The preview fades out at the foot of the card. Below it, bold text reads: Anyone in your company with a link can access a copy of this chat. It continues: The shared version won't update as the conversation changes. Make sure you're comfortable sharing the contents before sharing, followed by a Learn more link. A dark Copy link button sits at the bottom right." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The share dialog, showing you exactly what the other person will get.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s06-share-response-dialog.webp" alt="The Share Response dialog in my own tenant. A preview card shows one exchange: a grey prompt bubble asking for a follow-up to Karin about overdue Q3 numbers, then the answer offering versions in different tones, with the heading Option 1: Professional and Direct and a draft beginning Hi Karin. The preview fades out at the foot of the card. Below it, bold text reads: Anyone in your company with a link can access a copy of this chat. It continues: The shared version won't update as the conversation changes. Make sure you're comfortable sharing the contents before sharing, followed by a Learn more link. A dark Copy link button sits at the bottom right." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The share dialog, showing you exactly what the other person will get.</em></p>
 
 The dialog previews what you are about to hand over, which I liked. In my case it showed the prompt and the
 one answer it produced, and nothing else from the thread.
@@ -250,9 +247,8 @@ On mobile you can describe a message and Copilot creates an **embedded Outlook d
 than as a wall of text inside the reply, which is the genuinely useful half of this. The handoff to
 Outlook is the half I could not reproduce.
 
-<img src="/images/blog/copilot-september-2026/lab-s08-mobile-email-draft.webp" alt="Copilot on my phone, in dark mode. The header shows a model picker reading Auto with a Work IQ label beneath it, a green shield with a tick, and a more menu. My typed prompt reads: Draft an email to Nic asking about if there are any major copilot studio updates in the month of September. Copilot replies, Here is a concise draft you can send to Nic, and then renders the draft inside a card of its own. The card is labelled Message and carries a copy icon and a pencil icon in its top right corner. Inside it is a complete four paragraph email, opening Hi Nic, asking whether there have been any major Copilot Studio updates released so far in September worth highlighting for customer conversations or upcoming demos, asking for a quick summary or resources, and signed off Thanks, Susanth." loading="lazy" decoding="async" style="max-width:480px;" />
-
-<p class="img-caption"><em>My own phone, 14 September 2026. The draft arrives as a card of its own, labelled Message, with copy and edit controls attached to it.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s08-mobile-email-draft.webp" alt="Copilot on my phone, in dark mode. The header shows a model picker reading Auto with a Work IQ label beneath it, a green shield with a tick, and a more menu. My typed prompt reads: Draft an email to Nic asking about if there are any major copilot studio updates in the month of September. Copilot replies, Here is a concise draft you can send to Nic, and then renders the draft inside a card of its own. The card is labelled Message and carries a copy icon and a pencil icon in its top right corner. Inside it is a complete four paragraph email, opening Hi Nic, asking whether there have been any major Copilot Studio updates released so far in September worth highlighting for customer conversations or upcoming demos, asking for a quick summary or resources, and signed off Thanks, Susanth." loading="lazy" decoding="async" style="max-width:480px;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own phone, 14 September 2026. The draft arrives as a card of its own, labelled Message, with copy and edit controls attached to it.</em></p>
 
 I asked for a short email to a colleague about Copilot Studio updates. Copilot wrote a one line preamble,
 then put the message into **its own card, labelled “Message”**, with a copy icon and a pencil icon in the
@@ -283,9 +279,8 @@ You can **open an Outlook email within Copilot Chat**, rather than following a l
 
 **What I found on 14 September 2026.** This works, and it does slightly more than the description suggests.
 
-<img src="/images/blog/copilot-september-2026/lab-s09-email-in-chat.webp" alt="Copilot Chat in my own tenant, split into two panes. On the left, my question reads: whats the latest on Saudi registration status. Copilot answers that it found several relevant references across emails, documents and meeting transcripts and that the status is consistent across all of them, with a bolded conclusion that the market has not yet received registration approval. A small envelope citation chip sits beside the answer. Below is a two-column table of item and latest status, covering the registration decision and the expected timing. At the foot of the left pane the composer holds a pinned envelope chip naming the email, with a small cross to remove it. The right pane shows the email itself opened inside Copilot: sender avatar and name, the recipient, a Sunday date and time, and the full body text laid out by market." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The cited email, opened beside the answer rather than in Outlook.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s09-email-in-chat.webp" alt="Copilot Chat in my own tenant, split into two panes. On the left, my question reads: whats the latest on Saudi registration status. Copilot answers that it found several relevant references across emails, documents and meeting transcripts and that the status is consistent across all of them, with a bolded conclusion that the market has not yet received registration approval. A small envelope citation chip sits beside the answer. Below is a two-column table of item and latest status, covering the registration decision and the expected timing. At the foot of the left pane the composer holds a pinned envelope chip naming the email, with a small cross to remove it. The right pane shows the email itself opened inside Copilot: sender avatar and name, the recipient, a Sunday date and time, and the full body text laid out by market." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The cited email, opened beside the answer rather than in Outlook.</em></p>
 
 I asked a question, Copilot answered from a mix of emails, documents and meeting transcripts, and cited an
 email. Clicking that citation opened the message in a pane on the right, inside Copilot, with the sender,
@@ -343,7 +338,7 @@ Microsoft is moving Copilot to a single app experience across personal and work 
 
 **And this is the bit with a deadline.** A follow-up notice, MC1462915, is specifically about organisations that have *blocked* `copilot.cloud.microsoft`. Microsoft says: *"In early October, 2026 Microsoft will redirect the remaining users who had not been redirected in early September."* If your network, proxy, firewall, secure web gateway or Conditional Access policy blocks that host when the redirect reaches you, *"affected users may be unable to use the Copilot web app."*
 
-Microsoft's guidance is to allow the whole domain, not just the one host: *"Microsoft does not support allowing partial or only selected Microsoft 365 application URLs within the \*.cloud.microsoft domain. Allow the entire \*.cloud.microsoft domain."* You can check your position with the [Microsoft 365 Connectivity Test tool](https://connectivity.m365.cloud.microsoft/copilot). If the reason you blocked it was to stop personal-account sign-ins, Microsoft points at [tenant restrictions](https://learn.microsoft.com/entra/external-id/tenant-restrictions-v2#step-2-block-consumer-account-or-microsoft-account-tenants) as the targeted control instead.
+Microsoft's guidance is to allow the whole domain, not just the one host: *"Microsoft does not support allowing partial or only selected Microsoft 365 application URLs within the \*.cloud.microsoft domain. Allow the entire \*.cloud.microsoft domain."* You can check your position with the [Microsoft 365 Connectivity Test tool](https://connectivity.m365.cloud.microsoft/copilot). If the reason you blocked it was to stop personal-account sign-ins, Microsoft points at [tenant restrictions](https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2#step-2-block-consumer-account-or-microsoft-account-tenants) as the targeted control instead.
 
 **One more easily-missed item.** If you filter Copilot out of Windows Recall snapshots, that policy does not follow the rename: *"If you applied a group policy that filters the former Microsoft Copilot app from being saved in snapshots for Recall, this policy will not automatically carry over to the new Microsoft Copilot app."* Microsoft links its [Recall app and website filtering instructions](https://learn.microsoft.com/en-us/windows/client-management/manage-recall#app-and-website-filtering-policies) for re-creating it.
 
@@ -361,7 +356,7 @@ Microsoft states that *"Security, compliance, and governance controls remain unc
 
 <p><img src="/images/blog/copilot-september-2026/created-s11-copilot-app-rename-and-url.webp" alt="Diagram: the Microsoft Copilot app rename, the move from m365.cloud.microsoft to copilot.cloud.microsoft, and the early-October 2026 forced redirect." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the three changes bundled into one release note &mdash; not a screenshot. The rename, the address move and the October deadline never appear together on a single screen.</em></p>
-📖 [Deploy the unified Copilot app](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) · [Partner Center announcements, August 2026](https://learn.microsoft.com/partner-center/announcements/2026-august) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · Message Center MC1454108 and MC1462915 (tenant sign-in required)
+📖 [Deploy the unified Copilot app](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) · [Partner Center announcements, August 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-august) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · Message Center MC1454108 and MC1462915 (tenant sign-in required)
 
 ### 12. Copilot Chat sits beside Copilot Search
 
@@ -372,9 +367,8 @@ Copilot Chat is available in the **side pane while you use Copilot Search**, so 
 **What I found on 14 September 2026.** Search has a permanent home in the left rail, one click from the chat
 you are already in.
 
-<img src="/images/blog/copilot-september-2026/lab-s12-search-in-rail-annotated.webp" alt="The expanded left rail of Microsoft 365 Copilot in my own tenant. At the top is the Copilot wordmark with three small icons to its right, the last of which is circled in black. Below is a two-part pill switch reading Chat and Cowork with Chat selected. Beneath that, four rail entries are listed vertically with icons: New chat, Search, Library and Notebooks." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Search sitting in the rail beside Library and Notebooks. The circled icon expands the rail so the labels appear.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s12-search-in-rail-annotated.webp" alt="The expanded left rail of Microsoft 365 Copilot in my own tenant. At the top is the Copilot wordmark with three small icons to its right, the last of which is circled in black. Below is a two-part pill switch reading Chat and Cowork with Chat selected. Beneath that, four rail entries are listed vertically with icons: New chat, Search, Library and Notebooks." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Search sitting in the rail beside Library and Notebooks. The circled icon expands the rail so the labels appear.</em></p>
 
 The rail lists **New chat, Search, Library and Notebooks**, with Chat and Cowork as two tabs above them. If
 you cannot see those words, press the circled icon at the top right of the rail, which expands it from icons
@@ -382,18 +376,16 @@ to labels. That caught me out.
 
 Then I ran a search, and the results page turned out to carry rather more than results.
 
-<img src="/images/blog/copilot-september-2026/lab-s12-search-answer.webp" alt="The Copilot Search results page in my own tenant. The search box reads &quot;what did Kayo send about Saudi registration&quot;. Below it are filter dropdowns for Person, Type and Modified. A Copilot answer card carries a shield icon and the line &quot;AI-generated content may be incorrect&quot;, a paragraph of answer text with a citation chip, and buttons reading Ask Copilot, thumbs up, thumbs down and Sources. A panel on the right headed Sources lists All Results 5, Copilot Chats 0, Outlook Mail 2 and SharePoint 3. Two search results appear underneath." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Copilot Search answers the question above the results, and shows where the answer came from.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s12-search-answer.webp" alt="The Copilot Search results page in my own tenant. The search box reads &quot;what did Kayo send about Saudi registration&quot;. Below it are filter dropdowns for Person, Type and Modified. A Copilot answer card carries a shield icon and the line &quot;AI-generated content may be incorrect&quot;, a paragraph of answer text with a citation chip, and buttons reading Ask Copilot, thumbs up, thumbs down and Sources. A panel on the right headed Sources lists All Results 5, Copilot Chats 0, Outlook Mail 2 and SharePoint 3. Two search results appear underneath." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Copilot Search answers the question above the results, and shows where the answer came from.</em></p>
 
 I asked *"what did Kayo send about Saudi registration"*. Above the results, Copilot had already written an
 answer with a citation attached, and a **Sources** panel on the right broke down where it had looked: five
 results in all, three from SharePoint, two from Outlook mail, none from chat. Underneath the answer sat an
 **Ask Copilot** button, which turned out to be the door.
 
-<img src="/images/blog/copilot-september-2026/lab-s12-chat-pane.webp" alt="A chat pane in my own tenant. At the top are a briefcase and a globe as a two-part toggle with the briefcase selected, a share icon, a new chat button and a close cross. Under a divider reading Today, a user message reads &quot;what did Kayo send about Saudi registration&quot;. Copilot's reply names Kayo Miwa as a link and says Saudi Arabia was not approved. Below the reply is a card with an envelope icon, the subject &quot;Saudi registration status - KSA cannot be in wave 1&quot;, the line &quot;Sent on Sep 6, 11:10 AM&quot;, the line &quot;Kayo Miwa to: You&quot; and an Ask button. At the bottom is a message box reading Message Copilot." loading="lazy" decoding="async" style="max-width:380px;" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The pane that opens beside the results, with my search already asked for me.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s12-chat-pane.webp" alt="A chat pane in my own tenant. At the top are a briefcase and a globe as a two-part toggle with the briefcase selected, a share icon, a new chat button and a close cross. Under a divider reading Today, a user message reads &quot;what did Kayo send about Saudi registration&quot;. Copilot's reply names Kayo Miwa as a link and says Saudi Arabia was not approved. Below the reply is a card with an envelope icon, the subject &quot;Saudi registration status - KSA cannot be in wave 1&quot;, the line &quot;Sent on Sep 6, 11:10 AM&quot;, the line &quot;Kayo Miwa to: You&quot; and an Ask button. At the bottom is a message box reading Message Copilot." loading="lazy" decoding="async" style="max-width:380px;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The pane that opens beside the results, with my search already asked for me.</em></p>
 
 Pressing it opened the pane on the right, and the results stayed exactly where they were on the left. Two
 details I had not expected. **My search was already sitting in the pane as the first message**, so the
@@ -419,9 +411,8 @@ Copilot Notebooks became **two connected experiences**: a lightweight one inside
 **What I found on 14 September 2026.** The notebook in my tenant does not look much like the one in
 Microsoft's screenshot above, which is worth showing rather than glossing over.
 
-<img src="/images/blog/copilot-september-2026/lab-s13-notebook-anatomy.webp" alt="A Copilot Notebook open in my own tenant, titled Retail Partner Decision. A narrow left rail lists three sections, Overview, Create and Reference, with Create highlighted. Below it a Created content list holds nine study guides with names such as Quiz, Summary, Flashcards and Matching, an MP3 file marked with a headphone icon, and a mind map. Under that, a References list holds six source files, a mix of Word documents and an Excel workbook. The main pane is headed Overview with a date of September 7, 2026 and a refresh control. It contains a Summary section with body text and numbered citation chips, a Quick Create row of seven coloured buttons, and a Key Insights section. A hover tooltip over one study guide reads Created and added by, followed by a colleague name. A footer note reads AI-generated content may be incorrect." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. A notebook with nine generated study guides, an audio overview and a mind map sitting alongside six source files.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s13-notebook-anatomy.webp" alt="A Copilot Notebook open in my own tenant, titled Retail Partner Decision. A narrow left rail lists three sections, Overview, Create and Reference, with Create highlighted. Below it a Created content list holds nine study guides with names such as Quiz, Summary, Flashcards and Matching, an MP3 file marked with a headphone icon, and a mind map. Under that, a References list holds six source files, a mix of Word documents and an Excel workbook. The main pane is headed Overview with a date of September 7, 2026 and a refresh control. It contains a Summary section with body text and numbered citation chips, a Quick Create row of seven coloured buttons, and a Key Insights section. A hover tooltip over one study guide reads Created and added by, followed by a colleague name. A footer note reads AI-generated content may be incorrect." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. A notebook with nine generated study guides, an audio overview and a mind map sitting alongside six source files.</em></p>
 
 Mine has a three-part rail down the left, **Overview, Create and Reference**, with everything the notebook has
 produced listed separately from everything it was fed. Microsoft's image shows a different arrangement, with
@@ -452,9 +443,8 @@ Notebooks gained **proactive artifact recommendations**. Drawing on Work IQ and 
 **What I found on 14 September 2026.** The palette in my tenant has **seven** options, and so does
 Microsoft's own screenshot — but they are not labelled the same way.
 
-<img src="/images/blog/copilot-september-2026/lab-s14-quick-create.webp" alt="A close crop of a Copilot Notebook in my own tenant. A Quick Create row offers seven buttons, each with a coloured icon: Audio overview, Mind map, Study guide, Infographic, Workbook, Document and Presentation. Below a divider, a Key Insights section is headed Partner Selection Tradeoffs and contains three sub-headings. Coverage Versus Capability notes that 310 stores give one partner the broadest reach but that coverage is offset by weaker category management, logistics and reporting. Commercial Framework Tension notes an exclusivity request for twelve months on the core product and that granting it could materially affect launch economics. Meridian Capability Advantage notes an existing relationship and operational readiness, and integrated logistics with live EDI connectivity and cold-chain support. Every bullet ends with one or two small numbered citation chips." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Quick Create — the green Excel button is named Workbook here.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s14-quick-create.webp" alt="A close crop of a Copilot Notebook in my own tenant. A Quick Create row offers seven buttons, each with a coloured icon: Audio overview, Mind map, Study guide, Infographic, Workbook, Document and Presentation. Below a divider, a Key Insights section is headed Partner Selection Tradeoffs and contains three sub-headings. Coverage Versus Capability notes that 310 stores give one partner the broadest reach but that coverage is offset by weaker category management, logistics and reporting. Commercial Framework Tension notes an exclusivity request for twelve months on the core product and that granting it could materially affect launch economics. Meridian Capability Advantage notes an existing relationship and operational readiness, and integrated logistics with live EDI connectivity and cold-chain support. Every bullet ends with one or two small numbered citation chips." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Quick Create — the green Excel button is named Workbook here.</em></p>
 
 Microsoft's image has the same seven buttons, but two of them both read **Document** — the first with a green
 Excel icon, the second with a blue Word icon. Mine names the green one **Workbook**, which is what it actually
@@ -497,7 +487,7 @@ That may well be the wrong place to have looked, though — if the rollout is th
 notebook on the desktop was never going to be in scope for it. I will retest for October.
 
 One thing worth pulling apart, because the words are so nearly the same. A notebook can already *produce*
-audio — that is the audio overview in section 14, and it works. Taking audio *in* as a source is the new
+audio — that is the audio overview in [section 14](#14-notebooks-suggest-what-to-make-next), and it works. Taking audio *in* as a source is the new
 half, and that is the half I could not reproduce.
 
 <blockquote class="callout callout-tip">
@@ -656,9 +646,8 @@ This is a Frontier Program capability, which means it reaches Frontier tenants f
 **What I found on 14 September 2026.** The skill is there, and it describes itself in rather bigger terms
 than the release note does.
 
-<img src="/images/blog/copilot-september-2026/lab-s57-app-skill-slash.webp" alt="The Cowork home screen in my own tenant. A heading reads &quot;What should we finish today?&quot;. The message box below contains a forward slash followed by the letters app. A picker above the box has tabs reading All, Skills, People, Files, Meetings, Emails, Chats, Channels and Sites, and highlights an entry described as a skill that creates and edits apps that can connect to data." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Typing a slash in Cowork brings up the picker, with the App skill describing itself.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s57-app-skill-slash.webp" alt="The Cowork home screen in my own tenant. A heading reads &quot;What should we finish today?&quot;. The message box below contains a forward slash followed by the letters app. A picker above the box has tabs reading All, Skills, People, Files, Meetings, Emails, Chats, Channels and Sites, and highlights an entry described as a skill that creates and edits apps that can connect to data." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Typing a slash in Cowork brings up the picker, with the App skill describing itself.</em></p>
 
 You call it by typing **`/app`** in the Cowork box, and the picker that appears describes it as *"Create and
 edit apps that can connect to data"*. That last phrase is doing a lot of work, and it is not in the sentence
@@ -747,18 +736,16 @@ Plugin connector tools can accept **files from your Cowork session as input**. A
 screen of its own, so I cannot show you that. What I can show is the surface it plugs into, which turned out
 to be more interesting than I expected.
 
-<img src="/images/blog/copilot-september-2026/lab-s62-cowork-plugins.webp" alt="The Customize page in Cowork in my own tenant, with tabs for Plugins, Skills and Preferences. An Installed heading lists Fabric IQ, Dynamics 365 Sales and Dynamics 365 ERP apps, each with a toggle switched off, followed by a Show more link. A Discover heading below lists Adobe Journey Optimizer, Ahrefs, an AI meeting notes plugin, Aiwyn Tax, AllTrails and Apify, each with a padlock icon." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Cowork's plugin page: what is installed above, a catalogue below.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s62-cowork-plugins.webp" alt="The Customize page in Cowork in my own tenant, with tabs for Plugins, Skills and Preferences. An Installed heading lists Fabric IQ, Dynamics 365 Sales and Dynamics 365 ERP apps, each with a toggle switched off, followed by a Show more link. A Discover heading below lists Adobe Journey Optimizer, Ahrefs, an AI meeting notes plugin, Aiwyn Tax, AllTrails and Apify, each with a padlock icon." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Cowork's plugin page: what is installed above, a catalogue below.</em></p>
 
 **Customize → Plugins** lists what is installed with a toggle each — Fabric IQ, Dynamics 365 Sales and the
 Dynamics 365 ERP apps, all switched off in my tenant — above a **Discover** catalogue that is mostly other
 people's software. Adobe Journey Optimizer, Ahrefs, Aiwyn Tax, AllTrails and Apify were on the first screen
 alone.
 
-<img src="/images/blog/copilot-september-2026/lab-s62-add-plugin.webp" alt="A dialog headed Add a plugin sits over the Cowork Customize page. It contains an upload area reading &quot;Drag &amp; drop, choose a file, or choose a folder&quot; with the note &quot;.ZIP or a folder&quot;. Below it a shield icon sits beside the text &quot;Plugins can run skills and connect Cowork to external services. Only add plugins from sources you trust&quot;, and a line reads &quot;New to plugins? Learn more&quot;." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Adding a plugin of your own, and the warning that comes with it.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s62-add-plugin.webp" alt="A dialog headed Add a plugin sits over the Cowork Customize page. It contains an upload area reading &quot;Drag &amp; drop, choose a file, or choose a folder&quot; with the note &quot;.ZIP or a folder&quot;. Below it a shield icon sits beside the text &quot;Plugins can run skills and connect Cowork to external services. Only add plugins from sources you trust&quot;, and a line reads &quot;New to plugins? Learn more&quot;." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Adding a plugin of your own, and the warning that comes with it.</em></p>
 
 The **Add plugin** button is the part that matters for this section. It takes **a .ZIP or a folder**, dragged
 in or chosen — which is to say you can side-load a plugin you have written yourself, and that is exactly who
@@ -783,9 +770,8 @@ Plugins are **discoverable and configurable on the mobile app**. You find them t
 **What I found on 14 September 2026.** It is a genuine peer of the desktop page rather than a read-only view
 of it.
 
-<img src="/images/blog/copilot-september-2026/lab-s63-plugins-mobile.webp" alt="A sheet on my phone headed Customise, with two tabs reading Plug-ins and Skills, and Plug-ins selected. An Installed heading lists three Dynamics 365 entries, each with a toggle switched off. A Discover heading below lists Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research, each with an Add button, above a box reading Search plug-ins." loading="lazy" decoding="async" style="max-width:400px;" />
-
-<p class="img-caption"><em>My own phone, 14 September 2026. The Customise sheet, with Plug-ins and Skills sitting side by side.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s63-plugins-mobile.webp" alt="A sheet on my phone headed Customise, with two tabs reading Plug-ins and Skills, and Plug-ins selected. An Installed heading lists three Dynamics 365 entries, each with a toggle switched off. A Discover heading below lists Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research, each with an Add button, above a box reading Search plug-ins." loading="lazy" decoding="async" style="max-width:400px;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own phone, 14 September 2026. The Customise sheet, with Plug-ins and Skills sitting side by side.</em></p>
 
 The sheet has the same two halves as the desktop page. **Installed** carries a toggle each, and **Discover**
 gives every plugin its own **Add** button with a search box above it. So this is configuration, not a
@@ -928,9 +914,8 @@ That is worth reading twice, because it is a slightly different thing from what 
 
 It replied to me in German, which I did not ask for but rather liked. And it was straight with me about what it could not do: two of my slides were single full-screen images, so the text baked into them stayed in English.
 
-<img src="/images/blog/copilot-september-2026/lab-s67-translate-reasoning.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. My prompt reads Translate this presentation into German. Below it Copilot shows an expanded Reasoned in 5 steps list, including lines about checking whether slides 1, 3 and 4 are empty, translating the editable text on the one slide that contains it, noting that image-based slides cannot be changed, and reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box. The reply beneath is written in German and says the text is now in German with adjusted font size so everything fits neatly into the placeholders, that the product names Copilot, Copilot Studio and Teams were left unchanged, and that slide 1 contains no text while slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The fourth reasoning step is the feature describing itself — and note that it talks about shrinking the text and turning on autofit, rather than resizing the box.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s67-translate-reasoning.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. My prompt reads Translate this presentation into German. Below it Copilot shows an expanded Reasoned in 5 steps list, including lines about checking whether slides 1, 3 and 4 are empty, translating the editable text on the one slide that contains it, noting that image-based slides cannot be changed, and reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box. The reply beneath is written in German and says the text is now in German with adjusted font size so everything fits neatly into the placeholders, that the product names Copilot, Copilot Studio and Teams were left unchanged, and that slide 1 contains no text while slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The fourth reasoning step is the feature describing itself — and note that it talks about shrinking the text and turning on autofit, rather than resizing the box.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Translation was never the hard part. The hard part was the hour afterwards spent fixing every slide where the new text no longer fitted. Handing the reflow to Copilot removes the bit that made people avoid translating decks at all.</p>
@@ -938,9 +923,8 @@ It replied to me in German, which I did not ask for but rather liked. And it was
 
 The result holds up in the hardest direction. In the English original the right-hand column ran off the bottom of the slide. German runs roughly a third longer than English, and it still fits, with clear space underneath.
 
-<img src="/images/blog/copilot-september-2026/lab-s67-translated-slide.webp" alt="A slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents, with the body text now in German. Two columns headed Copilot Agent and Copilot Studio Agent each hold five German bullet points. Red spell-check underlines run beneath many of the German words. All of the text sits inside the slide, with clear space below the final bullet." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The same slide, translated. In English the right-hand column overran the bottom edge; in German — the longer language — it fits. The red underlines are my spell-checker, still set to English.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s67-translated-slide.webp" alt="A slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents, with the body text now in German. Two columns headed Copilot Agent and Copilot Studio Agent each hold five German bullet points. Red spell-check underlines run beneath many of the German words. All of the text sits inside the slide, with clear space below the final bullet." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The same slide, translated. In English the right-hand column overran the bottom edge; in German — the longer language — it fits. The red underlines are my spell-checker, still set to English.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
@@ -958,15 +942,13 @@ This is a Frontier Program capability, so it reaches Frontier tenants first rath
 
 SmartArt-**like**. Built from **simple shapes**. This is not PowerPoint's SmartArt engine. It is Copilot drawing a diagram that resembles one.
 
-<img src="/images/blog/copilot-september-2026/lab-s68-shapes-reasoning.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. An expanded reasoning list reads: I am checking slide 3 now to see its current content and layout; I am replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look; I am building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. SmartArt-<em>like</em>, built from simple shapes — Copilot saying plainly that this is not PowerPoint's SmartArt engine.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s68-shapes-reasoning.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. An expanded reasoning list reads: I am checking slide 3 now to see its current content and layout; I am replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look; I am building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. SmartArt-<em>like</em>, built from simple shapes — Copilot saying plainly that this is not PowerPoint's SmartArt engine.</em></p>
 
 That sounds like a downgrade until you see it.
 
-<img src="/images/blog/copilot-september-2026/lab-s68-smartart-result.webp" alt="A PowerPoint slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents. Two columns of rounded cards sit beneath the title. The left column has a dark navy header reading Copilot Agent above five pale blue cards. The right column has an orange header reading Copilot Studio Agent above five pale peach cards. The top left card carries a dotted selection border, showing it is a separate selectable shape." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The result. Cleaner than the bullet list it replaced, and each card is a separate shape you can select and move.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s68-smartart-result.webp" alt="A PowerPoint slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents. Two columns of rounded cards sit beneath the title. The left column has a dark navy header reading Copilot Agent above five pale blue cards. The right column has an orange header reading Copilot Studio Agent above five pale peach cards. The top left card carries a dotted selection border, showing it is a separate selectable shape." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The result. Cleaner than the bullet list it replaced, and each card is a separate shape you can select and move.</em></p>
 
 It is worth knowing what the distinction costs you. Because this is not a real SmartArt object, there is no **SmartArt Design** tab, so you cannot flick between built-in layouts or type into the text pane. What you get instead is a diagram that is not boxed in by SmartArt's templates — and in my case, one that looked rather better than SmartArt would have.
 
@@ -976,25 +958,22 @@ It is worth knowing what the distinction costs you. Because this is not a real S
 
 **Then the actual claim — editing it on the canvas.** This is what the release note is really about. I asked for a layout change in one short line.
 
-<img src="/images/blog/copilot-september-2026/lab-s68-prompt-left-right.webp" alt="A close-up of the Copilot prompt box in PowerPoint from my own tenant, showing a dropdown labelled Edit above the typed prompt: match the flow left to right and match my brand colors." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>One line was all the instruction it needed.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s68-prompt-left-right.webp" alt="A close-up of the Copilot prompt box in PowerPoint from my own tenant, showing a dropdown labelled Edit above the typed prompt: match the flow left to right and match my brand colors." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>One line was all the instruction it needed.</em></p>
 
 It rebuilt the whole thing as two chevron process flows, condensed the text so it sits inside the arrows, and deepened the colour of each step as the flow progresses.
 
-<img src="/images/blog/copilot-september-2026/lab-s68-chevron-result.webp" alt="A PowerPoint slide in my own tenant showing two horizontal chevron process flows. The top row begins with a navy anchor box labelled Copilot Agent, followed by five chevrons that deepen in blue reading Inside M365 Copilot, Built in minutes, Grounded in your data, Chat Teams Word, and Quick task help. The bottom row begins with an orange anchor box labelled Copilot Studio Agent, followed by five chevrons that deepen in orange reading Custom agent studio, Topics and triggers, Connectors and APIs, Publish anywhere, and Automated workflows. One chevron carries a dotted selection border." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The same content rebuilt as two process flows, with the text condensed to fit inside the chevrons.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s68-chevron-result.webp" alt="A PowerPoint slide in my own tenant showing two horizontal chevron process flows. The top row begins with a navy anchor box labelled Copilot Agent, followed by five chevrons that deepen in blue reading Inside M365 Copilot, Built in minutes, Grounded in your data, Chat Teams Word, and Quick task help. The bottom row begins with an orange anchor box labelled Copilot Studio Agent, followed by five chevrons that deepen in orange reading Custom agent studio, Topics and triggers, Connectors and APIs, Publish anywhere, and Automated workflows. One chevron carries a dotted selection border." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The same content rebuilt as two process flows, with the text condensed to fit inside the chevrons.</em></p>
 
 **And then one line in the reply that was worth the whole test.**
 
 > *"I kept your theme's own palette since no separate brand kit was available — say the word if you want specific hex colors applied instead."*
 
-I had built a Brand Kit earlier that same day — it is section 31 of this very post. Copilot in PowerPoint could not see it. I cannot yet tell you why: brand kits may only apply to the Create surface in the Copilot app, the deck may need to start from a brand kit template, or this may simply still be rolling out. What I can tell you is that "on brand" quietly fell back to the deck's theme colours, and that Copilot said so rather than guessing silently. I will chase this one down for the next issue.
+I had built a Brand Kit earlier that same day — it is [section 31](#31-powerpoint-can-be-locked-to-your-approved-template) of this very post. Copilot in PowerPoint could not see it. I cannot yet tell you why: brand kits may only apply to the Create surface in the Copilot app, the deck may need to start from a brand kit template, or this may simply still be rolling out. What I can tell you is that "on brand" quietly fell back to the deck's theme colours, and that Copilot said so rather than guessing silently. I will chase this one down for the next issue.
 
-<img src="/images/blog/copilot-september-2026/lab-s68-chevron-reply.webp" alt="A capture of the Copilot reply panel in PowerPoint from my own tenant. It shows my prompt, match the flow left to right and match my brand colors, a Reasoned in 7 steps link, and a reply explaining that the slide now reads as two left-to-right process flows, with a labeled anchor for each agent type and five chevron steps that deepen in the theme's blue and orange, and that the step text is condensed to short phrases. A second paragraph reads: I kept your theme's own palette since no separate brand kit was available, say the word if you want specific hex colors applied instead." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The line that matters. A Brand Kit existed in my tenant; Copilot in PowerPoint did not find one.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s68-chevron-reply.webp" alt="A capture of the Copilot reply panel in PowerPoint from my own tenant. It shows my prompt, match the flow left to right and match my brand colors, a Reasoned in 7 steps link, and a reply explaining that the slide now reads as two left-to-right process flows, with a labeled anchor for each agent type and five chevron steps that deepen in the theme's blue and orange, and that the step text is condensed to short phrases. A second paragraph reads: I kept your theme's own palette since no separate brand kit was available, say the word if you want specific hex colors applied instead." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The line that matters. A Brand Kit existed in my tenant; Copilot in PowerPoint did not find one.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
@@ -1008,19 +987,17 @@ You can **reference an email** when asking Copilot to create a presentation. The
 
 > *"I'm locating Miguel Garcia's email so I can build the deck."*
 
-<img src="/images/blog/copilot-september-2026/lab-s69-prompt-locating-email.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. The prompt reads: Create a presentation about Caldenza Relief, range and pack format email from Miguel Garcia. Beneath it an expanded reasoning list shows the steps Mapping it out, Looking at the details, I am locating Miguel Garcia's email so I can build the deck, and Exploring approaches." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. No attachment and no picker — Copilot searched my mailbox from the description in the prompt.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s69-prompt-locating-email.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. The prompt reads: Create a presentation about Caldenza Relief, range and pack format email from Miguel Garcia. Beneath it an expanded reasoning list shows the steps Mapping it out, Looking at the details, I am locating Miguel Garcia's email so I can build the deck, and Exploring approaches." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. No attachment and no picker — Copilot searched my mailbox from the description in the prompt.</em></p>
 
 **Then it did something I was not expecting.** Before generating anything, it stopped and asked how the deck should look, offering three styles it had written for this particular deck — "Clinical Navy & White", "Warm Sand & Deep Teal", "Bold Charcoal Data Focus" — along with a free-text box and a Skip all button.
 
 Look at the option sitting at the top of that list.
 
-<img src="/images/blog/copilot-september-2026/lab-s69-style-options.webp" alt="A capture from my own tenant showing a Copilot prompt in PowerPoint headed How should your presentation look and feel? The first option, marked Recommended, reads Your organization's templates, described as Use templates from my organization's brand kits. Below it are three suggested styles: Clinical Navy and White, described as crisp white background with deep navy headers and teal accent rules; Warm Sand and Deep Teal, described as sand backgrounds with deep teal panels and amber highlights; and Bold Charcoal Data Focus, described as charcoal slides with oversized figures in lime. A final option reads Enter another option, and there are Confirm and Skip all buttons." loading="lazy" decoding="async" />
+<p><img src="/images/blog/copilot-september-2026/lab-s69-style-options.webp" alt="A capture from my own tenant showing a Copilot prompt in PowerPoint headed How should your presentation look and feel? The first option, marked Recommended, reads Your organization's templates, described as Use templates from my organization's brand kits. Below it are three suggested styles: Clinical Navy and White, described as crisp white background with deep navy headers and teal accent rules; Warm Sand and Deep Teal, described as sand backgrounds with deep teal panels and amber highlights; and Bold Charcoal Data Focus, described as charcoal slides with oversized figures in lime. A final option reads Enter another option, and there are Confirm and Skip all buttons." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>"Your organization's templates — use templates from my organization's brand kits." This is where brand kits surface in PowerPoint.</em></p>
 
-<p class="img-caption"><em>"Your organization's templates — use templates from my organization's brand kits." This is where brand kits surface in PowerPoint.</em></p>
-
-That is worth pausing on. In section 35, Copilot in PowerPoint told me no brand kit was available. Here, on the create path, brand kits are the *recommended* option. So they are not absent from PowerPoint at all — they show up when you are **making** a deck, and not when you are **editing** one. That distinction took me two tests to find and I have not seen it written down anywhere.
+That is worth pausing on. In [section 35](#35-copilot-can-edit-smartart-on-the-canvas), Copilot in PowerPoint told me no brand kit was available. Here, on the create path, brand kits are the *recommended* option. So they are not absent from PowerPoint at all — they show up when you are **making** a deck, and not when you are **editing** one. That distinction took me two tests to find and I have not seen it written down anywhere.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A surprising number of decks start life as an email that got too long. Pointing Copilot at the thread skips the step where someone copies the argument into a blank slide and loses half of it.</p>
@@ -1028,9 +1005,8 @@ That is worth pausing on. In section 35, Copilot in PowerPoint told me no brand 
 
 The deck it produced held up. This is one slide from it, in the navy-and-teal treatment it had proposed a minute earlier.
 
-<img src="/images/blog/copilot-september-2026/lab-s69-generated-slide.webp" alt="A slide from the deck Copilot generated in my own tenant, titled Our framework position and what to verify. Two columns sit beneath the title: a dark navy header reading Framework position above four bullets covering trade margin no more than 30 percent, incremental-only rebates, payment terms of 60 days or shorter, and no category exclusivity; and a teal header reading Verify in negotiation above four bullets covering store-level storage capability, any exclusivity ask, registration status by presentation, and anything outside the envelope needing pricing sign-off." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>One slide from the generated deck, built from an email thread it found by itself. The content is fictional demo-tenant data.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s69-generated-slide.webp" alt="A slide from the deck Copilot generated in my own tenant, titled Our framework position and what to verify. Two columns sit beneath the title: a dark navy header reading Framework position above four bullets covering trade margin no more than 30 percent, incremental-only rebates, payment terms of 60 days or shorter, and no category exclusivity; and a teal header reading Verify in negotiation above four bullets covering store-level storage capability, any exclusivity ask, registration status by presentation, and anything outside the envelope needing pricing sign-off." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>One slide from the generated deck, built from an email thread it found by itself. The content is fictional demo-tenant data.</em></p>
 
 📖 [AI at Work Roadmap 555888](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555888) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
@@ -1042,21 +1018,18 @@ During a PowerPoint Live session, an attendee can **select part of a slide and a
 
 **What I found on 14 September 2026.** I ran a real meeting to test this one. PowerPoint Live tells attendees about it directly, with a coach mark that explains the gesture.
 
-<img src="/images/blog/copilot-september-2026/lab-s70-coach-mark.webp" alt="A teaching callout shown to attendees in PowerPoint Live in my own tenant. It is headed Get explanations from Copilot and reads: Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane. A Got it button sits below." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>PowerPoint Live introduces the feature itself. Note the phrase “private chat pane” — the presenter never sees this.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s70-coach-mark.webp" alt="A teaching callout shown to attendees in PowerPoint Live in my own tenant. It is headed Get explanations from Copilot and reads: Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane. A Got it button sits below." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>PowerPoint Live introduces the feature itself. Note the phrase “private chat pane” — the presenter never sees this.</em></p>
 
 Drag across anything on the slide and a small **Explain selected text** button appears where you released.
 
-<img src="/images/blog/copilot-september-2026/lab-s70-explain-button.webp" alt="A slide viewed in PowerPoint Live in my own tenant, titled Four SKUs confirmed for the Gulf range, with four bullets about product pack formats. A dark floating button labelled Explain selected text sits above the slide where the selection was made." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The trigger. Select, release, and the button comes to you.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s70-explain-button.webp" alt="A slide viewed in PowerPoint Live in my own tenant, titled Four SKUs confirmed for the Gulf range, with four bullets about product pack formats. A dark floating button labelled Explain selected text sits above the slide where the selection was made." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The trigger. Select, release, and the button comes to you.</em></p>
 
 What happens next is the part I liked. Copilot writes the prompt for you — including the text you selected, and a length limit you did not have to think about — and answers in your own pane, inside the meeting, while the presenter keeps talking.
 
-<img src="/images/blog/copilot-september-2026/lab-s70-teams-live-explain-annotated.webp" alt="A Teams meeting window in my own tenant. The meeting toolbar runs along the top with Copilot highlighted, three participant tiles sit beneath it, and a PowerPoint Live slide titled Four SKUs confirmed for the Gulf range fills the stage with the Explain selected text button visible. On the right, a Copilot pane shows an automatically composed prompt reading In 1-3 sentences, explain the selected text, followed by the four selected bullets, and beneath it Copilot's explanation of how the four product formats target different shopper needs and price points. A red rounded box, added by me, outlines the floating Explain selected text button." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Copilot composed the prompt, capped it at one to three sentences, and answered privately mid-meeting.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s70-teams-live-explain-annotated.webp" alt="A Teams meeting window in my own tenant. The meeting toolbar runs along the top with Copilot highlighted, three participant tiles sit beneath it, and a PowerPoint Live slide titled Four SKUs confirmed for the Gulf range fills the stage with the Explain selected text button visible. On the right, a Copilot pane shows an automatically composed prompt reading In 1-3 sentences, explain the selected text, followed by the four selected bullets, and beneath it Copilot's explanation of how the four product formats target different shopper needs and price points. A red rounded box, added by me, outlines the floating Explain selected text button." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Copilot composed the prompt, capped it at one to three sentences, and answered privately mid-meeting.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> In any large presentation there is someone who lost the thread three slides ago and will not put their hand up. This gives them a way back in that costs the room nothing.</p>
@@ -1084,9 +1057,8 @@ Creating a presentation with Copilot works **directly in the PowerPoint web app*
 
 **What I found on 14 September 2026.** It is not tucked away either. On the PowerPoint start page on the web, **Create with Copilot** is the first button, sitting ahead of Create blank presentation.
 
-<img src="/images/blog/copilot-september-2026/lab-s72-web-create-with-copilot.webp" alt="The PowerPoint start page in the web app in my own tenant. Three buttons sit under a welcome heading: Create with Copilot as the first and visually primary option, then Create blank presentation, then Upload a file. A Jump back in row of recent presentations appears below." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The PowerPoint web app in my own tenant. Create with Copilot leads, rather than sitting in a menu.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s72-web-create-with-copilot.webp" alt="The PowerPoint start page in the web app in my own tenant. Three buttons sit under a welcome heading: Create with Copilot as the first and visually primary option, then Create blank presentation, then Upload a file. A Jump back in row of recent presentations appears below." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The PowerPoint web app in my own tenant. Create with Copilot leads, rather than sitting in a menu.</em></p>
 
 Everything in the next section was built here, in the browser, which is the other half of the proof.
 
@@ -1104,23 +1076,20 @@ You can **reference web sources** when asking Copilot to create a presentation, 
 
 **What I found on 14 September 2026.** This one behaves differently from the email in [section 36](#36-powerpoint-can-build-a-deck-from-an-email), and the difference is worth knowing. Paste a URL into the prompt and it becomes a **source chip**, attached the way a document would be. An email could not be attached at all; a web link can.
 
-<img src="/images/blog/copilot-september-2026/lab-s73-web-source-chip.webp" alt="The Copilot create prompt in the PowerPoint web app in my own tenant. A source chip at the top of the prompt box reads support.microsoft.com/en-, with a document icon beside it. The prompt below reads: Create a presentation about How copilot notebooks work, use this web link as the only source, followed by the pasted URL rendered as a link." loading="lazy" decoding="async" />
+<p><img src="/images/blog/copilot-september-2026/lab-s73-web-source-chip.webp" alt="The Copilot create prompt in the PowerPoint web app in my own tenant. A source chip at the top of the prompt box reads support.microsoft.com/en-, with a document icon beside it. The prompt below reads: Create a presentation about How copilot notebooks work, use this web link as the only source, followed by the pasted URL rendered as a link." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The pasted link became an attached source, not just words in the prompt.</em></p>
 
-<p class="img-caption"><em>My own tenant, 14 September 2026. The pasted link became an attached source, not just words in the prompt.</em></p>
+Then it interviewed me again — but about something different this time. In [section 36](#36-powerpoint-can-build-a-deck-from-an-email) the question was how the deck should look. Here it asked **who it was for and how deep to go**, and each option came with a slide count.
 
-Then it interviewed me again — but about something different this time. In section 36 the question was how the deck should look. Here it asked **who it was for and how deep to go**, and each option came with a slide count.
-
-<img src="/images/blog/copilot-september-2026/lab-s73-audience-depth.webp" alt="A Copilot prompt card in the PowerPoint web app in my own tenant, headed Who is this deck for, and how deep should it go? Options are: Team enablement, marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks at roughly 8 to 10 slides; Exec overview, a short value-focused briefing at roughly 5 to 6 slides; Hands-on deep dive, a detailed walkthrough of sources, limits and workflows at roughly 10 to 12 slides; and Enter another option. Confirm and Skip all buttons sit at the bottom." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>Audience and depth, with slide counts attached. Both questions were written for this specific deck, not picked from a fixed list.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s73-audience-depth.webp" alt="A Copilot prompt card in the PowerPoint web app in my own tenant, headed Who is this deck for, and how deep should it go? Options are: Team enablement, marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks at roughly 8 to 10 slides; Exec overview, a short value-focused briefing at roughly 5 to 6 slides; Hands-on deep dive, a detailed walkthrough of sources, limits and workflows at roughly 10 to 12 slides; and Enter another option. Confirm and Skip all buttons sit at the bottom." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Audience and depth, with slide counts attached. Both questions were written for this specific deck, not picked from a fixed list.</em></p>
 
 Two different runs, two different questions, both generated from the source material. Copilot is not filling in a form any more — it is asking the questions a colleague would ask before starting.
 
 And the finished deck answered the provenance question on its own. Where it lifted a line straight from the page, it put the attribution underneath — **"— Microsoft Support"** — so a reader can see where the sentence came from without being told.
 
-<img src="/images/blog/copilot-september-2026/lab-s73-deck-quote-attributed.webp" alt="A finished slide from the deck Copilot generated in my own tenant. A large teal quotation mark sits top left. The quote, set in italic serif type, reads: Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture. Underneath, in small grey capitals, is the attribution: em dash Microsoft Support." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The quote is credited on the slide itself.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s73-deck-quote-attributed.webp" alt="A finished slide from the deck Copilot generated in my own tenant. A large teal quotation mark sits top left. The quote, set in italic serif type, reads: Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture. Underneath, in small grey capitals, is the attribution: em dash Microsoft Support." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The quote is credited on the slide itself.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Useful, and worth a moment's thought. A deck grounded in the open web inherits whatever that page says, so this is a feature to pair with the domain exclusion control in [section 90](#90-domain-exclusion-is-back) rather than to enable and forget. My one deck did credit its source on the slide, which helps — but that is a single run, not a promise.</p>
@@ -1153,15 +1122,13 @@ When you point Copilot in Word at a reference document, it now uses **both the t
 
 I put a chart in a document — an embedded Excel object with a title, an axis label, named categories and a data label sitting on every bar — and asked Copilot to explain it.
 
-<img src="/images/blog/copilot-september-2026/lab-s75-embedded-chart.webp" alt="An embedded Excel worksheet object inside a Word document in my own tenant, opened in edit mode so the spreadsheet column letters A to L and row numbers are visible. Cell A1 holds a heading reading Account Risk. A small table below lists Risk level against Accounts: Critical 1, Elevated 1, Moderate 2, Low 4. To the right sits a bar chart titled Accounts by Risk Level, with a vertical axis labelled Number of accounts running from 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low along the bottom, and a data label above each column reading 1, 1, 2 and 4. Round selection handles surround the chart." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Every label a reader needs is right there.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s75-embedded-chart.webp" alt="An embedded Excel worksheet object inside a Word document in my own tenant, opened in edit mode so the spreadsheet column letters A to L and row numbers are visible. Cell A1 holds a heading reading Account Risk. A small table below lists Risk level against Accounts: Critical 1, Elevated 1, Moderate 2, Low 4. To the right sits a bar chart titled Accounts by Risk Level, with a vertical axis labelled Number of accounts running from 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low along the bottom, and a data label above each column reading 1, 1, 2 and 4. Round selection handles surround the chart." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Every label a reader needs is right there.</em></p>
 
 It declined. The reply said it could see the chart <em>"only as an embedded image without readable chart labels, legends, or data values in the document view I received"</em>, and that it could not reliably explain the chart without them. Then it offered a way round: zoom in, crop the chart, or paste the underlying data.
 
-<img src="/images/blog/copilot-september-2026/lab-s75-chart-not-readable.webp" alt="The Copilot pane in Word in my own tenant. Copilot's reply says the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends or data values in the document view it received, and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. Below, it offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing the explanation it would give." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>Copilot saying, in its own words, what it could and could not see.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s75-chart-not-readable.webp" alt="The Copilot pane in Word in my own tenant. Copilot's reply says the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends or data values in the document view it received, and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. Below, it offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing the explanation it would give." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Copilot saying, in its own words, what it could and could not see.</em></p>
 
 Two things are worth saying plainly. First, this is **not a clean test of the feature as announced** — the release note describes reference documents you point Copilot at, and my chart was sitting in the document I already had open, as an embedded Excel object rather than a picture. Second, that phrase — <em>"the document view I received"</em> — is a rare glimpse of the plumbing. Whatever reached the model did not carry the chart's internals, even though every label is perfectly readable to a human eye in the screenshot above.
 
@@ -1215,9 +1182,8 @@ Anthropic models need admin-enabled Anthropic access, so the menu only offers wh
 
 There were also two of them, not one. Alongside Claude Sonnet 5 my tenant offered **Claude Opus 5** — a model the release note for this change does not name. Worth opening your own menu rather than assuming it matches the announcement.
 
-<img src="/images/blog/copilot-september-2026/lab-s78-model-menu-claude.webp" alt="The Copilot pane in Word on the web in my own tenant with its overflow menu open. Under a heading reading Model, the first entry is Auto with a tick beside it, and below it an entry reading Claude with a submenu arrow. The open submenu lists two models: Claude Opus 5 and Claude Sonnet 5. Further down the main menu are Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the Copilot pane shows an Allow editing dropdown, a prompt box reading Describe what you want, and suggestion chips." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Two Claude models, nested under a submenu, with Auto still the default.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s78-model-menu-claude.webp" alt="The Copilot pane in Word on the web in my own tenant with its overflow menu open. Under a heading reading Model, the first entry is Auto with a tick beside it, and below it an entry reading Claude with a submenu arrow. The open submenu lists two models: Claude Opus 5 and Claude Sonnet 5. Further down the main menu are Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the Copilot pane shows an Allow editing dropdown, a prompt box reading Describe what you want, and suggestion chips." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Two Claude models, nested under a submenu, with Auto still the default.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Model choice inside the app is becoming normal rather than notable. The thing worth tracking is not which model was added, but that the list changes often enough that a written standard about "which model we use" goes stale fast.</p>
@@ -1235,9 +1201,8 @@ Copilot in Excel can **use Python** as part of an edit, rather than being limite
 
 The test was deliberately chosen to be the kind of thing formulas struggle with: find the outliers in a column using standard deviation. Copilot did the work — mean, sample standard deviation, z-scores, a ±3σ test — but it did all of it in **native Excel formulas**. No Python, no code block, no Python label anywhere in the reply. Other prompts did not surface it either.
 
-<img src="/images/blog/copilot-september-2026/lab-s79-formulas-not-python.webp" alt="Part of a Copilot reply in Excel in my own tenant. A bullet reads: 15:43 local time, Added the standard-deviation outlier audit in Risk Chart exclamation A18 colon F23. Sub-bullets read: Added mean, sample standard deviation, z-score, and plus or minus 3 sigma outlier formulas; and Formatted the audit table, all four results are No. Below sits a monospaced code block containing three Excel formulas: a COUNTIF against the sales accounts sheet, STDEV.S over B4 to B7, and IF ABS of E20 greater than 3 returning Yes or No." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. A textbook Python job, answered entirely in formulas.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s79-formulas-not-python.webp" alt="Part of a Copilot reply in Excel in my own tenant. A bullet reads: 15:43 local time, Added the standard-deviation outlier audit in Risk Chart exclamation A18 colon F23. Sub-bullets read: Added mean, sample standard deviation, z-score, and plus or minus 3 sigma outlier formulas; and Formatted the audit table, all four results are No. Below sits a monospaced code block containing three Excel formulas: a COUNTIF against the sales accounts sheet, STDEV.S over B4 to B7, and IF ABS of E20 greater than 3 returning Yes or No." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. A textbook Python job, answered entirely in formulas.</em></p>
 
 I would not call that a failure, and it is worth saying why. Standard deviation is something Excel does perfectly well on its own, and `STDEV.S` is a faster, cheaper and more auditable answer than a script that does the same thing. Copilot reaching for formulas when formulas are enough is arguably the right call rather than a missing feature. Where Python earns its place is the work formulas genuinely cannot reach — and I did not get far enough to find that edge.
 
@@ -1261,15 +1226,13 @@ That last distinction is new, and it is the one that will matter in a year.
 
 I asked it plainly: *what changed in this workbook, and who changed it.* Before answering, Copilot narrated what it was about to do — and reached for the phrase itself. It calls this **the audit trail**.
 
-<img src="/images/blog/copilot-september-2026/lab-s80-audit-trail-reasoning.webp" alt="The Copilot pane in Excel in my own tenant. The user prompt above reads: what changed in this workbook, and who changed it. Copilot's reasoning card shows two steps. The first, ticked, is headed Auditing recent workbook activity and reads: I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges. The second, still running, is headed Retrieving the audit trail and reads: I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>Copilot describing the job before doing it — including that it will flag what the history cannot see.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s80-audit-trail-reasoning.webp" alt="The Copilot pane in Excel in my own tenant. The user prompt above reads: what changed in this workbook, and who changed it. Copilot's reasoning card shows two steps. The first, ticked, is headed Auditing recent workbook activity and reads: I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges. The second, still running, is headed Retrieving the audit trail and reads: I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Copilot describing the job before doing it — including that it will flag what the history cannot see.</em></p>
 
 The answer came back as a dated change summary scoped to the last 30 days, with times to the minute, the exact ranges touched, and the formulas that had been added.
 
-<img src="/images/blog/copilot-september-2026/lab-s80-change-summary.webp" alt="A Copilot reply in Excel in my own tenant headed Change summary, last 30 days. It states that all recorded changes were made by Colin Ballinger with Copilot assistance on September 14 2026, and that no recorded edits affected the sales accounts sheet. A timeline follows: at 15:32 local time, created and formatted the Risk Chart sheet, added the risk summary and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4 accounts; at 15:43 local time, added a standard-deviation outlier audit with mean, sample standard deviation, z-score and plus or minus 3 sigma formulas. A code block shows the three formulas. A closing line reads that the history does not track chart or conditional-formatting changes, so those cannot be attributed separately." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Times, ranges, formulas — and an honest note about what is missing.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s80-change-summary.webp" alt="A Copilot reply in Excel in my own tenant headed Change summary, last 30 days. It states that all recorded changes were made by Colin Ballinger with Copilot assistance on September 14 2026, and that no recorded edits affected the sales accounts sheet. A timeline follows: at 15:32 local time, created and formatted the Risk Chart sheet, added the risk summary and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4 accounts; at 15:43 local time, added a standard-deviation outlier audit with mean, sample standard deviation, z-score and plus or minus 3 sigma formulas. A code block shows the three formulas. A closing line reads that the history does not track chart or conditional-formatting changes, so those cannot be attributed separately." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Times, ranges, formulas — and an honest note about what is missing.</em></p>
 
 Two details stand out. The attribution reads **"made by Colin Ballinger with Copilot assistance"** — one phrase carrying both the person and the AI, which is exactly the distinction this feature promises. And at the end, unprompted, it names its own blind spot: *"The history does not track chart or conditional-formatting changes, so those cannot be attributed separately."*
 
@@ -1294,9 +1257,8 @@ Past Copilot conversations are **preserved in Excel**, reachable from a menu ico
 
 The part worth knowing is that the history is not just this session. My list still held a conversation from the previous week, sitting underneath one from a few minutes earlier.
 
-<img src="/images/blog/copilot-september-2026/lab-s81-chat-history.webp" alt="The Copilot chat history panel open in Excel on the web in my own tenant. A New Chat entry sits at the top with the Copilot icon beside it. Below, a heading reads Chats in Excel, followed by two saved conversations: one titled create a chat of this sheet timestamped 3:32 PM, and below it one beginning Calculate the weighted total for each partner, dated 9 slash 7. The Excel toolbar with Comments, Catch up, Editing and Share buttons is visible above the panel." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. A week-old conversation still sitting in the list.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s81-chat-history.webp" alt="The Copilot chat history panel open in Excel on the web in my own tenant. A New Chat entry sits at the top with the Copilot icon beside it. Below, a heading reads Chats in Excel, followed by two saved conversations: one titled create a chat of this sheet timestamped 3:32 PM, and below it one beginning Calculate the weighted total for each partner, dated 9 slash 7. The Excel toolbar with Comments, Catch up, Editing and Share buttons is visible above the panel." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. A week-old conversation still sitting in the list.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Word got this in August, Excel gets it now. Losing the conversation meant losing the reasoning behind a change, which made people redo work they had already done once.</p>
@@ -1313,9 +1275,8 @@ The part worth knowing is that the history is not just this session. My list sti
 **What I found on 14 September 2026.** The mechanic turns out to be a single character. Type **@** into the
 Copilot composer in Outlook and the agents your organisation has built appear right there in the pane.
 
-<img src="/images/blog/copilot-september-2026/lab-s82-agent-picker.webp" alt="The Copilot pane in Outlook on the web in my own tenant. A Work and Web toggle sits at the top with Work selected, alongside a shield icon, a chat history icon and a new chat button. The centre reads Get a quick summary. In the composer below, a single at sign has been typed, and a picker has opened underneath listing three custom agents, each with a coloured icon, a name and a one-line description: Retail Supplier Signal Tracker, which reads supplier and partner correspondence across email and Teams; Retail Partner Terms Screener, which screens retail partner or supplier proposals against Caldova's trade terms envelope; and Gulf Retail Market Watch, which checks the Gulf retail launch plan against what is happening in the UAE and Saudi Arabia. A scrollbar on the right shows the list continues above and below." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. One character, and the organisation's agents are in the inbox.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s82-agent-picker.webp" alt="The Copilot pane in Outlook on the web in my own tenant. A Work and Web toggle sits at the top with Work selected, alongside a shield icon, a chat history icon and a new chat button. The centre reads Get a quick summary. In the composer below, a single at sign has been typed, and a picker has opened underneath listing three custom agents, each with a coloured icon, a name and a one-line description: Retail Supplier Signal Tracker, which reads supplier and partner correspondence across email and Teams; Retail Partner Terms Screener, which screens retail partner or supplier proposals against Caldova's trade terms envelope; and Gulf Retail Market Watch, which checks the Gulf retail launch plan against what is happening in the UAE and Saudi Arabia. A scrollbar on the right shows the list continues above and below." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. One character, and the organisation's agents are in the inbox.</em></p>
 
 Each one carries its description underneath, which matters more than it sounds. Once you have half a dozen
 agents with similar-sounding names, that one-line summary is how you pick the right one without leaving
@@ -1345,15 +1306,13 @@ Copilot can **organise messages, apply categories and manage calendar entries** 
 
 What happened next is the part worth knowing. It did not act. It listed **every single message** it proposed to move, and put **Confirm** and **Cancel** underneath.
 
-<img src="/images/blog/copilot-september-2026/lab-s83-confirm-list.webp" alt="The Copilot pane in Outlook in my own tenant, showing a confirmation step. A plain bulleted list fills most of the pane, each row a subject line beginning Your scheduled prompt is complete, followed by one of four topics that repeat down the list. Confirm and Cancel buttons sit below the list." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Every affected message named, before anything moved.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s83-confirm-list.webp" alt="The Copilot pane in Outlook in my own tenant, showing a confirmation step. A plain bulleted list fills most of the pane, each row a subject line beginning Your scheduled prompt is complete, followed by one of four topics that repeat down the list. Confirm and Cancel buttons sit below the list." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Every affected message named, before anything moved.</em></p>
 
 Only once I confirmed did it run — and it did two jobs from the one sentence.
 
-<img src="/images/blog/copilot-september-2026/lab-s83-done-result.webp" alt="The Copilot pane in Outlook in my own tenant. The prompt above reads: move everything from Microsoft Copilot Your scheduled prompt is complete into a folder called Scheduled. Copilot's reply begins Done, followed by three bullets: Created Outlook folder Scheduled; Moved the scheduled prompt completion emails from Microsoft Copilot that were found in your inbox into that folder, with a small message chip beside it; and 25 matching emails were successfully moved. A closing line reads: The Scheduled folder now contains those Copilot-generated notifications." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>One sentence, two jobs: the folder created, then filled.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s83-done-result.webp" alt="The Copilot pane in Outlook in my own tenant. The prompt above reads: move everything from Microsoft Copilot Your scheduled prompt is complete into a folder called Scheduled. Copilot's reply begins Done, followed by three bullets: Created Outlook folder Scheduled; Moved the scheduled prompt completion emails from Microsoft Copilot that were found in your inbox into that folder, with a small message chip beside it; and 25 matching emails were successfully moved. A closing line reads: The Scheduled folder now contains those Copilot-generated notifications." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>One sentence, two jobs: the folder created, then filled.</em></p>
 
 Three things stand out. It **created a folder that did not exist** rather than asking me to make one first. It **scoped itself** — *"that were found in your inbox"* — and left the other folders alone. And it **reported the count**, twenty-five, instead of saying it was done and leaving me to go and check.
 
@@ -1375,17 +1334,15 @@ Scheduling through Copilot chat is available in **classic Outlook for Windows**,
 **Off** in the corner is the giveaway — and typed one sentence into Copilot chat: *"Schedule a catch-up with
 @Nic Bishop before Friday."* No duration, no times, no agenda.
 
-<img src="/images/blog/copilot-september-2026/lab-s84-classic-prompt-annotated.webp" alt="Classic Outlook for Windows in my own tenant. A toggle in the top right reads Try the new Outlook, set to Off, with a Copilot button beside it. Part of the classic ribbon is visible below, showing Viva Insights and Report Message. The Copilot pane is open on the right with an Auto model selector, a shield icon, a plus button and an overflow menu. The sent prompt reads: Schedule a catch-up with at-mention Nic Bishop before Friday. Underneath, Copilot shows a status line reading Queuing things up. A red rounded box, added by me, outlines the Try the new Outlook toggle switched to Off." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The "Try the new Outlook — Off" toggle is the proof this is the classic client.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s84-classic-prompt-annotated.webp" alt="Classic Outlook for Windows in my own tenant. A toggle in the top right reads Try the new Outlook, set to Off, with a Copilot button beside it. Part of the classic ribbon is visible below, showing Viva Insights and Report Message. The Copilot pane is open on the right with an Auto model selector, a shield icon, a plus button and an overflow menu. The sent prompt reads: Schedule a catch-up with at-mention Nic Bishop before Friday. Underneath, Copilot shows a status line reading Queuing things up. A red rounded box, added by me, outlines the Try the new Outlook toggle switched to Off." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The "Try the new Outlook — Off" toggle is the proof this is the classic client.</em></p>
 
 It came back with three morning options, and the wording is worth reading closely: *"both you and Nic are
 marked as available (working elsewhere), and the slot is open."* It had checked two calendars **and** two
 working locations, not just the gaps in mine.
 
-<img src="/images/blog/copilot-september-2026/lab-s84-invite-proposed.webp" alt="The Copilot pane in classic Outlook in my own tenant, with the Try the new Outlook Off toggle still visible at the top. Copilot's reply offers three options, each reading that both you and Nic are marked as available, working elsewhere, and the slot is open, for Tuesday, Wednesday and Thursday at 8:00 AM. Below it a card headed Event carries the title Catch-up with Nic Bishop, two attendee avatars each with a green tick, and three selectable times: 9/15 Tuesday 8:00 AM to 8:25 AM, highlighted as selected, 9/16 Wednesday and 9/17 Thursday at the same times. A Send button and an Open in Outlook button sit at the bottom." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>A complete invite, drafted and waiting — with a Send button rather than a sent meeting.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s84-invite-proposed.webp" alt="The Copilot pane in classic Outlook in my own tenant, with the Try the new Outlook Off toggle still visible at the top. Copilot's reply offers three options, each reading that both you and Nic are marked as available, working elsewhere, and the slot is open, for Tuesday, Wednesday and Thursday at 8:00 AM. Below it a card headed Event carries the title Catch-up with Nic Bishop, two attendee avatars each with a green tick, and three selectable times: 9/15 Tuesday 8:00 AM to 8:25 AM, highlighted as selected, 9/16 Wednesday and 9/17 Thursday at the same times. A Send button and an Open in Outlook button sit at the bottom." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>A complete invite, drafted and waiting — with a Send button rather than a sent meeting.</em></p>
 
 Then it did the thing I have come to expect from Outlook this month. **It did not create the meeting.** It
 drafted one — title written for me, both attendees ticked green, three dates to pick from with Tuesday
@@ -1422,15 +1379,13 @@ It worked out what I was doing on its own: *"It looks like you want to send a fo
 overdue Q3 numbers."* Then it offered the same message at three settings — **Professional and Direct**,
 **Firm but Collaborative**, and a third further down the pane.
 
-<img src="/images/blog/copilot-september-2026/lab-s85-tone-options.webp" alt="The Copilot pane in Outlook in my own tenant, with a Work and Web toggle at the top and Work selected. The pasted draft appears as the sent message. Copilot's reply reads: It looks like you want to send a follow-up to Karin about overdue Q3 numbers. Below are a few versions with different tones, depending on how firm you want to be. Two rewritten versions follow, headed Option 1, Professional and Direct, and Option 2, Firm but Collaborative, each with a full email body. A third option is partly visible at the bottom edge of the pane." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Three tones from a draft, with no instruction attached to it.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s85-tone-options.webp" alt="The Copilot pane in Outlook in my own tenant, with a Work and Web toggle at the top and Work selected. The pasted draft appears as the sent message. Copilot's reply reads: It looks like you want to send a follow-up to Karin about overdue Q3 numbers. Below are a few versions with different tones, depending on how firm you want to be. Two rewritten versions follow, headed Option 1, Professional and Direct, and Option 2, Firm but Collaborative, each with a full email body. A third option is partly visible at the bottom edge of the pane." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Three tones from a draft, with no instruction attached to it.</em></p>
 
 Rewriting an email is not new. This is the part that is.
 
-<img src="/images/blog/copilot-september-2026/lab-s85-writing-improvements.webp" alt="A table in the Copilot pane headed Writing Improvements, with two columns, Area and Improvement. Four rows. Tone: made the message firm and professional rather than sounding frustrated. Clarity: specified the impact of the delay on the wider team and downstream activities. Action: included a clear request for delivery and, where appropriate, confirmation of timing or blockers. Professionalism: maintained accountability while avoiding language that could be perceived as confrontational." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The coaching, unasked for: what changed, and why.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s85-writing-improvements.webp" alt="A table in the Copilot pane headed Writing Improvements, with two columns, Area and Improvement. Four rows. Tone: made the message firm and professional rather than sounding frustrated. Clarity: specified the impact of the delay on the wider team and downstream activities. Action: included a clear request for delivery and, where appropriate, confirmation of timing or blockers. Professionalism: maintained accountability while avoiding language that could be perceived as confrontational." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The coaching, unasked for: what changed, and why.</em></p>
 
 Underneath the rewrites it produced a **Writing Improvements** table, unprompted, naming what it changed and
 why. *Tone*: firm rather than frustrated. *Clarity*: spell out the impact of the delay. *Action*: add a clear
@@ -1463,9 +1418,8 @@ It said what it was about to do before doing it — *"I'll pull the full calenda
 files, chats, and meeting context, then turn it into a concise prep brief with talking points and questions"*
 — and showed a **Reasoned for 9s** line you can expand to see the working.
 
-<img src="/images/blog/copilot-september-2026/lab-s86-prep-brief-classic.webp" alt="The Copilot pane in classic Outlook for Windows in my own tenant, with the Try the new Outlook toggle set to Off at the top and part of the classic ribbon visible below it. A reference chip reads FW: Caldenza Relief. The prompt reads: help me prepare for this meeting. Copilot replies that it will pull the full calendar item and any related emails, files, chats and meeting context, then turn it into a concise prep brief with talking points and questions. An expandable line reads Reasoned for 9s. The next paragraph reads: I found the meeting invite and related conversation. The available material is limited, so this brief separates confirmed facts from suggested preparation. A Meeting snapshot heading follows with bullets stating the meeting was scheduled for Monday 14 September 2026 at 3:00 to 3:30 pm in Microsoft Teams and that the time has now passed; that the invite was sent by Colin Ballinger to three named people; that the invitation contains no agenda, background or attachments beyond the Teams joining details; and that the associated chat contains only the facilitator's opening message. Each bullet carries a small envelope citation icon." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. A prep brief that admits there was very little to prepare from.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s86-prep-brief-classic.webp" alt="The Copilot pane in classic Outlook for Windows in my own tenant, with the Try the new Outlook toggle set to Off at the top and part of the classic ribbon visible below it. A reference chip reads FW: Caldenza Relief. The prompt reads: help me prepare for this meeting. Copilot replies that it will pull the full calendar item and any related emails, files, chats and meeting context, then turn it into a concise prep brief with talking points and questions. An expandable line reads Reasoned for 9s. The next paragraph reads: I found the meeting invite and related conversation. The available material is limited, so this brief separates confirmed facts from suggested preparation. A Meeting snapshot heading follows with bullets stating the meeting was scheduled for Monday 14 September 2026 at 3:00 to 3:30 pm in Microsoft Teams and that the time has now passed; that the invite was sent by Colin Ballinger to three named people; that the invitation contains no agenda, background or attachments beyond the Teams joining details; and that the associated chat contains only the facilitator's opening message. Each bullet carries a small envelope citation icon." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. A prep brief that admits there was very little to prepare from.</em></p>
 
 Here is the part I did not expect. The meeting I picked was a thin one — an invite with nothing hanging off
 it. Copilot went and checked anyway, found the chat as well as the invite, and then said so out loud:
@@ -1529,9 +1483,8 @@ Copilot can **create Planner tasks and answer questions about them** without you
 **What I found on 14 September 2026.** I asked for it the way you would say it out loud: *"Create a Planner
 task to review the Caldenza pack, due Friday."*
 
-<img src="/images/blog/copilot-september-2026/lab-s89-task-created.webp" alt="Copilot chat in my own tenant. The prompt reads: Create a Planner task to review the Caldenza pack, due Friday. Copilot replies, I've created the private task, followed by a bold task name, Review the Caldenza pack, and three details: Status, Not Started; Priority, Important; and Due, 18 September 2026 in brackets Friday, with a small citation icon. A closing line reads: The task has been saved as a private task in your Planner tasks, also with a citation icon. A Sources control sits underneath." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. "Friday" resolved to a date, and shown to me.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s89-task-created.webp" alt="Copilot chat in my own tenant. The prompt reads: Create a Planner task to review the Caldenza pack, due Friday. Copilot replies, I've created the private task, followed by a bold task name, Review the Caldenza pack, and three details: Status, Not Started; Priority, Important; and Due, 18 September 2026 in brackets Friday, with a small citation icon. A closing line reads: The task has been saved as a private task in your Planner tasks, also with a citation icon. A Sources control sits underneath." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. "Friday" resolved to a date, and shown to me.</em></p>
 
 Two small things are worth noticing. It turned **Friday** into **18 September 2026** and showed me the date
 it had settled on — which is the only way you would ever catch it getting that wrong. And it gave the task a
@@ -1541,9 +1494,8 @@ It also said where the task had gone: a **private** task, not something dropped 
 
 Then I did the thing worth doing whenever an assistant tells you it has saved something. I went and looked.
 
-<img src="/images/blog/copilot-september-2026/lab-s89-task-verified.webp" alt="The Planner task detail pane in my own tenant, headed Private tasks. The task title reads Review the Caldenza pack. An information banner says some task fields may not appear because this task is private, was created in Microsoft To Do, or with a flagged Outlook email. Under a Task details tab the fields read Status, Not started; Priority, Important with a red exclamation mark; Start date, empty with a Set start date prompt; Due date, 09/18/2026; and Repeat, Does not repeat." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>The same task, opened in Planner. The chat's account of itself matched the record.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s89-task-verified.webp" alt="The Planner task detail pane in my own tenant, headed Private tasks. The task title reads Review the Caldenza pack. An information banner says some task fields may not appear because this task is private, was created in Microsoft To Do, or with a flagged Outlook email. Under a Task details tab the fields read Status, Not started; Priority, Important with a red exclamation mark; Start date, empty with a Set start date prompt; Due date, 09/18/2026; and Repeat, Does not repeat." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The same task, opened in Planner. The chat's account of itself matched the record.</em></p>
 
 It was really there — right title, due **09/18/2026**, priority **Important**, with a banner explaining that
 some fields stay hidden because the task is private.
@@ -1575,9 +1527,8 @@ toolbar, which is why I could not find it the first time I looked.
 **What I found on 14 September 2026.** I opened a plan belonging to a team and asked it the most obvious
 question I could think of.
 
-<img src="/images/blog/copilot-september-2026/lab-s90-planner-agent-priority.webp" alt="The Planner Agent chat pane open in my own tenant. My prompt reads: what are my highest priority tasks? The agent replies under the heading Planner Agent, preceded by a collapsed line reading Reasoning completed in 1 step. The answer says: In your open Onvexa Launch Tracker plan, I found four open tasks assigned to you. They are all marked Medium priority, so there isn't a single higher-priority task among them. It then offers to break the tie by due date and lists four tasks with their due dates of August 4, 5, 6 and 9, their bucket, and notes on one being assigned to a second person and another being At Risk. Small task chips sit under several lines as citations. The closing line reads: All four are still Not started, and all of those due dates have already passed as of September 14. A composer at the foot reads: Describe what you'd like help with." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The Planner Agent answering a question it could have faked.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s90-planner-agent-priority.webp" alt="The Planner Agent chat pane open in my own tenant. My prompt reads: what are my highest priority tasks? The agent replies under the heading Planner Agent, preceded by a collapsed line reading Reasoning completed in 1 step. The answer says: In your open Onvexa Launch Tracker plan, I found four open tasks assigned to you. They are all marked Medium priority, so there isn't a single higher-priority task among them. It then offers to break the tie by due date and lists four tasks with their due dates of August 4, 5, 6 and 9, their bucket, and notes on one being assigned to a second person and another being At Risk. Small task chips sit under several lines as citations. The closing line reads: All four are still Not started, and all of those due dates have already passed as of September 14. A composer at the foot reads: Describe what you'd like help with." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The Planner Agent answering a question it could have faked.</em></p>
 
 I asked for my highest priority tasks, and the honest answer was that there were not any. All four were marked
 medium, so there was no top of the list to give me. It said so, and then it did the useful thing instead: it
@@ -1612,9 +1563,8 @@ the chat pane rather than the whole window, so I cannot confirm that part from w
 **What I found on 14 September 2026.** Inside a Copilot Notebook, **Add references** opens a picker — and
 **Meetings** is a tab of its own, sitting between **Files** and **Emails**.
 
-<img src="/images/blog/copilot-september-2026/lab-s91-meetings-tab.webp" alt="A dialog in my own tenant headed Add references, with a search box beneath it. A row of tabs reads All, Chats, Files, Meetings, Emails and Sites, with Meetings selected as a filled black pill. Icons for upload, link and OneDrive sit at the right of that row. Below is a scrollable list of meetings, each with a calendar icon, a name on the left and a date and time range on the right: repeated one-to-one meetings with two colleagues across 14, 13 and 12 September 2026, a Supplier Strategy and Dual-Sourcing Workshop on Saturday 12 September from 7:00 to 8:30 AM, and a Logistics and Freight Rate Review the same morning. An Add button, greyed out, and a Cancel button sit at the bottom." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. Meetings as a source type, not a workaround.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s91-meetings-tab.webp" alt="A dialog in my own tenant headed Add references, with a search box beneath it. A row of tabs reads All, Chats, Files, Meetings, Emails and Sites, with Meetings selected as a filled black pill. Icons for upload, link and OneDrive sit at the right of that row. Below is a scrollable list of meetings, each with a calendar icon, a name on the left and a date and time range on the right: repeated one-to-one meetings with two colleagues across 14, 13 and 12 September 2026, a Supplier Strategy and Dual-Sourcing Workshop on Saturday 12 September from 7:00 to 8:30 AM, and a Logistics and Freight Rate Review the same morning. An Add button, greyed out, and a Cancel button sit at the bottom." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. Meetings as a source type, not a workaround.</em></p>
 
 That is the detail worth having. Meetings are not bolted on through a pasted link or an exported transcript
 file — they are a reference type in their own right, with a search box over the top of them. The list names
@@ -1640,9 +1590,8 @@ From a chat in OneDrive you can **find content, analyse files and data, and crea
 **What I found on 14 September 2026.** I opened the Copilot panel in OneDrive to see where it starts you off,
 because the suggestions a product offers on an empty screen tell you where its makers think the value is.
 
-<img src="/images/blog/copilot-september-2026/lab-s92-onedrive-starters.webp" alt="The Copilot panel open in OneDrive in my own tenant. It is headed Copilot with a pin and close control, greets the signed-in user by name and says: Here are some ideas to get you started. Six suggestion buttons follow: Give me the latest on, project; Find files on, topic; Find the file shared with me by, person; Find a file that was shared in a, meeting; Find a file I recently edited about, topic; and What can Copilot do in OneDrive? A message box at the bottom reads: Ask a question about your files." loading="lazy" decoding="async" />
-
-<p class="img-caption"><em>My own tenant, 14 September 2026. The front door to Copilot in OneDrive.</em></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s92-onedrive-starters.webp" alt="The Copilot panel open in OneDrive in my own tenant. It is headed Copilot with a pin and close control, greets the signed-in user by name and says: Here are some ideas to get you started. Six suggestion buttons follow: Give me the latest on, project; Find files on, topic; Find the file shared with me by, person; Find a file that was shared in a, meeting; Find a file I recently edited about, topic; and What can Copilot do in OneDrive? A message box at the bottom reads: Ask a question about your files." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The front door to Copilot in OneDrive.</em></p>
 
 Six suggestions, and five of them are about finding something. Give me the latest on a project. Find files on
 a topic. Find the file shared with me by a person. Find a file that was shared in a meeting. Find a file I
@@ -2488,8 +2437,8 @@ The other two from August, *deep citations* ([Roadmap 523223](https://www.micros
 - [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 - [What's new in Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new)
 - [AI at Work Roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap)
-- [Microsoft Copilot Blog board](https://techcommunity.microsoft.com/category/microsoft365copilot/blog/microsoft-copilot-blog)
-- [Copilot Studio Blog board](https://techcommunity.microsoft.com/category/microsoftcopilot/blog/copilot-studio-blog)
+- [Microsoft Copilot Blog board](https://techcommunity.microsoft.com/category/microsoft-copilot/blog/microsoft-copilot-blog)
+- [Copilot Studio Blog board](https://techcommunity.microsoft.com/category/microsoft-copilot/blog/copilot-studio-blog)
 - [What's New in Microsoft Copilot - August 2026](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 - [Domain exclusion overview](https://learn.microsoft.com/en-us/copilot/domain-exclusion)
 - [Microsoft Power CAT blog](https://microsoft.github.io/mcscatblog/)
