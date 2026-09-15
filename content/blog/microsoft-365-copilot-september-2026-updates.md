@@ -795,6 +795,8 @@ on Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research.
 
 ## Microsoft 365 apps and everyday work
 
+#### PowerPoint
+
 ### 31. PowerPoint can be locked to your approved template
 
 *For: Copilot in PowerPoint · Rolled out August 2026*
@@ -840,7 +842,7 @@ I went looking on **14 September 2026** and that checkbox was not in my tenant y
 <p><strong>Why this matters:</strong> Long prompts try to describe a whole deck at once, and the detail gets lost. Putting the instruction next to the slide it applies to is a much more natural way to work, and it survives into the next revision because it lives in the file.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/official-65-brand-kit-note-instructions-annotated.webp" alt="Official Microsoft image of a Brand Kit template settings dialog titled Edit details, reading Make this template easier to find by editing tags or description. The template name is Adventure Works MTB Line Expansion and the Brand Kit is Adventure Works Cycle. A Tags field holds removable chips for PowerPoint, Product Launch, Executive, Internal, Marketing, Product Management, Sales, Finance, English and Corporate. Below the description box sits a ticked checkbox labelled Allow note instructions, with the explanation Use slide notes to control how Copilot updates and creates content. A thumbnail beside the dialog shows a slide reading MTB Line Expansion over a mountain biking photograph. A red rounded box, added by me, outlines the ticked Allow note instructions checkbox and its sub-label." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/official-65-brand-kit-note-instructions-annotated.webp" alt="Official Microsoft image of a Brand Kit template settings dialog titled Edit details, reading Make this template easier to find by editing tags or description. The template name is Adventure Works MTB Line Expansion and the Brand Kit is Adventure Works Cycle. A Tags field holds removable chips for PowerPoint, Product Launch, Executive, Internal, Marketing, Product Management, Sales, Finance, English and Corporate. Below the description box sits a ticked checkbox labelled Allow note instructions, with the explanation Use slide notes to control how Copilot updates and creates content. A thumbnail beside the dialog shows a slide reading MTB Line Expansion over a mountain biking photograph. In Microsoft&rsquo;s own image, a red rounded box outlines the ticked Allow note instructions checkbox and its sub-label. A red callout added by me reads: Slide notes now steer Copilot." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
 <p><img src="/images/blog/copilot-september-2026/lab-s65-edit-details-no-checkbox.webp" alt="A capture from my own tenant showing the same Edit details dialog for a Brand Kit template. Template Name reads Caldova Brand Template and Brand Kit reads Caldova Brand Kit. A Tags field holds removable chips for PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English and Minimalist. Below that sits a Description box reading A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates, with a character count of 162 of 250. The form ends with Save and Cancel buttons. There is no Allow note instructions checkbox anywhere in it. A red callout added by me reads: No note checkbox here on 14 September 2026." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
@@ -925,7 +927,7 @@ It replied to me in German, which I did not ask for but rather liked. And it was
 
 The result holds up in the hardest direction. In the English original the right-hand column ran off the bottom of the slide. German runs roughly a third longer than English, and it still fits, with clear space underneath.
 
-<p><img src="/images/blog/copilot-september-2026/lab-s67-translated-slide.webp" alt="A slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents, with the body text now in German. Two columns headed Copilot Agent and Copilot Studio Agent each hold five German bullet points. Red spell-check underlines run beneath many of the German words. All of the text sits inside the slide, with clear space below the final bullet." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s67-translated-slide.webp" alt="A slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents, with the body text now in German. Two columns headed Copilot Agent and Copilot Studio Agent each hold five German bullet points. Red spell-check underlines run beneath many of the German words. All of the text sits inside the slide, with clear space below the final bullet. A red callout added by me reads: German runs longer, and it still fits." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The same slide, translated. In English the right-hand column overran the bottom edge; in German — the longer language — it fits. The red underlines are my spell-checker, still set to English.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
@@ -1099,6 +1101,8 @@ And the finished deck answered the provenance question on its own. Where it lift
 
 📖 [AI at Work Roadmap 555898](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555898) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
+#### Word
+
 ### 41. Word can add hyperlinks for you
 
 *For: Copilot in Word · Rolled out August 2026*
@@ -1193,6 +1197,8 @@ There were also two of them, not one. Alongside Claude Sonnet 5 my tenant offere
 
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
+#### Excel
+
 ### 46. Excel can use Python when editing with Copilot
 
 *For: Copilot in Excel · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
@@ -1267,6 +1273,8 @@ The surprise is that the history is not just this session. My list still held a 
 </blockquote>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
+
+#### Outlook
 
 ### 49. Custom engine agents work directly in Outlook
 
@@ -1444,6 +1452,8 @@ It is the behaviour you would hope for.
 
 📖 [AI at Work Roadmap 542186](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=542186) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
+#### Teams and Planner
+
 ### 54. Teams can translate a meeting recap after the fact
 
 *For: Copilot in Microsoft Teams · Rolled out August 2026*
@@ -1582,6 +1592,8 @@ for the next issue.
 </blockquote>
 
 📖 [AI at Work Roadmap 560706](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560706) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+
+#### OneDrive and SharePoint
 
 ### 59. OneDrive can take you from files to finished work in chat
 
