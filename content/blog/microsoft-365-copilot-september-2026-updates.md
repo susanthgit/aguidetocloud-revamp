@@ -56,7 +56,7 @@ Six things explain most of this month:
 1. **[Agents on Copilot Studio's new GitHub Copilot harness use usage-based billing regardless of Microsoft 365 Copilot licensing.](#64-agents-on-the-new-harness-are-billed-for-all-work-regardless-of-copilot-licensing)** The harness went generally available, and agents running on it use usage-based billing *for all work, regardless of Microsoft 365 Copilot licensing*. Credits are consumed while makers build, preview and evaluate — not only when an agent runs in production. This is the change most likely to surprise someone this quarter.
 2. **[Domain exclusion came back.](#90-domain-exclusion-is-back)** Microsoft announced it on 28 July, rolled it back a week later on 4 August, and turned it on again on 9 September. It is now documented on Microsoft Learn with limits that were not in the original announcement: it understands only two levels of subdomains, and it filters web page results only — news and other verticals can still be cited. If you shelved this in August, you can pick it up again.
 3. **[Two more frontier models arrived, in two places.](#1-gpt-6-astra-arrived-in-cowork-and-copilot-studio)** GPT-6 Astra (4 September) and [Claude Fable 5.1](#2-claude-fable-51-replaced-fable-5) (1 September) joined the frontier models in **Copilot Cowork and Copilot Studio** — Microsoft scopes both announcements to those two surfaces, not to Copilot across the board. Fable 5.1 replaces Fable 5, which the August issue covered as an off-by-default preview.
-4. **[Cowork learned to build apps, and to prove its worth.](#24-cowork-can-build-a-working-app-from-a-description)** An App skill turns a description into a small working app with no code. Separately, the Consumption Dashboard now reports [Cowork assisted hours and value](#92-measuring-cowork-in-hours-of-work-not-prompts) across eight task types, with the methodology published.
+4. **[Cowork learned to build apps, and to estimate what they are worth.](#24-cowork-can-build-a-working-app-from-a-description)** An App skill turns a description into a small working app with no code. Separately, the Consumption Dashboard now reports [Cowork assisted hours and value](#92-measuring-cowork-in-hours-of-work-not-prompts) across eight task types, with the methodology published.
 5. **[Grok joined the model list, switched off.](#91-grok-models-from-spacexai-off-by-default)** Microsoft added Grok from SpaceXAI as a model choice, added SpaceXAI to its Online Services Subprocessor List, and made the admin setting **disabled by default**. It is a Frontier Program preview in Word, Excel and PowerPoint, and it is not available in the EU, EFTA or the UK during the preview.
 6. **[Microsoft cancelled two things it had promised.](#22-proactive-push-notifications-were-cancelled)** Proactive push notifications in the Copilot mobile app — which I covered in August — and [Interactive Agents for Teams Meetings and Calls](#23-interactive-agents-for-teams-meetings-and-calls-was-cancelled). Both are now marked cancelled on the roadmap.
 
@@ -473,9 +473,9 @@ Worth noticing regardless: every bullet in Key Insights carries a numbered citat
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
-### 15. Notebooks take audio, images and notes together
+### 15. Notebooks take audio, images and notes together — on Android
 
-*For: Copilot Notebooks · Rolling out September 2026*
+*For: Copilot Notebooks on **Android** · Rolling out September 2026 · Already available on iOS and iPad via OneNote*
 
 **Multimodal capture** brings audio, images and notes into one experience, automatically structured into notes and summaries.
 
@@ -603,7 +603,7 @@ The **ServiceNow connectors support role-based permissions**, so what Copilot re
 
 In the August issue I covered proactive push notifications in the Copilot mobile app — *Your Day at a Glance* — as something Microsoft said had shipped, while noting the roadmap still said September. Microsoft has now marked that roadmap item **cancelled**. The entry carries the note *"Updated August 26, 2026: We have decided not to move forward with this change at this time."* That is after the August issue went out, which is why it appears here.
 
-So the honest position is: I reported it as announced, with a caveat about the date, and the feature is not coming in that form. If it made it into a communications plan or an adoption deck, take it out.
+So the honest position is: I reported it as announced, with a caveat about the date, and the feature is not coming in that form. If it made it into a communications plan or an adoption deck, take it out &mdash; though read the next paragraph first, because the scope is narrower than I originally reported.
 
 **One detail I missed in August, and should not have.** The roadmap entry is tagged for **GCC, GCC High and DoD** — and for nothing else. There is no worldwide multi-tenant tag on it. On the roadmap's own record, then, this was a US government cloud item for Android and iOS, which changes who the cancellation actually affects: if you are a commercial tenant, this entry was never describing your tenant to begin with. I am adding that here rather than quietly fixing it, because the August issue did not make the distinction either, and the correction is more useful to you than the original item was.
 
@@ -999,7 +999,7 @@ Look at the option sitting at the top of that list.
 <p><img src="/images/blog/copilot-september-2026/lab-s69-style-options.webp" alt="A capture from my own tenant showing a Copilot prompt in PowerPoint headed How should your presentation look and feel? The first option, marked Recommended, reads Your organization's templates, described as Use templates from my organization's brand kits. Below it are three suggested styles: Clinical Navy and White, described as crisp white background with deep navy headers and teal accent rules; Warm Sand and Deep Teal, described as sand backgrounds with deep teal panels and amber highlights; and Bold Charcoal Data Focus, described as charcoal slides with oversized figures in lime. A final option reads Enter another option, and there are Confirm and Skip all buttons. Red callouts added by me read: It asks before it builds; Your brand kit is the default; and Three looks, or write your own." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>"Your organization's templates — use templates from my organization's brand kits." This is where brand kits surface in PowerPoint.</em></p>
 
-That is worth pausing on. In [section 35](#35-copilot-can-edit-smartart-on-the-canvas), Copilot in PowerPoint told me no brand kit was available. Here, on the create path, brand kits are the *recommended* option. So they are not absent from PowerPoint at all — they show up when you are **making** a deck, and not when you are **editing** one. That distinction took me two tests to find and I have not seen it written down anywhere.
+That is worth pausing on. In [section 35](#35-copilot-can-edit-smartart-on-the-canvas), Copilot in PowerPoint told me no brand kit was available. Here, on the create path, brand kits are the *recommended* option. So they are not absent from PowerPoint at all. The working hypothesis I came away with is that they surface on the **create** path and not on the **edit** path — but that is two runs, not a rule, and I have not seen it written down anywhere. It is equally possible this is a rollout difference, or that the create flow offered the option without successfully applying the kit. Worth knowing where to look; not worth quoting as product behaviour until someone confirms it.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A surprising number of decks start life as an email that got too long. Pointing Copilot at the thread skips the step where someone copies the argument into a blank slide and loses half of it.</p>
@@ -1094,7 +1094,7 @@ And the finished deck answered the provenance question on its own. Where it lift
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The quote is credited on the slide itself.</em></p>
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> Useful, and worth a moment's thought. A deck grounded in the open web inherits whatever that page says, so this is a feature to pair with the domain exclusion control in [section 90](#90-domain-exclusion-is-back) rather than to enable and forget. My one deck did credit its source on the slide, which helps — but that is a single run, not a promise.</p>
+<p><strong>Why this matters:</strong> Useful, and worth a moment's thought. A deck grounded in the open web inherits whatever that page says, so this is a feature to brief people on rather than to enable and forget. The domain exclusion control in [section 90](#90-domain-exclusion-is-back) is the nearest related lever, but Microsoft describes it as filtering **web search results** for Copilot and Copilot Chat, and I have not confirmed it constrains a URL you hand to PowerPoint directly &mdash; so do not assume it covers this. My one deck did credit its source on the slide, which helps — but that is a single run, not a promise.</p>
 </blockquote>
 
 📖 [AI at Work Roadmap 555898](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555898) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
@@ -1204,14 +1204,14 @@ Copilot in Excel can **use Python** as part of an edit, rather than being limite
 The test was deliberately chosen to be the kind of thing formulas struggle with: find the outliers in a column using standard deviation. Copilot did the work — mean, sample standard deviation, z-scores, a ±3σ test — but it did all of it in **native Excel formulas**. No Python, no code block, no Python label anywhere in the reply. Other prompts did not surface it either.
 
 <p><img src="/images/blog/copilot-september-2026/lab-s79-formulas-not-python.webp" alt="Part of a Copilot reply in Excel in my own tenant. A bullet reads: 15:43 local time, Added the standard-deviation outlier audit in Risk Chart exclamation A18 colon F23. Sub-bullets read: Added mean, sample standard deviation, z-score, and plus or minus 3 sigma outlier formulas; and Formatted the audit table, all four results are No. Below sits a monospaced code block containing three Excel formulas: a COUNTIF against the sales accounts sheet, STDEV.S over B4 to B7, and IF ABS of E20 greater than 3 returning Yes or No. Red callouts added by me read: Mean, z-score, outliers; and All in Excel formulas, no Python." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. A textbook Python job, answered entirely in formulas.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. A statistics question, answered entirely in formulas.</em></p>
 
 I would not call that a failure, and it is worth saying why. Standard deviation is something Excel does perfectly well on its own, and `STDEV.S` is a faster, cheaper and more auditable answer than a script that does the same thing. Copilot reaching for formulas when formulas are enough is arguably the right call rather than a missing feature. Where Python earns its place is the work formulas genuinely cannot reach — and I did not get far enough to find that edge.
 
 So: announced as available from 25 August, but not something I could trigger on demand in my tenant on 14 September. I will push on harder problems for the next issue.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> This is the quiet ceiling-raiser. Formula-only analysis hits a wall on anything statistical; Python does not. It also means the person asking the question no longer needs to know Python to get a Python answer.</p>
+<p><strong>Why this matters:</strong> This is the quiet ceiling-raiser, though my own test does not demonstrate it. Python earns its place on the work formulas genuinely cannot reach &mdash; regression, clustering, anything iterative &mdash; and a standard-deviation audit is not that work, which is why Copilot answered it in formulas and why this run says nothing either way about whether Python is available to me. It also means the person asking the question no longer needs to know Python to get a Python answer.</p>
 </blockquote>
 
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
@@ -1754,7 +1754,7 @@ That 72-hour wait is the one to plan around. It rules this out as a fix you appl
 it means testing it is a two-sitting job rather than a two-minute one.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> Most tenants contain several versions of the same policy, and the newest one is not always the one Copilot finds. This is the cheapest available fix for the single most common complaint about Copilot answers — that it quoted something out of date.</p>
+<p><strong>Why this matters:</strong> Most tenants contain several versions of the same policy, and the newest one is not always the one Copilot finds. Within Copilot Search, this is the cheapest available fix for the most common complaint about Copilot answers — that it quoted something out of date. Note the boundary: Microsoft scopes the label and the ranking effect to Copilot Search, so this does not follow the same content into every other Copilot surface.</p>
 </blockquote>
 
 📖 [AI at Work Roadmap 561323](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561323) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [SharePoint authoritative sites in Copilot Search](https://learn.microsoft.com/en-us/sharepoint/sharepoint-authoritative-sites) · [Prerequisites for SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites)
@@ -1775,7 +1775,7 @@ After two months in preview, the capability got a name and a GA date: the GitHub
 
 Microsoft's description is that it gives Copilot Studio *"the coding and reasoning capabilities behind our most advanced agent experiences (like Copilot Cowork and the GitHub Copilot coding agent)"*, so agents can handle *"processes that have many steps, many sources, and ambiguous decision points."*
 
-It runs the frontier reasoning models — Microsoft gives Opus 5, GPT-5.6 Sol and Fable 5 as examples rather than a closed list — and can *"plan, reason through dynamic problems, run an agentic loop, use skills, integrate workflows, connect to tools and agents in other platforms, and produce rich, multi-part outputs."*
+It runs the frontier reasoning models — Microsoft's August announcement gave Opus 5, GPT-5.6 Sol and Fable 5 as examples rather than a closed list, and [Fable 5 has since been replaced by Fable 5.1](#2-claude-fable-51-replaced-fable-5) — and can *"plan, reason through dynamic problems, run an agentic loop, use skills, integrate workflows, connect to tools and agents in other platforms, and produce rich, multi-part outputs."*
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The phrase to hold onto is "long-horizon". Most agent platforms are good at a request and a response. The claim here is about work with many steps and no obvious right answer at each one — which is most real business process, and the reason so many agent pilots stall after the demo.</p>
@@ -1854,7 +1854,7 @@ The enforcement documentation confirms it from the other direction, by listing w
 
 📖 [Copilot Credits billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) · [Credit enforcement policy](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/enforcement-policy-credits) · [Adopting the GitHub Copilot Harness: Cost Control and Governance](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/)
 
-### 66. There is a property that tells you which agents are on the new harness
+### 66. `isCLIAgent` &mdash; the property that tells you which agents are on the new harness
 
 *For: Admins · Available now*
 
@@ -2012,7 +2012,7 @@ Power CAT also published a piece on Work IQ, the layer that gives agents access 
 
 ---
 
-**A note on what follows — these have not shipped.** The next ten items are roadmap entries, not releases. I checked every one of them on 14 September 2026 and all ten still read In development. Nine carry a September general-availability date and one, [section 81](#81-blocking-maker-provided-credentials), carries an **August** date it has already missed — which is the clearest possible illustration of why a planned month is not evidence of a launch. Nothing here has been tested, by me or by you, and none of it should go into a plan as available. I include them because knowing what Microsoft intends is useful when you are deciding what to pilot next quarter, but the only honest status for all ten is *announced, not arrived*.
+**A note on what follows — these have not shipped.** The next ten items are roadmap entries, not releases. I checked every one of them on 14 September 2026 and all ten still read In development. Nine carry a September general-availability date and one, [section 81](#81-blocking-maker-provided-credentials), carries an **August** date it has already missed — which is the clearest possible illustration of why a planned month is not evidence of a launch. I could not test any of it, and none of it should go into a plan as available on the strength of a roadmap row. Someone in a preview ring may well have hands on these already &mdash; [section 55](#55-the-planner-agent-writes-a-status-report) is a released feature whose roadmap entry still reads In development, so the status lags reality in both directions and its silence is not evidence of absence. I include them because knowing what Microsoft intends is useful when you are deciding what to pilot next quarter, but the only honest status for all ten is *announced, not arrived*.
 
 ### 75. Dataverse as a native knowledge source
 
@@ -2062,7 +2062,7 @@ Microsoft plans to let agents ground in structured SharePoint list data, as dist
 
 Microsoft plans an **agent node** that would let a workflow call an agent as a single step — reasoning over data, calling tools and returning a response inline.
 
-Small honesty note: this item appears twice on the roadmap under two different IDs with identical titles and dates. I have linked the lower one.
+Small honesty note: this item appears twice on the roadmap under two different IDs with identical titles and dates. I have linked the lower one. A second wrinkle, which I cannot resolve: [section 71](#71-new-designers-for-agents-and-workflows) reports Microsoft describing the new workflow designer as already supporting agent nodes, while this roadmap entry still reads In development. The most likely reading is that placing a node on the canvas shipped ahead of the full capability this entry describes, but Microsoft does not say that anywhere I can find, so treat the roadmap status as the conservative one and the designer note as the optimistic one.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is the join between deterministic automation and judgement. A workflow handles the steps that must happen the same way every time and hands the ambiguous one to an agent — which is a far more honest architecture than asking an agent to run the whole process.</p>
@@ -2394,8 +2394,12 @@ Three caveats before anyone builds a chargeback model on it. It is *"for public 
 <p><img src="/images/blog/copilot-september-2026/official-28-ai-cost-dashboard-github-usage.webp" alt="Official Microsoft image of a page headed GitHub usage, reached from the AI Cost Dashboard, filtered to Scope your group, Organization all and Job function all, for a time period of month to date covering 1 to 28 October. Three cards read Active GitHub Copilot users 10,902; Agent adoption 45 percent, 4,905 of 10,902 active users; and Most used, listing chat mode Ask, model Claude Opus 4.6 and language Markdown. A Chat requests section below holds a line chart of average chat requests per active user and a bar chart of chat requests by mode, showing Ask 4.4 thousand, Edit 3.1 thousand, Agent 3.6 thousand, Inline 3.6 thousand, Custom 3.2 thousand and Plan 1.4 thousand, both excluding code completions. Red callouts added by me read: Developer agent adoption, measured; and Which models the spend goes to." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
-<p><img src="/images/blog/copilot-september-2026/official-28-usage-intensity.webp" alt="Official Microsoft image of a Usage intensity view. The key insight reads: the top 1 percent of users use 65 percent of all credits, averaging 25 percent less credits per user compared to others. A banded table lists all users at 450,046 credits, the top 1 percent at 250,046 credits or 65 percent, the top 2 to 5 percent at 91,046 credits or 12 percent, the top 6 to 25 percent at 75,046 credits or 9 percent, and the top 26 to 50 percent at 60,041 credits or 8 percent. Red callouts added by me read: Top 1% burn 65% of all credits; and That is 100 people." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft Learn.</em></p>
+<p><img src="/images/blog/copilot-september-2026/official-28-usage-intensity.webp" alt="Official Microsoft image of a Usage intensity view. The key insight reads: the top 1 percent of users use 65 percent of all credits, averaging 25 percent less credits per user compared to others. A banded table lists all users at 450,046 credits, the top 1 percent at 250,046 credits or 65 percent, the top 2 to 5 percent at 91,046 credits or 12 percent, the top 6 to 25 percent at 75,046 credits or 9 percent, and the top 26 to 50 percent at 60,041 credits or 8 percent. Red callouts added by me read: Top 1% burn 65% of all credits; and That is 100 people. The figure&rsquo;s own numbers do not support its 65 percent headline: 250,046 of 450,046 credits is 55.6 percent, and the four bands add up to 476,179, which is more than the all-users total." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft Learn &mdash; and worth reading twice, for the reason below.</em></p>
+
+One last thing, and it is the best argument in this whole section for the caveats at the top of it. I added up the sample figure. **It does not add up.** The headline says the top 1 percent use **65 percent** of all credits, but the table underneath puts them at 250,046 of 450,046 credits, which is **55.6 percent**. The four bands shown total 476,179 credits &mdash; more than the all-users figure they are meant to be a subset of. The 2 to 5 percent band is labelled 12 percent and works out at 20 percent.
+
+I am not going to pretend to know which number is wrong, and I am certainly not going to publish a corrected version of someone else&rsquo;s sample data. It is illustrative data in a public-preview feature, and that is probably all it is. But it lands rather well next to Microsoft&rsquo;s own sentence that this dashboard is *&ldquo;for reference only&rdquo;*. If the worked example on the documentation page does not reconcile, treat every number this dashboard gives you as a direction of travel and settle the invoice somewhere else.
 
 📖 [Consumption Dashboard](https://learn.microsoft.com/en-us/viva/insights/org-team-insights/ai-cost-dashboard) · [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
