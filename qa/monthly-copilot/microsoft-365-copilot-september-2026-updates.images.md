@@ -91,7 +91,7 @@ not a loss on our side.
 
 ---
 
-## §64 — PowerPoint can be locked to your approved template *(image 1 of 2)*
+## §31 — PowerPoint can be locked to your approved template *(image 1 of 2)*
 `89f090c2d8201949a2128ce74f0a02cd1da5cc70e527f0c6b0fb3753528813a6`
 
 **Observed 14 September 2026 (my own tenant):** The Copilot app&rsquo;s **Create** page. A large
@@ -110,7 +110,7 @@ image shows the exact path named in the text: Create → More… → Brand kits
 .
 
 
-## §64 — PowerPoint can be locked to your approved template *(image 2 of 2)*
+## §31 — PowerPoint can be locked to your approved template *(image 2 of 2)*
 `f931282029cff1d55891172df855c4e4b6af454fad168db31ed5ca5cc78f548c`
 
 **Observed:** A settings page of stacked cards: **Logos** ("Ensure correct logo usage across
@@ -131,7 +131,7 @@ image shows exactly that control and its confirmation dialog
 .
 
 
-## §65 — Slide notes can steer Copilot slide by slide *(image 1 of 2)*
+## §32 — Slide notes can steer Copilot slide by slide *(image 1 of 2)*
 `054b8a41391f5d3b2a1cf7083b8e5eac8e027234aa763a1dbab3c3bb09f5a645`
 
 **Observed:** A Brand Kit page for "Adventure Works Cycle" (breadcrumb "‹ Manage Brand Kits",
@@ -158,7 +158,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** one callout added in a white right margin — “Slide notes now steer Copilot” — pointing at the red box Microsoft already drew around the “Allow note instructions” toggle. No second box was drawn over it. Microsoft’s border is thin enough that an automated red-coverage scan scored it at only 24 pixels after downscaling and read as unannotated; a direct pixel count on the full-size file measured 2,254 red pixels spanning x691–1026, y609–661, confirming the existing box.
 
 
-## §65 — Slide notes can steer Copilot slide by slide *(image 2 of 2)*
+## §32 — Slide notes can steer Copilot slide by slide *(image 2 of 2)*
 `44dfa783a5262813f176dd61171b7486e15f3668d3ace7a03e5a03f12e663a9e`
 
 **Observed:** My own tenant. The **Edit details** form for a Brand Kit template, cropped to the form itself so the whole dialog is in shot. **Template Name** "Caldova Brand Template"; **Brand Kit** "Caldova Brand Kit" (greyed dropdown); a **Tags** box with nine chips — PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English, Minimalist; a **Description** box reading "A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates." with a 162/250 counter; then **Save** (greyed) and **Cancel**. Between the description box and the buttons there is **nothing** — no checkbox, no "Allow note instructions" label, no sub-text.
@@ -168,7 +168,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §66 — You can now author your own PowerPoint skills *(image 1 of 7)*
+## §33 — You can now author your own PowerPoint skills *(image 1 of 7)*
 `f56ff3299f673ee8fc12b23c8293400e1c85c5e1cf50856807e5cacbfa5b5517`
 
 **Observed:** My own tenant. The Copilot pane in PowerPoint. Header "Let's edit your presentation", sub-line "Copilot can edit your presentation directly.", an **Allow editing** dropdown, and a prompt box reading "Create a presentation about" with **+**, microphone and send icons. An open menu sits above the prompt box listing: Add work content (focused), Upload images and files, Designer, Select brand, **Choose skills**, Change data sources.
@@ -178,7 +178,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** One callout on a 3.0× render of a 387px-wide crop, with a 700px right pad. **"Choose skills, in the + menu"** runs a horizontal leader to a dot immediately right of the "Choose skills" row, clear of the menu card's right edge. A second callout naming the **+** button itself was **planned and dropped**: the ink-run scan showed it boxed in on its row by the microphone icon at src x565 and the orange send button at x645, leaving no leader path that would not cross a control. Precedent for annotating a crop this small was checked rather than guessed — the smallest already-annotated source in this post is 325×619.
 
 
-## §66 — You can now author your own PowerPoint skills *(image 2 of 7)*
+## §33 — You can now author your own PowerPoint skills *(image 2 of 7)*
 `ca2f36cbaecccafe2c0332a6b0dc7c9592d60634bcfd4957489d771ce2f7dfa1`
 
 **Observed:** My own tenant. A pane headed **Skills**, then **Skills & plugins** — "Control which skills Copilot can use automatically, and manage their access to external data." First row: **Custom skills**, toggle **off** (grey), with a right chevron. Below it five rows each with a toggle **on** (red/accent): Visualize this slide, Review this presentation, Prepare for questions, Explain this presentation, Sharpen slide titles.
@@ -188,7 +188,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 3.4× render of a 334px-wide crop, with a 700px right pad. **"Custom skills, off"** uses a **shallow diagonal leader** rather than a horizontal one: a straight run at the toggle's own height would have passed through the row chevron the ink scan found at src [295-300], so the box was raised and the leader's y solved at the obstacle's x to prove it passes above it. The render confirms it clears. **"The rest ship on"** points past the "Sharpen slide titles" toggle. The pairing is the point of the image and it reads instantly on the render — one grey toggle called out as off, five red ones called out as on.
 
 
-## §66 — You can now author your own PowerPoint skills *(image 3 of 7)*
+## §33 — You can now author your own PowerPoint skills *(image 3 of 7)*
 `2259bb223199972fbae75c1438eaabeb7b3a9021ac97f087dd5c45d855abbaed`
 
 **Observed:** My own tenant. A back arrow beside "Skills & plugins" and a close X. Heading **Custom skills** with its toggle **off**. Body text: "Custom skills let you extend Copilot with your own skill files. To get started, create a skills folder in your OneDrive." Then an underlined link "Read detailed instructions." and a filled button reading **+ Create skills folder**.
@@ -198,7 +198,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 3.4× render of a 340px-wide crop, with a 700px right pad. **"Off until you create it"** lands its dot on the right edge of the grey toggle — the ink-run scan read that toggle as a short run at src [249-262], narrower than the ON toggles elsewhere in this section, which is exactly the visual difference the label is pointing at. **"Creates the OneDrive folder"** lands beyond the filled "Create skills folder" button, which the scan read as one solid run at src [19-187] because a filled button reads as continuous ink rather than as letters. Both leaders are horizontal and cross only empty card fill.
 
 
-## §66 — You can now author your own PowerPoint skills *(image 4 of 7)*
+## §33 — You can now author your own PowerPoint skills *(image 4 of 7)*
 `35eaf1ec2e35bec9e3140cf0ea3ff9510d68d788120990bd7c4d3a2931c40d29`
 
 **Observed:** My own tenant, OneDrive on the web, cropped to the breadcrumb and file list (browser chrome, left navigation, and the tenant host name in the address bar all removed). Breadcrumb: **My files › Documents › Copilot › Microsoft PowerP… › skills**. A file-type filter row (Word, Excel, PowerPoint, OneNote icons). Columns Name / Modified / Modified By. Two rows: a **folder** "create-infographic-summary.example" and a file **"README.md"**, both "A few seconds ago", both by Colin Ballinger.
@@ -208,7 +208,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** two callouts added into white top and bottom margins. “The path is the trick” points at the breadcrumb, which reads Documents > Copilot > skills. “One folder per skill” points at the create-infographic-summary.example row in the file list. The two-way pad was used because this frame has no usable whitespace on either side.
 
 
-## §66 — You can now author your own PowerPoint skills *(image 5 of 7)*
+## §33 — You can now author your own PowerPoint skills *(image 5 of 7)*
 `2609404857e9b474d590afc3f1dba943a7092850137d68cc36961d70622365d3`
 
 **Observed:** My own tenant. Back arrow beside "Skills & plugins", close X. Heading **Upload skill**. A line "Already have a skill file?" with an information icon. Body: "Add your own skill files to extend what Copilot can do for you. Files are saved directly to your **OneDrive Skills folder.**" (that phrase underlined as a link). Below, a dashed drag-and-drop area with an upload icon reading "Drag & Drop your files or **Browse**".
@@ -218,7 +218,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §66 — You can now author your own PowerPoint skills *(image 6 of 7)*
+## §33 — You can now author your own PowerPoint skills *(image 6 of 7)*
 `23ec8c1e8b47d4ab99e5ae237211311d5d3b417d03b7182f7e3e4c0ee44ce6c0`
 
 **Observed:** My own tenant. A PowerPoint slide titled **"Copilot Agents vs. Copilot Studio Agents"**, body set as two columns of plain black bullet text with no graphics, no cards and no colour. The right-hand column runs past the bottom edge of the slide area.
@@ -228,7 +228,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §66 — You can now author your own PowerPoint skills *(image 7 of 7)*
+## §33 — You can now author your own PowerPoint skills *(image 7 of 7)*
 `996e449edb7490c083cf799c2e344e8bacbf482a9b8b96e828133f8140415061`
 
 **Observed:** My own tenant. The same subject rebuilt: a navy header band carrying "Copilot Agents vs. Copilot Studio Agents", then two white rounded cards each with an icon — left card headed **COPILOT AGENT** in blue, right card headed **COPILOT STUDIO AGENT** in teal — each holding five short lines. A single line runs beneath both cards: "Start in Copilot, graduate to Studio when the work needs custom logic and systems."
@@ -238,7 +238,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §67 — Translation moved into Copilot, and resizes the text for you *(image 1 of 2)*
+## §34 — Translation moved into Copilot, and resizes the text for you *(image 1 of 2)*
 `4a9805d96b96f9fd59c19c14dbcac694e9ea455ea0aee6cff0de6bcba4c3dab9`
 
 **Observed:** The Copilot pane in PowerPoint, portrait. My prompt bubble reads "Translate this presentation into German". Below it, a "Reasoned in 5 steps" block is expanded and shows: "Thinking it through", "Mapping it out", "I'm checking whether slides 1, 3, and 4 are empty by looking at their contents", "I'm translating the editable text on the one slide that contains it and noting that the image-based slides can't be changed", and "I'm reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box". The reply below is in German: "Die Textinhalte sind jetzt auf Deutsch, mit angepasster Schriftgröße, damit alles sauber in die Platzhalter passt. Produktnamen (Copilot, Copilot Studio, Teams) blieben unverändert." A second German paragraph notes that slide 1 contains no text and slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly.
@@ -248,7 +248,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin; the black box already baked into this capture around “Reasoned in 5 steps” is left untouched. “Image slides can’t be translated” points at the end of the reasoning line saying image-based slides can’t be changed; “It resizes text so it still fits” points at the line about keeping content inside the box on slide 2. Both dots were moved after a first pass put them inside the text: profiling each row at 6px steps found the two shortest lines in the reasoning block ending at x283 and x292, and the dots were placed past those.
 
 
-## §67 — Translation moved into Copilot, and resizes the text for you *(image 2 of 2)*
+## §34 — Translation moved into Copilot, and resizes the text for you *(image 2 of 2)*
 `2d3b4346b351926a7b3ccb7af5ba7988571e52dc409fb07fab5c9ccfee015066`
 
 **Observed:** A PowerPoint slide, landscape, white background. Title "Copilot Agents vs. Copilot Studio Agents" in black. Two columns beneath: left headed "Copilot Agent" with five German bullets beginning "Schlanker Assistent, direkt in Microsoft 365 Copilot integriert"; right headed "Copilot Studio Agent" with five German bullets beginning "Vollständige Authoring-Umgebung für individuelle, erweiterbare Agents". Red wavy spell-check underlines appear beneath many German words. Both columns end well above the bottom edge, leaving roughly a fifth of the slide empty.
@@ -258,7 +258,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §68 — Copilot can edit SmartArt on the canvas *(image 1 of 5)*
+## §35 — Copilot can edit SmartArt on the canvas *(image 1 of 5)*
 `1004e72d33cd45b9668f656f77e4fbc9c1a9ec1f961c1d3f534be79b0319d8f4`
 
 **Observed:** The Copilot pane in PowerPoint, portrait. An expanded reasoning list shows three steps: "I am checking slide 3 now to see its current content and layout"; "I'm replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look"; and "I'm building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely".
@@ -268,7 +268,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin. “Shapes, not real SmartArt” points at the end of the reasoning line describing styled headers for a SmartArt-like look — the distinction the section is making. “It places each element itself” points at the line about placing new elements precisely.
 
 
-## §68 — Copilot can edit SmartArt on the canvas *(image 2 of 5)*
+## §35 — Copilot can edit SmartArt on the canvas *(image 2 of 5)*
 `8c5f688244a6ba2da66a1bb5007e8645f30d37977ced99c757ab231839717f5a`
 
 **Observed:** A PowerPoint slide titled "Copilot Agents vs. Copilot Studio Agents". Beneath it, two columns of rounded cards. Left column: a dark navy header bar reading "Copilot Agent" above five pale blue cards. Right column: an orange header bar reading "Copilot Studio Agent" above five pale peach cards. The top-left card carries a dotted selection border.
@@ -278,7 +278,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §68 — Copilot can edit SmartArt on the canvas *(image 3 of 5)*
+## §35 — Copilot can edit SmartArt on the canvas *(image 3 of 5)*
 `7961f76414b1c70312e466d64a79b03778e713d5ffe5b8ef35208aeef9b36367`
 
 **Observed:** A close crop of the Copilot prompt box in PowerPoint. A dropdown labelled "Edit" sits above the typed prompt "match the flow left to right and match my brand colors".
@@ -288,7 +288,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** one callout only — “One plain-English follow-up” — pointing at the end of the typed prompt about brand colours. A second callout was deliberately not added: this is a short, nearly empty strip, and two long parallel leaders across it would read as clutter.
 
 
-## §68 — Copilot can edit SmartArt on the canvas *(image 4 of 5)*
+## §35 — Copilot can edit SmartArt on the canvas *(image 4 of 5)*
 `cc0a1e942a69e80f248f6b90d94dad650dec3060afc5fbdc7f29a48cc4173d75`
 
 **Observed:** A PowerPoint slide showing two horizontal chevron process flows. Top row: a navy anchor box labelled "Copilot Agent" followed by five chevrons deepening in blue, reading "Inside M365 Copilot", "Built in minutes", "Grounded in your data", "Chat, Teams, Word", "Quick task help". Bottom row: an orange anchor box labelled "Copilot Studio Agent" followed by five chevrons deepening in orange, reading "Custom agent studio", "Topics and triggers", "Connectors and APIs", "Publish anywhere", "Automated workflows". One chevron carries a dotted selection border.
@@ -298,7 +298,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §68 — Copilot can edit SmartArt on the canvas *(image 5 of 5)*
+## §35 — Copilot can edit SmartArt on the canvas *(image 5 of 5)*
 `5fc4802a3ed76b1f7ee75ea5538fbc1a0f23c25354a40ae0babd8feabb0d422d`
 
 **Observed:** The Copilot reply panel in PowerPoint. It shows the prompt "match the flow left to right and match my brand colors", a "Reasoned in 7 steps" link, and a reply stating the slide now reads as two left-to-right process flows with a labeled anchor for each agent type and five chevron steps deepening in the theme's blue and orange, with step text condensed to short phrases. A second paragraph reads: "I kept your theme's own palette since no separate brand kit was available — say the word if you want specific hex colors applied instead."
@@ -308,7 +308,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §69 — PowerPoint can build a deck from an email *(image 1 of 3)*
+## §36 — PowerPoint can build a deck from an email *(image 1 of 3)*
 `eb41c6b9d56e1eb8af5a1e4703ddc7ac4074db177be3620b018afac0e8af37de`
 
 **Observed:** The Copilot pane in PowerPoint, portrait. The prompt bubble reads "Create a presentation about Caldenza Relief - range and pack format email from Miguel Garcia". Below it an expanded reasoning list shows four steps: "Mapping it out", "Looking at the details", "I'm locating Miguel Garcia's email so I can build the deck", and "Exploring approaches".
@@ -318,7 +318,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin. “Just name the email in the ask” points at the end of the prompt naming the sender; “It finds the email itself” points at the end of the instruction to build the deck. A third callout naming the Auto model pill was dropped after measurement: the only clear gap beside it is 19 source pixels wide and runs hard against the orange edit button, so the dot would have recoloured a coloured control.
 
 
-## §69 — PowerPoint can build a deck from an email *(image 2 of 3)*
+## §36 — PowerPoint can build a deck from an email *(image 2 of 3)*
 `6920f044b4f42d55d3201857e772a86ccc948d96603ab09bd03a175e7a3517a2`
 
 **Observed:** A Copilot prompt card in PowerPoint headed "How should your presentation look and feel?" with radio options. First, marked Recommended: "Your organization's templates - Use templates from my organization's brand kits." Then three styles with one-line descriptions: "Clinical Navy & White", "Warm Sand & Deep Teal", "Bold Charcoal Data Focus". A final option reads "Enter another option". Confirm and Skip all buttons sit at the bottom.
@@ -328,7 +328,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** three callouts in a white right margin. “It asks before it builds” runs on a shallow diagonal to the end of the question asking how the deck should look and feel; “Your brand kit is the default” points at the Recommended pill on the organisation’s templates option; “Three looks, or write your own” points into the “Enter another option” field below the three named styles (Clinical Navy & White, Warm Sand & Deep Teal, Bold Charcoal Data Focus).
 
 
-## §69 — PowerPoint can build a deck from an email *(image 3 of 3)*
+## §36 — PowerPoint can build a deck from an email *(image 3 of 3)*
 `8b861abba3bf928ebaca116ed53ad70d4fe1c35e34b8ff37874dd370b36bd89a`
 
 **Observed:** A single generated slide, landscape, white background. Title in dark navy serif: "Our framework position and what to verify". Two columns below: a navy header bar "Framework position" over four bullets (trade margin no more than 30 percent; incremental-only rebates; payment terms of 60 days or shorter; no category exclusivity), and a teal header bar "Verify in negotiation" over four bullets (store-level storage capability for Rapid; any exclusivity ask on the 400mg 24s; registration status by presentation; anything outside the envelope needs Pricing sign-off).
@@ -338,7 +338,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §70 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 1 of 3)*
+## §37 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 1 of 3)*
 `f8b238b5192d9ae8683eb92deec266f488b0f7907ccf816102a50e35909ccfd1`
 
 **Observed:** A dark teaching callout over a PowerPoint Live slide, headed "Get explanations from Copilot". Body text: "Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane." A "Got it" button sits at the bottom right. A page indicator reading 1 of 7 is visible beneath the slide.
@@ -348,7 +348,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §70 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 2 of 3)*
+## §37 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 2 of 3)*
 `f8468243d307f19fa8eb40f6df80f05ded7a6c2a203eadfb0ba0b2bfe4bb81f6`
 
 **Observed:** A PowerPoint Live slide titled "Four SKUs confirmed for the Gulf range" with four bullets describing pack formats. A dark rounded floating button labelled "Explain selected text", with a sparkle icon, floats above the slide.
@@ -358,7 +358,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §70 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 3 of 3)*
+## §37 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 3 of 3)*
 `1ac6f0565f838f4b7a6a03d5d139a5bccb86425750e7ee6e2bb983b46444c021`
 
 **Observed:** A full Teams meeting window. Top toolbar shows Take control, Chat, People 4, Raise, React, View, Notes, Copilot (underlined as active), More, Camera, Mic, Share and Leave. Three participant tiles sit below. The stage shows a PowerPoint Live slide titled "Four SKUs confirmed for the Gulf range" with the "Explain selected text" button visible, and a Caldova logo bottom-left. On the right, a Copilot pane contains an automatically composed prompt: "In 1-3 sentences, explain the selected text: Four SKUs confirmed for the Gulf range" followed by the four selected bullets, then a Copilot reply explaining that the range is built around four product formats targeting different shopper needs and price points.
@@ -367,7 +367,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 **Verdict:** ✅ MATCH — this carries the full claim in one frame: a live meeting, an attendee selection, an auto-composed prompt, and an answer in a side pane rather than on the shared stage. The prose claims Copilot wrote the prompt and imposed the one-to-three-sentence limit, and both are visible verbatim in the pane. Participant tiles are demo-tenant lab profiles, confirmed with Sush on 14 September 2026.
 
-## §72 — You can create a presentation from the PowerPoint web app *(image 1 of 1)*
+## §39 — You can create a presentation from the PowerPoint web app *(image 1 of 1)*
 `bc1a76ccbc7b9fb99a73fbd601ef8e631cb6f670243071a31c9352fc4e63b074`
 
 **Observed:** The PowerPoint start page in the web app. A welcome heading sits above three buttons in a row: "Create with Copilot" first and visually primary, then "Create blank presentation", then "Upload a file". A "Jump back in" row of recent presentation thumbnails appears below, and left navigation runs down the side.
@@ -377,7 +377,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 1.5× render with pads on three sides. **"This is the web app"** drops from the top pad to a dot on the address bar just past `powerpoint.cloud.microsoft` — the URL is the only thing in frame that proves this is the browser build rather than the desktop app, which is the whole claim the surrounding text makes. **"First button, ahead of blank"** runs in from the left pad to a dot on the orange "Create with Copilot" button, with "Create blank presentation" plainly second to its right. The first render **wrapped that label onto three lines with "blank" orphaned**; rather than reword it, the image scale was reduced from 1.8× to 1.5× so the same pad width bought proportionally more room, and it now breaks cleanly after "First button,". The long horizontal leader crosses src y208, which the ink scan showed carries nothing but the window border at [0-2].
 
 
-## §73 — Presentations can be grounded in web sources *(image 1 of 2)*
+## §40 — Presentations can be grounded in web sources *(image 1 of 2)*
 `d8c398fcc895fa53cc8c1538cd0801f6621ba9e1309c19966b0f8731f675d58a`
 
 **Observed:** The Copilot create prompt box in the PowerPoint web app. At the top of the box sits a source chip with a document icon reading "support.microsoft.com/en-" (truncated), with a control to its right. Below it the typed prompt reads "Create a presentation about How copilot notebooks work, use this web link as the only source" followed by the pasted URL rendered as a link.
@@ -387,7 +387,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin. “Paste the link in the ask” points at the end of the pasted support.microsoft.com URL in the prompt; “The link becomes a source chip” runs on a diagonal down to the resulting source chip below, the diagonal chosen so the leader clears the chip’s expand button rather than crossing it.
 
 
-## §73 — Presentations can be grounded in web sources *(image 2 of 2)*
+## §40 — Presentations can be grounded in web sources *(image 2 of 2)*
 `8341b5d0c20aace2dc38562fa8d9045e79adc9619a820c3006a939c87053ea7f`
 
 **Observed:** A Copilot prompt card headed "Who is this deck for, and how deep should it go?" with radio options: "Team enablement" marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks, roughly 8-10 slides; "Exec overview", short value-focused briefing, roughly 5-6 slides; "Hands-on deep dive", detailed walkthrough of sources, limits and workflows, roughly 10-12 slides; and "Enter another option". Confirm and Skip all buttons sit at the bottom.
@@ -397,7 +397,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 3.4× render of a 336px-wide crop, with a 700px right pad. **"It asks who it's for"** lands just past the "Who is it going to?" line and **"Each with a slide count"** just past the "~8-10 slides" option, both measured from OCR word boxes rather than read off the image, and both verified on the render to clear the final character. Together they carry the section's argument — that the new flow asks about audience before it asks about content, and prices each depth choice in slides.
 
 
-## §73 — Presentations can be grounded in web sources *(image 3 of 3)*
+## §40 — Presentations can be grounded in web sources *(image 3 of 3)*
 `ab5a1bfeaa248f71bd111e46dc9dbfe325b67269cb365b714588163b5d8c606f`
 
 **Observed:** A finished presentation slide on a white background. A large teal double quotation mark sits at top left. Below it, italic dark-navy serif text reads "Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture." Beneath the quote, in small grey bold capitals, is the attribution "— Microsoft Support". No other UI chrome is in frame — this is the rendered slide only.
@@ -407,7 +407,7 @@ clearly on the left. Alt text amended to "beside the dialog".
 .
 
 
-## §74 — Word can add hyperlinks for you
+## §41 — Word can add hyperlinks for you
 `e51054f8e43906e24484077c74343da7f0a77cd2569e9fe05a55a87b6f6ba88a`
 
 **Observed:** Two crops taken from the same Microsoft screenshot and stacked, so the detail is legible at the width this blog renders. **Top:** the document body in Word, showing a blue heading **"How to access Word Copilot"** with a selection bracket at its left, then a numbered list — "Open a document in Word and sign in with a Copilot-enabled account." / "Select the **Copilot** button in the corner of the document. Copilot opens in the chat pane." / "Type a prompt, choose a suggested action, or ask a question about the document." — followed by "For details, see Welcome to Copilot in Word.", where *Welcome to Copilot in Word* is a blue underlined hyperlink with the text cursor sitting after the full stop. **Bottom:** the docked Copilot pane, showing the Copilot wordmark, a collapsed "Reasoning completed in 3 steps ›" row, and the reply "I added a **“How to access Word Copilot”** section with three simple steps and a link to the official *Welcome to Copilot in Word* support page." with that phrase again rendered as a blue underlined link and a grey **microsoft** citation chip. The full, uncropped screenshot (ribbon, status bar, whole window) remains available in Microsoft's original post, linked from the source line under this section.
@@ -425,7 +425,7 @@ says it added "a link to the official … support page", which is exactly the ca
 > Microsoft's full screenshot rather than the crop we actually publish, so a screen reader would have
 > announced interface that is not there. **Rule: alt text is verified against the image as published,
 > never against the source it was cropped from.** The image itself is unchanged; the hash above stands.
-## §87 — Teams can translate a meeting recap after the fact
+## §54 — Teams can translate a meeting recap after the fact
 `8d68ccf61d6f15f50c6ca059e95a245c36c69fb23697436424687619bb1518a9`
 
 **Observed:** A Microsoft Teams window titled "Product roadmap discussion", showing the
@@ -451,7 +451,7 @@ fix; flagging only so no later edit treats either date as real.
 **Annotated 15 September 2026 (house style, verified on the render):** the canvas is padded 620 px to the right and two red boxes are drawn — one around the **Language** row in the recap's command menu, one around the language list itself (Chinese (Simplified, China), English (US), Japanese, then Arabic, Czech, Danish, Dutch (Belgium)). Two callouts point in: *"A Language menu on the recap"* to the boxed menu row, and *"And a list to pick from"* to the boxed list. Box geometry was measured, not eyeballed — the list's last item ends at y 438 and the underlying recap notes text begins at y 450, so the box bottom sits at 444 and clips nothing. The pad is white so the screenshot's own dark window border reads as a deliberate frame.
 
 
-## §88 — The Planner Agent writes a status report
+## §55 — The Planner Agent writes a status report
 `222f9ac79c9d1cdee23edb76d5582344dedd365641ced9a7950033075f5cc5c1`
 
 **Observed:** A crop of Microsoft's screenshot, enlarged so the report is legible at the width this blog renders. At the top the user's prompt sits in a grey bubble: "Create a status report for this plan for the last 14 days. Include a status overview, executive summary, risks and blockers, achievements, progress, upcoming commitments, and key milestones. Please do in depth analysis and insights for each section." Below it a purple Planner glyph and the label **Planner Agent**, then a grey disclaimer line reading "**Frontier preview** · This status report is generated by an experimental capability available through the Frontier early access program." Then the generated report itself: the heading **"Status report for Project Aurora"**, a line reading "**Date of report:** July 28, 2026 | **Reporting period:** July 14, 2026 – July 28, 2026", a horizontal rule, the heading **"Overall status"**, and a status line with an amber dot reading **"At risk · 23% overdue (44 tasks)"**. The full screenshot — left rail, chat history, account block and the rest of the report — remains available in Microsoft's original post, linked from the source line under this section.
@@ -474,7 +474,7 @@ image agree.
 **Annotated 15 September 2026 (house style, verified on the render):** padded 640 px right and 120 px bottom, with three callouts. *"The prompt named the sections"* points at the right edge of the prompt bubble; *"Frontier preview, and it says so"* points at the end of the preview line; *"A verdict with numbers behind it"* drops into the bottom pad and points back at the risk verdict line. The prompt bubble's right edge was located by pixel scan at x 1385 — its grey fill is light enough (level 246) to be invisible to an ordinary ink threshold, which is exactly the trap that makes eyeballing unreliable here. All three leaders run horizontally through measured clear bands.
 
 
-## §92 — OneDrive can take you from files to finished work in chat
+## §59 — OneDrive can take you from files to finished work in chat
 `49c44ee8234d0d7b317c4a7544cca410c7c3a193365b81e52b92562e6a3860ab`
 
 **Observed:** OneDrive on the web, user "Kat Larsson", breadcrumb "My files > Marketing Files".
@@ -498,7 +498,7 @@ already visible in the file list as "Just now" is precisely "from files to finis
 **Annotated 15 September 2026 (house style, verified on the render):** padded 640 px right and 300 px bottom. Three callouts — *"The prompt asked for a document"* at the prompt bubble, *"It made the file, with 7 charts"* at the created .docx link, and *"And the new file, just now"* which sits in the bottom pad and sends a long vertical leader up the file list to land beside the **Just now** timestamp on the new row. That corridor was chosen by scanning every column between the Modified and Modified by columns across the full height of the list and confirming zero ink, so the leader crosses no text at all.
 
 
-## §93 — SharePoint personal skills are saved to OneDrive and reused everywhere
+## §60 — SharePoint personal skills are saved to OneDrive and reused everywhere
 `bcefa48954d29f48e3a3a7c3efe2639feae2b49d29a979e96153cc9318aa06e4`
 
 **Observed:** A Copilot conversation. Grey user bubble: "can you create a personal skill for
@@ -691,7 +691,7 @@ notebook proposing what to make next, and the Quick Create row shows the formats
 > match; only the label differs, because my tenant names the green button **Workbook**. Body prose and both
 > alt texts corrected. **Lesson: count icons, not labels — repeated text hides adjacent controls.** The
 > image itself is unchanged; the hash above stands.
-## §58 — You can choose how hard Cowork thinks
+## §25 — You can choose how hard Cowork thinks
 `a703c51cee3668533a5db5765671587378d96f35e09ea5a0126456ed64587574`
 
 **Observed:** A small popover card headed **"Effort Max"** ("Effort" in regular weight, "**Max**" in
@@ -713,7 +713,7 @@ number of levels
 .
 
 
-## §59 — The cost skill shows where you are for the month
+## §26 — The cost skill shows where you are for the month
 `7cfffcc60c206bbf528d8f7d78f510c1c6c9ce60b8f1fcb33ab685264945582c`
 
 **Observed:** A narrow crop of a Cowork conversation. A grey user pill at the top right reads
@@ -729,7 +729,7 @@ full size and are unambiguous
 .
 
 
-## §60 — The Scheduled tab became Automations
+## §27 — The Scheduled tab became Automations
 `72a0ec4d6fca7113bc7ab99bb0266baf0889b58cd5bd186748d3b8597dc45977`
 
 **Observed:** A tight crop of the Copilot left rail. At the top, the "Copilot" wordmark beside a
@@ -747,7 +747,7 @@ text describes only the visible rail
 .
 
 
-## §29 — The GitHub Copilot harness in Copilot Studio is generally available
+## §62 — The GitHub Copilot harness in Copilot Studio is generally available
 `f6283166fce81a6df052b894688f790f26f05c55dcad227544e2fb3b07c7e5d9`
 
 **Observed:** A browser at **`https://copilotstudio.com`** showing a banner: "**Welcome to the new
@@ -773,7 +773,7 @@ older/standard-orchestration agents can be licence-included. Worth keeping in mi
 
 **Annotated 15 September 2026 (house style, verified on the render):** Padded on the right, where the margin is clear from the toggle row down, so all three leaders run horizontally through white space. Three callouts rather than the usual two, because this single screenshot carries the three things the Copilot Studio chapter is built on: “Credits are on the front door” (the Uses Copilot Credits chip beside Optimize your business processes), “Harness is now a build choice” (the GitHub Copilot tag on the build cards) and “Licence or credits, per agent” (the Last opened list, where one agent shows a credit count and another shows Incl. in license). **Correction made before acceptance:** all three dots were first placed on the right edge of the element as measured from a downscaled view, and all three clipped the last letter of the label they named — the chip read “Uses Copilot Credi”, the tag “GitHub Copilo” and the row “Incl. in licen”. Re-measured off the render and moved into the whitespace beyond each label; every one is now fully legible.
 
-## §30 — Three harnesses now, and a white paper on choosing between them *(image 1 of 2)*
+## §63 — Three harnesses now, and a white paper on choosing between them *(image 1 of 2)*
 `bfd5d06df9259be7ab413701c8e6f0a20b04514c7482269a799ab6e1f6ba1586`
 
 **Observed:** Two build cards side by side on a soft peach-to-blue gradient. The **left** card has a
@@ -793,7 +793,7 @@ must therefore describe two cards and must not imply the image shows three.
 
 **Annotated 15 September 2026 (house style, verified on the render):** Downscaled to 0.52× (the source is 4255 px wide) and padded at the bottom. This one could not use plain dots: every path into the harness pills from above crosses the cards' artwork panels, and every path from below crosses the description text. Instead each pill is outlined with a red box and the leader dots land in the cards' empty lower strip. The two callouts read as one sentence across the pair — “Both say ‘Agent’” and “The pill is the difference” — which is the point of the image: the harness is the only visible distinction at creation time. Passed on the first render.
 
-## §30 — Three harnesses now, and a white paper on choosing between them *(image 2 of 2)*
+## §63 — Three harnesses now, and a white paper on choosing between them *(image 2 of 2)*
 `5e2f12f7e08c61417e3be9fbdc81027cf311fb15c064d4a061ff273b987d40dc`
 
 **Observed:** A grouped bar chart on white, y-axis labelled 0.0% to 100.0% in 20-point steps.
@@ -817,7 +817,7 @@ values were read at full size and are unambiguous.
 **Caution for the body text:** the chart carries **no methodology, sample size or date**, so it must
 be attributed to Microsoft's own white paper rather than presented as an independent benchmark.
 
-## §31 — Agents on the new harness are billed for all work, regardless of Copilot licensing
+## §64 — Agents on the new harness are billed for all work, regardless of Copilot licensing
 `c11e6add32fd68dc62aadc878d9be60f24613fa50d836efe6bdd6029cf98dae6`
 
 **Observed:** A Microsoft slide-style graphic titled **"GitHub Copilot harness in Copilot Studio"**
@@ -854,7 +854,7 @@ not present them as guaranteed consumption.
 graphic, and it carries a title the alt omitted. Alt now reads "a three column graphic titled GitHub
 Copilot harness in Copilot Studio". No factual claim changed.
 
-## §32 — Credits are consumed while makers build, not just when agents run
+## §65 — Credits are consumed while makers build, not just when agents run
 `1d31bb9169c7c4e553a2d6430a7efdf63a413f9a878e91d64fce473c7585c28f`
 
 **Observed:** A single bordered in-product card. Its header row shows a small multicoloured
@@ -873,7 +873,7 @@ the message heading and omitted the card's actual header. The header is the **ag
 
 **Annotated 15 September 2026 (house style, verified on the render):** Upscaled 2.2× (the source is 733×159) and padded on the left. Rather than a dot, a red box outlines the phrase “the AI creation experience” inside Microsoft's own blocking message, with the callout “Building spends credits too” — that phrase is the evidence for this section's claim that credits are consumed while makers build, not only when agents run. **Correction made before acceptance:** the box's right edge first clipped the “a” of the following word “and”; pulled back to close just after “experience”.
 
-## §38 — New designers for agents and workflows
+## §71 — New designers for agents and workflows
 `50c67f9d0f7e39be9f9b58592db9a4b2b5f0208d04de4b891cd9ad4e70ebdaee`
 
 **Observed:** An agent editing surface titled **"Northwind Investment Advisor"** with tabs **Build**
@@ -919,7 +919,7 @@ concrete, quotable details visible in Microsoft's own screenshot.
 **Annotated 15 September 2026 (house style, verified on the render):** three red callouts added into a white top and right margin. “Build, preview, evaluate, monitor” drops to a dot just past the tab row, which reads Overview / Knowledge / Tools / Agents / Topics with Build, Preview, Evaluate and Monitor along the top. “Work IQ, in Copilot Studio” points at the Work IQ chip in the Knowledge row. “Tools where you build” points at the Update record chip in the Tools row. The dot after the tab row was moved from x556 to x575 in source space after OCR measured the word “Monitor” ending at x548, and the Work IQ dot from x799 to x770 after the chip measured x710–746; both labels were widened on a second render so no word is orphaned onto its own line.
 
 
-## §24 — Domain exclusion is back
+## §90 — Domain exclusion is back
 `ed49e5c279fbf5dc4496e5a920f997b65a07ec4b5765b5ff4f1bc8717004b0ef`
 
 **Observed:** A Copilot conversation under a **"Yesterday"** divider. Grey user bubble: "Can you help
@@ -945,7 +945,7 @@ website favicons. Alt corrected on both points.
 
 **Annotated 15 September 2026 (house style, batch 3):** upscaled **1.6× with LANCZOS before annotating** (an 864 px source is below the legibility floor this issue is trying to hold), then 480 px of white canvas added on the **right**. One callout quoting the tooltip verbatim — **“Admin policy may restrict certain sources”** — leading to a red dot on the tooltip's right border, level with its “Learn more” row. That row height was chosen deliberately: it is the one band where the leader can reach the pad without crossing either of the two answer-body lines above it. The callout is the section's practical point made visible — this single sentence is the only thing a user ever sees to indicate that domain exclusion is in force. Verified by viewing the render.
 
-## §26 — Measuring Cowork in hours of work, not prompts *(image 1 of 3)*
+## §92 — Measuring Cowork in hours of work, not prompts *(image 1 of 3)*
 `ae53c6285e2aea7aa081a2d994ab681605f30028a6c6af4ede0d26184920311a`
 
 **Observed:** A clean infographic headed **"From interaction metrics to task value"**. Three
@@ -971,7 +971,7 @@ All captions were rewritten to their true source and re-verified mechanically �
 were all genuinely Microsoft's, so nothing looked wrong on the page, and only reading the manifest
 caught it.
 
-## §26 — Measuring Cowork in hours of work, not prompts *(image 2 of 3)*
+## §92 — Measuring Cowork in hours of work, not prompts *(image 2 of 3)*
 `edd89f30e7f95082e4db86b6c63a68ae49512293c791da3f22ce82386e123f64`
 
 **Observed:** A table graphic headed **"All 8 categories at-a-glance / Low / Typical / High time
@@ -1002,7 +1002,7 @@ equal the Typical values (e.g. row 7 is "~15–20 min / coding instance" against
 which the footnote explains as a **sum across the activities making up a task**. Anyone quoting
 these numbers must carry that definition or they will read as a contradiction.
 
-## §26 — Measuring Cowork in hours of work, not prompts *(image 3 of 3)*
+## §92 — Measuring Cowork in hours of work, not prompts *(image 3 of 3)*
 `e59a703ba4d1a45c9a2bc53dc2bdb5d05ccc7377d9701ff6bf69246d31baa85e`
 
 **Observed:** A modal dialog titled **"Hours and value calculator"** with a selected radio button
@@ -1036,7 +1036,7 @@ numbers at all** — that was the right call and must not be "improved" by addin
 
 **Note on the other two §26 images:** `official-26-metrics-to-task-value.webp` and `official-26-task-category-time-values.webp` were reviewed for annotation and deliberately **left untouched**. Both are Microsoft **infographics** rather than UI screenshots — each already carries its own title, numbered stages or column headers and footnotes, so a callout would restate what the artwork states. Same rule applied to the `created-*` figures.
 
-## §27 — Exporting Copilot and agent metrics *(image 1 of 4)*
+## §93 — Exporting Copilot and agent metrics *(image 1 of 4)*
 `260a80bfbda29b270366d32827e373fde39bc0d134ae842f03dc1a9c12e67a6c`
 
 **Observed:** The **Microsoft Copilot Dashboard** with tabs **Readiness / Adoption (selected) /
@@ -1066,7 +1066,7 @@ deliberately left unchanged; this observation is the pixel evidence behind the f
 
 **Annotated 15 September 2026 (house style, batch 3):** 460 px of white canvas added on **both** sides — the only image in this batch padded symmetrically, because the subject is a centred modal offering two choices and the honest annotation is one callout per choice. **“Week level, six months back”** and **“Day level, 28 days, preview”** lead outward to the modal's left and right borders. Both leaders run at the card-title height, which is the one horizontal band where the dashboard behind the modal is empty on both flanks (the KPI cards sit above it, the *Adoption by group* heading below). Verified by viewing the render: correct first time, nothing covered.
 
-## §27 — Exporting Copilot and agent metrics *(image 2 of 4)*
+## §93 — Exporting Copilot and agent metrics *(image 2 of 4)*
 `7e4fdc8c104a8a57029da5866009972d08be9dc755de30ffcc799121366a4179`
 
 **Observed:** A dialog titled **"Export Agent 365 Dashboard data"**, subtitled *"Export day-level or
@@ -1104,7 +1104,7 @@ to *"a shield-icon notice reading Includes user identifiers"*.
 
 **Annotated 15 September 2026 (house style, batch 3):** 460 px of white canvas added on the **right**; a single callout, **“User identifiers: off by default”**, leading to a red dot in the empty part of the **Includes user identifiers** band, clear of both the shield glyph and the ⓘ. Deliberately only one callout: of everything in this dialog, the `IdentifiableExport` default is the one detail an admin can get wrong, and the section says so. Verified by viewing the render: correct first time.
 
-## §27 — Exporting Copilot and agent metrics *(image 3 of 4)*
+## §93 — Exporting Copilot and agent metrics *(image 3 of 4)*
 `033093acf7bd6d0794711f2b925694390204d2a785cb16cb2f1ddda3a6f4c0fa`
 
 **Observed:** The **Agent 365 Dashboard** header with the subtitle *"View insights across all agents
@@ -1130,7 +1130,7 @@ to catch: filling in what you expect to be there.
 
 **Annotated 15 September 2026 (house style, batch 3):** 260 px of white canvas added on **top** — both elements of interest are in the command bar of this wide, 418 px strip. A single callout, **“Export only runs with All agents on”**, leading to a red dot in the gap immediately left of the **All agents** label. Only one callout because Microsoft's own teaching popup in the frame already explains the export button; the toggle prerequisite is the thing the popup does **not** mention and the section does. First render put the dot **on the blue toggle itself**, recolouring part of the control it was meant to draw attention to; moved to the label gap and re-verified by viewing the render.
 
-## §27 — Exporting Copilot and agent metrics *(image 4 of 4)*
+## §93 — Exporting Copilot and agent metrics *(image 4 of 4)*
 `5a57d6ce461d01a7ba5928617f16bd6e37c16e318b39f54076e8fadacd0180db`
 
 **Observed:** A spreadsheet extract, header row then eight data rows. Columns: **PersonId**,
@@ -1161,7 +1161,7 @@ no meaning; leaving it.
 
 **Annotated 15 September 2026 (house style, batch 3):** 300 px of white canvas added at the **bottom**. This one needed a different technique from every other image in the batch: at 193 px tall with a ~24 px row pitch, there is no gap a 7 px dot can occupy without touching a value, and the first render proved it by putting both dots on data. Reworked to outline each **column** with a red box and land the callout dots on the pad below. **“Hashed IDs, not names”** boxes the `PersonId` column (header plus all eight anonymised IDs); **“Totals for the period, not single prompts”** boxes the first metric column's values. Both are the section's precision points — de-identification by default, and rows of period metrics rather than an interaction log. Four render passes were needed: the first column box clipped the IDs, the second box was placed in the *gap between* two metric columns and outlined header text with no values in it, then its right edge sliced through every number and its top edge cut the word “taken” in the header above. Final coordinates were measured off the render rather than estimated from the source. Verified by viewing the render.
 
-## §28 — The AI Cost Dashboard *(image 1 of 3)*
+## §94 — The AI Cost Dashboard *(image 1 of 3)*
 `f239b9746b11407d10fc05773c9928507f2ab801062276340090e4cd26992a72`
 
 **Observed:** The **AI Cost Dashboard**. A top banner reads: *"AI Cost Dashboard data is only
@@ -1192,7 +1192,7 @@ makes no claim that the two agree.
 
 **Annotated 15 September 2026 (house style, verified on the render):** Upscaled 1.4× and padded on the left. Two callouts — “Coverage is still limited” on the blue banner that names Cowork and the Work IQ API as the only services reporting yet, and “Credits, users and sessions in one row” on the All-users row of the breakdown table. Both dots sit in clear left-hand margins, so no label, icon or value is covered. Passed on the first render.
 
-## §28 — The AI Cost Dashboard *(image 2 of 3)*
+## §94 — The AI Cost Dashboard *(image 2 of 3)*
 `c2defb3d1d8e67b45388160e3988c4a25b8b4172320b9a8c2b97f2dfea05cbb4`
 
 **Observed:** Breadcrumb **"AI Cost Dashboard › GitHub usage"**, page title **GitHub usage**.
@@ -1221,7 +1221,7 @@ ever have noticed, in a number the post presents as fact.
 
 **Annotated 15 September 2026 (house style, verified on the render):** Upscaled 2× (the source is only 705 px wide) and padded at the top. Two callouts — “Developer agent adoption, measured” on the Agent adoption card and “Which models the spend goes to” on the Most used card, whose Model row names the specific model developers picked. **Correction made before acceptance:** the second dot first landed on the Most used card's extreme left corner, where it read as pointing at the gap between the two cards; moved right so it is unambiguously over that card, while still clearing the Time period filter pill the leader passes.
 
-## §28 — The AI Cost Dashboard *(image 3 of 3)*
+## §94 — The AI Cost Dashboard *(image 3 of 3)*
 `01fae0b0adb2f1a30112688c44202c15a0c882880189a0c2d12fb28e50aa903a`
 
 **Observed:** A card headed **"Usage intensity"** / *"How is credit usage distributed across our
@@ -1315,7 +1315,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §41 — Work IQ — how it is used, licensed and controlled
+## §74 — Work IQ — how it is used, licensed and controlled
 `a5e0a962577cc11af87c03e1815085153f112cc5ebc5b977c9aa707fd69b357e`
 
 **Observed:** My own generated figure, `created-s41-work-iq-used-licensed-controlled.webp`. Viewed on screen in `qa-panels-sheet.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Work IQ — how it is used, licensed and controlled”**; subtitle **“Power CAT · Published 24 August 2026 · illustrative, not a screenshot”**. Lead card **“What Power CAT published”**: “One piece covering capability, licensing and control together — rather than three that each cover one.”. Panel **“Capability”** — “The layer that gives agents access to organisational context: mail, calendar, files, Teams messages and people.”. Panel **“Licensing”** — “How Work IQ is licensed.”. Panel **“Control”** — “How access to that context is controlled.”. Footer bar **“Why both halves matter”**: “Work IQ is what makes an agent useful and what makes an agent risky, because the whole point is reaching real organisational content.”.
@@ -1324,7 +1324,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §42 — Dataverse as a native knowledge source
+## §75 — Dataverse as a native knowledge source
 `dce1478dadd4446a64d308a05f8c4c3ae4e85f6425aa385a45fc5b27631fc792`
 
 **Observed:** My own generated figure, `created-s42-dataverse-knowledge-source.webp`. Viewed on screen in `qa-A.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Dataverse as a native knowledge source”**; subtitle **“Copilot Studio · AI at Work Roadmap 568929 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 568929** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “Agents could be grounded directly in Dataverse tables, rather than reaching them through a connector or a workaround.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **Preview August 2026** and **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1333,7 +1333,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §43 — Azure SQL as a knowledge source
+## §76 — Azure SQL as a knowledge source
 `48bc48e9691b49d8b2fdb5e763b18f6691a234b1a4114477893d485b7f281ef5`
 
 **Observed:** My own generated figure, `created-s43-azure-sql-knowledge-source.webp`. Viewed on screen in `qa-A.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Azure SQL as a knowledge source”**; subtitle **“Copilot Studio &middot; AI at Work Roadmap 568930 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 568930** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “Agents could be grounded in data stored in Azure SQL. Microsoft titles the entry “SQL server Support”, but the description underneath refers to the Azure SQL Knowledge Source throughout.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **Preview August 2026** and **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. The text does not support reading this as on-premises SQL Server.”.
@@ -1342,7 +1342,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §44 — SharePoint lists as a knowledge source
+## §77 — SharePoint lists as a knowledge source
 `6e1bf8451cde749ca8104f9c8bb6a6d78220dd83f56f2fdb92c9145d77671ed2`
 
 **Observed:** My own generated figure, `created-s44-sharepoint-lists-knowledge-source.webp`. Viewed on screen in `qa-A.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“SharePoint lists as a knowledge source”**; subtitle **“Copilot Studio &middot; AI at Work Roadmap 566859 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 566859** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “Agents could ground in structured SharePoint list data, as distinct from documents sitting in a library.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **Preview July 2026** and **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1351,7 +1351,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §45 — Invoking agents as workflow steps
+## §78 — Invoking agents as workflow steps
 `b4642bfcb7a0545a220b608b1dd23e3f50e5dee253c3d46514910ce000852ef8`
 
 **Observed:** My own generated figure, `created-s45-agent-node-workflow-step.webp`. Viewed on screen in `qa-A.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Invoking agents as workflow steps”**; subtitle **“Copilot Studio &middot; AI at Work Roadmap 562222 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 562222** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “An agent node would let a workflow call an agent as a single step — reasoning over data, calling tools and returning a response inline.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **Preview April 2026** and **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. This item appears twice under two different IDs with identical titles and dates; the lower one is linked.”.
@@ -1360,7 +1360,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §46 — Requiring human approval for tool calls
+## §79 — Requiring human approval for tool calls
 `c28dc6f648e87bc1608724f876cac943a32ed0bbde4289de9de0fdcd75def3fa`
 
 **Observed:** My own generated figure, `created-s46-human-approval-tool-calls.webp`. Viewed on screen in `qa-B.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Requiring human approval for tool calls”**; subtitle **“Governance &middot; AI at Work Roadmap 570434 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 570434** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “A per-tool, per-agent toggle would pause the agent and raise an approval request before a tool call goes ahead.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1369,7 +1369,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §47 — Detecting credential oversharing
+## §80 — Detecting credential oversharing
 `1ef1c325c0fc2b972ae43453fbbe71bf200da31b121c4cb01d91b84fef8902e2`
 
 **Observed:** My own generated figure, `created-s47-credential-oversharing.webp`. Viewed on screen in `qa-B.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Detecting credential oversharing”**; subtitle **“Admins &middot; AI at Work Roadmap 566873 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 566873** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “Sharing of agents and flows that rely on unsafe identities would be blocked up front, rather than discovered afterwards.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **Preview July 2026** and **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1378,7 +1378,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §48 — Blocking maker-provided credentials
+## §81 — Blocking maker-provided credentials
 `eb182abf57513b0bdfca5baef67f145c366ab36cca9eb814e9b6c8344f6401fe`
 
 **Observed:** My own generated figure, `created-s48-maker-provided-credentials.webp`. Viewed on screen in `qa-B.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Blocking maker-provided credentials”**; subtitle **“Admins &middot; AI at Work Roadmap 566997 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 566997** with a red pill reading **In development**, under it “Status checked 14 September 2026. The August target has passed with the entry still in development.”. Right panel **“What Microsoft says it will do”**: “AI agents would be stopped from authenticating with credentials supplied by the maker who built them.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **GA August 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1387,7 +1387,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §49 — Agent Readiness
+## §82 — Agent Readiness
 `571e4ee5925bcb314844a090969c32c1a9d051cc804b750996b4289d58807e23`
 
 **Observed:** My own generated figure, `created-s49-agent-readiness.webp`. Viewed on screen in `qa-B.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Agent Readiness”**; subtitle **“Copilot Studio &middot; AI at Work Roadmap 568762 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 568762** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “An always-visible Review health indicator in the build experience, surfacing policy restrictions, missing evaluations and blocked capabilities as you work — with blocked capabilities greyed out up front, and a reason given.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1396,7 +1396,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §50 — Better explanations in agent evaluations
+## §83 — Better explanations in agent evaluations
 `81f36d67419c070fa0de94bf489f8024f36aa988ecc08d679741b39599f091fd`
 
 **Observed:** My own generated figure, `created-s50-agent-evaluation-explanations.webp`. Viewed on screen in `qa-B.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Better explanations in agent evaluations”**; subtitle **“Copilot Studio &middot; AI at Work Roadmap 569607 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 569607** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “Richer explanations in evaluation results, including the agent’s reasoning traces.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1405,7 +1405,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §51 — Setting up connectors by conversation
+## §84 — Setting up connectors by conversation
 `f67bc81980e00b0251ebdcaa20b3861ab8399f72ef2464ea69a8c5f99b3f533f`
 
 **Observed:** My own generated figure, `created-s51-connectors-by-conversation.webp`. Viewed on screen in `qa-B.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Setting up connectors by conversation”**; subtitle **“Copilot Studio &middot; AI at Work Roadmap 569930 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 569930** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “Signing in to and configuring a connector inside the chat, instead of being sent out to a full settings experience.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1414,7 +1414,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §52 — There is no September 2026 release wave 2
+## §85 — There is no September 2026 release wave 2
 `f71a8a66fcef1ef9e61ae0223802f9421c145fb496c63b64ed76533d7ae39c29`
 
 **Observed:** My own generated figure, `created-s52-no-release-wave-2.webp`. Viewed on screen in `qa-C.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“There is no September 2026 release wave 2”**; subtitle **“Announced August 2026 · illustrative, not a screenshot”**. A card headed **“Microsoft’s own FAQ”**: “Q. Will there be a September 2026 release wave 2 announcement or release wave 2 release plan?” answered with a single large red word, **“No.”**. Two panels beneath: **What was retired** — “The twice-yearly release wave model for Dynamics 365, Power Platform and Dataverse has been retired.”; **What replaces it** — “That content moves onto the AI at Work Roadmap and is published continuously, as things are ready, rather than in two large drops a year.”.
@@ -1423,7 +1423,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §53 — Release Planner retires by 15 November 2026
+## §86 — Release Planner retires by 15 November 2026
 `ceac2bb80d5533f9198f7a5e9984e60782bf6cb2b65b8d1f0153ba1341420efd`
 
 **Observed:** My own generated figure, `created-s53-release-planner-retirement.webp`. Viewed on screen in `qa-C.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Release Planner has a stated expiry date”**; subtitle **“Announced August 2026 · illustrative, not a screenshot”**. Three milestone columns, each with a coloured rule above it: **August 2026** — “Microsoft announces the retirement.” · **From September 2026** — “Release plans are no longer published to Release Planner.” · **By 15 November 2026** — “Release Planner retires.”. Two panels beneath: **What you keep** — “Roadmap content continues, in its new home.”; **What you lose** — “Any Release Planner link embedded in runbooks, planning pages or governance docs stops working.”.
@@ -1432,7 +1432,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §54 — Saved views in My Release Plans will not carry over
+## §87 — Saved views in My Release Plans will not carry over
 `5653c89e0e0c5b1490a3e8a87d242b7d433774f000a3897cea746dce12ae4f60`
 
 **Observed:** My own generated figure, `created-s54-saved-views-not-carried.webp`. Viewed on screen in `qa-C.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Saved views in My Release Plans will not carry over”**; subtitle **“Release Planner users &middot; before 15 November 2026 · illustrative, not a screenshot”**. Two panels: **Transfers to the new experience** — “Roadmap content itself, in its new home on the AI at Work Roadmap.”; **Does not transfer** — “Personalised My Release Plans saved views.”. Footer bar **“Before 15 November 2026”**: “If a saved view is doing real work in your planning routine, capture what is in it while Release Planner is still up.”.
@@ -1441,7 +1441,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §55 — Where the content is going, and when
+## §88 — Where the content is going, and when
 `4b1f2026de168d69a6ba1036f2eb788e5cfaaeb87b1ecd4cb07be9e610b8eec7`
 
 **Observed:** My own generated figure, `created-s55-content-migration-window.webp`. Viewed on screen in `qa-C.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Where the content is going, and when”**; subtitle **“Planners and admins &middot; September to November 2026 · illustrative, not a screenshot”**. Three milestone columns, each with a coloured rule above it: **From September 2026** — “Dynamics 365, Power Platform and Dataverse content joins the AI at Work Roadmap.” · **September to November 2026** — “Content with a preview or general availability date of 1 June 2026 or later transitions to the new home.” · **By 15 November 2026** — “Release Planner retires.”. Two panels beneath: **What you keep** — “The destination is the same roadmap this series already cites for Microsoft 365 Copilot.”; **What you lose** — “Content dated before 1 June 2026 is not described as transitioning.”.
@@ -1450,7 +1450,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §56 — Dataverse data in Microsoft 365 Copilot
+## §89 — Dataverse data in Microsoft 365 Copilot
 `4000324a350d4ba5b5f82a9fc0baee509e11f473933e1c855380d0d98048dd16`
 
 **Observed:** My own generated figure, `created-s56-dataverse-in-m365-copilot.webp`. Viewed on screen in `qa-C.png` at 760 px wide (63% of its 1200 px render) and confirmed complete — this image was re-rendered at full page height after a clipping bug was found, so no content is cut off. Heading **“Dataverse data in Microsoft 365 Copilot”**; subtitle **“End users &middot; AI at Work Roadmap 560539 · illustrative, not a screenshot”**. Left panel: **ROADMAP ID 560539** with a red pill reading **In development**, under it “Status checked 14 September 2026.”. Right panel **“What Microsoft says it will do”**: “Searching and querying Dataverse business data from inside Microsoft 365 Copilot.”. Under a header reading **“Target dates Microsoft published — none of them met yet”**, **Preview June 2026** and **GA September 2026**, each marked with a *hollow* dot — no dot is filled, so nothing reads as achieved. Footer bar **“Not yet testable”**: “The roadmap states intent, not availability. Nothing here has been tested in a tenant.”.
@@ -1459,7 +1459,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 
 ---
 
-## §75 — Word reads the pictures in your reference documents
+## §42 — Word reads the pictures in your reference documents
 `9acac8599bcdba22330bb9d12e95c1991706f39046b80e90f1c36b9cae8f8076`
 
 **Observed:** A Word window, file name **Bee Management A Practical Guide to Healthy.docx**, with a
@@ -1526,7 +1526,7 @@ it this would be a generic Notebook screenshot.
 
 ---
 
-## §39 — An Agent Review Tool for checking agents before release
+## §72 — An Agent Review Tool for checking agents before release
 `ae6b7626ef7efafa993810593acfdcd75b1360e63e35e05cc86c0e5b010f3857`
 
 **Observed:** A breadcrumb reading **Agent Review Tool › ZAVA Visual Merchandiser** with a green
@@ -1575,7 +1575,7 @@ pass/fail count, and each finding linked to an official Microsoft Learn referenc
 **Annotated 15 September 2026 (house style, verified on the render):** a red box plus two callouts. The box encloses the caveat line inside Review summary — “Deterministic rule outcomes + evaluation coverage; not a measure of answer quality” — which is the sentence the section turns on, and “A config score, not answer quality” points straight at it. “Review, map, and cost” drops from the top margin to the tab row (Review / Agent map / Cost & efficiency). A third planned callout on “every finding is grounded in parsed agent data” was dropped: OCR showed that line actually ends at x857, not x507, so every approach path crossed either the Review summary card, the Review tab or the learn.microsoft.com reference URL, and a leader over body text is worse than no callout.
 
 
-## §34 — Four enforcement rules per environment
+## §67 — Four enforcement rules per environment
 `23c7676420f2730bc9754f085e4437f7f55d32a28099ea1c129a469f1993a472`
 
 **Observed:** A panel headed **Manage capacity** with a back arrow and a close X. Beneath it the
@@ -1611,7 +1611,7 @@ notify at a threshold.
 ---
 
 
-## §36 — Limits can be set on a single agent
+## §69 — Limits can be set on a single agent
 `53cc2d7262851a89193f2d5fc301bf3fa42b54e7be8db8abee66be031e33240c`
 
 **Observed:** A panel with a back arrow, the title **Zava Studios Makers Assistant** and a close X.
@@ -1643,7 +1643,7 @@ against their section bodies before placement.
 ---
 
 
-## §75 — Word reads the pictures in your reference documents *(image 2 of 3)*
+## §42 — Word reads the pictures in your reference documents *(image 2 of 3)*
 `2eab2d2d5131b6ddeb459afe550800bd1b214b8c49f6fb91c2c663f14c6cecbb`
 
 **Observed:** An embedded Excel worksheet object shown in edit mode: spreadsheet column letters A through L across the top, row numbers 1 to 21 down the left. Cell A1 contains a white-on-blue heading reading "Account Risk". Beneath it a small table with headers "Risk level" and "Accounts" lists Critical 1, Elevated 1, Moderate 2, Low 4. To the right, inside round selection handles, is a bar chart titled "Accounts by Risk Level" with a vertical axis labelled "Number of accounts" scaled 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low, and data labels 1, 1, 2 and 4 above them.
@@ -1653,7 +1653,7 @@ against their section bodies before placement.
 .
 
 
-## §75 — Word reads the pictures in your reference documents *(image 3 of 3)*
+## §42 — Word reads the pictures in your reference documents *(image 3 of 3)*
 `a43ec938b8ec5f60fe739b4f7de8107b33d743d0b6a8957fb4efb07b29b8a201`
 
 **Observed:** The Copilot pane in Word. Copilot's reply states that the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends, or data values "in the document view I received", and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. It then offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing that explanation.
@@ -1663,7 +1663,7 @@ against their section bodies before placement.
 .
 
 
-## §76 — Word highlights the exact words Copilot changed
+## §43 — Word highlights the exact words Copilot changed
 `5cef1db4456776da24daf1712df5e2a102892b962611f9587798f35aae1e0dab`
 
 **Observed:** A Word window on the **Home** tab — Aptos (Body) 12, a Styles gallery showing
@@ -1703,7 +1703,7 @@ and would not need Undo.
 ---
 
 
-## §78 — Claude Sonnet 5 appears in Word's model menu *(image 1 of 1)*
+## §45 — Claude Sonnet 5 appears in Word's model menu *(image 1 of 1)*
 `4f042b46f2ef96b493c2935589e2bda4a7bdf017431ca065eac50cb6b95297a8`
 
 **Observed:** The Copilot pane in Word on the web with its overflow menu open. A section heading reads "Model". The first item is "Auto" with a tick to its left and a submenu arrow to its right; the second is "Claude" with a submenu arrow. An open flyout submenu lists exactly two entries: "Claude Opus 5" and "Claude Sonnet 5", the latter carrying a focus outline. Below the Model section the menu lists Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the pane shows an "Allow editing" dropdown, a prompt box reading "Describe what you want", and three suggestion chips.
@@ -1713,7 +1713,7 @@ and would not need Undo.
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "Auto is still the default" points at the tick beside **Auto** at the top of the model list, reached from a left pad because a leader from the right would have to cross the word Auto and its chevron. "Two Claude models, not one" points past the end of **Claude Opus 5** inside the open submenu, naming the count that the section is about. Verified on the render: both dots sit clear of the labels they name and neither leader crosses a menu item.
 
 
-## §79 — Excel can use Python when editing with Copilot *(image 1 of 1)*
+## §46 — Excel can use Python when editing with Copilot *(image 1 of 1)*
 `39c08411af4b08957b02f067dce6e848de6cdbe30e899f4ceb33364e6a8411c7`
 
 **Observed:** A fragment of a Copilot reply in Excel. A bold bullet reads "15:43 local time: Added the standard-deviation outlier audit in" followed by a highlighted range token "Risk Chart!A18:F23". Two sub-bullets read "Added mean, sample standard deviation, z-score, and ±3σ outlier formulas." and "Formatted the audit table; all four results are “No”." Below sits a bordered monospaced code block containing three Excel formulas: =COUNTIF('01-sales-accounts'!$E$2:$E$9,"*Risk:"&A4&"*"), =STDEV.S($B$4:$B$7), and =IF(ABS(E20)>3,"Yes","No"). No Python code and no Python label appears anywhere in frame.
@@ -1723,7 +1723,7 @@ and would not need Undo.
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts, both reached from a right pad because every target is flush-left text. "Mean, z-score, outliers" points past the bullet where Copilot lists the statistics it added, and names only what that bullet literally says. "All in Excel formulas, no Python" points at the `=STDEV.S($B$4:$B$7)` line — the clearest single proof that the answer was built from native Excel formulas, with no Python anywhere in the reply. Verified on the render.
 
 
-## §80 — Excel can explain what changed, and who changed it
+## §47 — Excel can explain what changed, and who changed it
 `e9f09da667b56c8dbc6930d6a07158f6651336099b6cc791ad8c8bb1fba70d85`
 
 **Observed:** Excel with the ribbon partly visible (Number, Styles, Cells, Editing, Sensitivity,
@@ -1760,7 +1760,7 @@ exactly that claim. ⚠️ The section also says Copilot can distinguish **human
 **Annotated 15 September 2026 (house style, verified on the render):** One outline and two callouts. "Numbered, named, dated" points past entry 1's attribution. Entry 2 has no gap at the end of its line — its attribution runs to the panel edge and is clipped by the frame — so the entry is outlined instead and "Two people and a time range" lands in the panel white beside it, naming what makes that entry different from the first. The canvas was extended at the bottom on a second pass so the outline closes below the clipped text rather than cutting across it. Verified on the render.
 
 
-## §80 — Excel can explain what changed, and who changed it *(image 2 of 3)*
+## §47 — Excel can explain what changed, and who changed it *(image 2 of 3)*
 `39f4126d514f548109109877be3129184c5b4970f73dd266ddd4ee1e6e8663f0`
 
 **Observed:** The Copilot pane in Excel. A user prompt chip reads "what changed in this workbook, and who changed it". Below, a collapsed status bar reads "Retrieving the audit trail". A reasoning card shows two steps: a ticked step headed "Auditing recent workbook activity" reading "I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges."; and an in-progress step headed "Retrieving the audit trail" reading "I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track." An Edit dropdown and a prompt box sit beneath.
@@ -1770,7 +1770,7 @@ exactly that claim. ⚠️ The section also says Copilot can distinguish **human
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "Its own words: audit trail" points past the step heading **Retrieving the audit trail** — Copilot reached for the phrase itself; it is not my label. "It flags its own blind spot" points past *…note any changes the history cannot track*, where the second step declares its own limit before it has finished running. Verified on the render: both leaders travel through empty whitespace between rows inside the card.
 
 
-## §80 — Excel can explain what changed, and who changed it *(image 3 of 3)*
+## §47 — Excel can explain what changed, and who changed it *(image 3 of 3)*
 `c1f33ccdcd1ea6707ae16fddb050d6170357e9f00180c30e7770ef105ff40256`
 
 **Observed:** A Copilot reply in Excel headed "Change summary — last 30 days". Opening line: "All recorded changes were made by Colin Ballinger with Copilot assistance on September 14, 2026. No recorded edits affected 01-sales-accounts." A tag reads "Risk Chart". Timeline entries: "15:32 local time: Created and formatted the Risk Chart sheet." with sub-bullets about a risk summary in Risk Chart!A1:B7 and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4; then "15:43 local time: Added the standard-deviation outlier audit in Risk Chart!A18:F23." with sub-bullets on mean, sample standard deviation, z-score and ±3σ formulas. A code block lists three formulas. Closing line: "The history does not track chart or conditional-formatting changes, so those cannot be attributed separately."
@@ -1780,7 +1780,7 @@ exactly that claim. ⚠️ The section also says Copilot can distinguish **human
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "The person and the AI, together" points at the attribution line crediting the edits to a named person **with Copilot assistance** — one line naming both. "Charts are not tracked" points past the closing sentence, which states what the history cannot attribute. Deliberately worded differently from the reasoning-card callout in the same section so the two do not read as a repeat. Verified on the render.
 
 
-## §81 — Excel keeps your Copilot chat history *(image 1 of 1)*
+## §48 — Excel keeps your Copilot chat history *(image 1 of 1)*
 `07fab1f8ba784085bdd992d5e7641f974365383173abe4682f711bae45f9eb1f`
 
 **Observed:** Excel on the web with the Copilot chat history panel open. The panel shows a list icon, then "New Chat" beside the Copilot icon, then a heading "Chats in Excel". Two saved conversations are listed: "create a chat of this sheet" timestamped "3:32 PM", and beneath it "Calculate the weighted total for each partner usin" dated "9/7". The Excel command bar above shows Comments, Catch up, Editing and Share.
@@ -1836,7 +1836,7 @@ so the panel lists and groups exactly as the source does.
 
 ---
 
-## §33 — The property that finds harness agents
+## §66 — The property that finds harness agents
 `51e313b309d65bd109362ef3b9f92a86a0704249c7170e37039131018970583c`
 
 **Observed:** My own illustration. Lead card “BEFORE YOU CAN CONTROL IT, YOU HAVE TO FIND IT” with **isCLIAgent**
@@ -1853,7 +1853,7 @@ to take.
 
 ---
 
-## §35 — The credit allocation setting is broader than it looks
+## §68 — The credit allocation setting is broader than it looks
 `32c2a6008627e60d50d1d902c9c97bab209ef9dcd6e6ac2802c69115966ad231`
 
 **Observed:** My own illustration. Lead card **POWER CAT’S WARNING, IN THEIR WORDS** carrying the quotation
@@ -1879,7 +1879,7 @@ reassuring. That is why an illustration earns its place rather than filling a ho
 
 ---
 
-## §37 — A tenant-wide view of where credits are going
+## §70 — A tenant-wide view of where credits are going
 `a84fafb6ea2da98af426493d01162f9c0f898cfedb82c0842029006910c45d1a`
 
 **Observed:** My own illustration. Lead card “WHAT POWER CAT PUBLISHED”. Three numbered panels: **1. PULL**
@@ -1898,7 +1898,7 @@ replaces them. I have not built the report myself, and the caption says so.
 
 ---
 
-## §40 — SharePoint metadata filtering is harness-specific
+## §73 — SharePoint metadata filtering is harness-specific
 `b82d56caa8d6d52dae24618d41964121766c74b6e3f1cf87891f7a6847e77b31`
 
 **Observed:** My own illustration. Lead card “THE SUBTITLE IS THE INTERESTING PART” carrying “From topic logic to
@@ -1915,7 +1915,7 @@ and an absence cannot be photographed.
 
 ---
 
-## §25 — Grok models — read the terms before the feature
+## §91 — Grok models — read the terms before the feature
 `c29c44fa9909a8aaee08df951d5e8312aafa34e15144019d96a992880a54e885`
 
 **Observed:** My own illustration. Lead card “WHAT WAS ADDED” — **Grok models from SpaceXAI**, through the
@@ -1939,7 +1939,7 @@ states it.
 
 ---
 
-## §83 — Copilot can tidy your mailbox from a sentence *(image 1 of 2)*
+## §50 — Copilot can tidy your mailbox from a sentence *(image 1 of 2)*
 
 **File:** `lab-s83-confirm-list.webp` (1836×1672, 221.6 KB)
 **SHA256:** `e3cc1423a6f532213d52750cff751f3c9c4d18415943253395a44bf860fbfeb2`
@@ -1968,7 +1968,7 @@ and the absence of any "done" wording confirms nothing had yet been moved.
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts, both with horizontal leaders from a right pad. "Every affected message, named" points past the first subject line in the list. "Nothing moved until I confirmed" points into the empty band beside the **Cancel** button, naming the gate rather than either button individually. Verified on the render. Noted while checking: the list rows carry plain bullets and the list has no border, which does not match the current alt text — raised separately for a wording fix.
 
 
-## §83 — Copilot can tidy your mailbox from a sentence *(image 2 of 2)*
+## §50 — Copilot can tidy your mailbox from a sentence *(image 2 of 2)*
 
 **File:** `lab-s83-done-result.webp` (2241×822, 97.6 KB) — cropped from a 1887×726 capture to the pane only
 **SHA256:** `e8a80cb2913c676175947d8b1bb7f1099a80c33f8571252f97dece9ea7354fcf`
@@ -1996,7 +1996,7 @@ the section records that question as unresolved rather than answering it.
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "It created the folder" points past the bullet recording that the *Scheduled* folder was created, and "And counted what it moved" points past the message chip on the bullet reporting twenty-five messages. The third finding in the prose — that Copilot scoped itself to the inbox — sits barely twenty source pixels from the count bullet, so annotating it would have collided; it is left to the body copy. Verified on the render.
 
 
-## §82 — Custom engine agents work directly in Outlook *(image 1 of 1)*
+## §49 — Custom engine agents work directly in Outlook *(image 1 of 1)*
 
 **File:** `lab-s82-agent-picker.webp` (1841×1370, 78.2 KB) — cropped from a 604×807 capture
 **SHA256:** `b21d941a9a36c9641ad01457e6fa49419af0802853419ea4869308c693993d38`
@@ -2028,7 +2028,7 @@ fictional demo-lab content (Caldova), not real customer data.
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "One character opens them" points at the single **@** typed into the composer, which is the whole mechanic of this section; its leader comes in diagonally from above so it clears both the mic and the send button. "Name and description on every row" points past the first agent's name, at the row whose one-line description sits directly beneath it — the thing that makes a long list usable. Verified on the render.
 
 
-## §84 — Scheduling with Copilot chat reached classic Outlook *(image 1 of 2)*
+## §51 — Scheduling with Copilot chat reached classic Outlook *(image 1 of 2)*
 
 **File:** `lab-s84-classic-prompt.webp` (445×454, 10.5 KB)
 **SHA256:** `321623b42e18bb9b6b90eb0e1172ea9aff1d1dd49c260d4ed12c767a40a4b9a3`
@@ -2050,7 +2050,7 @@ ribbon does. It also captures the exact prompt quoted in the body, confirming th
 
 ---
 
-## §84 — Scheduling with Copilot chat reached classic Outlook *(image 2 of 2)*
+## §51 — Scheduling with Copilot chat reached classic Outlook *(image 2 of 2)*
 
 **File:** `lab-s84-invite-proposed.webp` (1853×2612, 159.4 KB) — cropped from a 411×958 capture
 **SHA256:** `e890e54087c16d408596995d81bfcfdd2b00593bf0d3d72844d1aeb93781e244`
@@ -2080,7 +2080,7 @@ image supports, since no explanation appears anywhere in the pane.
 **Annotated 15 September 2026 (house style, verified on the render):** One outline and three callouts. The **Send** button is the headline finding and sits in the bottom-left corner with no usable gap on any side, so it is outlined and its callout placed in a bottom pad with the dot dropped into the sliver of white beneath it. "It checked working locations" points past one of the availability lines, and "Both attendees ticked" points past the two green-ticked avatars on the event card. Verified on the render: all three leaders cross nothing.
 
 
-## §85 — Outlook coaches your writing as you draft *(image 1 of 2)*
+## §52 — Outlook coaches your writing as you draft *(image 1 of 2)*
 
 **File:** `lab-s85-tone-options.webp` (1923×1687, 172.1 KB)
 **SHA256:** `50f8d42a46cfd4ee0bb07e4fe497060681f29439159f0bbd4f209c769d6344a9`
@@ -2103,7 +2103,7 @@ heading visible here rather than overstating what was captured.
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "No instruction, just the draft" points into the user bubble's own empty space, so it reads as naming that bubble — the point of the section being that nothing was attached to the pasted draft. "Each rewrite labelled by tone" points past the *Option 1* heading. No callout claims a count, because the third option is only partly visible at the bottom edge of the frame. Verified on the render.
 
 
-## §85 — Outlook coaches your writing as you draft *(image 2 of 2)*
+## §52 — Outlook coaches your writing as you draft *(image 2 of 2)*
 
 **File:** `lab-s85-writing-improvements.webp` (2292×633, 80.2 KB) — cropped from an 838×484 capture
 **SHA256:** `8032f2b8debc231320fc6fe450ee2bdfad819afbc19ecbdb50bc1b87ca43f870`
@@ -2130,7 +2130,7 @@ reads cleanly. "Karin" is fictional demo-lab content, not a real correspondent.
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "Coaching I did not ask for" points past the **Writing Improvements** heading. "Each change explained" points past the short second line of the *Clarity* row — the only row whose text ends far enough left to leave a clear run to the table edge — and the callout is placed so its leader stays inside that row's band instead of cutting diagonally through the row beneath. Verified on the render.
 
 
-## §86 — Meeting preparation reached classic Outlook *(image 1 of 1)*
+## §53 — Meeting preparation reached classic Outlook *(image 1 of 1)*
 
 **File:** `lab-s86-prep-brief-classic.webp` (1871×2250, 179.1 KB) — cropped from a 417×925 capture
 **SHA256:** `fc1adc4fea6fd02b59f10258df738c18001b79890b480e5751c80534c2f8ae1e`
@@ -2170,7 +2170,7 @@ fictional demo-lab content (Caldova), not real customer data.
 **Annotated 15 September 2026 (house style, verified on the render):** Three callouts, all with horizontal leaders from a right pad. "It shows its working" points past the expandable **Reasoned for 9s** line. "It says the material was thin" points past the sentence in which Copilot states that the available material is limited. "Every claim cites its source" points past one of the small envelope citation icons that follow each bullet. Verified on the render: every target line ends well short of the pane edge, so none of the three leaders crosses text, and the download affordance overlaying the lower text is avoided.
 
 
-## §89 — You can create and query Planner tasks from Copilot *(image 1 of 2)*
+## §56 — You can create and query Planner tasks from Copilot *(image 1 of 2)*
 
 **File:** `lab-s89-task-created.webp` (900×450, 20.4 KB) — cropped from a 1030×550 capture
 **SHA256:** `dc9e438a91b4fd5f060273de790195b3ccddabcccab7a3f74f594eebd42362c1`
@@ -2196,7 +2196,7 @@ task is reported as already created, not offered for approval.
 **Annotated 15 September 2026 (house style, verified on the render):** padded 620 px right and 260 px bottom over a 2× upscale. A red box outlines the resolved date **18 September 2026 (Friday)**, because a dot alone cannot single out one phrase inside a sentence. Three callouts fan down the right pad on staggered diagonal leaders — *"A priority I never asked for"* at the priority line, *"Friday, resolved to a date"* at the boxed date, and *"And it said where it went"* at the line naming where the task was saved. Horizontal stacking was impossible here: the three dots are only 70 and 97 px apart while a two-line callout box is 192 px tall.
 
 
-## §89 — You can create and query Planner tasks from Copilot *(image 2 of 2)*
+## §56 — You can create and query Planner tasks from Copilot *(image 2 of 2)*
 
 **File:** `lab-s89-task-verified.webp` (1022×523, 16.3 KB) — cropped from a 1123×876 capture
 **SHA256:** `91a462c28e78b242d3d5492185fee0d8a1c737689cf2b7224442435f6df1332e`
@@ -2219,7 +2219,7 @@ the field labels and values are large and every one reads cleanly.
 **Annotated 15 September 2026 (house style, verified on the render):** padded 640 px right and 140 px bottom over a 1.3× upscale. Two red boxes outline the **Priority** and **Due date** field rows in the saved task. Three callouts sit in the right pad — *"Fields hidden because it is private"* at the banner, *"Important, in the record too"* at the boxed priority row, and *"The due date, as saved"* at the boxed due-date row. All three dots ride the clear right margin at x 1295, measured at zero dark pixels and 21 px clear of the box borders.
 
 
-## §91 — Teams meetings can be added to a Copilot Notebook *(image 1 of 1)*
+## §58 — Teams meetings can be added to a Copilot Notebook *(image 1 of 1)*
 
 **File:** `lab-s91-meetings-tab.webp` (784×661, 33.3 KB)
 **SHA256:** `e2cff4615416f7b715856d110dc01f4df9a3ae96f718136af746f09c6a00445f`
@@ -2249,7 +2249,7 @@ confirms no selection had been made. All meeting names and attendees are fiction
 **Annotated 15 September 2026 (house style, verified on the render):** padded 340 px at the **top** rather than the side, because both things worth pointing at sit in the upper command area. A red box outlines the **Meetings** pill, and two callouts drop in from the pad — *"Meetings, a tab of its own"* and *"And a search box over them"*. The first dot sits in the 41 px gap between the search underline and the top of the pill; its leader is deliberately offset so it leaves the callout box cleanly instead of running down the box's own border.
 
 
-## §92 — OneDrive can take you from files to finished work in chat *(image 2 of 2)*
+## §59 — OneDrive can take you from files to finished work in chat *(image 2 of 2)*
 
 **File:** `lab-s92-onedrive-starters.webp` (367×522, 15.3 KB) — native size, no crop
 **SHA256:** `09461101e7b63aff9a69160da9ba115cd8d3b5b315214b8e768f0d890c3411da`
@@ -2358,7 +2358,7 @@ persona rather than a real contact.
 
 ---
 
-## §90 — The Planner Agent works in group-based basic plans
+## §57 — The Planner Agent works in group-based basic plans
 
 **File:** `lab-s90-planner-agent-priority.webp` (372×772, 51.8 KB) — native size, no crop
 **SHA256:** `6b7e458839d9e9145be9bc1ed3130703476ff198129c6c188e0db31495b8dbaa`
@@ -2559,7 +2559,7 @@ uncropped screenshot and confirmed.
 - **Annotated 15 September 2026 (house style, verified on the render):** One callout added — “Your search question carries into Chat”, dot on the right edge of the carried-over prompt bubble. The pane was upscaled 1.8× before annotating and padded on the right. Note: that pad sampled the capture’s own dark-green desktop background rather than white. It is seamless against the source and the white callout still reads clearly, so it is kept deliberately — forcing white would leave a visible seam against the green already baked into this capture.
 - **Verdict:** ✅ MATCH
 
-## §57 — lab-s57-app-skill-slash.webp
+## §24 — lab-s57-app-skill-slash.webp
 
 - **File:** `lab-s57-app-skill-slash.webp` (1154×460, 16.4 KB)
 - **SHA-256:** `2bd37a86a1b4fdca38c0c9865dae377cff788283429b0c5d216f24cf6be9c4cd`
@@ -2570,7 +2570,7 @@ uncropped screenshot and confirmed.
 H
 
 
-## §62 — lab-s62-cowork-plugins.webp
+## §29 — lab-s62-cowork-plugins.webp
 
 - **File:** `lab-s62-cowork-plugins.webp` (1417×1386, 57.3 KB)
 - **SHA-256:** `336b7536bf75fa54af068cba82e8668d52dd79e9efefb62b5119ee5d098a60a7`
@@ -2581,7 +2581,7 @@ H
 **Annotated 15 September 2026 (house style, verified on the render):** Two callouts on a 1.5× render with a 320px top pad and a 700px right pad. **"Plugins, Skills, Preferences"** sits in the top pad and drops a long near-vertical leader to a dot just right of the "Preferences" tab — the ink-run scan put the tab row's last ink at src x452, so the dot clears the final letter with room to spare. **"Installed, all off"** runs a horizontal leader in from the right pad to a dot beyond the Fabric IQ row's chevron; verified on the render that all three toggles below read grey, so the label matches what is actually visible. A third callout naming the Discover catalogue was **planned and dropped**: every horizontal path into it crossed either the search and filter icons at src x1186/x1237 or ran along the card border at x229, and the render confirms those icons sit exactly where the scan said.
 
 
-## §62 — lab-s62-add-plugin.webp
+## §29 — lab-s62-add-plugin.webp
 
 - **File:** `lab-s62-add-plugin.webp` (1353×1002, 41.0 KB)
 - **SHA-256:** `a457adeb5d411465b3efaa6514429a73df3cb61c528adbd94136a776afcca5f5`
@@ -2592,7 +2592,7 @@ H
 H
 
 
-## §63 — lab-s63-plugins-mobile.webp
+## §30 — lab-s63-plugins-mobile.webp
 
 - **File:** `lab-s63-plugins-mobile.webp` (1882×2242, 126.8 KB)
 - **SHA-256:** `822633be4842a10acc34c2d26f9574e4fd5a3d1d15fc1dbd41883afb8f715215`
