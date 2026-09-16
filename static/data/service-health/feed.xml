@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2026 16:47:48 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 21:14:29 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[SharePoint Online] Users may be unable to load SharePoint Online sites or pages and receive an error message</title>
@@ -19,11 +19,20 @@
     <item>
       <title>[Microsoft 365 suite] Some users in the United States and United Kingdom may be unable to access Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1472904</link>
-      <description>[Microsoft 365 suite] Users in the United States and United Kingdom may be unable to access Microsoft 365 services.</description>
+      <description>[Microsoft 365 suite] Users in the United States and United Kingdom may have been unable to access Microsoft 365 services.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">MO1472904</guid>
-      <pubDate>Wed, 16 Sep 2026 13:47:41 +0000</pubDate>
+      <pubDate>Wed, 16 Sep 2026 13:22:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users are unable to access Outlook on the web from a specific Outlook link </title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1473059</link>
+      <description>[Exchange Online] Users are unable to access Outlook on the web from a specific Outlook link. </description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1473059</guid>
+      <pubDate>Tue, 15 Sep 2026 15:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page</title>
@@ -48,7 +57,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MO1471241</link>
       <description>[Microsoft 365 suite] Admins' usage reports may contain stale data in Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1471241</guid>
       <pubDate>Sun, 13 Sep 2026 04:56:15 +0000</pubDate>
     </item>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1457636</guid>
       <pubDate>Wed, 19 Aug 2026 14:15:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1466441</link>
-      <description>[Microsoft Teams] Users may have been unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1466441</guid>
-      <pubDate>Tue, 18 Aug 2026 13:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
