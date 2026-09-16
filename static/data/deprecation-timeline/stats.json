@@ -1,29 +1,29 @@
 {
-  "generated": "2026-09-15T10:13:22.049651+00:00",
+  "generated": "2026-09-16T10:06:51.956792+00:00",
   "total": 52,
-  "active": 22,
-  "passed": 30,
-  "action_required": 21,
+  "active": 21,
+  "passed": 31,
+  "action_required": 20,
   "urgency": {
-    "critical": 17,
+    "critical": 16,
     "warning": 4,
     "watch": 1
   },
   "categories": {
-    "azure": 11,
+    "azure": 10,
     "office-apps": 3,
     "exchange": 2,
     "entra": 1,
     "windows": 5
   },
   "types": {
-    "retirement": 13,
+    "retirement": 12,
     "end-of-support": 9
   },
   "next_deadline": {
-    "title": "Azure Maps Gen1 Price Tier Retirement",
-    "deadline": "2026-09-15",
-    "days_remaining": 0,
+    "title": "Azure API for FHIR Retirement",
+    "deadline": "2026-09-30",
+    "days_remaining": 14,
     "urgency": "critical"
   },
   "category_meta": {
