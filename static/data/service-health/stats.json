@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T04:48:33.797887+00:00",
+  "generated_at": "2026-09-16T11:25:49.886758+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -97,12 +97,12 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 5,
-      "active_incidents": 1,
-      "avg_duration_minutes": 6974,
+      "active_incidents": 0,
+      "avg_duration_minutes": 18511,
       "last_incident": "2026-09-04T09:00:00+00:00",
       "classifications": {
-        "advisory": 2,
-        "incident": 3
+        "incident": 3,
+        "advisory": 2
       }
     },
     {
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 20,
+      "incident_count": 19,
       "services_affected": 8
     },
     {
@@ -217,8 +217,8 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 25,
-      "services_affected": 8
+      "incident_count": 26,
+      "services_affected": 9
     }
   ]
 }

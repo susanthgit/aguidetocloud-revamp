@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2026 04:48:34 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 11:25:50 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page</title>
@@ -141,15 +141,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1466621</guid>
       <pubDate>Thu, 03 Sep 2026 06:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to load themes in Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1465910</link>
-      <description>[Exchange Online] Users may be unable to load themes in Outlook on the web.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1465910</guid>
-      <pubDate>Wed, 02 Sep 2026 06:01:52 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may have been unable to open Google search links from email and Microsoft Teams messages</title>
@@ -456,6 +447,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1456866</guid>
       <pubDate>Mon, 17 Aug 2026 23:38:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Microsoft 365 Copilot in Excel</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1456911</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot in Excel.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1456911</guid>
+      <pubDate>Mon, 17 Aug 2026 19:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
