@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2026 11:25:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 16:47:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[SharePoint Online] Users may be unable to load SharePoint Online sites or pages and receive an error message</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1472983</link>
+      <description>[SharePoint Online] Users may have been unable to load SharePoint Online sites or pages and receive an error message.</description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1472983</guid>
+      <pubDate>Wed, 16 Sep 2026 15:04:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users in the United States and United Kingdom may be unable to access Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1472904</link>
+      <description>[Microsoft 365 suite] Users in the United States and United Kingdom may be unable to access Microsoft 365 services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1472904</guid>
+      <pubDate>Wed, 16 Sep 2026 13:47:41 +0000</pubDate>
+    </item>
     <item>
       <title>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1472181</link>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1466441</guid>
       <pubDate>Tue, 18 Aug 2026 13:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to send or receive new Exchange Online email through the native iOS mail app</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1456866</link>
-      <description>[Exchange Online] Users may have been unable to send or receive new Exchange Online email through the native iOS mail app.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1456866</guid>
-      <pubDate>Mon, 17 Aug 2026 23:38:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Microsoft 365 Copilot in Excel</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1456911</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot in Excel.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1456911</guid>
-      <pubDate>Mon, 17 Aug 2026 19:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

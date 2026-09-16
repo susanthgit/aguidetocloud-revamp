@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T11:25:49.886758+00:00",
+  "generated_at": "2026-09-16T16:47:48.382869+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 21,
-      "active_incidents": 5,
-      "avg_duration_minutes": 5142,
-      "last_incident": "2026-09-13T04:56:15.767000+00:00",
+      "total_incidents": 20,
+      "active_incidents": 6,
+      "avg_duration_minutes": 4697,
+      "last_incident": "2026-09-16T13:47:41+00:00",
       "classifications": {
-        "advisory": 16,
-        "incident": 5
+        "incident": 6,
+        "advisory": 14
       }
     },
     {
@@ -93,6 +93,19 @@
       }
     },
     {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 5,
+      "active_incidents": 0,
+      "avg_duration_minutes": 12109,
+      "last_incident": "2026-09-16T15:04:21+00:00",
+      "classifications": {
+        "incident": 4,
+        "advisory": 1
+      }
+    },
+    {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
@@ -103,19 +116,6 @@
       "classifications": {
         "incident": 3,
         "advisory": 2
-      }
-    },
-    {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 15115,
-      "last_incident": "2026-08-25T16:58:38.313000+00:00",
-      "classifications": {
-        "incident": 3,
-        "advisory": 1
       }
     },
     {
@@ -207,8 +207,8 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 19,
-      "services_affected": 8
+      "incident_count": 21,
+      "services_affected": 9
     },
     {
       "month": "2026-08",
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 26,
+      "incident_count": 24,
       "services_affected": 9
     }
   ]
