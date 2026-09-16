@@ -2,17 +2,17 @@
  "schema": 2,
  "slug": "microsoft-365-copilot-august-2026-updates",
  "tool_version": "1.0.0",
- "generated_at": "2026-08-24T21:46:17.962430+00:00",
+ "generated_at": "2026-09-16T02:38:24.897234+00:00",
  "post": {
   "path": "content/blog/microsoft-365-copilot-august-2026-updates.md",
-  "sha256": "59320eec43806f4ef800613788babaa939f453d6c152516dd3f22190aa586b26",
+  "sha256": "0450eb4e5c0b59808ebaa8e4469ef03ce666f354cb83461334fc4d99b16c7d8a",
   "sections": 59
  },
  "roadmap_snapshot": {
   "path": "static/data/roadmap/latest.json",
-  "generated_at": "2026-08-24T05:45:25.509565+00:00",
-  "item_count": 1792,
-  "sha256": "22f372de54f6565df8cf70fc8c76f7208e747f7adf93785efecb1cd097a0d982"
+  "generated_at": "2026-09-15T09:56:11.582351+00:00",
+  "item_count": 1753,
+  "sha256": "a3a2b9b80058adf1e4eb53e541b5c29d7bb5bad7a335df77034c0c9d5688170c"
  },
  "sections": [
   {
@@ -221,7 +221,7 @@
    "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "561491": "Rolling out"
+    "561491": "Launched"
    }
   },
   {
@@ -234,7 +234,7 @@
    "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "564614": "Rolling out"
+    "564614": "Launched"
    }
   },
   {
@@ -247,7 +247,7 @@
    "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "562018": "In development"
+    "562018": "Rolling out"
    }
   },
   {
@@ -290,7 +290,7 @@
    "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "567891": "In development"
+    "567891": "Rolling out"
    }
   },
   {
@@ -312,7 +312,7 @@
    "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "560339": "In development"
+    "560339": "Cancelled"
    }
   },
   {
@@ -603,7 +603,7 @@
    "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "503144": "Launched"
+    "503144": "Rolling out"
    }
   },
   {
@@ -634,7 +634,7 @@
    "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "503564": "In development"
+    "503564": "Launched"
    }
   },
   {

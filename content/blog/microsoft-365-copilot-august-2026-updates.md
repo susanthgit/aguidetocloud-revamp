@@ -879,7 +879,7 @@ The useful part is not another model picker. Cowork can decide which model fits 
 
 *For: Copilot Cowork · Rolled out June 2026*
 
-Cowork's plugin catalogue expanded into more of the systems people already use. Microsoft's roundup named enosix arnold for Copilot Cowork, Harvey, LSEG, Miro, monday.com, Moodys Credit MCP, Morningstar, S&P Global Energy and AI Meeting Notes TeamsMaestro, with **Databricks** available through sideloading.
+Cowork's plugin catalogue expanded into more of the systems people already use. Microsoft's roundup named enosix arnold for Copilot Cowork, Harvey, LSEG, Miro, monday.com, Moody's Credit MCP, Morningstar, S&P Global Energy and AI Meeting Notes TeamsMaestro, with **Databricks** available through sideloading.
 
 **Fabric IQ** and named **Dynamics 365** plugins — Customer Service, ERP and Sales — were also supported. That means a Cowork task can draw on more business context without asking the user to manually gather and paste everything into the prompt.
 
@@ -1183,7 +1183,7 @@ The panel in Microsoft's June article shows **All users** and No users choices f
 
 *For: Microsoft Purview + Copilot Cowork · Rolled out June 2026*
 
-Microsoft Purview coverage extended to **Cowork interactions**. The June roundup listed sensitivity-label inheritance and display, audit logging, DSPM Activity Explorer, Insider Risk, eDiscovery, Data Lifecycle Management and Communication Compliance.
+Microsoft Purview coverage extended to **Cowork interactions**. The June roundup listed sensitivity-label inheritance and display, audit logging, DSPM Activity Explorer, Insider Risk Management, eDiscovery, Data Lifecycle Management and Communication Compliance.
 
 The official image shows Cowork interaction records inside **DSPM Activity Explorer**, with a selected AI Interaction and detailed user, app and response information on the right.
 
