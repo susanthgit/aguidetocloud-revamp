@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Sep 2026 13:23:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 18:09:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may intermittently be unable to launch Microsoft Teams from the web or desktop clients</title>
@@ -51,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1472181</guid>
       <pubDate>Tue, 15 Sep 2026 07:18:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may encounter issues with the auto compose feature in Outlook mobile app for iOS</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1473520</link>
+      <description>[Exchange Online] Users may encounter issues with the auto compose feature in Outlook mobile app for iOS.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1473520</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview] Some admins may receive failures creating or updating Communications Compliance policies in Microsoft Purview</title>
@@ -447,15 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1457843</guid>
       <pubDate>Wed, 19 Aug 2026 22:38:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Admins may not see data in multiple tabs within the Microsoft 365 apps admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1457784</link>
-      <description>[Microsoft 365 apps] Admins may not have seen data in multiple tabs within the Microsoft 365 apps admin center.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OP1457784</guid>
-      <pubDate>Wed, 19 Aug 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
