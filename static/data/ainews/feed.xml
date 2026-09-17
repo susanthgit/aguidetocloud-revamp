@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2026 19:51:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 01:05:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>OpenAI's new sponsored agents are happy to chat about selling you things</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/09/16/openais-new-sponsored-agents-are-happy-to-chat-about-selling-you-things/5296946</link>
+      <title>Migrating the GitHub Copilot runtime to Rust, using Copilot</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 17 Sep 2026 00:26:43 +0000</pubDate>
+      <guid>https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/</guid>
+    </item>
+    <item>
+      <title>OpenAI Creates a New Framework to Disclose Bad AI Behavior</title>
+      <link>https://www.wired.com/story/openai-releases-new-policy-for-reporting-incidents-of-model-misalignment/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Wed, 16 Sep 2026 20:32:37 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/09/16/openais-new-sponsored-agents-are-happy-to-chat-about-selling-you-things/5296946</guid>
+      <pubDate>Wed, 16 Sep 2026 22:07:24 +0000</pubDate>
+      <guid>https://www.wired.com/story/openai-releases-new-policy-for-reporting-incidents-of-model-misalignment/</guid>
     </item>
     <item>
-      <title>Google Pixel phones pwned in zero-click attacks</title>
-      <link>https://www.theregister.com/security/2026/09/16/google-pixel-phones-pwned-in-zero-click-attacks/5296936</link>
+      <title>Nonprofit that tracks meteors taken down by "critical blow" from a cyberattack</title>
+      <link>https://arstechnica.com/security/2026/09/nonprofit-that-tracks-meteors-taken-down-by-critical-blow-from-a-cyberattack/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 19:56:31 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/09/16/google-pixel-phones-pwned-in-zero-click-attacks/5296936</guid>
+      <pubDate>Wed, 16 Sep 2026 21:08:14 +0000</pubDate>
+      <guid>https://arstechnica.com/security/2026/09/nonprofit-that-tracks-meteors-taken-down-by-critical-blow-from-a-cyberattack/</guid>
     </item>
     <item>
-      <title>4 engineering patterns behind the strongest AI Agents Challenge submissions</title>
-      <link>https://developers.googleblog.com/4-engineering-patterns-behind-the-strongest-ai-agents-challenge-submissions/</link>
+      <title>Anthropic and OpenAI want to embed safety evaluators. Will they really be independent?</title>
+      <link>https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 16 Sep 2026 21:07:24 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/</guid>
+    </item>
+    <item>
+      <title>Washington Won’t Be Regulating AI Anytime Soon</title>
+      <link>https://www.wired.com/story/washington-wont-be-regulating-ai-anytime-soon/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 16 Sep 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/washington-wont-be-regulating-ai-anytime-soon/</guid>
+    </item>
+    <item>
+      <title>Automate SSO authorization for classic PATs and SSH keys</title>
+      <link>https://github.blog/changelog/2026-09-16-automate-sso-authorization-for-classic-pats-and-ssh-keys</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 16 Sep 2026 20:20:16 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-09-16-automate-sso-authorization-for-classic-pats-and-ssh-keys</guid>
+    </item>
+    <item>
+      <title>SCIM user responses now include a profileUrl attribute</title>
+      <link>https://github.blog/changelog/2026-09-16-scim-user-responses-now-include-a-profileurl-attribute</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 16 Sep 2026 20:19:58 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-09-16-scim-user-responses-now-include-a-profileurl-attribute</guid>
+    </item>
+    <item>
+      <title>Copilot budget increase requests are generally available</title>
+      <link>https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 16 Sep 2026 20:17:18 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available</guid>
+    </item>
+    <item>
+      <title>After accusations of selling ‘perv glasses,’ Meta prepares to sell a pair without a camera</title>
+      <link>https://techcrunch.com/2026/09/16/after-accusations-of-selling-perv-glasses-meta-prepares-to-sell-a-pair-without-a-camera/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 16 Sep 2026 20:12:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/16/after-accusations-of-selling-perv-glasses-meta-prepares-to-sell-a-pair-without-a-camera/</guid>
+    </item>
+    <item>
+      <title>Snap is launching a new Specs AI tool, and it’s coming to iOS and Mac</title>
+      <link>https://www.theverge.com/tech/996078/snap-specs-intelligence-ai-agent-ios-mac</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Wed, 16 Sep 2026 19:50:07 +0000</pubDate>
-      <guid>https://developers.googleblog.com/4-engineering-patterns-behind-the-strongest-ai-agents-challenge-submissions/</guid>
+      <pubDate>Wed, 16 Sep 2026 19:40:00 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/996078/snap-specs-intelligence-ai-agent-ios-mac</guid>
     </item>
     <item>
-      <title>Agent Anomaly Detection, now in Private Preview on the Gemini Enterprise Agent Platform</title>
-      <link>https://developers.googleblog.com/agent-anomaly-detection-now-in-private-preview-on-the-gemini-enterprise-agent-platform/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 16 Sep 2026 19:50:07 +0000</pubDate>
-      <guid>https://developers.googleblog.com/agent-anomaly-detection-now-in-private-preview-on-the-gemini-enterprise-agent-platform/</guid>
-    </item>
-    <item>
-      <title>I Trained a Fly’s Brain to Generate WIRED Story Ideas</title>
-      <link>https://www.wired.com/story/i-trained-a-fly-on-wired-story-ideas/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 19:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/i-trained-a-fly-on-wired-story-ideas/</guid>
-    </item>
-    <item>
-      <title>Improving HCLS AI reasoning with open-source agent skills</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Wed, 16 Sep 2026 19:00:00 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/</guid>
-    </item>
-    <item>
-      <title>Fault tolerant distributed training on Amazon EKS using NVRx</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/fault-tolerant-distributed-training-on-amazon-eks-using-nvrx/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Wed, 16 Sep 2026 18:59:25 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/fault-tolerant-distributed-training-on-amazon-eks-using-nvrx/</guid>
-    </item>
-    <item>
-      <title>AI labs want in-house auditors — but maybe they should shut the front door first</title>
-      <link>https://techcrunch.com/2026/09/16/ai-labs-want-in-house-auditors-but-maybe-they-should-shut-the-front-door-first/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 18:25:25 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/16/ai-labs-want-in-house-auditors-but-maybe-they-should-shut-the-front-door-first/</guid>
-    </item>
-    <item>
-      <title>Enterprises are sweating legacy IT assets as AI investment grows</title>
-      <link>https://www.theregister.com/systems/2026/09/16/enterprises-are-sweating-legacy-it-assets-as-ai-investment-grows/5296896</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 18:15:00 +0200</pubDate>
-      <guid>https://www.theregister.com/systems/2026/09/16/enterprises-are-sweating-legacy-it-assets-as-ai-investment-grows/5296896</guid>
-    </item>
-    <item>
-      <title>Nine-year-old runs up $118,000 bill on dad's corporate credit card advertising his Roblox YouTube channel</title>
-      <link>https://www.theregister.com/offbeat/2026/09/16/nine-year-old-runs-up-118000-bill-on-dads-corporate-credit-card-advertising-his-roblox-youtube-channel/5296889</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 17:51:49 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/09/16/nine-year-old-runs-up-118000-bill-on-dads-corporate-credit-card-advertising-his-roblox-youtube-channel/5296889</guid>
-    </item>
-    <item>
-      <title>I recommend you don’t run these appliances on your power station – even if you can</title>
-      <link>https://www.zdnet.com/home-and-office/do-not-run-these-appliances-on-power-stations/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 16 Sep 2026 17:44:31 +0000</pubDate>
-      <guid>https://www.zdnet.com/home-and-office/do-not-run-these-appliances-on-power-stations/</guid>
-    </item>
-    <item>
-      <title>Fedora 45 beta drags the Linux console into the 21st century</title>
-      <link>https://www.theregister.com/software/2026/09/16/fedora-45-beta-drags-the-linux-console-into-the-21st-century/5296873</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 17:27:46 +0200</pubDate>
-      <guid>https://www.theregister.com/software/2026/09/16/fedora-45-beta-drags-the-linux-console-into-the-21st-century/5296873</guid>
-    </item>
-    <item>
-      <title>Your AI agents can now control your Google Home devices</title>
-      <link>https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/</link>
+      <title>Our framework for reporting model misalignment</title>
+      <link>https://openai.com/index/model-misalignment-reporting-framework</link>
       <description></description>
       <category>OpenAI</category>
       <pubDate>Wed, 16 Sep 2026 17:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/</guid>
+      <guid>https://openai.com/index/model-misalignment-reporting-framework</guid>
     </item>
     <item>
-      <title>Anthropic merges Claude chat and Cowork into one</title>
-      <link>https://www.zdnet.com/innovation/claude-chat-absorbs-cowork-anthropic/</link>
+      <title>The 2.5-hour AI-generated Odyssey movie is 2.5 hours too long</title>
+      <link>https://www.theverge.com/entertainment/996499/ai-odyssey-movie-review</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 16 Sep 2026 16:59:13 -0400</pubDate>
+      <guid>https://www.theverge.com/entertainment/996499/ai-odyssey-movie-review</guid>
+    </item>
+    <item>
+      <title>The AI data center e-waste problem is huge — and getting bigger</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/996470/ai-data-center-e-waste-ban</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 16 Sep 2026 16:40:46 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/996470/ai-data-center-e-waste-ban</guid>
+    </item>
+    <item>
+      <title>The sexy AI-powered dating app scams are here</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/995348/ai-dating-app-scams</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 16 Sep 2026 10:45:00 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/995348/ai-dating-app-scams</guid>
+    </item>
+    <item>
+      <title>Amazon launches Alexa+ in India with Hindi support</title>
+      <link>https://techcrunch.com/2026/09/16/amazon-launches-alexa-in-india-with-hindi-support/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 16 Sep 2026 10:34:47 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/16/amazon-launches-alexa-in-india-with-hindi-support/</guid>
+    </item>
+    <item>
+      <title>Global Market Today: Asian stocks steady as traders await Fed decision</title>
+      <link>https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-asian-stocks-steady-as-traders-await-fed-decision/articleshow/134275845.cms</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 16 Sep 2026 01:01:45 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-asian-stocks-steady-as-traders-await-fed-decision/articleshow/134275845.cms</guid>
+    </item>
+    <item>
+      <title>memman 0.38.0</title>
+      <link>https://pypi.org/project/memman/0.38.0/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Wed, 16 Sep 2026 16:30:44 +0000</pubDate>
-      <guid>https://www.zdnet.com/innovation/claude-chat-absorbs-cowork-anthropic/</guid>
+      <pubDate>Wed, 16 Sep 2026 01:00:21 +0000</pubDate>
+      <guid>https://pypi.org/project/memman/0.38.0/</guid>
     </item>
     <item>
-      <title>Anthropic merges Claude chat and Cowork in one interface</title>
-      <link>https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/</link>
+      <title>Trump Calls AI Panic the Next Climate Change Hoax</title>
+      <link>https://legalinsurrection.com/2026/09/trump-calls-ai-panic-the-next-climate-change-hoax/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 16 Sep 2026 01:00:14 +0000</pubDate>
+      <guid>https://legalinsurrection.com/2026/09/trump-calls-ai-panic-the-next-climate-change-hoax/</guid>
+    </item>
+    <item>
+      <title>Trump Completely Rejects AI “Experts” Push to ‘Pace the Frontier’</title>
+      <link>https://wattsupwiththat.com/2026/09/15/trump-completely-rejects-ai-experts-push-to-pace-the-frontier/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 16 Sep 2026 01:00:00 +0000</pubDate>
+      <guid>https://wattsupwiththat.com/2026/09/15/trump-completely-rejects-ai-experts-push-to-pace-the-frontier/</guid>
+    </item>
+    <item>
+      <title>Newell Brands puts internal audit at the heart of AI adoption</title>
+      <link>https://siliconangle.com/2026/09/15/newell-brands-puts-internal-audit-at-the-heart-of-ai-adoption-amplify/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 16 Sep 2026 00:57:10 +0000</pubDate>
+      <guid>https://siliconangle.com/2026/09/15/newell-brands-puts-internal-audit-at-the-heart-of-ai-adoption-amplify/</guid>
+    </item>
+    <item>
+      <title>freetoken 0.1.3</title>
+      <link>https://pypi.org/project/freetoken/0.1.3/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 16 Sep 2026 00:54:22 +0000</pubDate>
+      <guid>https://pypi.org/project/freetoken/0.1.3/</guid>
+    </item>
+    <item>
+      <title>runtm 0.2.151</title>
+      <link>https://pypi.org/project/runtm/0.2.151/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Wed, 16 Sep 2026 16:30:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:53:08 +0000</pubDate>
+      <guid>https://pypi.org/project/runtm/0.2.151/</guid>
     </item>
     <item>
-      <title>How September’s Pixel Drop changes the way you call and message important contacts</title>
-      <link>https://www.zdnet.com/tech/september-pixel-drop-call-message-important-contacts/</link>
+      <title>Gemini 3.8 Live Extended Thinking powers Gemini Live, Gmail, &amp; Keep - 9to5Google</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185664890</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 16 Sep 2026 00:52:37 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185664890</guid>
+    </item>
+    <item>
+      <title>Lawmakers throw out 'Trojan horse' activists they say are engaged in American subversion</title>
+      <link>https://www.foxnews.com/politics/lawmakers-throw-out-trojan-horse-activists-engaged-american-subversion</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Wed, 16 Sep 2026 16:25:53 +0000</pubDate>
-      <guid>https://www.zdnet.com/tech/september-pixel-drop-call-message-important-contacts/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:50:51 +0000</pubDate>
+      <guid>https://www.foxnews.com/politics/lawmakers-throw-out-trojan-horse-activists-engaged-american-subversion</guid>
     </item>
     <item>
-      <title>Helping older adults use AI in everyday life</title>
-      <link>https://openai.com/index/helping-older-adults-use-ai-in-everyday-life</link>
+      <title>lfx-google 0.1.2</title>
+      <link>https://pypi.org/project/lfx-google/0.1.2/</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 16 Sep 2026 16:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/helping-older-adults-use-ai-in-everyday-life</guid>
+      <category>Google</category>
+      <pubDate>Wed, 16 Sep 2026 00:50:42 +0000</pubDate>
+      <guid>https://pypi.org/project/lfx-google/0.1.2/</guid>
     </item>
     <item>
-      <title>Optimizing agent system prompts with Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/optimizing-agent-system-prompts-with-amazon-bedrock-agentcore/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Wed, 16 Sep 2026 15:47:39 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/optimizing-agent-system-prompts-with-amazon-bedrock-agentcore/</guid>
-    </item>
-    <item>
-      <title>Robots are waiting for a ChatGPT moment: Nvidia’s Les Karpas explains why at TechCrunch Disrupt 2026</title>
-      <link>https://techcrunch.com/2026/09/16/robots-are-waiting-for-a-chatgpt-moment-nvidias-les-karpas-explains-why-at-techcrunch-disrupt-2026/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 16 Sep 2026 15:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/16/robots-are-waiting-for-a-chatgpt-moment-nvidias-les-karpas-explains-why-at-techcrunch-disrupt-2026/</guid>
-    </item>
-    <item>
-      <title>Apple might make servers again to cash in on the AI rush</title>
-      <link>https://www.theverge.com/tech/996321/apple-servers-ai-nvidia</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 13:20:29 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/996321/apple-servers-ai-nvidia</guid>
-    </item>
-    <item>
-      <title>Google will now let any AI agent run your smart home</title>
-      <link>https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date</link>
+      <title>Re: Retrospective by 'gpg.fail' authors</title>
+      <link>https://seclists.org/oss-sec/2026/q3/798</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Wed, 16 Sep 2026 13:00:00 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date</guid>
+      <pubDate>Wed, 16 Sep 2026 00:50:11 +0000</pubDate>
+      <guid>https://seclists.org/oss-sec/2026/q3/798</guid>
     </item>
     <item>
-      <title>Building the materials foundation for AI</title>
-      <link>https://www.technologyreview.com/2026/09/16/1144014/building-the-materials-foundation-for-ai/</link>
+      <title>dro 0.4.1</title>
+      <link>https://pypi.org/project/dro/0.4.1/</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 12:47:34 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/09/16/1144014/building-the-materials-foundation-for-ai/</guid>
+      <category>Meta</category>
+      <pubDate>Wed, 16 Sep 2026 00:49:10 +0000</pubDate>
+      <guid>https://pypi.org/project/dro/0.4.1/</guid>
     </item>
     <item>
-      <title>Ministry of Justice apologizes after court staff accessed Southport victims' files</title>
-      <link>https://www.theregister.com/security/2026/09/16/ministry-of-justice-apologizes-after-court-staff-accessed-southport-victims-files/5296808</link>
+      <title>lfx-bundles 1.1.26</title>
+      <link>https://pypi.org/project/lfx-bundles/1.1.26/</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 12:42:28 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/09/16/ministry-of-justice-apologizes-after-court-staff-accessed-southport-victims-files/5296808</guid>
+      <category>Open Source</category>
+      <pubDate>Wed, 16 Sep 2026 00:47:38 +0000</pubDate>
+      <guid>https://pypi.org/project/lfx-bundles/1.1.26/</guid>
     </item>
     <item>
-      <title>Claude comes for Gemini with its own take on Docs and Slides</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/996234/anthropic-one-claude-cowork-docs-slides</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 16 Sep 2026 12:30:00 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/996234/anthropic-one-claude-cowork-docs-slides</guid>
-    </item>
-    <item>
-      <title>Salesforce staggers back to feet after global outage</title>
-      <link>https://www.theregister.com/saas/2026/09/16/salesforce-staggers-back-to-feet-after-global-outage/5296800</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 16 Sep 2026 12:06:00 +0200</pubDate>
-      <guid>https://www.theregister.com/saas/2026/09/16/salesforce-staggers-back-to-feet-after-global-outage/5296800</guid>
-    </item>
-    <item>
-      <title>How to connect AI usage to business value</title>
-      <link>https://openai.com/index/how-to-connect-ai-usage-to-business-value</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 16 Sep 2026 12:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/how-to-connect-ai-usage-to-business-value</guid>
-    </item>
-    <item>
-      <title>How workers are unlocking new ways of working</title>
-      <link>https://openai.com/index/unlocking-new-ways-of-working</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/unlocking-new-ways-of-working</guid>
-    </item>
-    <item>
-      <title>Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs</title>
-      <link>https://machinelearning.apple.com/research/glyph-column-description-tagging</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
-      <guid>https://machinelearning.apple.com/research/glyph-column-description-tagging</guid>
-    </item>
-    <item>
-      <title>Mistral and Mozilla are bringing open, private and multilingual AI to your web browser</title>
-      <link>https://mistral.ai/news/mistral-x-mozilla</link>
-      <description></description>
-      <category>Mistral</category>
-      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
-      <guid>https://mistral.ai/news/mistral-x-mozilla</guid>
-    </item>
-    <item>
-      <title>Tech CEOs call for AI regulation. Trump and Congress are not rushing to act</title>
-      <link>https://biztoc.com/x/983b1a43fedcd1a1</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 15 Sep 2026 19:46:27 +0000</pubDate>
-      <guid>https://biztoc.com/x/983b1a43fedcd1a1</guid>
-    </item>
-    <item>
-      <title>OpenAI, Anthropic, and Google Join Forces for Safety as Antitrust Concerns Mount</title>
-      <link>https://gizmodo.com/openai-anthropic-and-google-join-forces-for-safety-as-antitrust-concerns-mount-2000811888</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 15 Sep 2026 19:45:32 +0000</pubDate>
-      <guid>https://gizmodo.com/openai-anthropic-and-google-join-forces-for-safety-as-antitrust-concerns-mount-2000811888</guid>
-    </item>
-    <item>
-      <title>session-buddy 0.26.4</title>
-      <link>https://pypi.org/project/session-buddy/0.26.4/</link>
+      <title>runtm 0.2.150</title>
+      <link>https://pypi.org/project/runtm/0.2.150/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Tue, 15 Sep 2026 19:43:21 +0000</pubDate>
-      <guid>https://pypi.org/project/session-buddy/0.26.4/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:46:14 +0000</pubDate>
+      <guid>https://pypi.org/project/runtm/0.2.150/</guid>
     </item>
     <item>
-      <title>Bernie Sanders, Steve Bannon unite to call for AI restrictions</title>
-      <link>https://cryptobriefing.com/sanders-bannon-unite-ai-restrictions/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 15 Sep 2026 19:42:05 +0000</pubDate>
-      <guid>https://cryptobriefing.com/sanders-bannon-unite-ai-restrictions/</guid>
-    </item>
-    <item>
-      <title>manim-derivatives-plotter added to PyPI</title>
-      <link>https://pypi.org/project/manim-derivatives-plotter/</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 15 Sep 2026 19:41:56 +0000</pubDate>
-      <guid>https://pypi.org/project/manim-derivatives-plotter/</guid>
-    </item>
-    <item>
-      <title>Enflame’s 84% Revenue Dependency on Tencent Exposes the Compute Landlord Thesis at the Customer Level</title>
-      <link>https://forkast.news/enflames-84-revenue-dependency-on-tencent-exposes-the-compute-landlord-thesis-at-the-customer-level/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Tue, 15 Sep 2026 19:40:23 +0000</pubDate>
-      <guid>https://forkast.news/enflames-84-revenue-dependency-on-tencent-exposes-the-compute-landlord-thesis-at-the-customer-level/</guid>
-    </item>
-    <item>
-      <title>Micron Crams 512 GB Memory Into A Single DDR5 Stick, Pushing Next-Gen Intel And AMD Servers To 12 TB at 9200 MT/s</title>
-      <link>https://wccftech.com/micron-crams-512-gb-memory-into-single-ddr5-stick-next-gen-intel-amd-servers/</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Tue, 15 Sep 2026 19:40:05 +0000</pubDate>
-      <guid>https://wccftech.com/micron-crams-512-gb-memory-into-single-ddr5-stick-next-gen-intel-amd-servers/</guid>
-    </item>
-    <item>
-      <title>Google Announces Gemini 3.8 Live and 3.8 Live Extended Thinking</title>
-      <link>https://www.thurrott.com/a-i/google-gemini-a-i/341685/google-announces-gemini-3-8-live-and-3-8-live-extended-thinking</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 15 Sep 2026 19:32:47 +0000</pubDate>
-      <guid>https://www.thurrott.com/a-i/google-gemini-a-i/341685/google-announces-gemini-3-8-live-and-3-8-live-extended-thinking</guid>
-    </item>
-    <item>
-      <title>We’re Already Living Through Journalism’s Dystopian Future</title>
-      <link>https://truthout.org/articles/were-already-living-through-journalisms-dystopian-future/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 15 Sep 2026 19:32:12 +0000</pubDate>
-      <guid>https://truthout.org/articles/were-already-living-through-journalisms-dystopian-future/</guid>
-    </item>
-    <item>
-      <title>The Government Bought the Model. The Enterprise Is Deploying the Agent. The Safety Standards for the Leap Don’t Exist Yet.</title>
-      <link>https://forkast.news/the-government-bought-the-model-the-enterprise-is-deploying-the-agent-the-safety-standards-for-the-leap-dont-exist-yet/</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Tue, 15 Sep 2026 19:31:22 +0000</pubDate>
-      <guid>https://forkast.news/the-government-bought-the-model-the-enterprise-is-deploying-the-agent-the-safety-standards-for-the-leap-dont-exist-yet/</guid>
-    </item>
-    <item>
-      <title>Mobiles phones with low specs make a comeback in premium market</title>
-      <link>https://economictimes.indiatimes.com/industry/cons-products/electronics/mobiles-phones-with-low-specs-make-a-comeback-in-premium-market-ihpone/articleshow/134272525.cms</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 15 Sep 2026 19:27:51 +0000</pubDate>
-      <guid>https://economictimes.indiatimes.com/industry/cons-products/electronics/mobiles-phones-with-low-specs-make-a-comeback-in-premium-market-ihpone/articleshow/134272525.cms</guid>
-    </item>
-    <item>
-      <title>relflow 0.2.2</title>
-      <link>https://pypi.org/project/relflow/0.2.2/</link>
+      <title>probflow 2.6.1</title>
+      <link>https://pypi.org/project/probflow/2.6.1/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Tue, 15 Sep 2026 19:27:39 +0000</pubDate>
-      <guid>https://pypi.org/project/relflow/0.2.2/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:34:30 +0000</pubDate>
+      <guid>https://pypi.org/project/probflow/2.6.1/</guid>
     </item>
     <item>
-      <title>WangNet – 1.8 MB, zero-dependency Numberwang adjudication in 11 languages</title>
-      <link>https://github.com/GraafHenk/numberwang</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Tue, 15 Sep 2026 19:27:35 +0000</pubDate>
-      <guid>https://github.com/GraafHenk/numberwang</guid>
-    </item>
-    <item>
-      <title>Vertical GPU, top-loading HDDs: Morefine's 4-bay NAS is unlike any AI workstation PC I've ever seen, thanks to a simple physics law</title>
-      <link>https://www.techradar.com/pro/vertical-gpu-top-loading-hdds-morefines-4-bay-nas-is-unlike-any-ai-workstation-pc-ive-ever-seen-thanks-to-a-simple-physics-law</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Tue, 15 Sep 2026 19:20:00 +0000</pubDate>
-      <guid>https://www.techradar.com/pro/vertical-gpu-top-loading-hdds-morefines-4-bay-nas-is-unlike-any-ai-workstation-pc-ive-ever-seen-thanks-to-a-simple-physics-law</guid>
-    </item>
-    <item>
-      <title>iPhone 16 Pro vs. iPhone 18 Pro Buyer's Guide: Worth Upgrading?</title>
-      <link>https://www.macrumors.com/guide/iphone-16-pro-vs-18-pro/</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Tue, 15 Sep 2026 19:17:47 +0000</pubDate>
-      <guid>https://www.macrumors.com/guide/iphone-16-pro-vs-18-pro/</guid>
-    </item>
-    <item>
-      <title>Apple Home’s AI Security Camera Features Are Opt-In, if You Can Afford Them</title>
-      <link>https://gizmodo.com/apple-homes-ai-security-camera-features-are-opt-in-if-you-can-afford-them-2000811813</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Tue, 15 Sep 2026 19:15:16 +0000</pubDate>
-      <guid>https://gizmodo.com/apple-homes-ai-security-camera-features-are-opt-in-if-you-can-afford-them-2000811813</guid>
-    </item>
-    <item>
-      <title>iOS 27 gives Camera app on iPhone three powerful new features - 9to5Mac</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185662812</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Tue, 15 Sep 2026 19:12:25 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185662812</guid>
-    </item>
-    <item>
-      <title>my-claude-code 7.15.1</title>
-      <link>https://pypi.org/project/my-claude-code/7.15.1/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 15 Sep 2026 19:11:09 +0000</pubDate>
-      <guid>https://pypi.org/project/my-claude-code/7.15.1/</guid>
-    </item>
-    <item>
-      <title>Learning to solve hard problems in RL for LLMs by never giving up</title>
-      <link>https://mnoukhov.github.io/posts/ngu/</link>
+      <title>DeepSeek to hire its first CFO as it aims for public listing, expands workforce</title>
+      <link>https://www.digitimes.com/news/a20260915VL219/deepseek-workforce-venture-capital-chips-startup.html</link>
       <description></description>
       <category>DeepSeek</category>
-      <pubDate>Tue, 15 Sep 2026 19:07:38 +0000</pubDate>
-      <guid>https://mnoukhov.github.io/posts/ngu/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:29:40 +0000</pubDate>
+      <guid>https://www.digitimes.com/news/a20260915VL219/deepseek-workforce-venture-capital-chips-startup.html</guid>
     </item>
     <item>
-      <title>Canva releases Affinity 3.3 as part of the Canva ProSuite</title>
-      <link>https://www.cgchannel.com/2026/09/canva-releases-affinity-3-3/</link>
+      <title>pytorch-ignite 0.6.0.dev20260916</title>
+      <link>https://pypi.org/project/pytorch-ignite/0.6.0.dev20260916/</link>
       <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Tue, 15 Sep 2026 19:03:58 +0000</pubDate>
-      <guid>https://www.cgchannel.com/2026/09/canva-releases-affinity-3-3/</guid>
+      <category>Meta</category>
+      <pubDate>Wed, 16 Sep 2026 00:26:27 +0000</pubDate>
+      <guid>https://pypi.org/project/pytorch-ignite/0.6.0.dev20260916/</guid>
     </item>
     <item>
-      <title>Siri AI vs. Gemini: Two Trust Architectures, One Question About Who Sees Your Data</title>
-      <link>https://forkast.news/siri-ai-vs-gemini-two-trust-architectures-one-question-about-who-sees-your-data/</link>
+      <title>ctrlrun-langchain 1.0.0</title>
+      <link>https://pypi.org/project/ctrlrun-langchain/1.0.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Wed, 16 Sep 2026 00:25:09 +0000</pubDate>
+      <guid>https://pypi.org/project/ctrlrun-langchain/1.0.0/</guid>
+    </item>
+    <item>
+      <title>ctrlrun-langchain added to PyPI</title>
+      <link>https://pypi.org/project/ctrlrun-langchain/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Wed, 16 Sep 2026 00:25:04 +0000</pubDate>
+      <guid>https://pypi.org/project/ctrlrun-langchain/</guid>
+    </item>
+    <item>
+      <title>btp-guard 5.4.14</title>
+      <link>https://pypi.org/project/btp-guard/5.4.14/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 16 Sep 2026 00:23:00 +0000</pubDate>
+      <guid>https://pypi.org/project/btp-guard/5.4.14/</guid>
+    </item>
+    <item>
+      <title>Rubrics-as-an-Attack-Surface</title>
+      <link>https://kitploit.com/en/tools/github/zdcslab/rubrics-as-an-attack-surface/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Wed, 16 Sep 2026 00:15:58 +0000</pubDate>
+      <guid>https://kitploit.com/en/tools/github/zdcslab/rubrics-as-an-attack-surface/</guid>
+    </item>
+    <item>
+      <title>The Only Thing Capable of Uniting Bernie and Bannon</title>
+      <link>https://www.theatlantic.com/politics/2026/09/steve-bannon-bernie-sanders-ai-oligarch/688642/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 16 Sep 2026 00:09:41 +0000</pubDate>
+      <guid>https://www.theatlantic.com/politics/2026/09/steve-bannon-bernie-sanders-ai-oligarch/688642/</guid>
+    </item>
+    <item>
+      <title>Nike’s S&amp;P Exit Is a Warning for Every Consumer Brand</title>
+      <link>https://www.pymnts.com/news/retail/2026/nikes-sp-exit-is-a-warning-for-every-consumer-brand/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 16 Sep 2026 00:07:11 +0000</pubDate>
+      <guid>https://www.pymnts.com/news/retail/2026/nikes-sp-exit-is-a-warning-for-every-consumer-brand/</guid>
+    </item>
+    <item>
+      <title>btp-guard 5.4.13</title>
+      <link>https://pypi.org/project/btp-guard/5.4.13/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 16 Sep 2026 00:07:06 +0000</pubDate>
+      <guid>https://pypi.org/project/btp-guard/5.4.13/</guid>
+    </item>
+    <item>
+      <title>langchain-aws 1.7.7</title>
+      <link>https://pypi.org/project/langchain-aws/1.7.7/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Wed, 16 Sep 2026 00:05:43 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-aws/1.7.7/</guid>
+    </item>
+    <item>
+      <title>DACA-GRPO: Denoising-Aware Credit Assignment for Reinforcement Learning in Diffusion Language Models</title>
+      <link>https://machinelearning.apple.com/research/denoising-aware-credit-assignment</link>
       <description></description>
       <category>Apple</category>
-      <pubDate>Tue, 15 Sep 2026 19:00:10 +0000</pubDate>
-      <guid>https://forkast.news/siri-ai-vs-gemini-two-trust-architectures-one-question-about-who-sees-your-data/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/research/denoising-aware-credit-assignment</guid>
+    </item>
+    <item>
+      <title>Trajectory as the Teacher: Few-Step Discrete Flow Matching via Energy-Navigated Distillation</title>
+      <link>https://machinelearning.apple.com/research/trajectory-teacher-flow-matching</link>
+      <description></description>
+      <category>Apple</category>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/research/trajectory-teacher-flow-matching</guid>
+    </item>
+    <item>
+      <title>How Value Induction Reshapes LLM Behaviour</title>
+      <link>https://machinelearning.apple.com/research/value-induction-llm-behaviour</link>
+      <description></description>
+      <category>Apple</category>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/research/value-induction-llm-behaviour</guid>
+    </item>
+    <item>
+      <title>Google、Gemini 3.8 Liveを発表 ——会話を続けながら推論やツール実行が可能</title>
+      <link>https://gihyo.jp/article/2026/09/gemini-3.8-live</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://gihyo.jp/article/2026/09/gemini-3.8-live</guid>
+    </item>
+    <item>
+      <title>Rapid patient-specific neural networks for X-ray to volume registration</title>
+      <link>https://www.nature.com/articles/s41586-026-11045-x</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.nature.com/articles/s41586-026-11045-x</guid>
+    </item>
+    <item>
+      <title>Search Central Live Deep Dive Europe 2026: Meet the community speakers</title>
+      <link>https://developers.google.com/search/blog/2026/09/scl-dd-europe-2026-community-speakers</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://developers.google.com/search/blog/2026/09/scl-dd-europe-2026-community-speakers</guid>
+    </item>
+    <item>
+      <title>HP Announces an AMD-Powered Portable Workstation</title>
+      <link>https://www.thurrott.com/mobile/copilot-pc/341696/hp-announces-an-amd-powered-portable-workstation</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Tue, 15 Sep 2026 23:59:31 +0000</pubDate>
+      <guid>https://www.thurrott.com/mobile/copilot-pc/341696/hp-announces-an-amd-powered-portable-workstation</guid>
+    </item>
+    <item>
+      <title>Show HN: Plurnk (Yet *Another* AI Harness)</title>
+      <link>https://github.com/plurnk/plurnk</link>
+      <description></description>
+      <category>DeepSeek</category>
+      <pubDate>Tue, 15 Sep 2026 23:57:14 +0000</pubDate>
+      <guid>https://github.com/plurnk/plurnk</guid>
+    </item>
+    <item>
+      <title>The Maserati Collection, from 1600veloce</title>
+      <link>https://bringatrailer.com/2026/09/15/the-maserati-collection-from-1600veloce/</link>
+      <description></description>
+      <category>Mistral</category>
+      <pubDate>Tue, 15 Sep 2026 23:55:54 +0000</pubDate>
+      <guid>https://bringatrailer.com/2026/09/15/the-maserati-collection-from-1600veloce/</guid>
+    </item>
+    <item>
+      <title>AI progress and responsibility: Nvidia, Anthropic and OpenAI CEOs weigh in at Salesforce’s annual event</title>
+      <link>https://siliconangle.com/2026/09/15/ai-progress-and-responsibility-nvidia-anthropic-and-openai-ceos-weigh-in-at-salesforces-annual-event/</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Tue, 15 Sep 2026 23:46:34 +0000</pubDate>
+      <guid>https://siliconangle.com/2026/09/15/ai-progress-and-responsibility-nvidia-anthropic-and-openai-ceos-weigh-in-at-salesforces-annual-event/</guid>
     </item>
   </channel>
 </rss>
