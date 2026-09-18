@@ -5,23 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Sep 2026 16:20:38 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 20:51:23 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Power BI] Users may be unable to access Excel workbooks from Power BI and may receive an error message </title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1474132</link>
-      <description>[Power BI] Users may be unable to access Excel workbooks from Power BI and may receive an error message.</description>
-      <category>Power BI</category>
-      <category>investigating</category>
-      <guid isPermaLink="false">PB1474132</guid>
-      <pubDate>Fri, 18 Sep 2026 16:07:57 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Teams] Some users may experience unexpected application crashes for Microsoft Teams on MacOS devices</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1474031</link>
       <description>[Microsoft Teams] Users may experience unexpected application crashes for Microsoft Teams on MacOS devices.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">TM1474031</guid>
       <pubDate>Fri, 18 Sep 2026 13:11:19 +0000</pubDate>
     </item>
@@ -62,11 +53,11 @@
       <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online] Users are unable to access Outlook on the web from a specific Outlook link </title>
+      <title>[Exchange Online] Users may be unable to access Outlook on the web from a specific Outlook link</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1473059</link>
-      <description>[Exchange Online] Users are unable to access Outlook on the web from a specific Outlook link. </description>
+      <description>[Exchange Online] Users may have been unable to access Outlook on the web from a specific Outlook link.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1473059</guid>
       <pubDate>Tue, 15 Sep 2026 15:00:00 +0000</pubDate>
     </item>
@@ -132,6 +123,15 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1470554</guid>
       <pubDate>Fri, 11 Sep 2026 03:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view the Pay-As-You-Go (PAYG) breakdown in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1474143</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view the PAYG breakdown in the Microsoft 365 admin center.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1474143</guid>
+      <pubDate>Thu, 10 Sep 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users in the United Kingdom may have been unable to access multiple Microsoft 365 services</title>

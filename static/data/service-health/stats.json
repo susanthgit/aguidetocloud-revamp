@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T16:20:38.398354+00:00",
+  "generated_at": "2026-09-18T20:51:22.589828+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -7,12 +7,12 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 22,
-      "active_incidents": 2,
-      "avg_duration_minutes": 7752,
+      "active_incidents": 1,
+      "avg_duration_minutes": 7392,
       "last_incident": "2026-09-18T13:11:19.623000+00:00",
       "classifications": {
-        "incident": 9,
-        "advisory": 13
+        "advisory": 13,
+        "incident": 9
       }
     },
     {
@@ -32,25 +32,13 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 14,
-      "active_incidents": 1,
+      "total_incidents": 15,
+      "active_incidents": 2,
       "avg_duration_minutes": 4367,
       "last_incident": "2026-09-18T00:00:00+00:00",
       "classifications": {
-        "advisory": 7,
+        "advisory": 8,
         "incident": 7
-      }
-    },
-    {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 9481,
-      "last_incident": "2026-09-18T16:07:57.850000+00:00",
-      "classifications": {
-        "advisory": 7
       }
     },
     {
@@ -58,8 +46,8 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 16291,
+      "active_incidents": 0,
+      "avg_duration_minutes": 14627,
       "last_incident": "2026-09-15T15:00:00+00:00",
       "classifications": {
         "advisory": 4,
@@ -90,6 +78,18 @@
       "classifications": {
         "incident": 2,
         "advisory": 4
+      }
+    },
+    {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 6,
+      "active_incidents": 0,
+      "avg_duration_minutes": 9481,
+      "last_incident": "2026-09-15T07:18:03.133000+00:00",
+      "classifications": {
+        "advisory": 6
       }
     },
     {
