@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Sep 2026 21:18:07 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 00:12:28 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may intermittently be unable to launch Microsoft Teams from the web or desktop clients</title>
@@ -280,9 +280,9 @@
     <item>
       <title>[Microsoft 365 suite] Some admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1469836</link>
-      <description>[Microsoft 365 suite] Admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins may have seen Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1469836</guid>
       <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
     </item>
