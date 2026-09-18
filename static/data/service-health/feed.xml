@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Sep 2026 04:39:07 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 11:07:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot usage report delays in the Microsoft 365 admin center</title>
@@ -15,15 +15,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1473821</guid>
       <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may intermittently be unable to launch Microsoft Teams from the web or desktop clients</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1473237</link>
-      <description>[Microsoft Teams] Users may intermittently be unable to launch Microsoft Teams from the web or desktop clients.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1473237</guid>
-      <pubDate>Thu, 17 Sep 2026 04:48:12 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Users may be unable to load SharePoint Online sites or pages and receive an error message</title>
@@ -42,6 +33,15 @@
       <category>investigationSuspended</category>
       <guid isPermaLink="false">MO1472904</guid>
       <pubDate>Wed, 16 Sep 2026 13:22:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may intermittently be unable to launch Microsoft Teams from the web or desktop clients</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1473237</link>
+      <description>[Microsoft Teams] Users may have intermittently been unable to launch Microsoft Teams from the web or desktop clients.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1473237</guid>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users are unable to access Outlook on the web from a specific Outlook link </title>
@@ -78,6 +78,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MP1471821</guid>
       <pubDate>Mon, 14 Sep 2026 16:41:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Purview] Some users may experience delays accessing audit logs through the Microsoft Purview Management API</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1473907</link>
+      <description>[Microsoft Purview] Users may experience delays accessing audit logs through the Microsoft Purview Management API.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MP1473907</guid>
+      <pubDate>Mon, 14 Sep 2026 06:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some admins' usage reports may contain stale data in Microsoft 365 admin center</title>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">SP1461217</guid>
       <pubDate>Thu, 20 Aug 2026 07:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Some admins may see outdated device inventory and update status information in the Microsoft 365 Apps admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1459987</link>
-      <description>[Microsoft 365 apps] Admins may have seen outdated device inventory and update status information in the Microsoft 365 Apps admin center.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OP1459987</guid>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

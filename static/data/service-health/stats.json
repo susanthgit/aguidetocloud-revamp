@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T04:39:07.075503+00:00",
+  "generated_at": "2026-09-18T11:07:50.617872+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -7,24 +7,24 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 21,
-      "active_incidents": 2,
-      "avg_duration_minutes": 8002,
-      "last_incident": "2026-09-17T04:48:12+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 7752,
+      "last_incident": "2026-09-16T03:00:00+00:00",
       "classifications": {
-        "incident": 8,
-        "advisory": 13
+        "advisory": 13,
+        "incident": 8
       }
     },
     {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 20,
+      "total_incidents": 19,
       "active_incidents": 3,
-      "avg_duration_minutes": 5815,
+      "avg_duration_minutes": 5030,
       "last_incident": "2026-09-16T13:22:00+00:00",
       "classifications": {
-        "advisory": 14,
+        "advisory": 13,
         "incident": 6
       }
     },
@@ -68,6 +68,19 @@
       }
     },
     {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 6,
+      "active_incidents": 2,
+      "avg_duration_minutes": 18542,
+      "last_incident": "2026-09-14T16:41:47.403000+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 4
+      }
+    },
+    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -77,19 +90,6 @@
       "last_incident": "2026-09-15T07:18:03.133000+00:00",
       "classifications": {
         "advisory": 6
-      }
-    },
-    {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 5,
-      "active_incidents": 1,
-      "avg_duration_minutes": 18542,
-      "last_incident": "2026-09-14T16:41:47.403000+00:00",
-      "classifications": {
-        "incident": 2,
-        "advisory": 3
       }
     },
     {
@@ -119,18 +119,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 19255,
-      "last_incident": "2026-08-26T12:50:00+00:00",
-      "classifications": {
-        "advisory": 3
-      }
-    },
-    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -141,6 +129,18 @@
       "classifications": {
         "advisory": 2,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 29817,
+      "last_incident": "2026-08-26T12:50:00+00:00",
+      "classifications": {
+        "advisory": 3
       }
     },
     {
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 25,
+      "incident_count": 26,
       "services_affected": 9
     },
     {
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 21,
+      "incident_count": 20,
       "services_affected": 9
     }
   ]
