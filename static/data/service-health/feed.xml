@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Sep 2026 00:12:28 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 04:39:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot usage report delays in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1473821</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot usage report delays in the Microsoft 365 admin center. </description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1473821</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may intermittently be unable to launch Microsoft Teams from the web or desktop clients</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1473237</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">OP1459987</guid>
       <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins can't identify who deleted a Viva Engage community or its Microsoft 365 Group in Microsoft Entra ID audit logs</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1457843</link>
-      <description>[Microsoft 365 suite] Admins can't identify who deleted a Viva Engage community or its Microsoft 365 Group in Entra ID audit logs.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1457843</guid>
-      <pubDate>Wed, 19 Aug 2026 22:38:36 +0000</pubDate>
     </item>
   </channel>
 </rss>
