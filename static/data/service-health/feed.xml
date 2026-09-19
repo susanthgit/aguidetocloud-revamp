@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Sep 2026 12:27:52 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 17:14:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see stale or incomplete data in the Microsoft 365 Copilot usage and Copilot chat reports</title>
@@ -15,15 +15,6 @@
       <category>investigating</category>
       <guid isPermaLink="false">CP1474402</guid>
       <pubDate>Sat, 19 Sep 2026 01:16:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may experience unexpected application crashes for Microsoft Teams on MacOS devices</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1474031</link>
-      <description>[Microsoft Teams] Users may experience unexpected application crashes for Microsoft Teams on MacOS devices.</description>
-      <category>Microsoft Teams</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">TM1474031</guid>
-      <pubDate>Fri, 18 Sep 2026 13:11:19 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot usage report delays in the Microsoft 365 admin center</title>
@@ -159,6 +150,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1469885</guid>
       <pubDate>Wed, 09 Sep 2026 20:49:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Users can't access Excel workbooks from Power BI and receive an error message </title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1474132</link>
+      <description>[Power BI] Users couldn't access Excel workbooks from Power BI and received an error message.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1474132</guid>
+      <pubDate>Tue, 08 Sep 2026 20:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to access https://m365.cloud.microsoft and receive an error</title>
