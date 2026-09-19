@@ -5,25 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Sep 2026 17:14:37 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 20:34:54 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see stale or incomplete data in the Microsoft 365 Copilot usage and Copilot chat reports</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1474402</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may see stale or incomplete data in the Copilot usage and Copilot chat reports in the Microsoft 365 admin center</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen stale data in the Copilot usage and Copilot chat reports in the Microsoft 365 admin center</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1474402</guid>
-      <pubDate>Sat, 19 Sep 2026 01:16:28 +0000</pubDate>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot usage report delays in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1473821</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot usage report delays in the Microsoft 365 admin center. </description>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen Copilot usage report delays in the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1473821</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Sep 2026 01:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Users may be unable to load SharePoint Online sites or pages and receive an error message</title>
