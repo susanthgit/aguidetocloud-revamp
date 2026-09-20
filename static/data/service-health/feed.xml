@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Sep 2026 04:48:37 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 11:16:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see stale or incomplete data in the Microsoft 365 Copilot usage and Copilot chat reports</title>
@@ -91,9 +91,9 @@
     <item>
       <title>[Microsoft Purview] Some users may experience delays accessing audit logs through the Microsoft Purview Management API</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1473907</link>
-      <description>[Microsoft Purview] Users may experience delays accessing audit logs through the Microsoft Purview Management API.</description>
+      <description>[Microsoft Purview] Users may have experienced delays accessing audit logs through the Microsoft Purview Management API.</description>
       <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MP1473907</guid>
       <pubDate>Mon, 14 Sep 2026 06:00:00 +0000</pubDate>
     </item>
