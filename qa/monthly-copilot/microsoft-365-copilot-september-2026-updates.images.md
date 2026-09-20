@@ -1984,27 +1984,35 @@ and an absence cannot be photographed.
 
 ---
 
-## §91 — Grok models — read the terms before the feature
-`c29c44fa9909a8aaee08df951d5e8312aafa34e15144019d96a992880a54e885`
+## §91 — Grok models — two routes, two sets of terms
+`ddf0ffd20affc6ba512e726c7f9eed855aa131bf2768ee9f0e074a9be98a8bd1`
 
-**Observed:** My own illustration. Lead card “WHAT WAS ADDED” — **Grok models from SpaceXAI**, through the
-Microsoft Frontier Program, in Word, Excel and PowerPoint, behind a dedicated admin setting that is
+**Observed:** My own illustration, regenerated 20 September 2026 after the original encoded the wrong
+contractual position. Title **“Grok models — two routes, two sets of terms”**; subtitle “Admins and
+Frontier Program tenants · Announced 12 September 2026 · Available 18 September 2026 · *illustrative,
+not a screenshot*”.
+
+Lead card **WHAT WAS ADDED** — **Grok models from SpaceXAI**, through the Microsoft Frontier Program,
+in **Word, Excel and PowerPoint** via the model selector, behind a dedicated admin setting that is
 **disabled by default**.
 
-Three panels: **WHAT DOES NOT APPLY** (red rule) — Microsoft’s customer agreements, Product Terms,
-Data Processing Addendum, data residency commitments, audit and compliance requirements, service
-level agreements and the **Customer Copyright Commitment**; **WHAT GOVERNS INSTEAD** (navy rule) —
-the **xAI Enterprise Terms of Service** and the **xAI Data Processing Addendum**; **NOT AVAILABLE
-DURING PREVIEW** (tan) — Frontier customers in the **EU, EFTA and the UK**. Footer bar
-**MICROSOFT’S OWN WORDING** — the data “is processed outside all Microsoft managed environments and
-audit controls”, and a Global Administrator must accept the terms before anyone is assigned access.
+Three panels: **IN WORD, EXCEL AND POWERPOINT** (navy rule) — SpaceXAI acts as a **subprocessor**,
+Microsoft’s **Product Terms**, **DPA** and **Customer Copyright Commitment apply**, and use is covered
+by **Enterprise Data Protection**; **IN COPILOT STUDIO** (red rule) — a different route, SpaceXAI acts
+as an **independent processor**, the Product Terms and DPA **don’t apply**, and the **xAI Enterprise
+Terms of Service** govern instead; **NOT AVAILABLE** (tan) — Frontier customers in the **EU, EFTA and
+the UK**, on **government clouds** (GCC, GCC High, DoD), or on **sovereign clouds**. Footer bar
+**EXCLUSIONS THAT STILL APPLY** — even as a subprocessor, SpaceXAI maintains its own certifications,
+the models are **not FedRAMP High authorized**, and they are excluded from **in-country processing**
+commitments; enabling needs an AI Administrator or Global Administrator.
 
-Nothing clipped; the widest panel wraps cleanly across six lines.
+Nothing clipped; all three panels wrap cleanly and the footer sits on two lines.
 
-**Verdict:** ✅ MATCH — every carve-out listed is quoted or paraphrased directly from the section, which in turn
-quotes Microsoft’s own documentation. The section’s argument is that the contractual position matters
-more than the model, and that position is text rather than interface — there is no screen that
-states it.
+**Verdict:** ✅ MATCH — every panel is checked against Microsoft Learn’s `spacexai-subprocessor` page
+(ms.date 18 September 2026). The predecessor image was a ❌ MISMATCH: it applied the Copilot Studio
+independent-processor carve-outs to the Word, Excel and PowerPoint rollout shown in its own lead card,
+naming the Customer Copyright Commitment as not applying when Learn states it **does** apply there.
+That image has been replaced, not re-captioned.
 
 ---
 
@@ -2671,3 +2679,65 @@ H
 
 **Annotated 15 September 2026 (house style, verified on the render):** three callouts in a white right margin against this dark-mode phone capture. “Plug-ins and Skills, now on mobile” points at the Skills pill beside Plug-ins; “Dynamics plug-ins ship off” points at the Off control on the Dynamics 365 Sales row; “Third-party MCP connectors” points at the Add button on the Descrybe Legal Engine row. The first clearance scan flagged all three dots as collisions because the harness counts dark pixels as ink — on a dark-mode capture the background itself is dark. Re-scanning for light ink instead showed zero text at all three positions.
 
+## §10 — On mobile, Copilot can reshape a Page — or make one
+`857624b79187fa5329c36f8495c1a1dc315471c5b607d4d7f140b48e1bc75ee5`
+
+**Observed:** My own illustration, authored 20 September 2026 for a section that previously carried no visual at all. Subtitle carries the *illustrative, not a screenshot* marker. Lead card **ONE NAME, TWO THINGS** — “Page steering and auto-triggering” covers **two separate capabilities**, and the name obscures the more interesting one. Three panels: **EDIT BY INSTRUCTION** (navy rule) — tell Copilot “**Shorten this page**” and it reworks the page, instead of you editing by hand on a phone screen; **CREATE FROM CHAT** (brass rule) — ask for “**Create a new page for XYZ**” in an ordinary conversation and a Page gets made, without going to Pages first; **WHAT IT IS NOT** (red rule) — “Auto-triggering” does **not** mean an existing Page surfaces itself at a convenient moment. Footer bar **NOT TESTED** — I could not reproduce this in time for this issue, so the above is **Microsoft’s account rather than mine**.
+
+**Verdict:** ✅ MATCH — viewed directly at full size on 20 September 2026. Nothing clipped or overflowing; every panel wraps cleanly inside its card and the footer bar sits on one or two lines. Content matches the section it sits under.
+
+---
+
+## §15 — Notebooks take audio, images and notes together
+`b9b12760252db42b961105341be9edfeded47d898e3d625b1681f1963c071c6a`
+
+**Observed:** My own illustration, authored 20 September 2026 for a section that previously carried no visual at all. Subtitle carries the *illustrative, not a screenshot* marker. Lead card **THE DETAIL THAT DECIDES WHETHER THIS IS NEW FOR YOU** — Microsoft scopes this month’s rollout to **Android**; on **iOS and iPad**, multimodal capture is already available through the OneNote app. Two panels: **PRODUCE AUDIO — ALREADY WORKED** (navy) — a notebook could **already** make an audio overview, that is section 14, and it works; **TAKE AUDIO IN — THE NEW HALF** (brass) — using audio as a **source** is the new part, and the half I could not reproduce. Footer bar **WHAT I FOUND, 14 SEPTEMBER 2026** — adding a **meeting** as a source worked; an **.mp3** or a **.jpg** did not, the picker would not take them; the Windows entry (roadmap 566322) still read *In development*.
+
+**Verdict:** ✅ MATCH — viewed directly at full size on 20 September 2026. Nothing clipped or overflowing; every panel wraps cleanly inside its card and the footer bar sits on one or two lines. Content matches the section it sits under.
+
+---
+
+## §17 — Viva Engage private communities can ground Copilot
+`3e9a138fb391d9c247a49010a07e336dcf3e320a9685f9836285099ce74c5fa7`
+
+**Observed:** My own illustration, authored 20 September 2026 for a section that previously carried no visual at all. Subtitle carries the *illustrative, not a screenshot* marker. Lead card **MICROSOFT’S WORDING, QUOTED RATHER THAN PARAPHRASED** — when a user queries, they “will only be able to see content they are **privileged to access**.” Three panels: **WHAT DOES NOT CHANGE** (navy) — the **permission model**, nothing is being relaxed; **WHAT DOES CHANGE** (brass) — the **size of the pool** Copilot may draw from for each person, bounded by what they could already have opened by hand; **TWO THAT ARE EASY TO MISS** (tan) — **web only** for now, and roadmap 515144 still shows May 2026 while the release notes place it in the 25 August batch. Footer bar **WORTH AN ADMIN CONVERSATION RATHER THAN A CHEER**.
+
+**Verdict:** ✅ MATCH — viewed directly at full size on 20 September 2026. Nothing clipped or overflowing; every panel wraps cleanly inside its card and the footer bar sits on one or two lines. Content matches the section it sits under.
+
+---
+
+## §28 — Local browser use reached every Copilot tenant
+`c3559183a60eea27507a00e869b07775b34d94548246816f0f7e5e91ede76c74`
+
+**Observed:** My own illustration, authored 20 September 2026 for a section that previously carried no visual at all. Subtitle carries the *illustrative, not a screenshot* marker. Lead card **WHAT ACTUALLY CHANGED** — not the capability but **who has it**; local browser use moved out of the Frontier Program to all Microsoft 365 Copilot tenants. Two panels: **JUNE 2026** (tan) — listed in the Cowork release notes as a **Frontier** capability; **AUGUST 2026** (brass) — moved from Frontier to **general availability**, Cowork completes web tasks in **Microsoft Edge** on your device using your existing sign-ins and your organisation’s policies, and Edge must be installed. Footer bar **THE SECOND QUESTION WORTH ASKING EARLY** — “uses your existing sign-ins” means Cowork acts inside sessions you have **already authenticated**, so: **which internal sites are you comfortable with it reaching?**
+
+**Verdict:** ✅ MATCH — viewed directly at full size on 20 September 2026. Nothing clipped or overflowing; every panel wraps cleanly inside its card and the footer bar sits on one or two lines. Content matches the section it sits under.
+
+---
+
+## §38 — PowerPoint can use brand assets from Adobe Experience Manager
+`fdaaf342ad19b9bb9ee299259260876149d3c7899efd8b0453a5d62e822abfd7`
+
+**Observed:** My own illustration, authored 20 September 2026 for a section that previously carried no visual at all. Subtitle carries the *illustrative, not a screenshot* marker. Lead card **WHAT CHANGED** — Copilot in PowerPoint can use enterprise assets hosted in **Adobe Experience Manager**, so the images it reaches for are the **approved** ones. Two panels: **BEFORE** (tan) — Copilot reached for whatever it could **generate**; **NOW** (brass) — it can reach the library your organisation has **already approved**, and already pays for. Footer bar **WHY IT MATTERS** — most large organisations already pay for a digital asset manager, and it tends to sit outside the tools where the work actually happens.
+
+**Verdict:** ✅ MATCH — viewed directly at full size on 20 September 2026. Nothing clipped or overflowing; every panel wraps cleanly inside its card and the footer bar sits on one or two lines. Content matches the section it sits under.
+
+---
+
+## §44 — You can talk to Word during Read Aloud
+`380cc4fcf046b5d37e6f72294ccfdee2c0ab402b2251979ff8293c7a0c56dcef`
+
+**Observed:** My own illustration, authored 20 September 2026 for a section that previously carried no visual at all. Subtitle carries the *illustrative, not a screenshot* marker. Lead card **WHAT WAS ADDED** — Read Aloud gained **voice questions and answers**; interrupt the reading, ask about what you just heard, and carry on. Two panels: **WHY IT MATTERS** (navy) — Read Aloud is an accessibility feature a lot of people use simply because they are **walking, driving or tired**; **WHAT I FOUND, 14 SEPTEMBER 2026** (red rule) — I went looking for this in my own tenant and **could not find it**. Footer bar **MOST LIKELY EXPLANATION** — the ordinary one, a **staged rollout** that has not reached my tenant yet.
+
+**Verdict:** ✅ MATCH — viewed directly at full size on 20 September 2026. Nothing clipped or overflowing; every panel wraps cleanly inside its card and the footer bar sits on one or two lines. Content matches the section it sits under.
+
+---
+
+## §61 — Admins can mark SharePoint sites as authoritative
+`ee33a7eff9ad6f5451bf4f5c55368c58668b2534ec3ad345eca45645a387a295`
+
+**Observed:** My own illustration, authored 20 September 2026 for a section that previously carried no visual at all. Subtitle carries the *illustrative, not a screenshot* marker. Lead card **THE GAP WORTH NAMING** — it reads like a toggle sitting in a settings page; Microsoft’s own page says “In the current release, configure authoritative sites through **PowerShell and CSOM APIs**.” Three panels: **LICENSING — BETTER THAN YOU WOULD EXPECT** (brass) — sits under SharePoint Advanced Management but needs **no paid add-on**, unlocked when **one person** in the tenant holds a Copilot licence and it need not be the administrator; **THE 72-HOUR WAIT** (red rule) — up to **72 hours** before it shows up, testing it is a two-sitting job; **THE REST OF THE SHAPE** (tan) — **100 sites** per tenant, **whole sites only**, never personal sites or OneDrive, users see a **“From your organization”** label. Footer bar **READ THE SCOPE CAREFULLY** — Microsoft scopes the effect to **Copilot Search**.
+
+**Verdict:** ✅ MATCH — viewed directly at full size on 20 September 2026. Nothing clipped or overflowing; every panel wraps cleanly inside its card and the footer bar sits on one or two lines. Content matches the section it sits under.
+
+---

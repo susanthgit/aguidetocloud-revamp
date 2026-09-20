@@ -2,17 +2,17 @@
  "schema": 2,
  "slug": "microsoft-365-copilot-september-2026-updates",
  "tool_version": "1.0.0",
- "generated_at": "2026-09-15T00:54:10.685120+00:00",
+ "generated_at": "2026-09-19T22:00:35.377158+00:00",
  "post": {
   "path": "content/blog/microsoft-365-copilot-september-2026-updates.md",
-  "sha256": "b666e45f038fa3c123e6b1d8e1515a94f0b8e6918218fa6550c59f5eceb3a3c4",
+  "sha256": "4b32c9e4fde0203d2dd43a325a7868a7dd23e6555135456f100c1043510aabe4",
   "sections": 94
  },
  "roadmap_snapshot": {
   "path": "static/data/roadmap/latest.json",
-  "generated_at": "2026-09-14T10:30:10.108810+00:00",
-  "item_count": 1761,
-  "sha256": "a653039f0b5b7367be8b37bdbdc41faeb8b6a082f4479463b1aa0f4096870ab8"
+  "generated_at": "2026-09-19T09:23:03.961884+00:00",
+  "item_count": 1776,
+  "sha256": "7ee587c8e84af3040ec250e9f1e208a98f1b4b5af4173d66890945e456b1d637"
  },
  "sections": [
   {
@@ -101,7 +101,7 @@
    "title": "On mobile, Copilot can reshape a Page or create one for you",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "no_roadmap_row",
    "reason": "No roadmap row. Verified, not assumed: all 1768 items in the local roadmap feed (generated 2026-09-12) were searched by significant title tokens. 10 candidate(s) shared two or more significant words with this title; each was inspected and describes a different capability. Announced via learn.microsoft.com."
   },
@@ -147,15 +147,19 @@
   },
   {
    "section": 15,
-   "title": "Notebooks take audio, images and notes together",
+   "title": "Notebooks take audio, images and notes together \u2014 on Android",
    "roadmap_ids": [
-    "559095"
+    "559095",
+    "566322",
+    "567895"
    ],
-   "source_urls": 2,
-   "images": 0,
+   "source_urls": 4,
+   "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
-    "559095": "Launched"
+    "559095": "Launched",
+    "566322": "In development",
+    "567895": "Rolling out"
    }
   },
   {
@@ -174,7 +178,7 @@
     "515144"
    ],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
     "515144": "Launched"
@@ -248,7 +252,7 @@
   },
   {
    "section": 24,
-   "title": "Cowork can build a working app from a description",
+   "title": "Cowork can build interactive apps from a description",
    "roadmap_ids": [],
    "source_urls": 1,
    "images": 1,
@@ -287,7 +291,7 @@
    "title": "Local browser use reached every Copilot tenant",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "no_roadmap_row",
    "reason": "No roadmap row. Verified, not assumed: all 1768 items in the local roadmap feed (generated 2026-09-12) were searched by significant title tokens. 53 candidate(s) shared two or more significant words with this title; each was inspected and describes a different capability. Announced via learn.microsoft.com."
   },
@@ -388,7 +392,7 @@
     "516039"
    ],
    "source_urls": 3,
-   "images": 0,
+   "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
     "516038": "Launched",
@@ -455,7 +459,7 @@
     "523205"
    ],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
     "523205": "Launched"
@@ -640,7 +644,7 @@
     "561323"
    ],
    "source_urls": 4,
-   "images": 0,
+   "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
     "561323": "Launched"
@@ -684,7 +688,7 @@
   },
   {
    "section": 66,
-   "title": "There is a property that tells you which agents are on the new harness",
+   "title": "&mdash; the property that tells you which agents are on the new harness",
    "roadmap_ids": [],
    "source_urls": 1,
    "images": 1,
@@ -959,7 +963,7 @@
    "section": 91,
    "title": "Grok models from SpaceXAI, off by default",
    "roadmap_ids": [],
-   "source_urls": 2,
+   "source_urls": 3,
    "images": 1,
    "disposition": "no_roadmap_row",
    "reason": "No roadmap row. Verified, not assumed: all 1768 items in the local roadmap feed (generated 2026-09-12) were searched by significant title tokens; no item shared two or more significant words with this title. Announced via techcommunity.microsoft.com."
@@ -1000,7 +1004,7 @@
   {
    "section": 1,
    "src": "/images/blog/copilot-september-2026/official-01-model-picker-gpt-6-astra.webp",
-   "alt": "Official Microsoft image of the Copilot model picker. The prompt bar reads Start a task and carries a model chip set to GPT-6 Astra and an effort chip set to Medium. A first menu lists Auto, described as Best model for the task, then vendor groups GPT from OpenAI, which is ticked and expanded, and Claude from Anthropic. The expanded GPT submenu lists GPT-6 Astra, ticked and described as Latest model for tough problems, then GPT 5.6 Sol, Intelligent and efficient for hard work, GPT 5.6 Terra, Balanced effort for common asks, and GPT 5.5, Capable model for medium effort work.",
+   "alt": "Official Microsoft image of the Copilot model picker. The prompt bar reads Start a task and carries a model chip set to GPT-6 Astra and an effort chip set to Medium. A first menu lists Auto, described as Best model for the task, then vendor groups GPT from OpenAI, which is ticked and expanded, and Claude from Anthropic. The expanded GPT submenu lists GPT-6 Astra, ticked and described as Latest model for tough problems, then GPT 5.6 Sol, Intelligent and efficient for hard work, GPT 5.6 Terra, Balanced effort for common asks, and GPT 5.5, Capable model for medium effort work. Red callouts added by me read: Pick your model before you type; and GPT-6 Astra is the new top choice.",
    "exists": true,
    "sha256": "37ad56ff34713ee3373975a7e977786266a2c36664b11b8a5039acf527b9b2ef",
    "observed": true
@@ -1016,7 +1020,7 @@
   {
    "section": 3,
    "src": "/images/blog/copilot-september-2026/lab-s03-work-iq-button.webp",
-   "alt": "The top of Microsoft 365 Copilot Chat in my own tenant. On the left is the Copilot wordmark with an app-grid icon, a new-item icon and a pane-toggle icon, below which a pill switch offers Chat and Cowork with Chat selected, and a plus New chat link. On the right of the chat pane sit two controls: a rounded grey button labelled Work IQ, and a model picker reading Auto with a chevron. There is no Web or Work toggle anywhere.",
+   "alt": "The top of Microsoft 365 Copilot Chat in my own tenant. On the left is the Copilot wordmark with an app-grid icon, a new-item icon and a pane-toggle icon, below which a pill switch offers Chat and Cowork with Chat selected, and a plus New chat link. On the right of the chat pane sit two controls: a rounded grey button labelled Work IQ, and a model picker reading Auto with a chevron. There is no Web or Work toggle anywhere. A red callout added by me reads: Work IQ grounds the answer in your work data.",
    "exists": true,
    "sha256": "7e14e2e99f3ad09e331a73fdedec7d62357025ed412f577eece38ad1c7efca54",
    "observed": true
@@ -1024,7 +1028,7 @@
   {
    "section": 4,
    "src": "/images/blog/copilot-september-2026/official-04-select-part-of-answer.webp",
-   "alt": "Official Microsoft image of a Copilot answer summarising market news, with Work IQ and Auto chips above it. Within a paragraph about bond markets, the sentence reading the 30-year Treasury yield briefly exceeded 5.3 percent, its highest level since 2007 is highlighted in blue, and a small Ask Copilot button sits at the start of the selection. At the bottom of the screen the selected sentence has become a removable chip inside the compose box, followed by the typed follow-up Tell me more about this and its impact on different markets.",
+   "alt": "Official Microsoft image of a Copilot answer summarising market news, with Work IQ and Auto chips above it. Within a paragraph about bond markets, the sentence reading the 30-year Treasury yield briefly exceeded 5.3 percent, its highest level since 2007 is highlighted in blue, and a small Ask Copilot button sits at the start of the selection. At the bottom of the screen the selected sentence has become a removable chip inside the compose box, followed by the typed follow-up Tell me more about this and its impact on different markets. Red callouts added by me read: Highlight any part of an answer; and It becomes a quote in your prompt.",
    "exists": true,
    "sha256": "a67abb645f8c6811c3080365ad3b3abc46e16dd8a581dbf4e629e12660ed5214",
    "observed": true
@@ -1032,7 +1036,7 @@
   {
    "section": 5,
    "src": "/images/blog/copilot-september-2026/official-05-share-whole-chat.webp",
-   "alt": "Official Microsoft image of a Copilot share dialog titled Understanding Cowork in Copilot. The dialog previews the conversation, which explains that Cowork is the do it for me mode of Microsoft 365 Copilot and includes a two-column table comparing Copilot Chat and Copilot Cowork, Helps you think against Helps you do, and Answers, drafts and summaries against Plans, executes and delivers. Below the preview a notice reads: anyone in your company with a link can access a copy of this chat, the shared version will not update as the conversation changes, make sure you are comfortable sharing the contents before sharing. A Copy link button sits at the bottom right.",
+   "alt": "Official Microsoft image of a Copilot share dialog titled Understanding Cowork in Copilot. The dialog previews the conversation, which explains that Cowork is the do it for me mode of Microsoft 365 Copilot and includes a two-column table comparing Copilot Chat and Copilot Cowork, Helps you think against Helps you do, and Answers, drafts and summaries against Plans, executes and delivers. Below the preview a notice reads: anyone in your company with a link can access a copy of this chat, the shared version will not update as the conversation changes, make sure you are comfortable sharing the contents before sharing. A Copy link button sits at the bottom right. Red callouts added by me read: Anyone with the link gets a copy; and Copy link shares the whole chat.",
    "exists": true,
    "sha256": "fb41455ebbba0c5c3702f6caa40fe8b910e92549e64e469af7bc93a8b160b1db",
    "observed": true
@@ -1040,15 +1044,15 @@
   {
    "section": 6,
    "src": "/images/blog/copilot-september-2026/lab-s06-share-response-menu-annotated.webp",
-   "alt": "The More options menu opened under a single Copilot response in my own tenant, with the first item circled in black. The items read: Share response, followed by the word Frontier in brackets; Edit in Pages with a submenu arrow; Export to with a submenu arrow; Read aloud; and Schedule this prompt. Below the menu are the thumbs up, thumbs down, retry and more options controls that belong to the response itself.",
+   "alt": "The More options menu opened under a single Copilot response in my own tenant, with the first item circled in red. The items read: Share response, followed by the word Frontier in brackets; Edit in Pages with a submenu arrow; Export to with a submenu arrow; Read aloud; and Schedule this prompt. Below the menu are the thumbs up, thumbs down, retry and more options controls that belong to the response itself.",
    "exists": true,
-   "sha256": "d1cb0671319f01754b2ef789054de31fe9f38654f678f658fa1afa105f72e38a",
+   "sha256": "2fcffd15ab48cc62df3548ae2ebcf2dd735867c3ef85ca868ba7389f3c71d8a7",
    "observed": true
   },
   {
    "section": 6,
    "src": "/images/blog/copilot-september-2026/lab-s06-share-response-dialog.webp",
-   "alt": "The Share Response dialog in my own tenant. A preview card shows one exchange: a grey prompt bubble asking for a follow-up to Karin about overdue Q3 numbers, then the answer offering versions in different tones, with the heading Option 1: Professional and Direct and a draft beginning Hi Karin. The preview fades out at the foot of the card. Below it, bold text reads: Anyone in your company with a link can access a copy of this chat. It continues: The shared version won't update as the conversation changes. Make sure you're comfortable sharing the contents before sharing, followed by a Learn more link. A dark Copy link button sits at the bottom right.",
+   "alt": "The Share Response dialog in my own tenant. A preview card shows one exchange: a grey prompt bubble asking for a follow-up to Karin about overdue Q3 numbers, then the answer offering versions in different tones, with the heading Option 1: Professional and Direct and a draft beginning Hi Karin. The preview fades out at the foot of the card. Below it, bold text reads: Anyone in your company with a link can access a copy of this chat. It continues: The shared version won't update as the conversation changes. Make sure you're comfortable sharing the contents before sharing, followed by a Learn more link. A dark Copy link button sits at the bottom right. A red callout added by me reads: Just this answer, not the whole chat.",
    "exists": true,
    "sha256": "bb2d17cbf83892225a7e94e5efde9e16e7c7cfcd7748dc036d949dd542525c8b",
    "observed": true
@@ -1056,7 +1060,7 @@
   {
    "section": 7,
    "src": "/images/blog/copilot-september-2026/official-07-answer-card-weather.webp",
-   "alt": "Official Microsoft image of Copilot answering the question weather today in seattle with a rich weather card. The card reads Seattle, Washington, Now, Sunny, 79 degrees Fahrenheit, with a high of 79 and a low of 60, above a seven day forecast strip running Tuesday to Monday with an icon and temperatures for each day. Beneath the card, bulleted current conditions each carry an m s n citation: sunny at about 26 degrees Celsius feeling like 29, humidity around 50 percent with light winds near 4 miles per hour, and visibility good at nearly 10 miles. Work IQ and Auto chips sit above the answer.",
+   "alt": "Official Microsoft image of Copilot answering the question weather today in seattle with a rich weather card. The card reads Seattle, Washington, Now, Sunny, 79 degrees Fahrenheit, with a high of 79 and a low of 60, above a seven day forecast strip running Tuesday to Monday with an icon and temperatures for each day. Beneath the card, bulleted current conditions each carry an m s n citation: sunny at about 26 degrees Celsius feeling like 29, humidity around 50 percent with light winds near 4 miles per hour, and visibility good at nearly 10 miles. Work IQ and Auto chips sit above the answer. Red callouts added by me read: Answers come back as a card; and A seven-day forecast, inline.",
    "exists": true,
    "sha256": "093ca7d09c9017248e43f0b262e3c0b68cfab21269cf81b7febfd69df2ae01d9",
    "observed": true
@@ -1064,7 +1068,7 @@
   {
    "section": 8,
    "src": "/images/blog/copilot-september-2026/lab-s08-mobile-email-draft.webp",
-   "alt": "Copilot on my phone, in dark mode. The header shows a model picker reading Auto with a Work IQ label beneath it, a green shield with a tick, and a more menu. My typed prompt reads: Draft an email to Nic asking about if there are any major copilot studio updates in the month of September. Copilot replies, Here is a concise draft you can send to Nic, and then renders the draft inside a card of its own. The card is labelled Message and carries a copy icon and a pencil icon in its top right corner. Inside it is a complete four paragraph email, opening Hi Nic, asking whether there have been any major Copilot Studio updates released so far in September worth highlighting for customer conversations or upcoming demos, asking for a quick summary or resources, and signed off Thanks, Susanth.",
+   "alt": "Copilot on my phone, in dark mode. The header shows a model picker reading Auto with a Work IQ label beneath it, a green shield with a tick, and a more menu. My typed prompt reads: Draft an email to Nic asking about if there are any major copilot studio updates in the month of September. Copilot replies, Here is a concise draft you can send to Nic, and then renders the draft inside a card of its own. The card is labelled Message and carries a copy icon and a pencil icon in its top right corner. Inside it is a complete four paragraph email, opening Hi Nic, asking whether there have been any major Copilot Studio updates released so far in September worth highlighting for customer conversations or upcoming demos, asking for a quick summary or resources, and signed off Thanks, Susanth. Red callouts added by me read: Ask for an email in plain words; and Copy or edit the draft right here.",
    "exists": true,
    "sha256": "4398b0977ba4604551122414a6821f6acce8b87e0f4f218c6f9329ea3f467031",
    "observed": true
@@ -1072,9 +1076,17 @@
   {
    "section": 9,
    "src": "/images/blog/copilot-september-2026/lab-s09-email-in-chat.webp",
-   "alt": "Copilot Chat in my own tenant, split into two panes. On the left, my question reads: whats the latest on Saudi registration status. Copilot answers that it found several relevant references across emails, documents and meeting transcripts and that the status is consistent across all of them, with a bolded conclusion that the market has not yet received registration approval. A small envelope citation chip sits beside the answer. Below is a two-column table of item and latest status, covering the registration decision and the expected timing. At the foot of the left pane the composer holds a pinned envelope chip naming the email, with a small cross to remove it. The right pane shows the email itself opened inside Copilot: sender avatar and name, the recipient, a Sunday date and time, and the full body text laid out by market.",
+   "alt": "Copilot Chat in my own tenant, split into two panes. On the left, my question reads: whats the latest on Saudi registration status. Copilot answers that it found several relevant references across emails, documents and meeting transcripts and that the status is consistent across all of them, with a bolded conclusion that the market has not yet received registration approval. A small envelope citation chip sits beside the answer. Below is a two-column table of item and latest status, covering the registration decision and the expected timing. At the foot of the left pane the composer holds a pinned envelope chip naming the email, with a small cross to remove it. The right pane shows the email itself opened inside Copilot: sender avatar and name, the recipient, a Sunday date and time, and the full body text laid out by market. Red callouts added by me read: Copilot cites the email inline; and Click a citation \u2014 the email opens beside the answer.",
    "exists": true,
    "sha256": "b2778f8964ecd50bc2298bd00310f5598a2c12db539b282b788af58dadbd3ada",
+   "observed": true
+  },
+  {
+   "section": 10,
+   "src": "/images/blog/copilot-september-2026/created-s10-mobile-pages-steering.webp",
+   "alt": "My own diagram titled On mobile, Copilot can reshape a Page or make one, for the Microsoft 365 Copilot app on Android and iOS, generally available 25 August 2026, marked illustrative rather than a screenshot. A panel headed One name, two things reads: Page steering and auto-triggering covers two separate capabilities, and the name obscures the more interesting one. Three panels sit below. Edit by instruction: tell Copilot Shorten this page and it reworks the page, instead of you editing by hand on a phone screen. Create from chat: ask for Create a new page for XYZ in an ordinary conversation and a Page gets made, without going to Pages first. What it is not: auto-triggering does not mean an existing Page surfaces itself at a convenient moment. A footnote headed Not tested reads: I could not reproduce this in time for this issue, so the above is Microsoft's account rather than mine, and I will pick it up next month.",
+   "exists": true,
+   "sha256": "857624b79187fa5329c36f8495c1a1dc315471c5b607d4d7f140b48e1bc75ee5",
    "observed": true
   },
   {
@@ -1088,15 +1100,15 @@
   {
    "section": 12,
    "src": "/images/blog/copilot-september-2026/lab-s12-search-in-rail-annotated.webp",
-   "alt": "The expanded left rail of Microsoft 365 Copilot in my own tenant. At the top is the Copilot wordmark with three small icons to its right, the last of which is circled in black. Below is a two-part pill switch reading Chat and Cowork with Chat selected. Beneath that, four rail entries are listed vertically with icons: New chat, Search, Library and Notebooks.",
+   "alt": "The expanded left rail of Microsoft 365 Copilot in my own tenant. At the top is the Copilot wordmark with three small icons to its right, the last of which is circled in red. Below is a two-part pill switch reading Chat and Cowork with Chat selected. Beneath that, four rail entries are listed vertically with icons: New chat, Search, Library and Notebooks.",
    "exists": true,
-   "sha256": "972a73bd81d938dea354d1a009716a225034022226c2688f09f647df6e0af9e4",
+   "sha256": "d9604c0acbd980e4e59f359c3a54a94e4f2741e1ff1aa41c91dbc86529fddaa1",
    "observed": true
   },
   {
    "section": 12,
    "src": "/images/blog/copilot-september-2026/lab-s12-search-answer.webp",
-   "alt": "The Copilot Search results page in my own tenant. The search box reads &quot;what did Kayo send about Saudi registration&quot;. Below it are filter dropdowns for Person, Type and Modified. A Copilot answer card carries a shield icon and the line &quot;AI-generated content may be incorrect&quot;, a paragraph of answer text with a citation chip, and buttons reading Ask Copilot, thumbs up, thumbs down and Sources. A panel on the right headed Sources lists All Results 5, Copilot Chats 0, Outlook Mail 2 and SharePoint 3. Two search results appear underneath.",
+   "alt": "The Copilot Search results page in my own tenant. The search box reads &quot;what did Kayo send about Saudi registration&quot;. Below it are filter dropdowns for Person, Type and Modified. A Copilot answer card carries a shield icon and the line &quot;AI-generated content may be incorrect&quot;, a paragraph of answer text with a citation chip, and buttons reading Ask Copilot, thumbs up, thumbs down and Sources. A panel on the right headed Sources lists All Results 5, Copilot Chats 0, Outlook Mail 2 and SharePoint 3. Two search results appear underneath. Red callouts added by me read: Search opens with a Copilot answer; and Ask Copilot carries it into Chat.",
    "exists": true,
    "sha256": "006ee859ea08f0bb05a09555a9bee0bb2a7c25cb6c051bac6f2beb5097f1412e",
    "observed": true
@@ -1104,7 +1116,7 @@
   {
    "section": 12,
    "src": "/images/blog/copilot-september-2026/lab-s12-chat-pane.webp",
-   "alt": "A chat pane in my own tenant. At the top are a briefcase and a globe as a two-part toggle with the briefcase selected, a share icon, a new chat button and a close cross. Under a divider reading Today, a user message reads &quot;what did Kayo send about Saudi registration&quot;. Copilot's reply names Kayo Miwa as a link and says Saudi Arabia was not approved. Below the reply is a card with an envelope icon, the subject &quot;Saudi registration status - KSA cannot be in wave 1&quot;, the line &quot;Sent on Sep 6, 11:10 AM&quot;, the line &quot;Kayo Miwa to: You&quot; and an Ask button. At the bottom is a message box reading Message Copilot.",
+   "alt": "A chat pane in my own tenant. At the top are a briefcase and a globe as a two-part toggle with the briefcase selected, a share icon, a new chat button and a close cross. Under a divider reading Today, a user message reads &quot;what did Kayo send about Saudi registration&quot;. Copilot's reply names Kayo Miwa as a link and says Saudi Arabia was not approved. Below the reply is a card with an envelope icon, the subject &quot;Saudi registration status - KSA cannot be in wave 1&quot;, the line &quot;Sent on Sep 6, 11:10 AM&quot;, the line &quot;Kayo Miwa to: You&quot; and an Ask button. At the bottom is a message box reading Message Copilot. A red callout added by me reads: Your search question carries into Chat.",
    "exists": true,
    "sha256": "d1d1e32fab67efa4f251046c785c283086865f2dd7386b51dc501673f381bab8",
    "observed": true
@@ -1112,7 +1124,7 @@
   {
    "section": 13,
    "src": "/images/blog/copilot-september-2026/lab-s13-notebook-anatomy.webp",
-   "alt": "A Copilot Notebook open in my own tenant, titled Retail Partner Decision. A narrow left rail lists three sections, Overview, Create and Reference, with Create highlighted. Below it a Created content list holds nine study guides with names such as Quiz, Summary, Flashcards and Matching, an MP3 file marked with a headphone icon, and a mind map. Under that, a References list holds six source files, a mix of Word documents and an Excel workbook. The main pane is headed Overview with a date of September 7, 2026 and a refresh control. It contains a Summary section with body text and numbered citation chips, a Quick Create row of seven coloured buttons, and a Key Insights section. A hover tooltip over one study guide reads Created and added by, followed by a colleague name. A footer note reads AI-generated content may be incorrect.",
+   "alt": "A Copilot Notebook open in my own tenant, titled Retail Partner Decision. A narrow left rail lists three sections, Overview, Create and Reference, with Create highlighted. Below it a Created content list holds nine study guides with names such as Quiz, Summary, Flashcards and Matching, an MP3 file marked with a headphone icon, and a mind map. Under that, a References list holds six source files, a mix of Word documents and an Excel workbook. The main pane is headed Overview with a date of September 7, 2026 and a refresh control. It contains a Summary section with body text and numbered citation chips, a Quick Create row of seven coloured buttons, and a Key Insights section. A hover tooltip over one study guide reads Created and added by, followed by a colleague name. A footer note reads AI-generated content may be incorrect. Red callouts added by me read: Nine study guides, audio and a mind map; and Alongside the six source files.",
    "exists": true,
    "sha256": "45954a68bb7fd2d4fc71a37b5da5d7c5cd2dd39b38ab8d0020b584517f46ecac",
    "observed": true
@@ -1120,7 +1132,7 @@
   {
    "section": 13,
    "src": "/images/blog/copilot-september-2026/official-13-notebooks-zava-marketing.webp",
-   "alt": "Official Microsoft image of a Copilot Notebook called Zava Marketing, open in a browser tab titled Notebooks, Microsoft Copilot. The main pane has a Message Copilot box and a Chat history list containing two conversations, one about a go-to-market strategy shift for social media pressure and one about footwear market trends for a new product launch. The right rail has an Add references button above four tiles labelled New Page, Audio overview, Infographic and More in OneNote. Below those, a Creations group lists a Marketing Team Update for August 2026, and a References group lists a dozen source files including spreadsheets, presentations and Word documents.",
+   "alt": "Official Microsoft image of a Copilot Notebook called Zava Marketing, open in a browser tab titled Notebooks, Microsoft Copilot. The main pane has a Message Copilot box and a Chat history list containing two conversations, one about a go-to-market strategy shift for social media pressure and one about footwear market trends for a new product launch. The right rail has an Add references button above four tiles labelled New Page, Audio overview, Infographic and More in OneNote. Below those, a Creations group lists a Marketing Team Update for August 2026, and a References group lists a dozen source files including spreadsheets, presentations and Word documents. Red callouts added by me read: The full workspace opens in OneNote; and Source files stay in the notebook.",
    "exists": true,
    "sha256": "bd15fd170af55f0c39f4d22f03e9d175a525c8c9771233bee197279962ae4ea2",
    "observed": true
@@ -1128,7 +1140,7 @@
   {
    "section": 14,
    "src": "/images/blog/copilot-september-2026/lab-s14-quick-create.webp",
-   "alt": "A close crop of a Copilot Notebook in my own tenant. A Quick Create row offers seven buttons, each with a coloured icon: Audio overview, Mind map, Study guide, Infographic, Workbook, Document and Presentation. Below a divider, a Key Insights section is headed Partner Selection Tradeoffs and contains three sub-headings. Coverage Versus Capability notes that 310 stores give one partner the broadest reach but that coverage is offset by weaker category management, logistics and reporting. Commercial Framework Tension notes an exclusivity request for twelve months on the core product and that granting it could materially affect launch economics. Meridian Capability Advantage notes an existing relationship and operational readiness, and integrated logistics with live EDI connectivity and cold-chain support. Every bullet ends with one or two small numbered citation chips.",
+   "alt": "A close crop of a Copilot Notebook in my own tenant. A Quick Create row offers seven buttons, each with a coloured icon: Audio overview, Mind map, Study guide, Infographic, Workbook, Document and Presentation. Below a divider, a Key Insights section is headed Partner Selection Tradeoffs and contains three sub-headings. Coverage Versus Capability notes that 310 stores give one partner the broadest reach but that coverage is offset by weaker category management, logistics and reporting. Commercial Framework Tension notes an exclusivity request for twelve months on the core product and that granting it could materially affect launch economics. Meridian Capability Advantage notes an existing relationship and operational readiness, and integrated logistics with live EDI connectivity and cold-chain support. Every bullet ends with one or two small numbered citation chips. A red callout added by me reads: Seven quick-create options, including Workbook.",
    "exists": true,
    "sha256": "3f93a8b5d496dc48b8e69da7f8bd947a4ff9a6c02652185eb55a3aea5a45f0be",
    "observed": true
@@ -1136,9 +1148,17 @@
   {
    "section": 14,
    "src": "/images/blog/copilot-september-2026/official-14-notebooks-suggested-content.webp",
-   "alt": "Official Microsoft image of a Copilot Notebook overview page dated 18 August 2026, headed Summary, Global Telecommunications Transformation. A Suggested content card offers a Telecom Opportunity Matrix, described as a traceable framework for comparing telecommunications opportunity hypotheses and prioritising further validation, citing two references. A Quick Create rail on the right offers Audio Overview, Mind map, Study guide, Infographic, then two buttons that both read Document \u2014 the first with a green Excel icon, the second with a blue Word icon \u2014 and Presentation. Below, a Key Insights section lists Adoption Trails Network Coverage, noting 2.2 billion people remain offline despite near-universal mobile broadband coverage, 5G Reaches Commercial Scale, noting 2.9 billion subscriptions generating 48 percent of mobile data traffic by the end of 2025, and Infrastructure Supports Economic Expansion, noting mobile generated 7.6 trillion dollars in 2025 with a forecast of 11.3 trillion by 2030. Each insight carries numbered citations.",
+   "alt": "Official Microsoft image of a Copilot Notebook overview page dated 18 August 2026, headed Summary, Global Telecommunications Transformation. A Suggested content card offers a Telecom Opportunity Matrix, described as a traceable framework for comparing telecommunications opportunity hypotheses and prioritising further validation, citing two references. A Quick Create rail on the right offers Audio Overview, Mind map, Study guide, Infographic, then two buttons that both read Document \u2014 the first with a green Excel icon, the second with a blue Word icon \u2014 and Presentation. Below, a Key Insights section lists Adoption Trails Network Coverage, noting 2.2 billion people remain offline despite near-universal mobile broadband coverage, 5G Reaches Commercial Scale, noting 2.9 billion subscriptions generating 48 percent of mobile data traffic by the end of 2025, and Infrastructure Supports Economic Expansion, noting mobile generated 7.6 trillion dollars in 2025 with a forecast of 11.3 trillion by 2030. Each insight carries numbered citations. A red callout added by me reads: Copilot suggests what to make next.",
    "exists": true,
    "sha256": "ddbb8f0ff602c6ca303ec913b7f401f349b32d945a2298b14a4b3a5d9a4f12d5",
+   "observed": true
+  },
+  {
+   "section": 15,
+   "src": "/images/blog/copilot-september-2026/created-s15-notebooks-multimodal-android.webp",
+   "alt": "My own diagram titled Notebooks take audio, images and notes together, for Copilot Notebooks on Android, rolling out September 2026, marked illustrative rather than a screenshot. A panel headed The detail that decides whether this is new for you reads: Microsoft scopes this month's rollout to Android; on iOS and iPad, multimodal capture is already available through the OneNote app. Two panels sit below. Produce audio, already worked: a notebook could already make an audio overview, that is section 14, and it works. Take audio in, the new half: using audio as a source is the new part, and the half I could not reproduce. A footnote headed What I found, 14 September 2026 reads: adding a meeting as a source worked, an .mp3 or a .jpg did not because the picker would not take them, and the Windows entry roadmap 566322 still read In development, so a desktop notebook was not yet in scope for what I was testing.",
+   "exists": true,
+   "sha256": "b9b12760252db42b961105341be9edfeded47d898e3d625b1681f1963c071c6a",
    "observed": true
   },
   {
@@ -1147,6 +1167,14 @@
    "alt": "A diagram contrasting the June 2026 public preview of Power BI grounding, covered in the August issue as a Frontier capability, with its August 2026 worldwide rollout, noting that the capability itself did not change &mdash; the audience did.",
    "exists": true,
    "sha256": "7dce932015dbf097c1b85b2dd8c486de103af084e827db9b93cb3007641696d9",
+   "observed": true
+  },
+  {
+   "section": 17,
+   "src": "/images/blog/copilot-september-2026/created-s17-viva-engage-private-grounding.webp",
+   "alt": "My own diagram titled Viva Engage private communities can ground Copilot, for Microsoft 365 Copilot and Viva Engage on web, generally available 25 August 2026, marked illustrative rather than a screenshot. A panel headed Microsoft's wording, quoted rather than paraphrased reads: when a user queries, they will only be able to see content they are privileged to access. Three panels sit below. What does not change: the permission model, nothing is being relaxed. What does change: the size of the pool Copilot may draw from for each person, bounded by what they could already have opened by hand. Two that are easy to miss: web only for now, and roadmap 515144 still shows May 2026 while the release notes place it in the 25 August batch. A footnote headed Worth an admin conversation rather than a cheer reads: people post in private communities with an expectation about who is reading, permissions are respected but the set of places an answer can come from just got wider, and I do not have Viva Engage in my demo tenant so this is Microsoft's account.",
+   "exists": true,
+   "sha256": "3e9a138fb391d9c247a49010a07e336dcf3e320a9685f9836285099ce74c5fa7",
    "observed": true
   },
   {
@@ -1200,7 +1228,7 @@
   {
    "section": 24,
    "src": "/images/blog/copilot-september-2026/lab-s57-app-skill-slash.webp",
-   "alt": "The Cowork home screen in my own tenant. A heading reads &quot;What should we finish today?&quot;. The message box below contains a forward slash followed by the letters app. A picker above the box has tabs reading All, Skills, People, Files, Meetings, Emails, Chats, Channels and Sites, and highlights an entry described as a skill that creates and edits apps that can connect to data.",
+   "alt": "The Cowork home screen in my own tenant. A heading reads &quot;What should we finish today?&quot;. The message box below contains a forward slash followed by the letters app. A picker above the box has tabs reading All, Skills, People, Files, Meetings, Emails, Chats, Channels and Sites, and highlights an entry described as a skill that creates and edits apps that can connect to data. Red callouts added by me read: Type /app, then tab; and It claims it connects to data.",
    "exists": true,
    "sha256": "2bd37a86a1b4fdca38c0c9865dae377cff788283429b0c5d216f24cf6be9c4cd",
    "observed": true
@@ -1208,7 +1236,7 @@
   {
    "section": 25,
    "src": "/images/blog/copilot-september-2026/official-58-cowork-effort-slider.webp",
-   "alt": "Official Microsoft image of the Cowork effort control. A slider runs left to right from Faster to Smarter across a colour gradient, with the handle at the far right on Smarter. The description beneath reads: uses the most credits, so responses can run slower, best saved for the hardest tasks. The prompt box below reads Message Cowork and carries a plus button, an Auto dropdown and a Max dropdown, with a footer noting AI-generated content may be incorrect.",
+   "alt": "Official Microsoft image of the Cowork effort control. A slider runs left to right from Faster to Smarter across a colour gradient, with the handle at the far right on Smarter. The description beneath reads: uses the most credits, so responses can run slower, best saved for the hardest tasks. The prompt box below reads Message Cowork and carries a plus button, an Auto dropdown and a Max dropdown, with a footer noting AI-generated content may be incorrect. Red callouts added by me read: Five levels, Light to Max; and Model and effort, two dials.",
    "exists": true,
    "sha256": "a703c51cee3668533a5db5765671587378d96f35e09ea5a0126456ed64587574",
    "observed": true
@@ -1216,7 +1244,7 @@
   {
    "section": 26,
    "src": "/images/blog/copilot-september-2026/official-59-cost-skill.webp",
-   "alt": "Official Microsoft image of the result of a slash cost command in Copilot, with a small slash cost chip at the top right. The response reads: 128 credits used for this task, 10 percent of your monthly limit remaining, 900 credits used so far this month, monthly limit resets on August 1.",
+   "alt": "Official Microsoft image of the result of a slash cost command in Copilot, with a small slash cost chip at the top right. The response reads: 128 credits used for this task, 10 percent of your monthly limit remaining, 900 credits used so far this month, monthly limit resets on August 1. Red callouts added by me read: What this task cost; and Can you afford the next one.",
    "exists": true,
    "sha256": "7cfffcc60c206bbf528d8f7d78f510c1c6c9ce60b8f1fcb33ab685264945582c",
    "observed": true
@@ -1224,15 +1252,23 @@
   {
    "section": 27,
    "src": "/images/blog/copilot-september-2026/official-60-cowork-automations.webp",
-   "alt": "Official Microsoft image of the Copilot left navigation rail with a Chat and Cowork toggle set to Cowork. Beneath it the rail lists New task, My tasks, Automations, which is highlighted as the current selection, and Customize.",
+   "alt": "Official Microsoft image of the Copilot left navigation rail with a Chat and Cowork toggle set to Cowork. Beneath it the rail lists New task, My tasks, Automations, which is highlighted as the current selection, and Customize. A red callout added by me reads: This tab was called Scheduled.",
    "exists": true,
    "sha256": "72a0ec4d6fca7113bc7ab99bb0266baf0889b58cd5bd186748d3b8597dc45977",
    "observed": true
   },
   {
+   "section": 28,
+   "src": "/images/blog/copilot-september-2026/created-s28-local-browser-use-ga.webp",
+   "alt": "My own diagram titled Local browser use reached every Copilot tenant, for Copilot Cowork, generally available August 2026, marked illustrative rather than a screenshot. A panel headed What actually changed reads: not the capability but who has it, local browser use moved out of the Frontier Program to all Microsoft 365 Copilot tenants. Two panels sit below. June 2026: listed in the Cowork release notes as a Frontier capability. August 2026: moved from Frontier to general availability, Cowork completes web tasks in Microsoft Edge on your device using your existing sign-ins and your organisation's policies, and Edge must be installed. A footnote headed The second question worth asking early reads: uses your existing sign-ins means Cowork acts inside sessions you have already authenticated, so alongside does it work well enough, which internal sites are you comfortable with it reaching.",
+   "exists": true,
+   "sha256": "c3559183a60eea27507a00e869b07775b34d94548246816f0f7e5e91ede76c74",
+   "observed": true
+  },
+  {
    "section": 29,
    "src": "/images/blog/copilot-september-2026/lab-s62-cowork-plugins.webp",
-   "alt": "The Customize page in Cowork in my own tenant, with tabs for Plugins, Skills and Preferences. An Installed heading lists Fabric IQ, Dynamics 365 Sales and Dynamics 365 ERP apps, each with a toggle switched off, followed by a Show more link. A Discover heading below lists Adobe Journey Optimizer, Ahrefs, an AI meeting notes plugin, Aiwyn Tax, AllTrails and Apify, each with a padlock icon.",
+   "alt": "The Customize page in Cowork in my own tenant, with tabs for Plugins, Skills and Preferences. An Installed heading lists Fabric IQ, Dynamics 365 Sales and Dynamics 365 ERP apps, each with a toggle switched off, followed by a Show more link. A Discover heading below lists Adobe Journey Optimizer, Ahrefs, an AI meeting notes plugin, Aiwyn Tax, AllTrails and Apify, each with a padlock icon. Red callouts added by me read: Plugins, Skills, Preferences; and Installed, all off.",
    "exists": true,
    "sha256": "336b7536bf75fa54af068cba82e8668d52dd79e9efefb62b5119ee5d098a60a7",
    "observed": true
@@ -1240,7 +1276,7 @@
   {
    "section": 29,
    "src": "/images/blog/copilot-september-2026/lab-s62-add-plugin.webp",
-   "alt": "A dialog headed Add a plugin sits over the Cowork Customize page. It contains an upload area reading &quot;Drag &amp; drop, choose a file, or choose a folder&quot; with the note &quot;.ZIP or a folder&quot;. Below it a shield icon sits beside the text &quot;Plugins can run skills and connect Cowork to external services. Only add plugins from sources you trust&quot;, and a line reads &quot;New to plugins? Learn more&quot;.",
+   "alt": "A dialog headed Add a plugin sits over the Cowork Customize page. It contains an upload area reading &quot;Drag &amp; drop, choose a file, or choose a folder&quot; with the note &quot;.ZIP or a folder&quot;. Below it a shield icon sits beside the text &quot;Plugins can run skills and connect Cowork to external services. Only add plugins from sources you trust&quot;, and a line reads &quot;New to plugins? Learn more&quot;. Red callouts added by me read: Sideload a .ZIP or a folder; and Only add plugins you trust.",
    "exists": true,
    "sha256": "a457adeb5d411465b3efaa6514429a73df3cb61c528adbd94136a776afcca5f5",
    "observed": true
@@ -1248,7 +1284,7 @@
   {
    "section": 30,
    "src": "/images/blog/copilot-september-2026/lab-s63-plugins-mobile.webp",
-   "alt": "A sheet on my phone headed Customise, with two tabs reading Plug-ins and Skills, and Plug-ins selected. An Installed heading lists three Dynamics 365 entries, each with a toggle switched off. A Discover heading below lists Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research, each with an Add button, above a box reading Search plug-ins.",
+   "alt": "A sheet on my phone headed Customise, with two tabs reading Plug-ins and Skills, and Plug-ins selected. An Installed heading lists three Dynamics 365 entries, each with a toggle switched off. A Discover heading below lists Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research, each with an Add button, above a box reading Search plug-ins. Red callouts added by me read: Plug-ins and Skills, now on mobile; Dynamics plug-ins ship off; and Third-party MCP connectors.",
    "exists": true,
    "sha256": "822633be4842a10acc34c2d26f9574e4fd5a3d1d15fc1dbd41883afb8f715215",
    "observed": true
@@ -1256,7 +1292,7 @@
   {
    "section": 31,
    "src": "/images/blog/copilot-september-2026/lab-s64-brand-kit-nav.webp",
-   "alt": "A capture from my own tenant showing the Microsoft 365 Copilot app&rsquo;s Create page. The heading reads What do you want to create? A row of buttons beneath it shows Create an image, PowerPoint, Browse brand templates and More. The More menu is open, listing Story, Poster, Edit an image, Form, Banner and Draft, followed by a Start from a template group containing All templates, then a Manage brand kits group whose Brand kits entry is highlighted, and finally About Create.",
+   "alt": "A capture from my own tenant showing the Microsoft 365 Copilot app&rsquo;s Create page. The heading reads What do you want to create? A row of buttons beneath it shows Create an image, PowerPoint, Browse brand templates and More. The More menu is open, listing Story, Poster, Edit an image, Form, Banner and Draft, followed by a Start from a template group containing All templates, then a Manage brand kits group whose Brand kits entry is highlighted, and finally About Create. Red callouts added by me read: Hidden behind More; and The switch lives here.",
    "exists": true,
    "sha256": "89f090c2d8201949a2128ce74f0a02cd1da5cc70e527f0c6b0fb3753528813a6",
    "observed": true
@@ -1264,7 +1300,7 @@
   {
    "section": 31,
    "src": "/images/blog/copilot-september-2026/official-64-brand-kit-restrictions.webp",
-   "alt": "Official Microsoft image of a Brand Kit settings page. Sections run down the page for Logos, Templates, Fonts, Colors, Images and Icons. The Templates section reads Add branded PowerPoint, Word, Excel and Designer templates to ensure brand adherence, and shows Strict mode set to Off with one template. A toggle labelled Strict brand adherence carries the description Use only approved template layouts, Copilot will not create new layouts. An open dialog titled Turn on brand restrictions reads Copilot uses only layouts and design elements defined in your template when creating or editing presentations, with Turn on and Cancel buttons.",
+   "alt": "Official Microsoft image of a Brand Kit settings page. Sections run down the page for Logos, Templates, Fonts, Colors, Images and Icons. The Templates section reads Add branded PowerPoint, Word, Excel and Designer templates to ensure brand adherence, and shows Strict mode set to Off with one template. A toggle labelled Strict brand adherence carries the description Use only approved template layouts, Copilot will not create new layouts. An open dialog titled Turn on brand restrictions reads Copilot uses only layouts and design elements defined in your template when creating or editing presentations, with Turn on and Cancel buttons. A red callout added by me reads: Off until you turn it on. A red box outlines the matching part of the screen.",
    "exists": true,
    "sha256": "f931282029cff1d55891172df855c4e4b6af454fad168db31ed5ca5cc78f548c",
    "observed": true
@@ -1272,7 +1308,7 @@
   {
    "section": 32,
    "src": "/images/blog/copilot-september-2026/official-65-brand-kit-note-instructions-annotated.webp",
-   "alt": "Official Microsoft image of a Brand Kit template settings dialog titled Edit details, reading Make this template easier to find by editing tags or description. The template name is Adventure Works MTB Line Expansion and the Brand Kit is Adventure Works Cycle. A Tags field holds removable chips for PowerPoint, Product Launch, Executive, Internal, Marketing, Product Management, Sales, Finance, English and Corporate. Below the description box sits a ticked checkbox labelled Allow note instructions, with the explanation Use slide notes to control how Copilot updates and creates content. A thumbnail beside the dialog shows a slide reading MTB Line Expansion over a mountain biking photograph. A red rounded box, added by me, outlines the ticked Allow note instructions checkbox and its sub-label.",
+   "alt": "Official Microsoft image of a Brand Kit template settings dialog titled Edit details, reading Make this template easier to find by editing tags or description. The template name is Adventure Works MTB Line Expansion and the Brand Kit is Adventure Works Cycle. A Tags field holds removable chips for PowerPoint, Product Launch, Executive, Internal, Marketing, Product Management, Sales, Finance, English and Corporate. Below the description box sits a ticked checkbox labelled Allow note instructions, with the explanation Use slide notes to control how Copilot updates and creates content. A thumbnail beside the dialog shows a slide reading MTB Line Expansion over a mountain biking photograph. In Microsoft&rsquo;s own image, a red rounded box outlines the ticked Allow note instructions checkbox and its sub-label. A red callout added by me reads: Slide notes now steer Copilot.",
    "exists": true,
    "sha256": "054b8a41391f5d3b2a1cf7083b8e5eac8e027234aa763a1dbab3c3bb09f5a645",
    "observed": true
@@ -1280,7 +1316,7 @@
   {
    "section": 32,
    "src": "/images/blog/copilot-september-2026/lab-s65-edit-details-no-checkbox.webp",
-   "alt": "A capture from my own tenant showing the same Edit details dialog for a Brand Kit template. Template Name reads Caldova Brand Template and Brand Kit reads Caldova Brand Kit. A Tags field holds removable chips for PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English and Minimalist. Below that sits a Description box reading A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates, with a character count of 162 of 250. The form ends with Save and Cancel buttons. There is no Allow note instructions checkbox anywhere in it.",
+   "alt": "A capture from my own tenant showing the same Edit details dialog for a Brand Kit template. Template Name reads Caldova Brand Template and Brand Kit reads Caldova Brand Kit. A Tags field holds removable chips for PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English and Minimalist. Below that sits a Description box reading A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates, with a character count of 162 of 250. The form ends with Save and Cancel buttons. There is no Allow note instructions checkbox anywhere in it. A red callout added by me reads: No note checkbox here on 14 September 2026.",
    "exists": true,
    "sha256": "44dfa783a5262813f176dd61171b7486e15f3668d3ace7a03e5a03f12e663a9e",
    "observed": true
@@ -1288,7 +1324,7 @@
   {
    "section": 33,
    "src": "/images/blog/copilot-september-2026/lab-s66-choose-skills-menu.webp",
-   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. The heading reads Let us edit your presentation, with a note saying Copilot can edit your presentation directly and an Allow editing dropdown. An open menu above the prompt box lists Add work content, Upload images and files, Designer, Select brand, Choose skills and Change data sources.",
+   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. The heading reads Let us edit your presentation, with a note saying Copilot can edit your presentation directly and an Allow editing dropdown. An open menu above the prompt box lists Add work content, Upload images and files, Designer, Select brand, Choose skills and Change data sources. A red callout added by me reads: Choose skills, in the + menu.",
    "exists": true,
    "sha256": "f56ff3299f673ee8fc12b23c8293400e1c85c5e1cf50856807e5cacbfa5b5517",
    "observed": true
@@ -1296,7 +1332,7 @@
   {
    "section": 33,
    "src": "/images/blog/copilot-september-2026/lab-s66-custom-skills-off.webp",
-   "alt": "The Skills and plugins pane in my own tenant. The description reads Control which skills Copilot can use automatically, and manage their access to external data. A Custom skills entry sits at the top with its toggle switched off and a chevron to open it. Below it five built-in skills are each switched on: Visualize this slide, Review this presentation, Prepare for questions, Explain this presentation and Sharpen slide titles.",
+   "alt": "The Skills and plugins pane in my own tenant. The description reads Control which skills Copilot can use automatically, and manage their access to external data. A Custom skills entry sits at the top with its toggle switched off and a chevron to open it. Below it five built-in skills are each switched on: Visualize this slide, Review this presentation, Prepare for questions, Explain this presentation and Sharpen slide titles. Red callouts added by me read: Custom skills, off; and The rest ship on.",
    "exists": true,
    "sha256": "ca2f36cbaecccafe2c0332a6b0dc7c9592d60634bcfd4957489d771ce2f7dfa1",
    "observed": true
@@ -1304,7 +1340,7 @@
   {
    "section": 33,
    "src": "/images/blog/copilot-september-2026/lab-s66-create-skills-folder.webp",
-   "alt": "The Custom skills panel in my own tenant, opened from the Skills and plugins pane. Its toggle is off. The text reads Custom skills let you extend Copilot with your own skill files. To get started, create a skills folder in your OneDrive, followed by a link reading Read detailed instructions and a button reading Create skills folder.",
+   "alt": "The Custom skills panel in my own tenant, opened from the Skills and plugins pane. Its toggle is off. The text reads Custom skills let you extend Copilot with your own skill files. To get started, create a skills folder in your OneDrive, followed by a link reading Read detailed instructions and a button reading Create skills folder. Red callouts added by me read: Off until you create it; and Creates the OneDrive folder.",
    "exists": true,
    "sha256": "2259bb223199972fbae75c1438eaabeb7b3a9021ac97f087dd5c45d855abbaed",
    "observed": true
@@ -1312,7 +1348,7 @@
   {
    "section": 33,
    "src": "/images/blog/copilot-september-2026/lab-s66-onedrive-skills-folder.webp",
-   "alt": "A OneDrive folder listing in my own tenant. The breadcrumb reads My files, Documents, Copilot, Microsoft PowerPoint, skills. The folder holds two items, both modified a few seconds ago by Colin Ballinger: a folder called create-infographic-summary.example and a file called README.md.",
+   "alt": "A OneDrive folder listing in my own tenant. The breadcrumb reads My files, Documents, Copilot, Microsoft PowerPoint, skills. The folder holds two items, both modified a few seconds ago by Colin Ballinger: a folder called create-infographic-summary.example and a file called README.md. Red callouts added by me read: The path is the trick; and One folder per skill.",
    "exists": true,
    "sha256": "35eaf1ec2e35bec9e3140cf0ea3ff9510d68d788120990bd7c4d3a2931c40d29",
    "observed": true
@@ -1320,7 +1356,7 @@
   {
    "section": 33,
    "src": "/images/blog/copilot-september-2026/lab-s66-upload-skill.webp",
-   "alt": "The Upload skill panel in my own tenant. A line reads Already have a skill file, with an information icon. Below it the text reads Add your own skill files to extend what Copilot can do for you. Files are saved directly to your OneDrive Skills folder. Beneath that is a drag and drop area reading Drag and Drop your files or Browse.",
+   "alt": "The Upload skill panel in my own tenant. A line reads Already have a skill file, with an information icon. Below it the text reads Add your own skill files to extend what Copilot can do for you. Files are saved directly to your OneDrive Skills folder. Beneath that is a drag and drop area reading Drag and Drop your files or Browse. A red callout added by me reads: Upload just writes to that folder.",
    "exists": true,
    "sha256": "2609404857e9b474d590afc3f1dba943a7092850137d68cc36961d70622365d3",
    "observed": true
@@ -1328,7 +1364,7 @@
   {
    "section": 33,
    "src": "/images/blog/copilot-september-2026/lab-s66-visualize-before.webp",
-   "alt": "A slide in my own tenant titled Copilot Agents versus Copilot Studio Agents. The content is two columns of plain bullet points, and the right-hand column runs past the bottom edge of the slide.",
+   "alt": "A slide in my own tenant titled Copilot Agents versus Copilot Studio Agents. The content is two columns of plain bullet points, and the right-hand column runs past the bottom edge of the slide. A red callout added by me reads: Too much text, and it overflows.",
    "exists": true,
    "sha256": "23ec8c1e8b47d4ab99e5ae237211311d5d3b417d03b7182f7e3e4c0ee44ce6c0",
    "observed": true
@@ -1336,7 +1372,7 @@
   {
    "section": 33,
    "src": "/images/blog/copilot-september-2026/lab-s66-visualize-after.webp",
-   "alt": "The same slide after running the visualize this slide skill. The title now sits in a navy banner. The content is laid out as two white cards with icons, the left headed Copilot Agent in blue and the right headed Copilot Studio Agent in teal, each holding five short lines. A closing line beneath reads Start in Copilot, graduate to Studio when the work needs custom logic and systems.",
+   "alt": "The same slide after running the visualize this slide skill. The title now sits in a navy banner. The content is laid out as two white cards with icons, the left headed Copilot Agent in blue and the right headed Copilot Studio Agent in teal, each holding five short lines. A closing line beneath reads Start in Copilot, graduate to Studio when the work needs custom logic and systems. Red callouts added by me read: Bullets became cards; and A closing line to land it.",
    "exists": true,
    "sha256": "996e449edb7490c083cf799c2e344e8bacbf482a9b8b96e828133f8140415061",
    "observed": true
@@ -1344,7 +1380,7 @@
   {
    "section": 34,
    "src": "/images/blog/copilot-september-2026/lab-s67-translate-reasoning.webp",
-   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. My prompt reads Translate this presentation into German. Below it Copilot shows an expanded Reasoned in 5 steps list, including lines about checking whether slides 1, 3 and 4 are empty, translating the editable text on the one slide that contains it, noting that image-based slides cannot be changed, and reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box. The reply beneath is written in German and says the text is now in German with adjusted font size so everything fits neatly into the placeholders, that the product names Copilot, Copilot Studio and Teams were left unchanged, and that slide 1 contains no text while slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly.",
+   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. My prompt reads Translate this presentation into German. Below it Copilot shows an expanded Reasoned in 5 steps list, including lines about checking whether slides 1, 3 and 4 are empty, translating the editable text on the one slide that contains it, noting that image-based slides cannot be changed, and reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box. The reply beneath is written in German and says the text is now in German with adjusted font size so everything fits neatly into the placeholders, that the product names Copilot, Copilot Studio and Teams were left unchanged, and that slide 1 contains no text while slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly. Red callouts added by me read: Image slides can't be translated; and It resizes text so it still fits.",
    "exists": true,
    "sha256": "4a9805d96b96f9fd59c19c14dbcac694e9ea455ea0aee6cff0de6bcba4c3dab9",
    "observed": true
@@ -1352,7 +1388,7 @@
   {
    "section": 34,
    "src": "/images/blog/copilot-september-2026/lab-s67-translated-slide.webp",
-   "alt": "A slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents, with the body text now in German. Two columns headed Copilot Agent and Copilot Studio Agent each hold five German bullet points. Red spell-check underlines run beneath many of the German words. All of the text sits inside the slide, with clear space below the final bullet.",
+   "alt": "A slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents, with the body text now in German. Two columns headed Copilot Agent and Copilot Studio Agent each hold five German bullet points. Red spell-check underlines run beneath many of the German words. All of the text sits inside the slide, with clear space below the final bullet. A red callout added by me reads: German runs longer, and it still fits.",
    "exists": true,
    "sha256": "2d3b4346b351926a7b3ccb7af5ba7988571e52dc409fb07fab5c9ccfee015066",
    "observed": true
@@ -1360,7 +1396,7 @@
   {
    "section": 35,
    "src": "/images/blog/copilot-september-2026/lab-s68-shapes-reasoning.webp",
-   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. An expanded reasoning list reads: I am checking slide 3 now to see its current content and layout; I am replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look; I am building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely.",
+   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. An expanded reasoning list reads: I am checking slide 3 now to see its current content and layout; I am replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look; I am building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely. Red callouts added by me read: Shapes, not real SmartArt; and It places each element itself.",
    "exists": true,
    "sha256": "1004e72d33cd45b9668f656f77e4fbc9c1a9ec1f961c1d3f534be79b0319d8f4",
    "observed": true
@@ -1368,7 +1404,7 @@
   {
    "section": 35,
    "src": "/images/blog/copilot-september-2026/lab-s68-smartart-result.webp",
-   "alt": "A PowerPoint slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents. Two columns of rounded cards sit beneath the title. The left column has a dark navy header reading Copilot Agent above five pale blue cards. The right column has an orange header reading Copilot Studio Agent above five pale peach cards. The top left card carries a dotted selection border, showing it is a separate selectable shape.",
+   "alt": "A PowerPoint slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents. Two columns of rounded cards sit beneath the title. The left column has a dark navy header reading Copilot Agent above five pale blue cards. The right column has an orange header reading Copilot Studio Agent above five pale peach cards. The top left card carries a dotted selection border, showing it is a separate selectable shape. A red callout added by me reads: Plain shapes, not SmartArt.",
    "exists": true,
    "sha256": "8c5f688244a6ba2da66a1bb5007e8645f30d37977ced99c757ab231839717f5a",
    "observed": true
@@ -1376,7 +1412,7 @@
   {
    "section": 35,
    "src": "/images/blog/copilot-september-2026/lab-s68-prompt-left-right.webp",
-   "alt": "A close-up of the Copilot prompt box in PowerPoint from my own tenant, showing a dropdown labelled Edit above the typed prompt: match the flow left to right and match my brand colors.",
+   "alt": "A close-up of the Copilot prompt box in PowerPoint from my own tenant, showing a dropdown labelled Edit above the typed prompt: match the flow left to right and match my brand colors. A red callout added by me reads: One plain-English follow-up.",
    "exists": true,
    "sha256": "7961f76414b1c70312e466d64a79b03778e713d5ffe5b8ef35208aeef9b36367",
    "observed": true
@@ -1384,7 +1420,7 @@
   {
    "section": 35,
    "src": "/images/blog/copilot-september-2026/lab-s68-chevron-result.webp",
-   "alt": "A PowerPoint slide in my own tenant showing two horizontal chevron process flows. The top row begins with a navy anchor box labelled Copilot Agent, followed by five chevrons that deepen in blue reading Inside M365 Copilot, Built in minutes, Grounded in your data, Chat Teams Word, and Quick task help. The bottom row begins with an orange anchor box labelled Copilot Studio Agent, followed by five chevrons that deepen in orange reading Custom agent studio, Topics and triggers, Connectors and APIs, Publish anywhere, and Automated workflows. One chevron carries a dotted selection border.",
+   "alt": "A PowerPoint slide in my own tenant showing two horizontal chevron process flows. The top row begins with a navy anchor box labelled Copilot Agent, followed by five chevrons that deepen in blue reading Inside M365 Copilot, Built in minutes, Grounded in your data, Chat Teams Word, and Quick task help. The bottom row begins with an orange anchor box labelled Copilot Studio Agent, followed by five chevrons that deepen in orange reading Custom agent studio, Topics and triggers, Connectors and APIs, Publish anywhere, and Automated workflows. One chevron carries a dotted selection border. Red callouts added by me read: An anchor, then five steps; and Colour deepens left to right.",
    "exists": true,
    "sha256": "cc0a1e942a69e80f248f6b90d94dad650dec3060afc5fbdc7f29a48cc4173d75",
    "observed": true
@@ -1392,7 +1428,7 @@
   {
    "section": 35,
    "src": "/images/blog/copilot-september-2026/lab-s68-chevron-reply.webp",
-   "alt": "A capture of the Copilot reply panel in PowerPoint from my own tenant. It shows my prompt, match the flow left to right and match my brand colors, a Reasoned in 7 steps link, and a reply explaining that the slide now reads as two left-to-right process flows, with a labeled anchor for each agent type and five chevron steps that deepen in the theme's blue and orange, and that the step text is condensed to short phrases. A second paragraph reads: I kept your theme's own palette since no separate brand kit was available, say the word if you want specific hex colors applied instead.",
+   "alt": "A capture of the Copilot reply panel in PowerPoint from my own tenant. It shows my prompt, match the flow left to right and match my brand colors, a Reasoned in 7 steps link, and a reply explaining that the slide now reads as two left-to-right process flows, with a labeled anchor for each agent type and five chevron steps that deepen in the theme's blue and orange, and that the step text is condensed to short phrases. A second paragraph reads: I kept your theme's own palette since no separate brand kit was available, say the word if you want specific hex colors applied instead. A red callout added by me reads: It says it fell back to the theme.",
    "exists": true,
    "sha256": "5fc4802a3ed76b1f7ee75ea5538fbc1a0f23c25354a40ae0babd8feabb0d422d",
    "observed": true
@@ -1400,7 +1436,7 @@
   {
    "section": 36,
    "src": "/images/blog/copilot-september-2026/lab-s69-prompt-locating-email.webp",
-   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. The prompt reads: Create a presentation about Caldenza Relief, range and pack format email from Miguel Garcia. Beneath it an expanded reasoning list shows the steps Mapping it out, Looking at the details, I am locating Miguel Garcia's email so I can build the deck, and Exploring approaches.",
+   "alt": "A capture from my own tenant showing the Copilot pane in PowerPoint. The prompt reads: Create a presentation about Caldenza Relief, range and pack format email from Miguel Garcia. Beneath it an expanded reasoning list shows the steps Mapping it out, Looking at the details, I am locating Miguel Garcia's email so I can build the deck, and Exploring approaches. Red callouts added by me read: Just name the email in the ask; and It finds the email itself.",
    "exists": true,
    "sha256": "eb41c6b9d56e1eb8af5a1e4703ddc7ac4074db177be3620b018afac0e8af37de",
    "observed": true
@@ -1408,7 +1444,7 @@
   {
    "section": 36,
    "src": "/images/blog/copilot-september-2026/lab-s69-style-options.webp",
-   "alt": "A capture from my own tenant showing a Copilot prompt in PowerPoint headed How should your presentation look and feel? The first option, marked Recommended, reads Your organization's templates, described as Use templates from my organization's brand kits. Below it are three suggested styles: Clinical Navy and White, described as crisp white background with deep navy headers and teal accent rules; Warm Sand and Deep Teal, described as sand backgrounds with deep teal panels and amber highlights; and Bold Charcoal Data Focus, described as charcoal slides with oversized figures in lime. A final option reads Enter another option, and there are Confirm and Skip all buttons.",
+   "alt": "A capture from my own tenant showing a Copilot prompt in PowerPoint headed How should your presentation look and feel? The first option, marked Recommended, reads Your organization's templates, described as Use templates from my organization's brand kits. Below it are three suggested styles: Clinical Navy and White, described as crisp white background with deep navy headers and teal accent rules; Warm Sand and Deep Teal, described as sand backgrounds with deep teal panels and amber highlights; and Bold Charcoal Data Focus, described as charcoal slides with oversized figures in lime. A final option reads Enter another option, and there are Confirm and Skip all buttons. Red callouts added by me read: It asks before it builds; Your brand kit is the default; and Three looks, or write your own.",
    "exists": true,
    "sha256": "6920f044b4f42d55d3201857e772a86ccc948d96603ab09bd03a175e7a3517a2",
    "observed": true
@@ -1416,7 +1452,7 @@
   {
    "section": 36,
    "src": "/images/blog/copilot-september-2026/lab-s69-generated-slide.webp",
-   "alt": "A slide from the deck Copilot generated in my own tenant, titled Our framework position and what to verify. Two columns sit beneath the title: a dark navy header reading Framework position above four bullets covering trade margin no more than 30 percent, incremental-only rebates, payment terms of 60 days or shorter, and no category exclusivity; and a teal header reading Verify in negotiation above four bullets covering store-level storage capability, any exclusivity ask, registration status by presentation, and anything outside the envelope needing pricing sign-off.",
+   "alt": "A slide from the deck Copilot generated in my own tenant, titled Our framework position and what to verify. Two columns sit beneath the title: a dark navy header reading Framework position above four bullets covering trade margin no more than 30 percent, incremental-only rebates, payment terms of 60 days or shorter, and no category exclusivity; and a teal header reading Verify in negotiation above four bullets covering store-level storage capability, any exclusivity ask, registration status by presentation, and anything outside the envelope needing pricing sign-off. Red callouts added by me read: The palette it proposed earlier; and Specific, not filler.",
    "exists": true,
    "sha256": "8b861abba3bf928ebaca116ed53ad70d4fe1c35e34b8ff37874dd370b36bd89a",
    "observed": true
@@ -1424,7 +1460,7 @@
   {
    "section": 37,
    "src": "/images/blog/copilot-september-2026/lab-s70-coach-mark.webp",
-   "alt": "A teaching callout shown to attendees in PowerPoint Live in my own tenant. It is headed Get explanations from Copilot and reads: Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane. A Got it button sits below.",
+   "alt": "A teaching callout shown to attendees in PowerPoint Live in my own tenant. It is headed Get explanations from Copilot and reads: Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane. A Got it button sits below. A red callout added by me reads: The presenter never sees this.",
    "exists": true,
    "sha256": "f8b238b5192d9ae8683eb92deec266f488b0f7907ccf816102a50e35909ccfd1",
    "observed": true
@@ -1432,7 +1468,7 @@
   {
    "section": 37,
    "src": "/images/blog/copilot-september-2026/lab-s70-explain-button.webp",
-   "alt": "A slide viewed in PowerPoint Live in my own tenant, titled Four SKUs confirmed for the Gulf range, with four bullets about product pack formats. A dark floating button labelled Explain selected text sits above the slide where the selection was made.",
+   "alt": "A slide viewed in PowerPoint Live in my own tenant, titled Four SKUs confirmed for the Gulf range, with four bullets about product pack formats. A dark floating button labelled Explain selected text sits above the slide where the selection was made. A red callout added by me reads: It appears where you released.",
    "exists": true,
    "sha256": "f8468243d307f19fa8eb40f6df80f05ded7a6c2a203eadfb0ba0b2bfe4bb81f6",
    "observed": true
@@ -1446,9 +1482,17 @@
    "observed": true
   },
   {
+   "section": 38,
+   "src": "/images/blog/copilot-september-2026/created-s38-powerpoint-aem-brand-assets.webp",
+   "alt": "My own diagram titled PowerPoint can use brand assets from Adobe Experience Manager, for Copilot in PowerPoint on Web and Windows, generally available 11 August 2026, marked illustrative rather than a screenshot. A panel headed What changed reads: Copilot in PowerPoint can use enterprise assets hosted in Adobe Experience Manager, so the images it reaches for are the approved ones. Two panels sit below. Before: Copilot reached for whatever it could generate. Now: it can reach the library your organisation has already approved, and already pays for. A footnote headed Why it matters reads: most large organisations already pay for a digital asset manager, and it tends to sit outside the tools where the work actually happens, so wiring it into the app where the deck is made is how those assets finally get used.",
+   "exists": true,
+   "sha256": "fdaaf342ad19b9bb9ee299259260876149d3c7899efd8b0453a5d62e822abfd7",
+   "observed": true
+  },
+  {
    "section": 39,
    "src": "/images/blog/copilot-september-2026/lab-s72-web-create-with-copilot.webp",
-   "alt": "The PowerPoint start page in the web app in my own tenant. Three buttons sit under a welcome heading: Create with Copilot as the first and visually primary option, then Create blank presentation, then Upload a file. A Jump back in row of recent presentations appears below.",
+   "alt": "The PowerPoint start page in the web app in my own tenant. Three buttons sit under a welcome heading: Create with Copilot as the first and visually primary option, then Create blank presentation, then Upload a file. A Jump back in row of recent presentations appears below. Red callouts added by me read: This is the web app; and First button, ahead of blank.",
    "exists": true,
    "sha256": "bc1a76ccbc7b9fb99a73fbd601ef8e631cb6f670243071a31c9352fc4e63b074",
    "observed": true
@@ -1456,7 +1500,7 @@
   {
    "section": 40,
    "src": "/images/blog/copilot-september-2026/lab-s73-web-source-chip.webp",
-   "alt": "The Copilot create prompt in the PowerPoint web app in my own tenant. A source chip at the top of the prompt box reads support.microsoft.com/en-, with a document icon beside it. The prompt below reads: Create a presentation about How copilot notebooks work, use this web link as the only source, followed by the pasted URL rendered as a link.",
+   "alt": "The Copilot create prompt in the PowerPoint web app in my own tenant. A source chip at the top of the prompt box reads support.microsoft.com/en-, with a document icon beside it. The prompt below reads: Create a presentation about How copilot notebooks work, use this web link as the only source, followed by the pasted URL rendered as a link. Red callouts added by me read: The link becomes a source chip; and Paste the link in the ask.",
    "exists": true,
    "sha256": "d8c398fcc895fa53cc8c1538cd0801f6621ba9e1309c19966b0f8731f675d58a",
    "observed": true
@@ -1464,7 +1508,7 @@
   {
    "section": 40,
    "src": "/images/blog/copilot-september-2026/lab-s73-audience-depth.webp",
-   "alt": "A Copilot prompt card in the PowerPoint web app in my own tenant, headed Who is this deck for, and how deep should it go? Options are: Team enablement, marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks at roughly 8 to 10 slides; Exec overview, a short value-focused briefing at roughly 5 to 6 slides; Hands-on deep dive, a detailed walkthrough of sources, limits and workflows at roughly 10 to 12 slides; and Enter another option. Confirm and Skip all buttons sit at the bottom.",
+   "alt": "A Copilot prompt card in the PowerPoint web app in my own tenant, headed Who is this deck for, and how deep should it go? Options are: Team enablement, marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks at roughly 8 to 10 slides; Exec overview, a short value-focused briefing at roughly 5 to 6 slides; Hands-on deep dive, a detailed walkthrough of sources, limits and workflows at roughly 10 to 12 slides; and Enter another option. Confirm and Skip all buttons sit at the bottom. Red callouts added by me read: It asks who it's for; and Each with a slide count.",
    "exists": true,
    "sha256": "8341b5d0c20aace2dc38562fa8d9045e79adc9619a820c3006a939c87053ea7f",
    "observed": true
@@ -1472,7 +1516,7 @@
   {
    "section": 40,
    "src": "/images/blog/copilot-september-2026/lab-s73-deck-quote-attributed.webp",
-   "alt": "A finished slide from the deck Copilot generated in my own tenant. A large teal quotation mark sits top left. The quote, set in italic serif type, reads: Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture. Underneath, in small grey capitals, is the attribution: em dash Microsoft Support.",
+   "alt": "A finished slide from the deck Copilot generated in my own tenant. A large teal quotation mark sits top left. The quote, set in italic serif type, reads: Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture. Underneath, in small grey capitals, is the attribution: em dash Microsoft Support. A red callout added by me reads: Credited on the slide.",
    "exists": true,
    "sha256": "ab5a1bfeaa248f71bd111e46dc9dbfe325b67269cb365b714588163b5d8c606f",
    "observed": true
@@ -1488,7 +1532,7 @@
   {
    "section": 42,
    "src": "/images/blog/copilot-september-2026/lab-s75-embedded-chart.webp",
-   "alt": "An embedded Excel worksheet object inside a Word document in my own tenant, opened in edit mode so the spreadsheet column letters A to L and row numbers are visible. Cell A1 holds a heading reading Account Risk. A small table below lists Risk level against Accounts: Critical 1, Elevated 1, Moderate 2, Low 4. To the right sits a bar chart titled Accounts by Risk Level, with a vertical axis labelled Number of accounts running from 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low along the bottom, and a data label above each column reading 1, 1, 2 and 4. Round selection handles surround the chart.",
+   "alt": "An embedded Excel worksheet object inside a Word document in my own tenant, opened in edit mode so the spreadsheet column letters A to L and row numbers are visible. Cell A1 holds a heading reading Account Risk. A small table below lists Risk level against Accounts: Critical 1, Elevated 1, Moderate 2, Low 4. To the right sits a bar chart titled Accounts by Risk Level, with a vertical axis labelled Number of accounts running from 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low along the bottom, and a data label above each column reading 1, 1, 2 and 4. Round selection handles surround the chart. Red callouts added by me read: Values printed on every bar; and Every category is named.",
    "exists": true,
    "sha256": "2eab2d2d5131b6ddeb459afe550800bd1b214b8c49f6fb91c2c663f14c6cecbb",
    "observed": true
@@ -1496,7 +1540,7 @@
   {
    "section": 42,
    "src": "/images/blog/copilot-september-2026/lab-s75-chart-not-readable.webp",
-   "alt": "The Copilot pane in Word in my own tenant. Copilot's reply says the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends or data values in the document view it received, and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. Below, it offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing the explanation it would give.",
+   "alt": "The Copilot pane in Word in my own tenant. Copilot's reply says the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends or data values in the document view it received, and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. Below, it offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing the explanation it would give. A red callout added by me reads: It says it could not see the labels.",
    "exists": true,
    "sha256": "a43ec938b8ec5f60fe739b4f7de8107b33d743d0b6a8957fb4efb07b29b8a201",
    "observed": true
@@ -1504,7 +1548,7 @@
   {
    "section": 42,
    "src": "/images/blog/copilot-september-2026/official-75-word-reference-visuals.webp",
-   "alt": "Official Microsoft image of a Word document called Bee Management A Practical Guide to Healthy.docx. A heading reading Safety Measures sits above a large infographic titled Urban Beekeeping Safety First, with panels labelled Protect, Stay Calm and Secure Access. The Copilot pane on the right shows the prompt Include a section on safety measure along with visuals, with a reference document attached called Urban Beekeeping A Practical Guide for City Apiaries.docx. Copilot replies that it added a clearly labeled Safety Measures section and placed a safety-first infographic above the existing guidance, and shows a thumbnail of that same infographic with a source chip naming the reference document. A floating pill offers Done and Undo.",
+   "alt": "Official Microsoft image of a Word document called Bee Management A Practical Guide to Healthy.docx. A heading reading Safety Measures sits above a large infographic titled Urban Beekeeping Safety First, with panels labelled Protect, Stay Calm and Secure Access. The Copilot pane on the right shows the prompt Include a section on safety measure along with visuals, with a reference document attached called Urban Beekeeping A Practical Guide for City Apiaries.docx. Copilot replies that it added a clearly labeled Safety Measures section and placed a safety-first infographic above the existing guidance, and shows a thumbnail of that same infographic with a source chip naming the reference document. A floating pill offers Done and Undo. Red callouts added by me read: The infographic it placed; and It names the source file.",
    "exists": true,
    "sha256": "9acac8599bcdba22330bb9d12e95c1991706f39046b80e90f1c36b9cae8f8076",
    "observed": true
@@ -1512,15 +1556,23 @@
   {
    "section": 43,
    "src": "/images/blog/copilot-september-2026/official-76-word-changed-words.webp",
-   "alt": "Official Microsoft image of a Word document titled Creating Flexible and Efficient Work Environments for the Modern Business. In one paragraph, blue words are interleaved among black words, showing exactly which words Copilot rewrote and which it left untouched. A floating pill over the page offers Done and Undo. The Copilot pane on the right shows the prompt Polish this paragraph and a reply saying it polished the selected paragraph to make it more concise, improve the flow between statistics and sharpen the business impact while preserving the original meaning, followed by suggestion chips reading Make it more formal, Add a summary sentence and Highlight key statistics.",
+   "alt": "Official Microsoft image of a Word document titled Creating Flexible and Efficient Work Environments for the Modern Business. In one paragraph, blue words are interleaved among black words, showing exactly which words Copilot rewrote and which it left untouched. A floating pill over the page offers Done and Undo. The Copilot pane on the right shows the prompt Polish this paragraph and a reply saying it polished the selected paragraph to make it more concise, improve the flow between statistics and sharpen the business impact while preserving the original meaning, followed by suggestion chips reading Make it more formal, Add a summary sentence and Highlight key statistics. A red callout added by me reads: Blue words are the ones it changed. A red box outlines the matching part of the screen.",
    "exists": true,
    "sha256": "5cef1db4456776da24daf1712df5e2a102892b962611f9587798f35aae1e0dab",
    "observed": true
   },
   {
+   "section": 44,
+   "src": "/images/blog/copilot-september-2026/created-s44-word-read-aloud-voice-qa.webp",
+   "alt": "My own diagram titled You can talk to Word during Read Aloud, for Copilot in Word, generally available 25 August 2026, marked illustrative rather than a screenshot. A panel headed What was added reads: Read Aloud gained voice questions and answers, interrupt the reading, ask about what you just heard, and carry on. Two panels sit below. Why it matters: Read Aloud is an accessibility feature a lot of people use simply because they are walking, driving or tired, and asking a question without stopping to type keeps the document usable in those moments. What I found, 14 September 2026: I went looking for this in my own tenant and could not find it. A footnote headed Most likely explanation reads: the ordinary one, a staged rollout that has not reached my tenant yet or has reached only some users inside it, I am recording that rather than guessing, and I will look again for the next issue.",
+   "exists": true,
+   "sha256": "380cc4fcf046b5d37e6f72294ccfdee2c0ab402b2251979ff8293c7a0c56dcef",
+   "observed": true
+  },
+  {
    "section": 45,
    "src": "/images/blog/copilot-september-2026/lab-s78-model-menu-claude.webp",
-   "alt": "The Copilot pane in Word on the web in my own tenant with its overflow menu open. Under a heading reading Model, the first entry is Auto with a tick beside it, and below it an entry reading Claude with a submenu arrow. The open submenu lists two models: Claude Opus 5 and Claude Sonnet 5. Further down the main menu are Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the Copilot pane shows an Allow editing dropdown, a prompt box reading Describe what you want, and suggestion chips.",
+   "alt": "The Copilot pane in Word on the web in my own tenant with its overflow menu open. Under a heading reading Model, the first entry is Auto with a tick beside it, and below it an entry reading Claude with a submenu arrow. The open submenu lists two models: Claude Opus 5 and Claude Sonnet 5. Further down the main menu are Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the Copilot pane shows an Allow editing dropdown, a prompt box reading Describe what you want, and suggestion chips. Red callouts added by me read: Auto is still the default; and Two Claude models, not one.",
    "exists": true,
    "sha256": "4f042b46f2ef96b493c2935589e2bda4a7bdf017431ca065eac50cb6b95297a8",
    "observed": true
@@ -1528,7 +1580,7 @@
   {
    "section": 46,
    "src": "/images/blog/copilot-september-2026/lab-s79-formulas-not-python.webp",
-   "alt": "Part of a Copilot reply in Excel in my own tenant. A bullet reads: 15:43 local time, Added the standard-deviation outlier audit in Risk Chart exclamation A18 colon F23. Sub-bullets read: Added mean, sample standard deviation, z-score, and plus or minus 3 sigma outlier formulas; and Formatted the audit table, all four results are No. Below sits a monospaced code block containing three Excel formulas: a COUNTIF against the sales accounts sheet, STDEV.S over B4 to B7, and IF ABS of E20 greater than 3 returning Yes or No.",
+   "alt": "Part of a Copilot reply in Excel in my own tenant. A bullet reads: 15:43 local time, Added the standard-deviation outlier audit in Risk Chart exclamation A18 colon F23. Sub-bullets read: Added mean, sample standard deviation, z-score, and plus or minus 3 sigma outlier formulas; and Formatted the audit table, all four results are No. Below sits a monospaced code block containing three Excel formulas: a COUNTIF against the sales accounts sheet, STDEV.S over B4 to B7, and IF ABS of E20 greater than 3 returning Yes or No. Red callouts added by me read: Mean, z-score, outliers; and All in Excel formulas, no Python.",
    "exists": true,
    "sha256": "39c08411af4b08957b02f067dce6e848de6cdbe30e899f4ceb33364e6a8411c7",
    "observed": true
@@ -1536,7 +1588,7 @@
   {
    "section": 47,
    "src": "/images/blog/copilot-september-2026/lab-s80-audit-trail-reasoning.webp",
-   "alt": "The Copilot pane in Excel in my own tenant. The user prompt above reads: what changed in this workbook, and who changed it. Copilot's reasoning card shows two steps. The first, ticked, is headed Auditing recent workbook activity and reads: I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges. The second, still running, is headed Retrieving the audit trail and reads: I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track.",
+   "alt": "The Copilot pane in Excel in my own tenant. The user prompt above reads: what changed in this workbook, and who changed it. Copilot's reasoning card shows two steps. The first, ticked, is headed Auditing recent workbook activity and reads: I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges. The second, still running, is headed Retrieving the audit trail and reads: I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track. Red callouts added by me read: Its own words: audit trail; and It flags its own blind spot.",
    "exists": true,
    "sha256": "39f4126d514f548109109877be3129184c5b4970f73dd266ddd4ee1e6e8663f0",
    "observed": true
@@ -1544,7 +1596,7 @@
   {
    "section": 47,
    "src": "/images/blog/copilot-september-2026/lab-s80-change-summary.webp",
-   "alt": "A Copilot reply in Excel in my own tenant headed Change summary, last 30 days. It states that all recorded changes were made by Colin Ballinger with Copilot assistance on September 14 2026, and that no recorded edits affected the sales accounts sheet. A timeline follows: at 15:32 local time, created and formatted the Risk Chart sheet, added the risk summary and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4 accounts; at 15:43 local time, added a standard-deviation outlier audit with mean, sample standard deviation, z-score and plus or minus 3 sigma formulas. A code block shows the three formulas. A closing line reads that the history does not track chart or conditional-formatting changes, so those cannot be attributed separately.",
+   "alt": "A Copilot reply in Excel in my own tenant headed Change summary, last 30 days. It states that all recorded changes were made by Colin Ballinger with Copilot assistance on September 14 2026, and that no recorded edits affected the sales accounts sheet. A timeline follows: at 15:32 local time, created and formatted the Risk Chart sheet, added the risk summary and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4 accounts; at 15:43 local time, added a standard-deviation outlier audit with mean, sample standard deviation, z-score and plus or minus 3 sigma formulas. A code block shows the three formulas. A closing line reads that the history does not track chart or conditional-formatting changes, so those cannot be attributed separately. Red callouts added by me read: The person and the AI, together; and Charts are not tracked.",
    "exists": true,
    "sha256": "c1f33ccdcd1ea6707ae16fddb050d6170357e9f00180c30e7770ef105ff40256",
    "observed": true
@@ -1552,7 +1604,7 @@
   {
    "section": 47,
    "src": "/images/blog/copilot-september-2026/official-80-excel-what-changed.webp",
-   "alt": "Official Microsoft image of Excel with an Edit with Copilot pane open on the right, set to Auto. The pane shows a numbered change summary. Item one reads Dashboard Created, attributed to Alex Chen, Today, Apr 6, with the line a new executive dashboard was built with key Q2 metrics pulling from other sheets. Below it a table with columns Metric, Value, vs. Q1 and Status lists Total Q2 Revenue Target 34.1 million dollars up 12.0 percent On Track, Enterprise Revenue 18.3 million up 15.0 percent Strong, Mid-Market Revenue 9.2 million up 10.0 percent Monitor, SMB Revenue 3.9 million up 8.0 percent Monitor, Partner slash Channel Revenue 2.7 million up 14.0 percent Growing, Total Pipeline 43.5 million up 20.0 percent Healthy, Productive AE Headcount 86.2 up 7.0 percent Ramped, and Avg Deal Size Enterprise 195 thousand dollars up 8.0 percent Up. Item two begins below, reading Regional Revenue Sheet Created, attributed to Alex Chen and Jordan Lee, Apr 5, 7:30 to 9:15 PM. Behind the pane the worksheet shows a Status column with values including On Track, Strong, Monitor, Growing, Healthy, Ramped, Improving and Up.",
+   "alt": "Official Microsoft image of Excel with an Edit with Copilot pane open on the right, set to Auto. The pane shows a numbered change summary. Item one reads Dashboard Created, attributed to Alex Chen, Today, Apr 6, with the line a new executive dashboard was built with key Q2 metrics pulling from other sheets. Below it a table with columns Metric, Value, vs. Q1 and Status lists Total Q2 Revenue Target 34.1 million dollars up 12.0 percent On Track, Enterprise Revenue 18.3 million up 15.0 percent Strong, Mid-Market Revenue 9.2 million up 10.0 percent Monitor, SMB Revenue 3.9 million up 8.0 percent Monitor, Partner slash Channel Revenue 2.7 million up 14.0 percent Growing, Total Pipeline 43.5 million up 20.0 percent Healthy, Productive AE Headcount 86.2 up 7.0 percent Ramped, and Avg Deal Size Enterprise 195 thousand dollars up 8.0 percent Up. Item two begins below, reading Regional Revenue Sheet Created, attributed to Alex Chen and Jordan Lee, Apr 5, 7:30 to 9:15 PM. Behind the pane the worksheet shows a Status column with values including On Track, Strong, Monitor, Growing, Healthy, Ramped, Improving and Up. Red callouts added by me read: Numbered, named, dated; and Two people and a time range. Red boxes outline the matching parts of the screen.",
    "exists": true,
    "sha256": "e9f09da667b56c8dbc6930d6a07158f6651336099b6cc791ad8c8bb1fba70d85",
    "observed": true
@@ -1560,7 +1612,7 @@
   {
    "section": 48,
    "src": "/images/blog/copilot-september-2026/lab-s81-chat-history.webp",
-   "alt": "The Copilot chat history panel open in Excel on the web in my own tenant. A New Chat entry sits at the top with the Copilot icon beside it. Below, a heading reads Chats in Excel, followed by two saved conversations: one titled create a chat of this sheet timestamped 3:32 PM, and below it one beginning Calculate the weighted total for each partner, dated 9 slash 7. The Excel toolbar with Comments, Catch up, Editing and Share buttons is visible above the panel.",
+   "alt": "The Copilot chat history panel open in Excel on the web in my own tenant. A New Chat entry sits at the top with the Copilot icon beside it. Below, a heading reads Chats in Excel, followed by two saved conversations: one titled create a chat of this sheet timestamped 3:32 PM, and below it one beginning Calculate the weighted total for each partner, dated 9 slash 7. The Excel toolbar with Comments, Catch up, Editing and Share buttons is visible above the panel. Red callouts added by me read: History now lives in Excel; and A week-old chat, still here.",
    "exists": true,
    "sha256": "07fab1f8ba784085bdd992d5e7641f974365383173abe4682f711bae45f9eb1f",
    "observed": true
@@ -1568,7 +1620,7 @@
   {
    "section": 49,
    "src": "/images/blog/copilot-september-2026/lab-s82-agent-picker.webp",
-   "alt": "The Copilot pane in Outlook on the web in my own tenant. A Work and Web toggle sits at the top with Work selected, alongside a shield icon, a chat history icon and a new chat button. The centre reads Get a quick summary. In the composer below, a single at sign has been typed, and a picker has opened underneath listing three custom agents, each with a coloured icon, a name and a one-line description: Retail Supplier Signal Tracker, which reads supplier and partner correspondence across email and Teams; Retail Partner Terms Screener, which screens retail partner or supplier proposals against Caldova's trade terms envelope; and Gulf Retail Market Watch, which checks the Gulf retail launch plan against what is happening in the UAE and Saudi Arabia. A scrollbar on the right shows the list continues above and below.",
+   "alt": "The Copilot pane in Outlook on the web in my own tenant. A Work and Web toggle sits at the top with Work selected, alongside a shield icon, a chat history icon and a new chat button. The centre reads Get a quick summary. In the composer below, a single at sign has been typed, and a picker has opened underneath listing three custom agents, each with a coloured icon, a name and a one-line description: Retail Supplier Signal Tracker, which reads supplier and partner correspondence across email and Teams; Retail Partner Terms Screener, which screens retail partner or supplier proposals against Caldova's trade terms envelope; and Gulf Retail Market Watch, which checks the Gulf retail launch plan against what is happening in the UAE and Saudi Arabia. A scrollbar on the right shows the list continues above and below. Red callouts added by me read: One character opens them; and Name and description on every row.",
    "exists": true,
    "sha256": "b21d941a9a36c9641ad01457e6fa49419af0802853419ea4869308c693993d38",
    "observed": true
@@ -1576,7 +1628,7 @@
   {
    "section": 50,
    "src": "/images/blog/copilot-september-2026/lab-s83-confirm-list.webp",
-   "alt": "The Copilot pane in Outlook in my own tenant, showing a confirmation step. A plain bulleted list fills most of the pane, each row a subject line beginning Your scheduled prompt is complete, followed by one of four topics that repeat down the list. Confirm and Cancel buttons sit below the list.",
+   "alt": "The Copilot pane in Outlook in my own tenant, showing a confirmation step. A plain bulleted list fills most of the pane, each row a subject line beginning Your scheduled prompt is complete, followed by one of four topics that repeat down the list. Confirm and Cancel buttons sit below the list. Red callouts added by me read: Every affected message, named; and Nothing moved until I confirmed.",
    "exists": true,
    "sha256": "e3cc1423a6f532213d52750cff751f3c9c4d18415943253395a44bf860fbfeb2",
    "observed": true
@@ -1584,7 +1636,7 @@
   {
    "section": 50,
    "src": "/images/blog/copilot-september-2026/lab-s83-done-result.webp",
-   "alt": "The Copilot pane in Outlook in my own tenant. The prompt above reads: move everything from Microsoft Copilot Your scheduled prompt is complete into a folder called Scheduled. Copilot's reply begins Done, followed by three bullets: Created Outlook folder Scheduled; Moved the scheduled prompt completion emails from Microsoft Copilot that were found in your inbox into that folder, with a small message chip beside it; and 25 matching emails were successfully moved. A closing line reads: The Scheduled folder now contains those Copilot-generated notifications.",
+   "alt": "The Copilot pane in Outlook in my own tenant. The prompt above reads: move everything from Microsoft Copilot Your scheduled prompt is complete into a folder called Scheduled. Copilot's reply begins Done, followed by three bullets: Created Outlook folder Scheduled; Moved the scheduled prompt completion emails from Microsoft Copilot that were found in your inbox into that folder, with a small message chip beside it; and 25 matching emails were successfully moved. A closing line reads: The Scheduled folder now contains those Copilot-generated notifications. Red callouts added by me read: It created the folder; and And counted what it moved.",
    "exists": true,
    "sha256": "e8a80cb2913c676175947d8b1bb7f1099a80c33f8571252f97dece9ea7354fcf",
    "observed": true
@@ -1600,7 +1652,7 @@
   {
    "section": 51,
    "src": "/images/blog/copilot-september-2026/lab-s84-invite-proposed.webp",
-   "alt": "The Copilot pane in classic Outlook in my own tenant, with the Try the new Outlook Off toggle still visible at the top. Copilot's reply offers three options, each reading that both you and Nic are marked as available, working elsewhere, and the slot is open, for Tuesday, Wednesday and Thursday at 8:00 AM. Below it a card headed Event carries the title Catch-up with Nic Bishop, two attendee avatars each with a green tick, and three selectable times: 9/15 Tuesday 8:00 AM to 8:25 AM, highlighted as selected, 9/16 Wednesday and 9/17 Thursday at the same times. A Send button and an Open in Outlook button sit at the bottom.",
+   "alt": "The Copilot pane in classic Outlook in my own tenant, with the Try the new Outlook Off toggle still visible at the top. Copilot's reply offers three options, each reading that both you and Nic are marked as available, working elsewhere, and the slot is open, for Tuesday, Wednesday and Thursday at 8:00 AM. Below it a card headed Event carries the title Catch-up with Nic Bishop, two attendee avatars each with a green tick, and three selectable times: 9/15 Tuesday 8:00 AM to 8:25 AM, highlighted as selected, 9/16 Wednesday and 9/17 Thursday at the same times. A Send button and an Open in Outlook button sit at the bottom. Red callouts added by me read: It checked working locations; Both attendees ticked; and A Send button, not a sent meeting. A red box outlines the matching part of the screen.",
    "exists": true,
    "sha256": "e890e54087c16d408596995d81bfcfdd2b00593bf0d3d72844d1aeb93781e244",
    "observed": true
@@ -1608,7 +1660,7 @@
   {
    "section": 52,
    "src": "/images/blog/copilot-september-2026/lab-s85-tone-options.webp",
-   "alt": "The Copilot pane in Outlook in my own tenant, with a Work and Web toggle at the top and Work selected. The pasted draft appears as the sent message. Copilot's reply reads: It looks like you want to send a follow-up to Karin about overdue Q3 numbers. Below are a few versions with different tones, depending on how firm you want to be. Two rewritten versions follow, headed Option 1, Professional and Direct, and Option 2, Firm but Collaborative, each with a full email body. A third option is partly visible at the bottom edge of the pane.",
+   "alt": "The Copilot pane in Outlook in my own tenant, with a Work and Web toggle at the top and Work selected. The pasted draft appears as the sent message. Copilot's reply reads: It looks like you want to send a follow-up to Karin about overdue Q3 numbers. Below are a few versions with different tones, depending on how firm you want to be. Two rewritten versions follow, headed Option 1, Professional and Direct, and Option 2, Firm but Collaborative, each with a full email body. A third option is partly visible at the bottom edge of the pane. Red callouts added by me read: No instruction, just the draft; and Each rewrite labelled by tone.",
    "exists": true,
    "sha256": "50f8d42a46cfd4ee0bb07e4fe497060681f29439159f0bbd4f209c769d6344a9",
    "observed": true
@@ -1616,7 +1668,7 @@
   {
    "section": 52,
    "src": "/images/blog/copilot-september-2026/lab-s85-writing-improvements.webp",
-   "alt": "A table in the Copilot pane headed Writing Improvements, with two columns, Area and Improvement. Four rows. Tone: made the message firm and professional rather than sounding frustrated. Clarity: specified the impact of the delay on the wider team and downstream activities. Action: included a clear request for delivery and, where appropriate, confirmation of timing or blockers. Professionalism: maintained accountability while avoiding language that could be perceived as confrontational.",
+   "alt": "A table in the Copilot pane headed Writing Improvements, with two columns, Area and Improvement. Four rows. Tone: made the message firm and professional rather than sounding frustrated. Clarity: specified the impact of the delay on the wider team and downstream activities. Action: included a clear request for delivery and, where appropriate, confirmation of timing or blockers. Professionalism: maintained accountability while avoiding language that could be perceived as confrontational. Red callouts added by me read: Coaching I did not ask for; and Each change explained.",
    "exists": true,
    "sha256": "8032f2b8debc231320fc6fe450ee2bdfad819afbc19ecbdb50bc1b87ca43f870",
    "observed": true
@@ -1624,7 +1676,7 @@
   {
    "section": 53,
    "src": "/images/blog/copilot-september-2026/lab-s86-prep-brief-classic.webp",
-   "alt": "The Copilot pane in classic Outlook for Windows in my own tenant, with the Try the new Outlook toggle set to Off at the top and part of the classic ribbon visible below it. A reference chip reads FW: Caldenza Relief. The prompt reads: help me prepare for this meeting. Copilot replies that it will pull the full calendar item and any related emails, files, chats and meeting context, then turn it into a concise prep brief with talking points and questions. An expandable line reads Reasoned for 9s. The next paragraph reads: I found the meeting invite and related conversation. The available material is limited, so this brief separates confirmed facts from suggested preparation. A Meeting snapshot heading follows with bullets stating the meeting was scheduled for Monday 14 September 2026 at 3:00 to 3:30 pm in Microsoft Teams and that the time has now passed; that the invite was sent by Colin Ballinger to three named people; that the invitation contains no agenda, background or attachments beyond the Teams joining details; and that the associated chat contains only the facilitator's opening message. Each bullet carries a small envelope citation icon.",
+   "alt": "The Copilot pane in classic Outlook for Windows in my own tenant, with the Try the new Outlook toggle set to Off at the top and part of the classic ribbon visible below it. A reference chip reads FW: Caldenza Relief. The prompt reads: help me prepare for this meeting. Copilot replies that it will pull the full calendar item and any related emails, files, chats and meeting context, then turn it into a concise prep brief with talking points and questions. An expandable line reads Reasoned for 9s. The next paragraph reads: I found the meeting invite and related conversation. The available material is limited, so this brief separates confirmed facts from suggested preparation. A Meeting snapshot heading follows with bullets stating the meeting was scheduled for Monday 14 September 2026 at 3:00 to 3:30 pm in Microsoft Teams and that the time has now passed; that the invite was sent by Colin Ballinger to three named people; that the invitation contains no agenda, background or attachments beyond the Teams joining details; and that the associated chat contains only the facilitator's opening message. Each bullet carries a small envelope citation icon. Red callouts added by me read: It shows its working; It says the material was thin; and Every claim cites its source.",
    "exists": true,
    "sha256": "fc1adc4fea6fd02b59f10258df738c18001b79890b480e5751c80534c2f8ae1e",
    "observed": true
@@ -1632,7 +1684,7 @@
   {
    "section": 54,
    "src": "/images/blog/copilot-september-2026/official-87-teams-recap-language.webp",
-   "alt": "Official Microsoft image of a Teams meeting recap for a meeting called Product roadmap discussion, recorded by Mona Kane and organised by Kat Larsson. A video player sits on the left at eleven minutes twenty three seconds of one hour forty eight minutes, with Speakers, Topics and Chapters tabs beneath it. AI notes fill the right side with headings such as Product Vision and Brand Alignment, Supply Chain and Production Constraints and Customer Feedback Integration. Two menus are open: one listing Language, Watch in browser, Go to recap app and Delete, and a language submenu listing English US ticked, Chinese Simplified China, Japanese, Arabic Saudi Arabia, Czech Czechia, Danish Denmark and Dutch Belgium.",
+   "alt": "Official Microsoft image of a Teams meeting recap for a meeting called Product roadmap discussion, recorded by Mona Kane and organised by Kat Larsson. A video player sits on the left at eleven minutes twenty three seconds of one hour forty eight minutes, with Speakers, Topics and Chapters tabs beneath it. AI notes fill the right side with headings such as Product Vision and Brand Alignment, Supply Chain and Production Constraints and Customer Feedback Integration. Two menus are open: one listing Language, Watch in browser, Go to recap app and Delete, and a language submenu listing English US ticked, Chinese Simplified China, Japanese, Arabic Saudi Arabia, Czech Czechia, Danish Denmark and Dutch Belgium. Red callouts added by me read: A Language menu on the recap; and And a list to pick from. Red boxes outline the matching parts of the screen.",
    "exists": true,
    "sha256": "8d68ccf61d6f15f50c6ca059e95a245c36c69fb23697436424687619bb1518a9",
    "observed": true
@@ -1640,7 +1692,7 @@
   {
    "section": 55,
    "src": "/images/blog/copilot-september-2026/official-88-planner-agent-status-report--focus.webp",
-   "alt": "Official Microsoft image of a Planner Agent status report inside Copilot, cropped and enlarged so the text is legible at this width. The prompt asks for a status report for the plan for the last 14 days covering status overview, executive summary, risks and blockers, achievements, progress, upcoming commitments and key milestones. The reply is headed Planner Agent, followed by a line reading Frontier preview, this status report is generated by an experimental capability available through the Frontier early access program. The report is titled Status report for Project Aurora, dated 28 July 2026 for the period 14 to 28 July 2026. Under the heading Overall status, a single line reads At risk, 23% overdue, 44 tasks. The rest of Microsoft's original screenshot is outside this crop.",
+   "alt": "Official Microsoft image of a Planner Agent status report inside Copilot, cropped and enlarged so the text is legible at this width. The prompt asks for a status report for the plan for the last 14 days covering status overview, executive summary, risks and blockers, achievements, progress, upcoming commitments and key milestones. The reply is headed Planner Agent, followed by a line reading Frontier preview, this status report is generated by an experimental capability available through the Frontier early access program. The report is titled Status report for Project Aurora, dated 28 July 2026 for the period 14 to 28 July 2026. Under the heading Overall status, a single line reads At risk, 23% overdue, 44 tasks. The rest of Microsoft's original screenshot is outside this crop. Red callouts added by me read: The prompt named the sections; Frontier preview, and it says so; and A verdict with numbers behind it.",
    "exists": true,
    "sha256": "222f9ac79c9d1cdee23edb76d5582344dedd365641ced9a7950033075f5cc5c1",
    "observed": true
@@ -1648,7 +1700,7 @@
   {
    "section": 56,
    "src": "/images/blog/copilot-september-2026/lab-s89-task-created.webp",
-   "alt": "Copilot chat in my own tenant. The prompt reads: Create a Planner task to review the Caldenza pack, due Friday. Copilot replies, I've created the private task, followed by a bold task name, Review the Caldenza pack, and three details: Status, Not Started; Priority, Important; and Due, 18 September 2026 in brackets Friday, with a small citation icon. A closing line reads: The task has been saved as a private task in your Planner tasks, also with a citation icon. A Sources control sits underneath.",
+   "alt": "Copilot chat in my own tenant. The prompt reads: Create a Planner task to review the Caldenza pack, due Friday. Copilot replies, I've created the private task, followed by a bold task name, Review the Caldenza pack, and three details: Status, Not Started; Priority, Important; and Due, 18 September 2026 in brackets Friday, with a small citation icon. A closing line reads: The task has been saved as a private task in your Planner tasks, also with a citation icon. A Sources control sits underneath. Red callouts added by me read: A priority I never asked for; Friday, resolved to a date; and And it said where it went. A red box outlines the matching part of the screen.",
    "exists": true,
    "sha256": "dc9e438a91b4fd5f060273de790195b3ccddabcccab7a3f74f594eebd42362c1",
    "observed": true
@@ -1656,7 +1708,7 @@
   {
    "section": 56,
    "src": "/images/blog/copilot-september-2026/lab-s89-task-verified.webp",
-   "alt": "The Planner task detail pane in my own tenant, headed Private tasks. The task title reads Review the Caldenza pack. An information banner says some task fields may not appear because this task is private, was created in Microsoft To Do, or with a flagged Outlook email. Under a Task details tab the fields read Status, Not started; Priority, Important with a red exclamation mark; Start date, empty with a Set start date prompt; Due date, 09/18/2026; and Repeat, Does not repeat.",
+   "alt": "The Planner task detail pane in my own tenant, headed Private tasks. The task title reads Review the Caldenza pack. An information banner says some task fields may not appear because this task is private, was created in Microsoft To Do, or with a flagged Outlook email. Under a Task details tab the fields read Status, Not started; Priority, Important with a red exclamation mark; Start date, empty with a Set start date prompt; Due date, 09/18/2026; and Repeat, Does not repeat. Red callouts added by me read: Fields hidden because it is private; Important, in the record too; and The due date, as saved. Two red boxes outline the matching parts of the screen.",
    "exists": true,
    "sha256": "91a462c28e78b242d3d5492185fee0d8a1c737689cf2b7224442435f6df1332e",
    "observed": true
@@ -1664,7 +1716,7 @@
   {
    "section": 57,
    "src": "/images/blog/copilot-september-2026/lab-s90-planner-agent-priority.webp",
-   "alt": "The Planner Agent chat pane open in my own tenant. My prompt reads: what are my highest priority tasks? The agent replies under the heading Planner Agent, preceded by a collapsed line reading Reasoning completed in 1 step. The answer says: In your open Onvexa Launch Tracker plan, I found four open tasks assigned to you. They are all marked Medium priority, so there isn't a single higher-priority task among them. It then offers to break the tie by due date and lists four tasks with their due dates of August 4, 5, 6 and 9, their bucket, and notes on one being assigned to a second person and another being At Risk. Small task chips sit under several lines as citations. The closing line reads: All four are still Not started, and all of those due dates have already passed as of September 14. A composer at the foot reads: Describe what you'd like help with.",
+   "alt": "The Planner Agent chat pane open in my own tenant. My prompt reads: what are my highest priority tasks? The agent replies under the heading Planner Agent, preceded by a collapsed line reading Reasoning completed in 1 step. The answer says: In your open Onvexa Launch Tracker plan, I found four open tasks assigned to you. They are all marked Medium priority, so there isn't a single higher-priority task among them. It then offers to break the tie by due date and lists four tasks with their due dates of August 4, 5, 6 and 9, their bucket, and notes on one being assigned to a second person and another being At Risk. Small task chips sit under several lines as citations. The closing line reads: All four are still Not started, and all of those due dates have already passed as of September 14. A composer at the foot reads: Describe what you'd like help with. Red callouts added by me read: The reasoning, expandable; All medium, so no top of the list; Each one links to the task; and It noticed the dates had passed.",
    "exists": true,
    "sha256": "6b7e458839d9e9145be9bc1ed3130703476ff198129c6c188e0db31495b8dbaa",
    "observed": true
@@ -1672,7 +1724,7 @@
   {
    "section": 58,
    "src": "/images/blog/copilot-september-2026/lab-s91-meetings-tab.webp",
-   "alt": "A dialog in my own tenant headed Add references, with a search box beneath it. A row of tabs reads All, Chats, Files, Meetings, Emails and Sites, with Meetings selected as a filled black pill. Icons for upload, link and OneDrive sit at the right of that row. Below is a scrollable list of meetings, each with a calendar icon, a name on the left and a date and time range on the right: repeated one-to-one meetings with two colleagues across 14, 13 and 12 September 2026, a Supplier Strategy and Dual-Sourcing Workshop on Saturday 12 September from 7:00 to 8:30 AM, and a Logistics and Freight Rate Review the same morning. An Add button, greyed out, and a Cancel button sit at the bottom.",
+   "alt": "A dialog in my own tenant headed Add references, with a search box beneath it. A row of tabs reads All, Chats, Files, Meetings, Emails and Sites, with Meetings selected as a filled black pill. Icons for upload, link and OneDrive sit at the right of that row. Below is a scrollable list of meetings, each with a calendar icon, a name on the left and a date and time range on the right: repeated one-to-one meetings with two colleagues across 14, 13 and 12 September 2026, a Supplier Strategy and Dual-Sourcing Workshop on Saturday 12 September from 7:00 to 8:30 AM, and a Logistics and Freight Rate Review the same morning. An Add button, greyed out, and a Cancel button sit at the bottom. Red callouts added by me read: Meetings, a tab of its own; and And a search box over them. A red box outlines the matching part of the screen.",
    "exists": true,
    "sha256": "e2cff4615416f7b715856d110dc01f4df9a3ae96f718136af746f09c6a00445f",
    "observed": true
@@ -1680,7 +1732,7 @@
   {
    "section": 59,
    "src": "/images/blog/copilot-september-2026/lab-s92-onedrive-starters.webp",
-   "alt": "The Copilot panel open in OneDrive in my own tenant. It is headed Copilot with a pin and close control, greets the signed-in user by name and says: Here are some ideas to get you started. Six suggestion buttons follow: Give me the latest on, project; Find files on, topic; Find the file shared with me by, person; Find a file that was shared in a, meeting; Find a file I recently edited about, topic; and What can Copilot do in OneDrive? A message box at the bottom reads: Ask a question about your files.",
+   "alt": "The Copilot panel open in OneDrive in my own tenant. It is headed Copilot with a pin and close control, greets the signed-in user by name and says: Here are some ideas to get you started. Six suggestion buttons follow: Give me the latest on, project; Find files on, topic; Find the file shared with me by, person; Find a file that was shared in a, meeting; Find a file I recently edited about, topic; and What can Copilot do in OneDrive? A message box at the bottom reads: Ask a question about your files. Red callouts added by me read: Five of the six are about finding; Find it by the meeting it was in; and And the box asks for a question. Red boxes outline the matching parts of the screen.",
    "exists": true,
    "sha256": "09461101e7b63aff9a69160da9ba115cd8d3b5b315214b8e768f0d890c3411da",
    "observed": true
@@ -1688,7 +1740,7 @@
   {
    "section": 59,
    "src": "/images/blog/copilot-september-2026/official-92-onedrive-business-review.webp",
-   "alt": "Official Microsoft image of OneDrive with a Copilot pane open. The file list under My files, Marketing Files shows items including Zava Business Review February and March files, a sales pitch PDF, a fall campaign document and a Fiber presentation, with one file selected. The prompt reads: use the selected file as a template and the files in this folder for information, create a March business review as a Word document, generate helpful charts and graphs in the file. Copilot reports Finished and says it created Zava Business Review March 2026 dot docx, following the selected sales analysis as the template and including seven charts built from the folder's sales dashboard and price list data. Two chart previews are shown, Monthly revenue and gross profit trend and Revenue by product line, above an offer to convert the file into a PDF.",
+   "alt": "Official Microsoft image of OneDrive with a Copilot pane open. The file list under My files, Marketing Files shows items including Zava Business Review February and March files, a sales pitch PDF, a fall campaign document and a Fiber presentation, with one file selected. The prompt reads: use the selected file as a template and the files in this folder for information, create a March business review as a Word document, generate helpful charts and graphs in the file. Copilot reports Finished and says it created Zava Business Review March 2026 dot docx, following the selected sales analysis as the template and including seven charts built from the folder's sales dashboard and price list data. Two chart previews are shown, Monthly revenue and gross profit trend and Revenue by product line, above an offer to convert the file into a PDF. Red callouts added by me read: The prompt asked for a document; It made the file, with 7 charts; and And the new file, just now.",
    "exists": true,
    "sha256": "49c44ee8234d0d7b317c4a7544cca410c7c3a193365b81e52b92562e6a3860ab",
    "observed": true
@@ -1696,15 +1748,23 @@
   {
    "section": 60,
    "src": "/images/blog/copilot-september-2026/official-93-create-personal-skill.webp",
-   "alt": "Official Microsoft image of a Copilot conversation creating a personal skill. The user asks for a personal skill that creates a TODO tracker from meetings and emails as a Word document. Copilot shows a card labelled create-skill, described as a Copilot in SharePoint skill, and asks the user to confirm details: Name personal-todo-tracker, Does builds and updates a Word-based TODO tracker from your meetings and emails, Triggers create my TODO tracker, update my TODO tracker and what is on my TODO list, Output a Word document with tasks, owners, dates, sources and status, and Verifiable yes, tasks should cite the meeting or email source. The user replies yes and a second card appears headed personal-todo-tracker and labelled Your skill.",
+   "alt": "Official Microsoft image of a Copilot conversation creating a personal skill. The user asks for a personal skill that creates a TODO tracker from meetings and emails as a Word document. Copilot shows a card labelled create-skill, described as a Copilot in SharePoint skill, and asks the user to confirm details: Name personal-todo-tracker, Does builds and updates a Word-based TODO tracker from your meetings and emails, Triggers create my TODO tracker, update my TODO tracker and what is on my TODO list, Output a Word document with tasks, owners, dates, sources and status, and Verifiable yes, tasks should cite the meeting or email source. The user replies yes and a second card appears headed personal-todo-tracker and labelled Your skill. Red callouts added by me read: A built-in skill makes your skill; Nothing saved until I said yes; and And then it is yours.",
    "exists": true,
    "sha256": "bcefa48954d29f48e3a3a7c3efe2639feae2b49d29a979e96153cc9318aa06e4",
    "observed": true
   },
   {
+   "section": 61,
+   "src": "/images/blog/copilot-september-2026/created-s61-sharepoint-authoritative-sites.webp",
+   "alt": "My own diagram titled Admins can mark SharePoint sites as authoritative, for SharePoint and Microsoft 365 Copilot, admin, generally available 11 August 2026, marked illustrative rather than a screenshot. A panel headed The gap worth naming reads: it reads like a toggle sitting in a settings page, and Microsoft's own page says in the current release, configure authoritative sites through PowerShell and CSOM APIs. Three panels sit below. Licensing, better than you would expect: sits under SharePoint Advanced Management but needs no paid add-on, unlocked when one person in the tenant holds a Copilot licence, and it need not be the administrator. The 72-hour wait: up to 72 hours before it shows up, not a fix you apply the morning of a launch, and testing it is a two-sitting job. The rest of the shape: 100 sites per tenant, whole sites only and never personal sites or OneDrive, and users see a From your organization label on results. A footnote headed Read the scope carefully reads: Microsoft scopes the effect to Copilot Search, so read this as improving what Search surfaces rather than as a global reranking of every Copilot answer.",
+   "exists": true,
+   "sha256": "ee33a7eff9ad6f5451bf4f5c55368c58668b2534ec3ad345eca45645a387a295",
+   "observed": true
+  },
+  {
    "section": 62,
    "src": "/images/blog/copilot-september-2026/official-29-copilot-studio-new-home.webp",
-   "alt": "Official Microsoft image of the new Copilot Studio home page at copilotstudio dot com, with a New experience toggle switched on at the top right. A banner reads Welcome to the new Copilot Studio, build smarter processes with credit-powered capabilities. The greeting reads Hey Avery, ready to automate, above a heading Optimize your business processes carrying a Uses Copilot Credits label. Two cards follow, both badged GitHub Copilot: Agent, create an agent to take actions and answer questions, and Workflow, automate multi-step processes with triggers, actions and AI steps. A line beneath offers other ways to build, for agents that extend Microsoft 365 Copilot or run on standard orchestration. A Last opened list shows three published agents, one using 11,256 credits, one marked included in license and one using 2,799.",
+   "alt": "Official Microsoft image of the new Copilot Studio home page at copilotstudio dot com, with a New experience toggle switched on at the top right. A banner reads Welcome to the new Copilot Studio, build smarter processes with credit-powered capabilities. The greeting reads Hey Avery, ready to automate, above a heading Optimize your business processes carrying a Uses Copilot Credits label. Two cards follow, both badged GitHub Copilot: Agent, create an agent to take actions and answer questions, and Workflow, automate multi-step processes with triggers, actions and AI steps. A line beneath offers other ways to build, for agents that extend Microsoft 365 Copilot or run on standard orchestration. A Last opened list shows three published agents, one using 11,256 credits, one marked included in license and one using 2,799. Red callouts added by me read: Credits are on the front door; Harness is now a build choice; and Licence or credits, per agent.",
    "exists": true,
    "sha256": "f6283166fce81a6df052b894688f790f26f05c55dcad227544e2fb3b07c7e5d9",
    "observed": true
@@ -1712,7 +1772,7 @@
   {
    "section": 63,
    "src": "/images/blog/copilot-september-2026/official-30-agent-harness-choice.webp",
-   "alt": "Official Microsoft image of two agent creation cards side by side. The first is headed Agent with a GitHub Copilot label and reads: create an agent to take actions and answer questions. The second is headed Agent with a Standard label and reads: create a rule-based conversational agent with predefined topics and flows.",
+   "alt": "Official Microsoft image of two agent creation cards side by side. The first is headed Agent with a GitHub Copilot label and reads: create an agent to take actions and answer questions. The second is headed Agent with a Standard label and reads: create a rule-based conversational agent with predefined topics and flows. Red callouts added by me read: Both say 'Agent'; and The pill is the difference. Red boxes outline the matching parts of the screen.",
    "exists": true,
    "sha256": "bfd5d06df9259be7ab413701c8e6f0a20b04514c7482269a799ab6e1f6ba1586",
    "observed": true
@@ -1736,7 +1796,7 @@
   {
    "section": 65,
    "src": "/images/blog/copilot-september-2026/official-32-credits-exhausted.webp",
-   "alt": "Official Microsoft image of an in-product message shown on an agent named Onboarding experience process. The message reads: you need credits to continue, this environment does not have credits available right now, credits power the AI creation experience and some agent and workflow orchestrators when they run. A Back to home link sits beneath it.",
+   "alt": "Official Microsoft image of an in-product message shown on an agent named Onboarding experience process. The message reads: you need credits to continue, this environment does not have credits available right now, credits power the AI creation experience and some agent and workflow orchestrators when they run. A Back to home link sits beneath it. A red callout added by me reads: Building spends credits too. A red box outlines the matching part of the screen.",
    "exists": true,
    "sha256": "1d31bb9169c7c4e553a2d6430a7efdf63a413f9a878e91d64fce473c7585c28f",
    "observed": true
@@ -1752,7 +1812,7 @@
   {
    "section": 67,
    "src": "/images/blog/copilot-september-2026/official-34-environment-capacity.webp",
-   "alt": "Official Microsoft image of a pane titled Manage capacity for a sandbox environment. An Allocate capacity section explains that you select how much capacity to allocate from what is available in the tenant, and shows a Copilot Credits card reading 31.85 consumed and 0 allocated, with a box for entering an allocation and a note showing how much remains available to be allocated. A Capacity overages section asks how to manage things when capacity reaches zero in this environment, with unticked checkboxes for drawing from the available capacity in the tenant and for billing to a pay-as-you-go billing plan, the latter greyed out with no eligible billing plans. An Overage notification section has an unticked checkbox to send a notification when nearing capacity usage, with a percentage picker and a note that the percent value can only be between 50 and 100 per cent.",
+   "alt": "Official Microsoft image of a pane titled Manage capacity for a sandbox environment. An Allocate capacity section explains that you select how much capacity to allocate from what is available in the tenant, and shows a Copilot Credits card reading 31.85 consumed and 0 allocated, with a box for entering an allocation and a note showing how much remains available to be allocated. A Capacity overages section asks how to manage things when capacity reaches zero in this environment, with unticked checkboxes for drawing from the available capacity in the tenant and for billing to a pay-as-you-go billing plan, the latter greyed out with no eligible billing plans. An Overage notification section has an unticked checkbox to send a notification when nearing capacity usage, with a percentage picker and a note that the percent value can only be between 50 and 100 per cent. Red callouts added by me read: Allocation, not a rule; TenantPool; PayGo; and Alert.",
    "exists": true,
    "sha256": "23c7676420f2730bc9754f085e4437f7f55d32a28099ea1c129a469f1993a472",
    "observed": true
@@ -1768,7 +1828,7 @@
   {
    "section": 69,
    "src": "/images/blog/copilot-september-2026/official-36-single-agent-limits.webp",
-   "alt": "Official Microsoft image of a pane for a single agent called Zava Studios Makers Assistant. The subtitle reads adjust usage limits and notification threshold for this agent running in environment LB dash Dev in a UK sandbox, with a green pay-as-you-go pill. A Capacity limit section says set the message limit for your agent and shows a Copilot Credits card reading zero Copilot Credits currently used, an empty progress bar and a value of 25000. A Notification and throttling thresholds section has a Stop Usage checkbox, unticked and greyed out, reading turn off agent when consumption reaches one hundred per cent, and an Overage notification checkbox, ticked, reading send notification when nearing capacity usage, set to eighty per cent, with a note that the percent value can only be between 50 and 100 per cent.",
+   "alt": "Official Microsoft image of a pane for a single agent called Zava Studios Makers Assistant. The subtitle reads adjust usage limits and notification threshold for this agent running in environment LB dash Dev in a UK sandbox, with a green pay-as-you-go pill. A Capacity limit section says set the message limit for your agent and shows a Copilot Credits card reading zero Copilot Credits currently used, an empty progress bar and a value of 25000. A Notification and throttling thresholds section has a Stop Usage checkbox, unticked and greyed out, reading turn off agent when consumption reaches one hundred per cent, and an Overage notification checkbox, ticked, reading send notification when nearing capacity usage, set to eighty per cent, with a note that the percent value can only be between 50 and 100 per cent. Red callouts added by me read: Says 'message limit'; but the field is credits; and The per-agent hard stop.",
    "exists": true,
    "sha256": "53cc2d7262851a89193f2d5fc301bf3fa42b54e7be8db8abee66be031e33240c",
    "observed": true
@@ -1784,7 +1844,7 @@
   {
    "section": 71,
    "src": "/images/blog/copilot-september-2026/official-38-agent-designer.webp",
-   "alt": "Official Microsoft image of the Copilot Studio agent designer for an agent called Northwind Investment Advisor, with Build, Preview, Evaluate and Monitor tabs and a Publish button. The left pane holds a long Instructions block describing a financial advisor role, an investment philosophy, a customer data source reached through an MCP server for Salesforce, email summaries and record updates. The right pane lists Model set to Claude Sonnet 4.6; Microsoft IQ, described as bring in work context, business data and app signals to improve answers and actions, holding a Work IQ chip; Skills, define behaviors through structured instructions; Tools, connect the agent to external systems and actions, holding chips for Create record, Update record, Send Customer Summary, MCP server for Salesforce and Morningstar MCP Server; Knowledge, holding an Investment Philosophy chip; Connected agents, collaborate across agents to complete work; and Memory, marked Preview, described as remember interactions, workflows and context for improved results, with its toggle switched on.",
+   "alt": "Official Microsoft image of the Copilot Studio agent designer for an agent called Northwind Investment Advisor, with Build, Preview, Evaluate and Monitor tabs and a Publish button. The left pane holds a long Instructions block describing a financial advisor role, an investment philosophy, a customer data source reached through an MCP server for Salesforce, email summaries and record updates. The right pane lists Model set to Claude Sonnet 4.6; Microsoft IQ, described as bring in work context, business data and app signals to improve answers and actions, holding a Work IQ chip; Skills, define behaviors through structured instructions; Tools, connect the agent to external systems and actions, holding chips for Create record, Update record, Send Customer Summary, MCP server for Salesforce and Morningstar MCP Server; Knowledge, holding an Investment Philosophy chip; Connected agents, collaborate across agents to complete work; and Memory, marked Preview, described as remember interactions, workflows and context for improved results, with its toggle switched on. Red callouts added by me read: Build, preview, evaluate, monitor; Work IQ, in Copilot Studio; and Tools where you build.",
    "exists": true,
    "sha256": "50c67f9d0f7e39be9f9b58592db9a4b2b5f0208d04de4b891cd9ad4e70ebdaee",
    "observed": true
@@ -1792,7 +1852,7 @@
   {
    "section": 72,
    "src": "/images/blog/copilot-september-2026/official-39-agent-review-tool.webp",
-   "alt": "Official Microsoft image of the Agent Review Tool reviewing an agent called ZAVA Visual Merchandiser, marked Live. Tabs read Review, Agent map and Cost and efficiency, with buttons to Export PDF and Re-run review. The findings list is grouped worst first, and the selected error reads Skill display-audit references an unavailable tool. Its detail pane shows a parsed fact listing tools that are referenced but not configured, an impact note saying a skill that uses a tool the agent does not have will fail at runtime, a recommendation to add the tool or remove the reference, and an official reference linking to a Microsoft Learn page called Build an agent. A review summary on the right shows a grounded configuration score of 63 per cent, 39 of 54 checks passed, a breakdown of errors, warnings and information findings, and details including the model used, the number of rules evaluated, the duration of the review and the number of Microsoft Learn references cited.",
+   "alt": "Official Microsoft image of the Agent Review Tool reviewing an agent called ZAVA Visual Merchandiser, marked Live. Tabs read Review, Agent map and Cost and efficiency, with buttons to Export PDF and Re-run review. The findings list is grouped worst first, and the selected error reads Skill display-audit references an unavailable tool. Its detail pane shows a parsed fact listing tools that are referenced but not configured, an impact note saying a skill that uses a tool the agent does not have will fail at runtime, a recommendation to add the tool or remove the reference, and an official reference linking to a Microsoft Learn page called Build an agent. A review summary on the right shows a grounded configuration score of 63 per cent, 39 of 54 checks passed, a breakdown of errors, warnings and information findings, and details including the model used, the number of rules evaluated, the duration of the review and the number of Microsoft Learn references cited. Red callouts added by me read: Review, map, and cost; and A config score, not answer quality. Red boxes outline the matching parts of the screen.",
    "exists": true,
    "sha256": "ae6b7626ef7efafa993810593acfdcd75b1360e63e35e05cc86c0e5b010f3857",
    "observed": true
@@ -1936,7 +1996,7 @@
   {
    "section": 90,
    "src": "/images/blog/copilot-september-2026/official-24-web-grounding-transparency.webp",
-   "alt": "Official Microsoft image of a Copilot answer about the seven continents, with a collapsed Reasoning completed line above it. At the bottom of the answer sits a toolbar of copy, thumbs up, thumbs down, speaker and share icons, and an information icon whose tooltip is open. The tooltip reads: Copilot uses enterprise-grade security, while securely anonymizing web search queries separately, web queries are removed from responses after 24 hours, admin policy may restrict certain sources, with a Learn more link. A Sources label with three small app icons sits on the same toolbar row, to the right of the information icon.",
+   "alt": "Official Microsoft image of a Copilot answer about the seven continents, with a collapsed Reasoning completed line above it. At the bottom of the answer sits a toolbar of copy, thumbs up, thumbs down, speaker and share icons, and an information icon whose tooltip is open. The tooltip reads: Copilot uses enterprise-grade security, while securely anonymizing web search queries separately, web queries are removed from responses after 24 hours, admin policy may restrict certain sources, with a Learn more link. A Sources label with three small app icons sits on the same toolbar row, to the right of the information icon. A red callout added by me reads: Admin policy may restrict certain sources.",
    "exists": true,
    "sha256": "ed49e5c279fbf5dc4496e5a920f997b65a07ec4b5765b5ff4f1bc8717004b0ef",
    "observed": true
@@ -1944,9 +2004,9 @@
   {
    "section": 91,
    "src": "/images/blog/copilot-september-2026/created-s25-grok-spacexai-terms.webp",
-   "alt": "Diagram of the SpaceXAI Grok models terms: what does not apply, what governs instead, and where the preview is unavailable.",
+   "alt": "My own diagram titled Grok models, two routes, two sets of terms, for admins and Frontier Program tenants, announced 12 September 2026 and available 18 September 2026, marked illustrative rather than a screenshot. A What was added panel reads: Grok models from SpaceXAI, through the Microsoft Frontier Program, in Word, Excel and PowerPoint via the model selector, behind a dedicated admin setting that is disabled by default. Three panels sit below. In Word, Excel and PowerPoint: SpaceXAI acts as a subprocessor, Microsoft's Product Terms, DPA and Customer Copyright Commitment apply, and use is covered by Enterprise Data Protection. In Copilot Studio: a different route, SpaceXAI acts as an independent processor, the Product Terms and DPA don't apply, and the xAI Enterprise Terms of Service and xAI Data Processing Addendum govern instead. Not available: Frontier customers in the EU, EFTA and the UK, on government clouds GCC, GCC High and DoD, or on sovereign clouds. A footnote headed Exclusions that still apply reads: even as a subprocessor, SpaceXAI maintains its own certifications, the models are not FedRAMP High authorized, and they are excluded from in-country processing commitments, and enabling needs an AI Administrator or Global Administrator.",
    "exists": true,
-   "sha256": "c29c44fa9909a8aaee08df951d5e8312aafa34e15144019d96a992880a54e885",
+   "sha256": "ddf0ffd20affc6ba512e726c7f9eed855aa131bf2768ee9f0e074a9be98a8bd1",
    "observed": true
   },
   {
@@ -1968,7 +2028,7 @@
   {
    "section": 92,
    "src": "/images/blog/copilot-september-2026/official-26-hours-and-value-calculator.webp",
-   "alt": "Official Microsoft image of a dialog titled Hours and value calculator with the Hours calculator option selected. The description reads: estimated time Cowork assisted employees during the selected period, with an About this estimation link. A table has columns for task categories, task count multiplied by hours per action, and Cowork assisted hours, with a row for each of the eight categories: Analysis and research, Document and content creation, Email workflows, Meeting workflows, Communication workflows, Specialized workflows, Write or debug code, and General assistance or other. A Done button sits at the bottom.",
+   "alt": "Official Microsoft image of a dialog titled Hours and value calculator with the Hours calculator option selected. The description reads: estimated time Cowork assisted employees during the selected period, with an About this estimation link. A table has columns for task categories, task count multiplied by hours per action, and Cowork assisted hours, with a row for each of the eight categories: Analysis and research, Document and content creation, Email workflows, Meeting workflows, Communication workflows, Specialized workflows, Write or debug code, and General assistance or other. A Done button sits at the bottom. Red callouts added by me read: Microsoft publishes its method; and Hours, not prompt counts.",
    "exists": true,
    "sha256": "e59a703ba4d1a45c9a2bc53dc2bdb5d05ccc7377d9701ff6bf69246d31baa85e",
    "observed": true
@@ -1976,7 +2036,7 @@
   {
    "section": 93,
    "src": "/images/blog/copilot-september-2026/official-27-copilot-dashboard-export-modal.webp",
-   "alt": "Official Microsoft image of the Microsoft Copilot Dashboard with an Export data dialog open. The dialog reads: choose a week-level export for long-term trends, or a day-level export for recent signals and fresher insights. Two cards sit side by side. Export by week covers 2 July 2025 to 30 December 2025 and offers a wider set of key adoption metrics updated weekly; its use-case note says it is best for tracking usage trends over weeks or months for long-range planning, includes the last 6 months of data, and usually reflects activity up to 6 days before the export date. Export by day carries a Preview badge, covers 6 December 2025 to 2 January 2026 and offers a subset of key adoption metrics updated daily; its note says it is best for recent usage and short-term patterns, includes the last 28 days of data, and usually reflects activity up to 3 days before the export date. Close and Export buttons sit at the bottom.",
+   "alt": "Official Microsoft image of the Microsoft Copilot Dashboard with an Export data dialog open. The dialog reads: choose a week-level export for long-term trends, or a day-level export for recent signals and fresher insights. Two cards sit side by side. Export by week covers 2 July 2025 to 30 December 2025 and offers a wider set of key adoption metrics updated weekly; its use-case note says it is best for tracking usage trends over weeks or months for long-range planning, includes the last 6 months of data, and usually reflects activity up to 6 days before the export date. Export by day carries a Preview badge, covers 6 December 2025 to 2 January 2026 and offers a subset of key adoption metrics updated daily; its note says it is best for recent usage and short-term patterns, includes the last 28 days of data, and usually reflects activity up to 3 days before the export date. Close and Export buttons sit at the bottom. Red callouts added by me read: Week level, six months back; and Day level, 28 days, preview.",
    "exists": true,
    "sha256": "260a80bfbda29b270366d32827e373fde39bc0d134ae842f03dc1a9c12e67a6c",
    "observed": true
@@ -1984,7 +2044,7 @@
   {
    "section": 93,
    "src": "/images/blog/copilot-september-2026/official-27-agent-365-export-dialog.webp",
-   "alt": "Official Microsoft image of a dialog titled Export Agent 365 Dashboard data, reading: export day-level or week-level data for Agent 365 dashboard to analyze both short-term and long-term usage trends. Tabs read Create new and Previous exports. Two selectable cards are shown. Export by week, which is selected, includes the last 6 months of data, usually reflects activity up to 6 days before the export date, and is described as best for tracking usage trends over weeks or months for long-range planning. Export by day includes the last 28 days of data, usually reflects activity up to 2 days before the export date, and is described as best for monitoring recent usage patterns and short-term changes. Beneath the cards sits a shield-icon notice reading Includes user identifiers, above Cancel and Export to CSV buttons.",
+   "alt": "Official Microsoft image of a dialog titled Export Agent 365 Dashboard data, reading: export day-level or week-level data for Agent 365 dashboard to analyze both short-term and long-term usage trends. Tabs read Create new and Previous exports. Two selectable cards are shown. Export by week, which is selected, includes the last 6 months of data, usually reflects activity up to 6 days before the export date, and is described as best for tracking usage trends over weeks or months for long-range planning. Export by day includes the last 28 days of data, usually reflects activity up to 2 days before the export date, and is described as best for monitoring recent usage patterns and short-term changes. Beneath the cards sits a shield-icon notice reading Includes user identifiers, above Cancel and Export to CSV buttons. A red callout added by me reads: User identifiers: off by default.",
    "exists": true,
    "sha256": "7e4fdc8c104a8a57029da5866009972d08be9dc755de30ffcc799121366a4179",
    "observed": true
@@ -1992,7 +2052,7 @@
   {
    "section": 93,
    "src": "/images/blog/copilot-september-2026/official-27-agent-metrics-export-callout.webp",
-   "alt": "Official Microsoft image of the Agent 365 Dashboard, described as view insights across all agents in your organization. Overview and Adoption tabs sit below, with filters for License, Scope and Organization and a time period of 4 weeks covering 19 July to 15 August. An All agents toggle at the top right is switched on, beside download and share icons. An open teaching callout reads: you can now export agent metrics, download up to 6 months of de-identified agent metrics, depending on data availability, data is updated weekly, with Learn more and Got it buttons. A heading beneath reads Your insights at a glance, top-level breakdown of your organization's agents and their usage.",
+   "alt": "Official Microsoft image of the Agent 365 Dashboard, described as view insights across all agents in your organization. Overview and Adoption tabs sit below, with filters for License, Scope and Organization and a time period of 4 weeks covering 19 July to 15 August. An All agents toggle at the top right is switched on, beside download and share icons. An open teaching callout reads: you can now export agent metrics, download up to 6 months of de-identified agent metrics, depending on data availability, data is updated weekly, with Learn more and Got it buttons. A heading beneath reads Your insights at a glance, top-level breakdown of your organization's agents and their usage. A red callout added by me reads: Export only runs with All agents on.",
    "exists": true,
    "sha256": "033093acf7bd6d0794711f2b925694390204d2a785cb16cb2f1ddda3a6f4c0fa",
    "observed": true
@@ -2000,7 +2060,7 @@
   {
    "section": 93,
    "src": "/images/blog/copilot-september-2026/official-27-exported-csv.webp",
-   "alt": "Official Microsoft image of an exported spreadsheet. The columns are PersonId, MetricDate, Add content to presentation actions taken, Chat Copilot in Excel prompts submitted, Chat Copilot in PowerPoint prompts submitted, Chat Copilot in Word prompts submitted, and Compose chat message actions taken using Copilot in Teams. Each row begins with a hashed identifier such as ecb91581 and b8c7170b rather than a name, followed by a date and numeric counts.",
+   "alt": "Official Microsoft image of an exported spreadsheet. The columns are PersonId, MetricDate, Add content to presentation actions taken, Chat Copilot in Excel prompts submitted, Chat Copilot in PowerPoint prompts submitted, Chat Copilot in Word prompts submitted, and Compose chat message actions taken using Copilot in Teams. Each row begins with a hashed identifier such as ecb91581 and b8c7170b rather than a name, followed by a date and numeric counts. Red callouts added by me read: Hashed IDs, not names; and Totals for the period, not single prompts.",
    "exists": true,
    "sha256": "5a57d6ce461d01a7ba5928617f16bd6e37c16e318b39f54076e8fadacd0180db",
    "observed": true
@@ -2008,7 +2068,7 @@
   {
    "section": 94,
    "src": "/images/blog/copilot-september-2026/official-28-ai-cost-dashboard.webp",
-   "alt": "Official Microsoft image of the AI Cost Dashboard. A banner across the top reads: AI Cost Dashboard data is only available for Copilot Cowork and WorkIQ API, more agents and services are coming soon. Filters for Scope, Organization, Job function and Service sit below, with a time period of month to date covering 1 to 20 October. Three metric cards read Active users 10,902, Total Copilot credit usage 111,436 and Total session count 50,258. A usage trends chart sits beneath, above a table breaking credits used, active users and session count down by group.",
+   "alt": "Official Microsoft image of the AI Cost Dashboard. A banner across the top reads: AI Cost Dashboard data is only available for Copilot Cowork and WorkIQ API, more agents and services are coming soon. Filters for Scope, Organization, Job function and Service sit below, with a time period of month to date covering 1 to 20 October. Three metric cards read Active users 10,902, Total Copilot credit usage 111,436 and Total session count 50,258. A usage trends chart sits beneath, above a table breaking credits used, active users and session count down by group. Red callouts added by me read: Coverage is still limited; and Credits, users and sessions in one row.",
    "exists": true,
    "sha256": "f239b9746b11407d10fc05773c9928507f2ab801062276340090e4cd26992a72",
    "observed": true
@@ -2016,7 +2076,7 @@
   {
    "section": 94,
    "src": "/images/blog/copilot-september-2026/official-28-ai-cost-dashboard-github-usage.webp",
-   "alt": "Official Microsoft image of a page headed GitHub usage, reached from the AI Cost Dashboard, filtered to Scope your group, Organization all and Job function all, for a time period of month to date covering 1 to 28 October. Three cards read Active GitHub Copilot users 10,902; Agent adoption 45 percent, 4,905 of 10,902 active users; and Most used, listing chat mode Ask, model Claude Opus 4.6 and language Markdown. A Chat requests section below holds a line chart of average chat requests per active user and a bar chart of chat requests by mode, showing Ask 4.4 thousand, Edit 3.1 thousand, Agent 3.6 thousand, Inline 3.6 thousand, Custom 3.2 thousand and Plan 1.4 thousand, both excluding code completions.",
+   "alt": "Official Microsoft image of a page headed GitHub usage, reached from the AI Cost Dashboard, filtered to Scope your group, Organization all and Job function all, for a time period of month to date covering 1 to 28 October. Three cards read Active GitHub Copilot users 10,902; Agent adoption 45 percent, 4,905 of 10,902 active users; and Most used, listing chat mode Ask, model Claude Opus 4.6 and language Markdown. A Chat requests section below holds a line chart of average chat requests per active user and a bar chart of chat requests by mode, showing Ask 4.4 thousand, Edit 3.1 thousand, Agent 3.6 thousand, Inline 3.6 thousand, Custom 3.2 thousand and Plan 1.4 thousand, both excluding code completions. Red callouts added by me read: Developer agent adoption, measured; and Which models the spend goes to.",
    "exists": true,
    "sha256": "c2defb3d1d8e67b45388160e3988c4a25b8b4172320b9a8c2b97f2dfea05cbb4",
    "observed": true
@@ -2024,7 +2084,7 @@
   {
    "section": 94,
    "src": "/images/blog/copilot-september-2026/official-28-usage-intensity.webp",
-   "alt": "Official Microsoft image of a Usage intensity view. The key insight reads: the top 1 percent of users use 65 percent of all credits, averaging 25 percent less credits per user compared to others. A banded table lists all users at 450,046 credits, the top 1 percent at 250,046 credits or 65 percent, the top 2 to 5 percent at 91,046 credits or 12 percent, the top 6 to 25 percent at 75,046 credits or 9 percent, and the top 26 to 50 percent at 60,041 credits or 8 percent.",
+   "alt": "Official Microsoft image of a Usage intensity view. The key insight reads: the top 1 percent of users use 65 percent of all credits, averaging 25 percent less credits per user compared to others. A banded table lists all users at 450,046 credits, the top 1 percent at 250,046 credits or 65 percent, the top 2 to 5 percent at 91,046 credits or 12 percent, the top 6 to 25 percent at 75,046 credits or 9 percent, and the top 26 to 50 percent at 60,041 credits or 8 percent. Red callouts added by me read: Top 1% burn 65% of all credits; and That is 100 people. The figure&rsquo;s own numbers do not support its 65 percent headline: 250,046 of 450,046 credits is 55.6 percent, and the four bands add up to 476,179, which is more than the all-users total.",
    "exists": true,
    "sha256": "01fae0b0adb2f1a30112688c44202c15a0c882880189a0c2d12fb28e50aa903a",
    "observed": true

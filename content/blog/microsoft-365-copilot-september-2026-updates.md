@@ -3,9 +3,9 @@ title: "What's New in Microsoft 365 Copilot: September 2026"
 list_title: "M365 Copilot — September Recap: 94 Updates"
 hub_id: "whats-new"
 description: "94 numbered Copilot entries: September releases, August catch-up, previews, roadmap plans, cancellations and admin guidance."
-date: 2026-09-21
-lastmod: 2026-09-21
-draft: true
+date: 2026-09-20
+lastmod: 2026-09-20
+draft: false
 youtube_id: ""
 card_tag: "What's New"
 tag_class: "ai"
@@ -18,13 +18,13 @@ tags:
   - news
 faq:
   - question: "What's new in Microsoft Copilot in September 2026?"
-    answer: "This recap covers 94 numbered entries — 55 generally available or rolling out, 10 in preview, 11 still marked In development on the Microsoft roadmap, 2 cancelled, and the rest guidance and planning changes. Most are August catch-up, because Microsoft's August roundup landed at the end of that month; the rest are September releases and plans, and a few carry no Microsoft date at all. The biggest are the GitHub Copilot harness in Copilot Studio going generally available with usage-based billing that applies regardless of Microsoft 365 Copilot licensing, domain exclusion for web grounding returning after being rolled back in August, GPT-6 Astra and Claude Fable 5.1 joining the frontier models in Copilot Cowork and Copilot Studio, a Cowork App skill that builds working apps from a description, and new Cowork value reporting measured in assisted hours rather than prompts. Two roadmap items were also cancelled outright."
+    answer: "This recap covers 94 numbered entries — 55 generally available or rolling out, 10 in preview, 11 still marked In development on the Microsoft roadmap, 2 cancelled, and the rest guidance and planning changes. Most are August catch-up, because Microsoft's August roundup landed at the end of that month; the rest are September releases and plans, and a few carry no Microsoft date at all. The biggest are the GitHub Copilot harness in Copilot Studio going generally available with usage-based billing that applies regardless of Microsoft 365 Copilot licensing, domain exclusion for web grounding returning after being rolled back in August, GPT-6 Astra and Claude Fable 5.1 joining the frontier models in Copilot Cowork and Copilot Studio, a Cowork App skill that builds lightweight, interactive apps from a description, and new Cowork value reporting measured in assisted hours rather than prompts. Two roadmap items were also cancelled outright."
   - question: "Why does this issue have Copilot Studio and Power Platform sections?"
     answer: "Because decisions made in Copilot Studio now change what a Microsoft 365 Copilot tenant gets billed. Agents built on the new GitHub Copilot harness consume credits for all work regardless of Copilot licensing, including while makers are still building and testing, so it is no longer a separate conversation from the rest of this series. Copilot Studio gets full treatment from this issue onward. Power Platform is covered more lightly, focused on the retirement of the twice-yearly release wave model."
   - question: "Which items in this issue need admin attention?"
-    answer: "Five are time-sensitive. Check who can spend Copilot Credits in Copilot Studio, because credits are consumed during maker experimentation and the tenant setting that controls allocation grants tenant-wide reach rather than scoping admins to their own environments. Confirm your network allows *.cloud.microsoft, including copilot.cloud.microsoft, because the Copilot web app redirects there and organisations that had it blocked are redirected in early October 2026. Decide your position on Grok, since SpaceXAI is now a Microsoft subprocessor and Microsoft states that its Product Terms, Data Processing Addendum, data residency commitments, SLAs and Customer Copyright Commitment do not apply to SpaceXAI use — even though the setting is off by default. Re-plan domain exclusion if you dropped it in August. And review the new Cowork value reporting before someone treats its estimate as a finance number."
+    answer: "Five are time-sensitive. Check who can spend Copilot Credits in Copilot Studio, because credits are consumed during maker experimentation and the tenant setting that controls allocation grants tenant-wide reach rather than scoping admins to their own environments. Confirm your network allows *.cloud.microsoft, including copilot.cloud.microsoft, because the Copilot web app redirects there and organisations that had it blocked are redirected in early October 2026. Decide your position on Grok, since SpaceXAI is now a Microsoft subprocessor and the model now reaches tenants by two different contractual routes: in Word, Excel and PowerPoint Microsoft's Product Terms, Data Processing Addendum and Customer Copyright Commitment apply, while the separate Copilot Studio route runs under xAI's own terms instead — and the setting is off by default either way. Re-plan domain exclusion if you dropped it in August. And review the new Cowork value reporting before someone treats its estimate as a finance number."
   - question: "What happened to domain exclusion for web grounding?"
-    answer: "Microsoft announced it on 28 July 2026, published an update pulling it back on 4 August, then rolled it out again on 9 September. It is now live and documented on Microsoft Learn. It lets administrators exclude up to 1,000 domains from web grounding in Microsoft Copilot and Copilot Chat, is off by default, and is configured with a PowerShell script — Microsoft documents no admin-center experience for it. Three limits matter: it understands two levels of subdomains, it filters web page results only so news can still be cited, and updating a configuration replaces it rather than merging."
+    answer: "Microsoft announced it on 28 July 2026, published an update pulling it back on 4 August, then rolled it out again on 9 September. It is now live and documented on Microsoft Learn. It lets administrators exclude up to 1,000 domains from web grounding in Microsoft Copilot, Copilot Chat and Cowork, is off by default, and is configured with a PowerShell script — Microsoft documents no admin-center experience for it. Three limits matter: it understands two levels of subdomains, it filters web page results only so news can still be cited, and updating a configuration replaces it rather than merging."
   - question: "Where did these updates come from?"
     answer: "Microsoft's own August roundup, published 31 August and revised 3 September, plus the Microsoft Copilot and Copilot Studio blogs, Microsoft Learn release notes, the Copilot Cowork release notes, the AI at Work Roadmap and Microsoft's Power CAT team. Every section keeps the date Microsoft gave it, or says so where Microsoft gave none. Six capabilities already covered in the August issue were deliberately left out, and roadmap-dated items are marked as plans rather than tested claims — no Copilot Studio roadmap item flipped to launched during this window."
 layout: "notebook"
@@ -45,7 +45,9 @@ founder_note: |
 {{< pack-download >}}
 
 
-<p style="font-size:0.9rem;opacity:0.8;border-left:3px solid var(--border);padding:var(--space-1) 0 var(--space-1) var(--space-3);margin:var(--space-4) 0;"><em>Screenshot note: images below come from my demo tenant or official Microsoft product imagery. Your tenant may look different because features roll out at different times and the interface changes often.</em></p>
+<p style="font-size:0.9rem;opacity:0.8;border-left:3px solid var(--border);padding:var(--space-1) 0 var(--space-1) var(--space-3);margin:var(--space-4) 0;"><em>Screenshot note: images below come from my demo tenant, official Microsoft product imagery, or diagrams I drew myself &mdash; each of mine is labelled <em>illustrative, not a screenshot</em>. Your tenant may look different because features roll out at different times and the interface changes often.</em></p>
+<p style="font-size:0.9rem;opacity:0.8;border-left:3px solid var(--border);padding:var(--space-1) 0 var(--space-1) var(--space-3);margin:var(--space-4) 0;"><em>Disclaimer: I work at Microsoft, and everything here is my own reading rather than Microsoft&rsquo;s official position. This is a summary of public announcements and documentation &mdash; not official guidance, and not legal advice. Availability and terms change, so check <a href="https://learn.microsoft.com">Microsoft Learn</a> for the current word, and talk to your own legal and compliance people before acting on anything in here.</em></p>
+
 
 ---
 
@@ -56,8 +58,8 @@ Six things explain most of this month:
 1. **[Agents on Copilot Studio's new GitHub Copilot harness use usage-based billing regardless of Microsoft 365 Copilot licensing.](#64-agents-on-the-new-harness-are-billed-for-all-work-regardless-of-copilot-licensing)** The harness went generally available, and agents running on it use usage-based billing *for all work, regardless of Microsoft 365 Copilot licensing*. Credits are consumed while makers build, preview and evaluate — not only when an agent runs in production. This is the change most likely to surprise someone this quarter.
 2. **[Domain exclusion came back.](#90-domain-exclusion-is-back)** Microsoft announced it on 28 July, rolled it back a week later on 4 August, and turned it on again on 9 September. It is now documented on Microsoft Learn with limits that were not in the original announcement: it understands only two levels of subdomains, and it filters web page results only — news and other verticals can still be cited. If you shelved this in August, you can pick it up again.
 3. **[Two more frontier models arrived, in two places.](#1-gpt-6-astra-arrived-in-cowork-and-copilot-studio)** GPT-6 Astra (4 September) and [Claude Fable 5.1](#2-claude-fable-51-replaced-fable-5) (1 September) joined the frontier models in **Copilot Cowork and Copilot Studio** — Microsoft scopes both announcements to those two surfaces, not to Copilot across the board. Fable 5.1 replaces Fable 5, which the August issue covered as an off-by-default preview.
-4. **[Cowork learned to build apps, and to estimate what they are worth.](#24-cowork-can-build-a-working-app-from-a-description)** An App skill turns a description into a small working app with no code. Separately, the Consumption Dashboard now reports [Cowork assisted hours and value](#92-measuring-cowork-in-hours-of-work-not-prompts) across eight task types, with the methodology published.
-5. **[Grok joined the model list, switched off.](#91-grok-models-from-spacexai-off-by-default)** Microsoft added Grok from SpaceXAI as a model choice, added SpaceXAI to its Online Services Subprocessor List, and made the admin setting **disabled by default**. It is a Frontier Program preview in Word, Excel and PowerPoint, and it is not available in the EU, EFTA or the UK during the preview.
+4. **[Cowork learned to build apps, and to estimate what they are worth.](#24-cowork-can-build-interactive-apps-from-a-description)** An App skill turns a description into a small interactive app with no code. Separately, the Consumption Dashboard now reports [Cowork assisted hours and value](#92-measuring-cowork-in-hours-of-work-not-prompts) across eight task types, with the methodology published.
+5. **[Grok joined the model list, switched off.](#91-grok-models-from-spacexai-off-by-default)** Microsoft added Grok from SpaceXAI as a model choice, added SpaceXAI to its Online Services Subprocessor List, and made the admin setting **disabled by default**. It is a Frontier Program preview in Word, Excel and PowerPoint, and it is not available in the EU, EFTA or the UK, on government clouds, or on sovereign clouds.
 6. **[Microsoft cancelled two things it had promised.](#22-proactive-push-notifications-were-cancelled)** Proactive push notifications in the Copilot mobile app — which I covered in August — and [Interactive Agents for Teams Meetings and Calls](#23-interactive-agents-for-teams-meetings-and-calls-was-cancelled). Both are now marked cancelled on the roadmap.
 
 **Also worth knowing:** the twice-yearly Power Platform release wave is gone — there is [no September 2026 release wave 2](#85-there-is-no-september-2026-release-wave-2), and [Release Planner retires by 15 November](#86-release-planner-retires-by-15-november-2026). And Microsoft quietly renamed this series: its roundup is now *What's New in Microsoft Copilot*, not *Microsoft 365 Copilot*, published on a renamed blog. There is more on that in [how this issue was put together](#how-this-issue-was-put-together).
@@ -70,7 +72,7 @@ Start with these five. They are the items where doing nothing has a cost:
 
 1. **Check who can spend Copilot Credits in Copilot Studio.** Agents on the new GitHub Copilot harness are billed for all work *regardless of Microsoft 365 Copilot licensing*, and credits are consumed while makers build and test, not just when agents run. Sections [64](#64-agents-on-the-new-harness-are-billed-for-all-work-regardless-of-copilot-licensing) to [69](#69-limits-can-be-set-on-a-single-agent) cover the controls. If makers in your tenant are already experimenting, this is today's job, not this quarter's.
 2. **Confirm your network allows `*.cloud.microsoft` — this one has an October date.** The Copilot web app is being redirected from `m365.cloud.microsoft` to `copilot.cloud.microsoft`. Organisations that had the new host blocked get redirected in **early October 2026**, and if a proxy, firewall or Conditional Access policy still blocks it then, Microsoft says users *"may be unable to use the Copilot web app."* Microsoft asks for the whole domain rather than the single host, because it does not support partial allow-listing. Same section covers the Windows Recall filter that does **not** survive the app rename — see [section 11](#11-the-copilot-app-is-being-renamed-and-its-web-address-is-changing).
-3. **Decide about Grok before your users ask.** The setting is off by default, so nothing happens until an admin turns it on. But SpaceXAI is now on Microsoft's subprocessor list, and Microsoft states plainly that its Product Terms, Data Processing Addendum, data residency commitments, audit and compliance requirements, SLAs and Customer Copyright Commitment **do not apply** to SpaceXAI use — the **xAI Enterprise Terms of Service** and the **xAI Data Processing Addendum** govern instead. That is a legal review, not a feature toggle. See [section 91](#91-grok-models-from-spacexai-off-by-default).
+3. **Decide about Grok before your users ask.** The setting is off by default, so nothing happens until an admin turns it on. Check first whether it can reach you at all: this is a **Microsoft Frontier Program** rollout in Word, Excel and PowerPoint, and it is **not available** in the EU, EFTA or the UK, on government clouds, or on sovereign clouds. If it can reach you, SpaceXAI is now on Microsoft's subprocessor list, and the detail that matters is which route you mean. In Word, Excel and PowerPoint, Microsoft's Product Terms, DPA and Customer Copyright Commitment apply. The separate Copilot Studio route runs under the xAI Enterprise Terms of Service and Data Processing Addendum instead. Three exclusions apply on the subprocessor route: SpaceXAI keeps its own certifications, the models are not FedRAMP High authorized, and they are excluded from in-country processing commitments. That is a legal review, not a feature toggle. See [section 91](#91-grok-models-from-spacexai-off-by-default).
 4. **Re-plan domain exclusion.** If you removed it from a rollout plan in August, it is back. Read the limits in [section 90](#90-domain-exclusion-is-back) first — the subdomain depth, the web-pages-only scope and the fact that updating replaces rather than merges all change how you would use it.
 5. **Look at the Cowork value reporting.** The Consumption Dashboard now puts hours and value against Cowork usage. It is a deliberately conservative proxy, not a finance number, and knowing that before someone puts it in a slide is worth five minutes.
 
@@ -186,7 +188,7 @@ You can share a full chat session via a link, and the recipient opens their own 
 
 *For: Microsoft 365 Copilot Chat · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
-A single response can be shared by link from the **More options** menu, without sending the whole conversation.
+Microsoft's description is that a single response can be shared by link from the **More options** menu, without sending the whole conversation.
 
 **What I found on 14 September 2026.** It is there, and it carries a label worth noticing.
 
@@ -199,7 +201,7 @@ rather than everywhere at once. If you cannot see it, that is the likeliest reas
 worth a look on its own: edit in Pages, export, read aloud, and schedule this prompt.
 
 <p><img src="/images/blog/copilot-september-2026/lab-s06-share-response-dialog.webp" alt="The Share Response dialog in my own tenant. A preview card shows one exchange: a grey prompt bubble asking for a follow-up to Karin about overdue Q3 numbers, then the answer offering versions in different tones, with the heading Option 1: Professional and Direct and a draft beginning Hi Karin. The preview fades out at the foot of the card. Below it, bold text reads: Anyone in your company with a link can access a copy of this chat. It continues: The shared version won't update as the conversation changes. Make sure you're comfortable sharing the contents before sharing, followed by a Learn more link. A dark Copy link button sits at the bottom right. A red callout added by me reads: Just this answer, not the whole chat." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The share dialog, showing you exactly what the other person will get.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The share dialog. My red callout is my reading of the preview; Microsoft&rsquo;s own line underneath it says &ldquo;a copy of this chat&rdquo;.</em></p>
 
 The dialog previews what you are about to hand over, which I liked. In my case it showed the prompt and the
 one answer it produced, and nothing else from the thread.
@@ -214,10 +216,10 @@ there is no expiry offered. What the other side gets is a copy frozen at the mom
 keep talking to Copilot afterwards they will not see it. And the wording says *chat* even though the menu said
 *response* and the preview showed a single exchange. I could not settle which of the two is the accurate
 description without opening a shared link and reading it as the recipient, so I am reporting both rather than
-picking one.
+picking one. My red callout above picked the narrower reading, and I should not have. Until I have opened one of these links as the recipient, treat the scope as an open question.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> Conversations wander. Usually it is one answer in a long thread that is worth sending to someone, and sharing the whole lot makes them read everything else first.</p>
+<p><strong>Why this matters:</strong> Conversations wander. Usually it is one answer in a long thread that is worth sending to someone, and sharing the whole lot makes them read everything else first. That is the promise being made here; whether the link really carries just the one answer is the bit I still have to confirm.</p>
 </blockquote>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
@@ -241,7 +243,7 @@ Copilot gained **model-driven answer cards** for weather, sports, finance, image
 
 *For: Microsoft 365 Copilot Chat (mobile) · Rolled out August 2026 · Tested on my phone 14 September 2026*
 
-On mobile you can describe a message and Copilot creates an embedded Outlook draft inside the chat, which you can then open in Outlook.
+On mobile you can describe a message and Copilot creates an embedded Outlook draft inside the chat. Microsoft says you can then open it in Outlook.
 
 **What I found on 14 September 2026.** The draft does arrive as a distinct object in the thread rather
 than as a wall of text inside the reply, which is the genuinely useful half of this. The handoff to
@@ -266,7 +268,7 @@ it, which is the same pairing the desktop app now shows, so that change is not a
 below the crop, the bottom bar carries **Cowork** as a full tab alongside Chat, Search and More.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> On a phone, switching apps is the whole cost. Drafting in place and handing the finished thing to Outlook is one of those flows that only makes sense on mobile, which is a good sign somebody designed it for mobile rather than shrinking the desktop version.</p>
+<p><strong>Why this matters:</strong> On a phone, switching apps is the whole cost. Drafting in place and handing the finished thing to Outlook is one of those flows that only makes sense on mobile, which is a good sign somebody designed it for mobile rather than shrinking the desktop version. That is the flow Microsoft describes, mind &mdash; the handoff is the half I could not get to work.</p>
 </blockquote>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
@@ -323,6 +325,9 @@ of it rather than mine. I will pick it up next month.
 <p><strong>Why this matters:</strong> Editing anything structured on a phone is awkward, so handing the fiddly part to an instruction is a sensible trade. The creation half is the more interesting one, because it lets a Page start life as a sentence in a chat rather than as a decision to go and make a Page.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-september-2026/created-s10-mobile-pages-steering.webp" alt="My own diagram titled On mobile, Copilot can reshape a Page or make one, for the Microsoft 365 Copilot app on Android and iOS, generally available 25 August 2026, marked illustrative rather than a screenshot. A panel headed One name, two things reads: Page steering and auto-triggering covers two separate capabilities, and the name obscures the more interesting one. Three panels sit below. Edit by instruction: tell Copilot Shorten this page and it reworks the page, instead of you editing by hand on a phone screen. Create from chat: ask for Create a new page for XYZ in an ordinary conversation and a Page gets made, without going to Pages first. What it is not: auto-triggering does not mean an existing Page surfaces itself at a convenient moment. A footnote headed Not tested reads: I could not reproduce this in time for this issue, so the above is Microsoft's account rather than mine, and I will pick it up next month." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the two capabilities hiding behind one name &mdash; not a screenshot. I could not reproduce either in time, so this lays out Microsoft&rsquo;s account rather than mine.</em></p>
+
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 
@@ -342,7 +347,7 @@ Microsoft's guidance is to allow the whole domain, not just the one host: *"Micr
 
 **One more easily-missed item.** If you filter Copilot out of Windows Recall snapshots, that policy does not follow the rename: *"If you applied a group policy that filters the former Microsoft Copilot app from being saved in snapshots for Recall, this policy will not automatically carry over to the new Microsoft Copilot app."* Microsoft links its [Recall app and website filtering instructions](https://learn.microsoft.com/en-us/windows/client-management/manage-recall#app-and-website-filtering-policies) for re-creating it.
 
-**A note on where the last two details come from.** The October date and the Recall policy point both come from Message Center posts, which are only visible from inside a tenant — I cannot link you to a public page for either. Microsoft's public [deployment guidance](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) confirms the broad rollout began in September and asks you to make sure `copilot.cloud.microsoft` is not blocked, but it does not name an October cut-off. Treat the date as directional and check your own Message Center rather than taking mine.
+**A note on where the last two details come from.** The October date and the Recall policy point both come from Message Center posts, which Microsoft publishes to tenant administrators. Both are mirrored publicly by the open-source [merill/mc](https://github.com/merill/mc) archive — [MC1454108](https://mc.merill.net/message/MC1454108) and [MC1462915](https://mc.merill.net/message/MC1462915) — so you can read them in full without signing in. Microsoft's public [deployment guidance](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) confirms the broad rollout began in September and asks you to make sure `copilot.cloud.microsoft` is not blocked, but it does not name an October cut-off. Treat the date as directional and check your own Message Center rather than taking mine.
 
 Microsoft states that *"Security, compliance, and governance controls remain unchanged"*, and that the new URL stays inside `*.cloud.microsoft` and keeps its existing allow-listing properties.
 
@@ -356,7 +361,8 @@ Microsoft states that *"Security, compliance, and governance controls remain unc
 
 <p><img src="/images/blog/copilot-september-2026/created-s11-copilot-app-rename-and-url.webp" alt="Diagram: the Microsoft Copilot app rename, the move from m365.cloud.microsoft to copilot.cloud.microsoft, and the early-October 2026 forced redirect." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the three changes bundled into one release note &mdash; not a screenshot. The rename, the address move and the October deadline never appear together on a single screen.</em></p>
-📖 [Deploy the unified Copilot app](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) · [Partner Center announcements, August 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-august) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · Message Center MC1454108 and MC1462915 (tenant sign-in required)
+
+📖 [Deploy the unified Copilot app](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) · [Partner Center announcements, August 2026](https://learn.microsoft.com/en-us/partner-center/announcements/2026-august) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · Message Center [MC1454108](https://mc.merill.net/message/MC1454108) and [MC1462915](https://mc.merill.net/message/MC1462915) (mirrored publicly via [merill/mc](https://github.com/merill/mc); your own Message Center is the authoritative copy for your tenant)
 
 ### 12. Copilot Chat sits beside Copilot Search
 
@@ -432,6 +438,7 @@ the Copilot side, so the sync is not something I have watched work.
 
 <p><img src="/images/blog/copilot-september-2026/official-13-notebooks-zava-marketing.webp" alt="Official Microsoft image of a Copilot Notebook called Zava Marketing, open in a browser tab titled Notebooks, Microsoft Copilot. The main pane has a Message Copilot box and a Chat history list containing two conversations, one about a go-to-market strategy shift for social media pressure and one about footwear market trends for a new product launch. The right rail has an Add references button above four tiles labelled New Page, Audio overview, Infographic and More in OneNote. Below those, a Creations group lists a Marketing Team Update for August 2026, and a References group lists a dozen source files including spreadsheets, presentations and Word documents. Red callouts added by me read: The full workspace opens in OneNote; and Source files stay in the notebook." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 14. Notebooks suggest what to make next
@@ -496,6 +503,9 @@ half, and that is the half I could not reproduce.
 <p><strong>Why this matters:</strong> This is the closest Microsoft has come to the way people actually capture things — a photo of a whiteboard, a voice memo walking to the car, three lines typed in a meeting. Making that one input rather than three is the useful part.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-september-2026/created-s15-notebooks-multimodal-android.webp" alt="My own diagram titled Notebooks take audio, images and notes together, for Copilot Notebooks on Android, rolling out September 2026, marked illustrative rather than a screenshot. A panel headed The detail that decides whether this is new for you reads: Microsoft scopes this month's rollout to Android; on iOS and iPad, multimodal capture is already available through the OneNote app. Two panels sit below. Produce audio, already worked: a notebook could already make an audio overview, that is section 14, and it works. Take audio in, the new half: using audio as a source is the new part, and the half I could not reproduce. A footnote headed What I found, 14 September 2026 reads: adding a meeting as a source worked, an .mp3 or a .jpg did not because the picker would not take them, and the Windows entry roadmap 566322 still read In development, so a desktop notebook was not yet in scope for what I was testing." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the produce-audio versus take-audio-in split &mdash; not a screenshot. The two are easy to confuse because the words are so nearly the same.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960) · [AI at Work Roadmap 567895](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567895) — the Android entry that matches this month's rollout (Rolling out, preview August 2026, general availability September 2026) · [Roadmap 566322](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566322) — the **Windows** entry, still In development on 14 September · [Roadmap 559095](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559095) — the **iPhone** entry, which shipped back in May 2026
 
 ### 16. Power BI grounding went worldwide
@@ -510,6 +520,7 @@ Reasoning over Power BI reports and semantic models in natural language rolled o
 
 <p><img src="/images/blog/copilot-september-2026/created-s16-power-bi-grounding-worldwide.webp" alt="A diagram contrasting the June 2026 public preview of Power BI grounding, covered in the August issue as a Frontier capability, with its August 2026 worldwide rollout, noting that the capability itself did not change &mdash; the audience did." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the rollout &mdash; not a screenshot. A change in <em>who can reach</em> a capability has no new screen to photograph.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 17. Viva Engage private communities can ground Copilot
@@ -537,6 +548,9 @@ tested one.
 <p><strong>Why this matters:</strong> Worth an admin conversation rather than a cheer. Private communities are private for a reason, and people post in them with an expectation about who is reading. Permissions are respected, but the set of places an answer can come from just got wider.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-september-2026/created-s17-viva-engage-private-grounding.webp" alt="My own diagram titled Viva Engage private communities can ground Copilot, for Microsoft 365 Copilot and Viva Engage on web, generally available 25 August 2026, marked illustrative rather than a screenshot. A panel headed Microsoft's wording, quoted rather than paraphrased reads: when a user queries, they will only be able to see content they are privileged to access. Three panels sit below. What does not change: the permission model, nothing is being relaxed. What does change: the size of the pool Copilot may draw from for each person, bounded by what they could already have opened by hand. Two that are easy to miss: web only for now, and roadmap 515144 still shows May 2026 while the release notes place it in the 25 August batch. A footnote headed Worth an admin conversation rather than a cheer reads: people post in private communities with an expectation about who is reading, permissions are respected but the set of places an answer can come from just got wider, and I do not have Viva Engage in my demo tenant so this is Microsoft's account." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of what does and does not change here &mdash; not a screenshot. The permission model is untouched; the size of the pool is the part that moved.</em></p>
+
 📖 [AI at Work Roadmap 515144](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=515144) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 18. More Copilot connectors, several industry-specific
@@ -553,20 +567,22 @@ Microsoft did not attach a rollout date to this list, so treat availability as s
 
 <p><img src="/images/blog/copilot-september-2026/created-s18-industry-connectors.webp" alt="Diagram listing the six new Copilot connectors: Mercury, Xero, iManage Work, Boardwise, Harvey and Descrybe Legal Engine." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the six named connectors &mdash; not a screenshot. Microsoft published this as a list, with no date and no image.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 19. The Work IQ APIs reached general availability
 
 *For: Copilot extensibility · Developer · Generally available 25 August 2026*
 
-The **Work IQ APIs** — a unified REST endpoint for agents and workflows to reach work context — became generally available.
+The **Work IQ APIs** — a unified REST endpoint for agents and workflows to reach work context — became generally available. The dates disagree on this one: Microsoft's release notes give 25 August 2026, while [roadmap 559021](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559021) reads Launched with a June 2026 general-availability month. I am following the release notes, as everywhere else in this issue.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> This is the plumbing under most of the features in this issue. Making it a documented, generally available API means the same grounding Microsoft uses is available to anything your organisation builds, which is a bigger deal than any single feature above it.</p>
+<p><strong>Why this matters:</strong> Work IQ is the grounding layer Microsoft keeps naming alongside the features in this issue — it is what Microsoft credits for grounding GPT-6 Astra in section 1. Making it a documented, generally available API means the same grounding Microsoft uses is available to anything your organisation builds, which is a bigger deal than any single feature above it.</p>
 </blockquote>
 
 <p><img src="/images/blog/copilot-september-2026/created-s19-work-iq-apis-ga.webp" alt="A diagram of the Work IQ APIs reaching general availability on 25 August 2026, showing roadmap entry 559021 and who can call the unified REST endpoint." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the release &mdash; not a screenshot. An API has no interface to photograph.</em></p>
+
 📖 [AI at Work Roadmap 559021](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559021) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 20. Connector crawling got faster
@@ -581,6 +597,7 @@ Content and identity crawling now run **in parallel**, improving how quickly con
 
 <p><img src="/images/blog/copilot-september-2026/created-s20-connector-crawling-parallel.webp" alt="A diagram of the connector crawling change, showing that content and identity crawling now run in parallel, a general availability date of 11 August 2026, and a note that Microsoft gives no figure for how much faster." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the change &mdash; not a screenshot. A service-side speed improvement has no screen and no visible setting to photograph, and Microsoft publishes no number I could quote.</em></p>
+
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 21. ServiceNow connectors respect role-based permissions
@@ -595,6 +612,7 @@ The **ServiceNow connectors support role-based permissions**, so what Copilot re
 
 <p><img src="/images/blog/copilot-september-2026/created-s21-servicenow-role-permissions.webp" alt="A diagram of ServiceNow connectors supporting role-based permissions, generally available 11 August 2026, noting that Copilot honours the role ServiceNow already holds for that user, and that I have no ServiceNow instance connected to test it." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the change &mdash; not a screenshot. I have no ServiceNow instance connected, so there is nothing in my tenant to photograph.</em></p>
+
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 22. Proactive push notifications were cancelled
@@ -613,6 +631,7 @@ So the honest position is: I reported it as announced, with a caveat about the d
 
 <p><img src="/images/blog/copilot-september-2026/created-s22-proactive-push-cancelled.webp" alt="A diagram of roadmap entry 560339, showing the entry struck through with a Cancelled badge, a summary of what Microsoft says it will do &mdash; proactive push notifications in the Copilot mobile app &mdash;, Microsoft's note that it decided not to move forward with the change, and what that means for anyone who already communicated it." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the cancelled entry &mdash; not a screenshot. A cancelled roadmap item has no product screen to photograph; the note on the entry is the whole story.</em></p>
+
 📖 [AI at Work Roadmap 560339](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560339)
 
 ### 23. Interactive Agents for Teams Meetings and Calls was cancelled
@@ -629,13 +648,19 @@ This one never reached an issue of this series, so there is nothing to withdraw 
 
 <p><img src="/images/blog/copilot-september-2026/created-s23-interactive-agents-cancelled.webp" alt="A diagram of roadmap entry 490564 for Interactive Agents for Teams Meetings and Calls, struck through with a Cancelled badge, alongside Microsoft's note that it decided not to move forward with the change at this time." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the cancelled entry &mdash; not a screenshot. Nothing shipped, so there is nothing to photograph.</em></p>
+
 📖 [AI at Work Roadmap 490564](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=490564)
 
 ---
 
 ## Copilot Cowork
 
-### 24. Cowork can build a working app from a description
+<blockquote class="callout callout-warn">
+<p><strong>Four more cancellations landed after this issue&rsquo;s research cut-off.</strong> The two sections above are the cancellations I found on 14 September. Between 15 and 18 September Microsoft cancelled four more Copilot roadmap items: the Copilot browser extension for Chrome (<a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=530577">530577</a>, 15 September), Purview Data Lifecycle Management insights on Copilot interactions (<a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=561209">561209</a>, 15 September), Content Sources in Copilot Chat (<a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=496596">496596</a>, 18 September) and Copilot Chat session persistence (<a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=500638">500638</a>, 18 September). Each carries the same wording &mdash; <em>&ldquo;We are cancelling this Roadmap item at this time.&rdquo;</em> &mdash; and Microsoft gives no reason for any of them. They are listed here rather than numbered, because they fall outside the window this issue covers.</p>
+<p><strong>One of them reaches back into our August issue.</strong> Roadmap 496596 is the entry August&rsquo;s section 33 cited for managing your own sources and pointing a prompt at one, reported there as rolled out in July. A cancelled roadmap record is not the same thing as a withdrawn feature &mdash; entries are sometimes closed for bookkeeping &mdash; so treat this as a record to watch rather than a confirmed removal, and check your own tenant before planning around it. I will follow it up next month.</p>
+</blockquote>
+
+### 24. Cowork can build interactive apps from a description
 
 *For: Copilot Cowork · Frontier Program · September 2026*
 
@@ -677,7 +702,7 @@ Cowork gained an **effort level** — Light, Medium, High, Extra High and Max �
 <p><strong>Why this matters:</strong> Model choice was only half the dial. Plenty of tasks need a good model thinking briefly, and plenty need a cheap one thinking hard. Exposing effort separately from model is the first time the cost and the quality levers have been honestly separated.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/official-58-cowork-effort-slider.webp" alt="Official Microsoft image of the Cowork effort control. A slider runs left to right from Faster to Smarter across a colour gradient, with the handle at the far right on Smarter. The description beneath reads: uses the most credits, so responses can run slower, best saved for the hardest tasks. The prompt box below reads Message Cowork and carries a plus button, an Auto dropdown and a Max dropdown, with a footer noting AI-generated content may be incorrect. Red callouts added by me read: Five levels, Medium by default; Model and effort, two dials; Five levels, Light to Max; and Model and effort, two dials." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/official-58-cowork-effort-slider.webp" alt="Official Microsoft image of the Cowork effort control. A slider runs left to right from Faster to Smarter across a colour gradient, with the handle at the far right on Smarter. The description beneath reads: uses the most credits, so responses can run slower, best saved for the hardest tasks. The prompt box below reads Message Cowork and carries a plus button, an Auto dropdown and a Max dropdown, with a footer noting AI-generated content may be incorrect. Red callouts added by me read: Five levels, Light to Max; and Model and effort, two dials." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
@@ -692,7 +717,7 @@ The `/cost` skill now reports the percentage of your monthly credit limit remain
 <p><strong>Why this matters:</strong> A per-task estimate tells you what one thing costs. It does not tell you whether you can afford it. Showing the month-to-date position and the reset date turns a number into a decision, and it does it in front of the user rather than in an admin report they never see.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/official-59-cost-skill.webp" alt="Official Microsoft image of the result of a slash cost command in Copilot, with a small slash cost chip at the top right. The response reads: 128 credits used for this task, 10 percent of your monthly limit remaining, 900 credits used so far this month, monthly limit resets on August 1. Red callouts added by me read: What this task cost; Can you afford the next one; What this task cost; and Can you afford the next one." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/official-59-cost-skill.webp" alt="Official Microsoft image of the result of a slash cost command in Copilot, with a small slash cost chip at the top right. The response reads: 128 credits used for this task, 10 percent of your monthly limit remaining, 900 credits used so far this month, monthly limit resets on August 1. Red callouts added by me read: What this task cost; and Can you afford the next one." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
@@ -725,6 +750,9 @@ For the record on dates, because this one has a history: the Cowork release note
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is the most consequential availability change in the issue. "Uses your existing sign-ins" means Cowork acts inside sessions you have already authenticated — so alongside "does it work well enough", there is a second question worth asking early: which internal sites are you comfortable with it reaching.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-september-2026/created-s28-local-browser-use-ga.webp" alt="My own diagram titled Local browser use reached every Copilot tenant, for Copilot Cowork, generally available August 2026, marked illustrative rather than a screenshot. A panel headed What actually changed reads: not the capability but who has it, local browser use moved out of the Frontier Program to all Microsoft 365 Copilot tenants. Two panels sit below. June 2026: listed in the Cowork release notes as a Frontier capability. August 2026: moved from Frontier to general availability, Cowork completes web tasks in Microsoft Edge on your device using your existing sign-ins and your organisation's policies, and Edge must be installed. A footnote headed The second question worth asking early reads: uses your existing sign-ins means Cowork acts inside sessions you have already authenticated, so alongside does it work well enough, which internal sites are you comfortable with it reaching." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the Frontier-to-general-availability move &mdash; not a screenshot. The capability is not new; the audience is.</em></p>
 
 📖 [What's new in Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new)
 
@@ -795,7 +823,7 @@ on Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research.
 
 ## Microsoft 365 apps and everyday work
 
-#### PowerPoint
+## PowerPoint
 
 ### 31. PowerPoint can be locked to your approved template
 
@@ -936,9 +964,9 @@ The result holds up in the hardest direction. In the English original the right-
 
 *For: Copilot in PowerPoint · Frontier Program · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
-Copilot can edit SmartArt, diagrams and shapes directly on the canvas, on brand, instead of leaving you to align things by hand.
+Microsoft's description is that Copilot can edit SmartArt, diagrams and shapes directly on the canvas, on brand, instead of leaving you to align things by hand.
 
-This is a Frontier Program capability, so it reaches Frontier tenants first rather than everyone. I could reproduce it in my own tenant on 14 September 2026, so if you had written it off as not-for-me, it is worth ten seconds to check.
+This is a Frontier Program capability, so it reaches Frontier tenants first rather than everyone. I could reach it in my own tenant on 14 September 2026, so if you had written it off as not-for-me, it is worth ten seconds to check.
 
 **What actually happens when you ask for SmartArt.** I took a plain two-column bullet slide and typed *"convert this slide to a smart art"*. The reasoning is the interesting part:
 
@@ -1051,6 +1079,9 @@ Copilot in PowerPoint can use enterprise assets hosted in Adobe Experience Manag
 <p><strong>Why this matters:</strong> Most large organisations already pay for a digital asset manager, and it tends to sit outside the tools where the work actually happens. Wiring it into the app where the deck is made is how those assets finally get used.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-september-2026/created-s38-powerpoint-aem-brand-assets.webp" alt="My own diagram titled PowerPoint can use brand assets from Adobe Experience Manager, for Copilot in PowerPoint on Web and Windows, generally available 11 August 2026, marked illustrative rather than a screenshot. A panel headed What changed reads: Copilot in PowerPoint can use enterprise assets hosted in Adobe Experience Manager, so the images it reaches for are the approved ones. Two panels sit below. Before: Copilot reached for whatever it could generate. Now: it can reach the library your organisation has already approved, and already pays for. A footnote headed Why it matters reads: most large organisations already pay for a digital asset manager, and it tends to sit outside the tools where the work actually happens, so wiring it into the app where the deck is made is how those assets finally get used." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the before and after &mdash; not a screenshot. The change is which library Copilot reaches into.</em></p>
+
 📖 [AI at Work Roadmap 516038](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516038) (Web) · [516039](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516039) (Desktop) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 39. You can create a presentation from the PowerPoint web app
@@ -1061,7 +1092,7 @@ Creating a presentation with Copilot works directly in the PowerPoint web app, n
 
 **What I found on 14 September 2026.** It is not tucked away either. On the PowerPoint start page on the web, **Create with Copilot** is the first button, sitting ahead of Create blank presentation.
 
-<p><img src="/images/blog/copilot-september-2026/lab-s72-web-create-with-copilot.webp" alt="The PowerPoint start page in the web app in my own tenant. Three buttons sit under a welcome heading: Create with Copilot as the first and visually primary option, then Create blank presentation, then Upload a file. A Jump back in row of recent presentations appears below. Red callouts added by me read: This is the web app; First button, ahead of blank; This is the web app; and First button, ahead of blank." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/lab-s72-web-create-with-copilot.webp" alt="The PowerPoint start page in the web app in my own tenant. Three buttons sit under a welcome heading: Create with Copilot as the first and visually primary option, then Create blank presentation, then Upload a file. A Jump back in row of recent presentations appears below. Red callouts added by me read: This is the web app; and First button, ahead of blank." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The PowerPoint web app in my own tenant. Create with Copilot leads, rather than sitting in a menu.</em></p>
 
 Everything in the next section was built here, in the browser, which is the other half of the proof.
@@ -1096,12 +1127,13 @@ And the finished deck answered the provenance question on its own. Where it lift
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. The quote is credited on the slide itself.</em></p>
 
 <blockquote class="callout callout-tip">
+
 <p><strong>Why this matters:</strong> Useful, and worth a moment's thought. A deck grounded in the open web inherits whatever that page says, so this is a feature to brief people on rather than to enable and forget. The domain exclusion control in [section 90](#90-domain-exclusion-is-back) is the nearest related lever, but Microsoft describes it as filtering **web search results** for Copilot and Copilot Chat, and I have not confirmed it constrains a URL you hand to PowerPoint directly &mdash; so do not assume it covers this. My one deck did credit its source on the slide, which helps — but that is a single run, not a promise.</p>
 </blockquote>
 
 📖 [AI at Work Roadmap 555898](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555898) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
-#### Word
+## Word
 
 ### 41. Word can add hyperlinks for you
 
@@ -1146,6 +1178,7 @@ So I am recording this as a question rather than a verdict, and I will test the 
 
 <p><img src="/images/blog/copilot-september-2026/official-75-word-reference-visuals.webp" alt="Official Microsoft image of a Word document called Bee Management A Practical Guide to Healthy.docx. A heading reading Safety Measures sits above a large infographic titled Urban Beekeeping Safety First, with panels labelled Protect, Stay Calm and Secure Access. The Copilot pane on the right shows the prompt Include a section on safety measure along with visuals, with a reference document attached called Urban Beekeeping A Practical Guide for City Apiaries.docx. Copilot replies that it added a clearly labeled Safety Measures section and placed a safety-first infographic above the existing guidance, and shows a thumbnail of that same infographic with a source chip naming the reference document. A floating pill offers Done and Undo. Red callouts added by me read: The infographic it placed; and It names the source file." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 43. Word highlights the exact words Copilot changed
@@ -1160,6 +1193,7 @@ Edit highlighting got **more granular**. Instead of marking a whole paragraph as
 
 <p><img src="/images/blog/copilot-september-2026/official-76-word-changed-words.webp" alt="Official Microsoft image of a Word document titled Creating Flexible and Efficient Work Environments for the Modern Business. In one paragraph, blue words are interleaved among black words, showing exactly which words Copilot rewrote and which it left untouched. A floating pill over the page offers Done and Undo. The Copilot pane on the right shows the prompt Polish this paragraph and a reply saying it polished the selected paragraph to make it more concise, improve the flow between statistics and sharpen the business impact while preserving the original meaning, followed by suggestion chips reading Make it more formal, Add a summary sentence and Highlight key statistics. A red callout added by me reads: Blue words are the ones it changed. A red box outlines the matching part of the screen." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 44. You can talk to Word during Read Aloud
@@ -1173,6 +1207,9 @@ Read Aloud gained **voice questions and answers**. You can interrupt the reading
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Read Aloud is an accessibility feature that a lot of people use simply because they are walking, driving or tired. Being able to ask a question without stopping to type keeps the document usable in those moments.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-september-2026/created-s44-word-read-aloud-voice-qa.webp" alt="My own diagram titled You can talk to Word during Read Aloud, for Copilot in Word, generally available 25 August 2026, marked illustrative rather than a screenshot. A panel headed What was added reads: Read Aloud gained voice questions and answers, interrupt the reading, ask about what you just heard, and carry on. Two panels sit below. Why it matters: Read Aloud is an accessibility feature a lot of people use simply because they are walking, driving or tired, and asking a question without stopping to type keeps the document usable in those moments. What I found, 14 September 2026: I went looking for this in my own tenant and could not find it. A footnote headed Most likely explanation reads: the ordinary one, a staged rollout that has not reached my tenant yet or has reached only some users inside it, I am recording that rather than guessing, and I will look again for the next issue." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of what was added against what I could actually find &mdash; not a screenshot.</em></p>
 
 📖 [AI at Work Roadmap 523205](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=523205) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
@@ -1197,7 +1234,7 @@ There were also two of them, not one. Alongside Claude Sonnet 5 my tenant offere
 
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
-#### Excel
+## Excel
 
 ### 46. Excel can use Python when editing with Copilot
 
@@ -1207,7 +1244,7 @@ Copilot in Excel can **use Python** as part of an edit, rather than being limite
 
 **What I found on 14 September 2026.** I went looking for Python and could not make it appear.
 
-The test was deliberately chosen to be the kind of thing formulas struggle with: find the outliers in a column using standard deviation. Copilot did the work — mean, sample standard deviation, z-scores, a ±3σ test — but it did all of it in **native Excel formulas**. No Python, no code block, no Python label anywhere in the reply. Other prompts did not surface it either.
+The test I picked was to find the outliers in a column using standard deviation. Copilot did the work — mean, sample standard deviation, z-scores, a ±3σ test — but it did all of it in **native Excel formulas**. No Python, no code block, no Python label anywhere in the reply. Other prompts did not surface it either.
 
 <p><img src="/images/blog/copilot-september-2026/lab-s79-formulas-not-python.webp" alt="Part of a Copilot reply in Excel in my own tenant. A bullet reads: 15:43 local time, Added the standard-deviation outlier audit in Risk Chart exclamation A18 colon F23. Sub-bullets read: Added mean, sample standard deviation, z-score, and plus or minus 3 sigma outlier formulas; and Formatted the audit table, all four results are No. Below sits a monospaced code block containing three Excel formulas: a COUNTIF against the sales accounts sheet, STDEV.S over B4 to B7, and IF ABS of E20 greater than 3 returning Yes or No. Red callouts added by me read: Mean, z-score, outliers; and All in Excel formulas, no Python." loading="lazy" decoding="async" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. A statistics question, answered entirely in formulas.</em></p>
@@ -1250,7 +1287,7 @@ The second is the more valuable of the two. A log that tells you what it cannot 
 <p><strong>Why this matters:</strong> Shared workbooks accumulate changes that nobody can explain by Friday. Being able to ask "what happened to this sheet" — and get an answer that separates human edits from AI edits — is the beginning of an audit trail for AI-assisted work.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/official-80-excel-what-changed.webp" alt="Official Microsoft image of Excel with an Edit with Copilot pane open on the right, set to Auto. The pane shows a numbered change summary. Item one reads Dashboard Created, attributed to Alex Chen, Today, Apr 6, with the line a new executive dashboard was built with key Q2 metrics pulling from other sheets. Below it a table with columns Metric, Value, vs. Q1 and Status lists Total Q2 Revenue Target 34.1 million dollars up 12.0 percent On Track, Enterprise Revenue 18.3 million up 15.0 percent Strong, Mid-Market Revenue 9.2 million up 10.0 percent Monitor, SMB Revenue 3.9 million up 8.0 percent Monitor, Partner slash Channel Revenue 2.7 million up 14.0 percent Growing, Total Pipeline 43.5 million up 20.0 percent Healthy, Productive AE Headcount 86.2 up 7.0 percent Ramped, and Avg Deal Size Enterprise 195 thousand dollars up 8.0 percent Up. Item two begins below, reading Regional Revenue Sheet Created, attributed to Alex Chen and Jordan Lee, Apr 5, 7:30 to 9:15 PM. Behind the pane the worksheet shows a Status column with values including On Track, Strong, Monitor, Growing, Healthy, Ramped, Improving and Up. Red callouts added by me read: Numbered, named, dated; Two people and a time range; Numbered, named, dated; and Two people and a time range. Red boxes outline the matching parts of the screen." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/official-80-excel-what-changed.webp" alt="Official Microsoft image of Excel with an Edit with Copilot pane open on the right, set to Auto. The pane shows a numbered change summary. Item one reads Dashboard Created, attributed to Alex Chen, Today, Apr 6, with the line a new executive dashboard was built with key Q2 metrics pulling from other sheets. Below it a table with columns Metric, Value, vs. Q1 and Status lists Total Q2 Revenue Target 34.1 million dollars up 12.0 percent On Track, Enterprise Revenue 18.3 million up 15.0 percent Strong, Mid-Market Revenue 9.2 million up 10.0 percent Monitor, SMB Revenue 3.9 million up 8.0 percent Monitor, Partner slash Channel Revenue 2.7 million up 14.0 percent Growing, Total Pipeline 43.5 million up 20.0 percent Healthy, Productive AE Headcount 86.2 up 7.0 percent Ramped, and Avg Deal Size Enterprise 195 thousand dollars up 8.0 percent Up. Item two begins below, reading Regional Revenue Sheet Created, attributed to Alex Chen and Jordan Lee, Apr 5, 7:30 to 9:15 PM. Behind the pane the worksheet shows a Status column with values including On Track, Strong, Monitor, Growing, Healthy, Ramped, Improving and Up. Red callouts added by me read: Numbered, named, dated; and Two people and a time range. Red boxes outline the matching parts of the screen." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup — a still frame from their animated demo. Each change carries a name and a time.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
@@ -1274,7 +1311,7 @@ The surprise is that the history is not just this session. My list still held a 
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
-#### Outlook
+## Outlook
 
 ### 49. Custom engine agents work directly in Outlook
 
@@ -1452,7 +1489,7 @@ It is the behaviour you would hope for.
 
 📖 [AI at Work Roadmap 542186](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=542186) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
-#### Teams and Planner
+## Teams and Planner
 
 ### 54. Teams can translate a meeting recap after the fact
 
@@ -1593,7 +1630,7 @@ for the next issue.
 
 📖 [AI at Work Roadmap 560706](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560706) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
-#### OneDrive and SharePoint
+## OneDrive and SharePoint
 
 ### 59. OneDrive can take you from files to finished work in chat
 
@@ -1683,75 +1720,39 @@ chains together things Copilot can do anyway. It does not grant anything new.
 
 *For: SharePoint + Microsoft 365 Copilot · Admin · Generally available 11 August 2026 · Checked in my tenant 14 September 2026*
 
-**Authoritative Sites** lets an admin designate sites as official and trusted. Microsoft scopes the effect to **Copilot Search** experiences, which *"recognize its content as trusted"* — so read this as improving what Search surfaces rather than as a global reranking of every Copilot answer.
+**Authoritative Sites** lets an admin designate sites as official and trusted. Microsoft scopes the effect to **Copilot Search** experiences, which *"recognize its content as trusted"* — so read this as improving what Search surfaces rather than as a global reranking of every Copilot answer. Microsoft's own sources disagree here: the Learn article describes Copilot Search, while [roadmap 561323](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561323) says authoritative content is prioritised across Copilot Chat *and* Copilot Search. I am following Learn, and treating the wider Chat behaviour as **unconfirmed** rather than ruled out.
 
-**Where it actually lives.** I went looking for this in the SharePoint admin centre on 14 September 2026 and
-could not find it. That turns out to be the story, not a failure of searching. Microsoft's own page, updated
-26 August 2026, says it plainly:
+**Where it actually lives.** I went looking for this in the SharePoint admin centre and could not find it.
+That turns out to be the story. Microsoft's own page, updated 26 August 2026, says it plainly:
 
 > *"In the current release, configure authoritative sites through PowerShell and CSOM APIs."*
 
-So a capability announced as something an administrator does is, today, a cmdlet:
-
-```powershell
-Set-SPOSite -Identity "https://<tenant>.sharepoint.com/sites/<siteName>" -IsAuthoritative $true
-```
-
-That gap is worth naming, because "admins can mark sites as authoritative" reads like a toggle sitting in a
-settings page, and a fair number of people will go hunting for it the way I did.
+So a capability announced as something an administrator does is, today, a cmdlet. Worth naming, because
+"admins can mark sites as authoritative" reads like a toggle sitting in a settings page, and a fair number
+of people will go hunting for it the way I did.
 
 **The licensing is better news than you would expect.** This sits under SharePoint Advanced Management, which
-usually implies a paid add-on. It does not here. Microsoft's prerequisites page says the capability is
-unlocked when at least one person in the tenant has a Copilot licence, and that person does not have to be
-the administrator. There is a base subscription requirement sitting under that — Office 365 E3/E5/A5,
-Microsoft 365 E1/E3/E5/A5, or the GCC, GCC High and DoD equivalents — but in practice almost every tenant
-running Copilot already meets it.
+usually implies a paid add-on. It does not here. Microsoft's prerequisites page says one Copilot licence
+anywhere in the tenant unlocks it, and that person does not have to be the administrator. There is a base
+subscription requirement underneath — Office 365 E3/E5/A5, Microsoft 365 E1/E3/E5/A5, or the GCC, GCC High
+and DoD equivalents — but most tenants already running Copilot meet it. That list is the *licence* eligibility Microsoft documents, not a statement of where the feature runs: the roadmap entry lists Worldwide (Standard Multi-Tenant) only, so confirm availability separately if you are on a government or sovereign cloud.
 
-**How to actually do it.** I have not run this in my own tenant, so treat what follows as the documented path
-rather than something I have watched work. The steps come from Microsoft's page. I have written them out in
-full because the documentation hands you the one line in the middle and assumes you can supply the rest.
-
-Start by installing the module and signing in. The admin URL is your tenant name with `-admin` on the end,
-which is the same address you see in the browser when you open the SharePoint admin centre.
+**The short version of how.** I have not run this in my own tenant, so treat it as the documented path
+rather than something I have watched work.
 
 ```powershell
 Install-Module -Name Microsoft.Online.SharePoint.PowerShell -Scope CurrentUser -Force
-Import-Module -Name Microsoft.Online.SharePoint.PowerShell
-
 Connect-SPOService -Url "https://<tenant>-admin.sharepoint.com"
-```
 
-Then find the site you want. Worth listing them rather than typing a URL from memory, because the cmdlet needs
-the exact address and will not guess.
-
-```powershell
-Get-SPOSite -Limit 25 | Select-Object Title, Url
-```
-
-Now check where the site stands before you change anything, set it, then check again. Doing it in that order
-means you get to see the change rather than assume it.
-
-```powershell
 $site = "https://<tenant>.sharepoint.com/sites/<siteName>"
-
-Get-SPOSite -Identity $site | Select-Object Url, IsAuthoritative   # expect False
 Set-SPOSite -Identity $site -IsAuthoritative $true
 Get-SPOSite -Identity $site | Select-Object Url, IsAuthoritative   # expect True
 ```
 
-And to undo it:
-
-```powershell
-Set-SPOSite -Identity $site -IsAuthoritative $false
-```
-
-One thing to watch for. If PowerShell says it cannot find a parameter named `IsAuthoritative`, that is far
-more likely to be an old copy of the module than a problem with your tenant. Run `Update-Module
-Microsoft.Online.SharePoint.PowerShell` and try again.
-
-If you are doing this for more than a handful of sites, Microsoft documents a heavier CSOM route with bulk
-commands for adding and removing several at once, plus a `GetAuthoritativeResources()` call that lists
-everything currently marked. It needs an app registration to set up, so it only earns its keep at volume.
+Set it back with `-IsAuthoritative $false`. If PowerShell cannot find the parameter, that is almost always an
+old copy of the module rather than a problem with your tenant — run `Update-Module
+Microsoft.Online.SharePoint.PowerShell`. For more than a handful of sites, Microsoft documents a heavier CSOM
+route with bulk commands, but it needs an app registration, so it only earns its keep at volume.
 
 The rest of the shape, before you plan around it:
 
@@ -1766,8 +1767,11 @@ That 72-hour wait is the one to plan around. It rules this out as a fix you appl
 it means testing it is a two-sitting job rather than a two-minute one.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> Most tenants contain several versions of the same policy, and the newest one is not always the one Copilot finds. Within Copilot Search, this is the cheapest available fix for the most common complaint about Copilot answers — that it quoted something out of date. Note the boundary: Microsoft scopes the label and the ranking effect to Copilot Search, so this does not follow the same content into every other Copilot surface.</p>
+<p><strong>Why this matters:</strong> Most tenants contain several versions of the same policy, and the newest one is not always the one Copilot finds. Within Copilot Search, this is one low-cost mitigation for the most common complaint about Copilot answers — that it quoted something out of date. It raises trusted content; it does not guarantee a correct answer. Note the boundary: Microsoft scopes the label and the ranking effect to Copilot Search, so this does not follow the same content into every other Copilot surface.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-september-2026/created-s61-sharepoint-authoritative-sites.webp" alt="My own diagram titled Admins can mark SharePoint sites as authoritative, for SharePoint and Microsoft 365 Copilot, admin, generally available 11 August 2026, marked illustrative rather than a screenshot. A panel headed The gap worth naming reads: it reads like a toggle sitting in a settings page, and Microsoft's own page says in the current release, configure authoritative sites through PowerShell and CSOM APIs. Three panels sit below. Licensing, better than you would expect: sits under SharePoint Advanced Management but needs no paid add-on, unlocked when one person in the tenant holds a Copilot licence, and it need not be the administrator. The 72-hour wait: up to 72 hours before it shows up, not a fix you apply the morning of a launch, and testing it is a two-sitting job. The rest of the shape: 100 sites per tenant, whole sites only and never personal sites or OneDrive, and users see a From your organization label on results. A footnote headed Read the scope carefully reads: Microsoft scopes the effect to Copilot Search, so read this as improving what Search surfaces rather than as a global reranking of every Copilot answer." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the whole shape of this one &mdash; not a screenshot. The 72-hour wait is the part to plan around.</em></p>
 
 📖 [AI at Work Roadmap 561323](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561323) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [SharePoint authoritative sites in Copilot Search](https://learn.microsoft.com/en-us/sharepoint/sharepoint-authoritative-sites) · [Prerequisites for SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites)
 
@@ -1870,7 +1874,7 @@ The enforcement documentation confirms it from the other direction, by listing w
 
 *For: Admins · Available now*
 
-Before you can control anything you have to find it. Power CAT documents that the **`isCLIAgent`** property identifies agents using the GitHub Copilot harness, and that you can query it tenant-wide through the Power Platform Inventory API against the `microsoft.copilotstudio/agents` resource type, returning each agent with its environment and owner.
+Before you can control anything you have to find it. The quickest route is now documented on Learn: the Power Platform admin center has a **Harness** column in the agent inventory (**Manage** > **Copilot Studio**), and filtering it to **GitHub Copilot** gives you the list. The column reads GitHub Copilot, Standard or Copilot Chat, and Learn notes it is a user-interface column only. For the programmatic route, Power CAT documents that the **`isCLIAgent`** property identifies agents using the GitHub Copilot harness, and that you can query it tenant-wide through the Power Platform Inventory API against the `microsoft.copilotstudio/agents` resource type, returning each agent with its environment and owner.
 
 For a small estate, the inventory view in the Power Platform admin center is enough. At scale, Power CAT points at Azure Resource Graph or the Inventory API so the review is repeatable.
 
@@ -1879,8 +1883,9 @@ For a small estate, the inventory view in the Power Platform admin center is eno
 </blockquote>
 
 <p><img src="/images/blog/copilot-september-2026/created-s33-iscliagent-property.webp" alt="Diagram of the isCLIAgent property and the two ways to find harness agents: the admin center inventory view for a small estate, or the Inventory API and Azure Resource Graph at scale." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of how to find harness agents &mdash; not a screenshot. This is a property and a query, so there is no single screen that shows it.</em></p>
-📖 [Adopting the GitHub Copilot Harness: Cost Control and Governance](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/)
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of how to find harness agents &mdash; not a screenshot.</em></p>
+
+📖 [Manage costs for agents powered by the GitHub Copilot harness](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness) · [Adopting the GitHub Copilot Harness: Cost Control and Governance](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/)
 
 ### 67. Four enforcement rules per environment
 
@@ -1903,6 +1908,7 @@ The first row is not an enforcement rule — the allocation is a separate `alloc
 
 <p><img src="/images/blog/copilot-september-2026/official-34-environment-capacity.webp" alt="Official Microsoft image of a pane titled Manage capacity for a sandbox environment. An Allocate capacity section explains that you select how much capacity to allocate from what is available in the tenant, and shows a Copilot Credits card reading 31.85 consumed and 0 allocated, with a box for entering an allocation and a note showing how much remains available to be allocated. A Capacity overages section asks how to manage things when capacity reaches zero in this environment, with unticked checkboxes for drawing from the available capacity in the tenant and for billing to a pay-as-you-go billing plan, the latter greyed out with no eligible billing plans. An Overage notification section has an unticked checkbox to send a notification when nearing capacity usage, with a percentage picker and a note that the percent value can only be between 50 and 100 per cent. Red callouts added by me read: Allocation, not a rule; TenantPool; PayGo; and Alert." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Power CAT&rsquo;s &lsquo;Adopting the GitHub Copilot Harness: Cost Control and Governance&rsquo;.</em></p>
+
 📖 [Adopting the GitHub Copilot Harness: Cost Control and Governance](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/)
 
 ### 68. The credit allocation setting is broader than it looks
@@ -1923,6 +1929,7 @@ They flag a second drift risk too: new environments can appear with tenant-pool 
 
 <p><img src="/images/blog/copilot-september-2026/created-s35-credit-allocation-scope.webp" alt="Diagram contrasting what the credit allocation setting appears to do, scope an administrator to their own environments, with what it actually grants, allocation control across every environment in the tenant." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the scope trap &mdash; not a screenshot. The gap is between what the setting reads like and what it grants, and a picture of the setting cannot show that.</em></p>
+
 📖 [Adopting the GitHub Copilot Harness: Cost Control and Governance](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/)
 
 ### 69. Limits can be set on a single agent
@@ -1937,6 +1944,7 @@ Environment-level control is not always tight enough — one experimental agent 
 
 <p><img src="/images/blog/copilot-september-2026/official-36-single-agent-limits.webp" alt="Official Microsoft image of a pane for a single agent called Zava Studios Makers Assistant. The subtitle reads adjust usage limits and notification threshold for this agent running in environment LB dash Dev in a UK sandbox, with a green pay-as-you-go pill. A Capacity limit section says set the message limit for your agent and shows a Copilot Credits card reading zero Copilot Credits currently used, an empty progress bar and a value of 25000. A Notification and throttling thresholds section has a Stop Usage checkbox, unticked and greyed out, reading turn off agent when consumption reaches one hundred per cent, and an Overage notification checkbox, ticked, reading send notification when nearing capacity usage, set to eighty per cent, with a note that the percent value can only be between 50 and 100 per cent. Red callouts added by me read: Says 'message limit'; but the field is credits; and The per-agent hard stop." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Power CAT&rsquo;s &lsquo;Adopting the GitHub Copilot Harness: Cost Control and Governance&rsquo;.</em></p>
+
 📖 [Adopting the GitHub Copilot Harness: Cost Control and Governance](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/)
 
 ### 70. A tenant-wide view of where credits are going
@@ -1953,6 +1961,7 @@ Be clear about what this is before you get excited: the reporting layer is a **c
 
 <p><img src="/images/blog/copilot-september-2026/created-s37-credit-consumption-report.webp" alt="Diagram of the credit consumption reporting flow: pull through the Power Platform API, land the data in Dataverse, then report by agent and environment." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the flow Power CAT describes &mdash; not a screenshot. I have not built this report, so I am not showing you a different product&rsquo;s dashboard in its place.</em></p>
+
 📖 [Where are your Copilot Credits going?](https://microsoft.github.io/mcscatblog/posts/copilot-credit-consumption-api/)
 
 ### 71. New designers for agents and workflows
@@ -1967,7 +1976,7 @@ One flagged as coming rather than shipped: Microsoft says that *"soon, natural l
 <p><strong>Why this matters:</strong> Evaluations on the canvas is the quiet one. Being able to run an eval where you built the workflow is what makes testing a normal part of building rather than a separate exercise nobody gets round to.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/official-38-agent-designer.webp" alt="Official Microsoft image of the Copilot Studio agent designer for an agent called Northwind Investment Advisor, with Build, Preview, Evaluate and Monitor tabs and a Publish button. The left pane holds a long Instructions block describing a financial advisor role, an investment philosophy, a customer data source reached through an MCP server for Salesforce, email summaries and record updates. The right pane lists Model set to Claude Sonnet 4.6; Microsoft IQ, described as bring in work context, business data and app signals to improve answers and actions, holding a Work IQ chip; Skills, define behaviors through structured instructions; Tools, connect the agent to external systems and actions, holding chips for Create record, Update record, Send Customer Summary, MCP server for Salesforce and Morningstar MCP Server; Knowledge, holding an Investment Philosophy chip; Connected agents, collaborate across agents to complete work; and Memory, marked Preview, described as remember interactions, workflows and context for improved results, with its toggle switched on. Red callouts added by me read: Build, preview, evaluate, monitor; Work IQ, in Copilot Studio; Tools right where you build; Build, preview, evaluate, monitor; Work IQ, in Copilot Studio; and Tools where you build." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/official-38-agent-designer.webp" alt="Official Microsoft image of the Copilot Studio agent designer for an agent called Northwind Investment Advisor, with Build, Preview, Evaluate and Monitor tabs and a Publish button. The left pane holds a long Instructions block describing a financial advisor role, an investment philosophy, a customer data source reached through an MCP server for Salesforce, email summaries and record updates. The right pane lists Model set to Claude Sonnet 4.6; Microsoft IQ, described as bring in work context, business data and app signals to improve answers and actions, holding a Work IQ chip; Skills, define behaviors through structured instructions; Tools, connect the agent to external systems and actions, holding chips for Create record, Update record, Send Customer Summary, MCP server for Salesforce and Morningstar MCP Server; Knowledge, holding an Investment Philosophy chip; Connected agents, collaborate across agents to complete work; and Memory, marked Preview, described as remember interactions, workflows and context for improved results, with its toggle switched on. Red callouts added by me read: Build, preview, evaluate, monitor; Work IQ, in Copilot Studio; and Tools where you build." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s Copilot Studio announcement.</em></p>
 
 📖 [Introducing a new harness for Copilot Studio](https://techcommunity.microsoft.com/blog/copilot-studio-blog/more-powerful-agents-and-workflows-for-autonomous-business-processes-introducing/4542969)
@@ -1986,8 +1995,9 @@ This is also a different thing from the planned in-product **Agent Readiness** i
 <p><strong>Why this matters:</strong> Agent review has mostly meant one person reading the instructions and hoping. A structured pass that maps what the agent can reach is a real step up — as long as nobody reads a clean report as a sign-off. It tells you the configuration looks sane, not that the agent behaves.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/official-39-agent-review-tool.webp" alt="Official Microsoft image of the Agent Review Tool reviewing an agent called ZAVA Visual Merchandiser, marked Live. Tabs read Review, Agent map and Cost and efficiency, with buttons to Export PDF and Re-run review. The findings list is grouped worst first, and the selected error reads Skill display-audit references an unavailable tool. Its detail pane shows a parsed fact listing tools that are referenced but not configured, an impact note saying a skill that uses a tool the agent does not have will fail at runtime, a recommendation to add the tool or remove the reference, and an official reference linking to a Microsoft Learn page called Build an agent. A review summary on the right shows a grounded configuration score of 63 per cent, 39 of 54 checks passed, a breakdown of errors, warnings and information findings, and details including the model used, the number of rules evaluated, the duration of the review and the number of Microsoft Learn references cited. Red callouts added by me read: Review, map, and cost; A config score, not answer quality; Review, map, and cost; and A config score, not answer quality. Red boxes outline the matching parts of the screen." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/official-39-agent-review-tool.webp" alt="Official Microsoft image of the Agent Review Tool reviewing an agent called ZAVA Visual Merchandiser, marked Live. Tabs read Review, Agent map and Cost and efficiency, with buttons to Export PDF and Re-run review. The findings list is grouped worst first, and the selected error reads Skill display-audit references an unavailable tool. Its detail pane shows a parsed fact listing tools that are referenced but not configured, an impact note saying a skill that uses a tool the agent does not have will fail at runtime, a recommendation to add the tool or remove the reference, and an official reference linking to a Microsoft Learn page called Build an agent. A review summary on the right shows a grounded configuration score of 63 per cent, 39 of 54 checks passed, a breakdown of errors, warnings and information findings, and details including the model used, the number of rules evaluated, the duration of the review and the number of Microsoft Learn references cited. Red callouts added by me read: Review, map, and cost; and A config score, not answer quality. Red boxes outline the matching parts of the screen." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Power CAT&rsquo;s &lsquo;Review before release: using Agent Review Tool&rsquo;.</em></p>
+
 📖 [Review before release: using Agent Review Tool](https://microsoft.github.io/mcscatblog/posts/agent-review-tool/)
 
 ### 73. SharePoint metadata filtering, for GitHub Copilot harness agents
@@ -2006,6 +2016,7 @@ One caution if you go deep: the article warns that the built-in metadata and kno
 
 <p><img src="/images/blog/copilot-september-2026/created-s40-sharepoint-metadata-harness.webp" alt="Diagram contrasting the Standard harness, which had no configurable path from user intent to SharePoint metadata, with the GitHub Copilot harness, which can bridge that gap." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the harness difference &mdash; not a screenshot. The point is what the Standard harness cannot do, and an absence does not photograph.</em></p>
+
 📖 [SharePoint metadata filtering in Copilot Studio](https://microsoft.github.io/mcscatblog/posts/sharepoint-metadata-filtering/)
 
 ### 74. Work IQ — how it is used, licensed and controlled
@@ -2020,6 +2031,7 @@ Power CAT also published a piece on Work IQ, the layer that gives agents access 
 
 <p><img src="/images/blog/copilot-september-2026/created-s41-work-iq-used-licensed-controlled.webp" alt="A diagram of the Power CAT piece on Work IQ, showing the three things it covers together &mdash; capability, licensing and control &mdash; and the organisational context Work IQ reaches." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of what the piece covers &mdash; not a screenshot. It summarises an article rather than a product screen.</em></p>
+
 📖 [Work IQ: how it's used, licensed and controlled](https://microsoft.github.io/mcscatblog/posts/work-iq-context-layer-you-already-have/)
 
 ---
@@ -2028,7 +2040,7 @@ Power CAT also published a piece on Work IQ, the layer that gives agents access 
 
 ### 75. Dataverse as a native knowledge source
 
-*For: Copilot Studio makers · Roadmap: preview August 2026, GA September 2026 · Status 14 Sep 2026: In development*
+*For: Copilot Studio makers · Roadmap: preview August 2026, GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans to make Dataverse a first-class knowledge source, so agents could be grounded directly in Dataverse tables rather than through a connector or a workaround.
 
@@ -2038,11 +2050,12 @@ Microsoft plans to make Dataverse a first-class knowledge source, so agents coul
 
 <p><img src="/images/blog/copilot-september-2026/created-s42-dataverse-knowledge-source.webp" alt="A diagram of roadmap entry 568929, showing a status of In development as at 14 September 2026, Microsoft's claim that agents could be grounded directly in Dataverse tables, and the target dates it publishes, neither of which has been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 568929](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=568929)
 
 ### 76. Azure SQL as a knowledge source
 
-*For: Copilot Studio makers · Roadmap: preview August 2026, GA September 2026 · Status 14 Sep 2026: In development*
+*For: Copilot Studio makers · Roadmap: preview August 2026, GA September 2026 · Status 14 September 2026: In development*
 
 The same idea pointed at Azure SQL. Worth a note on the name: Microsoft's roadmap entry is titled *"SQL server Support in Microsoft Copilot Studio"*, but the description under it refers to the **Azure SQL Knowledge Source** throughout and talks about data *"stored in Azure SQL"*. I have written it as Azure SQL because that is what the description says. If you are hoping this covers on-premises SQL Server, the roadmap text does not support that reading.
 
@@ -2052,11 +2065,12 @@ The same idea pointed at Azure SQL. Worth a note on the name: Microsoft's roadma
 
 <p><img src="/images/blog/copilot-september-2026/created-s43-azure-sql-knowledge-source.webp" alt="A diagram of roadmap entry 568930, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; grounding agents in data stored in Azure SQL &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 568930](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=568930)
 
 ### 77. SharePoint lists as a knowledge source
 
-*For: Copilot Studio makers · Roadmap: preview July 2026, GA September 2026 · Status 14 Sep 2026: In development*
+*For: Copilot Studio makers · Roadmap: preview July 2026, GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans to let agents ground in structured SharePoint list data, as distinct from documents in libraries.
 
@@ -2066,11 +2080,12 @@ Microsoft plans to let agents ground in structured SharePoint list data, as dist
 
 <p><img src="/images/blog/copilot-september-2026/created-s44-sharepoint-lists-knowledge-source.webp" alt="A diagram of roadmap entry 566859, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; grounding agents in structured SharePoint list data rather than documents in a library &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 566859](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566859)
 
 ### 78. Invoking agents as workflow steps
 
-*For: Copilot Studio makers · Roadmap: preview April 2026, GA September 2026 · Status 14 Sep 2026: In development*
+*For: Copilot Studio makers · Roadmap: preview April 2026, GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans an **agent node** that would let a workflow call an agent as a single step — reasoning over data, calling tools and returning a response inline.
 
@@ -2082,11 +2097,12 @@ Small honesty note: this item appears twice on the roadmap under two different I
 
 <p><img src="/images/blog/copilot-september-2026/created-s45-agent-node-workflow-step.webp" alt="A diagram of roadmap entry 562222, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; an agent node that lets a workflow call an agent as a single step &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 562222](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=562222)
 
 ### 79. Requiring human approval for tool calls
 
-*For: Governance · Roadmap: GA September 2026 · Status 14 Sep 2026: In development*
+*For: Governance · Roadmap: GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans a per-tool, per-agent toggle that would pause the agent and raise an approval request before a tool call goes ahead.
 
@@ -2096,11 +2112,12 @@ Microsoft plans a per-tool, per-agent toggle that would pause the agent and rais
 
 <p><img src="/images/blog/copilot-september-2026/created-s46-human-approval-tool-calls.webp" alt="A diagram of roadmap entry 570434, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; a per-tool, per-agent toggle that pauses an agent for approval before a tool call &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 570434](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=570434)
 
 ### 80. Detecting credential oversharing
 
-*For: Admins · Roadmap: preview July 2026, GA September 2026 · Status 14 Sep 2026: In development*
+*For: Admins · Roadmap: preview July 2026, GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans to block the sharing of agents and flows that rely on unsafe identities, rather than leaving the problem to be discovered afterwards.
 
@@ -2110,11 +2127,12 @@ Microsoft plans to block the sharing of agents and flows that rely on unsafe ide
 
 <p><img src="/images/blog/copilot-september-2026/created-s47-credential-oversharing.webp" alt="A diagram of roadmap entry 566873, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; blocking the sharing of agents and flows that rely on unsafe identities &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 566873](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566873)
 
 ### 81. Blocking maker-provided credentials
 
-*For: Admins · Roadmap: GA August 2026 · Status 14 Sep 2026: In development*
+*For: Admins · Roadmap: GA August 2026 · Status 14 September 2026: In development*
 
 Microsoft plans to stop AI agents authenticating with credentials supplied by the maker who built them.
 
@@ -2124,11 +2142,12 @@ Microsoft plans to stop AI agents authenticating with credentials supplied by th
 
 <p><img src="/images/blog/copilot-september-2026/created-s48-maker-provided-credentials.webp" alt="A diagram of roadmap entry 566997, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; stopping agents authenticating with credentials supplied by their maker &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. This is the one whose published target has already passed while the entry still reads In development.</em></p>
+
 📖 [AI at Work Roadmap 566997](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566997)
 
 ### 82. Agent Readiness
 
-*For: Copilot Studio makers · Roadmap: GA September 2026 · Status 14 Sep 2026: In development*
+*For: Copilot Studio makers · Roadmap: GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans an always-visible **Review** health indicator in the build experience, surfacing policy restrictions, missing evaluations, blocked capabilities and other publish risks as you work. The roadmap entry says blocked capabilities would be greyed out up front with a reason, so a maker does not configure something that was never going to work.
 
@@ -2138,11 +2157,12 @@ Microsoft plans an always-visible **Review** health indicator in the build exper
 
 <p><img src="/images/blog/copilot-september-2026/created-s49-agent-readiness.webp" alt="A diagram of roadmap entry 568762, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; an always-visible Review health indicator in the build experience &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 568762](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=568762)
 
 ### 83. Better explanations in agent evaluations
 
-*For: Copilot Studio makers · Roadmap: GA September 2026 · Status 14 Sep 2026: In development*
+*For: Copilot Studio makers · Roadmap: GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans richer explanations in evaluation results, including the agent's reasoning traces.
 
@@ -2152,11 +2172,12 @@ Microsoft plans richer explanations in evaluation results, including the agent's
 
 <p><img src="/images/blog/copilot-september-2026/created-s50-agent-evaluation-explanations.webp" alt="A diagram of roadmap entry 569607, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; richer evaluation explanations including the agent's reasoning traces &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 569607](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=569607)
 
 ### 84. Setting up connectors by conversation
 
-*For: Copilot Studio makers · Roadmap: GA September 2026 · Status 14 Sep 2026: In development*
+*For: Copilot Studio makers · Roadmap: GA September 2026 · Status 14 September 2026: In development*
 
 Microsoft plans to let you sign in to and configure a connector inside the chat, instead of being sent out to a full settings experience.
 
@@ -2166,6 +2187,7 @@ Microsoft plans to let you sign in to and configure a connector inside the chat,
 
 <p><img src="/images/blog/copilot-september-2026/created-s51-connectors-by-conversation.webp" alt="A diagram of roadmap entry 569930, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; signing in to and configuring a connector inside the chat &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 569930](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=569930)
 
 ---
@@ -2191,6 +2213,7 @@ In its place, this content moves onto the AI at Work Roadmap and is published co
 
 <p><img src="/images/blog/copilot-september-2026/created-s52-no-release-wave-2.webp" alt="A diagram quoting Microsoft's own FAQ, asking whether there will be a September 2026 release wave 2 announcement or release wave 2 release plan, answered with a single word, No, set beside what was retired and what replaces it." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the FAQ answer &mdash; not a screenshot. The change here is an absence, and an absence cannot be photographed.</em></p>
+
 📖 [Release Planner migration notes](https://aka.ms/ReleasePlannerMigrationBlog)
 
 ### 86. Release Planner retires by 15 November 2026
@@ -2205,6 +2228,7 @@ Microsoft's timeline is specific: by 15 November 2026, *"the transition complete
 
 <p><img src="/images/blog/copilot-september-2026/created-s53-release-planner-retirement.webp" alt="A timeline of the Release Planner retirement, from Microsoft's August 2026 announcement, through September 2026 when release plans stop being published, to Release Planner retiring by 15 November 2026." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own timeline of the retirement &mdash; not a screenshot. A stated expiry date is a fact about the future, which no screen can show.</em></p>
+
 📖 [Release Planner migration notes](https://aka.ms/ReleasePlannerMigrationBlog)
 
 ### 87. Saved views in My Release Plans will not carry over
@@ -2219,6 +2243,7 @@ Personalised **My Release Plans** saved views do not transfer to the new experie
 
 <p><img src="/images/blog/copilot-september-2026/created-s54-saved-views-not-carried.webp" alt="A diagram contrasting what transfers to the new experience, the roadmap content itself, against what does not, personalised My Release Plans saved views, with a note to capture any saved view still doing real work." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of what survives the migration &mdash; not a screenshot. What is lost is precisely what cannot be shown.</em></p>
+
 📖 [Release Planner migration notes](https://aka.ms/ReleasePlannerMigrationBlog)
 
 ### 88. Where the content is going, and when
@@ -2233,11 +2258,12 @@ Content with a preview or general availability date of **1 June 2026 or later** 
 
 <p><img src="/images/blog/copilot-september-2026/created-s55-content-migration-window.webp" alt="A timeline of the Release Planner migration, from September 2026 when Dynamics 365, Power Platform and Dataverse content joins the AI at Work Roadmap, through the September to November window in which content dated 1 June 2026 or later transitions, to Release Planner retiring by 15 November 2026." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own timeline of the migration &mdash; not a screenshot. The dates come from Microsoft's Release Planner migration notes.</em></p>
+
 📖 [Release Planner migration notes](https://aka.ms/ReleasePlannerMigrationBlog) · [AI at Work Roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap)
 
 ### 89. Dataverse data in Microsoft 365 Copilot
 
-*For: End users · Roadmap: preview June 2026, GA September 2026 · Status 14 Sep 2026: In development*
+*For: End users · Roadmap: preview June 2026, GA September 2026 · Status 14 September 2026: In development*
 
 Searching and querying Dataverse business data from inside Microsoft 365 Copilot. As with the Copilot Studio roadmap items above, this carries a September date and I have not tested it.
 
@@ -2247,6 +2273,7 @@ Searching and querying Dataverse business data from inside Microsoft 365 Copilot
 
 <p><img src="/images/blog/copilot-september-2026/created-s56-dataverse-in-m365-copilot.webp" alt="A diagram of roadmap entry 560539, showing a status of In development as at 14 September 2026, a summary of what Microsoft says it will do &mdash; searching and querying Dataverse business data from inside Microsoft 365 Copilot &mdash; and the target dates it publishes, none of which have been met." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the roadmap entry &mdash; not a screenshot. The feature is still in development, so there is no product screen to photograph, and the dates shown are targets Microsoft published rather than milestones it has met.</em></p>
+
 📖 [AI at Work Roadmap 560539](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560539)
 
 ---
@@ -2259,7 +2286,7 @@ Searching and querying Dataverse business data from inside Microsoft 365 Copilot
 
 September's headline, and the reason is as much about how it happened as what it does.
 
-Domain exclusion lets an administrator name external domains that Microsoft Copilot and Copilot Chat should not draw on when grounding answers in public web content. It filters the web-page results used for grounding — which, as the limits below explain, is narrower than a blanket block on the domain. It was announced on **28 July**, and then, a week later on **4 August**, Microsoft published an update pulling it back. Our August issue covered it in that state — announced, then withdrawn.
+Domain exclusion lets an administrator name external domains that Microsoft Copilot, Copilot Chat and Cowork should not draw on when grounding answers in public web content. It filters the web-page results used for grounding — which, as the limits below explain, is narrower than a blanket block on the domain. It was announced on **28 July**, and then, a week later on **4 August**, Microsoft published an update pulling it back. Our August issue covered it in that state — announced, then withdrawn.
 
 On **9 September** Microsoft published a second update: *"Domain Exclusion for Microsoft Copilot has been rolled out again and is now available."* The Learn documentation went live the following day.
 
@@ -2270,7 +2297,7 @@ What you actually get:
 | **Limit** | Up to **1,000 domains** |
 | **Subdomain depth** | Up to **two levels** of subdomains |
 | **Scope** | **Web page results only** — see below |
-| **Applies to** | **Microsoft Copilot and Copilot Chat** — Learn does not list Cowork |
+| **Applies to** | **Microsoft Copilot, Copilot Chat and Cowork** — Learn confirms Cowork uses your organisation's domain exclusion policies |
 | **On by default?** | **No** — it is opt-in and requires configuration |
 | **How** | A PowerShell script, `ConfigureTenantDomainExclusions.ps1` |
 | **Who** | **Search Administrator** or **Global Administrator** |
@@ -2287,7 +2314,7 @@ Three things the Learn page says that the announcement does not, and all three c
 Worth being clear about one more thing: Microsoft documents only the PowerShell path. As of 14 September 2026, Learn describes the script as the way to manage the configuration and does not document an admin-center experience. That is what the documentation shows — not a statement from Microsoft that no portal experience exists or is planned. Either way, what you can act on today is a script you download, run and re-run. The configuration itself lives on the tenant; CSV is the format the script imports from and exports to. Keep a reviewed copy of that CSV in source control and treat it as your administrative record of what is excluded.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> Every organisation that has been asked "can we stop Copilot citing our competitor, or that forum, or the site with our leaked pricing on it?" has had no good answer. This is the closest thing to one, and 1,000 domains is a real allowance rather than a token one.</p>
+<p><strong>Why this matters:</strong> Every organisation that has been asked "can we stop Copilot grounding answers in that scraper site with our old product data on it, or the forum thread full of out-of-date advice?" has had no good answer. This is the closest thing to one, and 1,000 domains is a real allowance rather than a token one.</p>
 <p>But read the web-pages-only limitation before you promise anyone a clean block. If the domain you are excluding is a news publisher, it can still surface through the news vertical — so this reduces exposure rather than guaranteeing absence, and that is the version to take into a compliance conversation.</p>
 <p>The delivery deserves a comment too. Because the configuration is a script plus a CSV, and because updating replaces rather than merges, it is only as good as whoever maintains it — and Microsoft documents no admin-center view where a colleague can see what was set. If you adopt this, put the CSV in source control and treat it as a reviewed artefact, not something that lives in a folder on one administrator's laptop.</p>
 </blockquote>
@@ -2299,34 +2326,50 @@ Worth being clear about one more thing: Microsoft documents only the PowerShell 
 
 ### 91. Grok models from SpaceXAI, off by default
 
-*For: Admins and Frontier Program tenants · Announced 12 September 2026*
+*For: Admins and Frontier Program tenants · Announced 12 September 2026 · Available to eligible tenants 18 September 2026*
 
 Microsoft added **Grok models from SpaceXAI** to Copilot's model choice. The administrative detail matters more than the model:
 
-- SpaceXAI has been added to Microsoft's Online Services Subprocessor List.
+- SpaceXAI was added to Microsoft's Online Services Subprocessor List on **10 September 2026**, and became available to eligible tenants on **18 September 2026**.
 - Access is managed through a dedicated administrative setting that is disabled by default.
-- It is rolling out through the **Microsoft Frontier Program**, in **Word, Excel and PowerPoint**.
-- Grok is **not available** to Frontier customers in the **EU, EFTA or the UK** during the preview.
+- It is rolling out through the **Microsoft Frontier Program**, in **Word, Excel and PowerPoint**, through the model selector.
+- It is **not available** to Frontier customers in the **EU, EFTA or the UK**, on **government clouds** (GCC, GCC High or DoD), or on **sovereign clouds**.
 
 Microsoft describes this as a focused release to gather feedback before deciding whether to broaden availability.
 
-**Read the contractual terms before you read the feature.** This is the part that did not make the announcement blog, and it is the part your legal and procurement people will care about. Microsoft's own documentation for connecting to SpaceXAI is unusually direct: the data *"is processed outside all Microsoft managed environments and audit controls, therefore Microsoft's customer agreements, including the Product Terms and Data Processing Addendum don't apply."* It continues that *"Microsoft's data residency commitments, audit and compliance requirements, service level agreements, and Customer Copyright Commitment don't apply to your use of SpaceXAI services."* What governs instead is the xAI Enterprise Terms of Service and the xAI Data Processing Addendum.
+**There are now two different ways Grok reaches a tenant, and they are not governed the same way.** This is the part worth slowing down for. The route decides whether Microsoft's contractual protections travel with the work, and the two are easy to confuse because the same model name sits on both.
 
-Turning this on is therefore not the same class of decision as switching models between Microsoft-hosted options. The admin-centre flow reflects that — it requires a Global Administrator to review the legal terms and tick *"I have read and agree to the Terms and Conditions"* before any user can be assigned access.
+What Microsoft Learn states about each route:
 
-Two details the announcement leaves out, but Learn states plainly. Users need a **Microsoft Copilot licence** assigned before they can use SpaceXAI at all. And access is granted at **provider level**, which Learn says is *"enforced across Microsoft Copilot and Copilot Studio experiences"* - so this is not a Word-and-Excel-only switch, even though that is where the Frontier rollout starts.
+| | **As a subprocessor** | **As an independent processor** |
+|---|---|---|
+| **Where** | Copilot in **Word, Excel, PowerPoint** | **Copilot Studio** |
+| **Product Terms and DPA** | **Apply** | **Do not apply** |
+| **Enterprise Data Protection** | **Covered** | Not stated on Learn |
+| **Customer Copyright Commitment** | **Applies** | **Does not apply** |
+| **Governed by** | Microsoft's customer agreements | **xAI Enterprise Terms of Service** and the **xAI Data Processing Addendum** |
+
+For the Word, Excel and PowerPoint rollout, Learn is explicit: *"The Microsoft Product Terms and Microsoft Data Protection Addendum (DPA) apply to use of SpaceXAI models through Microsoft's enterprise Online Services"*, that such use *"is also covered under our Enterprise Data Protection"*, and that the Customer Copyright Commitment *"applies to SpaceXAI models used within products covered by that commitment, including Microsoft Copilot in Word, Excel, and PowerPoint."* Microsoft adds that as a subprocessor, SpaceXAI *"operates with Microsoft oversight through contractual safeguards and appropriate technical and organizational measures."*
+
+The Copilot Studio route is the one those widely-shared carve-outs actually describe. There SpaceXAI acts as an independent processor, the data *"is processed outside all Microsoft managed environments and audit controls, therefore Microsoft's customer agreements, including the Product Terms and Data Processing Addendum don't apply"*, and the xAI Enterprise Terms of Service and xAI Data Processing Addendum govern instead.
+
+**Three exclusions still apply even on the subprocessor route**, and these are the ones to take into a compliance conversation. SpaceXAI maintains its own certifications rather than inheriting Microsoft's, so [SpaceXAI's trust page](https://trust.x.ai/) is where those live. The models are **not FedRAMP High authorized**. And they are **excluded from in-country processing commitments** where those would otherwise apply.
+
+Two practical details that live on Learn rather than in the announcement. Enabling this needs an **AI Administrator or Global Administrator**, and access is assigned at **provider level** — Learn says those assignments are *"enforced across Microsoft Copilot experiences."* And if you already switched SpaceXAI on through the older **AI providers for other large language models** setting, that is a *different* setting: Learn is clear that previous settings *"aren't automatically carried over to the new subprocessor setting."*
 
 <blockquote class="callout callout-warn">
-<p><strong>Worth being precise about:</strong> losing the Customer Copyright Commitment is the one most likely to be missed. If your organisation has leaned on that indemnity when approving AI-generated output, it does not extend to work produced through SpaceXAI models.</p>
+<p><strong>Worth being precise about:</strong> the line doing the rounds &mdash; that Microsoft&rsquo;s terms don&rsquo;t apply to Grok &mdash; describes the <strong>Copilot Studio</strong> route. For the Word, Excel and PowerPoint rollout, Microsoft says the opposite: the Product Terms, the DPA and the Customer Copyright Commitment all apply. If this is going into a risk register, write down which route you mean, because the answer changes completely.</p>
 </blockquote>
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> A new subprocessor is a compliance event, not a feature. Whoever maintains your data protection impact assessments and your subprocessor register should know about this even if you never turn it on — and "disabled by default" means nobody has to rush. But the data-residency, SLA and copyright carve-outs move this further than a subprocessor entry normally does: for once, the honest summary is that enabling SpaceXAI means that use is governed by xAI's terms rather than Microsoft's customer agreements.</p>
+<p><strong>Why this matters:</strong> A new subprocessor is a compliance event, not a feature. Whoever maintains your data protection impact assessments and your subprocessor register should know about this even if you never turn it on &mdash; and &ldquo;disabled by default&rdquo; means nobody has to rush.</p>
+<p>The useful version of this story isn&rsquo;t that Grok is risky. It is that one model now reaches your tenant by two contractual routes, and only one of them carries Microsoft&rsquo;s protections with it. That distinction is the whole decision. The FedRAMP High and in-country processing exclusions are real, and worth reading before anyone in a regulated environment says yes.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/created-s25-grok-spacexai-terms.webp" alt="Diagram of the SpaceXAI Grok models terms: what does not apply, what governs instead, and where the preview is unavailable." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the contractual position &mdash; not a screenshot. These are terms rather than interface, and they are the part of this release that matters most.</em></p>
-📖 [Expanding model choice in Copilot with Grok](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/expanding-model-choice-in-copilot-with-grok/4555749) · [Connect to SpaceXAI models on Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-models)
+<p><img src="/images/blog/copilot-september-2026/created-s25-grok-spacexai-terms.webp" alt="My own diagram titled Grok models, two routes, two sets of terms, for admins and Frontier Program tenants, announced 12 September 2026 and available 18 September 2026, marked illustrative rather than a screenshot. A What was added panel reads: Grok models from SpaceXAI, through the Microsoft Frontier Program, in Word, Excel and PowerPoint via the model selector, behind a dedicated admin setting that is disabled by default. Three panels sit below. In Word, Excel and PowerPoint: SpaceXAI acts as a subprocessor, Microsoft's Product Terms, DPA and Customer Copyright Commitment apply, and use is covered by Enterprise Data Protection. In Copilot Studio: a different route, SpaceXAI acts as an independent processor, the Product Terms and DPA don't apply, and the xAI Enterprise Terms of Service and xAI Data Processing Addendum govern instead. Not available: Frontier customers in the EU, EFTA and the UK, on government clouds GCC, GCC High and DoD, or on sovereign clouds. A footnote headed Exclusions that still apply reads: even as a subprocessor, SpaceXAI maintains its own certifications, the models are not FedRAMP High authorized, and they are excluded from in-country processing commitments, and enabling needs an AI Administrator or Global Administrator." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the two contractual routes &mdash; not a screenshot. These are terms rather than interface, and they are the part of this release that matters most.</em></p>
+
+📖 [Expanding model choice in Copilot with Grok](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/expanding-model-choice-in-copilot-with-grok/4555749) · [SpaceXAI as a subprocessor on Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/spacexai-subprocessor) · [Connect to SpaceXAI models — the Copilot Studio route](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-models)
 
 ### 92. Measuring Cowork in hours of work, not prompts
 
@@ -2360,7 +2403,7 @@ Microsoft says these views are coming to the Cowork report in the Microsoft 365 
 
 ### 93. Data export from the Copilot and Agent 365 dashboards
 
-*For: Admins and analysts · Copilot export: public preview · Agent 365: identifiable export in public preview · Rolling out September 2026*
+*For: Admins and analysts · Copilot export: public preview · Agent 365: identifiable export in public preview · Documented on Learn now; roadmap 500872 still shows October*
 
 These are **two separate exports**, and the difference matters if you are planning reporting.
 
@@ -2409,9 +2452,9 @@ Three caveats before anyone builds a chargeback model on it. It is *"for public 
 <p><img src="/images/blog/copilot-september-2026/official-28-usage-intensity.webp" alt="Official Microsoft image of a Usage intensity view. The key insight reads: the top 1 percent of users use 65 percent of all credits, averaging 25 percent less credits per user compared to others. A banded table lists all users at 450,046 credits, the top 1 percent at 250,046 credits or 65 percent, the top 2 to 5 percent at 91,046 credits or 12 percent, the top 6 to 25 percent at 75,046 credits or 9 percent, and the top 26 to 50 percent at 60,041 credits or 8 percent. Red callouts added by me read: Top 1% burn 65% of all credits; and That is 100 people. The figure&rsquo;s own numbers do not support its 65 percent headline: 250,046 of 450,046 credits is 55.6 percent, and the four bands add up to 476,179, which is more than the all-users total." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft Learn &mdash; and worth reading twice, for the reason below.</em></p>
 
-One last thing, and it is the best argument in this whole section for the caveats at the top of it. I added up the sample figure. **It does not add up.** The headline says the top 1 percent use **65 percent** of all credits, but the table underneath puts them at 250,046 of 450,046 credits, which is **55.6 percent**. The four bands shown total 476,179 credits &mdash; more than the all-users figure they are meant to be a subset of. The 2 to 5 percent band is labelled 12 percent and works out at 20 percent.
+One last thing, and it is the best argument in this whole section for the caveats at the top of it. I added up the sample figure, and the values do not reconcile. The headline says the top 1 percent use **65 percent** of all credits, but the table underneath puts them at 250,046 of 450,046 credits, which is **55.6 percent**. The four bands shown total 476,179 credits &mdash; more than the all-users figure they are meant to be a subset of. The 2 to 5 percent band is labelled 12 percent and works out at 20 percent.
 
-I am not going to pretend to know which number is wrong, and I am certainly not going to publish a corrected version of someone else&rsquo;s sample data. It is illustrative data in a public-preview feature, and that is probably all it is. But it lands rather well next to Microsoft&rsquo;s own sentence that this dashboard is *&ldquo;for reference only&rdquo;*. If the worked example on the documentation page does not reconcile, treat every number this dashboard gives you as a direction of travel and settle the invoice somewhere else.
+I am not going to pretend to know which number is wrong, and I am certainly not going to publish a corrected version of someone else&rsquo;s sample data. It is illustrative data in a public-preview feature, and that is probably all it is. It is also a practical illustration of Microsoft&rsquo;s own guidance that this dashboard is *&ldquo;for reference only&rdquo;*. Treat the figures as directional, and validate anything you are going to bill against the Microsoft 365 admin center or GitHub.com, which is where Microsoft points you for official charges.
 
 📖 [Consumption Dashboard](https://learn.microsoft.com/en-us/viva/insights/org-team-insights/ai-cost-dashboard) · [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 

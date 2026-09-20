@@ -172,6 +172,46 @@ for (const fname of blogFiles) {
       errors.push(`${relPath} Quick Jump anchors reference non-existent section numbers: ${missing.join(', ')}`)
     }
   }
+
+  // --- 6: markdown swallowed by an adjacent raw-HTML block ---
+  // Goldmark absorbs a markdown line that directly follows a raw HTML block when
+  // there is no blank line between them, so the link renders as literal text.
+  // Sept 2026: 36 reference links rendered dead this way (image captions sit
+  // immediately above the link line). The previous line must be genuine HTML —
+  // a bare `>` blockquote marker is NOT a match.
+  const swLines = text.split(/\r?\n/)
+  let swFence = false
+  for (let i = 1; i < swLines.length; i++) {
+    if (/^\s*```/.test(swLines[i])) { swFence = !swFence; continue }
+    if (swFence) continue
+    const prev = swLines[i - 1].trim()
+    if (!(prev.startsWith('<') && prev.endsWith('>'))) continue
+    const cur = swLines[i].trim()
+    if (!cur || cur.startsWith('<')) continue
+    if (cur.includes('](') || /^#{1,6}\s/.test(cur)) {
+      errors.push(`${relPath}:${i + 1} markdown directly after a raw HTML block — Goldmark renders it as literal text, not a link. Insert a blank line above it: "${cur.substring(0, 60)}"`)
+    }
+  }
+
+  // --- 7: heading hierarchy jumps ---
+  // A level skip (e.g. H2 -> H4) makes Hugo nest the lower heading inside the
+  // PREVIOUS list item in the table of contents, so a group label appears to
+  // belong to the section above it. Sept 2026: 6 app group labels did this.
+  const hdLines = text.split(/\r?\n/)
+  let hdFence = false
+  const heads = []
+  for (let i = 0; i < hdLines.length; i++) {
+    if (/^\s*```/.test(hdLines[i])) { hdFence = !hdFence; continue }
+    if (hdFence) continue
+    const m = hdLines[i].match(/^(#{2,6})\s+(.+)$/)
+    if (m) heads.push({ line: i + 1, depth: m[1].length, text: m[2].trim() })
+  }
+  for (let i = 1; i < heads.length; i++) {
+    const jump = heads[i].depth - heads[i - 1].depth
+    if (jump > 1) {
+      errors.push(`${relPath}:${heads[i].line} heading jumps H${heads[i - 1].depth} → H${heads[i].depth} ("${heads[i].text.substring(0, 50)}") — breaks table-of-contents nesting, so this heading renders inside the previous entry.`)
+    }
+  }
 }
 
 console.log(`\n=== Blog HTML hygiene check ===`)

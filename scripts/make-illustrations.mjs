@@ -626,17 +626,111 @@ const SPECS = [
     },
   },
   {
-    n: 91, slug: 'grok-spacexai-terms', layout: 'panels', h: 480,
-    title: 'Grok models &mdash; read the terms before the feature',
-    subtitle: 'Admins and Frontier Program tenants &middot; Announced 12 September 2026',
+    n: 91, slug: 'grok-spacexai-terms', layout: 'panels', h: 500,
+    title: 'Grok models &mdash; two routes, two sets of terms',
+    subtitle: 'Admins and Frontier Program tenants &middot; Announced 12 September 2026 &middot; Available 18 September 2026',
     data: {
-      quote: { lbl: 'What was added', text: '<strong>Grok models from SpaceXAI</strong>, through the Microsoft Frontier Program, in Word, Excel and PowerPoint &mdash; behind a dedicated admin setting that is <strong>disabled by default</strong>.' },
+      quote: { lbl: 'What was added', text: '<strong>Grok models from SpaceXAI</strong>, through the Microsoft Frontier Program, in <strong>Word, Excel and PowerPoint</strong> via the model selector &mdash; behind a dedicated admin setting that is <strong>disabled by default</strong>.' },
       cols: [
-        { lbl: 'What does not apply', accent: 'red', text: 'Microsoft&rsquo;s customer agreements, Product Terms, Data Processing Addendum, data residency commitments, audit and compliance requirements, service level agreements and the <strong>Customer Copyright Commitment</strong>.' },
-        { lbl: 'What governs instead', accent: 'navy', text: 'The <strong>xAI Enterprise Terms of Service</strong> and the <strong>xAI Data Processing Addendum</strong>.' },
-        { lbl: 'Not available during preview', accent: 'tan', text: 'Frontier customers in the <strong>EU, EFTA and the UK</strong>.' },
+        { lbl: 'In Word, Excel and PowerPoint', accent: 'navy', text: 'SpaceXAI acts as a <strong>subprocessor</strong>. Microsoft&rsquo;s <strong>Product Terms</strong>, <strong>DPA</strong> and <strong>Customer Copyright Commitment apply</strong>, and use is covered by <strong>Enterprise Data Protection</strong>.' },
+        { lbl: 'In Copilot Studio', accent: 'red', text: 'A different route. SpaceXAI acts as an <strong>independent processor</strong>: the Product Terms and DPA <strong>don&rsquo;t apply</strong>, and the <strong>xAI Enterprise Terms of Service</strong> and <strong>xAI Data Processing Addendum</strong> govern instead.' },
+        { lbl: 'Not available', accent: 'tan', text: 'Frontier customers in the <strong>EU, EFTA and the UK</strong>, on <strong>government clouds</strong> (GCC, GCC High, DoD), or on <strong>sovereign clouds</strong>.' },
       ],
-      note: { lbl: 'Microsoft&rsquo;s own wording', text: 'The data &ldquo;is processed outside all Microsoft managed environments and audit controls&rdquo;. A Global Administrator must accept the terms before anyone is assigned access.' },
+      note: { lbl: 'Exclusions that still apply', text: 'Even as a subprocessor: SpaceXAI maintains its own certifications, the models are <strong>not FedRAMP High authorized</strong>, and they are excluded from <strong>in-country processing</strong> commitments. Enabling needs an AI Administrator or Global Administrator.' },
+    },
+  },
+  {
+    n: 10, slug: 'mobile-pages-steering', layout: 'panels', h: 470,
+    title: 'On mobile, Copilot can reshape a Page &mdash; or make one',
+    subtitle: 'Microsoft 365 Copilot app &middot; Android and iOS &middot; Generally available 25 August 2026',
+    data: {
+      quote: { lbl: 'One name, two things', text: '&ldquo;Page steering and auto-triggering&rdquo; covers <strong>two separate capabilities</strong>, and the name obscures the more interesting one.' },
+      cols: [
+        { lbl: 'Edit by instruction', accent: 'navy', text: 'Tell Copilot &ldquo;<strong>Shorten this page</strong>&rdquo; and it reworks the page &mdash; instead of you editing by hand on a phone screen.' },
+        { lbl: 'Create from chat', accent: 'brass', text: 'Ask for &ldquo;<strong>Create a new page for XYZ</strong>&rdquo; in an ordinary conversation and a Page gets made, without going to Pages first.' },
+        { lbl: 'What it is not', accent: 'red', text: '&ldquo;Auto-triggering&rdquo; does <strong>not</strong> mean an existing Page surfaces itself at a convenient moment.' },
+      ],
+      note: { lbl: 'Not tested', text: 'I could not reproduce this in time for this issue, so the above is <strong>Microsoft&rsquo;s account rather than mine</strong>. I will pick it up next month.' },
+    },
+  },
+  {
+    n: 15, slug: 'notebooks-multimodal-android', layout: 'panels', h: 470,
+    title: 'Notebooks take audio, images and notes together',
+    subtitle: 'Copilot Notebooks on Android &middot; Rolling out September 2026',
+    data: {
+      quote: { lbl: 'The detail that decides whether this is new for you', text: 'Microsoft scopes this month&rsquo;s rollout to <strong>Android</strong>. On <strong>iOS and iPad</strong>, multimodal capture is already available through the OneNote app.' },
+      cols: [
+        { lbl: 'Produce audio &mdash; already worked', accent: 'navy', text: 'A notebook could <strong>already</strong> make an audio overview. That is section 14, and it works.' },
+        { lbl: 'Take audio in &mdash; the new half', accent: 'brass', text: 'Using audio as a <strong>source</strong> is the new part &mdash; and the half I could not reproduce.' },
+      ],
+      note: { lbl: 'What I found, 14 September 2026', text: 'Adding a <strong>meeting</strong> as a source worked. An <strong>.mp3</strong> or a <strong>.jpg</strong> did not &mdash; the picker would not take them. The Windows entry (roadmap 566322) still read <em>In development</em>, so a desktop notebook was not yet in scope for what I was testing.' },
+    },
+  },
+  {
+    n: 17, slug: 'viva-engage-private-grounding', layout: 'panels', h: 480,
+    title: 'Viva Engage private communities can ground Copilot',
+    subtitle: 'Microsoft 365 Copilot + Viva Engage &middot; Web &middot; Generally available 25 August 2026',
+    data: {
+      quote: { lbl: 'Microsoft&rsquo;s wording, quoted rather than paraphrased', text: 'When a user queries, they &ldquo;will only be able to see content they are <strong>privileged to access</strong>.&rdquo;' },
+      cols: [
+        { lbl: 'What does not change', accent: 'navy', text: 'The <strong>permission model</strong>. Nothing is being relaxed.' },
+        { lbl: 'What does change', accent: 'brass', text: 'The <strong>size of the pool</strong> Copilot may draw from for each person &mdash; bounded by what they could already have opened by hand.' },
+        { lbl: 'Two that are easy to miss', accent: 'tan', text: '<strong>Web only</strong> for now. And roadmap 515144 still shows May 2026 while the release notes place it in the 25 August batch.' },
+      ],
+      note: { lbl: 'Worth an admin conversation rather than a cheer', text: 'People post in private communities with an expectation about who is reading. Permissions are respected &mdash; but the set of places an answer can come from just got wider. I do not have Viva Engage in my demo tenant, so this is Microsoft&rsquo;s account.' },
+    },
+  },
+  {
+    n: 28, slug: 'local-browser-use-ga', layout: 'panels', h: 460,
+    title: 'Local browser use reached every Copilot tenant',
+    subtitle: 'Copilot Cowork &middot; Generally available August 2026',
+    data: {
+      quote: { lbl: 'What actually changed', text: 'Not the capability &mdash; <strong>who has it</strong>. Local browser use moved out of the Frontier Program to all Microsoft 365 Copilot tenants.' },
+      cols: [
+        { lbl: 'June 2026', accent: 'tan', text: 'Listed in the Cowork release notes as a <strong>Frontier</strong> capability.' },
+        { lbl: 'August 2026', accent: 'brass', text: 'Moved from Frontier to <strong>general availability</strong>. Cowork completes web tasks in <strong>Microsoft Edge</strong> on your device, using your existing sign-ins and your organisation&rsquo;s policies. Edge must be installed.' },
+      ],
+      note: { lbl: 'The second question worth asking early', text: '&ldquo;Uses your existing sign-ins&rdquo; means Cowork acts inside sessions you have <strong>already authenticated</strong>. So alongside &ldquo;does it work well enough&rdquo;: <strong>which internal sites are you comfortable with it reaching?</strong>' },
+    },
+  },
+  {
+    n: 38, slug: 'powerpoint-aem-brand-assets', layout: 'panels', h: 430,
+    title: 'PowerPoint can use brand assets from Adobe Experience Manager',
+    subtitle: 'Copilot in PowerPoint (Web and Windows) &middot; Generally available 11 August 2026',
+    data: {
+      quote: { lbl: 'What changed', text: 'Copilot in PowerPoint can use enterprise assets hosted in <strong>Adobe Experience Manager</strong> &mdash; so the images it reaches for are the <strong>approved</strong> ones.' },
+      cols: [
+        { lbl: 'Before', accent: 'tan', text: 'Copilot reached for whatever it could <strong>generate</strong>.' },
+        { lbl: 'Now', accent: 'brass', text: 'It can reach the library your organisation has <strong>already approved</strong> &mdash; and already pays for.' },
+      ],
+      note: { lbl: 'Why it matters', text: 'Most large organisations already pay for a digital asset manager, and it tends to sit outside the tools where the work actually happens. Wiring it into the app where the deck is made is how those assets finally get used.' },
+    },
+  },
+  {
+    n: 44, slug: 'word-read-aloud-voice-qa', layout: 'panels', h: 450,
+    title: 'You can talk to Word during Read Aloud',
+    subtitle: 'Copilot in Word &middot; Generally available 25 August 2026',
+    data: {
+      quote: { lbl: 'What was added', text: 'Read Aloud gained <strong>voice questions and answers</strong>. Interrupt the reading, ask about what you just heard, and carry on.' },
+      cols: [
+        { lbl: 'Why it matters', accent: 'navy', text: 'Read Aloud is an accessibility feature a lot of people use simply because they are <strong>walking, driving or tired</strong>. Asking a question without stopping to type keeps the document usable in those moments.' },
+        { lbl: 'What I found, 14 September 2026', accent: 'red', text: 'I went looking for this in my own tenant and <strong>could not find it</strong>.' },
+      ],
+      note: { lbl: 'Most likely explanation', text: 'The ordinary one &mdash; a <strong>staged rollout</strong> that has not reached my tenant yet, or has reached only some users inside it. I am recording that rather than guessing, and I will look again for the next issue.' },
+    },
+  },
+  {
+    n: 61, slug: 'sharepoint-authoritative-sites', layout: 'panels', h: 490,
+    title: 'Admins can mark SharePoint sites as authoritative',
+    subtitle: 'SharePoint + Microsoft 365 Copilot &middot; Admin &middot; Generally available 11 August 2026',
+    data: {
+      quote: { lbl: 'The gap worth naming', text: 'It reads like a toggle sitting in a settings page. Microsoft&rsquo;s own page says: &ldquo;In the current release, configure authoritative sites through <strong>PowerShell and CSOM APIs</strong>.&rdquo;' },
+      cols: [
+        { lbl: 'Licensing &mdash; better than you would expect', accent: 'brass', text: 'Sits under SharePoint Advanced Management but needs <strong>no paid add-on</strong>. Unlocked when <strong>one person</strong> in the tenant holds a Copilot licence &mdash; and it need not be the administrator.' },
+        { lbl: 'The 72-hour wait', accent: 'red', text: 'Up to <strong>72 hours</strong> before it shows up. Not a fix you apply the morning of a launch, and testing it is a two-sitting job.' },
+        { lbl: 'The rest of the shape', accent: 'tan', text: '<strong>100 sites</strong> per tenant &middot; <strong>whole sites only</strong>, never personal sites or OneDrive &middot; users see a <strong>&ldquo;From your organization&rdquo;</strong> label on results.' },
+      ],
+      note: { lbl: 'Read the scope carefully', text: 'Microsoft scopes the effect to <strong>Copilot Search</strong>. Read this as improving what Search surfaces rather than as a global reranking of every Copilot answer.' },
     },
   },
 ];
