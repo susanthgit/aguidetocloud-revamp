@@ -33,7 +33,9 @@ intro_note: "← what changed this month, in plain English"
 founder_note: |
   Two things make this issue different. Microsoft published its own August roundup on 31 August, ten days after my August issue went out — so everything it added that I had missed is in here, with the date Microsoft gave it rather than repackaged as September news.
 
-  And this month the series grows. A colleague pointed out that Copilot Studio and Power Platform belong in a Copilot recap, because that is where a lot of people actually build the thing they then use. He is right. Copilot Studio gets a full section from this issue onward. Power Platform starts lighter, and will grow if it earns the space.
+  And this month the series grows. Nathan asked whether Copilot Studio and Power Platform belonged in a Copilot recap, because that is where a lot of people actually build the thing they then use. He is right. He also kindly sent me the sources to start from, which is the only reason both made it into this issue rather than the next one. Copilot Studio gets a full section from here onward. Power Platform starts lighter, and will grow if it earns the space. I am not claiming either is thorough yet — this is a first pass, and I would rather say that plainly than pretend otherwise.
+
+  And thank you. The response to the August issue caught me off guard, in the best way — the notes, the corrections, and the people asking to be added to the slide pack list. It is genuinely nice to hear this is as useful to you as it is to me. Keep the requests coming; this issue exists because one of you asked.
 ---
 
 **Three things reversed course, which is unusual.** Domain exclusion for web grounding came back after being pulled in August. Two roadmap items were cancelled outright in late August — including one I covered in the August issue as shipping. Each entry below keeps the date Microsoft gave it, and where Microsoft changed its own story, I have said so.
