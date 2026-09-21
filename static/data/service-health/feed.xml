@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Sep 2026 12:41:32 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 19:22:00 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to access or use Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1475580</link>
+      <description>[Microsoft Teams] Users may have been unable to access or use Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1475580</guid>
+      <pubDate>Mon, 21 Sep 2026 13:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see stale or incomplete data in the Microsoft 365 Copilot usage and Copilot chat reports</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1474402</link>
@@ -107,15 +116,6 @@
       <pubDate>Sun, 13 Sep 2026 04:56:15 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 apps] Users may be unable to copy, paste, drag, or duplicate cells and worksheets in Microsoft Excel</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1470668</link>
-      <description>[Microsoft 365 apps] Users may be unable to copy, paste, drag, or duplicate cells and worksheets in Microsoft Excel.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">OP1470668</guid>
-      <pubDate>Fri, 11 Sep 2026 12:36:11 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1470554</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot.</description>
@@ -168,6 +168,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1469271</guid>
       <pubDate>Tue, 08 Sep 2026 15:23:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Users may be unable to copy, paste, drag, or duplicate cells and worksheets in Microsoft Excel</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1470668</link>
+      <description>[Microsoft 365 apps] Users may be unable to copy, paste, drag, or duplicate cells and worksheets in Microsoft Excel.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OP1470668</guid>
+      <pubDate>Tue, 08 Sep 2026 10:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some admins' Microsoft 365 admin center usage report data may be delayed</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1459181</guid>
       <pubDate>Fri, 21 Aug 2026 23:42:31 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience inconsistencies with Microsoft 365 Copilot features</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1458413</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have experienced inconsistencies with Copilot such as chat, agent availability, and Microsoft 365 apps.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1458413</guid>
-      <pubDate>Fri, 21 Aug 2026 06:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
