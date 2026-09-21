@@ -276,7 +276,11 @@
       {{ end }}
 
       <ul class="zt-cert-exam-features">
+        {{ if .Params.supplemental }}
+        <li>✓ Untimed revision mode</li>
+        {{ else }}
         <li>✓ Exam simulation mode</li>
+        {{ end }}
         <li>✓ Spaced repetition</li>
         <li>✓ Progress tracking</li>
         <li>✓ Detailed explanations</li>
