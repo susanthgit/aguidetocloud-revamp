@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-09-22T16:52:55.282058+00:00",
+  "generated_at": "2026-09-22T21:14:32.503913+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 21,
-      "active_incidents": 0,
+      "total_incidents": 22,
+      "active_incidents": 1,
       "avg_duration_minutes": 9294,
-      "last_incident": "2026-09-21T13:00:00+00:00",
+      "last_incident": "2026-09-22T20:56:05.363000+00:00",
       "classifications": {
-        "incident": 8,
-        "advisory": 13
+        "advisory": 14,
+        "incident": 8
       }
     },
     {
@@ -110,8 +110,8 @@
       "short_name": "M365 Apps",
       "icon": "💼",
       "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2984,
+      "active_incidents": 0,
+      "avg_duration_minutes": 7130,
       "last_incident": "2026-09-08T10:00:00+00:00",
       "classifications": {
         "advisory": 3,
@@ -180,18 +180,6 @@
       }
     },
     {
-      "service": "Windows Autopatch",
-      "short_name": "Autopatch",
-      "icon": "🪟",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 19953,
-      "last_incident": "2026-07-24T04:38:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
-    },
-    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -207,7 +195,7 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 30,
+      "incident_count": 31,
       "services_affected": 9
     },
     {
@@ -217,8 +205,8 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 16,
-      "services_affected": 9
+      "incident_count": 15,
+      "services_affected": 8
     }
   ]
 }
