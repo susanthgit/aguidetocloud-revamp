@@ -252,3 +252,13 @@ logo_emoji = "🎓"
 official_url = "https://www.peoplecert.org/"
 cert_path_note = "Start with ITIL Foundation (Version 5) - PeopleCert states it has no prerequisites and is itself the prerequisite for the higher-level ITIL Version 5 qualifications, so it is the foundation the rest of the ITIL track builds on."
 order = 25
+
+[[vendor]]
+slug = "pmi"
+name = "Project Management Institute"
+short_name = "PMI"
+accent = "#6366F1"
+logo_emoji = "PMI"
+official_url = "https://www.pmi.org/certifications"
+cert_path_note = "Choose a credential that matches your experience. PMP has education, project leadership experience and training requirements; practice exams alone do not satisfy the training requirement."
+order = 26
