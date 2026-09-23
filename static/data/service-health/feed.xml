@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Sep 2026 21:14:33 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 00:26:35 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Teams] We're looking into a potential problem impacting Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1477123</link>
-      <description>[Microsoft Teams] We're looking into a potential problem impacting Microsoft Teams</description>
-      <category>Microsoft Teams</category>
-      <category>investigating</category>
-      <guid isPermaLink="false">TM1477123</guid>
-      <pubDate>Tue, 22 Sep 2026 20:56:05 +0000</pubDate>
+      <title>[Exchange Online] Some users may be unable to open the account view in Outlook on the web</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1476802</link>
+      <description>[Exchange Online] Users may be unable to open the account view in Outlook on the web.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1476802</guid>
+      <pubDate>Tue, 22 Sep 2026 14:06:31 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Some users may be unable to access or use Microsoft Teams</title>
@@ -42,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1473821</guid>
       <pubDate>Fri, 18 Sep 2026 01:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users of HP DirectConnect mode on Poly Microsoft Teams Rooms on Android (MTRA) devices may experience call drops</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1477123</link>
+      <description>[Microsoft Teams] Users of HP DirectConnect mode on Poly MTRA devices may have experienced call drops after 30 seconds.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1477123</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Users may be unable to load SharePoint Online sites or pages and receive an error message</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1466659</guid>
       <pubDate>Sun, 23 Aug 2026 16:32:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Some users may be unable to access SharePoint Online sites configured with Authentication Context</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1464785</link>
-      <description>[SharePoint Online] Users may have been unable to access SharePoint Online sites configured with Authentication Context.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1464785</guid>
-      <pubDate>Sun, 23 Aug 2026 02:38:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
