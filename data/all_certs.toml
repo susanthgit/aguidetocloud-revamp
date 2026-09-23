@@ -14438,3 +14438,56 @@ exam_prerequisites = "ITIL Foundation (Version 5). In addition, training through
 exam_question_types = ["Standard multiple choice", "Missing word", "List", "Negative"]
 guided_url = "/guided/itil-experience/"
 practice_url = "/guided/itil-experience/practice/"
+
+[[cert]]
+slug = "pmp"
+vendor = "pmi"
+code = "PMP"
+name = "Project Management Professional (PMP)"
+tagline = "Practise project leadership decisions across people, delivery processes and the business environment."
+exam_category = "PMI"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 1034
+featured = false
+price_practice = 9
+exam_url = "https://www.pmi.org/certifications/project-management-pmp"
+exam_cost = "See PMI for current pricing, membership options, taxes and regional booking details. The practice-bank price is not the official exam fee."
+exam_duration = 240
+exam_passing_score = "PMI does not publish a single fixed passing percentage; see PMI for its current scoring information."
+guided_url = "/guided/pmp/"
+
+
+# ═══════════════════════════════════════════════════
+# Keyed map — use (index site.Data.all_certs.cert_map "slug")
+# for single-page lookups (replaces guided_certs.toml)
+# ═══════════════════════════════════════════════════
+
+[cert_map."pmp"]
+vendor = "pmi"
+code = "PMP"
+name = "Project Management Professional (PMP)"
+tagline = "Practise project leadership decisions across people, delivery processes and the business environment."
+exam_category = "PMI"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 1034
+featured = false
+price_practice = 9
+exam_url = "https://www.pmi.org/certifications/project-management-pmp"
+exam_cost = "See PMI for current pricing, membership options, taxes and regional booking details. The practice-bank price is not the official exam fee."
+exam_duration = 240
+exam_passing_score = "PMI does not publish a single fixed passing percentage; see PMI for its current scoring information."
+exam_questions_real = "180 questions: 170 scored and 10 unscored pretest questions."
+exam_provider = "Project Management Institute (PMI)"
+exam_validity = "Maintain the credential through PMI's Continuing Certification Requirements: 60 PDUs in each 3-year cycle."
+exam_prerequisites = "Education, non-overlapping project leadership experience and 35 hours of eligible training or active CAPM certification are required. The experience requirement varies by qualification. Check PMI's current eligibility rules, including the live instructor-led training change effective 1 December 2026. This practice bank does not satisfy the training requirement."
+exam_question_types = ["Single-answer multiple choice", "Multiple-response", "Case or scenario questions", "Graphic-based questions", "Enhanced matching (computer-based testing only)", "Point and click (computer-based testing only)", "Matching and drag-and-drop interaction (computer-based testing only)", "Pull-down list (computer-based testing only)", "Practicum hands-on testing that may include tools, data and case studies"]
+guided_url = "/guided/pmp/"
+practice_url = "/guided/pmp/practice/"

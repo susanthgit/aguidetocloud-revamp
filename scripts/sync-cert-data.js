@@ -146,6 +146,7 @@ function getExamCategory(cert) {
     'nvidia': 'NVIDIA',
     'salesforce': 'Salesforce',
   'servicenow': 'ServiceNow',
+    'pmi': 'PMI',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }
