@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T13:35:55.762304+00:00",
+  "generated_at": "2026-09-23T18:22:22.862701+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -46,9 +46,9 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 8,
-      "active_incidents": 1,
-      "avg_duration_minutes": 14587,
-      "last_incident": "2026-09-22T14:06:31.073000+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 12974,
+      "last_incident": "2026-09-22T12:13:00+00:00",
       "classifications": {
         "advisory": 5,
         "incident": 3
