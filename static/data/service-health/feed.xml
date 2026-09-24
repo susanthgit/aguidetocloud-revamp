@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Sep 2026 04:41:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 11:39:04 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Users may be unable to access Microsoft Defender for Endpoint public APIs</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1478328</link>
+      <description>[Microsoft Defender XDR] Users may be unable to access Microsoft Defender for Endpoint public APIs. </description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1478328</guid>
+      <pubDate>Thu, 24 Sep 2026 08:17:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Some users may be unable to open the account view in Outlook on the web</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1476802</link>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">OP1460815</guid>
       <pubDate>Mon, 24 Aug 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may have been unable to join calls or meetings in Microsoft Teams for Mac</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1466659</link>
-      <description>[Microsoft Teams] Users may have been unable to join calls or meetings in Microsoft Teams for Mac. </description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1466659</guid>
-      <pubDate>Sun, 23 Aug 2026 16:32:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
