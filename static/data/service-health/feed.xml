@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Sep 2026 17:05:49 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 21:27:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users may not be able to create, schedule, or update Microsoft Teams meetings</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1478719</link>
+      <description>[Microsoft Teams] Users may have not been able to create, schedule, or update Microsoft Teams meetings.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1478719</guid>
+      <pubDate>Thu, 24 Sep 2026 19:57:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Users may be unable to publish posts in Microsoft Viva Engage</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1478587</link>
+      <description>[Microsoft Viva] Users may have been unable to publish posts in Viva Engage.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1478587</guid>
+      <pubDate>Thu, 24 Sep 2026 18:49:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot Chat or Copilot Notebooks</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1478470</link>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MB1462509</guid>
       <pubDate>Wed, 26 Aug 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to use multiple Microsoft Teams features</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1461801</link>
-      <description>[Microsoft Teams] Users may have been unable to use multiple Microsoft Teams features.</description>
-      <category>Microsoft Teams</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">TM1461801</guid>
-      <pubDate>Wed, 26 Aug 2026 01:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Some users may not receive results when searching on SharePoint Online sites</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1461580</link>
-      <description>[SharePoint Online] Users may not receive results when searching on SharePoint Online sites.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1461580</guid>
-      <pubDate>Tue, 25 Aug 2026 16:58:38 +0000</pubDate>
     </item>
   </channel>
 </rss>
