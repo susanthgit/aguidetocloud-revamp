@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Sep 2026 22:55:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 04:41:10 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may be unable to open the account view in Outlook on the web</title>
@@ -57,7 +57,7 @@
       <link>https://www.aguidetocloud.com/service-health/#SP1472983</link>
       <description>[SharePoint Online] Users may have been unable to load SharePoint Online sites or pages and receive an error message.</description>
       <category>SharePoint Online</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">SP1472983</guid>
       <pubDate>Wed, 16 Sep 2026 15:04:21 +0000</pubDate>
     </item>
