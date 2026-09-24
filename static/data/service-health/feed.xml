@@ -5,16 +5,43 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Sep 2026 11:39:04 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 17:05:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Defender XDR] Users may be unable to access Microsoft Defender for Endpoint public APIs</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1478328</link>
-      <description>[Microsoft Defender XDR] Users may be unable to access Microsoft Defender for Endpoint public APIs. </description>
-      <category>Microsoft Defender XDR</category>
+      <title>[Microsoft 365 Copilot Chat] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot Chat or Copilot Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1478470</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to access or receive prompt responses with Copilot Chat or Copilot Notebooks.</description>
+      <category>Microsoft 365 Copilot Chat</category>
       <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1478470</guid>
+      <pubDate>Thu, 24 Sep 2026 15:34:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1478444</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1478444</guid>
+      <pubDate>Thu, 24 Sep 2026 15:06:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1478328</link>
+      <description>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs. </description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1478328</guid>
       <pubDate>Thu, 24 Sep 2026 08:17:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to update calendar delegates in the classic Outlook desktop client </title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1478163</link>
+      <description>[Exchange Online] Users may be unable to update calendar delegates in the classic Outlook desktop client.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1478163</guid>
+      <pubDate>Thu, 24 Sep 2026 05:45:38 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to open the account view in Outlook on the web</title>
@@ -429,33 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1461580</guid>
       <pubDate>Tue, 25 Aug 2026 16:58:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may be unable to receive responses when using Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1461372</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be unable to receive responses when using Copilot Chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CW1461372</guid>
-      <pubDate>Mon, 24 Aug 2026 22:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Some users may be unable to access Microsoft Viva Glint services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1461005</link>
-      <description>[Microsoft Viva] Users may have been unable to access Viva Glint services.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1461005</guid>
-      <pubDate>Mon, 24 Aug 2026 18:16:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Some users may be unable to activate new or refresh existing Office 365 licenses</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1460815</link>
-      <description>[Microsoft 365 apps] Users may have been unable to activate new or refresh existing Office 365 licenses.</description>
-      <category>Microsoft 365 apps</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">OP1460815</guid>
-      <pubDate>Mon, 24 Aug 2026 13:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
