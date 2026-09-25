@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Sep 2026 21:27:47 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 00:31:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users may not be able to create, schedule, or update Microsoft Teams meetings</title>
@@ -24,6 +24,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1478587</guid>
       <pubDate>Thu, 24 Sep 2026 18:49:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Users may be unable to convert Microsoft Word desktop app documents to PDFs using Save As to SharePoint locations</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1478558</link>
+      <description>[Microsoft 365 apps] Users may be unable to convert Microsoft Word desktop app documents to PDFs using Save As to SharePoint locations.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OP1478558</guid>
+      <pubDate>Thu, 24 Sep 2026 18:23:33 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot Chat or Copilot Notebooks</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1462187</guid>
       <pubDate>Wed, 26 Aug 2026 12:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Bookings] Users may have seen blank pages when opening Microsoft Bookings</title>
-      <link>https://www.aguidetocloud.com/service-health/#MB1462509</link>
-      <description>[Microsoft Bookings] Users may have seen blank pages when opening Microsoft Bookings.</description>
-      <category>Microsoft Bookings</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MB1462509</guid>
-      <pubDate>Wed, 26 Aug 2026 04:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
