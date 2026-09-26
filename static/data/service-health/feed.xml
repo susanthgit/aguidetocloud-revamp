@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Sep 2026 23:16:33 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 04:50:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins and users may be unable to access or utilize multiple features within some Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1479564</link>
+      <description>[Microsoft 365 suite] Admins and users may have been unable to access or utilize multiple features within some Microsoft 365 services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1479564</guid>
+      <pubDate>Fri, 25 Sep 2026 23:06:44 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Users may be unable to reply or reply-all to email messages sent to Microsoft 365 groups in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1479349</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1462800</guid>
       <pubDate>Thu, 27 Aug 2026 15:15:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users with an active Microsoft Teams license may be unable to sign in to Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1462904</link>
-      <description>[Microsoft Teams] Users with an active Microsoft Teams license may have been unable to sign in to Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1462904</guid>
-      <pubDate>Thu, 27 Aug 2026 14:41:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
