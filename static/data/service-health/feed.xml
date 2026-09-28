@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Sep 2026 13:45:44 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 20:31:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users' requests to change interaction types from drop down may fail in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1480924</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users' requests to change interaction types from drop down may fail Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">CP1480924</guid>
+      <pubDate>Mon, 28 Sep 2026 15:34:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] We're looking into a potential problem impacting Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1480927</link>
+      <description>[Microsoft 365 Copilot Chat] We're checking for potential impact to your users.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">CW1480927</guid>
+      <pubDate>Mon, 28 Sep 2026 15:34:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admins and users may be unable to access or utilize multiple features within some Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1479564</link>
@@ -46,9 +64,9 @@
     <item>
       <title>[Microsoft 365 apps] Users may be unable to convert Microsoft Word desktop app documents to PDFs using Save As to SharePoint locations</title>
       <link>https://www.aguidetocloud.com/service-health/#OP1478558</link>
-      <description>[Microsoft 365 apps] Users may be unable to convert Microsoft Word desktop app documents to PDFs using Save As to SharePoint locations.</description>
+      <description>[Microsoft 365 apps] Users may have been unable to convert Word desktop app documents to PDFs using Save As to SharePoint locations.</description>
       <category>Microsoft 365 apps</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OP1478558</guid>
       <pubDate>Thu, 24 Sep 2026 18:23:33 +0000</pubDate>
     </item>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1469836</guid>
       <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to access or manage some Microsoft Teams channels features</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1462874</link>
-      <description>[Microsoft Teams] Users may have been unable to access or manage some Microsoft Teams channels features.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1462874</guid>
-      <pubDate>Thu, 27 Aug 2026 19:22:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Some users may experience intermittent failures or delays when accessing Microsoft Power BI or Microsoft Fabric</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1462800</link>
-      <description>[Power BI] Users may have experienced intermittent failures or delays when accessing Microsoft Power BI or Microsoft Fabric.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1462800</guid>
-      <pubDate>Thu, 27 Aug 2026 15:15:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
