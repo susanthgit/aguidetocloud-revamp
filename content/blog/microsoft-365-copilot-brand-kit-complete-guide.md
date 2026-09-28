@@ -4,7 +4,7 @@ list_title: "M365 Copilot Brand Kit — The Complete Guide"
 hub_id: "it-admins"
 description: "Build PowerPoint templates that work inside and outside Copilot, set up Brand Images, run Brand Checker, position Designer vs Adobe Express."
 date: 2026-04-15
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -16,25 +16,25 @@ faq:
   - question: "Where does Brand Kit work in Microsoft 365?"
     answer: "Brand Kit has the deepest integration in PowerPoint (PowerPoint Agent, Narrative Builder, Brand Checker). It also works in Word through templates and the Word Agent, in the Create tab on microsoft365.com for images, banners, and posters, and Excel templates can be uploaded to Brand Kits for consistent spreadsheet formatting."
   - question: "What is the Brand Checker in PowerPoint?"
-    answer: "Brand Checker scans your entire presentation against your Brand Kit and flags issues — incorrect colours or fonts, misplaced logos, off-brand imagery, and layout problems. It offers one-click fixes to bring everything back on brand automatically."
+    answer: "Brand Checker (Microsoft now calls it Brand Reviewer) reviews your presentation against your Brand Kit and flags issues like incorrect colours or fonts, misplaced logos, off-brand imagery, and layout problems. It can suggest one-click fixes where available. On some builds it returns a written report you act on manually, so check what your tenant exposes."
   - question: "How do I set up Brand Kit as an IT admin?"
     answer: "You need to do three things: (1) Set up a SharePoint Organizational Asset Library for templates and images, (2) Create a mail-enabled security group with your brand managers, and (3) Enable the Enterprise Brand Manager policy at config.office.com. It takes up to 24 hours after configuration *(the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) fits right alongside this setup work).*"
   - question: "What is the difference between Brand Kit and the Organizational Asset Library (OAL)?"
     answer: "The OAL is a SharePoint-based storage location for templates and images. Brand Kit adds richer capabilities on top — brand voice, guidelines extraction, Brand Checker, multiple brand support, and AI-powered enforcement of your visual and verbal identity. They work together for the best results."
   - question: "Can Copilot automatically extract my brand guidelines?"
-    answer: "Yes. You can upload your existing brand guidelines PDF to a Brand Kit, and Copilot's AI will automatically extract colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. You review and refine before publishing."
+    answer: "Some kits offer an Add brand guidelines option for uploading a guidelines PDF, and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. New kits checked on 29 September 2026 did not show that separate tile. If yours has no upload, set colours and fonts directly and add written guidance under Brand voice and Design instructions. Microsoft has not announced that PDF extraction is retired. A guidelines upload can override existing values, so add it before hand-tuning."
   - question: "How do I create a PowerPoint template optimised for Copilot?"
     answer: "Use Slide Master with theme colours and fonts (not manual styling), include 12+ representative slide layouts showing content density, visual style, and data visualisation, use placeholders instead of text boxes, and avoid overlapping elements. Upload as .potx or .pptx to your Brand Kit."
   - question: "Can I have multiple Brand Kits for different brands or departments?"
     answer: "Yes. You can create and maintain multiple Brand Kits — for example, Corporate, Product, and Regional brands. Users can switch between them when creating content. Each kit has its own templates, colours, fonts, and assets."
   - question: "Are the PowerPoint, Word, and Excel Agents generally available?"
-    answer: "As of May 2026, the PowerPoint Agent (including Brand Kit and Brand Checker) is generally available on Windows, Mac, and Web, with new capabilities still rolling out to specific channels. These agents are powered by Anthropic Claude models and represent a new way of creating content directly from within the M365 Copilot app. Check the Microsoft 365 Roadmap for the latest availability in your channel."
+    answer: "Brand Kit works with Copilot in PowerPoint on Windows, Mac, and the web. The Word, Excel, and PowerPoint Agents are available in the Microsoft Copilot app for eligible licensed users when the administrator permits Anthropic models. Brand Reviewer behaviour varies by build and channel, so check what your tenant exposes. These agents are powered by Anthropic Claude models. Check the Microsoft 365 Roadmap and your Message Center for current status."
   - question: "How do I create a standalone PowerPoint template my team can use even without Copilot?"
     answer: "Build it in PowerPoint using the Slide Master (Theme Colours, Theme Fonts, Layouts, Placeholders), save it as a .potx file, then host it in a SharePoint Organizational Asset Library so it appears in File → New → Office for every user, with or without a Copilot licence. The same template can then be uploaded to your Brand Kit to power Copilot's output too."
   - question: "What's the difference between Brand Images and Microsoft stock images?"
     answer: "Microsoft stock images are the free royalty-free library built into Office (Insert → Pictures → Stock Images). Brand Images are your organisation's approved photos, logos, icons, and illustrations, surfaced from your SharePoint Organizational Asset Library or Templafy under Insert → Pictures → Brand Images. Copilot prefers Brand Images when generating presentations, so they keep generated content visually on-brand."
   - question: "How does Brand Kit work with Adobe Express and Microsoft Designer?"
-    answer: "Designer (built into Copilot Create) handles fast, good-enough visuals — banners, posters, infographics — using your Brand Kit colours, fonts, and style. Adobe Express agent (invoked via @Adobe Express inside Copilot) offers deeper creative editing with Adobe templates, then exports back to Microsoft formats. Your Brand Kit colours, fonts, and rules help guide both, though brand enforcement is tighter in Designer than in Adobe Express today."
+    answer: "Designer, built into Copilot Create, makes fast visuals like banners, posters, and infographics using your Brand Kit colours, fonts, and style. The Adobe Express agent, invoked with @Adobe Express inside Copilot, offers deeper creative editing with Adobe templates, then exports back to Microsoft formats. Brand Kit guides the Microsoft Create and PowerPoint experiences; I have not verified native Brand Kit enforcement inside Adobe Express, so check branding there separately."
   - question: "Does Brand Kit work in Outlook, Loop, Whiteboard, or Forms?"
     answer: "Mostly no, today. Copilot writing in Outlook reflects your tenant defaults, but explicit Brand Kit voice enforcement in Outlook is limited. Loop, Whiteboard, and Forms don't have documented Brand Kit support yet — they use their own themes and templates. Track the Microsoft 365 Roadmap for changes."
 images: ["images/og/blog/microsoft-365-copilot-brand-kit-complete-guide.jpg"]
@@ -57,13 +57,13 @@ I just wrapped up two Train-the-Trainer sessions on Microsoft 365 Copilot, and o
 
 If you've been wondering the same thing, this guide is for you.
 
-<p><img src="/images/blog/brand-kit/01-create-brand-hero.webp" alt="The Microsoft 365 Copilot Create canvas with the Brand panel open on the right — showing an 'XBox brand' asset set and Microsoft brand assets, so Copilot can generate on-brand visuals" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/brand-kit/01-create-brand-hero.webp" alt="The Microsoft 365 Copilot Create canvas with the Brand panel open on the right — showing an 'Xbox brand' asset set and Microsoft brand assets, so Copilot can generate on-brand visuals" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *Source: [Microsoft Learn — Enterprise Brand Manager](https://learn.microsoft.com/copilot/microsoft-365/enterprise-brand-manager) — the Brand panel inside Microsoft 365 Copilot Create, where your organisation's brand assets become available for on-brand content. (Microsoft demo data.)*
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: May 2026.
+🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: September 2026 (I re-checked the Create UI and the Brand Kit asset sections on 29 September 2026).
 
 </div>
 
@@ -77,6 +77,7 @@ If you've been wondering the same thing, this guide is for you.
 - [Where Brand Kit Works — App by App](#where-brand-kit-works--app-by-app)
 - [The Three Types of Brand Kits](#the-three-types-of-brand-kits)
 - [Admin Setup — Step by Step](#admin-setup--step-by-step)
+- [Build and use a kit: a visual walkthrough](#build-and-use-a-kit-a-visual-walkthrough)
 - [Governance — Who Owns What](#governance--who-owns-what)
 - [Building a PowerPoint Template (Inside and Outside Copilot)](#building-a-powerpoint-template-inside-and-outside-copilot)
 - [Stock Images and Brand Images — What Goes Where](#stock-images-and-brand-images--what-goes-where)
@@ -98,9 +99,9 @@ If you only have a minute, here's what you need to know:
 | **What is it?** | A collection of your org's brand rules (logos, colours, fonts, voice, templates) that Copilot follows automatically |
 | **Who manages it?** | Brand managers — designated by IT admin through a policy |
 | **Where does it work?** | PowerPoint (deepest), Word, Create tab, Designer. Excel templates can be uploaded |
-| **What licence?** | Microsoft 365 Copilot ($30/user/month). Unlicensed users can only open templates |
+| **What licence?** | Microsoft 365 Copilot (US$30/user/month, paid yearly). Unlicensed users can only open templates |
 | **How to set up?** | (1) Brand Manager policy → (2) Create and publish kit. Optional: SharePoint OAL for PowerPoint integration |
-| **Killer feature?** | Brand Checker in PowerPoint — scans and fixes off-brand slides in one click |
+| **Killer feature?** | Brand Reviewer (formerly Brand Checker) in PowerPoint — reviews slides against your brand and suggests fixes |
 | **Time to set up?** | Allow 24 hours after policy configuration |
 
 > 📌 **Do these three things today:**
@@ -202,7 +203,9 @@ A Brand Kit is more than just a logo and a colour code. Here's everything you ca
 | Excel | `.xltx` | Spreadsheet templates |
 | Designer | Various | Images, banners, posters |
 
-> 💡 **Tip:** You can upload your existing brand guidelines as a **PDF**, and Copilot's AI will automatically extract colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. You review and refine before publishing — it saves hours of manual setup.
+> 💡 **Tip:** If your kit offers the guidelines upload, you can add your existing brand guidelines as a **PDF** and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. You review and refine before publishing. A guidelines upload can override existing values, so add it before hand-tuning.
+
+> **September 2026 update:** A new kit in the current Create experience no longer shows a separate **Brand guidelines (PDF)** tile. I checked this on 29 September 2026 in two tenants. A fresh kit opens with Logos, Templates, Fonts, Colors, Images, Icons, Brand voice, and three newer sections: **Design instructions**, **Skills**, and **Connectors**. Microsoft still documents the guidelines PDF, and kits made earlier still show the upload, so this reads as a UI change rolling out rather than a retired feature. If a colleague still sees the guidelines tile, they are on an older kit or an earlier build. There is a walkthrough with screenshots later in this guide.
 
 ## Brand Voice — Beyond Logos and Colours
 
@@ -310,7 +313,7 @@ Brand Kit itself doesn't have a separate price tag, but a few adjacent things do
 
 | Item | Extra cost? | Notes |
 |---|---|---|
-| Microsoft 365 Copilot licence | Yes — $30/user/month | Required for any AI-powered Brand Kit feature |
+| Microsoft 365 Copilot licence | Yes — US$30/user/month, paid yearly | Required for any AI-powered Brand Kit feature. Copilot Cowork adds usage-based billing on top |
 | SharePoint OAL storage | Included in tenant storage | Still consumes your SharePoint quota — check tier |
 | Microsoft Syntex image tagging | Per-use or capacity-based | Only if you use Syntex to auto-tag images |
 | Templafy / Bynder / Frontify / Aprimo | Third-party licensing | Pricing varies — talk to the vendor |
@@ -318,7 +321,7 @@ Brand Kit itself doesn't have a separate price tag, but a few adjacent things do
 | Adobe Express agent | Free for many features; some require Adobe Express paid plans for advanced tools | Check current licensing |
 | Custom font licensing | Depends on font | If you use commercial fonts (e.g., Helvetica), check distribution rights |
 
-> 💡 **Practical tip:** The Copilot licence is the only hard requirement. Everything else can start small. Most organisations begin with just Brand Kit + a SharePoint OAL, and add Syntex or third-party DAMs later if needed.
+> 💡 **Practical tip:** The Copilot licence is the main requirement for the AI features. Everything else can start small. Most organisations begin with just Brand Kit + a SharePoint OAL, and add Syntex or third-party DAMs later if needed. One exception: Copilot Cowork brand templates need admin-enabled usage-based billing, so that consumption is billed separately.
 
 ## Where Brand Kit Works — App by App
 
@@ -369,7 +372,7 @@ Three things the agent does that a basic text generator doesn't:
 
 > 💡 **Key difference:** The PowerPoint Agent lives inside the **M365 Copilot app** — you don't need to open PowerPoint first. The agent creates the deck for you, and you can then open it in PowerPoint to refine. Similarly, there's a Word Agent and Excel Agent for creating documents and spreadsheets from Copilot Chat.
 
-> ⚠️ **Availability note:** As of last verified (May 2026), the PowerPoint Agent with Brand Kit and Brand Checker (Brand Reviewer) is generally available on Windows, Mac, and Web for tenants with a Microsoft 365 Copilot licence. Specific capabilities are still rolling out across channels, so behaviour can differ between **Current Channel**, Monthly Enterprise Channel, and Beta Channel. Check the [M365 Roadmap](/m365-roadmap/) and your Message Center for your tenant's status.
+> ⚠️ **Availability note:** Brand Kit works with Copilot in PowerPoint on Windows, Mac, and the web. The Word, Excel, and PowerPoint Agents are available in the Microsoft Copilot app for eligible licensed users when the administrator permits Anthropic models. Brand Reviewer (formerly Brand Checker) behaviour varies by build and channel, so what you see can differ between **Current Channel**, Monthly Enterprise Channel, and Beta Channel. This reflects my testing through September 2026. Check the [M365 Roadmap](/m365-roadmap/) and your Message Center for your tenant's status.
 
 #### The Traditional Way: Narrative Builder (in the PowerPoint App)
 
@@ -474,7 +477,7 @@ If your organisation operates across geos with regional variations (different im
 | Pattern | When to use | How |
 |---|---|---|
 | **Shared Brand Kits per geo** | Parent brand stays the same, regional assets vary | Set up the regional kits as **Shared Brand Kits** and share them only with users in that geo or org. Each user picks the kit relevant to their region when generating content. |
-| **Replicated Official kits per geo** | Governance requires a separate "official" kit per region (e.g., legal entity differences) | Duplicate the official Brand Kit per region and customise it with region-specific imagery, icons, templates, and voice. Each becomes its own official kit visible to users in that region. |
+| **Replicated Official kits per geo** | Governance requires a separate "official" kit per region (e.g., legal entity differences) | Duplicate the official Brand Kit per region and customise it with region-specific imagery, icons, templates, and voice. Each official kit is visible tenant-wide, so if access must be limited to a regional group, use Shared kits instead. |
 
 Both approaches work — choose based on your governance model and how strictly each region needs to be policed. Microsoft has indicated they're working on more refined geo/group-targeting controls for official kits; check Message Center for updates.
 
@@ -500,6 +503,9 @@ Brand managers are the people who create and publish official Brand Kits. Only t
 8. Set the policy to **Enabled**
 9. Enter the **security group email address** for your brand managers group
 10. Select **Apply**
+11. Go to the **Review and Publish** tab, verify the details, and select **Done**
+12. On the Policy Management page, confirm the policy scope shows as **Tenant**
+13. Select the policy, choose **Reorder priority**, set its priority to **0**, and save
 
 > ⚠️ **It takes up to 24 hours** after enabling the policy for brand managers to receive permission to create official kits. Don't panic if it doesn't appear immediately.
 
@@ -513,19 +519,23 @@ Once the policy is active, your designated brand managers can create the kit:
 4. Select **+ New Brand kit** and give it a name
 5. Configure each section:
    - **Logos** — Upload primary, secondary, and variant logos
-   - **Colours** — Define HEX codes for your brand palette
-   - **Fonts** — Select heading and body typefaces
-   - **Images and Icons** — Add approved visuals
    - **Templates** — Upload `.potx`, `.dotx`, `.xltx` files
+   - **Fonts** — Select heading and body typefaces
+   - **Colors** — Define HEX codes for your brand palette (no file needed)
+   - **Images and Icons** — Add approved visuals
    - **Brand voice** — Define tone, terminology, and writing guidelines
-   - **Brand guidelines** — Upload your brand guidelines PDF (Copilot auto-extracts rules)
-   - **Style** — Upload representative images or describe your visual style
-   - **Data Visualisation** — Include example slides showing chart and table styles
+   - **Design instructions** — Free-text visual guidance that applies to the whole kit
+   - **Skills** — Teach Copilot custom tasks tailored to this kit
+   - **Connectors** — Set connector defaults for the kit
 6. Select **Publish** to make it available organisation-wide
 
-> 💡 **Pro tip:** Upload your **existing brand guidelines PDF** first. Copilot's AI will extract colour palettes, fonts, photography styles, layout structures, and brand voice patterns automatically. Review and refine — it saves significant setup time.
+> **September 2026 update:** These are the sections a new kit opens with today (checked 29 September 2026). The older standalone **Brand guidelines (PDF)** tile is no longer shown on a new kit, and **Design instructions**, **Skills**, and **Connectors** are the newer additions. Kits created earlier keep whatever sections they were built with. Microsoft still documents the guidelines PDF, so treat this as a rolling UI change, not a removed feature.
+
+> 💡 **Pro tip:** If your kit still offers a guidelines upload, start with your **existing brand guidelines PDF**. Copilot's AI extracts colour palettes, fonts, photography styles, layout structures, and brand voice patterns automatically, which saves setup time. On newer kits without that tile, set colours and fonts directly and paste your voice rules into **Brand voice** and **Design instructions** instead.
 
 > ⚠️ **Change management warning:** When you update a published Brand Kit, changes are saved and available to users immediately — there's no built-in version history or rollback. Treat Brand Kit updates like production deployments: review carefully before saving, and consider keeping a backup of your assets offline.
+
+> 💡 **See it in action:** The [visual walkthrough](#build-and-use-a-kit-a-visual-walkthrough) below shows every screen of this, from naming the kit to generating an on-brand poster.
 
 ### Step 3: Set Up a SharePoint Organizational Asset Library (Recommended)
 
@@ -565,7 +575,7 @@ Add-SPOOrgAssetsLibrary `
   -OrgAssetType ImageDocumentLibrary
 ```
 
-> 💡 The cmdlet also accepts `-OrgAssetType BrandKitLibrary` and `-CopilotSearchable $true` in newer versions of the SharePoint Online Management Shell (16.0.24915.12000+) — useful when explicitly wiring Brand Kit content for Copilot retrieval. See [the official reference](https://learn.microsoft.com/powershell/module/microsoft.online.sharepoint.powershell/add-spoorgassetslibrary) for current syntax.
+> 💡 The cmdlet also lists `-OrgAssetType BrandKitLibrary` as an accepted type in newer versions of the SharePoint Online Management Shell (16.0.24915.12000+), and `-CopilotSearchable $true` makes a library available to Microsoft 365 Copilot Search. Neither setting on its own links images to a Brand Kit — use the documented Brand Kit workflow for that. See [the official reference](https://learn.microsoft.com/powershell/module/microsoft.online.sharepoint.powershell/add-spoorgassetslibrary) for current syntax.
 
 > ⚠️ **Important notes:**
 >
@@ -577,6 +587,65 @@ Add-SPOOrgAssetsLibrary `
 > 💡 **Third-party DAM support:** Brand Kits also support assets from **third-party Digital Asset Management systems** like Templafy. If your organisation already uses a DAM, you can reference those assets directly from your Brand Kit without re-uploading — check your DAM provider's Microsoft 365 integration documentation.
 
 Need help building these PowerShell commands? Try our [PowerShell Command Builder](/ps-builder/) — it has recipes for SharePoint Online administration.
+
+## Build and use a kit: a visual walkthrough
+
+I built a kit from scratch in my own tenant on 29 September 2026 so you can see each screen. This is what a brand manager, or any Copilot-licensed user building a personal kit, actually clicks.
+
+### 1. Open the Brand kits area
+
+In the Microsoft 365 Copilot app, go to **Create**, then **More…**, and under **Manage brand kits** choose **Brand kits**.
+
+<p><img src="/images/blog/brand-kit/06-create-more-menu.webp" alt="The More menu in Microsoft 365 Copilot Create, showing Brand kits listed under a 'Manage brand kits' group alongside Brand templates and All templates" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The More menu in Copilot Create. Brand kits sits under "Manage brand kits". (My tenant, 29 September 2026.)*
+
+### 2. Add a kit
+
+The **Manage Brand Kits** page lists every kit you can see. Filter by **All**, **Organization** (official kits), or **User** (shared and personal kits). Select **Add Brand Kit**.
+
+<p><img src="/images/blog/brand-kit/07-manage-brand-kits.webp" alt="The Manage Brand Kits page with an Add Brand Kit tile and existing kits, filtered by All, Organization and User tabs" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### 3. Name it
+
+Give the kit a unique name. You add the brand elements on the next screen.
+
+<p><img src="/images/blog/brand-kit/08-name-your-kit.webp" alt="The Create a Brand Kit dialog asking for a unique kit name before adding brand elements" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### 4. The asset sections
+
+This is the part that changed. A new kit opens with **Logos, Templates, Fonts, Colors, Images, Icons, Brand voice, Design instructions, Skills, and Connectors**. There is no separate "Brand guidelines (PDF)" tile on a new kit anymore. Design instructions, Skills, and Connectors are the newer sections.
+
+<p><img src="/images/blog/brand-kit/09-empty-kit-sections.webp" alt="A new empty Brand Kit showing asset sections from Logos through Skills: Logos, Templates, Fonts, Colors, Images, Icons, Brand voice and Skills" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### 5. Add colours and voice
+
+Colours take hex codes, so you can set a palette without uploading a file. I added a navy (`#1B2A4A`) and a brass (`#C9A24B`). Brand voice is a plain text box for tone, terminology, and do and don't rules.
+
+<p><img src="/images/blog/brand-kit/10-colours-and-voice.webp" alt="A Brand Kit with a Primary Color Palette holding a navy and a brass swatch, plus a populated Brand voice section" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### 6. Share or publish
+
+A brand manager sees **Publish as Official** to push the kit to the whole tenant. A regular user sees **Share** instead, with People and Groups tabs. That is the difference between an official kit and a personal or shared one.
+
+<p><img src="/images/blog/brand-kit/11-share-kit.webp" alt="The Share dialog for a Brand Kit with People and Groups tabs and a Start sharing button" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+A finished kit, with logos, a template, and a palette in place, looks like this:
+
+<p><img src="/images/blog/brand-kit/12-finished-kit.webp" alt="A finished Brand Kit showing two logo variants, a template with strict mode on, and a colour palette" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Using a kit to generate on-brand content
+
+Building the kit is half the job. Here it is doing the work. In **Create**, I opened **Brand and color**, picked the kit, and asked for a supplier summit poster.
+
+<p><img src="/images/blog/brand-kit/13-select-brand.webp" alt="The Brand and color picker in Copilot Create, with a list of brand kits to apply before generating an image" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Copilot returned this. Navy and gold, the logo placed, no manual styling.
+
+<p><img src="/images/blog/brand-kit/14-on-brand-result.webp" alt="A generated poster reading 'Caldova Pharmaceuticals Supplier Summit' in navy and gold with the brand logo, produced by Copilot using the selected Brand Kit" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+The same brand picker shows up in the PowerPoint Copilot pane (**+**, then **Select brand**), so generated slides follow the kit too.
+
 
 ## Governance — Who Owns What
 
@@ -782,7 +851,7 @@ To save: File → Save As → PowerPoint Template (`.potx`). PowerPoint will def
 
 ### How Users Open It WITHOUT Copilot
 
-This is the part that often gets missed. A `.potx` is useful even without any AI in the picture, but where it appears depends on the platform. Here are the four common paths:
+This is the part that often gets missed. A `.potx` is useful even without any AI in the picture, but where it appears depends on the platform. Here are the five common paths:
 
 | Path | Where users find it | Best for |
 |---|---|---|
@@ -890,7 +959,7 @@ After registration:
 > - The library is on the same SharePoint site as your other OALs (Microsoft's hard rule: all OAL libraries must be on the same site, up to 30 libraries)
 > - `ImageDocumentLibrary` is the type required for Brand Images search inside PowerPoint — `OfficeTemplateLibrary` is the type for templates
 > - For users to see the org library in **PowerPoint for the web**, they need an Office 365 E3 or E5 licence
-> - Newer versions of the cmdlet also support `-OrgAssetType BrandKitLibrary` and a `-CopilotSearchable $true` switch — useful when wiring Brand Kit content explicitly. Check the [official cmdlet reference](https://learn.microsoft.com/powershell/module/microsoft.online.sharepoint.powershell/add-spoorgassetslibrary) for current syntax.
+> - Newer versions of the cmdlet also list `-OrgAssetType BrandKitLibrary` as an accepted type, and `-CopilotSearchable $true` controls availability to Microsoft 365 Copilot Search. Neither setting links images to a Brand Kit on its own — do that through the documented Brand Kit workflow. Check the [official cmdlet reference](https://learn.microsoft.com/powershell/module/microsoft.online.sharepoint.powershell/add-spoorgassetslibrary) for current syntax.
 
 ### How Big Should the Library Be?
 
@@ -1028,7 +1097,7 @@ Brand Checker scans your entire presentation against your Brand Kit and flags:
 
 ### Walkthrough — What It Looks Like on My Build (June 2026)
 
-> 🔄 **Reality check:** Copilot's UI shifts constantly. The "automatic scan + one-click fixes" description above is the broader documented behaviour, but when I ran a brand review in my tenant this week, the entry point looked different — there wasn't a dedicated "Brand Reviewer" button I could spot in the ribbon. So I just typed what I wanted into the Copilot pane and it worked. Yours may look different by next month — that's normal for any feature this new.
+> 🔄 **Reality check:** Copilot's UI shifts constantly. The "automatic scan + one-click fixes" description above is the broader documented behaviour, but when I ran a brand review in my tenant in June 2026, the entry point looked different — there wasn't a dedicated "Brand Reviewer" button I could spot in the ribbon. So I just typed what I wanted into the Copilot pane and it worked. Yours may look different by next month — that's normal for any feature this new.
 
 Here's what I actually saw on my build, end to end. Three screenshots, three steps:
 
@@ -1040,7 +1109,7 @@ Step 1 — Open the Copilot pane and just ask.
        loading="lazy"
        style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid var(--border); border-radius: 6px;" />
   <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.5rem;">
-    On my build today, I couldn't spot a dedicated Brand Reviewer button — but typing <em>"check this presentation against my brand"</em> into the Copilot pane kicked off the same workflow. The magic phrase, for now: works.
+    On my June 2026 build, I couldn't spot a dedicated Brand Reviewer button — but typing <em>"check this presentation against my brand"</em> into the Copilot pane kicked off the same workflow. The magic phrase, for now: works.
   </figcaption>
 </figure>
 
@@ -1064,7 +1133,7 @@ Step 3 — The payoff: a detailed brand-by-brand audit.
        loading="lazy"
        style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid var(--border); border-radius: 6px; max-width: 800px;" />
   <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.5rem;">
-    Then a detailed brand-by-brand comparison — Typography, Colour palette, Logo and imagery, Layout and structure — each with Current vs Brand spec vs Verdict, plus a bottom-line summary. On my build today, one-click fixes weren't surfaced; it's a thorough report you act on manually. That may change with the next release — track Message Center.
+    Then a detailed brand-by-brand comparison — Typography, Colour palette, Logo and imagery, Layout and structure — each with Current vs Brand spec vs Verdict, plus a bottom-line summary. On my June 2026 build, one-click fixes weren't surfaced; it's a thorough report you act on manually. That may change with the next release — track Message Center.
   </figcaption>
 </figure>
 
@@ -1094,7 +1163,7 @@ This is the section people skip until something breaks, then come back to. Bookm
 
 ## What Doesn't Work Yet (Current Limitations)
 
-I want to be honest about what's still evolving. As of last verified (May 2026):
+I want to be honest about what's still evolving. This table reflects my testing through September 2026:
 
 | Scenario | Status | Notes |
 |----------|--------|-------|
@@ -1104,7 +1173,7 @@ I want to be honest about what's still evolving. As of last verified (May 2026):
 | Start from Brand Kit template | ✓ Available | Current Channel |
 | Copilot Cowork brand templates (attach `.potx`, OneDrive, OAL, or a `.pptx` starting deck) | ✓ Generally available | Since 16 June 2026. Preserves theme, fonts, logos, **all named layouts + slide master**, and placeholder geometry |
 | Brand Kit in Create tab (images, banners, posters) | ✓ Available | Web |
-| Upload brand guidelines PDF for AI extraction | ✓ Available | In Brand Kit creation, in supported tenants |
+| Upload brand guidelines PDF for AI extraction | ⚠️ Changing | Still documented, and present on older kits. New kits in the current Create UI (checked 29 September 2026) no longer show a separate guidelines tile. |
 | Brand Images via SharePoint OAL | ✓ Available | After PowerShell registration |
 | Brand Images via Templafy | ✓ Available | Via Microsoft Graph Connector |
 | Adobe Express agent in Copilot Chat | ✓ Available for many customers | `@Adobe Express` — check tenant availability |
@@ -1156,7 +1225,7 @@ This pattern works just as well for **multi-brand holding companies** — each s
 | Practice | Why |
 |----------|-----|
 | Start with **one official Brand Kit** | Get the foundation right before adding complexity |
-| Upload your brand guidelines **PDF** | Let Copilot extract rules automatically — faster and more accurate |
+| Upload a brand guidelines **PDF** if your kit offers it | Copilot extracts rules automatically. On newer kits without the tile, set colours, fonts, and voice by hand |
 | Use **Slide Master** for templates | Theme definitions, not manual formatting |
 | Include **12+ slide types** in templates | More variety = better Copilot output |
 | Build **one template that works inside AND outside Copilot** | `.potx` in the OAL surfaces in File → New for everyone |
@@ -1206,7 +1275,7 @@ Use this as your implementation checklist:
 ### Brand Manager Tasks
 
 - [ ] Gather all brand assets (logos, colours, fonts, icons, photography rules)
-- [ ] Prepare brand guidelines PDF for AI extraction
+- [ ] Prepare your brand guidelines PDF (for kits that still offer the upload)
 - [ ] Create the Brand Kit in the Copilot Create tab
 - [ ] Upload logos (primary + secondary + variants)
 - [ ] Define colour palette with HEX codes
@@ -1216,7 +1285,7 @@ Use this as your implementation checklist:
 - [ ] Define brand voice (tone, terminology, do/don't rules — see the [Brand Voice section](#brand-voice--beyond-logos-and-colours))
 - [ ] Upload templates (.potx, .dotx, .xltx) — built with Slide Master and placeholders
 - [ ] Verify the template works **standalone** (open it from File → New, build a deck without Copilot)
-- [ ] Upload brand guidelines PDF for auto-extraction
+- [ ] Upload the brand guidelines PDF for auto-extraction, if your kit shows the option
 - [ ] Review AI-extracted brand rules and refine (especially voice)
 - [ ] Publish the official Brand Kit
 - [ ] Test by creating content in PowerPoint, Word, and Create tab
@@ -1253,7 +1322,7 @@ Brand Kit has the deepest integration in PowerPoint (PowerPoint Agent, Narrative
 
 4. What is the Brand Checker?
 
-Brand Checker scans your entire presentation against your Brand Kit and flags issues — incorrect colours or fonts, misplaced logos, off-brand imagery, and layout problems. It offers one-click fixes to bring everything back on brand automatically.
+Brand Checker, which Microsoft now calls Brand Reviewer, reviews your presentation against your Brand Kit and flags issues like incorrect colours or fonts, misplaced logos, off-brand imagery, and layout problems. It can suggest one-click fixes where available. On some builds it returns a written report you act on manually, so check what your tenant exposes.
 
 5. How do I set up Brand Kit as an IT admin?
 
@@ -1265,7 +1334,7 @@ The OAL is SharePoint-based storage for templates and images. Brand Kit adds ric
 
 7. Can Copilot extract my brand guidelines automatically?
 
-Yes. Upload your existing brand guidelines PDF to a Brand Kit, and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. Review and refine before publishing — especially the voice section, where nuance often needs a human eye.
+Some kits offer an Add brand guidelines option for uploading a guidelines PDF, and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. New kits I checked on 29 September 2026 did not show that tile. If yours has no upload, set colours and fonts directly and add written guidance under Brand voice and Design instructions. Review and refine before publishing, especially the voice section, where nuance often needs a human eye. A guidelines upload can override existing values, so add it before hand-tuning.
 
 8. How do I create a PowerPoint template optimised for Copilot?
 
@@ -1277,7 +1346,7 @@ Yes. You can create and maintain multiple Brand Kits — for example, Corporate,
 
 10. Are the PowerPoint, Word, and Excel Agents generally available?
 
-As of last verified (May 2026), the PowerPoint Agent (including Brand Kit and Brand Checker / Brand Reviewer) is generally available on Windows, Mac, and Web for tenants with a Microsoft 365 Copilot licence. Specific capabilities are still rolling out across channels, and behaviour can differ between Current Channel, Monthly Enterprise Channel, and Beta Channel. These agents are powered by Anthropic Claude models. Check the [M365 Roadmap](/m365-roadmap/) and your Message Center for the latest status in your tenant.
+Brand Kit works with Copilot in PowerPoint on Windows, Mac, and the web. The Word, Excel, and PowerPoint Agents are available in the Microsoft Copilot app for eligible licensed users when the administrator permits Anthropic models. Brand Reviewer behaviour varies by build and channel. This reflects my testing through September 2026. These agents are powered by Anthropic Claude models. Check the [M365 Roadmap](/m365-roadmap/) and your Message Center for the latest status in your tenant.
 
 11. How do I create a standalone PowerPoint template my team can use even without Copilot?
 
@@ -1316,4 +1385,4 @@ Related guides you might find useful:
 
 ---
 
-> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. Feature availability and rollout timelines may change — always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information. Brand Kit, Brand Checker, PowerPoint / Word / Excel Agent, and Adobe Express agent availability varies by tenant, channel, region, and licence. Last verified: May 2026.
+> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. Feature availability and rollout timelines may change — always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information. Brand Kit, Brand Checker, PowerPoint / Word / Excel Agent, and Adobe Express agent availability varies by tenant, channel, region, and licence. Last verified: September 2026.
