@@ -2,7 +2,7 @@
 title: "Microsoft Scout — The Complete Guide"
 description: "What Microsoft Scout is, how it differs from Copilot, how to install through the Frontier preview program, and where to go deeper on secure configuration."
 date: 2026-06-12
-lastmod: 2026-06-16
+lastmod: 2026-09-29
 draft: false
 hub_id: "scout"
 hub: true
@@ -27,7 +27,7 @@ intro_note: "↗ a living guide — I've been using Scout (when it was still cal
 faq_intro: "Everything I get asked about Scout in the first 30 seconds of any conversation."
 faq:
   - question: "What is Microsoft Scout?"
-    answer: "Microsoft Scout is a desktop AI app for Windows and macOS that takes action on your behalf — reads and writes files, runs shell commands, controls a browser, queries your Microsoft 365 data, and works autonomously in the background. Microsoft calls it the first 'Autopilot' agent. It was announced at Microsoft Build 2026 (2 June 2026) and is currently in the Frontier preview program."
+    answer: "Microsoft Scout is a desktop AI app for Windows and macOS that takes action on your behalf — reads and writes files, runs shell commands, controls a browser, queries your Microsoft 365 data, and works autonomously in the background. It's Microsoft's 'Autopilot' — and as of the 25 September 2026 'new Copilot' announcement, Microsoft is renaming the product itself to **Autopilot** (the app is still branded 'Microsoft Scout' as the change rolls out). It was announced at Microsoft Build 2026 (2 June 2026) and is in the Frontier preview program."
   - question: "How is Scout different from Microsoft 365 Copilot?"
     answer: "Copilot answers your question in the moment — you type, it replies, the conversation is the thing. Scout keeps working in the background, with its own identity, on the tasks you handed it before. Microsoft introduced a new category name to make the distinction clear: chat is what you actively steer; an Autopilot is what holds the line while you do something else. Both are useful; they're different tools."
   - question: "Can I just download and install Scout right now?"
@@ -72,9 +72,11 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **This is a living guide.** Scout is in Frontier preview — releases ship roughly weekly, settings change, new skills land. I update this post every time Microsoft ships something new or I find something worth calling out. If you spot anything out of date, [send me feedback](/feedback/) and I'll patch it. Last verified: 16 June 2026 · Scout version 0.23.0.20260608.1.
+🔄 **This is a living guide.** Scout is in Frontier preview — releases ship roughly weekly, settings change, new skills land. I update this post every time Microsoft ships something new or I find something worth calling out. If you spot anything out of date, [send me feedback](/feedback/) and I'll patch it. Last verified: 29 September 2026 · Scout version 0.23.0.20260608.1.
 
 </div>
+
+> ✏️ **Naming update (25 September 2026):** In the "new Copilot" announcement (Home · Code · Autopilot), Microsoft confirmed that **Scout is being renamed "Autopilot"** — the product now *is* the Autopilot, not just "the first Autopilot agent." It's expanding to private preview at the end of September 2026. The desktop app is still branded **Microsoft Scout** while the change rolls out, so this guide keeps using "Scout" — read it as **Autopilot (formerly Scout)** throughout.
 
 Microsoft Scout is the first thing Microsoft has shipped in this Year of Agents that genuinely feels like a *new* tool, not another riff on Copilot. It's an "Autopilot" — Microsoft's name for a new category of agent that works continuously in the background, with its own identity, on your behalf, with your permission.
 
@@ -151,7 +153,7 @@ That's an Autopilot moment — a request that would have taken an hour of HTML +
 
 ### What it can do (Microsoft's words)
 
-Direct from the [official Microsoft 365 Blog announcement](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/) on 2 June 2026:
+Direct from the [official Microsoft 365 Blog announcement](https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/) on 2 June 2026:
 
 > Microsoft Scout is integrated across the Microsoft 365 apps you use every day, keeping it grounded in your flow of work. It operates across cloud, desktop, and web, connecting to Teams, Outlook, OneDrive, and SharePoint, and to the data that powers your day, including chats, email, calendar, and contacts. You interact with it in Teams, and extend its reach through the desktop app to your browser, local resources, and model context protocol servers.
 
