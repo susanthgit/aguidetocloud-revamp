@@ -4,7 +4,7 @@ list_title: "M365 Copilot Brand Kit — The Complete Guide"
 hub_id: "it-admins"
 description: "Build PowerPoint templates that work inside and outside Copilot, set up Brand Images, run Brand Checker, position Designer vs Adobe Express."
 date: 2026-04-15
-lastmod: 2026-09-29
+lastmod: 2026-09-30
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -22,7 +22,7 @@ faq:
   - question: "What is the difference between Brand Kit and the Organizational Asset Library (OAL)?"
     answer: "The OAL is a SharePoint-based storage location for templates and images. Brand Kit adds richer capabilities on top — brand voice, guidelines extraction, Brand Checker, multiple brand support, and AI-powered enforcement of your visual and verbal identity. They work together for the best results."
   - question: "Can Copilot automatically extract my brand guidelines?"
-    answer: "Some kits offer an Add brand guidelines option for uploading a guidelines PDF, and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. New kits checked on 29 September 2026 did not show that separate tile. If yours has no upload, set colours and fonts directly and add written guidance under Brand voice and Design instructions. Microsoft has not announced that PDF extraction is retired. A guidelines upload can override existing values, so add it before hand-tuning."
+    answer: "Historically, a Brand kit offered an Add brand guidelines option for uploading a guidelines PDF that Copilot's AI extracted colours, fonts, typography, photography styles, layout structures, and brand voice from. That upload has since been rolled back: a new kit checked on 30 September 2026 did not show it, and Microsoft Field Readiness guidance says the feature was pulled and is being reworked. So it isn't permanently retired — expect it to return in reworked form. In the meantime, set colours and fonts directly and add written guidance under Brand voice and Design instructions. Kits created before the change may still show the upload; if yours does, a guidelines upload can override existing values, so add it before hand-tuning."
   - question: "How do I create a PowerPoint template optimised for Copilot?"
     answer: "Use Slide Master with theme colours and fonts (not manual styling), include 12+ representative slide layouts showing content density, visual style, and data visualisation, use placeholders instead of text boxes, and avoid overlapping elements. Upload as .potx or .pptx to your Brand Kit."
   - question: "Can I have multiple Brand Kits for different brands or departments?"
@@ -63,7 +63,7 @@ If you've been wondering the same thing, this guide is for you.
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: September 2026 (I re-checked the Create UI and the Brand Kit asset sections on 29 September 2026).
+🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 30 September 2026 (re-checked the Create UI and Brand Kit sections live on 30 September 2026 — the "Add brand guidelines" PDF upload has been rolled back from new kits and is being reworked).
 
 </div>
 
@@ -264,7 +264,7 @@ A Brand Kit is more than just a logo and a colour code. Here's everything you ca
 
 > 💡 **Tip:** If your kit offers the guidelines upload, you can add your existing brand guidelines as a **PDF** and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. You review and refine before publishing. A guidelines upload can override existing values, so add it before hand-tuning.
 
-> **September 2026 update:** A new kit in the current Create experience no longer shows a separate **Brand guidelines (PDF)** tile. I checked this on 29 September 2026 in two tenants. A fresh kit opens with Logos, Templates, Fonts, Colors, Images, Icons, Brand voice, and three newer sections: **Design instructions**, **Skills**, and **Connectors**. Microsoft still documents the guidelines PDF, and kits made earlier still show the upload, so this reads as a UI change rolling out rather than a retired feature. If a colleague still sees the guidelines tile, they are on an older kit or an earlier build. There is a step-by-step walkthrough with screenshots earlier in this guide.
+> **Update — the guidelines PDF upload has been rolled back (checked 30 September 2026):** The **"Add brand guidelines"** PDF upload has been **pulled from new Brand kits and is being reworked** — this is the current Microsoft Field Readiness position, and I confirmed it live: a brand-new kit created on 30 September 2026 opens with **Logos, Templates, Fonts, Colors, Images, Icons, Brand voice, Design instructions, Skills, and Connectors** — no guidelines tile. So this is a temporary rollback pending rework, not a simple UI reshuffle and not a permanent retirement. Kits created before the change may still show the upload, and one Microsoft support page still describes it (docs lag a rollback). Expect it to return in reworked form. The step-by-step walkthrough below shows how to build a kit without it.
 
 ## Brand Voice — Beyond Logos and Colours
 
@@ -588,7 +588,7 @@ Once the policy is active, your designated brand managers can create the kit:
    - **Connectors** — Set connector defaults for the kit
 6. Select **Publish** to make it available organisation-wide
 
-> **September 2026 update:** These are the sections a new kit opens with today (checked 29 September 2026). The older standalone **Brand guidelines (PDF)** tile is no longer shown on a new kit, and **Design instructions**, **Skills**, and **Connectors** are the newer additions. Kits created earlier keep whatever sections they were built with. Microsoft still documents the guidelines PDF, so treat this as a rolling UI change, not a removed feature.
+> **Update (checked 30 September 2026):** These are the sections a new kit opens with today. The standalone **Brand guidelines (PDF)** upload is **no longer shown on a new kit** — Microsoft Field Readiness guidance is that the feature has been **rolled back and is being reworked**, which I confirmed with a fresh kit on 30 September 2026. **Design instructions**, **Skills**, and **Connectors** are the newer additions. Kits created earlier keep whatever sections they were built with, and one support page still documents the guidelines PDF (docs lag the rollback). Treat the upload as temporarily removed pending rework, not a permanent removal.
 
 > 💡 **Pro tip:** If your kit still offers a guidelines upload, start with your **existing brand guidelines PDF**. Copilot's AI extracts colour palettes, fonts, photography styles, layout structures, and brand voice patterns automatically, which saves setup time. On newer kits without that tile, set colours and fonts directly and paste your voice rules into **Brand voice** and **Design instructions** instead.
 
@@ -1173,7 +1173,7 @@ I want to be honest about what's still evolving. This table reflects my testing 
 | Start from Brand Kit template | ✓ Available | Current Channel |
 | Copilot Cowork brand templates (attach `.potx`, OneDrive, OAL, or a `.pptx` starting deck) | ✓ Generally available | Since 16 June 2026. Preserves theme, fonts, logos, **all named layouts + slide master**, and placeholder geometry |
 | Brand Kit in Create tab (images, banners, posters) | ✓ Available | Web |
-| Upload brand guidelines PDF for AI extraction | ⚠️ Changing | Still documented, and present on older kits. New kits in the current Create UI (checked 29 September 2026) no longer show a separate guidelines tile. |
+| Upload brand guidelines PDF for AI extraction | 🔻 Rolled back | Pulled from new kits and being reworked per Microsoft Field Readiness guidance (confirmed on a fresh kit, 30 September 2026). May still appear on kits created earlier; one support page still describes it. Expect a reworked version to return. |
 | Brand Images via SharePoint OAL | ✓ Available | After PowerShell registration |
 | Brand Images via Templafy | ✓ Available | Via Microsoft Graph Connector |
 | Adobe Express agent in Copilot Chat | ✓ Available for many customers | `@Adobe Express` — check tenant availability |
@@ -1334,7 +1334,7 @@ The OAL is SharePoint-based storage for templates and images. Brand Kit adds ric
 
 7. Can Copilot extract my brand guidelines automatically?
 
-Some kits offer an Add brand guidelines option for uploading a guidelines PDF, and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. New kits I checked on 29 September 2026 did not show that tile. If yours has no upload, set colours and fonts directly and add written guidance under Brand voice and Design instructions. Review and refine before publishing, especially the voice section, where nuance often needs a human eye. A guidelines upload can override existing values, so add it before hand-tuning.
+Historically, a Brand kit offered an Add brand guidelines option for uploading a guidelines PDF that Copilot's AI extracted colours, fonts, typography, photography styles, layout structures, and brand voice from. That upload has been rolled back — a new kit checked on 30 September 2026 did not show it, and Microsoft Field Readiness guidance says the feature was pulled and is being reworked (so expect it to return in reworked form, not gone for good). In the meantime, set colours and fonts directly and add written guidance under Brand voice and Design instructions. Review and refine before publishing, especially the voice section, where nuance often needs a human eye. Kits created before the change may still show the upload; where it appears, a guidelines upload can override existing values, so add it before hand-tuning.
 
 8. How do I create a PowerPoint template optimised for Copilot?
 
