@@ -5,7 +5,7 @@ hub_id: "built-in-agents"
 hub: true
 description: "The agents Microsoft ships inside Microsoft 365 — Facilitator, Planner, SharePoint and more: what each one does, where it lives, and how to turn it on."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-09-29
 draft: false
 card_tag: "Agents"
 tag_class: "ai"
@@ -33,9 +33,9 @@ faq:
   - question: "Where do I manage Microsoft 365 agents?"
     answer: "The Microsoft 365 admin center is the main control plane — go to Agents, where the Registry lists every agent and Agent settings controls what's allowed. Some agents are also managed in their own admin center: Teams agents (Facilitator, Channel Agent, Interpreter) in the Teams admin center, SharePoint agents in the SharePoint admin center. Microsoft Agent 365 (generally available since May 2026) adds a single layer to observe, govern and secure all of them."
   - question: "Which built-in agents are generally available, and which are in preview?"
-    answer: "Generally available: SharePoint agents, Interpreter, Researcher, Analyst, and the Planner Agent. Partly available: Facilitator — its core note-taking, agenda and Q&A are GA, while task tracking and document drafting are in public preview. In preview: the Channel Agent and the SharePoint Knowledge Agent. The Community Agent in Viva Engage is newer and Microsoft's public documentation is still thin, so confirm its status before you rely on it."
+    answer: "Generally available: SharePoint agents, Interpreter, Researcher, Analyst, and the Planner Agent. Partly available: Facilitator — its core note-taking, agenda, Q&A and Word document creation are GA, while task tracking with Planner is in public preview. In preview: the Channel Agent and the SharePoint Knowledge Agent. The Community Agent in Viva Engage is newer and Microsoft's public documentation is still thin, so confirm its status before you rely on it."
   - question: "Are the built-in agents available in government clouds (GCC, GCCH, DoD)?"
-    answer: "It varies by agent. Microsoft's service description notes that Teams meeting Copilot features like Facilitator, and the Planner Agent, are not yet available in GCC, GCC High or DoD, whereas SharePoint agents have their own (different) government-cloud status. If you run a government tenant, check the service-description row for the specific agent before planning a rollout."
+    answer: "It varies by agent and by cloud. Per Microsoft's service description, Copilot in Teams meeting agents (Facilitator, Channel Agent) and SharePoint agents are available in GCC and DoD but not GCC High; Researcher is in GCC and GCC High but not DoD; Analyst is in all three. The Planner Agent's government status isn't listed in that table, so check the Planner service description before you plan a rollout. If you run a government tenant, confirm the specific agent's row for your cloud."
   - question: "Do built-in agents cost extra on top of the Copilot seat?"
     answer: "As far as Microsoft's public documentation shows, the built-in agents are included with the Microsoft 365 Copilot licence rather than metered per message. The clear exception is SharePoint agents used through the pay-as-you-go path, which are billed per query. Usage-based work like Copilot Cowork is metered separately in Copilot Credits. When in doubt, confirm with your licensing contact before you budget."
 sitemap:
@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **A living guide to the agents Microsoft *ships* inside Microsoft 365** — as opposed to the ones you build yourself. New agents arrive often and previews change; confirm specifics in [Microsoft Learn — AI agents in Teams](https://learn.microsoft.com/en-us/microsoftteams/copilot-ai-agents-overview) and the [Microsoft 365 Copilot service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot). **Last verified: 23 June 2026.**
+🔄 **A living guide to the agents Microsoft *ships* inside Microsoft 365** — as opposed to the ones you build yourself. New agents arrive often and previews change; confirm specifics in [Microsoft Learn — AI agents in Teams](https://learn.microsoft.com/en-us/microsoftteams/copilot-ai-agents-overview) and the [Microsoft 365 Copilot service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot). **Last verified: 29 September 2026.**
 
 </div>
 
@@ -64,8 +64,8 @@ founder_note: |
 - The headline ones: **Facilitator** (Teams meetings), the Planner Agent (Microsoft Planner, formerly "Project Manager agent"), agents in SharePoint and the Knowledge Agent, the Channel Agent (Teams channels), the Community Agent (Viva Engage), plus Interpreter, Researcher and Analyst.
 - For most of them, a **Microsoft 365 Copilot licence** is the on-switch. SharePoint agents can also run on a pay-as-you-go path for unlicensed users.
 - You govern them from the Microsoft 365 admin center → Agents (Registry and Agent settings), with **Teams** and SharePoint admin centers for their own agents, and Microsoft Agent 365 as the single observe-govern-secure layer.
-- **Generally available:** SharePoint agents, Interpreter, Researcher, Analyst, Planner Agent. **Preview / partial:** Facilitator (core GA, tasks + drafting in preview), Channel Agent, Knowledge Agent. Thin docs: Community Agent — confirm before relying on it.
-- **Government-cloud availability varies by agent** — Facilitator and Planner aren't in GCC/GCCH/DoD; SharePoint agents differ.
+- **Generally available:** SharePoint agents, Interpreter, Researcher, Analyst, Planner Agent. **Preview / partial:** Facilitator (core GA, Planner task tracking in preview), Channel Agent, Knowledge Agent. Thin docs: Community Agent — confirm before relying on it.
+- **Government-cloud availability varies by agent and cloud** — the Teams meeting agents and SharePoint agents are in GCC and DoD but not GCC High; Researcher is in GCC and GCC High but not DoD; Analyst is in all three. Check the Planner service description for the Planner Agent.
 
 > ⚡ **In a hurry?** Skim **[the full lineup table](#lineup)**, then jump to the surface you care about — [Teams](#teams), [Planner](#planner) or [SharePoint](#sharepoint).
 
@@ -86,11 +86,11 @@ The Microsoft 365 admin center sorts every agent in your tenant into four bucket
 
 ## The full lineup {#lineup}
 
-Here's the built-in agents worth knowing — what each does in one line, where it lives, what unlocks it, and where it sits on the road to general availability (as of June 2026). The well-established ones link to a deeper section below; the newest few (Community Agent, Employee Self-Service, Skills agent) are in for completeness, with the honest note that Microsoft's public documentation on them is still thin — so confirm before you plan around them.
+Here's the built-in agents worth knowing — what each does in one line, where it lives, what unlocks it, and where it sits on the road to general availability (as of September 2026). The well-established ones link to a deeper section below; the newest few (Community Agent, Employee Self-Service, Skills agent) are in for completeness, with the honest note that Microsoft's public documentation on them is still thin — so confirm before you plan around them.
 
 | Agent | What it does | Lives in | Unlocked by | Status |
 |---|---|---|---|---|
-| **[Facilitator](#teams)** | Takes shared notes, runs the agenda, answers questions in a meeting | Teams meetings | M365 Copilot | Core GA; tasks + drafting in preview |
+| **[Facilitator](#teams)** | Takes shared notes, runs the agenda, answers questions in a meeting | Teams meetings | M365 Copilot | Core GA; task tracking (Planner) in preview |
 | **[Planner Agent](#planner)** *(was Project Manager)* | Builds task plans, works tasks assigned to it, writes status reports | Microsoft Planner | M365 Copilot (premium Planner adds goal→plan) | GA |
 | **[Channel Agent](#teams)** | A per-channel expert that answers from the channel's messages and files | Teams channels | M365 Copilot | Preview |
 | **Interpreter** | Real-time voice interpretation across 9 languages in meetings | Teams meetings | M365 Copilot | GA |
@@ -104,7 +104,7 @@ Here's the built-in agents worth knowing — what each does in one line, where i
 
 <span style="font-size:0.85em;">*Community Agent licensing is not fully documented publicly yet — treat the licence column as "appears to need M365 Copilot" and confirm.*</span>
 
-The next sections walk the ones with the most to show, grouped by the app they live in. The three with their own deep guides — Facilitator, Planner and the SharePoint Knowledge Agent — get a short summary here and a link to the full walkthrough.
+The next sections walk the ones with the most to show, grouped by the app they live in. The three with their own deep guides — Facilitator, Planner and the SharePoint Knowledge Agent — get a short summary here and a link to the full walkthrough. In a hurry to pick one? Skip to [which agent for which job](#which).
 
 ---
 
@@ -214,7 +214,7 @@ Researcher and Analyst come with a monthly query allowance on a qualifying licen
 
 For most of these agents, the **on-switch is the licence**: assign a Microsoft 365 Copilot licence and the agent becomes available. Beyond that, here's where you actually control them.
 
-<p><img src="/images/blog/microsoft-365-built-in-agents/01-admin-agents-registry.webp" alt="The Microsoft 365 admin center with the Agents section open on the All agents Registry tab, showing counters for Total agents, Agents at risk, Ownerless agents and Blocked agents, and a table of agents — including Researcher from Microsoft alongside Copilot Studio and Foundry agents — with availability, risk, active-user and last-updated columns." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/microsoft-365-built-in-agents/01-admin-agents-registry.webp" alt="The Microsoft 365 admin center with the Agents section open on the All agents Registry tab, showing summary counters and a table of agents — including Researcher from Microsoft alongside Copilot Studio and Foundry agents — with availability, risk, active-user and last-updated columns." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The Microsoft 365 admin center → Agents → Registry — where every agent in the tenant shows up: Microsoft's built-in ones (like Researcher) alongside the rest, with risk and usage at a glance.*
 
@@ -225,7 +225,7 @@ For most of these agents, the **on-switch is the licence**: assign a Microsoft 3
 | **SharePoint admin center** | SharePoint agents — access controls and the **pay-as-you-go billing** setup. |
 | **Microsoft Agent 365** | The newer single layer (GA May 2026) to **observe, govern and secure** every agent in one place, whoever built it. **Needs its own per-user licence** — it isn't bundled with M365 Copilot. |
 
-> ✅ **Two quick prerequisites people miss:** the Teams meeting agents (Facilitator, Channel Agent) need **Loop experiences in Teams** turned on; and government-cloud availability varies by agent — the Teams meeting agents and the Planner Agent aren't in GCC, GCC High or DoD, while SharePoint agents have their own (different) GCC/DoD status. Check the service-description row for the specific agent if that's you.
+> ✅ **Two quick prerequisites people miss:** the Teams meeting agents (Facilitator, Channel Agent) need **Loop experiences in Teams** turned on; and government-cloud availability varies by agent and cloud. Per the service description, the Teams meeting agents and SharePoint agents are in GCC and DoD but not GCC High, Researcher is in GCC and GCC High but not DoD, and Analyst is in all three. Check the service-description row for the specific agent if that's you.
 
 For the full governance picture — registry, policies, security templates and Agent 365 — see [Agent 365: the security & governance guide](/blog/agent-365-security-governance-complete-guide/).
 
@@ -284,8 +284,8 @@ The public, primary references behind this page:
 - [Interpreter agent in Teams](https://learn.microsoft.com/en-us/microsoftteams/interpreter-agent-teams)
 - [Access the Planner Agent](https://support.microsoft.com/en-us/planner/copilot/access-planner-agent)
 - [Get started with agents in SharePoint](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents)
-- [Get started with Researcher in Microsoft 365 Copilot](https://support.microsoft.com/en-us/topic/get-started-with-researcher-in-microsoft-365-copilot-e63ab760-f3de-4c47-ae87-dad601b0e9c4)
-- [Get started with Analyst in Microsoft 365 Copilot](https://support.microsoft.com/en-us/topic/get-started-with-analyst-in-microsoft-365-copilot-ff505b9c-a06c-4be9-b855-69d89b1d25d2)
+- [Get started with Researcher in Microsoft 365 Copilot](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-researcher-in-microsoft-365-copilot-e63ab760-f3de-4c47-ae87-dad601b0e9c4)
+- [Get started with Analyst in Microsoft 365 Copilot](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-analyst-in-microsoft-365-copilot-ff505b9c-a06c-4be9-b855-69d89b1d25d2)
 - [Microsoft 365 Copilot in Viva Engage](https://learn.microsoft.com/en-us/viva/engage/configure-microsoft-365-copilot-in-viva-engage)
 - [Agent registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
 - [Microsoft Agent 365 overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview)
