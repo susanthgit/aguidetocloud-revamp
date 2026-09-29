@@ -4,13 +4,13 @@ list_title: "M365 Copilot (licensed) — Train-the-Trainer Guide"
 hub_id: "fundamentals"
 description: "Train-the-Trainer guide for the licensed M365 Copilot. Every app (Word, Excel, PPT, Outlook, Teams), Researcher, Analyst, agents, rollout tips."
 date: 2026-04-12
-lastmod: 2026-06-18
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is the Microsoft 365 Copilot licence?"
-    answer: "Microsoft 365 Copilot is a paid add-on licence ($30/user/month for enterprise, $21 for business) that unlocks the full AI experience across all Microsoft 365 apps. It adds work data grounding via Microsoft Graph, deep in-app integration, advanced agents like Researcher and Analyst, Notebooks, priority access, and Anthropic Claude model choice."
+    answer: "Microsoft 365 Copilot is a paid add-on licence (indicatively around $30/user/month for enterprise and $21 for business, on an annual term — confirm current pricing on Microsoft's pricing page) that unlocks the full AI experience across all Microsoft 365 apps. It adds work data grounding via Microsoft Graph, deep in-app integration, advanced agents like Researcher and Analyst, Notebooks, priority access, and Anthropic Claude model choice."
   - question: "What does work data grounding mean in Microsoft 365 Copilot?"
     answer: "Work data grounding means Copilot can read and reason over your organisation's data through Microsoft Graph — your emails in Outlook, files in SharePoint and OneDrive, Teams chats and meetings, calendar events, and contacts. This makes Copilot contextually aware of your work, not just the web."
   - question: "What can Copilot do in Word?"
@@ -44,7 +44,7 @@ founder_note: |
   Most train-the-trainer content I find is either an investor deck or a 200-slide product walkthrough. This is the version I would hand to a change lead who has one week to get up to speed. Every section maps to a question I have actually been asked in a customer room.
 ---
 
-This is the guide for people training users on the **paid** Microsoft 365 Copilot licence — the $30/month upgrade that turns Copilot from a chat tool into an AI assistant embedded in every app your users touch *(for the free version first, see the [Copilot Chat trainer guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)).*
+This is the guide for people training users on the **paid** Microsoft 365 Copilot licence — the paid upgrade that turns Copilot from a chat tool into an AI assistant embedded in every app your users touch *(for the free version first, see the [Copilot Chat trainer guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)).*
 
 If your users don't have the paid licence yet, start with our [Copilot Chat (Free) Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) — everything there still applies to licensed users too. This guide covers what the licence **adds on top**.
 
@@ -52,7 +52,7 @@ If your users don't have the paid licence yet, start with our [Copilot Chat (Fre
 
 <div class="living-doc-banner">
 
-This is a living document. Bookmark this page rather than printing it — the AI landscape changes fast. If you spot something outdated, please [let me know](/feedback/) and I'll update it.
+This is a living document. Bookmark this page rather than printing it — the AI landscape changes fast. If you spot something outdated, please [let me know](/feedback/) and I'll update it. **Last verified: 29 September 2026.**
 
 </div>
 
@@ -157,7 +157,7 @@ Licensed users benefit from these extra controls beyond what Copilot Chat provid
 | Control | What It Does |
 |:--|:--|
 | **Microsoft Graph permissions** | Copilot only accesses data the user already has permission to see |
-| **Sensitivity label inheritance** | When Copilot references a labelled document, the output inherits the highest sensitivity label |
+| **Sensitivity label inheritance** | When Copilot creates new content from labelled sources in supported apps (Word, PowerPoint, Outlook), the output inherits the highest sensitivity label |
 | **Purview audit logging** | All Copilot interactions can be audited, searched in eDiscovery, and retained |
 | **Retention policies** | Copilot conversations can be covered by the same retention policies as Teams chats |
 | **Admin controls** | IT can manage Copilot settings, disable features, and control agent access |
@@ -175,17 +175,17 @@ Licensed users benefit from these extra controls beyond what Copilot Chat provid
 
 | Question | Answer |
 |:--|:--|
-| **Does Copilot share data with OpenAI?** | ❌ No. Microsoft uses OpenAI models through Azure OpenAI Service — Microsoft controls the infrastructure. No data is shared with OpenAI. |
+| **Does Copilot share data with OpenAI?** | It depends which path. The core GPT experience runs on **Azure OpenAI (Microsoft-operated)** — Microsoft controls the infrastructure and nothing goes to OpenAI. Eligible commercial tenants may *also* have **OpenAI-operated GPT** enabled (OpenAI as a Microsoft subprocessor, on by default) — that path processes on OpenAI's infrastructure under the Microsoft DPA, inside the EU Data Boundary. Admins can turn the subprocessor path off. Neither path trains OpenAI's models on your data. |
 | **Does Copilot use my data to train AI?** | ❌ No. Under EDP, prompts and responses are never used to train foundation models. |
 | **Can Copilot access files I can't see?** | ❌ No. Copilot respects all existing access controls and permissions. |
 | **What about Anthropic Claude data?** | Data sent to Claude is processed outside the EU Data Boundary. Anthropic is a Microsoft subprocessor — your data isn't used for Anthropic's training. Microsoft DPA applies. |
 | **Is Copilot data discoverable in eDiscovery?** | ✅ Yes. Copilot interactions are logged and available for audit, eDiscovery, and retention. |
-| **Does Copilot work with sensitivity labels?** | ✅ Yes. Output inherits the highest sensitivity label from referenced content. |
+| **Does Copilot work with sensitivity labels?** | ✅ Yes. When Copilot creates a new file from labelled content in supported apps (Word, PowerPoint, Outlook), the output inherits the highest sensitivity label from the referenced content. |
 
 > 📖 **Official references:**
 > - [Enterprise Data Protection in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection)
 > - [Privacy and protections in Copilot Chat](https://learn.microsoft.com/en-us/copilot/privacy-and-protections)
-> - [Data, privacy, and security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy)
+> - [Data, privacy, and security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy)
 
 ---
 
@@ -199,7 +199,7 @@ flowchart TD
     B --> C["Microsoft 365<br/>Copilot Orchestrator"]
     C --> D["Microsoft Graph<br/>(Emails, Files,<br/>Meetings, Chats)"]
     C --> E["Web Search<br/>(Bing, if enabled)"]
-    C --> F["AI Model<br/>(GPT-5 or Claude<br/>via Azure)"]
+    C --> F["AI Model<br/>GPT (Azure / OpenAI)<br/>or Claude (Anthropic)"]
     F --> G["EDP Layer<br/>Content filtering<br/>+ Label inheritance"]
     G --> H["User receives<br/>secure response"]
 ```
@@ -212,10 +212,10 @@ flowchart TD
 | **2. Identity check** | Copilot checks who the user is and what they can access | Conditional access, MFA, permissions all enforced |
 | **3. Orchestration** | Copilot determines what data sources to query | Only queries sources the user has access to |
 | **4. Graph retrieval** | Retrieves relevant emails, files, meetings, chats | Sensitivity labels and DLP policies respected |
-| **5. Web search** | Optionally searches the web for additional context | Web queries don't include organisational data |
+| **5. Web search** | Optionally searches the web for additional context | Only a short *derived* query goes to Bing — never your files or identity; the query can include terms drawn from the content you're working with |
 | **6. AI processing** | AI model generates a response | Processed in Azure (GPT) or Anthropic infrastructure (Claude) |
 | **7. Content filtering** | Response checked for harmful content, copyright, prompt injection | Microsoft's responsible AI safeguards applied |
-| **8. Label inheritance** | If referenced data had sensitivity labels, output inherits the highest | Ensures classified content stays classified |
+| **8. Label inheritance** | In supported creation scenarios (Word, PowerPoint, Outlook), if referenced data had sensitivity labels the new output inherits the highest | Ensures classified content stays classified |
 | **9. Response delivered** | User receives the response | Response protected under EDP, available for audit |
 
 <div class="trainer-tip">
@@ -323,7 +323,7 @@ Copilot in Excel turns data analysis from a specialist skill into something ever
 | **Sort and filter** | Organise data with natural language | *"Sort this table by revenue, highest to lowest, and filter to only show the APAC region"* |
 | **Edit with Copilot** | Copilot directly modifies your data | *"Add a column that calculates profit margin for each product"* |
 | **Advanced analysis (Python)** | Complex statistical analysis | *"Run a correlation analysis between marketing spend and revenue using Python"* |
-| **Think Deeper mode** | Elaborate analysis with reasoning models | *"Analyse this dataset for outliers and anomalies, explain what they might mean"* |
+| **Advanced analysis** | Deeper reasoning over your data | *"Analyse this dataset for outliers and anomalies, explain what they might mean"* |
 
 <div class="trainer-tip">
 
@@ -350,7 +350,7 @@ Copilot in PowerPoint turns ideas into presentations — from a prompt, a Word d
 | **Organise flow** | Restructure and add sections | *"Organise this presentation into three sections: Introduction, Analysis, and Recommendations"* |
 | **Summarise** | Get key points from a long deck | *"Summarise the key findings from this presentation in 5 bullet points"* |
 | **Design adjustments** | Change formatting across the deck | *"Make all headings consistent and add our brand colours"* |
-| **Translate** | Translate entire presentations | *"Translate this presentation into te reo Māori"* |
+| **Translate** | Translate entire presentations | *"Translate this presentation into Spanish"* |
 | **Explain content** | Right-click any element for explanation | Right-click a chart → *"Explain"* |
 
 <div class="trainer-tip">
@@ -390,7 +390,7 @@ Copilot in Outlook helps users stay on top of their inbox, craft better emails, 
 
 ## Copilot in Teams
 
-Copilot in Teams is where many users experience the **most immediate time savings**. Based on [Microsoft's Work Trend Index research](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview), users report significant time savings on meeting follow-ups and catch-ups.
+Copilot in Teams is where many users experience the **most immediate time savings**. Based on [Microsoft's Work Trend Index research](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview), users report significant time savings on meeting follow-ups and catch-ups.
 
 ### What Licensed Users Can Do
 
@@ -470,7 +470,7 @@ Works with Word, PDF, PowerPoint, Excel, and text files.
 
 ## Copilot in Loop
 
-Copilot in Loop enables AI-assisted collaborative content creation. Your team can work together on Loop pages while Copilot helps generate, refine, and organise content in real time.
+Copilot in Loop supports AI-assisted collaborative work. Your team co-authors Loop pages together in real time, and Copilot helps via a **Copilot Chat** panel you can ask questions and *insert* answers from, plus **Recap** to summarise page changes. One limit worth teaching: Copilot in Loop **can't directly edit the page you have open** — you ask, then insert. For a Copilot that actively drafts and rewrites *in* the document, that's Copilot Pages.
 
 **Key capabilities:**
 - Draft collaborative content with AI assistance
@@ -525,7 +525,7 @@ Analyst is a **data analysis agent** that uses Python under the hood to process,
 |:--|:--|
 | **What it does** | Data analysis, visualisation, statistical modelling |
 | **How it's different** | Uses Python for computation — not just formulas |
-| **Model** | Can use Think Deeper mode for complex analysis |
+| **Model** | Reasons over your data with visible workings (writes and runs Python) |
 | **Best for** | Sales analysis, trend detection, forecasting, data cleaning, visual reports |
 
 Example prompts to try:
@@ -582,7 +582,7 @@ Copilot Notebooks is a **secure, AI-powered workspace** for structured problem-s
 
 ## Full Agent Capabilities
 
-With the paid licence, users get **comprehensive agent access** — no metering, no billing plans needed.
+With the paid licence, users get **comprehensive agent access** — the built-in agents and everyday employee-facing agent use are included (zero-rated) within fair-use limits, with nothing extra to buy. The exception to know: **Cowork** and Cowork-built apps run on **usage-based Copilot Credits**, so that autonomous work is metered separately even for licensed users.
 
 ### What Licensed Users Can Do with Agents
 
@@ -643,6 +643,8 @@ flowchart TD
 3. Under **Available subprocessors**, find Anthropic and click Enable
 4. Changes take effect within minutes to a few hours
 
+> 💡 **Trainer note:** That same "AI providers operating as Microsoft subprocessors" list also includes **OpenAI-operated GPT** (OpenAI acting as a Microsoft subprocessor — distinct from the Microsoft-operated Azure OpenAI that's always on). Like Anthropic, it's **on by default for eligible commercial tenants** (admins opt out), but unlike Anthropic it sits *inside* the EU Data Boundary. So if your compliance line is "nothing leaves the Microsoft-operated boundary", both subprocessor toggles are the ones to check — not just Anthropic.
+
 ### Regional Defaults
 
 | Region | Default Status | Action Needed |
@@ -657,7 +659,7 @@ flowchart TD
 
 In supported apps, users see a **model selector** in the UI — typically at the top right. They can switch between:
 - **Auto** — Copilot chooses the best model (default)
-- **GPT-5** — OpenAI's latest model
+- **GPT** — OpenAI's GPT models (the model picker shows the current versions)
 - **Claude** — Anthropic's model (when available)
 
 <div class="trainer-tip">
@@ -773,7 +775,7 @@ Running your first M365 Copilot (licensed) training session? Here's your quick-s
 
 🗣️ **Say this to executives:**
 
-*"Microsoft 365 Copilot is the AI layer across your entire productivity stack. It reads your organisation's data — emails, files, meetings, chats — and turns it into instant insights, drafts, and actions. According to [Forrester's Total Economic Impact study](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview), organisations are seeing meaningful productivity gains across roles. It's not just a chat tool — it's AI that handles routine work so your team can focus on strategy."*
+*"Microsoft 365 Copilot is the AI layer across your entire productivity stack. It reads your organisation's data — emails, files, meetings, chats — and turns it into instant insights, drafts, and actions. According to [Forrester's Total Economic Impact study](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview), organisations are seeing meaningful productivity gains across roles. It's not just a chat tool — it's AI that handles routine work so your team can focus on strategy."*
 
 </div>
 
@@ -791,10 +793,10 @@ Running your first M365 Copilot (licensed) training session? Here's your quick-s
 
 ## Pricing & Licensing
 
-| Plan | Price | Minimum | Commitment |
+| Plan | Price (indicative, US) | Minimum | Commitment |
 |:--|:--|:--|:--|
-| **Enterprise** (E3/E5, 300+ users) | $30 USD/user/month | 1 user | Annual |
-| **Business** (< 300 users) | $21 USD/user/month | 1 user | Annual |
+| **Enterprise** (E3/E5, 300+ users) | ~$30 USD/user/month | 1 user | Annual |
+| **Business** (< 300 users) | ~$21 USD/user/month | 1 user | Annual |
 | **Education** | Discounted | Varies | Annual |
 
 > 🔧 **Need help understanding licensing?** Use our interactive [Microsoft Licensing Simplifier](/licensing/) to compare all M365 plans side-by-side.
@@ -850,7 +852,7 @@ Not every user needs the paid licence. **Copilot Chat (free) is sufficient** whe
 
 | Resource | What It Covers | Link |
 |:--|:--|:--|
-| **M365 Copilot Overview** | Full product overview for admins | [learn.microsoft.com](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview) |
+| **M365 Copilot Overview** | Full product overview for admins | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview) |
 | **Copilot App Overview** | App features, licence comparison | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-overview) |
 | **Release Notes** | Latest feature updates | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) |
 | **Enterprise Data Protection** | Security & compliance details | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection) |
@@ -899,7 +901,7 @@ It covers everything about the free Copilot Chat experience — security, EDP, c
 
 1. What is the Microsoft 365 Copilot licence?
 
-It's a paid add-on ($30/user/month for enterprise, $21 for business) that unlocks the full AI experience across all M365 apps — work data grounding, deep in-app integration, Researcher & Analyst agents, Notebooks, Anthropic model choice, and priority access.
+It's a paid add-on (indicatively ~$30/user/month for enterprise, ~$21 for business) that unlocks the full AI experience across all M365 apps — work data grounding, deep in-app integration, Researcher & Analyst agents, Notebooks, Anthropic model choice, and priority access.
 
 </div>
 
@@ -971,7 +973,7 @@ Teams meeting transcription (for recaps), Anthropic subprocessor toggle, agent c
 
 10. How much does the Copilot licence cost?
 
-$30 USD/user/month for Enterprise (300+ users), $21 USD/user/month for Business (under 300 users). Both require annual commitment. Education pricing is discounted.
+Indicatively around $30 USD/user/month for Enterprise (300+ users) and $21 USD/user/month for Business (under 300 users), on an annual commitment; Education pricing is discounted. Figures are indicative US list prices — confirm the current number on Microsoft's pricing page, as enterprise pricing varies by agreement and region.
 
 </div>
 
