@@ -4,7 +4,7 @@ list_title: "Copilot Security Questions — Answered (IT Admin FAQ)"
 hub_id: "it-admins"
 description: "Plain answers to the top Microsoft 365 Copilot security questions — web grounding, data privacy, Outlook access, audit, retention and AI governance."
 date: 2026-06-24
-lastmod: 2026-09-15
+lastmod: 2026-09-29
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-security-questions-answered.jpg"]
@@ -142,7 +142,7 @@ This trips up almost every security review, so let's clear it up before anything
 
 The one line worth memorising: both run under the same enterprise terms — the [Microsoft Products and Services Data Protection Addendum](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA) and the Product Terms, with Microsoft acting as your data processor. Both honour your identity model and permissions, and — when they're working over your Microsoft 365 content — your sensitivity labels, retention and audit apply. (Exactly how labels and retention behave depends on whether Copilot is touching Graph content, an uploaded file, chat history, an agent, or the open web — I'll call out the differences as we go.)
 
-*Source: [Enterprise data protection in Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection).*
+*Source: [Enterprise data protection in Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection).*
 
 ---
 
@@ -204,7 +204,7 @@ A user-level web-search toggle is available for both Copilot and Copilot Chat wh
 
 **When should it be off?** Decide with your privacy and security teams based on the information involved, applicable obligations and the separate Bing terms. There is no safe universal answer for every regulator, contract or organisation.
 
-*Source: [Manage web search for Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access).*
+*Source: [Manage web search for Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access).*
 
 ---
 
@@ -245,7 +245,7 @@ In other words, the processor-to-controller line moves at the Bing boundary. For
 
 **DLP scope matters.** Label-based file/email processing exclusions are distinct from prompt sensitive-information-type controls. Prompt blocking is documented as preview and rolling out, scans typed text rather than uploaded-file contents, and changes can take up to four hours. A separate **Performing Web Searches** action can block web grounding while allowing an internal response. Prompt DLP is listed for all Copilot/Chat users; file/email restrictions require eligible E5/Purview entitlements.
 
-*Sources: [How Microsoft handles generated search queries](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access#how-microsoft-handles-generated-search-queries) · [Enterprise data protection — web queries](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection).*
+*Sources: [How Microsoft handles generated search queries](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access#how-microsoft-handles-generated-search-queries) · [Enterprise data protection — web queries](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection).*
 
 ---
 
@@ -464,7 +464,7 @@ For an RFP, distinguish certifications, assurance reports, regulatory obligation
 
 **The RFP answer should state scope and date.** Cite the applicable certificate, report or contractual commitment from the [Service Trust Portal](https://servicetrust.microsoft.com), then explain your configuration and responsibilities. ISO 42001 concerns AI management systems; it does not certify each output as correct. Web queries and connected services can have separate exclusions. No service certification makes a customer automatically GDPR- or HIPAA-compliant.
 
-*Sources: [Data, privacy & security for M365 Copilot — regulatory compliance](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy#meeting-regulatory-compliance-requirements) · [Microsoft Service Trust Portal](https://servicetrust.microsoft.com).*
+*Sources: [Data, privacy & security for M365 Copilot — regulatory compliance](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy#meeting-regulatory-compliance-requirements) · [Microsoft Service Trust Portal](https://servicetrust.microsoft.com).*
 
 ---
 

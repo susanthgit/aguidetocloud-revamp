@@ -3,7 +3,7 @@ title: "Auditing Microsoft 365 Copilot: What's Logged and Kept"
 list_title: "Auditing Microsoft 365 Copilot — A Practical Guide"
 description: "A plain-English guide to Microsoft 365 Copilot auditing: what each interaction records, where to find it in Purview, and how long it's kept."
 date: 2026-08-11
-lastmod: 2026-09-15
+lastmod: 2026-09-29
 hub_id: "it-admins"
 card_tag: "Security"
 tag_class: "security"

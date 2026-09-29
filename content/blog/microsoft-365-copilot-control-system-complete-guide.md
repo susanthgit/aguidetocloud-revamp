@@ -4,7 +4,7 @@ list_title: "Copilot Control System (CCS) — The Complete Guide"
 hub_id: "it-admins"
 description: "What CCS is, how it differs from Agent 365, and the 3 pillars of M365 AI governance — security, management, measurement."
 date: 2026-04-19
-lastmod: 2026-06-18
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -24,7 +24,7 @@ faq:
   - question: "Can CCS prevent Copilot from leaking sensitive data?"
     answer: "Yes — through multiple layers. Copilot already respects your existing permissions (it can only access what a user can access). Sensitivity labels add another layer of data classification. Purview DLP policies can detect sensitive information in Copilot prompts and block responses grounded in that data. SharePoint Advanced Management helps you find overshared content before Copilot surfaces it. The key insight is that most 'Copilot data leakage' is actually a pre-existing oversharing problem that Copilot makes visible."
   - question: "When does Agent 365 become available?"
-    answer: "Agent 365 reaches general availability on May 1, 2026. It will be available as a standalone add-on at $15/user/month for any Microsoft 365 plan that includes Copilot, or included in the new Microsoft 365 E7 (Frontier Suite) at $99/user/month."
+    answer: "Agent 365 reached general availability on 1 May 2026. It's available as a standalone add-on at indicatively ~$15/user/month for any Microsoft 365 plan that includes Copilot, or included in Microsoft 365 E7 (Frontier Suite) at ~$99/user/month. Figures are indicative — confirm on Microsoft's pricing page."
   - question: "What is the relationship between CCS, Agent 365, and Microsoft 365 E7?"
     answer: "Think of it as layers. CCS provides governance for the Copilot experience — included with your existing licences. Agent 365 provides governance for AI agents — a new paid add-on. Microsoft 365 E7 bundles everything together: E5 + Copilot + Agent 365 + Entra Suite at $99/user/month. E7 is for organisations that want the complete AI governance stack in one SKU."
 images: ["images/og/blog/microsoft-365-copilot-control-system-complete-guide.jpg"]
@@ -338,7 +338,7 @@ Whether you're just starting your Copilot journey or already deep into agents, h
 > - [Microsoft 365 E7 (Frontier Suite) — Everything You Need to Know](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)
 > - [Copilot Content Safety Controls — Complete Guide for Admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
 > - [Copilot Deployment Best Practices — Ultimate Checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/)
-> - [Copilot Control System overview — Microsoft Learn](https://learn.microsoft.com/en-us/copilot/microsoft-365/copilot-control-system/overview)
+> - [Copilot Control System overview — Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-control-system/overview)
 
 ---
 
@@ -378,10 +378,10 @@ Yes — through multiple layers. Copilot already respects your existing permissi
 
 8. When does Agent 365 become available?
 
-Agent 365 reaches general availability on May 1, 2026. It will be available as a standalone add-on at $15/user/month for any Microsoft 365 plan that includes Copilot, or included in the new [Microsoft 365 E7](https://www.microsoft.com/en-us/microsoft-365/enterprise/e7) at $99/user/month.
+Agent 365 reached general availability on 1 May 2026. It's available as a standalone add-on at indicatively ~$15/user/month for any Microsoft 365 plan that includes Copilot, or included in [Microsoft 365 E7](https://www.microsoft.com/en-us/microsoft-365/enterprise/e7) at ~$99/user/month (indicative — confirm on Microsoft's pricing page).
 
 </div>
 
 ---
 
-> Disclaimer: This blog is my personal take based on what I've seen working with customers and partners. It doesn't represent official Microsoft guidance. Always check [Microsoft Learn](https://learn.microsoft.com/en-us/copilot/microsoft-365/copilot-control-system/overview) for the latest official documentation and confirm details with your Microsoft account team.
+> Disclaimer: This blog is my personal take based on what I've seen working with customers and partners. It doesn't represent official Microsoft guidance. Always check [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-control-system/overview) for the latest official documentation and confirm details with your Microsoft account team.

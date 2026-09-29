@@ -4,7 +4,7 @@ list_title: "M365 Copilot Chat — April 15 Changes (IT Admin Update)"
 hub_id: "it-admins"
 description: "Microsoft is removing free Copilot Chat from Word/Excel/PPT/OneNote for unlicensed users April 15. MC1253858, MC1253863, Chat Basic explained."
 date: 2026-04-09
-lastmod: 2026-08-19
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -170,7 +170,7 @@ Even after April 15, unlicensed users in **both** large and small tenants can st
 
 So a user in a large enterprise who loses the Word side panel can still open the Copilot app, talk to the Word Agent, and get a full document created and saved to OneDrive.
 
-> 📚 **How to use them:** [Get started with Word, Excel, and PowerPoint Agents](https://learn.microsoft.com/en-us/copilot/microsoft-365/wordexcelppt-agents)
+> 📚 **How to use them:** [Get started with Word, Excel, and PowerPoint Agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/wordexcelppt-agents)
 
 ---
 
@@ -178,7 +178,7 @@ So a user in a large enterprise who loses the Word side panel can still open the
 
 Here's the catch with WXP agents — and this is the part that trips people up. They run exclusively on Anthropic's Claude models, not OpenAI GPT. *(Why Claude matters across the wider Copilot story — model choice in Word/Excel/PowerPoint, when to pick it over GPT — is in the [licensed Copilot trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).)*
 
-From the [official documentation](https://learn.microsoft.com/en-us/copilot/microsoft-365/wordexcelppt-agents):
+From the [official documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/wordexcelppt-agents):
 
 > *"These agents exclusively use Anthropic's AI models. This AI model must be enabled."*
 
@@ -274,9 +274,9 @@ If you're the person who runs the training on this, the [Copilot Chat train-the-
 | Resource | Link |
 |----------|------|
 | Manage Microsoft 365 Copilot Chat | [learn.microsoft.com/copilot/manage](https://learn.microsoft.com/copilot/manage) |
-| WXP Agents documentation | [learn.microsoft.com/.../wordexcelppt-agents](https://learn.microsoft.com/en-us/copilot/microsoft-365/wordexcelppt-agents) |
+| WXP Agents documentation | [learn.microsoft.com/.../wordexcelppt-agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/wordexcelppt-agents) |
 | Anthropic as a subprocessor | [learn.microsoft.com/.../connect-to-ai-subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor) |
-| Enterprise Data Protection | [learn.microsoft.com/.../enterprise-data-protection](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection) |
+| Enterprise Data Protection | [learn.microsoft.com/.../enterprise-data-protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection) |
 | Which Copilot is right for me? | [learn.microsoft.com/.../which-copilot](https://learn.microsoft.com/en-us/copilot/which-copilot) |
 | Copilot pricing | [microsoft.com/.../copilot](https://www.microsoft.com/en-us/microsoft-365/copilot) |
 
@@ -310,7 +310,7 @@ AI agents for Word, Excel, and PowerPoint that live in the [Copilot app](https:/
 
 ### Why do WXP agents need Anthropic?
 
-They [exclusively use Claude](https://learn.microsoft.com/en-us/copilot/microsoft-365/wordexcelppt-agents), not GPT. If Anthropic is disabled, the agents are completely hidden. Microsoft is developing a GPT-based version, but it's not available yet.
+They [exclusively use Claude](https://learn.microsoft.com/en-us/microsoft-365/copilot/wordexcelppt-agents), not GPT. If Anthropic is disabled, the agents are completely hidden. Microsoft is developing a GPT-based version, but it's not available yet.
 
 ### Is Anthropic Claude enabled by default?
 

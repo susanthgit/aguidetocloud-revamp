@@ -4,7 +4,7 @@ list_title: "Copilot Agents & Studio — Data-Flow Governance"
 hub_id: "it-admins"
 description: "Trace Copilot agent data by architecture, channel, credentials and storage. Review Studio transcripts, sharing, DLP, audit and residency limits."
 date: 2026-06-24
-lastmod: 2026-09-15
+lastmod: 2026-09-29
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-agents-data-flow-governance.jpg"]
@@ -130,7 +130,7 @@ flowchart TD
     H --> R
 ```
 
-*Sources: [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent) · [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-custom-engine-agent) · [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder) · [Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview).*
+*Sources: [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent) · [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent) · [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) · [Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview).*
 
 ---
 
@@ -190,7 +190,7 @@ An agent can read untrusted content and act on it. A malicious instruction in a 
 - **Trust the source, not just the agent** — treat any knowledge source containing user-generated or external content as a potential injection vector.
 - **Monitor and red-team** — watch for risky AI usage in DSPM and Microsoft Defender, and test agents with adversarial prompts before publishing.
 
-*Source: [Microsoft 365 Copilot privacy (content safety & protections)](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy).*
+*Source: [Microsoft 365 Copilot privacy (content safety & protections)](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy).*
 
 ---
 
@@ -231,7 +231,7 @@ Restricting future Agent Builder sharing does not revoke old shares. Review exis
 
 > **A note on the "Copilot Control System":** you'll hear that term for the overall framework that manages how people use Copilot and agents. In practice it's not a single screen — the controls are split between the Microsoft 365 admin center (for M365 Copilot agents) and the Power Platform admin center (for Copilot Studio agents). [Here's the deeper guide to the Copilot Control System](/blog/microsoft-365-copilot-control-system-complete-guide/).
 
-*Sources: [Microsoft 365 Copilot privacy (Integrated Apps)](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Agent settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings).*
+*Sources: [Microsoft 365 Copilot privacy (Integrated Apps)](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy) · [Agent settings](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-settings).*
 
 ---
 

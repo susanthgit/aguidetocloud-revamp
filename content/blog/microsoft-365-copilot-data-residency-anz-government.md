@@ -4,7 +4,7 @@ list_title: "Copilot Data Residency & Sovereignty (ANZ & Government)"
 hub_id: "it-admins"
 description: "Where Microsoft 365 Copilot data lives in Australia & New Zealand — residency, ADR, Multi-Geo, EU Data Boundary, IRAP and sovereignty, in plain English."
 date: 2026-06-24
-lastmod: 2026-06-25
+lastmod: 2026-09-29
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-data-residency-anz-government.jpg"]
@@ -143,7 +143,7 @@ flowchart TD
 
 The solid arrows all stay inside the Microsoft 365 boundary. The only dotted line — the one thing that can cross out — is the optional web query, which carries no user or tenant identifiers (though its search terms can still reflect the topic of your prompt). Everything else in this guide is about pinning down exactly where those in-boundary boxes physically sit.
 
-*Source: [Data, privacy, and security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy).*
+*Source: [Data, privacy, and security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy).*
 
 ---
 
@@ -152,7 +152,7 @@ The solid arrows all stay inside the Microsoft 365 boundary. The only dotted lin
 Start with the foundation, because the rest builds on it. Microsoft 365 Copilot is a **Microsoft 365 core service** — in the same category as Exchange Online, SharePoint, OneDrive and Teams. When you use it:
 
 - Your **prompts**, the data they retrieve through Microsoft Graph, and the generated responses all remain within the Microsoft 365 service boundary, under the same privacy, security and compliance commitments as the rest of your tenant.
-- Processing uses **Azure OpenAI**, not OpenAI's public service. Azure OpenAI doesn't cache your content.
+- Processing runs under Microsoft's enterprise commitments. The core path is **Azure OpenAI** (Microsoft-operated), which doesn't cache your content. Two subprocessor model paths may also be on by default for commercial tenants — **OpenAI-operated GPT** (OpenAI as a Microsoft subprocessor) and **Anthropic Claude** — both under the Microsoft DPA. For a sovereignty review this matters: admins can turn the subprocessor paths off, and Anthropic in particular sits outside the EU Data Boundary (see [Anthropic models and sovereignty](#anthropic-models-and-sovereignty)).
 - Your prompts, responses and Graph data are **not used to train** the foundation models.
 - **Your source content isn't copied into a separate Copilot store** — Copilot reads your existing email, files and chats in place through Microsoft Graph, under their existing permissions and residency. It *does* build a **semantic index** of your organisation's content to ground answers — and that index is covered by the same at-rest residency commitment as your interaction data, so it stays in your committed geography too.
 
@@ -162,7 +162,7 @@ Microsoft 365 Copilot has been a covered data-residency workload since 1 March 2
 
 > **Why "service boundary" matters more than "data centre":** the boundary is the security and compliance perimeter — isolation, encryption, no training, no caching. *Residency* then narrows down which **region** inside that boundary your data sits in. A reviewer needs both answers; they're different guarantees.
 
-*Sources: [Microsoft 365 Copilot privacy](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Data residency for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-workload-copilot).*
+*Sources: [Microsoft 365 Copilot privacy](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy) · [Data residency for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-workload-copilot).*
 
 ---
 
@@ -251,7 +251,7 @@ So the precise, honest answer to *"does our data leave the region?"* is: your st
 
 {{< margin >}}If a reviewer needs a hard in-region *processing* guarantee, that's a conversation for your Microsoft account team about in-region processing commitments — don't assume residency-at-rest covers it.{{< /margin >}}
 
-*Source: [Microsoft 365 Copilot privacy — data location and processing](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy).*
+*Source: [Microsoft 365 Copilot privacy — data location and processing](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy).*
 
 ---
 
@@ -266,7 +266,7 @@ When **web search is on**, Copilot can send a search query to Bing — and that'
 
 One honest nuance: even with identifiers stripped, the search *terms* can still reflect the **topic** of your prompt. So for a sovereignty-focused organisation, the clean control is simple: turn web grounding off — or use Microsoft Purview DLP to restrict how Copilot handles sensitive content in prompts and web searches (covered in the [security questions guide](/blog/microsoft-365-copilot-security-questions-answered/#what-actually-gets-sent-to-the-web)).
 
-*Sources: [Manage public web access in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access) · [Enterprise data protection](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection).*
+*Sources: [Manage public web access in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access) · [Enterprise data protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection).*
 
 ---
 
@@ -289,7 +289,7 @@ A newer consideration, and one ANZ government teams should decide on deliberatel
 
 The control: an admin can restrict Anthropic models to specific users or turn them off in the Microsoft 365 admin center. For an agency with strict in-country processing requirements, that's a deliberate switch to evaluate, not a default to ignore.
 
-*Source: [Connect to an AI subprocessor (Anthropic)](https://learn.microsoft.com/en-us/copilot/microsoft-365/connect-to-ai-subprocessor).*
+*Source: [Connect to an AI subprocessor (Anthropic)](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor).*
 
 ---
 
@@ -307,7 +307,7 @@ This came up almost word-for-word in a real review: *"we know the servers are in
 
 So the precise reassurance for a reviewer is: knowing the region tells an attacker nothing useful, because access never depends on location — it depends on identity and permissions, which are yours to control.
 
-*Sources: [Microsoft 365 Copilot privacy](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Customer Lockbox](https://learn.microsoft.com/en-us/purview/customer-lockbox-requests) · [Customer Key overview](https://learn.microsoft.com/en-us/purview/customer-key-overview).*
+*Sources: [Microsoft 365 Copilot privacy](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy) · [Customer Lockbox](https://learn.microsoft.com/en-us/purview/customer-lockbox-requests) · [Customer Key overview](https://learn.microsoft.com/en-us/purview/customer-key-overview).*
 
 ---
 

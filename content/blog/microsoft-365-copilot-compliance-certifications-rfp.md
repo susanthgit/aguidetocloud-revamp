@@ -4,7 +4,7 @@ list_title: "Copilot Certifications & Compliance (the RFP answer)"
 hub_id: "it-admins"
 description: "What Microsoft 365 Copilot is certified against — ISO 42001, ISO 27001, SOC 2, HIPAA, IRAP — and how to prove it in an RFP or security review."
 date: 2026-06-24
-lastmod: 2026-06-24
+lastmod: 2026-09-29
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-compliance-certifications-rfp.jpg"]
@@ -157,7 +157,7 @@ These matter just as much in an RFP — but they're commitments and regulations,
 
 > **The honest framing for an RFP:**lead with **ISO 42001** (the AI-specific, Copilot-named attestation), then the platform stack underneath it. Where a standard doesn't name Copilot, say "Copilot runs on the assessed Microsoft 365 platform" rather than "Copilot is certified against X" — the precision is what an auditor respects.
 
-*Sources: [ISO 42001 offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001) · [HIPAA/HITECH offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-hipaa-hitech) · [FedRAMP offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-fedramp) · [Copilot privacy & compliance](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy).*
+*Sources: [ISO 42001 offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001) · [HIPAA/HITECH offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-hipaa-hitech) · [FedRAMP offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-fedramp) · [Copilot privacy & compliance](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy).*
 
 ---
 
@@ -225,7 +225,7 @@ For healthcare (and anyone who handles health information), the question is the 
 
 > ⚠️ **The exclusion a healthcare reviewer must know:** HIPAA compliance does not apply to web search queries — they aren't covered by the DPA or the BAA, because the web query goes to the separately operated Bing service with Microsoft as an independent controller. For a HIPAA deployment, either **turn web search off**, or document the exclusion explicitly in your compliance programme.
 
-*Source: [HIPAA/HITECH — Microsoft compliance offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-hipaa-hitech) · [Enterprise data protection](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection).*
+*Source: [HIPAA/HITECH — Microsoft compliance offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-hipaa-hitech) · [Enterprise data protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection).*
 
 ---
 
@@ -249,7 +249,7 @@ This trips people up, so be precise. FedRAMP applies to Microsoft's US Governmen
 
 **EU AI Act** — here's the honest distinction. Microsoft has a **public commitment to comply** with the EU AI Act, and Compliance Manager ships an EU AI Act assessment template. But there is no published Copilot-specific EU AI Act conformity certificate the way there is an ISO 42001 certificate. The EU AI Act is a *regulation you assess your own obligations against* — using ISO 42001 and the Compliance Manager template as inputs. Treat "committed to comply" and "certified" as different claims in your RFP.
 
-*Sources: [Australia IRAP offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-ccsl-irap-australia) · [Copilot privacy (GDPR/EU AI Act)](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Compliance Manager regulations](https://learn.microsoft.com/en-us/purview/compliance-manager-regulations-list).*
+*Sources: [Australia IRAP offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-ccsl-irap-australia) · [Copilot privacy (GDPR/EU AI Act)](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy) · [Compliance Manager regulations](https://learn.microsoft.com/en-us/purview/compliance-manager-regulations-list).*
 
 ---
 
@@ -264,7 +264,7 @@ Certifications prove the controls; the **contract** is what you actually hold Mi
 
 > **Tip —** in an RFP, the contract beats the brochure. Cite the **DPA** for processing obligations, the Product Terms for service specifics, and the CCC for the copyright indemnity. The live documents always supersede any summary, including this one.
 
-*Sources: [Microsoft DPA](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA) · [Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) · [Connect to an AI subprocessor](https://learn.microsoft.com/en-us/copilot/microsoft-365/connect-to-ai-subprocessor).*
+*Sources: [Microsoft DPA](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA) · [Product Terms](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/all) · [Connect to an AI subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor).*
 
 ---
 
@@ -323,7 +323,7 @@ This is the single most important framing for an honest RFP answer.
 
 > The certificate is the start of your assessment, not the end. Compliance Manager makes this split concrete — Microsoft-managed controls arrive pre-populated; customer-managed controls show what's left for you.
 
-*Source: [Copilot data, privacy and security](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy).*
+*Source: [Copilot data, privacy and security](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy).*
 
 ---
 
@@ -359,7 +359,7 @@ Increasingly, questionnaires ask for AI *transparency* artefacts, not just secur
 
 Two data-handling facts worth quoting directly: your data is **not used to train** the foundation models, and Microsoft 365 Copilot has opted out of Azure OpenAI abuse monitoring, so there's no human review of your content.
 
-*Source: [Copilot Application Card](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-application-card) · [Responsible AI Transparency Report](https://www.microsoft.com/corporate-responsibility/responsible-ai-transparency-report).*
+*Source: [Copilot Application Card](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-application-card) · [Responsible AI Transparency Report](https://www.microsoft.com/corporate-responsibility/responsible-ai-transparency-report).*
 
 ---
 

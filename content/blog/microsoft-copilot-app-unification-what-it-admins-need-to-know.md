@@ -3,7 +3,7 @@ title: "Copilot Apps Are Merging: What IT Admins Need to Check"
 list_title: "Copilot App Unification: The Admin Guide"
 description: "Microsoft is merging the personal and work Copilot apps. The work address moves to copilot.cloud.microsoft — not copilot.microsoft.com. What to check."
 date: 2026-08-19
-lastmod: 2026-08-19
+lastmod: 2026-09-29
 hub_id: "it-admins"
 card_tag: "Copilot"
 tag_class: "ai"

@@ -5,7 +5,7 @@ hub: true
 hub_id: "it-admins"
 description: "Deployment checklist for M365 Copilot — licensing, security, governance, data readiness, adoption, monitoring, real-world best practices."
 date: 2026-04-14
-lastmod: 2026-06-16
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -120,7 +120,7 @@ flowchart TD
 
 | What You Need | Details |
 |--------------|---------|
-| **Eligible base licence** | Includes Microsoft 365 Business Basic/Standard/Premium, E3, E5, F1, F3, Office 365 E1/E3/E5, and other qualifying plans ([see full list](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing)) |
+| **Eligible base licence** | Includes Microsoft 365 Business Basic/Standard/Premium, E3, E5, F1, F3, Office 365 E1/E3/E5, and other qualifying plans ([see full list](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing)) |
 | **Copilot add-on** | Microsoft 365 Copilot — pricing varies by plan (check [official pricing](https://www.microsoft.com/en-us/microsoft-365/copilot/compare-plans)) |
 | **Annual commitment** | Required for most plans — check your specific agreement |
 | **Apps version** | Microsoft 365 Apps on **Current Channel** or **Monthly Enterprise Channel** (version 2308+) |
@@ -139,7 +139,7 @@ flowchart TD
 | Agents (Agent Builder, Studio) | ❌ | ✅ |
 | Admin controls (harmful content, web search) | Limited | ✅ Full |
 
-> 📚 **Official reference:** [Microsoft 365 Copilot licensing plans](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing) · Confused by Microsoft licensing? Try our [Licensing Simplifier](/licensing/) to compare 59 plans side by side.
+> 📚 **Official reference:** [Microsoft 365 Copilot licensing plans](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing) · Confused by Microsoft licensing? Try our [Licensing Simplifier](/licensing/) to compare 59 plans side by side.
 >
 > 🔍 Want to see exactly which Copilot features are available in each app and licence tier? Check our [Copilot Feature Matrix](/copilot-matrix/) — interactive comparison across 15 apps and 4 tiers.
 
@@ -198,7 +198,7 @@ Define what "success" means before deployment:
 - **Satisfaction:** What NPS score from pilot users?
 - **Security:** Zero oversharing incidents during pilot?
 
-> 📚 **Official reference:** [Microsoft 365 Copilot adoption guide](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-enablement-resources) · [Microsoft Adoption site](https://adoption.microsoft.com/copilot)
+> 📚 **Official reference:** [Microsoft 365 Copilot adoption guide](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources) · [Microsoft Adoption site](https://adoption.microsoft.com/copilot)
 
 ---
 
@@ -262,7 +262,7 @@ Sensitivity labels classify and protect data. Copilot honours these labels — i
 
 **Where to configure:** Microsoft Purview → Information Protection → Labels
 
-> 📚 **Official reference:** [Sensitivity labels in Microsoft Purview](https://learn.microsoft.com/en-us/purview/sensitivity-labels) · [Configure secure data foundation for Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/configure-secure-governed-data-foundation-microsoft-365-copilot)
+> 📚 **Official reference:** [Sensitivity labels in Microsoft Purview](https://learn.microsoft.com/en-us/purview/sensitivity-labels) · [Configure secure data foundation for Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot)
 
 ### 2.3 Configure DLP Policies
 
@@ -311,7 +311,7 @@ Configure how Copilot handles sensitive topics and web content:
 - [ ] Decide if any roles need the **harmful content protection toggle**
 - [ ] Review **optional connected experiences** policy
 
-> 📚 **Official reference:** [Manage harmful content protection in Copilot Chat](https://learn.microsoft.com/en-us/copilot/microsoft-365/harmful-content-protection-copilot-chat) · [Manage web search in Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access) · Also see our [detailed content safety guide](https://www.aguidetocloud.com/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
+> 📚 **Official reference:** [Manage harmful content protection in Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/harmful-content-protection-copilot-chat) · [Manage web search in Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access) · Also see our [detailed content safety guide](https://www.aguidetocloud.com/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
 
 ---
 
@@ -334,7 +334,7 @@ Before assigning a single licence, verify:
 - [ ] **Teams** updated to latest version
 - [ ] **SharePoint Online** and **OneDrive** services operational
 - [ ] **WebSocket connectivity** available from user devices to Microsoft services
-- [ ] Required **network endpoints** allowed through firewall ([see official endpoint list](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements))
+- [ ] Required **network endpoints** allowed through firewall ([see official endpoint list](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements))
 - [ ] **Modern authentication** enabled (Entra ID)
 - [ ] **Restricted SharePoint Search** disabled (if previously enabled)
 
@@ -385,7 +385,7 @@ Before scaling beyond the pilot:
 - [ ] Collect pilot user feedback after 2 weeks
 - [ ] Review Copilot audit logs for unexpected data access
 
-> 📚 **Official reference:** [Set up Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup) · [Admin setup guide in M365 Admin Centre](https://admin.microsoft.com/Adminportal/Home?Q=learndocs#/modernonboarding/microsoft365copilotsetupguide)
+> 📚 **Official reference:** [Set up Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup) · [Admin setup guide in M365 Admin Centre](https://admin.microsoft.com/Adminportal/Home?Q=learndocs#/modernonboarding/microsoft365copilotsetupguide)
 
 ---
 
@@ -447,7 +447,7 @@ Most users underperform with Copilot because they write bad prompts. Invest in p
 - **Provide a prompt library** with tested, role-specific prompts — see our [AI Prompt Library](/prompts/) with 84 prompts across 8 platforms
 - **Show before/after examples** — try the [Prompt Polisher](/prompt-polisher/) to instantly improve any prompt with a CRAFTS score
 
-> 📚 **Official reference:** [Welcome end users to Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-enable-users) · [Microsoft Adoption Success Kit](https://adoption.microsoft.com/copilot)
+> 📚 **Official reference:** [Welcome end users to Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enable-users) · [Microsoft Adoption Success Kit](https://adoption.microsoft.com/copilot)
 
 ---
 
@@ -589,14 +589,14 @@ Before expanding beyond the pilot, all of these must be true:
 
 | Resource | What It Is | Link |
 |----------|-----------|------|
-| **Copilot Adoption Guide** | Microsoft's official step-by-step for IT admins | [Learn Docs](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-enablement-resources) |
+| **Copilot Adoption Guide** | Microsoft's official step-by-step for IT admins | [Learn Docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources) |
 | **Copilot Optimization Assessment** | Free readiness evaluation tool | [Microsoft Solution Assessments](https://www.microsoft.com/solutionassessments/) |
 | **Microsoft Adoption Site** | Success kits, training materials, scenario library | [adoption.microsoft.com/copilot](https://adoption.microsoft.com/copilot) |
 | **Copilot Setup Guide** | In-product admin setup wizard | [M365 Admin Centre](https://admin.microsoft.com/Adminportal/Home?Q=learndocs#/modernonboarding/microsoft365copilotsetupguide) |
-| **Data Foundation for Copilot** | Security and governance configuration guide | [Learn Docs](https://learn.microsoft.com/en-us/copilot/microsoft-365/configure-secure-governed-data-foundation-microsoft-365-copilot) |
-| **Copilot Privacy & Security** | How Copilot handles your data | [Learn Docs](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) |
-| **Network Requirements** | Endpoints and connectivity requirements | [Learn Docs](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements) |
-| **Copilot Licensing** | Licence plans and pricing | [Learn Docs](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing) |
+| **Data Foundation for Copilot** | Security and governance configuration guide | [Learn Docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot) |
+| **Copilot Privacy & Security** | How Copilot handles your data | [Learn Docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy) |
+| **Network Requirements** | Endpoints and connectivity requirements | [Learn Docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements) |
+| **Copilot Licensing** | Licence plans and pricing | [Learn Docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing) |
 | **Implement Copilot (Training Module)** | Free Learn module for admins and architects | [Microsoft Learn Training](https://learn.microsoft.com/en-us/training/modules/implement-microsoft-365-copilot/) |
 | **Content Safety Controls** | Our companion guide on content safety | [aguidetocloud.com](https://www.aguidetocloud.com/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/) |
 | **Copilot Readiness Checker** | Free interactive assessment tool | [aguidetocloud.com](https://www.aguidetocloud.com/copilot-readiness/) |
@@ -611,7 +611,7 @@ Before expanding beyond the pilot, all of these must be true:
 
 1. What is the minimum licence needed to deploy Microsoft 365 Copilot?
 
-You need an eligible base Microsoft 365 licence (E3, E5, Business Premium, F1/F3, or other qualifying plans) plus the Microsoft 365 Copilot add-on. Copilot cannot run as a standalone licence. See the [full licensing list](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing).
+You need an eligible base Microsoft 365 licence (E3, E5, Business Premium, F1/F3, or other qualifying plans) plus the Microsoft 365 Copilot add-on. Copilot cannot run as a standalone licence. See the [full licensing list](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing).
 
 2. What is the biggest risk when deploying Copilot?
 

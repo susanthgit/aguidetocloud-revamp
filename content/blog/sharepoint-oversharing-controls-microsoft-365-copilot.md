@@ -3,7 +3,7 @@ title: "SharePoint Oversharing Controls for Microsoft 365 Copilot"
 list_title: "SharePoint Oversharing Controls for Copilot"
 description: "Reduce SharePoint oversharing for Copilot with owner reviews, RCD, RAC and SAM. Includes RSS retirement and current limits on discovery controls."
 date: 2026-05-13
-lastmod: 2026-09-15
+lastmod: 2026-09-29
 hub_id: "it-admins"
 card_tag: "Security"
 tag_class: "security"

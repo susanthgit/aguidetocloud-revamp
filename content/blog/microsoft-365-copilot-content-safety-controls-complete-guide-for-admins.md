@@ -4,7 +4,7 @@ list_title: "M365 Copilot Content Safety — The Complete Guide (for IT Admins)"
 hub_id: "it-admins"
 description: "How M365 Copilot handles harmful content, sensitivity labels, web search, and admin controls. Step-by-step config, scenarios, best practices."
 date: 2026-04-14
-lastmod: 2026-06-18
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins.jpg"]
@@ -166,7 +166,7 @@ These are the safety features that are always on. Think of them like the fire al
 
 ## Layer 2: The Harmful Content Toggle
 
-This is the big one — the control that generates the most questions. Introduced in **September 2025** via [MC1133507](https://learn.microsoft.com/en-us/copilot/microsoft-365/harmful-content-protection-copilot-chat).
+This is the big one — the control that generates the most questions. Introduced in **September 2025** via [MC1133507](https://learn.microsoft.com/en-us/microsoft-365/copilot/harmful-content-protection-copilot-chat).
 
 <p><img src="/images/blog/content-safety/01-harmful-content-toggle.webp" alt="The More menu in Microsoft 365 Copilot Chat showing the Web search and Harmful content protection toggles, both switched on" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -331,7 +331,7 @@ Almost certainly. Here's what I'd recommend:
 
 > 💡 **Fix permissions first, toggle second.** Deploy sensitivity labels and clean up SharePoint permissions as your foundation. The harmful content toggle is a targeted tool for a small group — it's not your main security strategy.
 
-> 📚 **Official reference:** [Data, Privacy, and Security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Microsoft Purview sensitivity labels](https://learn.microsoft.com/en-us/purview/sensitivity-labels)
+> 📚 **Official reference:** [Data, Privacy, and Security for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy) · [Microsoft Purview sensitivity labels](https://learn.microsoft.com/en-us/purview/sensitivity-labels)
 
 ---
 
@@ -355,7 +355,7 @@ If you work in government, financial services, or healthcare, this matters: web 
 
 When web search is on, Copilot sends search queries (not your full prompt) to Bing. Those queries are handled under the Microsoft Services Agreement — **not** the Data Protection Addendum. HIPAA and EU Data Boundary don't apply to those web queries. The queries aren't used for training, ads, or profiling — but they're not covered by your enterprise data protection commitments.
 
-> 📚 **Official reference:** [Data, privacy, and security for web search in Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access)
+> 📚 **Official reference:** [Data, privacy, and security for web search in Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access)
 
 > 💡 **My recommendation:** If your compliance framework requires data processor commitments for all AI interactions, disable web search for those user groups.
 
