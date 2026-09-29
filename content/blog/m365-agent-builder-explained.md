@@ -4,7 +4,7 @@ list_title: "M365 Agent Builder — The Complete Guide"
 hub_id: "ai-agents"
 description: "Plain-English field guide to M365 Agent Builder: 6 agents to build, the CAPS technique, hidden scheduled-prompt workflow, the gotchas docs miss."
 date: 2026-05-16
-lastmod: 2026-08-12
+lastmod: 2026-09-29
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
@@ -32,7 +32,7 @@ faq:
   - question: "Does Agent Builder work on mobile?"
     answer: "No. Custom agents built with Agent Builder aren't available on mobile M365 apps. They work on microsoft365.com/chat, office.com/chat, and the desktop/web Teams Copilot pane only. Mobile support is on the roadmap but not shipped yet."
   - question: "Can I build a customer-facing chatbot with Agent Builder?"
-    answer: "No. Agent Builder agents only work inside your M365 tenant for authenticated users. For external customer-facing bots, deploy with Copilot Studio (multi-channel publishing) or build with Azure AI Foundry. The full comparison is in my Agent Builder vs Copilot Studio vs Foundry guide."
+    answer: "No. Agent Builder agents only work inside your M365 tenant for authenticated users. For external customer-facing bots, deploy with Copilot Studio (multi-channel publishing) or build with Microsoft Foundry (formerly Azure AI Foundry). The full comparison is in my Agent Builder vs Copilot Studio vs Foundry guide."
   - question: "How many agents can I build?"
     answer: "There's no hard limit on the number of agents per user. Each AGENT has limits: 8,000 character instructions, up to 100 SharePoint files + 50 OneDrive files + 20 uploaded files + 4 public URLs + 5 Teams chats, plus (since mid-2026) one SharePoint list and individual OneNote pages. Build as many specialised agents as you want."
   - question: "What data can I safely connect to an agent I plan to share with my team?"
@@ -62,7 +62,7 @@ That's the 30-second version. But before we go any further:
 
 </div>
 
-If you need to compare it side-by-side with Copilot Studio or Azure AI Foundry, that's a separate decision-framework guide → [Agent Builder vs Copilot Studio vs Foundry (2026 Guide)](/blog/agent-builder-vs-copilot-studio-vs-foundry/).
+If you need to compare it side-by-side with Copilot Studio or Microsoft Foundry (formerly Azure AI Foundry), that's a separate decision-framework guide → [Agent Builder vs Copilot Studio vs Foundry (2026 Guide)](/blog/agent-builder-vs-copilot-studio-vs-foundry/).
 
 > 🏃 **TL;DR for skimmers**
 >
@@ -219,7 +219,7 @@ Here's how to wire up each kind of source:
 Three toggles sit below the input — they're easy to miss but they change how the agent behaves:
 
 - **Search all websites** *(off by default)* — when on, the agent can search the open web, not just URLs you listed. Useful for current-events agents; risky for policy bots.
-- **Only use specified sources** *(off by default)* — when on, the agent will **not** fall back to general M365 knowledge or web. Useful for tightly scoped policy bots where any answer outside your documents would be a problem.
+- **Only use specified sources** *(off by default)* — when on, the agent *prioritises* your listed sources and avoids falling back to general M365 knowledge or the web. Useful for tightly scoped policy bots. One honest limit: it strongly prioritises rather than hard-blocks — the model's general knowledge can still leak in at the edges, so for a guaranteed block on anything outside your documents, graduate to Copilot Studio.
 - **Reference org chart and profile info** *(on by default — heads-up)* — lets the agent know who reports to whom, job titles, and basic profile data. Convenient for "who owns this?" agents; turn it off if your agent shouldn't surface org structure.
 
 > 💡 **Tip:** Files take a minute or two to index. You'll see a *"Preparing"* status next to anything still being processed. You can keep building — just don't test on that file's content until it's ready.
@@ -794,7 +794,7 @@ Cold readers often arrive thinking Agent Builder is something else. Quick disamb
 | **ChatGPT GPTs** | No | Conceptually similar (custom AI assistants) but lives inside M365 with your tenant's security, identity, and data — not OpenAI's. |
 | **Power Virtual Agents** | No (renamed) | PVA was renamed to Copilot Studio. So "PVA" today *is* Copilot Studio. |
 | **Copilot Pro** | No | Copilot Pro is the $20/month consumer tier for personal Microsoft accounts. Agent Builder is for organisational tenants. [Full breakdown →](/blog/copilot-pro-vs-microsoft-365-copilot/) |
-| **Azure AI Foundry** | No | Foundry is the pro-code Azure-native developer platform. Agent Builder is for business users; Foundry needs developers. |
+| **Microsoft Foundry** | No | Foundry (formerly Azure AI Foundry) is the pro-code Azure-native developer platform. Agent Builder is for business users; Foundry needs developers. |
 | **Microsoft 365 Agents Toolkit** | Same product, different surface | The Toolkit is the VS Code extension for building declarative agents in code. Agent Builder is the no-code UI. They produce compatible agents. |
 
 > 🗺️ **Want the bigger picture?** The **[Copilot Feature Matrix](/copilot-feature-matrix/)** tool maps every Copilot product side-by-side — chat, licensed, agents, Pro — so you can see exactly which feature lives where.
@@ -843,7 +843,7 @@ flowchart TB
     M365C["<b>Microsoft 365 Copilot</b><br/>your chat experience"]
     AB["🛠️ <b>Agent Builder</b> (this post)<br/>No-code · Q&A + light automation<br/>Built INTO M365 Copilot"]
     CS["🏭 <b>Copilot Studio</b> (full)<br/>Low-code / pro-code<br/>Multi-channel · Workflows + APIs"]
-    F["🏢 <b>Azure AI Foundry</b><br/>Pro-code<br/>Enterprise integrations"]
+    F["🏢 <b>Microsoft Foundry</b><br/>Pro-code<br/>Enterprise integrations"]
     M365C --> AB
     AB -->|"Copy to Studio<br/>(preserves work)"| CS
     CS --> F
@@ -866,9 +866,9 @@ Agent Builder has been evolving fast — Microsoft shipped material changes righ
 
 ### 1. Scheduled prompts — your agent can now act on a schedule
 
-**Status:** Available (shipped May 2026; needs a Microsoft 365 Copilot licence) · [See: Microsoft 365 Copilot May 2026 Updates →](/blog/microsoft-365-copilot-may-2026-updates/)
+**Status:** Available (shipped May 2026) · [See: Microsoft 365 Copilot May 2026 Updates →](/blog/microsoft-365-copilot-may-2026-updates/)
 
-The first proactive capability inside Agent Builder. Your agent can now run prompts on a schedule — hourly, daily, weekly, monthly, or yearly. Want a daily summary of yesterday's Teams meetings? A weekly digest of project-channel changes? You can now set it and forget it. *(Strictly, scheduled prompts are a broader Copilot feature — they also work in plain Copilot Chat, Teams, and Outlook — but they really shine pointed at an agent.)*
+The first proactive capability inside Agent Builder. Your agent can now run prompts on a schedule — hourly, daily, weekly, monthly, or yearly. Want a daily summary of yesterday's Teams meetings? A weekly digest of project-channel changes? You can now set it and forget it. *(Strictly, scheduled prompts are a broader Copilot feature — they also work in plain Copilot Chat, Teams, and Outlook — but they really shine pointed at an agent. What the schedule can ground on still follows the licence tiers above: pointed at a work-data agent, that means the knowledge needs PayGo or the full Copilot licence.)*
 
 > 📍 **Full walkthrough with screenshots:** see [Step 6 — Schedule the first run](#schedule-first-run) earlier in this post. The control is hidden behind a hover toolbar — most people miss it.
 
@@ -916,7 +916,7 @@ Makers submit an agent to the organisation's catalog; a tenant admin reviews it,
 
 This is a big distribution unlock — agents you build can be discovered by colleagues across the org without you sharing them individually.
 
-> 🧪 **Test in your tenant:** Build a polished agent. Click *Submit to Agent Store*. Walk through the maker submission flow. Ask your admin to confirm what the approval UX looks like for them.
+> 🧪 **Test in your tenant:** Build a polished agent. Click *Submit to your org catalog*. Walk through the maker submission flow. Ask your admin to confirm what the approval UX looks like for them.
 
 > 💬 **Findings I'd love to publish:** What metadata does the submission flow require (description, icon, screenshots, contact person)? What does the admin approval dashboard look like? How long is the typical approval time? Is there a versioning model when you update a published agent? Can submissions be revoked? <!-- LAB-VERIFY: Agent Store submission + admin approval workflow -->
 
@@ -954,10 +954,10 @@ Teams knowledge used to be *5 chats, or all your Teams*. You can now also scope 
 
 - **Response-mode selector** — when you build or run an agent you can pick Auto / Quick response / Think deeper, overriding the default reasoning depth.
 - **Microsoft Lockbox** is now supported for Agent Builder agents (it used to be on the unsupported list). **Customer Managed Keys** are still unsupported.
-- **Wider regions** — availability expanded through 2026 (e.g. Singapore, plus US Government GCC/GCCH with admin enablement; sharing isn't available in GCCH).
+- **Wider regions** — availability expanded through 2026 (e.g. Singapore, plus US Government GCC/GCCH with admin enablement; sharing isn't available in GCCH). One caveat worth checking for your tenant: agents grounded in shared tenant work data have tighter government-cloud limits than web-only agents, so confirm current GCC/GCCH availability for the grounding you need.
 - **Pay-as-you-go cost governance** — the M365 admin centre added budgets and cost monitoring for PayGo Copilot Credits (notify-not-block), with granular per-agent credit tracking and a spend cap arriving in preview (Aug 2026).
 
-> 🔍 **What about MCP Apps?** You may have heard about **MCP Apps** — the new interactive-UI capability (forms, dashboards, approval cards rendering inside Copilot chat) landing in 2026. It's not an Agent Builder feature. MCP Apps are built in code, with the Microsoft 365 Agents Toolkit (the SDK + VS Code extension we called out in [Not the same as...](#not-same) above). When and if the capability lands in the no-code Agent Builder UI, this guide will be updated. Until then — different track, different audience.
+> 🔍 **What about MCP Apps?** You may have heard about **MCP Apps** — the new interactive-UI capability (forms, dashboards, approval cards rendering inside Copilot chat) landing in 2026. It now appears in Microsoft's broader declarative-agent capability matrix, but it isn't in the no-code Agent Builder UI. MCP Apps are built in code, with the Microsoft 365 Agents Toolkit (the SDK + VS Code extension we called out in [Not the same as...](#not-same) above). When and if the capability lands in the no-code Agent Builder UI, this guide will be updated. Until then — different track, different audience.
 
 ---
 
@@ -1307,7 +1307,7 @@ Agents aren't set-and-forget. Here's what to expect after build.
 - ✓ **Microsoft Lockbox** is now supported (as of Aug 2026); Customer Managed Keys are still NOT supported for Agent Builder agents
 - − **Information Barriers** do NOT apply to embedded uploaded file content
 
-If your org is in a regulated industry where Lockbox / CMK / IB are required, that's a *"use Copilot Studio (or Azure AI Foundry)"* signal — covered in [When to graduate](#graduate). For the full security/governance picture across all M365 Copilot agents, read **[Agent 365 Security Guide — Entra, Purview, Defender](/blog/agent-365-security-governance-complete-guide/)**. For the SharePoint-specific oversharing controls every admin should check before agents go org-wide, see **[SharePoint Oversharing Controls for M365 Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)**.
+If your org is in a regulated industry where Lockbox / CMK / IB are required, that's a *"use Copilot Studio (or Microsoft Foundry)"* signal — covered in [When to graduate](#graduate). For the full security/governance picture across all M365 Copilot agents, read **[Agent 365 Security Guide — Entra, Purview, Defender](/blog/agent-365-security-governance-complete-guide/)**. For the SharePoint-specific oversharing controls every admin should check before agents go org-wide, see **[SharePoint Oversharing Controls for M365 Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)**.
 
 ## Licensing and admin notes {#licensing}
 
@@ -1350,7 +1350,7 @@ For the full admin lifecycle — environment, deployment, change management — 
 
 ### The "Agent 365" question
 
-You'll hear about **Agent 365** — it went GA on 1 May 2026. It's Microsoft's unified governance and identity control plane for agents across all three platforms (Agent Builder, Copilot Studio, Azure AI Foundry). $15 / user / month standalone, or included in **[Microsoft 365 E7 (Frontier Suite)](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)**.
+You'll hear about **Agent 365** — it went GA on 1 May 2026. It's Microsoft's unified governance and identity control plane for agents across all three platforms (Agent Builder, Copilot Studio, Microsoft Foundry). Indicative US list pricing is around $15/user/month standalone, or it's included in **[Microsoft 365 E7 (Frontier Suite)](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)** — confirm the live figure on Microsoft's pricing page.
 
 You don't need Agent 365 to use Agent Builder. But if your org is starting to have lots of agents across teams, it's the governance layer that makes them manageable at scale. Use the **[Agent 365 Planner](/agent-365-planner/)** tool to size your need, **[Full Agent 365 details in my comparison guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/#agent-365)**, and the **[ROI Calculator](/roi-calculator/)** to model whether the licence pays for itself.
 
@@ -1358,7 +1358,7 @@ You don't need Agent 365 to use Agent Builder. But if your org is starting to ha
 
 ## When to graduate to Copilot Studio {#graduate}
 
-Agent Builder solves about 80% of agent use cases. The other 20% genuinely need Copilot Studio (or, rarely, Azure AI Foundry). Use this 7-signal checklist to know when you've outgrown it.
+Agent Builder solves about 80% of agent use cases. The other 20% genuinely need Copilot Studio (or, rarely, Microsoft Foundry). Use this 7-signal checklist to know when you've outgrown it.
 
 > 💡 **This post isn't the full decision framework.** For the deep AB vs Studio vs Foundry comparison with pricing, deployment scenarios, and IT-admin guidance, read my [Agent Builder vs Copilot Studio vs Foundry guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/). The list below is the quick test.
 
