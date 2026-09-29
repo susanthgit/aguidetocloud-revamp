@@ -3,7 +3,7 @@ title: "Microsoft Skill Recorder: Record Work into Skills"
 list_title: "Skill Recorder — Turn Work into a Skill"
 description: "Hands-on review of Microsoft Skill Recorder v0.3.1: capture work, analyze it with GitHub Copilot, export Scout or Cowork skills, and assess the risks."
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot Skills"
 tag_class: "ai"

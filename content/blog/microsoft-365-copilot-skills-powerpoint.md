@@ -3,7 +3,7 @@ title: "How to Use Copilot Skills in PowerPoint"
 list_title: "Skills in PowerPoint — Step-by-Step"
 description: "Choose, invoke, manage, upload, edit, and troubleshoot reusable Copilot Skills in PowerPoint, with the SKILL.md rules that matter."
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot Skills"
 tag_class: "ai"

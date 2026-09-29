@@ -3,7 +3,7 @@ title: "How to Use Copilot Skills in Excel"
 list_title: "Skills in Excel — User Guide + Developer Preview"
 description: "Use built-in and custom Copilot Skills in Excel, then understand the separate Office.js developer preview without mixing the two experiences."
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot Skills"
 tag_class: "ai"
@@ -166,7 +166,7 @@ The Skill is automatically enabled and also appears under Formatting.
 
 <!-- Screenshot planned: Excel Manage Skills Formatting folder showing brandkit and theme-design enabled. -->
 
-*Official source: [Microsoft Support — Microsoft-managed Skills in Excel](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-microsoft-skills).*
+*Official source: [Microsoft Support — Microsoft-managed Skills in Excel](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-built-in-skills).*
 
 ## Create a personal custom Skill
 
@@ -399,8 +399,8 @@ Keep these as open checks:
 ## Official public sources
 
 - [Microsoft Support — use and manage Copilot Skills in Excel](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills)
-- [Microsoft Support — Microsoft-managed Skills in Excel](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-microsoft-skills)
-- [Microsoft 365 Blog — Copilot in Excel for finance](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/)
+- [Microsoft Support — Microsoft-managed Skills in Excel](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-built-in-skills)
+- [Microsoft 365 Blog — Copilot in Excel for finance](https://www.microsoft.com/en-us/copilot/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/)
 - [Microsoft Learn — overview of Office.js Copilot Skills for Excel](https://learn.microsoft.com/en-us/office/dev/add-ins/excel/excel-skills)
 - [Microsoft Learn — Office.js Copilot Skill tutorial](https://learn.microsoft.com/en-us/office/dev/add-ins/excel/excel-copilot-skill)
 - [Agent Skills specification](https://agentskills.io/specification)

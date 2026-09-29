@@ -3,7 +3,7 @@ title: "Admin Guide to Microsoft 365 Copilot Skills"
 list_title: "Copilot Skills — Admin & Governance Guide"
 description: "Govern personal Skills, Cowork plugins, agents, and MCP tools without mixing their controls. Includes roles, deployment, Purview, DLP, IB, and pilot steps."
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot Skills"
 tag_class: "ai"
@@ -258,7 +258,7 @@ The registry supports:
 
 <!-- Screenshot planned: Microsoft 365 admin center Agents > Tools > Registry showing available and blocked MCP servers. -->
 
-*Official UI reference: [Microsoft Learn — Agent Tools registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-for-agent?view=o365-worldwide&preserve-view=true).*
+*Official UI reference: [Microsoft Learn — Agent Tools registry](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-tools-overview?view=o365-worldwide&preserve-view=true).*
 
 ### BYO MCP is Preview
 
@@ -475,7 +475,7 @@ This is a time-bound limitation. Recheck it before the pilot.
 - [Microsoft Learn — manage Copilot Cowork for your organisation](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance)
 - [Microsoft Learn — Purview support for Copilot Cowork](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork)
 - [Microsoft Learn — manage agents in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps?view=o365-worldwide)
-- [Microsoft Learn — manage Agent Tools and MCP servers](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-for-agent?view=o365-worldwide&preserve-view=true)
+- [Microsoft Learn — manage Agent Tools and MCP servers](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-tools-overview?view=o365-worldwide&preserve-view=true)
 - [Microsoft Learn — build Cowork plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development)
 - [Microsoft Learn — Customize Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-customize)
 - [Microsoft Support — PowerPoint Skills](https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills)

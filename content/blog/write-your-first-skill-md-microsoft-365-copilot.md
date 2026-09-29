@@ -3,7 +3,7 @@ title: "Write Your First SKILL.md: Step-by-Step Guide"
 list_title: "Write Your First SKILL.md — Step-by-Step"
 description: "Create a portable Agent Skill from scratch: folder rules, frontmatter, workflows, references, scripts, validation, trigger tests, and common fixes."
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot Skills"
 tag_class: "ai"

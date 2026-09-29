@@ -3,7 +3,7 @@ title: "Microsoft 365 Copilot Skills, Explained"
 list_title: "Microsoft 365 Copilot Skills — Start Here"
 description: "What Copilot Skills are, how SKILL.md works, where Skills appear in PowerPoint, Excel and Cowork, and what admins need to govern them."
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot Skills"
 tag_class: "ai"
@@ -428,7 +428,7 @@ Already using Cowork? The existing [Cowork Skills and plugins guide](/blog/micro
 - [Manage Cowork plugins as an administrator](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-manage-plugins)
 - [Manage Copilot Cowork for your organization](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance)
 - [Use Microsoft Purview with Copilot Cowork](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork)
-- [Edit with Copilot in Word](https://support.microsoft.com/en-us/word/edit-with-copilot-in-word)
+- [Edit with Copilot in Word](https://support.microsoft.com/en-us/word/copilot/edit-rewrite-content)
 - [Microsoft 365 Copilot June 2026 feature update](https://techcommunity.microsoft.com/blog/Microsoft365CopilotBlog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 - [Agent Skills specification](https://agentskills.io/specification)
 - [Agent Skills client showcase](https://agentskills.io/clients)

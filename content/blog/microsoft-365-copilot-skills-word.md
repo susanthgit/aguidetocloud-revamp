@@ -3,7 +3,7 @@ title: "Copilot Skills in Word: What Exists Today"
 list_title: "Skills in Word — The Honest Current State"
 description: "Word has Edit with Copilot and a Word Agent, but no public standalone SKILL.md picker yet. Here is what each experience actually does."
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot Skills"
 tag_class: "ai"
@@ -69,7 +69,7 @@ It works as a co-creator in the open document:
 
 <!-- Screenshot planned: Current Word Copilot Tools menu showing Edit with Copilot, not the older Agent mode label. -->
 
-*Official UI reference: [Microsoft Support — Edit with Copilot in Word](https://support.microsoft.com/en-us/word/edit-with-copilot-in-word). The current public image still shows the older Agent mode label, so capture the live tenant wording.*
+*Official UI reference: [Microsoft Support — Edit with Copilot in Word](https://support.microsoft.com/en-us/word/copilot/edit-rewrite-content). The current public image still shows the older Agent mode label, so capture the live tenant wording.*
 
 ### Open Edit with Copilot
 
@@ -304,9 +304,9 @@ That means this spoke should not invent:
 ## Official public sources
 
 - [Microsoft Support — welcome to Copilot in Word](https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word)
-- [Microsoft Support — Edit with Copilot in Word](https://support.microsoft.com/en-us/word/edit-with-copilot-in-word)
+- [Microsoft Support — Edit with Copilot in Word](https://support.microsoft.com/en-us/word/copilot/edit-rewrite-content)
 - [Microsoft Support — draft and add content with Copilot in Word](https://support.microsoft.com/en-us/word/copilot/draft-and-add-content-with-copilot-in-word)
 - [Microsoft Support — Word, Excel, and PowerPoint Agents in Microsoft 365 Copilot](https://support.microsoft.com/en-us/office/365-copilot-app/get-started-with-word-excel-and-powerpoint-agents-in-microsoft-365-copilot)
 - [Microsoft Learn — admin controls for Word, Excel, and PowerPoint Agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/wordexcelppt-agents)
-- [Microsoft 365 Blog — agentic capabilities in Word, Excel, and PowerPoint](https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/)
+- [Microsoft 365 Blog — agentic capabilities in Word, Excel, and PowerPoint](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/)
 - [Microsoft 365 Copilot June 2026 feature update](https://techcommunity.microsoft.com/blog/Microsoft365CopilotBlog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
