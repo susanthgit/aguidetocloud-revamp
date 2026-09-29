@@ -2,7 +2,7 @@
 title: "Microsoft Scout — Admin Install & Frontier Setup"
 description: "Step-by-step admin install for Microsoft Scout: Frontier enrollment in the Microsoft 365 admin center, Intune policy, attestation, GitHub Copilot license."
 date: 2026-06-12
-lastmod: 2026-06-16
+lastmod: 2026-09-29
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -29,7 +29,9 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the admin-install spoke. Frontier ships weekly — this page updates as the gates change. Last verified: 16 June 2026 · Scout version 0.23.0.20260608.1.
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the admin-install spoke. Frontier ships weekly — this page updates as the gates change. Last verified: 29 September 2026 · Scout version 0.23.0.20260608.1.
+
+> ✏️ **Naming update (25 Sep 2026):** Microsoft is renaming Scout to **Autopilot** (announced in the "new Copilot" update; expanding to private preview end of Sept). The app is still branded "Microsoft Scout" as this rolls out, so this guide keeps the Scout name — read it as **Autopilot (formerly Scout)**.
 
 </div>
 

@@ -2,7 +2,7 @@
 title: "Microsoft Scout — All 7 Bundled Skills Explained"
 description: "Microsoft Scout ships seven bundled skills — docx, xlsx, pptx, Loop, web artifacts, Excalidraw, expense report. What each does and when Scout uses it."
 date: 2026-06-12
-lastmod: 2026-06-13
+lastmod: 2026-09-29
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the feature-tour spoke. Bundled skills can change between releases — this page updates as Microsoft ships. Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the feature-tour spoke. Bundled skills can change between releases — this page updates as Microsoft ships. Last verified: 29 September 2026 · Scout version 0.23.0.20260608.1. **Naming update:** Microsoft is renaming Scout to **Autopilot** (announced 25 Sep 2026, expanding to private preview); the desktop app is still branded "Microsoft Scout" as it rolls out, so read "Scout" here as **Autopilot (formerly Scout)**.
 
 </div>
 

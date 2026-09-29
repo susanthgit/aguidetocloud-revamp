@@ -2,7 +2,7 @@
 title: "Microsoft Scout — MCP Servers & Custom Skills"
 description: "Add MCP servers and author custom SKILL.md skills for Microsoft Scout — bundled servers, runtime patterns, OAuth, markdown-not-code authoring."
 date: 2026-06-12
-lastmod: 2026-06-13
+lastmod: 2026-09-29
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the MCP-and-custom-skills spoke. The MCP catalog and skill conventions can change between releases — this page updates as Microsoft ships. Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the MCP-and-custom-skills spoke. The MCP catalog and skill conventions can change between releases — this page updates as Microsoft ships. Last verified: 29 September 2026 · Scout version 0.23.0.20260608.1. **Naming update:** Microsoft is renaming Scout to **Autopilot** (announced 25 Sep 2026, expanding to private preview); the desktop app is still branded "Microsoft Scout" as it rolls out, so read "Scout" here as **Autopilot (formerly Scout)**.
 
 </div>
 
