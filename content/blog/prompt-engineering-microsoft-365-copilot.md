@@ -5,7 +5,7 @@ hub: true
 hub_id: "prompt-engineering"
 description: "Brief Microsoft 365 Copilot like a capable new colleague. Microsoft's 4-block framework, slash-command grounding, per-app prompts, mistakes to avoid."
 date: 2026-05-25
-lastmod: 2026-05-27
+lastmod: 2026-09-29
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
@@ -30,7 +30,7 @@ faq:
   - question: "Can Copilot read my work emails and files?"
     answer: "Microsoft 365 Copilot (the licensed version your employer pays for) can — within the limits of your existing permissions. *(For the licensing edge cases, see the [complete guide for trainers](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).)* It only sees what you can already see. Copilot Pro (the personal $20 version) cannot — it only works with your personal files. The free Copilot Chat does not read your work data at all."
   - question: "What is a slash command?"
-    answer: "A slash command is the / character followed by a file, person, meeting, or chat name. It tells Copilot exactly which document or context to ground its answer in. For example, '/Q3 report' tells Copilot to use that specific file as the source. Slash commands are grounding — they're not a separate Copilot mode, they're how you point Copilot at the right material. Availability varies by Copilot surface and tenant configuration — when slash auto-complete doesn't appear, the file picker or 'Add files' button does the same job."
+    answer: "In Copilot Chat, typing the / character opens a reference picker with tabs — People, Files, Meetings, Emails and more — so you pick the exact item to ground the answer in. For example, pick the 'Q3 report' file and Copilot grounds its answer in that document. You can also just describe the source in natural language and Copilot reaches it through Microsoft Graph. Either way it's grounding, not a separate Copilot mode — it's how you point Copilot at the right material. Availability of the slash picker varies by surface and tenant; when it doesn't appear, the file picker or 'Add files' button does the same job."
   - question: "Will my Copilot prompts stay private?"
     answer: "If you use Microsoft 365 Copilot at work, your prompts stay inside your organisation's tenant boundary. *(For the admin controls behind that, see the [content safety controls guide](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/).)* Microsoft does not use them to train AI models. Free consumer Copilot is different — read the privacy terms before pasting anything sensitive. As a rule: never paste personally identifiable information, customer data, or anything regulated into a consumer AI tool."
   - question: "Can I let Copilot make decisions for me?"
@@ -121,7 +121,7 @@ I had to look this up three times before it clicked. Then I taught it to a recru
 
 <div class="living-doc-banner">
 
-🔄 **Living document.** Microsoft 365 Copilot ships changes monthly. The four-block framework and the underlying skills don't move — but a button position, a feature name, or a specific slash command may have shifted by the time you read this. Spotted something off? [Let me know](/feedback/) and I'll update.
+🔄 **Living document.** Microsoft 365 Copilot ships changes monthly. The four-block framework and the underlying skills don't move — but a button position, a feature name, or a specific reference gesture may have shifted by the time you read this. Spotted something off? [Let me know](/feedback/) and I'll update. **Last verified: 29 September 2026.**
 
 </div>
 
@@ -211,14 +211,16 @@ Treat the first answer as a draft. Coach Copilot with one sentence at a time:
 
 ### Slash-command grounding (when your Copilot supports it)
 
-| You type | What it does |
-|---|---|
-| `/file name` | Grounds the answer in that file |
-| `/person name` | Adds what's known about that person |
-| `/meeting name` | Pulls in that meeting's recap |
-| `/email subject` | Pulls in that email thread |
+In Copilot Chat, typing **`/`** opens a **reference picker** with tabs — **People · Files · Meetings · Emails** (and more) — so you pick the exact item to ground the answer in:
 
-If slash auto-complete doesn't appear, use the **file picker** / Add files button in the chat composer — that's the proper fallback for grounding. Pasting a filename into the prompt does not ground; pasting the actual content works for one-shot tasks but isn't equivalent to a real source reference.
+| You type `/` then pick… | What it does |
+|---|---|
+| a **File** | Grounds the answer in that document |
+| a **Person** | Adds what's known about that person from your org graph |
+| a **Meeting** | Pulls in that meeting's recap |
+| an **Email** | Pulls in that email thread |
+
+You can also just describe the source in natural language (*"recap my steering committee meeting on 12 May"*) — Copilot reaches it through Microsoft Graph either way. If the slash picker doesn't appear on a given surface, use the **file picker** / Add files button in the composer. Pasting a filename into the prompt does not ground; pasting the actual content works for one-shot tasks but isn't equivalent to a real source reference.
 
 ### App-by-app one-liner
 
@@ -630,17 +632,17 @@ The picker has tabs at the top — All / People / Files / Meetings / Emails / 4 
 
 > 💡 **Don't see what you need?** Use the **`+` (plus / upload) button** to the left of the chat input — that lets you upload a file directly from your local machine (Word, PDF, image, spreadsheet, etc.). The uploaded file becomes a one-shot source for that conversation. Useful when the file you want to ground in isn't in SharePoint, OneDrive, or any indexed surface — or when you just want a quick analysis without putting the document in shared storage first.
 
-A few example patterns that pay off:
+A few example patterns that pay off. Typing **`/`** opens the reference picker (People · Files · Meetings · Emails and more) so you can pick the exact source; you can also describe it in natural language and Copilot reaches it through Microsoft Graph:
 
 | Pattern | What it does |
 |---|---|
-| `/Project alpha brief` | Grounds Copilot in that specific document |
-| `/Steering committee 12 May` | Pulls in that meeting's recap and decisions |
-| `/email subject line` | Brings in an email thread |
-| `/Sonia Rees` | Surfaces what's known about that person from your org graph |
-| `/Sales channel` | Pulls in the channel context for cross-thread answers |
+| Pick a file like *Project alpha brief* | Grounds Copilot in that specific document |
+| Pick a meeting like *Steering committee 12 May* | Pulls in that meeting's recap and decisions |
+| Pick an email thread | Brings in that conversation |
+| Pick a person like *Sonia Rees* | Surfaces what's known about them from your org graph |
+| Pick a channel like *Sales* | Pulls in the channel context for cross-thread answers |
 
-If your Copilot doesn't surface slash auto-complete on a particular surface, use the file picker or Add files button in the chat composer — it does the same thing under the hood. The label might be "Add files", "Reference content", or a paperclip icon depending on which surface you're in.
+If your Copilot doesn't surface the slash picker on a particular surface, use the file picker or Add files button in the chat composer — it does the same thing under the hood. The label might be "Add files", "Reference content", or a paperclip icon depending on which surface you're in.
 
 > 📎 **Why this matters:** Without grounding, Copilot is writing from general knowledge plus whatever it remembers from the recent chat. That's fine for brainstorming and writing scaffolds. It is not fine when your answer needs to reflect a specific customer, policy, decision, or set of numbers. Most "Copilot hallucinated" stories I hear are really "Copilot wasn't given the source".
 
@@ -814,7 +816,7 @@ Worth saying clearly, because the marketing softens it.
 - **Copilot will not learn your company without grounding.** Without `/file` and the file picker, it's writing from general knowledge.
 - **Copilot will sometimes be wrong.** Language models hallucinate. The mitigation is grounding + validation, not blind trust.
 - **Copilot will not replace judgment.** It will free up the time you used to spend typing, so you can spend more time on the judgment work.
-- **Copilot is not the same in every surface.** Consumer Copilot, Copilot Pro, and Microsoft 365 Copilot are three different products with different data access and different governance. [The licensing guide](/blog/copilot-pro-vs-microsoft-365-copilot/) covers this in detail.
+- **Copilot is not the same in every surface.** Consumer Copilot, the personal Copilot plans (Microsoft 365 Premium, which replaced the retired Copilot Pro), and Microsoft 365 Copilot are different products with different data access and different governance. [The licensing guide](/blog/copilot-pro-vs-microsoft-365-copilot/) covers this in detail.
 
 If those four things stay true in your head, you'll get a lot of value from Copilot without any of the surprises.
 
