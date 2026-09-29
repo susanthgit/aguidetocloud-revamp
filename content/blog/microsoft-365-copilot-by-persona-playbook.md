@@ -4,7 +4,7 @@ list_title: "M365 Copilot for 5 Personas — The Complete Playbook"
 hub_id: "prompt-engineering"
 description: "Copilot prompts for Recruiters, Operations, Finance, IT Admin, Sales & Marketing — daily workflows, worked examples, and the guardrails that matter."
 date: 2026-05-25
-lastmod: 2026-05-27
+lastmod: 2026-09-29
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
@@ -29,7 +29,7 @@ faq:
   - question: "Can Copilot make decisions on my behalf?"
     answer: "No. Hiring decisions, performance ratings, financial commitments, customer commitments, security incidents, deal closures, marketing budget approvals — those are all human-owned. Copilot summarises, structures, drafts, and flags. You read, judge, and decide."
   - question: "What's the single most useful prompt pattern across all personas?"
-    answer: "The grounding pattern: '/file or /meeting or /email' + a clear goal + an explicit format. For example: 'Using /[file], summarise X into a table with columns Y. Plain English, no jargon, do not speculate beyond the source.' Every persona section in this playbook uses variants of this same pattern."
+    answer: "The grounding pattern: point Copilot at your source + a clear goal + an explicit format. Reference a document by typing / and its file name; refer to emails, meetings and Teams chats in plain English (Copilot reaches them through Microsoft Graph). For example: 'Using /[file], summarise X into a table with columns Y. Plain English, no jargon, do not speculate beyond the source.' Every persona section in this playbook uses variants of this same pattern."
   - question: "How long does it take to feel productive with Copilot?"
     answer: "One to two weeks for the daily wins (email triage, meeting recaps, document drafting). Three to four weeks for the role-specific compounding wins (consistent funnel reports, faster month-end close, cleaner SOPs, better-prepared customer calls). The 4-week practice plan in this playbook is calibrated for that arc."
   - question: "What's the biggest mistake across all roles?"
@@ -101,7 +101,7 @@ This is the role-specific companion to the [Prompt Engineering hub guide](/blog/
 
 <div class="living-doc-banner">
 
-🔄 **Living document.** Microsoft 365 Copilot ships changes monthly. The workflows in this guide don't move — but specific button positions, feature names, or supported file types may have shifted by the time you read this. Spotted something off? [Let me know](/feedback/) and I'll update.
+🔄 **Living document.** Microsoft 365 Copilot ships changes monthly. The workflows in this guide don't move — but specific button positions, feature names, or supported file types may have shifted by the time you read this. Spotted something off? [Let me know](/feedback/) and I'll update. **Last verified: 29 September 2026.**
 
 </div>
 
@@ -147,7 +147,7 @@ Print this. Stick it next to your monitor. Works in every role.
 | **Goal** | What do you want Copilot to do? | "Summarise…" / "Draft…" / "Compare…" / "Find…" |
 | **Context** | What does Copilot need to know? | Audience, situation, tone, constraints |
 | **Expectations** | What does good look like? | Length, format, what to avoid, what to flag |
-| **Source** | Where should it ground its answer? | /file, /meeting, /email, /chat |
+| **Source** | Where should it ground its answer? | `/file` name for a document; emails, meetings and chats in plain English |
 
 ### Three guardrail phrases — paste these into any prompt that touches people or money
 
@@ -170,7 +170,7 @@ If you've read the [Prompt Engineering hub guide](/blog/prompt-engineering-micro
 - **Goal** — the verb. "Summarise" / "Draft" / "Compare". Not "help me with".
 - **Context** — what Copilot needs to know. Audience, situation, tone, constraints.
 - **Expectations** — what good looks like. Length, format, what to avoid, what to flag.
-- **Source** — what to ground in. /file, /meeting, /email, /chat. Without this, Copilot writes from general knowledge — fine for brainstorming, not fine for your-specific-work output.
+- **Source** — what to ground in. Type `/` and a file name to reference a document; describe emails, meetings and Teams chats in plain English (Copilot reaches them through Microsoft Graph). Without a source, Copilot writes from general knowledge — fine for brainstorming, not fine for your-specific-work output.
 
 Every prompt in the persona sections below uses this shape. Once you've seen 20 of them, you'll be writing your own without thinking about it.
 
@@ -771,11 +771,11 @@ These are scenarios most recruitment teams don't think to try. They're the *"and
 
 #### Atlas Bonus 1 — Boomerang candidate watch
 
-> **Goal:** Identify the top 5 candidates from a 12-month past-candidate dataset most likely to re-engage.
+> **Goal:** Surface 5 past candidates from a 12-month past-candidate dataset whose own stated signals suggest they may be open to re-engaging — so you can prioritise *outreach*.
 >
 > **Context:** Every recruitment team has a database of candidates who got close but didn't accept. Six or twelve months later, they may be open again — counter-offer wore off, fintech turbulence, new manager left. Almost no team systematically goes back. This pattern is the 5-minute scan that turns dormant data into warm leads.
 >
-> **Expectations:** Rank by signal strength (not contact yet). Output a 5-row table — Candidate ID · Why they're a top-5 signal · Recommended outreach angle. Ground each angle in the original decline reason. Do not contact them — just prioritise.
+> **Expectations:** Sequence by strength of their *own* re-engagement signals (their stated "open to re-engage" note, original decline reason) — this is prioritising who to *contact*, not scoring candidates for selection. Output a 5-row table — Candidate ID · Which of their own signals puts them here · Recommended outreach angle. Ground each angle in the original decline reason. Do not contact them — just sequence the outreach list.
 >
 > **Source:** Past-candidate spreadsheet with columns for original decline reason, current employer, public signals, and free-form recruiter notes.
 
@@ -793,7 +793,9 @@ Copilot solves all three in 5 minutes. {{< hi >}}Past candidates aren't a dead a
 
 "Do not contact them — just rank by signal strength so I can prioritise outreach."
 
-Why this matters: as Copilot agents and Studio flows become more capable, prompts that say *"draft and send"* are increasingly tempting. In recruitment, sending boomerang outreach without human review is a brand risk — past candidates remember the original conversation. The guardrail keeps the action with the human, even while Copilot does the prioritisation.
+**First, reconcile this with the playbook's "do not rank" rule.** Everywhere else this playbook says *never ask Copilot to rank, score or shortlist candidates* — because that's an automated employment *decision*. This prompt is the one deliberate exception, and the difference is worth naming: you're not scoring people for selection or a hiring outcome. You're sequencing *outreach* to past candidates who already declined, using **their own stated signals** (their "open to re-engage" note, their original decline reason) — no protected-trait inference, no selection decision. The hiring decision, and whether to contact anyone at all, stays with you. If that distinction ever feels thin, fall back to the safe wording: *"prioritise who to contact first based on their own re-engagement signals."*
+
+Why the human-in-the-loop part matters: as Copilot agents and Studio flows become more capable, prompts that say *"draft and send"* are increasingly tempting. In recruitment, sending boomerang outreach without human review is a brand risk — past candidates remember the original conversation. The guardrail keeps the action with the human, even while Copilot does the prioritisation.
 
 ##### What the prompt looks like in M365 Copilot Chat
 
