@@ -16,7 +16,7 @@ guided_slug: "juniper-jncis-ent"
 
 > Master enterprise switching, routing, and Junos operations on EX, QFX, and MX
 
-Original 200 practice questions covering 9 JNCIS-ENT exam domains: Layer 2 Switching and VLANs, Spanning Tree, Layer 2 Security, Protocol-Independent Routing, OSPF, IS-IS, BGP, Tunnels, and High Availability. Junos OS 23.1 verified. Character-driven scenarios.
+Original 249 practice questions covering 9 JNCIS-ENT exam domains: Layer 2 Switching and VLANs, Spanning Tree, Layer 2 Security, Protocol-Independent Routing, OSPF, IS-IS, BGP, Tunnels, and High Availability. Junos OS 23.1 verified. Character-driven scenarios.
 
 ## Who Should Take This Exam?
 

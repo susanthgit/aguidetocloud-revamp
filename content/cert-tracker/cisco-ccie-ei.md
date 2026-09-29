@@ -28,7 +28,7 @@ faq:
 
 > Expert-level enterprise networking — the hardest questions on the platform
 
-200 expert-level practice questions for the CCIE Enterprise Infrastructure lab exam. Covers Network Infrastructure, Software Defined Infrastructure, Transport Technologies (MPLS, VXLAN EVPN, DMVPN), and Infrastructure Security & Services. The hardest questions on the platform — designed for candidates preparing for the 8-hour hands-on lab.
+250 expert-level practice questions for the CCIE Enterprise Infrastructure lab exam. Covers Network Infrastructure, Software Defined Infrastructure, Transport Technologies (MPLS, VXLAN EVPN, DMVPN), and Infrastructure Security & Services. The hardest questions on the platform — designed for candidates preparing for the 8-hour hands-on lab.
 
 ## Who Should Take This Exam?
 

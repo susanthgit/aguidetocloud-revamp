@@ -18,9 +18,9 @@ faq:
   - question: "How hard is JNCIA-Junos compared to CCNA?"
     answer: "Slightly easier in scope (90 minutes / 65 questions vs CCNA's 120 minutes / 100+ questions) but more focused on Junos OS specifics. Routing concepts overlap heavily — BGP, OSPF, IS-IS, routing policy, firewall filters. The biggest mental shift is Junos's commit-based configuration model (you stage changes, then commit) and the hierarchical config tree. If you're comfortable with CLI and routing fundamentals, expect 4 to 8 weeks of part-time prep."
   - question: "How much does the JNCIA-Junos exam cost?"
-    answer: "USD $200 via Pearson VUE. Juniper periodically runs free voucher promotions through their [Open Learning portal](https://learning.juniper.net/) — sign up for an account and watch for promo emails. The cert is valid 3 years and renewable by passing the current version or progressing to a higher-level Juniper cert (JNCIS or above) in the same track."
+    answer: "Juniper doesn't publish the exam fee on its certification pages, so check the current price for your country when you book through [Pearson VUE](https://home.pearsonvue.com/juniper). Juniper periodically runs free voucher promotions through their [Open Learning portal](https://learning.juniper.net/) — sign up for an account and watch for promo emails. The cert is valid 3 years and renewable by passing the current version or progressing to a higher-level Juniper cert (JNCIS or above) in the same track."
   - question: "What Junos OS version should I study?"
-    answer: "Junos OS 23.x or newer for the current JNCIA-Junos exam. Juniper updates the exam blueprint when major Junos versions ship — older study material (Junos 19.x or earlier) is missing features around EVPN, segment routing, and modern automation. Use Juniper's [free vSRX trial](https://www.juniper.net/us/en/dm/free-vsrx-trial.html) or [Juniper Open Learning labs](https://learning.juniper.net/) to practise hands-on."
+    answer: "Junos OS 21.2. The current exam is **JN0-106**, which replaced JN0-105 on 6 April 2026, and Juniper's official exam page lists Junos OS 21.2 as the software version it is written against — so treat 21.2 as your baseline rather than the newest release you can download. Practising on a later release is fine, because the associate-level fundamentals (the CLI, the configuration hierarchy, the commit model, routing basics) are stable across versions, but check anything version-specific against 21.2. Use Juniper's [free vSRX trial](https://www.juniper.net/us/en/dm/free-vsrx-trial.html) or [Juniper Open Learning labs](https://learning.juniper.net/) to practise hands-on."
   - question: "Does JNCIA-Junos lead to a clear career path?"
     answer: "Yes — Juniper's certification ladder is clean: JNCIA (associate) → JNCIS (specialist, choose a track such as Enterprise Routing & Switching, Service Provider, Security, Data Center, or Cloud) → JNCIP (professional) → JNCIE (expert, includes a hands-on lab exam). Most service-provider network engineers stop at JNCIP-SP, which carries serious weight in the industry. JNCIE is the credential equivalent of CCIE and takes 2 to 4 years of dedicated study."
 ---
@@ -28,7 +28,7 @@ faq:
 
 > Master Junos OS networking from the ground up
 
-Original 200 practice questions covering all 7 JNCIA-Junos exam domains: Networking Fundamentals, Junos OS Architecture, CLI User Interfaces, Configuration Basics, Operational Monitoring, Routing Fundamentals, and Routing Policy & Firewall Filters. Junos OS 23.x verified. Character-driven scenarios.
+Original 250 practice questions covering all 7 JNCIA-Junos exam domains: Networking Fundamentals, Junos OS Architecture, CLI User Interfaces, Configuration Basics, Operational Monitoring, Routing Fundamentals, and Routing Policy & Firewall Filters. Written for exam **JN0-106**, which replaced JN0-105 on 6 April 2026 and specifies Junos OS 21.2. Character-driven scenarios.
 
 ## Who Should Take This Exam?
 
@@ -40,32 +40,32 @@ The JNCIA-JUNOS is designed for **IT professionals with some hands-on experience
 
 | Detail | Value |
 |--------|-------|
-| **Exam Code** | JNCIA-JUNOS |
+| **Exam Code** | JNCIA-JUNOS (exam JN0-106) |
 | **Title** | Juniper Networks Certified Associate, Junos (JNCIA-Junos) |
 | **Duration** | 90 minutes |
 | **Questions** | 65 |
-| **Cost** | $200 USD |
+| **Cost** | Not published by Juniper — check [Pearson VUE](https://home.pearsonvue.com/juniper) |
 | **Provider** | Pearson VUE |
 | **Validity** | 3 years |
-| **Question Types** | Multiple choice, Drag-and-drop |
+| **Question Types** | Multiple choice |
 | **Official Page** | [View on Juniper →](https://www.juniper.net/us/en/training/certification/tracks/junos/jncia-junos.html) |
 
-## Exam Domains & Weights
+## Exam Domains
 
-The JNCIA-JUNOS exam covers **7 domains**. Focus your study time based on the weights below — higher-weighted domains have more exam questions.
+The JNCIA-JUNOS exam covers **7 domains**. Juniper publishes the objective list but not a per-domain weighting, so the table below pairs the official objectives with the number of questions in our practice bank. Those counts are our allocation — they are not a prediction of how the real exam splits its 65 questions.
 
-| Domain | Weight | Practice Qs |
-|--------|--------|-------------|
-| Networking Fundamentals | 12% | 32 |
-| Junos OS Fundamentals | 12% | 31 |
-| User Interfaces | 14% | 35 |
-| Configuration Basics | 18% | 43 |
-| Operational Monitoring & Maintenance | 14% | 35 |
-| Routing Fundamentals | 16% | 39 |
-| Routing Policy & Firewall Filters | 14% | 35 |
-| **Total** | **100%** | **250** |
+| Domain | Practice Qs |
+|--------|-------------|
+| Networking Fundamentals | 32 |
+| Junos OS Fundamentals | 31 |
+| User Interfaces | 35 |
+| Configuration Basics | 43 |
+| Operational Monitoring & Maintenance | 35 |
+| Routing Fundamentals | 39 |
+| Routing Policy & Firewall Filters | 35 |
+| **Total** | **250** |
 
-> 💡 **Study tip:** **Configuration Basics** carries the most weight (18%) — start there. **Networking Fundamentals** has the least (12%), but don't skip it — exam questions can come from any domain.
+> 💡 **Study tip:** **Configuration Basics** has the largest practice pool here, and the commit-based configuration model is the biggest mental shift for anyone arriving from IOS — start there. Every objective is testable, so don't skip the smaller sections.
 
 ## Practice Exam — 250 Questions
 

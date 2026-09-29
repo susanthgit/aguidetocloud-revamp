@@ -14,9 +14,9 @@ guided_slug: "hashicorp-vault-associate"
 ---
 ## About the VAULT-ASSOCIATE Exam
 
-> Master secrets management — 200 scenario-based questions for the VA-003 exam
+> Master secrets management — 250 scenario-based questions for the VA-003 exam
 
-200 practice questions for the HashiCorp Certified: Vault Associate (003) exam. Covers Authentication Methods, Vault Policies, Tokens, Leases, Secrets Engines, Encryption as a Service, Architecture Fundamentals, Deployment Architecture, and Access Management. Scenario-based questions with detailed explanations — designed for candidates preparing for the VA-003 certification.
+250 practice questions for the HashiCorp Certified: Vault Associate (003) exam. Covers Authentication Methods, Vault Policies, Tokens, Leases, Secrets Engines, Encryption as a Service, Architecture Fundamentals, Deployment Architecture, and Access Management. Scenario-based questions with detailed explanations — designed for candidates preparing for the VA-003 certification.
 
 ## Who Should Take This Exam?
 

@@ -16,7 +16,7 @@ guided_slug: "aws-ans-c01"
 
 > Design and implement advanced AWS network architectures
 
-Master AWS networking — VPCs, Transit Gateway, Direct Connect, Route 53, CloudFront, Network Firewall, and hybrid connectivity — with 200 original scenario-based practice questions.
+Master AWS networking — VPCs, Transit Gateway, Direct Connect, Route 53, CloudFront, Network Firewall, and hybrid connectivity — with 250 original scenario-based practice questions.
 
 ## Who Should Take This Exam?
 

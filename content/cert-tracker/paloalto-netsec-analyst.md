@@ -16,7 +16,7 @@ guided_slug: "paloalto-netsec-analyst"
 
 > PAN-OS 11.x specialist — SCM, App-ID, threat prevention, and policy design at scale
 
-200 specialist-level practice questions for the Palo Alto Networks Certified Network Security Analyst exam (PALOALTO-4). Covers Object Configuration, Policy Creation and Management, Strata Cloud Manager Administration, and Security Subscriptions and Services. Built for experienced firewall administrators managing multi-firewall environments on PAN-OS 11.x.
+250 specialist-level practice questions for the Palo Alto Networks Certified Network Security Analyst exam (PALOALTO-4). Covers Object Configuration, Policy Creation and Management, Strata Cloud Manager Administration, and Security Subscriptions and Services. Built for experienced firewall administrators managing multi-firewall environments on PAN-OS 11.x.
 
 ## Who Should Take This Exam?
 

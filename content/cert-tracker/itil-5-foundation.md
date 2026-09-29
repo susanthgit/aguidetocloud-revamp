@@ -17,7 +17,7 @@ guided_slug: "itil-5-foundation"
 
 > Prepare for the ITIL Value System, the four dimensions, the eight product and service lifecycle activities, value streams, ITIL and AI, and ITIL alongside other frameworks.
 
-This independent practice bank follows the official PeopleCert Foundation syllabus v5.0. Its 250 original questions cover the syllabus learning outcomes and assessment criteria. They are not real exam questions, and no vendor sample questions or text from the ITIL core publication is reproduced.
+This independent practice bank follows the official PeopleCert Foundation syllabus v5.0. Its 288 original questions cover the syllabus learning outcomes and assessment criteria. They are not real exam questions, and no vendor sample questions or text from the ITIL core publication is reproduced.
 
 **Check the version before studying.** ITIL Foundation (Version 5) has a different syllabus from ITIL 4. Version 5 uses the ITIL Value System and an eight-activity ITIL Product and Service Lifecycle, with categories covering value streams and ITIL and AI. An ITIL 4 question bank is not a substitute for Version 5 preparation.
 
@@ -49,12 +49,12 @@ Use the **official exam weights**, not the size of each practice pool, to plan y
 |-------------------|---------------------|--------------------|
 | Key ITIL terms and definitions | 30% | 57 |
 | The ITIL Four Dimensions of Product and Service Management | 10% | 25 |
-| The ITIL Product and Service Lifecycle | 10% | 25 |
+| The ITIL Product and Service Lifecycle | 10% | 63 |
 | The ITIL Value System | 40% | 75 |
 | Value stream identification, mapping and management | 5% | 24 |
 | ITIL and AI | 2.5% | 22 |
 | ITIL and other frameworks | 2.5% | 22 |
-| **Total** | **100%** | **250** |
+| **Total** | **100%** | **288** |
 
 The practice allocation deliberately gives the three smallest categories more questions than a strictly proportional split would provide. This leaves enough material to revise those topics while keeping the ITIL Value System the largest practice pool. It is a study allocation, not a prediction of the question mix on your exam.
 
@@ -62,7 +62,7 @@ The ITIL Value System carries 40% of the official exam weight. ITIL and AI and I
 
 ## Practice exam
 
-[Try the ITIL Foundation (Version 5) practice exam](/guided/itil-5-foundation/practice/). The first **20 questions are free**. Full access to this certification's **250-question bank costs US$9 for one year**.
+[Try the ITIL Foundation (Version 5) practice exam](/guided/itil-5-foundation/practice/). The first **20 questions are free**. Full access to this certification's **288-question bank costs US$9 for one year**.
 
 The bank contains single-answer multiple-choice questions across all seven categories. Each question includes an explanation, a hint, distractor explanations and a link to the official certification page. Study mode lets you review the reasoning after answering; timed mode lets you practise with a clock.
 

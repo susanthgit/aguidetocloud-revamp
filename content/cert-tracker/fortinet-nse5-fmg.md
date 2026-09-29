@@ -14,7 +14,7 @@ guided_slug: "fortinet-nse5-fmg"
 ---
 ## About the NSE5-FMG Exam
 
-> Master centralized FortiGate management — 200 questions for the FCP_FMG_AD-7.4 exam
+> Master centralized FortiGate management — 250 questions for the FCP_FMG_AD-7.4 exam
 
 250 original practice questions for the Fortinet NSE 5 FortiManager 7.4 certification exam. Covers system administration, device manager, policy and objects, advanced configuration (HA, FortiGuard, FortiAnalyzer), and troubleshooting. Scenario-based questions with detailed explanations and exam tips.
 
