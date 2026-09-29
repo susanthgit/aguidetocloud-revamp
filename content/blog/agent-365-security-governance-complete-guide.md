@@ -4,7 +4,7 @@ list_title: "Agent 365 Security — The Complete Guide (Entra, Purview, Defender
 hub_id: "ai-agents"
 description: "Agent 365 is now GA. Here's how Entra, Purview, and Defender secure your AI agents — with real screenshots, scenarios, and no marketing fluff."
 date: 2026-04-30
-lastmod: 2026-06-18
+lastmod: 2026-09-29
 card_tag: "AI Agents"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -12,15 +12,15 @@ faq:
   - question: "What is Agent 365?"
     answer: "Think of Agent 365 as the HR department for your AI agents. Just like Entra manages user identities and Intune manages devices, Agent 365 manages AI agents — their identity, permissions, lifecycle, and compliance. It's not where you build agents (that's Copilot Studio). It's where you govern them."
   - question: "What licence do I need for Agent 365?"
-    answer: "Agent 365 standalone is 15 dollars per user per month. It's included in Microsoft 365 E7 at 99 dollars per user per month. The M365 Copilot licence at 30 dollars does NOT include Agent 365. To get the full security stack (Purview DLP for agents, Defender threat detection), you'll want E5 or E5 Security on top."
+    answer: "Indicative US list pricing: Agent 365 standalone is around 15 dollars per user per month, and it's included in Microsoft 365 E7 (around 99 dollars per user per month). The M365 Copilot licence (around 30 dollars) does NOT include Agent 365. To get the full security stack (Purview DLP for agents, Defender threat detection), you'll want E5 or E5 Security on top. Figures are indicative — pricing varies by agreement and region, so confirm on Microsoft's pricing page."
   - question: "What is an Entra Agent ID?"
     answer: "It's an identity for your AI agent — just like an Entra ID for an employee. The agent gets a unique ID, a human sponsor (think: line manager), access permissions, and lifecycle policies. When the sponsor leaves the company, automated policies can reassign or deactivate the agent."
   - question: "Can Defender detect threats on non-Microsoft agents?"
-    answer: "Yes — and this surprised me. Defender's AI Agents inventory discovers agents across Microsoft Foundry, Copilot Studio, AWS Bedrock, and GCP Vertex AI. It's not limited to the Microsoft ecosystem."
+    answer: "Yes — and this surprised me. Defender's AI Agents inventory can discover agents across Microsoft Foundry, Copilot Studio, AWS Bedrock, and GCP Vertex AI. It's not limited to the Microsoft ecosystem — though the non-Microsoft platforms aren't automatic: you connect each one to Agent 365 and sync its agents, then Defender surfaces them in the inventory."
   - question: "Do my existing Purview DLP policies protect against agent data leaks?"
-    answer: "Mostly yes. If you have DLP policies for email and Teams, they'll catch agent-initiated actions in those channels too. Purview doesn't care whether a human or an agent tries to share sensitive data — the same rules apply. But you should review your policies to make sure agent scenarios are covered."
+    answer: "Mostly yes, but not automatically. Purview treats an agent action like any other actor — the same rules apply whether a human or an agent tries to share sensitive data — but your existing email and Teams DLP policies don't necessarily scope to agent instances on their own. Microsoft's guidance is to explicitly include the agent instance (or a group containing it) in the policy. So review your policies and extend them to cover agent scenarios rather than assuming they already do."
   - question: "What happens when an agent's creator leaves the company?"
-    answer: "This is exactly why Entra Agent ID requires sponsors. If the sponsor leaves, automated lifecycle policies kick in — the agent can be reassigned to a new sponsor, have its access revoked, or be deactivated entirely. No more orphaned agents with active permissions."
+    answer: "This is exactly why Entra Agent ID requires sponsors. If the sponsor leaves, lifecycle workflows kick in — for example a task that transfers the agent's sponsorship to the departing person's manager, plus notifications so a human decides whether to revoke access or disable the agent. Departure doesn't silently deactivate the agent on its own; it routes ownership so there are no orphaned agents with active permissions and no owner."
   - question: "Is Agent 365 available now?"
     answer: "Agent 365 reached general availability on 1 May 2026. It's available standalone or as part of E7. The Entra Agent ID, Purview integration, and Defender AI agent features are rolling out progressively."
   - question: "How is Agent 365 different from the Copilot Control System?"
@@ -76,7 +76,7 @@ This guide is my breakdown of what Agent 365 actually does, how it works under t
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. Agent 365 reached GA on May 1, 2026, and features are still rolling out fast. If something here becomes outdated, please [let me know](/feedback/) and I'll update it.
+🔄 This is a living document. Agent 365 reached GA on May 1, 2026, and features are still rolling out fast. If something here becomes outdated, please [let me know](/feedback/) and I'll update it. **Last verified: 29 September 2026.**
 
 </div>
 
@@ -252,7 +252,7 @@ This is a lifecycle workflow triggered by an **"Employee job profile change"** �
 
 No human has to remember to do this. It's automated. The moment someone's profile changes in Entra, the agent governance follows.
 
-> 💡 **Think of it like this:** When an employee leaves your company, their Entra account gets disabled and their devices get wiped by Intune. Now, their agents get reassigned or deactivated by lifecycle workflows. Same principle, extended to agents.
+> 💡 **Think of it like this:** When an employee leaves your company, their Entra account gets disabled and their devices get wiped by Intune. Now, their agents get routed by lifecycle workflows — sponsorship transferred to a manager, with a human deciding on access or disable — rather than left ownerless. Same principle, extended to agents.
 
 ```mermaid
 flowchart TD
@@ -358,7 +358,7 @@ flowchart TD
 
 ### What It Looks Like in Practice
 
-**The Observability Dashboard** — This is the "big picture" view. Purview now shows you every agent in your tenant, their risk level, and what sensitive data they're touching:
+**The Observability Dashboard** — This is the "big picture" view. Purview's AI observability surfaces the agents active in your tenant over the last 30 days, their risk level, and what sensitive data they're touching (for a full inventory of every registered agent, including idle ones, use the Agent Registry):
 
 <p><img src="/images/blog/agent-365-security/purview-ai-observability.webp" alt="Purview AI Observability dashboard showing total AI apps and agents, how many are high risk, and how many are interacting with sensitive data" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -380,7 +380,7 @@ Look at what got flagged: someone asking an agent to *"rewrite this expense desc
 
 <p><img src="/images/blog/agent-365-security/purview-ediscovery.webp" alt="Purview eDiscovery showing agent conversation metadata including custodian, item class, retention label, and sensitivity label for a Copilot Studio interaction" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**Audit Logs** — Every agent action is now logged with a unique Agent ID. You can trace exactly what an agent did, when, and with which tool:
+**Audit Logs** — Supported agent interactions and tool calls are logged, each carrying an agent identifier you can use to correlate activity. You can trace what an agent did, when, and with which tool:
 
 <p><img src="/images/blog/agent-365-security/purview-audit-agent-id.webp" alt="Purview Audit showing agent activity logged with a unique Agent ID, the tool name, and full operation details" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -429,7 +429,7 @@ First step: find out what agents actually exist in your tenant. Defender's inven
 
 <p><img src="/images/blog/agent-365-security/defender-ai-agents-inventory.webp" alt="Defender AI Agents inventory discovering agents across Microsoft Foundry, Copilot Studio, AWS Bedrock, and GCP Vertex AI" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Notice the tabs: Foundry, Copilot Studio, **AWS Bedrock**, GCP Vertex AI. This isn't limited to Microsoft agents. If you're running a multi-cloud environment with agents on different platforms, Defender sees them all.
+Notice the tabs: Foundry, Copilot Studio, **AWS Bedrock**, GCP Vertex AI. This isn't limited to Microsoft agents. The non-Microsoft platforms aren't discovered automatically — you connect each one to Agent 365 and sync its agents first — but once connected, if you're running a multi-cloud environment with agents on different platforms, Defender brings them into one inventory.
 
 Click on any agent and you get the full picture:
 
@@ -580,12 +580,12 @@ I know the question you're about to ask. Here's the straight answer:
 
 | What You Want | What You Need |
 |--------------|--------------|
-| Just agent governance (registry, sponsors, lifecycle) | **Agent 365** — $15/user/month or included in E7 |
+| Just agent governance (registry, sponsors, lifecycle) | **Agent 365** — ~$15/user/month (indicative) or included in E7 |
 | Agent + data protection (DLP, compliance, eDiscovery) | Agent 365 + **E5** (or E5 Compliance add-on) |
-| Agent + threat detection (inventory, attack paths, blocking) | Agent 365 + **E5 Security** (or Defender standalone) |
-| Everything in this guide | **Microsoft 365 E7** ($99/user/month) — bundles it all |
+| Agent + broader security operations (beyond the agent inventory and detections Agent 365 includes) | Agent 365 + **E5 Security** (or Defender standalone) |
+| Everything in this guide | **Microsoft 365 E7** (~$99/user/month, indicative) — bundles it all |
 
-> 💡 For the full licensing breakdown, see my [E7 deep dive](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/) and the [Licensing Simplifier tool](/licensing/).
+> 💡 Figures are indicative US list pricing — enterprise pricing varies with your agreement, region and any negotiated discount, so confirm on Microsoft's pricing page. For the full licensing breakdown, see my [E7 deep dive](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/) and the [Licensing Simplifier tool](/licensing/).
 
 ---
 
@@ -598,7 +598,7 @@ Honestly? If you have 2-3 simple agents, basic Copilot Control System governance
 I wrote a [whole guide on this](/blog/microsoft-365-copilot-control-system-complete-guide/). The short version: CCS governs **people using AI**. Agent 365 governs AI working for people. Different things. You probably want both eventually.
 
 "Can Defender see agents on AWS and GCP?"
-Yes — the screenshots in this article show it. Defender discovers agents on Foundry, Copilot Studio, AWS Bedrock, and GCP Vertex AI. The inventory is cross-platform.
+Yes — the screenshots in this article show it. Once you connect the platforms to Agent 365 and sync their agents, Defender discovers agents on Foundry, Copilot Studio, AWS Bedrock, and GCP Vertex AI. The inventory is cross-platform.
 
 "Is this just for big enterprises?"
 The features are enterprise-grade, but the problems are universal. Even a 50-person company with a few Copilot Studio agents needs to know who built them, what they access, and what happens when the builder leaves. Start simple — sponsors and basic DLP — and grow from there.
