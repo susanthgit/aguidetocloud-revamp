@@ -4,7 +4,7 @@ list_title: "Analyst Agent (Copilot)"
 hub_id: "built-in-agents"
 description: "What the Analyst agent in Microsoft 365 Copilot does — turns raw data from Excel, CSV and other files into plain-English insights, charts and tables."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-09-29
 draft: false
 card_tag: "Agents"
 tag_class: "ai"
@@ -27,7 +27,7 @@ faq:
   - question: "How is Analyst different from Copilot in Excel?"
     answer: "Copilot in Excel helps you inside a single workbook. Analyst is built for the cross-file job: it can pull together multiple spreadsheets, CSVs and other data sources, consolidate them, and reason across the lot to answer a question — then hand back a written report with visuals. Think 'analyse all of these for me' rather than 'help me in this sheet'."
   - question: "Do I need a licence for Analyst?"
-    answer: "Yes — Analyst runs inside the Microsoft 365 Copilot app and needs a Microsoft 365 Copilot licence. It reached general availability on 2 June 2025, alongside its sibling, the Researcher agent. You'll find it under Agents in the left navigation."
+    answer: "Yes — Analyst runs inside the Microsoft 365 Copilot app and needs a Microsoft 365 Copilot licence, a Microsoft 365 Premium or Pro subscription. It reached general availability on 2 June 2025, alongside its sibling, the Researcher agent. You'll find it under Agents in the left navigation."
   - question: "What data can Analyst work with?"
     answer: "You attach the files that hold the data you want analysed — Excel spreadsheets, CSV files and similar sources — by selecting the + icon and Attach content, then uploading from your device or picking from OneDrive. It can work across more than one file at a time, which is the point: it consolidates them so you don't have to."
   - question: "Does Analyst write code?"
@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Analyst is **generally available** (since June 2025) with a Microsoft 365 Copilot licence. Last verified: 23 June 2026.
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Analyst is **generally available** (since June 2025) with a Microsoft 365 Copilot licence. Last verified: 29 September 2026.
 
 </div>
 
@@ -164,7 +164,7 @@ Both are reasoning agents, both sit under Agents in Microsoft 365 Copilot, and t
 
 ## Licensing {#licensing}
 
-- **Licence:** a Microsoft 365 Copilot licence. Analyst debuted in April 2025 through the Frontier program and reached general availability on 2 June 2025.
+- **Licence:** a Microsoft 365 Copilot licence, or a Microsoft 365 Premium or Pro subscription. Analyst debuted in April 2025 through the Frontier program and reached general availability on 2 June 2025.
 - **Where:** the Microsoft 365 Copilot app, under Agents.
 - **Allowance:** included with the licence; at general availability a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month, and like Researcher that figure may change — confirm the current number in Microsoft's docs.
 
@@ -182,9 +182,9 @@ Both are reasoning agents, both sit under Agents in Microsoft 365 Copilot, and t
 
 ## Official Microsoft sources {#sources}
 
-- [Get started with Analyst in Microsoft 365 Copilot](https://support.microsoft.com/en-us/topic/get-started-with-analyst-in-microsoft-365-copilot-ff505b9c-a06c-4be9-b855-69d89b1d25d2)
-- [Researcher and Analyst are now generally available (Microsoft 365 blog)](https://www.microsoft.com/en-us/microsoft-365/blog/2025/06/02/researcher-and-analyst-are-now-generally-available-in-microsoft-365-copilot/)
-- [Get started with Researcher in Microsoft 365 Copilot](https://support.microsoft.com/en-us/topic/get-started-with-researcher-in-microsoft-365-copilot-e63ab760-f3de-4c47-ae87-dad601b0e9c4)
+- [Get started with Analyst in Microsoft 365 Copilot](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-analyst-in-microsoft-365-copilot)
+- [Researcher and Analyst are now generally available (Microsoft 365 blog)](https://www.microsoft.com/en-us/copilot/blog/2025/06/02/researcher-and-analyst-are-now-generally-available-in-microsoft-365-copilot/)
+- [Get started with Researcher in Microsoft 365 Copilot](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-researcher-in-microsoft-365-copilot)
 - [Microsoft 365 Copilot service description (government-cloud availability)](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot)
 
 ---
@@ -194,4 +194,4 @@ Both are reasoning agents, both sit under Agents in Microsoft 365 Copilot, and t
 - [Microsoft 365's Built-in Agents — the complete guide](/blog/microsoft-365-built-in-agents/) *(the hub)*
 - [The Researcher Agent in Microsoft 365 Copilot](/blog/microsoft-365-researcher-agent/) *(its sibling)*
 - [The Microsoft 365 Facilitator Agent in Teams](/blog/microsoft-365-facilitator-agent/)
-- [The Planner Agent (Project Manager agent)](/blog/microsoft-365-project-manager-agent/)
+- [The Planner Agent (formerly Project Manager agent)](/blog/microsoft-365-project-manager-agent/)

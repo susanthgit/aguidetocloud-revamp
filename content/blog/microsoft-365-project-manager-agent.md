@@ -4,7 +4,7 @@ list_title: "Planner Agent (Project Manager)"
 hub_id: "built-in-agents"
 description: "The Microsoft Planner Agent — formerly the Project Manager agent — builds task plans from goals, works tasks you assign it, and writes status reports."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-09-29
 draft: false
 card_tag: "Agents"
 tag_class: "ai"
@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Planner Agent (formerly the **Project Manager agent**) is generally available in both basic and premium Planner plans. Last verified: 23 June 2026.
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Planner Agent (formerly the **Project Manager agent**) is generally available in both basic and premium Planner plans. Last verified: 29 September 2026.
 
 </div>
 

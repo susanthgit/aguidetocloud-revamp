@@ -4,7 +4,7 @@ list_title: "Facilitator Agent (Teams meetings)"
 hub_id: "built-in-agents"
 description: "How the Microsoft 365 Facilitator agent runs your Teams meetings — shared notes, an agenda timer, Q&A, task tracking and a recap. Setup and limits."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-09-29
 draft: false
 card_tag: "Agents"
 tag_class: "ai"
@@ -27,15 +27,15 @@ faq:
   - question: "Does Facilitator work in Teams chats, or only in meetings?"
     answer: "Scheduled meetings only. Facilitator does not work in 1:1 chats, group chats, channel meetings, instant 'Meet now' meetings, or Teams calls. A support article titled around 'chats' refers to the meeting chat panel inside a meeting, not standalone conversations — so if you want Facilitator, schedule the meeting on the calendar."
   - question: "Do I need a licence to use Facilitator?"
-    answer: "To prompt Facilitator — add it, set the agenda, ask it questions — you need a Microsoft 365 Copilot licence, on top of an eligible Microsoft 365 base plan and a Teams licence. Participants without a Copilot licence can still read its notes and answers; they just can't instruct it. Microsoft's public docs show no separate per-message charge — it's included with the Copilot seat, subject to capacity."
+    answer: "To prompt Facilitator — add it, set the agenda, ask it questions — you need a Microsoft 365 Copilot licence, on top of an eligible Microsoft 365 base plan and a Teams licence. Internal participants without a Copilot licence can still read its notes and answers where they have access; they just can't instruct it. Microsoft describes Facilitator as included with the Copilot licence, subject to available capacity, rather than charged per message."
   - question: "How do I turn Facilitator on?"
     answer: "It's allowed by default in most tenants. Two prerequisites matter: Loop experiences in Teams must be turned on, and the meeting needs Copilot/Facilitator allowed in its options. A meeting organiser or presenter on desktop or web can switch it on or off mid-meeting from More actions, or enable it at scheduling time under Options. Admins allow or block it in the Teams admin center under Manage apps."
   - question: "Can Facilitator create tasks and draft documents?"
-    answer: "Yes, but those two are in public preview as of mid-2026. Facilitator can create a task in Microsoft Planner from the meeting discussion, and draft a document with Word or a Loop component. Its core features — real-time notes, the agenda timer, in-meeting Q&A, and the recap — are generally available."
+    answer: "Yes. Facilitator can draft a document with Word (this is now generally available), and it can create a task in Microsoft Planner from the meeting discussion (that Planner task tracking is in public preview). Its core features — real-time notes, the agenda timer, in-meeting Q&A, and the recap — are generally available. Note: Microsoft is retiring Loop file generation as it enhances Word document creation, so lean on the Word output."
   - question: "Where are Facilitator's notes stored?"
     answer: "The AI-generated notes are saved as a .loop file in a folder called Meetings, in the OneDrive of whoever turned Facilitator on — that's the initiator, who can be a presenter rather than the meeting organiser. They're treated like meeting transcript data. Sensitivity labels aren't inherited automatically — you apply them manually in Loop or OneDrive if you need them."
   - question: "Is Facilitator available in government clouds?"
-    answer: "Not yet. Per Microsoft's Microsoft 365 Copilot service description, Teams meeting Copilot features — which include Facilitator — are not yet available in GCC, GCC High or DoD environments."
+    answer: "It varies by cloud. Per Microsoft's Microsoft 365 Copilot service description, the Teams meeting Copilot features that include Facilitator are available in GCC and DoD but not GCC High. Check the service-description row for your specific cloud before planning a rollout."
   - question: "What languages does Facilitator support?"
     answer: "Nearly 40, including English, Spanish, French, German, Italian, Japanese, Portuguese, Chinese (Simplified and Traditional), Korean, Dutch, Arabic and more. Only one meeting language is supported per session, so in a multilingual meeting it captures the portion spoken in the selected language. (Note: Arabic is supported here in Facilitator, but the Planner Agent excludes Arabic and Hebrew — the language lists differ per agent.)"
 sitemap:
@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Facilitator's core features (notes, agenda, Q&A, recap) are **generally available**; task tracking and document drafting are in public preview. Last verified: 23 June 2026.
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Facilitator's core features (notes, agenda, Q&A, recap) and Word document creation are **generally available**; only task tracking with Planner is in public preview. Last verified: 29 September 2026.
 
 </div>
 
@@ -63,7 +63,7 @@ founder_note: |
 ## TL;DR
 
 - **Facilitator** is a built-in agent that joins a **scheduled Teams meeting** as a *visible* teammate — its notes and answers are seen by everyone.
-- It does five things: **shared real-time notes**, agenda + timer, in-meeting Q&A, task tracking (preview), document drafting (preview), and a recap at the end.
+- Its capabilities include **shared real-time notes**, agenda + timer, in-meeting Q&A, Word document drafting, task tracking in Planner (preview), and a recap at the end.
 - **Meetings only** — not 1:1 chats, group chats, channel meetings, "Meet now", or calls.
 - **On-switch:** a **Microsoft 365 Copilot** licence to prompt it (reading is free), plus Loop experiences turned on. Allowed by default; an organiser can toggle it per meeting.
 - **Notes** are saved as a **`.loop` file** in the OneDrive of whoever turned Facilitator on. Nearly 40 languages, one per meeting.
@@ -140,7 +140,7 @@ Because the answer appears in the shared chat, the whole meeting benefits from i
 
 ## Tracking tasks — into Planner {#tasks}
 
-This is one of the public preview features, and it's where Facilitator stops being just a note-taker. Tell it to create a task and it makes one **in Microsoft Planner**, ready to assign and date.
+This is in public preview (it needs Teams Public preview turned on), and it's where Facilitator stops being just a note-taker. Tell it to create a task and it makes one **in Microsoft Planner**, ready to assign and date.
 
 <p><img src="/images/blog/microsoft-365-facilitator-agent/04-facilitator-tasks.webp" alt="The Teams meeting chat showing a recap-style list of next steps with citations, then a Facilitator message saying 'I've created a task in Planner. Would you like me to generate a draft?' with a Not started task card titled 'Create a strategy document' and an Assign to Facilitator button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -152,7 +152,7 @@ That hand-off is the quietly clever bit: a decision made out loud in a meeting b
 
 ## Drafting a document {#draft}
 
-The other preview feature: ask Facilitator to draft something and it produces a real document — a launch plan, a brief — using Word or a Loop component.
+Now generally available: ask Facilitator to draft something and it produces a real document — a launch plan, a brief — using Word. (Microsoft is retiring the older Loop-file generation as it enhances the Word output, so expect a Word document.)
 
 <p><img src="/images/blog/microsoft-365-facilitator-agent/05-facilitator-document.webp" alt="A Word document titled 'Zavaweave Smart Clothing Product Launch Plan' with an Introduction, a Product Overview section, and a Core Features list — the draft Facilitator generated from the meeting discussion, with an AI summary banner across the top." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -215,7 +215,7 @@ A few honest edges to keep in mind:
 
 - [Facilitator in Microsoft Teams (admin setup, GA vs preview, limits)](https://learn.microsoft.com/en-us/microsoftteams/facilitator-teams)
 - [Automate note-taking in Microsoft Teams meetings (end-user guide)](https://support.microsoft.com/en-us/office/automate-notetaking-in-microsoft-teams-meetings-37657f91-39b5-40eb-9421-45141e3ce9f6)
-- [Facilitator FAQ — features, languages, limitations](https://support.microsoft.com/en-us/office/frequently-asked-questions-about-facilitator-in-microsoft-teams-f7317b78-fd53-4cfe-88f0-f0a0751a4150)
+- [Teams agents FAQ — Facilitator languages and limitations](https://support.microsoft.com/en-us/teams/platform/frequently-asked-questions-about-agents-in-microsoft-teams)
 - [AI tools and agents in Microsoft Teams (overview)](https://learn.microsoft.com/en-us/microsoftteams/copilot-ai-agents-overview)
 - [Microsoft 365 Copilot service description (government-cloud availability)](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot)
 

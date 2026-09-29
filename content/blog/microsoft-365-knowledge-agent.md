@@ -4,7 +4,7 @@ list_title: "Knowledge Agent (SharePoint)"
 hub_id: "built-in-agents"
 description: "The SharePoint Knowledge Agent tidies your document libraries with AI — auto-filled metadata columns, rules and curated views. Here's how it works."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-09-29
 draft: false
 card_tag: "Agents"
 tag_class: "ai"
@@ -46,7 +46,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Knowledge Agent is in **public preview** (documented by Microsoft under "Copilot in SharePoint" / "AI in SharePoint"); the question-answering agents in SharePoint are generally available. Last verified: 23 June 2026.
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Knowledge Agent is in **public preview** (documented by Microsoft under "Copilot in SharePoint" / "AI in SharePoint"); the question-answering agents in SharePoint are generally available. Last verified: 29 September 2026.
 
 </div>
 
@@ -88,7 +88,7 @@ And the bigger distinction, which the next sections build on: this agent works o
 
 This is the headline trick. The agent reads the files in a library and **suggests metadata columns** — and then fills them in. In Microsoft's words, *"Create autofill columns analyses files in the library and suggests metadata columns and extraction prompts; these columns automatically populate metadata from file content."*
 
-A scope note worth knowing: the first suggestions are drawn from a sample of the library — Microsoft's docs say up to the **first 20 files** — and you can ask it for more columns. New files added later are tagged automatically; for existing files beyond that sample, you pick the ones you want the agent to fill in (it doesn't silently backfill the whole library), and you can watch the [processing status](https://learn.microsoft.com/en-us/sharepoint/knowledge-agent-file-processing-status) as it works.
+A scope note worth knowing: the first suggestions are drawn from a sample of the library — Microsoft's docs say up to the **first 20 files** — and you can ask it for more columns. New files added later are tagged automatically; for existing files beyond that sample, you pick the ones you want the agent to fill in (it doesn't silently backfill the whole library), and you can watch the [processing status](https://learn.microsoft.com/en-us/sharepoint/ai-in-sharepoint-file-processing-status) as it works.
 
 <p><img src="/images/blog/microsoft-365-knowledge-agent/02-knowledge-metadata.webp" alt="The SharePoint 'Organize your library' view in preview mode, showing a documents grid with three AI-generated columns — Product, Department and Material Type — populated with values like ZavaCore Fiber and Sales/Marketing. A Knowledge Agent panel on the right lists the suggested columns with their extraction prompts and Edit and Remove buttons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -190,8 +190,8 @@ The questions people ask once a question-answering SharePoint agent is live:
 ## Official Microsoft sources {#sources}
 
 - [Organize files in a library with Knowledge Agent (support)](https://support.microsoft.com/en-us/sharepoint/ai-copilot/organize-files-in-a-library)
-- [Create autofill columns in a library (Microsoft Learn)](https://learn.microsoft.com/en-us/sharepoint/knowledge-agent-organize-files)
-- [Knowledge Agent file processing status (Microsoft Learn)](https://learn.microsoft.com/en-us/sharepoint/knowledge-agent-file-processing-status)
+- [Create autofill columns in a library (Microsoft Learn)](https://learn.microsoft.com/en-us/sharepoint/ai-in-sharepoint-create-autofill-columns)
+- [Knowledge Agent file processing status (Microsoft Learn)](https://learn.microsoft.com/en-us/sharepoint/ai-in-sharepoint-file-processing-status)
 - [Introducing Knowledge Agent in SharePoint (Microsoft Community Hub)](https://techcommunity.microsoft.com/blog/spblog/introducing-knowledge-agent-in-sharepoint/4454154)
 - [Get started with agents in SharePoint — admin (the Q&A agents)](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents)
 - [Get started with agents in SharePoint — end user](https://support.microsoft.com/en-us/office/get-started-with-agents-in-sharepoint-69e2faf9-2c1e-4baa-8305-23e625021bcf)
@@ -204,4 +204,4 @@ The questions people ask once a question-answering SharePoint agent is live:
 
 - [Microsoft 365's Built-in Agents — the complete guide](/blog/microsoft-365-built-in-agents/) *(the hub)*
 - [The Microsoft 365 Facilitator Agent in Teams](/blog/microsoft-365-facilitator-agent/)
-- [The Planner Agent (Project Manager agent)](/blog/microsoft-365-project-manager-agent/)
+- [The Planner Agent (formerly Project Manager agent)](/blog/microsoft-365-project-manager-agent/)

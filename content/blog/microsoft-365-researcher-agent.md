@@ -4,7 +4,7 @@ list_title: "Researcher Agent (Copilot)"
 hub_id: "built-in-agents"
 description: "What the Researcher agent in Microsoft 365 Copilot does — deep, multi-step research across your work and the web, returned as a source-cited report."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-09-29
 draft: false
 card_tag: "Agents"
 tag_class: "ai"
@@ -27,7 +27,7 @@ faq:
   - question: "How is Researcher different from just asking Copilot?"
     answer: "Standard Copilot Chat is optimised for speed — quick answers, short summaries, drafting a reply. Researcher is built for depth: it takes longer on purpose so it can reason across many sources and produce a structured, source-cited report. Use Copilot Chat for a fast answer; use Researcher when you need an in-depth, shareable report."
   - question: "Do I need a licence to use Researcher?"
-    answer: "Yes. Researcher is available to Microsoft 365 Copilot add-on users, and also to Microsoft 365 Premium subscribers. People on a base Microsoft 365 plan without one of those won't see it. It runs inside the Microsoft 365 Copilot app under Agents."
+    answer: "Yes. Researcher is available to Microsoft 365 Copilot add-on users, and also to Microsoft 365 Premium and Pro subscribers. People on a base Microsoft 365 plan without one of those won't see it. It runs inside the Microsoft 365 Copilot app under Agents."
   - question: "Does Researcher use my work data — and is that safe?"
     answer: "It can use your work content — files, emails, meetings and chats — but only what you already have permission to see, and it respects the same policies and compliance you rely on across Microsoft 365. You can also point it at just the web, just your work, or both. It shows its sources so you can verify the important claims."
   - question: "Can I use Claude with Researcher, and what is Critique and Council?"
@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Researcher is **generally available** (since June 2025) to Microsoft 365 Copilot and Microsoft 365 Premium users. Last verified: 23 June 2026.
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Researcher is **generally available** (since June 2025) to Microsoft 365 Copilot and Microsoft 365 Premium users. Last verified: 29 September 2026.
 
 </div>
 
@@ -67,7 +67,7 @@ founder_note: |
 - It **takes longer by design** — it reasons through many sources, then writes the report. It may ask clarifying questions first.
 - It runs **multiple models**: an Auto mode blends OpenAI's GPT and Anthropic's Claude, and Critique & Council have models check each other for accuracy.
 - A Frontier feature, **Researcher with Computer Use**, can act in a secure virtual computer — open gated sites, click through interfaces, run code.
-- **On-switch:** a **Microsoft 365 Copilot** licence, or a Microsoft 365 Premium subscription. Not in government clouds yet.
+- **On-switch:** a **Microsoft 365 Copilot** licence, or a Microsoft 365 Premium or Pro subscription. Not in government clouds yet.
 
 > 🧭 **Jump to:** [What it is](#what) · [Researcher vs Copilot Chat](#vs) · [How to use it](#how) · [Sources & work content](#sources-step) · [It reasons, then reports](#report) · [Auto, Critique & Council](#models) · [Computer Use](#computer-use) · [Prompt tips](#tips) · [Licensing](#licensing) · [Limits](#limits) · [Sources](#sources)
 
@@ -183,7 +183,7 @@ Microsoft's own guidance, in plain terms:
 
 ## Licensing {#licensing}
 
-- **Licence:** a Microsoft 365 Copilot add-on, or a Microsoft 365 Premium subscription. Researcher debuted in April 2025 through the Frontier program and reached general availability on 2 June 2025.
+- **Licence:** a Microsoft 365 Copilot add-on, or a Microsoft 365 Premium or Pro subscription. Researcher debuted in April 2025 through the Frontier program and reached general availability on 2 June 2025.
 - **Query allowance:** included with the licence rather than sold per query — at general availability (June 2025) a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month. That figure may change, so confirm the current number in Microsoft's docs.
 - **Models & Computer Use:** the multi-model behaviour (Auto, Critique, Council) is built in; Researcher with Computer Use is a separate **Frontier** tier an admin enables (see [above](#computer-use)).
 
@@ -201,11 +201,11 @@ Microsoft's own guidance, in plain terms:
 
 ## Official Microsoft sources {#sources}
 
-- [Get started with Researcher in Microsoft 365 Copilot](https://support.microsoft.com/en-us/topic/get-started-with-researcher-in-microsoft-365-copilot-e63ab760-f3de-4c47-ae87-dad601b0e9c4)
+- [Get started with Researcher in Microsoft 365 Copilot](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-researcher-in-microsoft-365-copilot)
 - [Introducing multi-model intelligence in Researcher — Critique & Council (Microsoft 365 Copilot blog)](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-multi-model-intelligence-in-researcher/4506011)
 - [Get started using Researcher with Computer Use (Frontier)](https://support.microsoft.com/en-us/Microsoft-365-Copilot/get-started-using-researcher-with-computer-use-in-microsoft-365-copilot-frontier)
 - [Researcher with Computer Use — FAQ (Microsoft Learn)](https://learn.microsoft.com/en-us/microsoft-365/copilot/researcher-agent-computer-use-faq)
-- [Researcher and Analyst are now generally available (Microsoft 365 blog)](https://www.microsoft.com/en-us/microsoft-365/blog/2025/06/02/researcher-and-analyst-are-now-generally-available-in-microsoft-365-copilot/)
+- [Researcher and Analyst are now generally available (Microsoft 365 blog)](https://www.microsoft.com/en-us/copilot/blog/2025/06/02/researcher-and-analyst-are-now-generally-available-in-microsoft-365-copilot/)
 - [Microsoft 365 Copilot service description (government-cloud availability)](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot)
 
 ---
@@ -215,4 +215,4 @@ Microsoft's own guidance, in plain terms:
 - [Microsoft 365's Built-in Agents — the complete guide](/blog/microsoft-365-built-in-agents/) *(the hub)*
 - [The Analyst Agent in Microsoft 365 Copilot](/blog/microsoft-365-analyst-agent/) *(its sibling)*
 - [The Microsoft 365 Facilitator Agent in Teams](/blog/microsoft-365-facilitator-agent/)
-- [The Planner Agent (Project Manager agent)](/blog/microsoft-365-project-manager-agent/)
+- [The Planner Agent (formerly Project Manager agent)](/blog/microsoft-365-project-manager-agent/)
