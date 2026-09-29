@@ -3,7 +3,7 @@ title: "22 M365 Copilot Features You're Probably Not Using"
 hub_id: "fundamentals"
 description: "22 M365 Copilot features as a journey from quick wins to power moves. Sample prompts, real customer cases, custom templates."
 date: 2026-04-21
-lastmod: 2026-06-18
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 images: ["images/og/blog/20-copilot-features-you-should-be-using.jpg"]
@@ -12,9 +12,9 @@ og_glyph: "list"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "Do I need a special licence for these M365 Copilot features?"
-    answer: "Most features work with the standard Microsoft 365 Copilot licence your organisation has likely already provisioned. Some (model choice, third-party connectors, image input, image generation) may need your admin to switch them on. Cowork (#22) is currently in early-access preview via the Microsoft Frontier programme and is expected to require an upcoming higher M365 tier."
+    answer: "Most features work with the standard Microsoft 365 Copilot licence your organisation has likely already provisioned. Some (model choice, third-party connectors, image input, image generation) may need your admin to switch them on. Cowork (#22) is generally available (since June 2026): it runs on a Microsoft 365 Copilot licence plus usage-based Copilot Credits for the work it does, with admin enablement — not a separate mystery tier."
   - question: "How many Researcher queries do I get per month?"
-    answer: "Microsoft documents 25 Researcher queries per user per month. Analyst has its own usage limit (check the latest Microsoft Learn docs for the current number). Save these agents for high-value work like customer research, deal prep and data analysis — regular Copilot chat handles quick questions just fine."
+    answer: "Microsoft documents 25 Researcher queries per user per month. Analyst usage is metered too — check the latest Microsoft Learn docs for the current limits. Save these agents for high-value work like customer research, deal prep and data analysis — regular Copilot chat handles quick questions just fine."
   - question: "Can I use Agent Builder without Copilot Studio?"
     answer: "Yes. The Agent Builder inside Microsoft 365 Copilot Chat is a separate, simpler experience designed for personal and small-team productivity agents. For complex workflows with custom integrations you would move to Copilot Studio."
   - question: "Which AI model should I pick in M365 Copilot?"
@@ -45,7 +45,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. The AI world changes fast — features ship, names change, new ones land every month. If you spot something out of date, please [send me feedback](/feedback/) and I'll update it. **Last verified: May 2026** — added 5 new features (Loop, Planner, Image creation, Image input, Connectors), woven in real customer case studies, fact-checked every product claim against Microsoft Learn, and compressed the persona prompts into collapsible blocks.
+🔄 This is a living document. The AI world changes fast — features ship, names change, new ones land every month. If you spot something out of date, please [send me feedback](/feedback/) and I'll update it. **Last verified: 29 September 2026** — refreshed Cowork to GA (now part of Copilot Home) and re-checked feature naming and availability against Microsoft Learn.
 
 </div>
 
@@ -69,7 +69,7 @@ This blog is the guide I wish someone had handed me on day one. Not a feature du
 
 **Here's the deal.** I've organised these from easiest to most powerful. Start at the top. Try one or two this week. Come back next week for the next level. By the time you reach the end, you'll wonder how you ever worked without them.
 
-Almost everything in this guide is **generally available today** with the M365 Copilot licence your organisation has already provisioned. There's one early-access feature at the end — clearly marked — because it shows where things are heading.
+Almost everything in this guide is **generally available today** with the M365 Copilot licence your organisation has already provisioned — including Cowork (#22), which reached GA in June 2026 and is now moving into Copilot Home. A few features just need your admin to switch them on, and those are called out where they come up.
 
 Ready? Let's start small.
 
@@ -99,7 +99,7 @@ Ready? Let's start small.
 | 8 | Agentic Copilot in PowerPoint | 🔵 Superpower | 10 min |
 | 9 | Copilot in OneNote | 🔵 Superpower | 5 min |
 | 10 | Copilot in Loop | 🔵 Superpower | 10 min |
-| 11 | Copilot in Planner | 🔵 Superpower | 10 min |
+| 11 | Planner Agent | 🔵 Superpower | 10 min |
 | 12 | Image Generation in Copilot | 🔵 Superpower | 5 min |
 | 13 | Copilot Pages | 🔵 Superpower | 10 min |
 | 14 | Researcher Agent (with Model Choice) | 🟣 Power Move | 15 min |
@@ -110,7 +110,7 @@ Ready? Let's start small.
 | 19 | Image Input in Copilot Chat | 🟣 Power Move | 5 min |
 | 20 | Connectors (Salesforce, ServiceNow, Jira…) | 🟣 Power Move | varies |
 | 21 | Prompt Gallery | 🟡 Secret Weapon | 5 min |
-| 22 | Copilot Cowork *(preview)* | 🟡 What's Next | coming soon |
+| 22 | Copilot Cowork *(now in Home)* | 🟡 Secret Weapon | GA |
 
 ---
 
@@ -420,7 +420,7 @@ If Level 1 was "wait, it can do that?" — Level 2 is "why didn't I know this so
 
 ---
 
-### 6. Agentic Copilot in Word (formerly "Edit with Copilot")
+### 6. Agentic Copilot in Word
 
 <p><img src="/images/blog/20-features/06-word.webp" alt="The Word agent in Microsoft 365 Copilot prompting 'Describe the document you want to create' with sample ideas like a project status update and a strategic planning document" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -568,21 +568,19 @@ Copilot in OneNote changes that. It summarises, extracts action items, organises
 
 *Skip if your team doesn't use Loop. If you do — read on.*
 
-Loop is Microsoft's collaborative canvas — components that sync everywhere. Copilot in Loop is what makes it interesting.
+Loop is Microsoft's collaborative canvas — components that sync everywhere. The star here is **live human co-authoring**: instead of one person drafting and emailing around for feedback, your whole team works in the same Loop page **at the same time**, edits appearing as everyone types.
 
-Instead of one person drafting and emailing around for feedback, your whole team brainstorms in the same Loop page **at the same time**, with Copilot helping everyone — drafting, rewriting, pulling in tables, summarising, generating lists from a prompt.
-
-The shift is subtle but big: it's not "I asked Copilot, then I shared the answer". It's *"we're working with Copilot together"*.
+Where does Copilot fit? Honestly, more narrowly than it used to. Microsoft pared back the Copilot integration in Loop in late 2025 to line it up with the Copilot Pages experience, so today Copilot in Loop is mainly two things: a **Copilot Chat** panel (top-right) you can ask questions and then *insert* answers onto the page from, and **Recap**, which summarises the changes made on a page so latecomers can catch up. One honest limit worth knowing: Copilot Chat in Loop **can't directly edit the page you have open** — you ask, then insert. For a Copilot that actively drafts and rewrites *in* the document, that's **Copilot Pages** (#13), and Microsoft is working to bring more of that experience back into Loop.
 
 🎯 Open a Loop workspace and try:
 
 <div class="prompt-cards">
 
-> "We're planning [project]. Generate a kick-off agenda, a stakeholder map, and a risks/mitigations table — leave space for the team to add."
+> (In the Copilot Chat panel) "Draft a kick-off agenda, a stakeholder map, and a risks/mitigations table for [project]" — then use **Insert** to drop the result onto the page for the team to build on.
 
-> "Summarise everything on this page so the people joining late can get up to speed in 30 seconds."
+> (Recap) "Summarise the changes made on this page so people joining late can get up to speed in 30 seconds."
 
-> "Turn this messy brainstorm into three clean themes with bullet points under each."
+> (In the Copilot Chat panel) "Turn this messy brainstorm into three clean themes with bullet points" — review it, then insert.
 
 </div>
 
@@ -590,23 +588,23 @@ The shift is subtle but big: it's not "I asked Copilot, then I shared the answer
 
 ---
 
-### 11. Copilot in Planner — Turn Meetings into Tasks
+### 11. Planner Agent — Turn Meetings into Tasks
 
 *Skip if your team doesn't use Planner. If you do — this saves your post-meeting hour.*
 
 How often do you leave a meeting with a Word doc full of action items, and then spend the next hour copying them into Planner / DevOps / Jira / wherever?
 
-Copilot in Planner can build the plan for you. Describe the goal, paste in the meeting notes, point at a project document — Copilot generates tasks, suggests assignees where it can infer them, sets rough due dates and groups tasks into buckets. You tweak, you publish.
+The **Planner Agent** (in Copilot) can build the plan for you. Describe the goal or paste in your meeting notes and it generates tasks, sets rough due dates and groups them into buckets — you tweak, you publish. A couple of honest notes: the agent's richer moves (generating a whole plan from a goal *inside* a plan) sit in the premium Planner experience, and while it drafts task details for you, treat owner assignments and dates as suggestions to confirm rather than something it decides for you.
 
 🎯 Try this after your next planning meeting:
 
 <div class="prompt-cards">
 
-> "Here are my meeting notes. Generate a Planner plan with tasks grouped by workstream, suggested owners and rough due dates."
+> "Here are my meeting notes. Generate a Planner plan with tasks grouped by workstream and rough due dates."
 
 > "Look at the action items in this meeting recap and add them to my [Plan] as new tasks."
 
-> "Status check: which tasks in this plan are at risk of slipping based on assignee load and due dates?"
+> "Draft a status summary for this plan — which tasks are open, which are due soon, and where are the gaps?"
 
 </div>
 
@@ -829,9 +827,9 @@ You can schedule prompts to run automatically — daily, weekly, one-off. Copilo
 
 No more remembering to check something every Monday. No more manually pulling together a weekly summary. Copilot just… does it.
 
-⚠️ **Note:** Scheduled Prompts are generally available in M365 Copilot Chat (Teams, Outlook and microsoft365.com/chat). Microsoft documents a limit of **10 scheduled prompts per user**. Your admin can disable the feature via the *Optional Connected Experiences* policy — if you don't see the *Schedule* option, that's the place to ask.
+⚠️ **Note:** Scheduled Prompts are generally available in Microsoft Copilot Chat (Teams, Outlook and the Copilot chat app). Microsoft documents a limit of **10 scheduled prompts per user**. Your admin can disable the feature via the *Connected Experiences* policy (Microsoft moved it under that policy in August 2026) — if you don't see the *Schedule* option, that's the place to ask.
 
-🎯 Set up your first scheduled prompt today (or save these for when it lands):
+🎯 Set up your first scheduled prompt today:
 
 <div class="prompt-cards">
 
@@ -989,21 +987,19 @@ Microsoft maintains an official [**Copilot Prompt Gallery**](https://copilot.clo
 
 ---
 
-### 22. What's Coming — Copilot Cowork *(Preview)*
+### 22. Copilot Cowork — Hand Over a Whole Project
 
-I'm including this because it shows where Copilot is heading, and you'll want to be ready when it lands.
-
-**Copilot Cowork** is the next step from where Researcher (#14) gets you today. Researcher *finds and synthesises* — pulls everything together so you can decide what to do. Cowork goes further: it actually *takes the actions*. You describe a goal, and it plans the steps, works across your apps (Outlook, Teams, SharePoint, Word, Excel), executes the work, and checks in with you at key milestones.
+Cowork is the next step from where Researcher (#14) gets you today. Researcher *finds and synthesises* — pulls everything together so you can decide what to do. Cowork goes further: it actually *takes the actions*. You describe a goal, and it plans the steps, works across your apps (Outlook, Teams, SharePoint, Word, Excel), executes the work, and checks in with you at key milestones.
 
 It's the difference between asking someone a question and handing them a whole project to run.
 
-**Example scenarios in early access:**
+**Example scenarios:**
 
 - *"Prepare a complete briefing for my meeting with [Customer] tomorrow"* — finds emails, gathers files, checks past discussions, creates talking points.
 - *"Clean up my calendar for next week — find conflicts, suggest what to decline, block focus time."*
 - *"Track down the status of [Project] across emails, Teams, and shared files — give me a one-page update."*
 
-⚠️ **Availability:** Cowork is currently in **early-access preview** for selected enterprises. Broader availability is expected as part of new M365 licensing tiers — watch the [Microsoft 365 roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap) for confirmed dates and licensing.
+✅ **Availability:** Cowork reached **general availability on 16 June 2026**. In the September 2026 "new Copilot" update, Cowork moves into Copilot **Home** — the new starting point where Chat and Cowork come together — so you'll increasingly reach it there rather than as a separate surface.
 
 🔗 **Go deeper:** Full Cowork field guide — what it is, how it differs from regular Copilot, the agentic harness, skills, access, licensing — is at [Microsoft Copilot Cowork complete guide](/blog/microsoft-copilot-cowork-complete-guide/).
 
@@ -1036,10 +1032,10 @@ By the end, you'll have more than the AI features in your toolkit. You'll have a
 ## FAQ
 
 Do I need a special licence for these M365 Copilot features?
-Most features here work with the standard Microsoft 365 Copilot licence your organisation has likely already provisioned. Some — model choice, third-party connectors, image input, image generation — may need your admin to switch them on. Cowork (#22) is in early-access preview via the Microsoft Frontier programme and is expected to require an upcoming higher M365 tier. If a feature isn't appearing for you, check with IT first.
+Most features here work with the standard Microsoft 365 Copilot licence your organisation has likely already provisioned. Some — model choice, third-party connectors, image input, image generation — may need your admin to switch them on. Cowork (#22) is generally available (since June 2026): it runs on a Microsoft 365 Copilot licence plus usage-based Copilot Credits for the work it does, with admin enablement. If a feature isn't appearing for you, check with IT first.
 
 How many Researcher queries do I get per month?
-Microsoft documents 25 Researcher queries per user per month. Analyst has its own usage limit (check Microsoft Learn for the latest number). Save them for high-value work — regular Copilot chat handles quick questions just fine.
+Microsoft documents 25 Researcher queries per user per month. Analyst usage is metered too (check Microsoft Learn for the latest limits). Save them for high-value work — regular Copilot chat handles quick questions just fine.
 
 Can I use Agent Builder without Copilot Studio?
 Yes. Agent Builder inside M365 Copilot is a simpler, no-code experience for personal and small-team agents. For complex workflows with custom integrations, you'd move to Copilot Studio.
@@ -1057,7 +1053,7 @@ Can I paste a screenshot into M365 Copilot Chat?
 Yes — image input is supported in M365 Copilot Chat (paste a screenshot, photo of a whiteboard or a chart and ask questions about it). This is different from *Copilot Vision* on Windows, which is a separate consumer feature where the AI sees your open screen. Some tenants may need admin enablement for image input.
 
 Are Connectors the same as plugins?
-Same broad idea — they let Copilot reach data outside Microsoft 365. Some connectors are first-party Microsoft (Salesforce, ServiceNow, Jira Cloud, Confluence Cloud). Others are partner-built (Asana, GitLab, Box, S3, etc.) — both kinds need admin enablement. The plugin and skill experiences from earlier rollouts are folding into this connector model.
+Same broad idea — they let Copilot reach data outside Microsoft 365. Some connectors are first-party Microsoft (Salesforce, ServiceNow, Jira Cloud, Confluence Cloud). Others are partner-built (Asana, GitLab, Box, S3, etc.) — both kinds need admin enablement. Think of connectors as the *data connections* specifically; the broader Copilot extensibility catalogue (plugins, skills, connectors and more) is increasingly organised under a single plugin registry.
 
 Can I set custom instructions for the whole team?
 Personal Copilot instructions are personal. For team-wide customisation, your admin can configure organisational settings, and you can build shared Agents (#18) that encode team knowledge.
@@ -1066,7 +1062,7 @@ Where should a complete beginner start?
 Feature #1 (Meeting Recap), #5 (Personalisation), #21 (Prompt Gallery). Set up Personalisation first, then use the Gallery to find great prompts for your role. Everything else follows naturally.
 
 Is what I type into Copilot private?
-Your Copilot conversations are private to you. They're not shared with colleagues or used to train AI models. Your organisation's data protection policies apply.
+Your Copilot conversations aren't shared with colleagues by default, and they're not used to train AI models. They're not fully "invisible", though: your organisation's retention, audit and eDiscovery policies apply, so authorised compliance staff can review Copilot interactions through Microsoft Purview where policy requires it.
 
 What's the difference between Copilot in Teams/Outlook vs the main Copilot chat?
 Copilot in Teams and Outlook works *within* those apps — it knows the meeting context or the email thread you're looking at. The main Copilot chat (at [microsoft365.com/chat](https://microsoft365.com/chat)) can search across everything and is where you'll find Researcher, Analyst, Notebooks, Agent Builder and Pages.
@@ -1125,4 +1121,4 @@ Go. 🚀
 
 ---
 
-**Disclaimer:** Feature availability depends on your Microsoft 365 licence and your organisation's admin settings. Some features may still be rolling out regionally. GA status confirmed as of May 2026 unless marked as preview. If something isn't appearing for you, check with IT — it might just need enabling.
+**Disclaimer:** Feature availability depends on your Microsoft 365 licence and your organisation's admin settings. Some features may still be rolling out regionally. Product claims re-checked against Microsoft Learn as of September 2026. If something isn't appearing for you, check with IT — it might just need enabling.
