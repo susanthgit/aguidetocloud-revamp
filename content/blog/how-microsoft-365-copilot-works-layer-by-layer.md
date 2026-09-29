@@ -5,7 +5,7 @@ hub: true
 hub_id: "fundamentals"
 description: "Layer-by-layer guide to Microsoft 365 Copilot: Orchestrator, Semantic Index, Microsoft Graph grounding, LLM choice. How prompts become answers — explained."
 date: 2026-05-01
-lastmod: 2026-06-18
+lastmod: 2026-09-29
 sitemap:
   priority: 0.9
 card_tag: "Copilot"
@@ -23,7 +23,7 @@ faq:
   - question: "How many layers does the Copilot architecture have?"
     answer: "M365 Copilot processes prompts through 7 key layers: Microsoft 365 Apps (where prompts originate), Identity and Access (Entra ID authentication), the Copilot Orchestrator (the brain), the Grounding layer (Semantic Index and Microsoft Graph), LLM Processing (Azure OpenAI and optional Anthropic Claude), Responsible AI (safety guardrails), and Response and Governance (delivery, audit, retention)."
   - question: "What happens when Copilot uses Anthropic Claude?"
-    answer: "When Claude is used, your grounded prompt crosses the Microsoft boundary to Anthropic as a sub-processor. However, it remains under Microsoft's Data Protection Addendum. Anthropic cannot use your data for training. Admins can disable Claude entirely at tenant level. It's disabled by default in EU/EFTA/UK."
+    answer: "When Claude is used, your grounded prompt crosses to Anthropic as a Microsoft sub-processor. It remains under Microsoft's Data Protection Addendum, and Anthropic cannot use your data for training. Admins can disable Claude at tenant level. Note the default: Anthropic is on by default for most commercial tenants (admins opt out), and off by default only in EU/EFTA/UK; it isn't available in US government clouds."
   - question: "Can I see what users asked Copilot?"
     answer: "Yes. All Copilot interactions — prompts, responses, and web searches — are logged in Microsoft Purview Audit. Admins can search and review these logs. Chat history is stored in the user's Exchange Online mailbox and is subject to retention policies and eDiscovery."
   - question: "What is Responsible AI in Copilot?"
@@ -73,7 +73,7 @@ So let me try something different. Let me walk you through what happens — step
 
 If you only have 30 seconds, here's the answer to "is Copilot safe?":
 
-1. **Your data stays inside Microsoft's boundary** — for standard Copilot interactions (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.
+1. **Your data stays inside Microsoft's boundary — if you keep it there** — for a standard Copilot interaction on the Microsoft-operated path (no web search, no subprocessor models), your data never leaves the Microsoft 365 service boundary. Just note that the OpenAI-operated and Anthropic subprocessor paths are on by default for most commercial tenants (see Layer 5) — turn them off if your policy requires it.
 2. **Copilot only sees what YOU can see** — it inherits your Microsoft Graph permissions. If you can't access a file, neither can Copilot. {{< hi >}}The risk isn't Copilot — it's overshared SharePoint permissions{{< /hi >}}.
 
 {{< margin >}}If you remember nothing else from this post, remember this line.{{< /margin >}}
@@ -125,7 +125,7 @@ Now let's look at each layer properly.
 
 **The prompt starts here.**
 
-Copilot isn't a separate app you install. It's not a website you visit. It's embedded directly into the Microsoft 365 apps you already use — Word, Excel, PowerPoint, Outlook, Teams, and Microsoft 365 Chat (what Microsoft calls "BizChat").
+Copilot isn't a separate app you install. It's not a website you visit. It's embedded directly into the Microsoft 365 apps you already use — Word, Excel, PowerPoint, Outlook, Teams, and Microsoft Copilot Chat (formerly Microsoft 365 Chat, once nicknamed "BizChat").
 
 When you type a prompt, it leaves your device over an encrypted HTTPS connection and enters the Copilot service. That's it. No magic. No separate portal.
 
@@ -271,7 +271,7 @@ The Semantic Index works like a librarian who has actually *read* every book. It
 
 The Semantic Index is:
 - **Automatically maintained** — no admin setup required
-- **Tenant-level** — covers SharePoint Online files accessible to 2+ users
+- **Tenant-level** — an organisation-wide index built from your text-based SharePoint Online files, surfaced per-user by permissions
 - **User-level** — personal index of your emails, documents you interact with
 - **Permission-respecting** — only surfaces results you already have access to
 
@@ -306,38 +306,40 @@ This is where the magic happens — but it's also the part people worry about mo
 
 The grounded prompt — your question, combined with the relevant context from your tenant — is sent to a large language model (LLM) that generates the response.
 
-Microsoft uses two model providers:
+Microsoft delivers Copilot's GPT experiences three ways, and the distinction matters for your data boundary:
 
 ```mermaid
 flowchart TD
     A["📦 Grounded Prompt"] --> B{"🔀 Model Router"}
-    B -->|"Default path"| C["Azure OpenAI — GPT<br/>Inside Microsoft boundary"]
-    B -->|"Optional path"| D["Anthropic Claude<br/>Sub-processor · Outside boundary"]
+    B -->|"Microsoft-operated · core"| C["Azure OpenAI — GPT<br/>Microsoft-operated · in-boundary"]
+    B -->|"Subprocessor · default-on (commercial)"| D["OpenAI-operated GPT<br/>Subprocessor · within EU Data Boundary"]
+    B -->|"Subprocessor · default-on (commercial)"| F["Anthropic Claude<br/>Subprocessor · excluded from EUDB"]
     C --> E["📝 Generated Response"]
     D --> E
+    F --> E
 ```
 
-| Aspect | Azure OpenAI (GPT) | Anthropic Claude |
-|---|---|---|
-| **Hosted by** | Microsoft (Azure infrastructure) | Anthropic (under Microsoft's contractual control) |
-| **Data boundary** | Inside Microsoft 365 service boundary | Crosses Microsoft boundary → Anthropic infrastructure |
-| **EU Data Boundary** | ✅ Supported | ❌ Excluded |
-| **Default status** | Always enabled | Disabled by default in EU/EFTA/UK |
-| **Admin control** | Can't disable (it's the core) | Tenant-level toggle — you choose |
-| **Training on your data** | ❌ Never | ❌ Never (covered by Microsoft DPA) |
-| **Data retention** | Transient — no persistent storage | Transient — no persistent storage |
+| Aspect | Azure OpenAI (GPT) | OpenAI-operated GPT | Anthropic Claude |
+|---|---|---|---|
+| **Operated by** | Microsoft (Azure infrastructure) | OpenAI, as a Microsoft **subprocessor** | Anthropic, as a Microsoft **subprocessor** |
+| **Data boundary** | Inside the Microsoft-operated boundary | OpenAI infrastructure (subprocessor) | Anthropic infrastructure (subprocessor) |
+| **EU Data Boundary** | ✅ Supported | ✅ Included | ❌ Excluded |
+| **Default status** | Always on — it's the core | **On by default** for eligible commercial tenants (opt-out) | **On by default** for most commercial tenants (opt-out); **off by default** in EU/EFTA/UK |
+| **Admin control** | Can't disable (it's the core) | Tenant toggle — set to *No users* to disable | Tenant toggle — you choose |
+| **Training on your data** | ❌ Never | ❌ Never (Microsoft DPA) | ❌ Never (Microsoft DPA) |
+| **Data retention** | Transient — no persistent storage | Transient — no persistent storage | Transient — no persistent storage |
 
 ### Three Things You Need to Know
 
-**1. Neither provider trains on your data.** This is contractual, not just a promise. Microsoft's Data Protection Addendum (DPA) explicitly covers both OpenAI and Anthropic.
+**1. No provider trains on your data.** This is contractual, not just a promise. Microsoft's Data Protection Addendum (DPA) covers the Microsoft-operated path *and* the OpenAI and Anthropic subprocessor paths.
 
 **2. Processing is transient.** The model doesn't "remember" your data after generating a response. There's no persistent storage of your prompts or responses at the model layer.
 
-**3. You control the model providers.** Anthropic is opt-in. If your compliance team says "no data outside the Microsoft boundary," you simply don't enable Anthropic. Azure OpenAI handles everything inside the boundary.
+**3. Know your defaults — this is the one CISOs get wrong.** For most commercial tenants, *both* subprocessor paths (OpenAI-operated GPT and Anthropic Claude) are **on by default** — admins opt out, they don't opt in. The exceptions: EU/EFTA/UK tenants have Anthropic **off** by default, and the subprocessor paths aren't available in US government clouds. If your compliance line is "nothing leaves the Microsoft-operated boundary," you must *actively* set both subprocessor toggles to *No users* — don't assume they're off. (OpenAI-operated GPT is inside the EU Data Boundary; Anthropic is excluded from it.)
 
 <div class="living-doc-banner">
 
-🔑 **IT Admin takeaway:** You control who processes your data. Anthropic is disabled by default in EU/EFTA/UK and requires explicit admin opt-in. Azure OpenAI is always available and can't be disabled. If in doubt, leave Anthropic off — you'll still get the full Copilot experience.
+🔑 **IT Admin takeaway:** You control who processes your data — but check your defaults. For most commercial tenants, both subprocessor paths (OpenAI-operated GPT and Anthropic Claude) are **on by default**; EU/EFTA/UK tenants have Anthropic off by default. Azure OpenAI (Microsoft-operated) is always available and can't be disabled. If your policy is "nothing leaves the Microsoft-operated boundary," actively set both subprocessor toggles to *No users* — you'll still get the full Copilot experience on the Microsoft-operated path.
 
 </div>
 
@@ -465,7 +467,7 @@ flowchart TD
     F --> G["7️⃣ Summary appears in Word<br/>With citations · Logged in Purview Audit"]
 ```
 
-For a standard Copilot interaction (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.
+For a standard Copilot interaction on the Microsoft-operated path (no web search, no subprocessor models), your data never leaves the Microsoft 365 service boundary. Not once. The catch: the subprocessor model paths are on by default for most commercial tenants, so "keep it in-boundary" is a setting you apply, not a default you inherit.
 
 ---
 
@@ -475,12 +477,12 @@ Before the checklist, let's clear up the misconceptions I hear most often. Pin t
 
 | Misconception | Reality |
 |--------------|---------|
-| "Copilot crawls the internet by default" | ❌ Web search is **optional** and admin-controlled. By default, Copilot only uses your tenant data. When web search IS enabled, only a short derived query goes to Bing — not your prompt, documents, or identity. |
+| "Copilot crawls the internet by default" | ⚠️ Web search is admin-controlled, but the user-level Web content toggle is generally **on by default**, so Copilot may issue a short *derived* query to Bing when it judges it helpful — never your full prompt, documents, or identity. Admins can disable it tenant-wide. |
 | "Copilot can see everything in my tenant" | ❌ Copilot can only access data **the signed-in user** has permission to see. It never escalates privileges. A junior employee and a CEO get different results for the same prompt. |
 | "OpenAI/Anthropic store my data" | ❌ Processing is **transient**. Neither provider persistently stores your prompts, responses, or tenant data. It's processed, the response is generated, and the data is discarded at the model layer. |
 | "Copilot remembers previous conversations" | ⚠️ Within a session, yes — Copilot maintains conversation context. But it doesn't learn from your data permanently. Next session, it starts fresh. Chat history is stored in your Exchange mailbox, not in the AI model. |
 | "I need a special security setup for Copilot" | ❌ Copilot inherits your existing M365 security stack — Conditional Access, MFA, DLP, sensitivity labels. If your M365 environment is secured, Copilot is secured. No separate setup needed. |
-| "Copilot works without a licence" | ❌ Users need a **Microsoft 365 Copilot licence** ($30/user/month). No licence = no Copilot. The Semantic Index is only generated for licenced users. |
+| "Copilot works without a licence" | ❌ Users need a **Microsoft 365 Copilot licence** (~$30/user/month, indicative). No licence = no Copilot. The Semantic Index is only generated for licenced users. |
 
 ---
 
@@ -502,7 +504,7 @@ Before you roll out Copilot, here are the eight things to verify. I've ranked th
 | # | Item | Why It Matters |
 |:---:|------|---------------|
 | 5 | **Purview Audit logging enabled** | All Copilot prompts, responses, and web searches are logged for compliance review |
-| 6 | **Anthropic sub-processor decision made** | Decide whether to enable Claude models — enabling sends data outside Microsoft boundary |
+| 6 | **Subprocessor model decision made** | Both OpenAI-operated GPT and Anthropic Claude are on by default for most commercial tenants and send data to a subprocessor — decide whether to keep or disable each |
 | 7 | **Web search grounding configured** | Decide whether Copilot can search the web via Bing; enable Zero Query Logging if on |
 | 8 | **Microsoft Graph permissions audited** | Review what data each user can access via Graph — Copilot inherits these permissions |
 
@@ -536,7 +538,7 @@ No — and this is the most misunderstood part. Microsoft hosts OpenAI's models 
 
 "What about Anthropic? That one worries me."
 
-Fair. When Copilot uses Anthropic Claude (for features like Cowork or custom Studio agents), your grounded prompt does cross the Microsoft boundary to Anthropic's infrastructure. But: it's covered by Microsoft's DPA, Anthropic can't train on your data, and it's disabled by default in EU/EFTA/UK. If your compliance team says no, just don't enable it.
+Fair. When Copilot uses Anthropic Claude (for features like Cowork or custom Studio agents), your grounded prompt does cross the Microsoft boundary to Anthropic's infrastructure as a subprocessor. But: it's covered by Microsoft's DPA, Anthropic can't train on your data, and admins control it with a tenant toggle. One default to know: Anthropic is on by default for most commercial tenants (off by default only in EU/EFTA/UK), so if your compliance team says no, you disable it — don't assume it's already off.
 
 "What if someone asks Copilot to do something harmful?"
 
