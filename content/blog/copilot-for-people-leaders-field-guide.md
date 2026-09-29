@@ -4,7 +4,7 @@ list_title: "Copilot for People Leaders — The Complete Guide"
 hub_id: "prompt-engineering"
 description: "Microsoft 365 Copilot for people leaders — plain English. 1:1s, team comms, performance, recognition, hiring, wellbeing. Copilot drafts, you decide."
 date: 2026-06-01
-lastmod: 2026-06-02
+lastmod: 2026-09-29
 draft: false
 card_tag: "Prompt Engineering"
 tag_class: "ai"
@@ -100,7 +100,7 @@ Three paths in — pick yours:
 
 <div class="living-doc-banner">
 
-🔄 **Living document.** Microsoft 365 Copilot ships changes monthly. The patterns in this guide don't move — but specific feature names, button positions, or model choices may have shifted by the time you read this. Spotted something off? [Let me know](/feedback/) and I'll update.
+🔄 **Living document.** Microsoft 365 Copilot ships changes monthly. The patterns in this guide don't move — but specific feature names, button positions, or model choices may have shifted by the time you read this. Spotted something off? [Let me know](/feedback/) and I'll update. **Last verified: 29 September 2026.**
 
 </div>
 
@@ -435,11 +435,11 @@ The critique pattern works particularly well on internal policies, manager-enabl
 
 <h2 id="u7">7 · Cowork — autonomous multi-app work</h2>
 
-Cowork is the third wave of Copilot — Assistant (2023) → Agent Builder (2025) → **Cowork (2026)**. Where Copilot Chat answers a question and Researcher/Analyst do deep single-task work, Cowork takes an *outcome* you describe and executes a multi-step plan across your M365 suite, with human-in-the-loop checkpoints at sensitive moments. It is a separate agent, not a label for Researcher and Analyst.
+Cowork is the third wave of Copilot — Assistant (2023) → Agent Builder (2025) → **Cowork (GA June 2026)**. Where Copilot Chat answers a question and Researcher/Analyst do deep single-task work, Cowork takes an *outcome* you describe and executes a multi-step plan across your M365 suite, with human-in-the-loop checkpoints at sensitive moments. It is a separate capability, not a label for Researcher and Analyst.
 
-For people leaders, three patterns earn their keep: **morning routines** (the 20-minute inbox + calendar + Teams scan compressed to 60 seconds), 1:1 / project meeting prep (Cowork pulls all threads on a direct report across email, Teams, SharePoint and drafts the briefing + confirmation email), and weekly team updates (the status nobody has time to write, compressed to a two-minute approval). The hard line still holds — checkpoints exist because the editorial judgement that protects your relationship with the team lives there. Cowork requires Frontier tenant enrolment + Anthropic enabled as a subprocessor; if you can't see it in your Agent Store, that's a CIO conversation, not a problem to debug.
+For people leaders, three patterns earn their keep: **morning routines** (the 20-minute inbox + calendar + Teams scan compressed to 60 seconds), 1:1 / project meeting prep (Cowork pulls all threads on a direct report across email, Teams, SharePoint and drafts the briefing + confirmation email), and weekly team updates (the status nobody has time to write, compressed to a two-minute approval). The hard line still holds — checkpoints exist because the editorial judgement that protects your relationship with the team lives there. Cowork is generally available (since 16 June 2026) and, in the September 2026 "new Copilot" update, moves into Copilot **Home** where Chat and Cowork come together; it runs on a Microsoft 365 Copilot licence plus usage-based Copilot Credits for the work it does. Exact availability still depends on your admin's enablement and regional rollout — if you can't see it yet, that's a CIO conversation, not a problem to debug.
 
-**Read further:** Sush's [Microsoft Copilot Cowork — Plain-English Guide](/blog/microsoft-copilot-cowork-complete-guide/) is the definitive walkthrough — six high-impact prompts ready to try, the agentic harness explained, worked examples for meeting prep autopilot + weekly updates, when NOT to reach for Cowork, and the Frontier enrolment specifics.
+**Read further:** Sush's [Microsoft Copilot Cowork — Plain-English Guide](/blog/microsoft-copilot-cowork-complete-guide/) is the definitive walkthrough — six high-impact prompts ready to try, the agentic harness explained, worked examples for meeting prep autopilot + weekly updates, when NOT to reach for Cowork, and the licensing and enablement specifics.
 
 <h2 id="features">Each Copilot feature, called out individually</h2>
 
@@ -447,7 +447,7 @@ The clusters above are the *why*. This section is the *what* — the actual surf
 
 Read the ones relevant to you. Skim the rest. The order roughly follows the frequency that managers actually reach for each feature in their first 90 days.
 
-> ⚠️ **Before you try this — feature availability varies.** Not every feature below will be available to every people leader immediately. Memory · Scheduled prompts · Researcher · Analyst · Cowork · Notebooks · Teams transcripts · Custom agents (Copilot Studio) all depend on your licensing tier, your admin's tenant policy, your region's rollout schedule, and (in some cases) optional connected-experiences settings being enabled. Cowork specifically requires Frontier program enrolment and Anthropic enabled as a subprocessor — that one is the most common reason it's not visible in NZ tenants yet. If a feature isn't there for you, ask your IT/CIO contact — it's usually a configuration question, not a capability gap.
+> ⚠️ **Before you try this — feature availability varies.** Not every feature below will be available to every people leader immediately. Memory · Scheduled prompts · Researcher · Analyst · Cowork · Notebooks · Teams transcripts · Custom agents (Copilot Studio) all depend on your licensing tier, your admin's tenant policy, your region's rollout schedule, and (in some cases) optional connected-experiences settings being enabled. Cowork is generally available, but reaching it still depends on your admin enabling it and on regional rollout — a common reason it's not visible in some NZ tenants yet. If a feature isn't there for you, ask your IT/CIO contact — it's usually a configuration question, not a capability gap.
 
 ---
 
@@ -712,11 +712,11 @@ Prompt:
 
 <h3 id="f-cowork">Cowork — the autonomous multi-app agent</h3>
 
-**What it is:** Microsoft's third-wave Copilot agent (Assistant 2023 → Agent Builder 2025 → Cowork 2026). You describe an *outcome*, Cowork builds a multi-step plan across multiple apps (Outlook · Teams · Word · Excel · SharePoint · OneDrive), executes it autonomously over minutes or hours, and pauses at checkpoints for your approval before doing anything sensitive. You'll find it in the **Agent Store** inside Copilot Chat. Available via the Microsoft Frontier program (early access — requires Anthropic enabled as a subprocessor at the tenant level).
+**What it is:** Microsoft's third-wave Copilot capability (Assistant 2023 → Agent Builder 2025 → Cowork, GA June 2026). You describe an *outcome*, Cowork builds a multi-step plan across multiple apps (Outlook · Teams · Word · Excel · SharePoint · OneDrive), executes it autonomously over minutes or hours, and pauses at checkpoints for your approval before doing anything sensitive. It's generally available and, from the September 2026 "new Copilot" update, lives in Copilot **Home** (where Chat and Cowork come together); it runs on a Microsoft 365 Copilot licence plus usage-based Copilot Credits, subject to your admin's enablement and regional rollout.
 
 **Why it matters for people leaders:** This is the agent that changes Copilot from "tool I open to draft something" to "colleague who takes ownership of a multi-step task" — for the work managers care about most (team-facing comms, 1:1 prep, status updates). The checkpoint discipline is what makes it safe; "Copilot drafts, you decide" gets the most stress-tested here, and the moments where Cowork pauses to ask "should I send this?" are the moments where your editorial judgement protects your relationship with the team.
 
-**Read further:** Sush's [Microsoft Copilot Cowork — Plain-English Guide](/blog/microsoft-copilot-cowork-complete-guide/) covers the five highest-leverage Cowork patterns for managers (morning triage · customer meeting prep · post-session follow-up · weekly team update · customer deliverable from email brief), how Cowork actually feels different from regular Copilot, the limits to know, and the Frontier enrolment specifics.
+**Read further:** Sush's [Microsoft Copilot Cowork — Plain-English Guide](/blog/microsoft-copilot-cowork-complete-guide/) covers the five highest-leverage Cowork patterns for managers (morning triage · customer meeting prep · post-session follow-up · weekly team update · customer deliverable from email brief), how Cowork actually feels different from regular Copilot, the limits to know, and the licensing and enablement specifics.
 
 <h3 id="f-notebooks">Notebooks — the workspace that grounds everything</h3>
 
