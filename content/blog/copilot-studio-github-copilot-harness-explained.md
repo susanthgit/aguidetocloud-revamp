@@ -4,7 +4,7 @@ list_title: "Copilot Studio's GitHub Copilot Harness — Explained Simply"
 hub_id: "ai-agents"
 description: "What is the GitHub Copilot harness in Copilot Studio? A plain-English guide to the three harnesses, how to build one, and why the credit meter differs."
 date: 2026-08-11
-lastmod: 2026-08-24
+lastmod: 2026-09-29
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
@@ -60,7 +60,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **This is a fast-moving area.** The GitHub Copilot harness reached general availability on 3 August 2026 ([announcement](https://techcommunity.microsoft.com/blog/copilot-studio-blog/more-powerful-agents-and-workflows-for-autonomous-business-processes-introducing/4542969)), after a production-ready preview that began in June 2026. Several capabilities *inside* it — memory, the Foundry IQ connection, connected agents in the new experience, and natural-language creation itself — are still previews in their own right, and the billing detail is still settling: developer and trial environments move to usage-based billing on 1 September 2026. Always confirm on Microsoft Learn: [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview), [usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) and [manage harness costs](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness). **Last verified: 24 August 2026.**
+🔄 **This is a fast-moving area.** The GitHub Copilot harness reached general availability on 3 August 2026 ([announcement](https://techcommunity.microsoft.com/blog/copilot-studio-blog/more-powerful-agents-and-workflows-for-autonomous-business-processes-introducing/4542969)), after a production-ready preview that began in June 2026. Several capabilities *inside* it — memory, the Foundry IQ connection, connected agents in the new experience, and natural-language creation itself — are still previews in their own right, and the billing model matters: anything on the GitHub Copilot harness is metered in Copilot Credits from the moment you start building, and it isn't covered by a Microsoft 365 Copilot licence. Always confirm on Microsoft Learn: [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview), [usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) and [manage harness costs](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness). **Last verified: 29 September 2026.**
 
 </div>
 
@@ -159,7 +159,7 @@ Three of the constructs you'd reach for when authoring a standard-harness agent 
 
 One nuance worth keeping straight, because it can look like a contradiction: [Workflows](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview) run on the GitHub Copilot harness too, and the Workflow canvas has its own Variable building block. That's a different construct from the standard harness's four-scope variable model — same word, different thing.
 
-The tell is on the Learn pages themselves: all three carry the same banner, *"Features in this article are powered by the standard harness."* This is the sort of thing that moves, so check those three pages before you quote them. Last verified: 24 August 2026.
+The tell is on the Learn pages themselves: all three carry the same banner, *"Features in this article are powered by the standard harness."* This is the sort of thing that moves, so check those three pages before you quote them. Last verified: 29 September 2026.
 
 ---
 
@@ -181,14 +181,14 @@ Microsoft's example scenario is a good "aha": an **accounts-payable** agent that
 
 ---
 
-## The timeline — GA, previews, and the 1 September billing change {#whats-new}
+## The timeline — GA, previews, and how it's billed {#whats-new}
 
 A quick, honest timeline (from Microsoft's public announcements and docs — I'm sticking to what's actually documented):
 
-- **June 2026** — the new experience shows up in Copilot Studio's *What's new* as a **production-ready preview**: *"The GitHub Copilot harness uses an enhanced orchestration runtime for improved response quality and reasoning, available alongside the classic experience."* Memory, Skills, connected agents and Microsoft IQ grounding land around the same time.
+- **June 2026** — the new experience shows up in Copilot Studio's *What's new* as a **production-ready preview**: *"The GitHub Copilot harness uses an enhanced orchestration runtime for improved response quality and reasoning, available alongside the standard harness."* Memory, Skills, connected agents and Microsoft IQ grounding land around the same time.
 - **3 August 2026** — **general availability.** Microsoft announces the harness GA on the Copilot Studio blog, [*"More powerful agents and workflows for autonomous business processes"*](https://techcommunity.microsoft.com/blog/copilot-studio-blog/more-powerful-agents-and-workflows-for-autonomous-business-processes-introducing/4542969), describing it as bringing "the coding and reasoning capabilities behind our most advanced agent experiences" into Copilot Studio. (Learn's *What's new* index is a dated log — its June entry still says preview because that's what was true in June.)
-- **1 September 2026** — developer and trial environments move to usage-based billing. If your makers have been experimenting in a dev environment, this is the date to plan for. [More below ↓](#sept-billing)
-- **As of August 2026** — it's the experience you're guided into at [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) (toggle **New experience** on if you don't see it). To build the older way, turn the toggle off or choose "Other ways to build."
+- **How it's billed** — anything built on the GitHub Copilot harness is metered in Copilot Credits from the first build action (creating, previewing and testing all count), regardless of a Microsoft 365 Copilot licence — where the standard harness, by contrast, bills after publish. If your makers have been experimenting in a dev environment, that exploration already draws on real capacity. [More below ↓](#sept-billing)
+- **As of late September 2026** — it's the experience you're guided into at [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) (toggle **New experience** on if you don't see it). To build the older way, turn the toggle off or choose "Other ways to build."
 
 <p><img src="/images/blog/copilot-studio-harness/03-left-nav-change.webp" alt="Before-and-after of the Copilot Studio left navigation: the classic experience shows Agents, Flows, and Tools; the new experience shows Agents and Workflows, where Workflows is the GitHub Copilot harness automation surface." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -406,9 +406,9 @@ Swap the resource type to `microsoft.powerplatform/environments` and the same re
 
 That gives you the agent, its environment and its owner — the three things you need before you can decide who owns the bill. Microsoft's Power CAT team has a full worked governance process in [Adopting the GitHub Copilot Harness: cost control and governance](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/).
 
-### Before 1 September 2026 {#sept-billing}
+### The billing surprise: the harness meters from the first build {#sept-billing}
 
-**Developer and trial environments move to usage-based billing on 1 September 2026.** If your makers have been exploring in a dev environment, that exploration starts drawing on real capacity. A short checklist I'd work through:
+**The GitHub Copilot harness meters Copilot Credits from the moment you start building — and that usage isn't covered by a Microsoft 365 Copilot licence.** So if your makers have been exploring in a dev environment, that exploration draws on real capacity. Work through this checklist:
 
 1. **Inventory** — [find every harness agent](#find-agents) and the environments holding them.
 2. **Classify** each environment: maker playground, or funded production? They deserve different settings.
@@ -417,7 +417,7 @@ That gives you the agent, its environment and its owner — the three things you
 5. **Set a default per-agent limit** on development agents, and tell the owners what it is.
 6. **Confirm who owns the cost** for anything heading to production.
 
-{{< margin >}}If you only do one thing before September: check whether your dev environments can draw from the tenant pool. That's the one that surprises people.{{< /margin >}}
+{{< margin >}}If you only do one thing: check whether your dev environments can draw from the tenant pool. That's the one that surprises people.{{< /margin >}}
 
 > ⚠️ The admin surface here is still filling in — confirm current behaviour in Microsoft's [enforcement policy](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/enforcement-policy-credits), [manage harness costs](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness) and [licensing & access](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing) docs before you design a rollout.
 
@@ -512,7 +512,7 @@ If I had five minutes, this is the honest summary I'd give:
 
 - **It can be a real step up for the right work.** Describe-it-and-it-plans is a different way to build — well suited to messy, multi-step processes.
 - **The billing model is the thing to get right.** On this harness the meter starts when you start building, and a Microsoft 365 Copilot licence doesn't zero-rate it. Budget for build/test, not just runtime — and remember credits show in PPAC, dollars show in Azure, so set a **per-agent hard stop** on anything experimental.
-- **It's generally available — but still moving.** GA landed **3 August 2026**. Several capabilities inside it are still previews, and developer and trial environments move to usage-based billing on 1 September 2026 — so confirm on Learn before you quote numbers.
+- **It's generally available — but still moving.** GA landed **3 August 2026**. Several capabilities inside it are still previews, and anything on the harness is metered in Copilot Credits from the first build (not covered by a Microsoft 365 Copilot licence) — so confirm on Learn before you quote numbers.
 - **It's not GitHub Copilot.** You don't buy developer seats to use it.
 - **Pilot before you promise.** There's no tidy public per-action price yet, so run a small real workload, read the usage reports, then model the cost.
 
