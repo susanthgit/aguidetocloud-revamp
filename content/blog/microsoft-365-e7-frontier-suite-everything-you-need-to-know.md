@@ -4,7 +4,7 @@ list_title: "Microsoft 365 E7 (Frontier Suite) — The Complete Guide"
 hub_id: "it-admins"
 description: "The new $99/user/mo Frontier Suite — what's included, E3/E5/E7 comparison, Agent 365, pricing, GA'd 1 May 2026, licensing essentials."
 date: 2026-04-10
-lastmod: 2026-05-13
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -55,6 +55,8 @@ Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365
 Here's the honest version: if you're already on E5 with a Copilot add-on, E7 is basically a bundle deal that adds two new things — {{< hi >}}Agent 365 (governance for AI agents) and the full Entra Suite (Zero Trust network access){{< /hi >}}. The question isn't "is E7 good?" — it's "do I need those two things right now?"
 
 This guide breaks it all down so you can have that conversation with your leadership.
+
+> 💰 **A note on the numbers.** The figures throughout are **indicative US list prices**, used to show the *shape* of the bundle. Enterprise pricing shifts with your agreement, region and any negotiated discount, so treat the maths here as a guide and confirm the live numbers on [Microsoft's pricing page](https://www.microsoft.com/en-us/microsoft-365/copilot) before you budget.
 
 **Quick links:** [What's inside?](#whats-inside-microsoft-365-e7) · [E3 vs E5 vs E7](#e3-vs-e5-vs-e7-comparison) · [Agent 365 deep dive](#agent-365--why-e7-exists) · [Pricing](#pricing--is-it-worth-it) · [Timeline](#timeline--availability) · [Who should upgrade?](#who-should-upgrade) · [Admin checklist](#what-should-you-do-now) · [FAQ](#frequently-asked-questions)
 
@@ -200,12 +202,12 @@ Let's do the maths. Here's the honest breakdown:
 
 ### The Sticker Price
 
-| Plan | Price | What's Included |
+| Plan | Price (indicative, US) | What's Included |
 |------|-------|----------------|
-| Microsoft 365 E3 | **$39 USD/user/month** | Productivity + baseline security |
-| Microsoft 365 E5 | **$60 USD/user/month** | E3 + advanced security + analytics + voice |
-| Microsoft 365 E7 | **$99 USD/user/month** | E5 + Copilot + Entra Suite + Agent 365 |
-| Agent 365 (standalone) | **$15 USD/user/month** | Agent governance only (add-on to any plan) |
+| Microsoft 365 E3 | **~$39 USD/user/month** | Productivity + baseline security |
+| Microsoft 365 E5 | **~$60 USD/user/month** | E3 + advanced security + analytics + voice |
+| Microsoft 365 E7 | **~$99 USD/user/month** | E5 + Copilot + Entra Suite + Agent 365 |
+| Agent 365 (standalone) | **~$15 USD/user/month** | Agent governance only (add-on to any plan) |
 
 ### The Bundle Savings Math
 
@@ -348,7 +350,7 @@ Here's what I'd do to prepare:
 
 ### What is Microsoft 365 E7?
 
-Microsoft 365 E7, also known as the **Frontier Suite**, is Microsoft's new top-tier enterprise plan. It bundles [Microsoft 365 E5](https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-plans-and-pricing), [Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview), [Microsoft Entra Suite](https://learn.microsoft.com/entra/fundamentals/licensing), and the brand-new [Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) platform into a single SKU at $99/user/month.
+Microsoft 365 E7, also known as the **Frontier Suite**, is Microsoft's new top-tier enterprise plan. It bundles [Microsoft 365 E5](https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-plans-and-pricing), [Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview), [Microsoft Entra Suite](https://learn.microsoft.com/entra/fundamentals/licensing), and the brand-new [Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) platform into a single SKU at $99/user/month.
 
 ### When does Microsoft 365 E7 become available?
 
