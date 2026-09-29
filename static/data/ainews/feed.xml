@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Sep 2026 16:50:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 21:16:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Microsoft sends PDFs to strange new worlds instead of SharePoint</title>
-      <link>https://www.theregister.com/software/2026/09/29/microsoft-sends-pdfs-to-strange-new-worlds-instead-of-sharepoint/5299735</link>
+      <title>Zuckerberg touts enterprise AI push because Meta would never do anything to damage your reputation</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/09/29/zuckerberg-touts-enterprise-ai-push-because-meta-would-never-do-anything-to-damage-your-reputation/5299655</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 18:32:00 +0200</pubDate>
-      <guid>https://www.theregister.com/software/2026/09/29/microsoft-sends-pdfs-to-strange-new-worlds-instead-of-sharepoint/5299735</guid>
+      <pubDate>Tue, 29 Sep 2026 21:35:00 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/09/29/zuckerberg-touts-enterprise-ai-push-because-meta-would-never-do-anything-to-damage-your-reputation/5299655</guid>
     </item>
     <item>
-      <title>AI models keep posting screenshots showing sensitive data from inside tech companies</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/09/29/ai-models-keep-posting-screenshots-showing-sensitive-data-from-inside-tech-companies/5299640</link>
+      <title>Build zero-trust AI agents that judge intent, not just syntax</title>
+      <link>https://developers.googleblog.com/build-zero-trust-ai-agents-that-judge-intent-not-just-syntax/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 29 Sep 2026 21:14:57 +0000</pubDate>
+      <guid>https://developers.googleblog.com/build-zero-trust-ai-agents-that-judge-intent-not-just-syntax/</guid>
+    </item>
+    <item>
+      <title>Close the observability gap with agentic observability</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/09/29/sponsored-close-the-observability-gap-with-agentic-observability/5299410</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 18:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/09/29/ai-models-keep-posting-screenshots-showing-sensitive-data-from-inside-tech-companies/5299640</guid>
+      <pubDate>Tue, 29 Sep 2026 21:02:00 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/09/29/sponsored-close-the-observability-gap-with-agentic-observability/5299410</guid>
     </item>
     <item>
-      <title>Schneider gives datacenter switchgear the software-defined treatment</title>
-      <link>https://www.theregister.com/on-prem/2026/09/29/schneider-gives-datacenter-switchgear-the-software-defined-treatment/5299756</link>
+      <title>AMD's 192 GB Gorgon Halo prices might leave you petrified</title>
+      <link>https://www.theregister.com/personal-tech/2026/09/29/amds-192-gb-gorgon-halo-prices-might-leave-you-petrified/5299875</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 17:15:00 +0200</pubDate>
-      <guid>https://www.theregister.com/on-prem/2026/09/29/schneider-gives-datacenter-switchgear-the-software-defined-treatment/5299756</guid>
+      <pubDate>Tue, 29 Sep 2026 20:59:21 +0200</pubDate>
+      <guid>https://www.theregister.com/personal-tech/2026/09/29/amds-192-gb-gorgon-halo-prices-might-leave-you-petrified/5299875</guid>
     </item>
     <item>
-      <title>Apple patches CoreGraphics zero-day already exploited in targeted attacks</title>
-      <link>https://www.theregister.com/security/2026/09/29/apple-patches-coregraphics-zero-day-already-exploited-in-targeted-attacks/5299721</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 16:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/09/29/apple-patches-coregraphics-zero-day-already-exploited-in-targeted-attacks/5299721</guid>
-    </item>
-    <item>
-      <title>Prompt engineering fundamentals for Amazon Quick</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/prompt-engineering-fundamentals-for-amazon-quick/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 29 Sep 2026 16:27:57 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/prompt-engineering-fundamentals-for-amazon-quick/</guid>
-    </item>
-    <item>
-      <title>Prompt engineering by Quick component: Patterns and pitfalls</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/prompt-engineering-by-quick-component-patterns-and-pitfalls/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 29 Sep 2026 16:27:33 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/prompt-engineering-by-quick-component-patterns-and-pitfalls/</guid>
-    </item>
-    <item>
-      <title>Building an AI-powered contract intelligence platform with Amazon Quick and Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-contract-intelligence-platform-with-amazon-quick-and-amazon-bedrock-agentcore/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 29 Sep 2026 16:14:24 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-contract-intelligence-platform-with-amazon-quick-and-amazon-bedrock-agentcore/</guid>
-    </item>
-    <item>
-      <title>How Condé Nast built multimodal video discovery with Amazon Bedrock</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/how-conde-nast-built-multimodal-video-discovery-with-amazon-bedrock/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 29 Sep 2026 15:55:17 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/how-conde-nast-built-multimodal-video-discovery-with-amazon-bedrock/</guid>
-    </item>
-    <item>
-      <title>OpenAI benches GPT-6.1 Astra for overstepping the mark</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/09/29/openai-benches-gpt-61-astra-for-overstepping-the-mark/5299743</link>
+      <title>OpenAI’s latest features take direct aim at the app store model</title>
+      <link>https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Tue, 29 Sep 2026 15:43:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/09/29/openai-benches-gpt-61-astra-for-overstepping-the-mark/5299743</guid>
+      <pubDate>Tue, 29 Sep 2026 20:15:47 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/</guid>
     </item>
     <item>
-      <title>NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction</title>
-      <link>https://huggingface.co/blog/nvidia/kumo-tabular</link>
+      <title>OpenAI repotedly in talks to raise $30B round at $1.4T valuation</title>
+      <link>https://techcrunch.com/2026/09/29/openai-repotedly-in-talks-to-raise-30b-round-at-1-4t-valuation/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Tue, 29 Sep 2026 15:30:38 +0000</pubDate>
-      <guid>https://huggingface.co/blog/nvidia/kumo-tabular</guid>
+      <category>OpenAI</category>
+      <pubDate>Tue, 29 Sep 2026 19:52:37 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/29/openai-repotedly-in-talks-to-raise-30b-round-at-1-4t-valuation/</guid>
     </item>
     <item>
-      <title>Instinct founder said more than 50% of transactions on the platform are travel-related</title>
-      <link>https://techcrunch.com/2026/09/29/instinct-founder-said-more-than-50-of-transactions-on-the-platform-are-travel-related/</link>
+      <title>Custom malware used in Citrix 0-day attacks targeting govt, banks, professional services</title>
+      <link>https://www.theregister.com/security/2026/09/29/custom-malware-used-in-citrix-0-day-attacks-targeting-govt-banks-professional-services/5299867</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 15:12:07 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/29/instinct-founder-said-more-than-50-of-transactions-on-the-platform-are-travel-related/</guid>
+      <pubDate>Tue, 29 Sep 2026 19:49:45 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/09/29/custom-malware-used-in-citrix-0-day-attacks-targeting-govt-banks-professional-services/5299867</guid>
     </item>
     <item>
-      <title>Developer policy update: Transparency, state policy, and what’s ahead</title>
-      <link>https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-transparency-state-policy-and-whats-ahead/</link>
+      <title>Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Tue, 29 Sep 2026 19:34:14 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/</guid>
+    </item>
+    <item>
+      <title>Open source tool distills Jev so you can run it locally</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/09/29/open-source-tool-distills-jev-so-you-can-run-it-locally/5299856</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 29 Sep 2026 19:28:00 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/09/29/open-source-tool-distills-jev-so-you-can-run-it-locally/5299856</guid>
+    </item>
+    <item>
+      <title>Repository custom runner settings for Dependabot</title>
+      <link>https://github.blog/changelog/2026-09-29-repository-custom-runner-settings-for-dependabot</link>
       <description></description>
       <category>GitHub Copilot</category>
-      <pubDate>Tue, 29 Sep 2026 15:00:00 +0000</pubDate>
-      <guid>https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-transparency-state-policy-and-whats-ahead/</guid>
+      <pubDate>Tue, 29 Sep 2026 19:10:00 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-09-29-repository-custom-runner-settings-for-dependabot</guid>
     </item>
     <item>
-      <title>Leaked IPO docs: Anthropic tempts investors with existential risk warning</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/09/29/leaked-ipo-docs-anthropic-tempts-investors-with-existential-risk-warning/5299763</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 29 Sep 2026 14:53:13 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/09/29/leaked-ipo-docs-anthropic-tempts-investors-with-existential-risk-warning/5299763</guid>
-    </item>
-    <item>
-      <title>Investors are pricing in a 32.6% AI productivity boost for software engineers</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/09/29/investors-are-pricing-in-a-326-ai-productivity-boost-for-software-engineers/5299645</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 14:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/09/29/investors-are-pricing-in-a-326-ai-productivity-boost-for-software-engineers/5299645</guid>
-    </item>
-    <item>
-      <title>Starship finally makes orbit but engine trouble cuts the victory lap short</title>
-      <link>https://www.theregister.com/offbeat/2026/09/29/starship-finally-makes-orbit-but-engine-trouble-cuts-the-victory-lap-short/5299708</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 14:01:00 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/09/29/starship-finally-makes-orbit-but-engine-trouble-cuts-the-victory-lap-short/5299708</guid>
-    </item>
-    <item>
-      <title>With Dazzle, Marissa Mayer bets your camera roll has more info on your life than your inbox</title>
-      <link>https://techcrunch.com/2026/09/29/with-dazzle-marissa-mayer-bets-your-camera-roll-has-more-info-on-your-life-than-your-inbox/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 13:53:01 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/29/with-dazzle-marissa-mayer-bets-your-camera-roll-has-more-info-on-your-life-than-your-inbox/</guid>
-    </item>
-    <item>
-      <title>Meta is expanding its AI agent Muse to small businesses</title>
-      <link>https://techcrunch.com/2026/09/29/meta-is-expanding-its-ai-agent-muse-to-small-businesses/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 13:47:30 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/29/meta-is-expanding-its-ai-agent-muse-to-small-businesses/</guid>
-    </item>
-    <item>
-      <title>Former X-Force hackers chase the offensive cyber gold rush</title>
-      <link>https://www.theregister.com/security/2026/09/29/former-x-force-hackers-chase-the-offensive-cyber-gold-rush/5299662</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 29 Sep 2026 13:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/09/29/former-x-force-hackers-chase-the-offensive-cyber-gold-rush/5299662</guid>
-    </item>
-    <item>
-      <title>Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents</title>
-      <link>https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Tue, 29 Sep 2026 13:07:00 +0000</pubDate>
-      <guid>https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source</guid>
-    </item>
-    <item>
-      <title>OpenAI apologizes to Australia after its AI agents breached government sites</title>
-      <link>https://techcrunch.com/2026/09/29/openai-apologizes-to-australia-after-its-ai-agents-breached-government-sites/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 29 Sep 2026 12:45:05 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/29/openai-apologizes-to-australia-after-its-ai-agents-breached-government-sites/</guid>
-    </item>
-    <item>
-      <title>OpenAI DevDay 2026: The biggest news and announcements</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 29 Sep 2026 12:00:00 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements</guid>
-    </item>
-    <item>
-      <title>Anthropic warns of ‘catastrophic’ AI risks in its own IPO filing</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1001838/anthropic-ipo-prospectus-ai-safety-threat</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 29 Sep 2026 07:48:27 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/1001838/anthropic-ipo-prospectus-ai-safety-threat</guid>
-    </item>
-    <item>
-      <title>The Communication Bottleneck: A Round-Trip Study of Tree-Structured Expression Serialization in Language Models</title>
-      <link>https://machinelearning.apple.com/research/communication-bottleneck-serialization</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
-      <guid>https://machinelearning.apple.com/research/communication-bottleneck-serialization</guid>
-    </item>
-    <item>
-      <title>Scientist Claims He Documented Anthropic's 'AI Discovered' Gene Editing Enzymes 4 Years Ago</title>
-      <link>https://www.breitbart.com/tech/2026/09/28/scientist-claims-he-documented-anthropics-ai-discovered-gene-editing-enzymes-4-years-ago/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 28 Sep 2026 16:46:47 +0000</pubDate>
-      <guid>https://www.breitbart.com/tech/2026/09/28/scientist-claims-he-documented-anthropics-ai-discovered-gene-editing-enzymes-4-years-ago/</guid>
-    </item>
-    <item>
-      <title>Tech Tuesday: Empowering AI Agents</title>
-      <link>http://wwd.com/sourcing-journal/industry-news/tech-tuesday-empowering-ai-agents-smbs-1239283818/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 28 Sep 2026 16:46:40 +0000</pubDate>
-      <guid>http://wwd.com/sourcing-journal/industry-news/tech-tuesday-empowering-ai-agents-smbs-1239283818/</guid>
-    </item>
-    <item>
-      <title>The AirPods Pro 3 is $50 Off</title>
-      <link>https://www.ilounge.com/news/daily-deals/the-airpods-pro-3-is-50-off-7</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Mon, 28 Sep 2026 16:44:45 +0000</pubDate>
-      <guid>https://www.ilounge.com/news/daily-deals/the-airpods-pro-3-is-50-off-7</guid>
-    </item>
-    <item>
-      <title>Florida demands that the following OpenAI models be shut down</title>
-      <link>https://www.israelnationalnews.com/news/433784</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 28 Sep 2026 16:44:04 +0000</pubDate>
-      <guid>https://www.israelnationalnews.com/news/433784</guid>
-    </item>
-    <item>
-      <title>Delhi-NCR children with asthma, allergies at risk as weather patterns change</title>
-      <link>https://timesofindia.indiatimes.com/health/delhi-ncr-children-with-asthma-allergies-at-risk-as-weather-patterns-change/articleshow/134546746.cms</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 28 Sep 2026 16:44:02 +0000</pubDate>
-      <guid>https://timesofindia.indiatimes.com/health/delhi-ncr-children-with-asthma-allergies-at-risk-as-weather-patterns-change/articleshow/134546746.cms</guid>
-    </item>
-    <item>
-      <title>MongoDB CEO's Abrupt Exit For Meta Stuns Wall Street On Eve Of Investor Day</title>
-      <link>https://biztoc.com/x/dcbdf47d46a5d052</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 28 Sep 2026 16:42:54 +0000</pubDate>
-      <guid>https://biztoc.com/x/dcbdf47d46a5d052</guid>
-    </item>
-    <item>
-      <title>MAIA: Meta Taps MongoDB CEO to Lead New Enterprise AI Platform, ft. Seth Fiegerman | Open Interest</title>
-      <link>https://biztoc.com/x/0b02e228d58dc9b8</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 28 Sep 2026 16:41:04 +0000</pubDate>
-      <guid>https://biztoc.com/x/0b02e228d58dc9b8</guid>
-    </item>
-    <item>
-      <title>allyotter-lite 0.1.9</title>
-      <link>https://pypi.org/project/allyotter-lite/0.1.9/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 28 Sep 2026 16:40:56 +0000</pubDate>
-      <guid>https://pypi.org/project/allyotter-lite/0.1.9/</guid>
-    </item>
-    <item>
-      <title>iPad 12 Essentially Confirmed</title>
-      <link>https://www.ilounge.com/news/ipad/ipad-12-essentially-confirmed</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Mon, 28 Sep 2026 16:40:35 +0000</pubDate>
-      <guid>https://www.ilounge.com/news/ipad/ipad-12-essentially-confirmed</guid>
-    </item>
-    <item>
-      <title>castia 0.12.0</title>
-      <link>https://pypi.org/project/castia/0.12.0/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Mon, 28 Sep 2026 16:34:58 +0000</pubDate>
-      <guid>https://pypi.org/project/castia/0.12.0/</guid>
-    </item>
-    <item>
-      <title>Nvidia says its new AI safety platform can contain rogue agents within ‘milliseconds’ - The Verge</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185889932</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 28 Sep 2026 16:34:01 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185889932</guid>
-    </item>
-    <item>
-      <title>Zimbabwe financial advisory firm Bard Santner takes charge of Sh208 billion Dangote refinery IPO | The Eastleigh Voice</title>
-      <link>https://eastleighvoice.co.ke/business/405676/zimbabwe-financial-advisory-firm-bard-santner-takes-charge-of-sh208-billion-dangote-refinery-ipo</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 28 Sep 2026 16:32:05 +0000</pubDate>
-      <guid>https://eastleighvoice.co.ke/business/405676/zimbabwe-financial-advisory-firm-bard-santner-takes-charge-of-sh208-billion-dangote-refinery-ipo</guid>
-    </item>
-    <item>
-      <title>Here's Why Apple Is Waiting Until 2027 To Release The iPhone 18</title>
-      <link>https://www.bgr.com/2266662/why-apple-launch-base-iphone-18-2027-explained/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 28 Sep 2026 16:32:00 +0000</pubDate>
-      <guid>https://www.bgr.com/2266662/why-apple-launch-base-iphone-18-2027-explained/</guid>
-    </item>
-    <item>
-      <title>revenium-python-sdk 0.9.1</title>
-      <link>https://pypi.org/project/revenium-python-sdk/0.9.1/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 28 Sep 2026 16:31:55 +0000</pubDate>
-      <guid>https://pypi.org/project/revenium-python-sdk/0.9.1/</guid>
-    </item>
-    <item>
-      <title>Turning off Google's priciest smart home tier saved me $120 a year with zero regrets</title>
-      <link>https://www.makeuseof.com/i-canceled-google-most-expensive-smart-home-tier/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 28 Sep 2026 16:31:14 +0000</pubDate>
-      <guid>https://www.makeuseof.com/i-canceled-google-most-expensive-smart-home-tier/</guid>
-    </item>
-    <item>
-      <title>claude-accounts-dash 0.1.7</title>
-      <link>https://pypi.org/project/claude-accounts-dash/0.1.7/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 28 Sep 2026 16:31:04 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-accounts-dash/0.1.7/</guid>
-    </item>
-    <item>
-      <title>sd-model-hub 0.1.16</title>
-      <link>https://pypi.org/project/sd-model-hub/0.1.16/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 28 Sep 2026 16:29:48 +0000</pubDate>
-      <guid>https://pypi.org/project/sd-model-hub/0.1.16/</guid>
-    </item>
-    <item>
-      <title>Microsoft’s Suleyman tells Bloomberg AI needs a ‘red line’ on control</title>
-      <link>https://thenextweb.com/news/microsoft-suleyman-red-line-ai-control-bloomberg</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 28 Sep 2026 16:29:02 +0000</pubDate>
-      <guid>https://thenextweb.com/news/microsoft-suleyman-red-line-ai-control-bloomberg</guid>
-    </item>
-    <item>
-      <title>torchlingo 0.2.1</title>
-      <link>https://pypi.org/project/torchlingo/0.2.1/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Mon, 28 Sep 2026 16:28:49 +0000</pubDate>
-      <guid>https://pypi.org/project/torchlingo/0.2.1/</guid>
-    </item>
-    <item>
-      <title>Meta the conqueror: The AI titan just poached MongoDB’s CEO and sent its stock down 27%</title>
-      <link>https://www.businessinsider.com/mongodb-stock-meta-ceo-enterprise-meta-zuckerberg-mdb-net-now-2026-9#article</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 28 Sep 2026 16:25:47 +0000</pubDate>
-      <guid>https://www.businessinsider.com/mongodb-stock-meta-ceo-enterprise-meta-zuckerberg-mdb-net-now-2026-9#article</guid>
-    </item>
-    <item>
-      <title>Quavo "Hotel Lobby" AI Trend</title>
-      <link>https://knowyourmeme.com/memes/quavo-hotel-lobby-ai-trend</link>
+      <title>LLMjacking can run up your business’ AI bill fast – how to stop it</title>
+      <link>https://www.zdnet.com/innovation/llmjacking-business-ai-bill-cost-how-to-stop/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Mon, 28 Sep 2026 16:24:07 +0000</pubDate>
-      <guid>https://knowyourmeme.com/memes/quavo-hotel-lobby-ai-trend</guid>
+      <pubDate>Tue, 29 Sep 2026 19:09:53 +0000</pubDate>
+      <guid>https://www.zdnet.com/innovation/llmjacking-business-ai-bill-cost-how-to-stop/</guid>
     </item>
     <item>
-      <title>tonst 0.2.0a1</title>
-      <link>https://pypi.org/project/tonst/</link>
+      <title>OpenAI Gets Sued Over the Hugging Face Hack</title>
+      <link>https://www.wired.com/story/openai-sued-over-the-hugging-face-hack/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 29 Sep 2026 19:05:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/openai-sued-over-the-hugging-face-hack/</guid>
+    </item>
+    <item>
+      <title>Boeing's Calamity Capsule gets another shot at the ISS taxi business</title>
+      <link>https://www.theregister.com/offbeat/2026/09/29/boeings-calamity-capsule-gets-another-shot-at-the-iss-taxi-business/5299778</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 29 Sep 2026 19:00:00 +0200</pubDate>
+      <guid>https://www.theregister.com/offbeat/2026/09/29/boeings-calamity-capsule-gets-another-shot-at-the-iss-taxi-business/5299778</guid>
+    </item>
+    <item>
+      <title>Bring business context with external custom properties</title>
+      <link>https://github.blog/changelog/2026-09-29-bring-business-context-with-external-custom-properties</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 29 Sep 2026 18:40:27 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-09-29-bring-business-context-with-external-custom-properties</guid>
+    </item>
+    <item>
+      <title>Here’s why OpenAI is absent from Nvidia’s industry-wide effort to end rogue AI agents</title>
+      <link>https://techcrunch.com/2026/09/29/heres-why-openai-is-absent-from-nvidias-industry-wide-effort-to-end-rogue-ai-agents/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 29 Sep 2026 18:35:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/29/heres-why-openai-is-absent-from-nvidias-industry-wide-effort-to-end-rogue-ai-agents/</guid>
+    </item>
+    <item>
+      <title>Anthropic Says It Discovered a Crispr-Like System. Now What?</title>
+      <link>https://www.wired.com/story/anthropic-says-it-discovered-a-crispr-like-system-now-what/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 29 Sep 2026 18:03:01 +0000</pubDate>
+      <guid>https://www.wired.com/story/anthropic-says-it-discovered-a-crispr-like-system-now-what/</guid>
+    </item>
+    <item>
+      <title>Is ChatGPT your new Google Workspace alternative? Meet Space, Pages, and slides</title>
+      <link>https://www.zdnet.com/innovation/chatgpt-space-pages-slides-google-workspace-alternative/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 29 Sep 2026 17:58:37 +0000</pubDate>
+      <guid>https://www.zdnet.com/innovation/chatgpt-space-pages-slides-google-workspace-alternative/</guid>
+    </item>
+    <item>
+      <title>OpenAI takes on Microsoft with the launch of what feels a whole lot like ChatGPT’s own office suite</title>
+      <link>https://techcrunch.com/2026/09/29/openai-takes-on-microsoft-with-the-launch-of-what-feels-a-whole-lot-like-chatgpts-own-office-suite/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 29 Sep 2026 17:45:51 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/29/openai-takes-on-microsoft-with-the-launch-of-what-feels-a-whole-lot-like-chatgpts-own-office-suite/</guid>
+    </item>
+    <item>
+      <title>Get Kindle Unlimited free for 3 months with this early Prime Day deal</title>
+      <link>https://www.zdnet.com/uncategorized/kindle-unlimited-amazon-october-prime-day-deal-2026/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 29 Sep 2026 17:32:40 +0000</pubDate>
+      <guid>https://www.zdnet.com/uncategorized/kindle-unlimited-amazon-october-prime-day-deal-2026/</guid>
+    </item>
+    <item>
+      <title>AI-powered app maker Wabi pivots to a messaging experience</title>
+      <link>https://techcrunch.com/2026/09/29/ai-powered-app-maker-wabi-pivots-to-a-messaging-experience/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 29 Sep 2026 17:20:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/29/ai-powered-app-maker-wabi-pivots-to-a-messaging-experience/</guid>
+    </item>
+    <item>
+      <title>OpenAI launches Dots, its bubbly agentic avatar</title>
+      <link>https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 29 Sep 2026 17:17:15 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/</guid>
+    </item>
+    <item>
+      <title>GPT-6.1 Sol in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 29 Sep 2026 17:02:27 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot</guid>
+    </item>
+    <item>
+      <title>Can a chatbot fix the government maze? The White House is about to find out</title>
+      <link>https://techcrunch.com/2026/09/29/can-a-chatbot-fix-the-government-maze-the-white-house-is-about-to-find-out/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 29 Sep 2026 16:55:56 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/29/can-a-chatbot-fix-the-government-maze-the-white-house-is-about-to-find-out/</guid>
+    </item>
+    <item>
+      <title>Healthcare campaigners turn up the heat on Palantir at Labour conference</title>
+      <link>https://www.theregister.com/public-sector/2026/09/29/healthcare-campaigners-turn-up-the-heat-on-palantir-at-labour-conference/5299724</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 29 Sep 2026 13:05:35 +0200</pubDate>
+      <guid>https://www.theregister.com/public-sector/2026/09/29/healthcare-campaigners-turn-up-the-heat-on-palantir-at-labour-conference/5299724</guid>
+    </item>
+    <item>
+      <title>Dutch police arrest 'security pro' in ShinyHunters probe</title>
+      <link>https://www.theregister.com/cyber-crime/2026/09/29/dutch-police-arrest-security-pro-in-shinyhunters-probe/5299715</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 29 Sep 2026 12:41:24 +0200</pubDate>
+      <guid>https://www.theregister.com/cyber-crime/2026/09/29/dutch-police-arrest-security-pro-in-shinyhunters-probe/5299715</guid>
+    </item>
+    <item>
+      <title>Google Assistant is Gone</title>
+      <link>https://www.droid-life.com/2026/09/28/google-assistant-is-gone/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Mon, 28 Sep 2026 16:24:05 +0000</pubDate>
-      <guid>https://pypi.org/project/tonst/</guid>
+      <pubDate>Mon, 28 Sep 2026 21:06:50 +0000</pubDate>
+      <guid>https://www.droid-life.com/2026/09/28/google-assistant-is-gone/</guid>
     </item>
     <item>
-      <title>Operation Karameh: Israeli Orders, Civilian Warnings, and the Targeting of Fatah Forces in 1968 - El-Farrah championing false "genocide" accusation</title>
-      <link>https://freerepublic.com/focus/f-bloggers/4397159/posts</link>
+      <title>nara-catalog-mcp added to PyPI</title>
+      <link>https://pypi.org/project/nara-catalog-mcp/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 28 Sep 2026 16:20:44 +0000</pubDate>
-      <guid>https://freerepublic.com/focus/f-bloggers/4397159/posts</guid>
+      <category>Anthropic</category>
+      <pubDate>Mon, 28 Sep 2026 21:03:16 +0000</pubDate>
+      <guid>https://pypi.org/project/nara-catalog-mcp/</guid>
     </item>
     <item>
-      <title>Pixel Buds app update lets Gemini control audio and settings</title>
-      <link>http://9to5google.com/2026/09/28/pixel-buds-gemini-controls/</link>
+      <title>Show HN: A never-ending chess match between Claude and Codex</title>
+      <link>https://claudevcodex.com/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 28 Sep 2026 16:20:01 +0000</pubDate>
-      <guid>http://9to5google.com/2026/09/28/pixel-buds-gemini-controls/</guid>
+      <category>Anthropic</category>
+      <pubDate>Mon, 28 Sep 2026 21:02:46 +0000</pubDate>
+      <guid>https://claudevcodex.com/</guid>
     </item>
     <item>
-      <title>Rocker Michael Stipe Holding Major NYC Fundraiser for Michigan Democrat Abdul El-Sayed</title>
-      <link>https://www.breitbart.com/entertainment/2026/09/28/rocker-michael-stipe-holding-major-nyc-fundraiser-for-michigan-democrat-abdul-el-sayed/</link>
+      <title>Anthropic Releases Claude Sonnet 5.5</title>
+      <link>https://www.thurrott.com/a-i/anthropic/342139/anthropic-releases-claude-sonnet-5-5</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 28 Sep 2026 16:18:52 +0000</pubDate>
-      <guid>https://www.breitbart.com/entertainment/2026/09/28/rocker-michael-stipe-holding-major-nyc-fundraiser-for-michigan-democrat-abdul-el-sayed/</guid>
+      <category>Anthropic</category>
+      <pubDate>Mon, 28 Sep 2026 20:59:39 +0000</pubDate>
+      <guid>https://www.thurrott.com/a-i/anthropic/342139/anthropic-releases-claude-sonnet-5-5</guid>
     </item>
     <item>
-      <title>EXCLUSIVE: The Pentagon Wants More AI. One CEO Says That Could Go Very Wrong</title>
-      <link>https://dailycaller.com/2026/09/28/exclusive-edgerunner-ai-pentagon-military-tech</link>
+      <title>This AI startup has 14 employees and a $10B valuation</title>
+      <link>https://biztoc.com/x/b2cc4a36f583dcb3</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 28 Sep 2026 20:59:24 +0000</pubDate>
+      <guid>https://biztoc.com/x/b2cc4a36f583dcb3</guid>
+    </item>
+    <item>
+      <title>pyrefly-torch-stubs 1.4.0.dev2</title>
+      <link>https://pypi.org/project/pyrefly-torch-stubs/1.4.0.dev2/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 28 Sep 2026 20:55:27 +0000</pubDate>
+      <guid>https://pypi.org/project/pyrefly-torch-stubs/1.4.0.dev2/</guid>
+    </item>
+    <item>
+      <title>Tensor Achieves ISO/SAE 21434 Cybersecurity Certification with Zero Non-Conformities by Applus+ IDIADA</title>
+      <link>https://www.prnewswire.com/news-releases/tensor-achieves-isosae-21434-cybersecurity-certification-with-zero-non-conformities-by-applus-idiada-302891973.html</link>
       <description></description>
       <category>AI Foundry</category>
-      <pubDate>Mon, 28 Sep 2026 16:16:52 +0000</pubDate>
-      <guid>https://dailycaller.com/2026/09/28/exclusive-edgerunner-ai-pentagon-military-tech</guid>
+      <pubDate>Mon, 28 Sep 2026 20:54:00 +0000</pubDate>
+      <guid>https://www.prnewswire.com/news-releases/tensor-achieves-isosae-21434-cybersecurity-certification-with-zero-non-conformities-by-applus-idiada-302891973.html</guid>
     </item>
     <item>
-      <title>AWS Weekly Roundup: GPT-6 Sol and Luna, Claude Opus 5.5 on Amazon Bedrock, Strands harness, and more (September 28, 2026)</title>
-      <link>https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-sol-and-luna-claude-opus-5-5-on-amazon-bedrock-strands-harness-and-more-september-28-2026/</link>
+      <title>Disney wants staffers to use AI for their annual reviews and goal setting</title>
+      <link>https://www.businessinsider.com/disney-ai-push-annual-performance-review-josh-damaro-2026-9#article</link>
       <description></description>
-      <category>Amazon</category>
-      <pubDate>Mon, 28 Sep 2026 16:14:54 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-sol-and-luna-claude-opus-5-5-on-amazon-bedrock-strands-harness-and-more-september-28-2026/</guid>
+      <category>Microsoft</category>
+      <pubDate>Mon, 28 Sep 2026 20:50:14 +0000</pubDate>
+      <guid>https://www.businessinsider.com/disney-ai-push-annual-performance-review-josh-damaro-2026-9#article</guid>
+    </item>
+    <item>
+      <title>Nolte: Actress Camryn Manheim Says She Tried to Turn Her Son Gay</title>
+      <link>https://www.breitbart.com/entertainment/2026/09/28/nolte-actress-camryn-manheim-says-she-tried-to-turn-her-son-gay/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Mon, 28 Sep 2026 20:49:30 +0000</pubDate>
+      <guid>https://www.breitbart.com/entertainment/2026/09/28/nolte-actress-camryn-manheim-says-she-tried-to-turn-her-son-gay/</guid>
+    </item>
+    <item>
+      <title>Anthropic Publishes Prompting Guidance For Claude Opus 5.5 via @sejournal, @MattGSouthern</title>
+      <link>https://www.searchenginejournal.com/anthropic-claude-opus-5-5-prompting-guidance/591278/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 28 Sep 2026 20:48:12 +0000</pubDate>
+      <guid>https://www.searchenginejournal.com/anthropic-claude-opus-5-5-prompting-guidance/591278/</guid>
+    </item>
+    <item>
+      <title>Gemini fully replaces Google Assistant on Android</title>
+      <link>http://9to5google.com/2026/09/28/google-assistant-gemini-android/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 28 Sep 2026 20:48:08 +0000</pubDate>
+      <guid>http://9to5google.com/2026/09/28/google-assistant-gemini-android/</guid>
+    </item>
+    <item>
+      <title>langchain-fireworks 1.7.0</title>
+      <link>https://pypi.org/project/langchain-fireworks/1.7.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Mon, 28 Sep 2026 20:46:34 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-fireworks/1.7.0/</guid>
+    </item>
+    <item>
+      <title>lectic 0.3.2</title>
+      <link>https://pypi.org/project/lectic/0.3.2/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 28 Sep 2026 20:44:48 +0000</pubDate>
+      <guid>https://pypi.org/project/lectic/0.3.2/</guid>
+    </item>
+    <item>
+      <title>Texas Driver Allegedly Rams Car Into Kroger To Use Bathroom: Report</title>
+      <link>https://dailyhodl.com/2026/09/28/texas-driver-allegedly-rams-car-into-kroger-to-use-bathroom-report/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Mon, 28 Sep 2026 20:38:17 +0000</pubDate>
+      <guid>https://dailyhodl.com/2026/09/28/texas-driver-allegedly-rams-car-into-kroger-to-use-bathroom-report/</guid>
+    </item>
+    <item>
+      <title>agy-telegram added to PyPI</title>
+      <link>https://pypi.org/project/agy-telegram/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 28 Sep 2026 20:37:45 +0000</pubDate>
+      <guid>https://pypi.org/project/agy-telegram/</guid>
+    </item>
+    <item>
+      <title>mimir-decisions added to PyPI</title>
+      <link>https://pypi.org/project/mimir-decisions/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 28 Sep 2026 20:37:23 +0000</pubDate>
+      <guid>https://pypi.org/project/mimir-decisions/</guid>
+    </item>
+    <item>
+      <title>Gemini launches staking for Hyperliquid’s HYPE token, offering 2.1% APY</title>
+      <link>https://cryptobriefing.com/gemini-hype-staking-hyperliquid-apy/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 28 Sep 2026 20:33:49 +0000</pubDate>
+      <guid>https://cryptobriefing.com/gemini-hype-staking-hyperliquid-apy/</guid>
+    </item>
+    <item>
+      <title>pyrefly-torch-stubs 1.3.2</title>
+      <link>https://pypi.org/project/pyrefly-torch-stubs/1.3.2/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 28 Sep 2026 20:33:27 +0000</pubDate>
+      <guid>https://pypi.org/project/pyrefly-torch-stubs/1.3.2/</guid>
+    </item>
+    <item>
+      <title>barndoor 2.4.0.dev202609282030</title>
+      <link>https://pypi.org/project/barndoor/2.4.0.dev202609282030/</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 28 Sep 2026 20:31:06 +0000</pubDate>
+      <guid>https://pypi.org/project/barndoor/2.4.0.dev202609282030/</guid>
+    </item>
+    <item>
+      <title>SaaS Marketers - Promote your Claude &amp; Codex connectors &amp; win in AI search</title>
+      <link>https://www.seerinteractive.com/insights/saas-marketers-promote-your-claude-or-codex-connectors</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Mon, 28 Sep 2026 20:30:29 +0000</pubDate>
+      <guid>https://www.seerinteractive.com/insights/saas-marketers-promote-your-claude-or-codex-connectors</guid>
+    </item>
+    <item>
+      <title>langchain-amu 0.1.3</title>
+      <link>https://pypi.org/project/langchain-amu/0.1.3/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Mon, 28 Sep 2026 20:29:13 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-amu/0.1.3/</guid>
+    </item>
+    <item>
+      <title>Blockchain.com eyes $500M IPO as crypto capital markets thaw: Report</title>
+      <link>https://cointelegraph.com/news/blockchain-com-500m-ipo-bloomberg-reports</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 28 Sep 2026 20:28:13 +0000</pubDate>
+      <guid>https://cointelegraph.com/news/blockchain-com-500m-ipo-bloomberg-reports</guid>
+    </item>
+    <item>
+      <title>Artmarket.com: H1 2026 Financial Report--One-of-a-Kind AI Systems Intuitive Artmarket® and Blind Spot Will Drive the Next Phase of Growth for "AI-First" Artprice in 2026-2030</title>
+      <link>https://smartbusinesnews.com/business/artmarketcom-h1-2026-financial-report-one-of-a-kind-ai-systems-intuitive-artmarket-and-blind-spot-will-drive-the-next-phase-of-growth-for-ai-first-artprice-in-2026-2030/</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 28 Sep 2026 20:26:21 +0000</pubDate>
+      <guid>https://smartbusinesnews.com/business/artmarketcom-h1-2026-financial-report-one-of-a-kind-ai-systems-intuitive-artmarket-and-blind-spot-will-drive-the-next-phase-of-growth-for-ai-first-artprice-in-2026-2030/</guid>
+    </item>
+    <item>
+      <title>Jeff – Jev-compatible 0.8B decision models, trained at home, ~30 ms</title>
+      <link>https://github.com/firelex/jeff</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 28 Sep 2026 20:23:36 +0000</pubDate>
+      <guid>https://github.com/firelex/jeff</guid>
+    </item>
+    <item>
+      <title>AMD acquiring Fei-Fei Li's World Labs AI firm in deal worth $8.2 billion</title>
+      <link>https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Mon, 28 Sep 2026 20:23:33 +0000</pubDate>
+      <guid>https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html</guid>
     </item>
   </channel>
 </rss>
