@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Sep 2026 20:31:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 01:53:11 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins may see multiple usage report types experiencing varying delays in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1481173</link>
+      <description>[Microsoft 365 suite] Admins may see multiple usage report types experiencing varying delays in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1481173</guid>
+      <pubDate>Mon, 28 Sep 2026 22:36:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Users may not be able to access Microsoft Viva Glint</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1481028</link>
+      <description>[Microsoft Viva] Users may have not been able to access Viva Glint.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1481028</guid>
+      <pubDate>Mon, 28 Sep 2026 21:48:07 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' requests to change interaction types from drop down may fail in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1480924</link>
@@ -71,24 +89,6 @@
       <pubDate>Thu, 24 Sep 2026 18:23:33 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot Chat or Copilot Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1478470</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be unable to access or receive prompt responses with Copilot Chat or Copilot Notebooks.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CW1478470</guid>
-      <pubDate>Thu, 24 Sep 2026 15:34:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1478444</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1478444</guid>
-      <pubDate>Thu, 24 Sep 2026 15:06:04 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1478328</link>
       <description>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs. </description>
@@ -114,6 +114,24 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1476802</guid>
       <pubDate>Tue, 22 Sep 2026 12:13:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1478444</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1478444</guid>
+      <pubDate>Tue, 22 Sep 2026 02:50:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot Chat or Copilot Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1478470</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have been unable to access or receive prompt responses with Copilot Chat or Copilot Notebooks.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1478470</guid>
+      <pubDate>Tue, 22 Sep 2026 02:50:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Some users may be unable to access or use Microsoft Teams</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1464659</guid>
       <pubDate>Mon, 31 Aug 2026 04:15:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may see delayed data in Microsoft 365 Copilot usage and adoption reports</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1463378</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen delayed data in Microsoft 365 Copilot usage and adoption reports.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1463378</guid>
-      <pubDate>Fri, 28 Aug 2026 23:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1469836</link>
-      <description>[Microsoft 365 suite] Admins may have seen Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1469836</guid>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
