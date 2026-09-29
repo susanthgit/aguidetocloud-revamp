@@ -4,7 +4,7 @@ list_title: "M365 Copilot Prompting — What's New 2026"
 hub_id: "prompt-engineering"
 description: "Notebooks, Researcher, Analyst, Work IQ, model choice, Memory, multimodal. The 2026 prompting layer that sits on top of the four-block framework."
 date: 2026-05-27
-lastmod: 2026-05-27
+lastmod: 2026-09-29
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
@@ -97,7 +97,7 @@ If you haven't read the [Prompt Engineering Field Guide](/blog/prompt-engineerin
 
 <div class="living-doc-banner">
 
-🔄 **Living document — dated 27 May 2026.** Microsoft is shipping Copilot updates roughly monthly. The framing in this brief is current as of late May 2026 — specific feature names, model versions, and UI positions will shift. The underlying shapes (Notebooks, agents, Memory, model choice) are durable. **I'm adding more UI screenshots — Researcher's final output, Analyst's final tables, the multimodal chart-read, model selector, Memory and Pages — as I capture clean ones; the text stands on its own meanwhile.** Spotted something off? [Let me know](/feedback/) and I'll update.
+🔄 **Living document.** Microsoft is shipping Copilot updates roughly monthly. The framing in this brief is current as of late September 2026 — specific feature names, model versions, and UI positions will shift. The underlying shapes (Notebooks, agents, Memory, model choice) are durable. Spotted something off? [Let me know](/feedback/) and I'll update. **Last verified: 29 September 2026.**
 
 </div>
 
@@ -484,8 +484,8 @@ Also on this site:
 **Microsoft references:**
 
 - [Microsoft 365 Copilot Prompt Gallery](https://adoption.microsoft.com/en-us/copilot/prompt-gallery/) — Microsoft's curated public prompt library.
-- [Microsoft Learn — Microsoft 365 Copilot overview](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview)
-- [Microsoft Tech Community — Microsoft 365 Copilot blog](https://techcommunity.microsoft.com/category/microsoft365copilot/blog/microsoft365copilotblog) — monthly *What's New* posts. The single best place to track feature rollouts.
+- [Microsoft Learn — Microsoft 365 Copilot overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview)
+- [Microsoft Tech Community — Microsoft 365 Copilot blog](https://techcommunity.microsoft.com/category/microsoft-copilot/blog/microsoft-copilot-blog) — monthly *What's New* posts. The single best place to track feature rollouts.
 
 **Related guides on this site:**
 
