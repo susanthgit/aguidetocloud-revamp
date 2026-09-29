@@ -29,7 +29,7 @@ faq:
   - question: "Can Copilot make decisions on my behalf?"
     answer: "No. Hiring decisions, performance ratings, financial commitments, customer commitments, security incidents, deal closures, marketing budget approvals — those are all human-owned. Copilot summarises, structures, drafts, and flags. You read, judge, and decide."
   - question: "What's the single most useful prompt pattern across all personas?"
-    answer: "The grounding pattern: point Copilot at your source + a clear goal + an explicit format. Reference a document by typing / and its file name; refer to emails, meetings and Teams chats in plain English (Copilot reaches them through Microsoft Graph). For example: 'Using /[file], summarise X into a table with columns Y. Plain English, no jargon, do not speculate beyond the source.' Every persona section in this playbook uses variants of this same pattern."
+    answer: "The grounding pattern: point Copilot at your source + a clear goal + an explicit format. Typing / opens a reference picker with tabs for People, Files, Meetings and Emails, so you can pick the exact source; you can also just describe it in plain English (Copilot reaches it through Microsoft Graph). For example: 'Using /[file], summarise X into a table with columns Y. Plain English, no jargon, do not speculate beyond the source.' Every persona section in this playbook uses variants of this same pattern."
   - question: "How long does it take to feel productive with Copilot?"
     answer: "One to two weeks for the daily wins (email triage, meeting recaps, document drafting). Three to four weeks for the role-specific compounding wins (consistent funnel reports, faster month-end close, cleaner SOPs, better-prepared customer calls). The 4-week practice plan in this playbook is calibrated for that arc."
   - question: "What's the biggest mistake across all roles?"
@@ -147,7 +147,7 @@ Print this. Stick it next to your monitor. Works in every role.
 | **Goal** | What do you want Copilot to do? | "Summarise…" / "Draft…" / "Compare…" / "Find…" |
 | **Context** | What does Copilot need to know? | Audience, situation, tone, constraints |
 | **Expectations** | What does good look like? | Length, format, what to avoid, what to flag |
-| **Source** | Where should it ground its answer? | `/file` name for a document; emails, meetings and chats in plain English |
+| **Source** | Where should it ground its answer? | Type `/` to pick a file, person, meeting or email — or describe it in plain English |
 
 ### Three guardrail phrases — paste these into any prompt that touches people or money
 
@@ -170,7 +170,7 @@ If you've read the [Prompt Engineering hub guide](/blog/prompt-engineering-micro
 - **Goal** — the verb. "Summarise" / "Draft" / "Compare". Not "help me with".
 - **Context** — what Copilot needs to know. Audience, situation, tone, constraints.
 - **Expectations** — what good looks like. Length, format, what to avoid, what to flag.
-- **Source** — what to ground in. Type `/` and a file name to reference a document; describe emails, meetings and Teams chats in plain English (Copilot reaches them through Microsoft Graph). Without a source, Copilot writes from general knowledge — fine for brainstorming, not fine for your-specific-work output.
+- **Source** — what to ground in. Type `/` to open the reference picker (People · Files · Meetings · Emails) and pick the exact source, or just describe it in plain English (Copilot reaches it through Microsoft Graph). Without a source, Copilot writes from general knowledge — fine for brainstorming, not fine for your-specific-work output.
 
 Every prompt in the persona sections below uses this shape. Once you've seen 20 of them, you'll be writing your own without thinking about it.
 
