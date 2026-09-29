@@ -4,7 +4,7 @@ list_title: "M365 Copilot Chat (free tier) — Train-the-Trainer Guide"
 hub_id: "fundamentals"
 description: "Train-the-Trainer guide for free M365 Copilot Chat. Features, security, prompting, agents, Pages, memory, custom instructions, model picker."
 date: 2026-04-12
-lastmod: 2026-06-18
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -16,7 +16,7 @@ faq:
   - question: "What is Enterprise Data Protection in Copilot Chat?"
     answer: "Enterprise Data Protection (EDP) means your prompts and responses are covered by the same Microsoft Data Protection Addendum (DPA) and Product Terms that protect your emails in Exchange and files in SharePoint. Your data is encrypted, private, never used to train AI models, and your admin policies apply."
   - question: "What is the difference between Copilot Chat and Microsoft 365 Copilot?"
-    answer: "Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Copilot is the paid licence ($30/user/month for enterprise) — it adds work data grounding via Microsoft Graph, deep in-app integration in Word, Excel, PowerPoint and Teams, advanced agents like Researcher and Analyst, Notebooks, and priority access to capabilities."
+    answer: "Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Copilot is the paid licence (indicatively around $30/user/month for enterprise, on an annual term) — it adds work data grounding via Microsoft Graph, deep in-app integration in Word, Excel, PowerPoint and Teams, advanced agents like Researcher and Analyst, Notebooks, and priority access to capabilities. Confirm current pricing on Microsoft's pricing page."
   - question: "Can Copilot Chat users access agents?"
     answer: "Yes. Copilot Chat users can discover and use free agents like Prompt Coach and Writing Coach. They can also access pay-as-you-go agents. Creating agents with web grounding is possible for selected users, but agents with document or SharePoint grounding require a billing plan with Copilot credits or a pay-as-you-go plan enabled by the organisation."
   - question: "What are Copilot Pages and can free users use them?"
@@ -48,25 +48,25 @@ If you're training people on Copilot Chat tomorrow and you're wondering "what ex
 
 I wrote this for **AI Change Leads**, Digital Champions, and anyone running a Train-the-Trainer session. It covers everything about Copilot Chat (the free tier included with your Microsoft 365 subscription) — not just what buttons to click, but how to explain the value, handle the tough questions, and actually get people excited about using it.
 
-> 📖 **Looking for the paid Copilot guide?** See our [Microsoft 365 Copilot (Licensed) — Complete Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) for everything about the full $30/month experience.
+> 📖 **Looking for the paid Copilot guide?** See our [Microsoft 365 Copilot (Licensed) — Complete Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) for everything about the full paid experience.
 
 > 📋 **How to use this guide:** Bookmark it. Share it with your training team. Each section is self-contained — jump to what you need.
 
 <div class="living-doc-banner">
 
-This is a living document. The AI landscape changes fast — features get added, renamed, or retired. Bookmark this page rather than printing it, so you always have the latest version. If you spot something outdated, please [let me know](/feedback/) and I'll update it.
+This is a living document. The AI landscape changes fast — features get added, renamed, or retired. (Microsoft now calls this free tier **Microsoft Copilot Chat**; you'll still see "Microsoft 365 Copilot Chat" in places as the rename rolls out — same product.) Bookmark this page rather than printing it, so you always have the latest version. If you spot something outdated, please [let me know](/feedback/) and I'll update it. **Last verified: 29 September 2026.**
 
 </div>
 
 <p><img src="/images/blog/chat-trainers/hero-copilot-chat.webp" alt="The Microsoft 365 Copilot Chat home with the model picker open (Auto, Quick Response, Think Deeper, GPT 5.5 and 5.2) — the free Chat experience, with no Work IQ toggle" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Copilot Chat — the free experience included with Microsoft 365. Notice there's no **Work IQ** toggle: that's the paid, work-grounded Copilot. This guide is everything you get without the $30 licence.*
+*Copilot Chat — the free experience included with Microsoft 365. Notice there's no **Work IQ** toggle: that's the paid, work-grounded Copilot. This guide is everything you get without the paid licence.*
 
 **Table of Contents**
 
 - [What Is Microsoft 365 Copilot Chat?](#what-is-microsoft-365-copilot-chat)
 - [Security & Enterprise Data Protection](#security--enterprise-data-protection)
-- [⚠️ Upcoming Changes (April 15, 2026)](#upcoming-changes-april-15-2026)
+- [The April 2026 free-Copilot change](#upcoming-changes-april-2026)
 - **Deep Dive: Copilot Chat Features**
   - [1. The Chat Experience](#1-the-copilot-chat-experience)
   - [2. Upload Documents](#2-upload-documents-for-better-answers)
@@ -131,7 +131,7 @@ If you're short on time and need to run a Copilot Chat training session soon, he
 
 ## What Is Microsoft 365 Copilot Chat?
 
-**Microsoft 365 Copilot Chat** is a **free**, **secure** AI assistant included with every Microsoft 365 subscription. Think of it as your organisation's approved AI chat — protected by enterprise-grade security, available to every user, and {{< hi >}}completely free{{< /hi >}}. *(When users outgrow it, the [Licensed Copilot trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) covers the $30/month upgrade story.)*
+**Microsoft 365 Copilot Chat** is a **free**, **secure** AI assistant included with every Microsoft 365 subscription. Think of it as your organisation's approved AI chat — protected by enterprise-grade security, available to every user, and {{< hi >}}completely free{{< /hi >}}. *(When users outgrow it, the [Licensed Copilot trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) covers the paid upgrade story.)*
 
 {{< margin >}}Lead every training with "free" and "secure" — that's the whole pitch.{{< /margin >}}
 
@@ -147,7 +147,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["M365 Copilot<br/>($30/user/month)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
+    A["M365 Copilot<br/>(~$30/user/mo, indicative)"] -->|"Work-grounded AI"| B["Everything in Chat PLUS"]
     B --> C["Work Data via Graph"]
     B --> D["Deep App Integration"]
     B --> E["Researcher & Analyst"]
@@ -159,7 +159,7 @@ flowchart TD
 
 | Capability | 🆓 Copilot Chat (Free) | 💳 M365 Copilot (Paid) |
 |:--|:--|:--|
-| **Price** | Included with M365 subscription | $30/user/month (Enterprise) |
+| **Price** | Included with M365 subscription | ~$30/user/mo, indicative (Enterprise) |
 | **AI Chat** | ✅ Web-grounded | ✅ Web + Work data grounded |
 | **File Upload** | ✅ Standard access | ✅ Priority access |
 | **Image Generation** | ✅ Standard access | ✅ Priority access + branding |
@@ -240,11 +240,9 @@ A common question your users will ask. The answer is clear:
 
 ---
 
-## Upcoming Changes (April 15, 2026)
+## The April 2026 free-Copilot change (in effect) {#upcoming-changes-april-2026}
 
-If you're training people this month, you need to know about this — because your trainees will ask.
-
-Microsoft is pulling back free Copilot Chat from some Office apps on April 15. What happens depends on your organisation's size. Know which category you fall into before you step into the training room.
+This one still catches trainees out, so it's worth knowing even though it has already happened. From 15 April 2026, Microsoft pulled back free Copilot Chat from some Office apps. What it meant depends on your organisation's size — know which category you fall into before you step into the training room.
 
 > 📖 **Full details:** [Copilot Chat Changes April 15 — What Every IT Admin Needs to Know](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/)
 
@@ -321,12 +319,12 @@ When users sign in with their work account, they'll see the **green shield 🛡�
 
 | Platform | How to Access |
 |:--|:--|
-| **Web** | [m365copilot.com](https://m365copilot.com) or [m365.cloud.microsoft/chat](https://m365.cloud.microsoft/chat) |
+| **Web** | [copilot.cloud.microsoft](https://copilot.cloud.microsoft) (the primary URL; the older [m365.cloud.microsoft/chat](https://m365.cloud.microsoft/chat) still works) |
 | **Microsoft 365 App** | Desktop app (Windows/Mac) or mobile (iOS/Android) |
 | **Teams** | Built-in Chat experience |
 | **Outlook** | Side pane and full chat |
 | **Edge Browser** | Copilot side pane |
-| **Word, Excel, PPT** | Side pane (availability depends on tenant size — see [changes above](#upcoming-changes-april-15-2026)) |
+| **Word, Excel, PPT** | Side pane (availability depends on tenant size — see [the April 2026 change](#upcoming-changes-april-2026)) |
 
 ### Prompting Matters — A Lot
 
@@ -538,7 +536,7 @@ Copilot Pages is one of the most underrated features in Copilot Chat. It turns a
 
 > *"Ask Copilot to brainstorm ideas for your upcoming team offsite. When you get a good response, click 'Create a page.' Share it with your team. Everyone can add their own ideas, and use Copilot on the page to organise and prioritise them. When you're done, export it as a Word document for your manager."*
 
-> 📖 **Official reference:** [Introducing Microsoft 365 Copilot Pages](https://support.microsoft.com/topic/introducing-microsoft-365-copilot-pages-6674bd51-9ff5-42c4-9256-44d9428a726f)
+> 📖 **Official reference:** [Introducing Microsoft 365 Copilot Pages](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-pages)
 
 ---
 
@@ -737,13 +735,13 @@ Here's how to frame Copilot Chat for different audiences in your organisation:
 | **Privacy & Protections** | How data is handled in Copilot Chat | [learn.microsoft.com](https://learn.microsoft.com/en-us/copilot/privacy-and-protections) |
 | **Copilot Chat FAQ** | Common questions answered | [learn.microsoft.com](https://learn.microsoft.com/en-us/copilot/faq) |
 | **Copilot App Overview** | App features and admin settings | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-overview) |
-| **Which Copilot for Your Org** | Decision guide for licensing | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/which-copilot-for-your-organization) |
+| **Which Copilot for Your Org** | Decision guide for licensing | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview) |
 | **Anthropic Subprocessor** | Claude model details and admin settings | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor) |
 | **Copilot Memory & Personalisation** | Memory, custom instructions details | [learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-personalization-memory) |
 | **Copilot Success Kit** | Enablement resources | [adoption.microsoft.com](https://adoption.microsoft.com/copilot/success-kit/) |
 | **Copilot Chat Adoption Kit** | Deployment and adoption tools | [adoption.microsoft.com](https://adoption.microsoft.com/copilot-chat/) |
 | **Copilot Academy** | Training and skilling | [learn.microsoft.com](https://learn.microsoft.com/en-us/viva/learning/academy-copilot) |
-| **Video Tutorials** | Getting started videos | [support.microsoft.com](https://support.microsoft.com/topic/microsoft-365-copilot-chat-video-tutorial-e54fb679-9554-435a-8418-d0e0ce2646c6) |
+| **Video Tutorials** | Getting started videos | [support.microsoft.com](https://support.microsoft.com/en-us/microsoft-365-copilot/video-tutorial-about-microsoft-365-copilot-chat) |
 | **Responsible AI** | Microsoft's AI principles | [microsoft.com](https://www.microsoft.com/ai/responsible-ai) |
 
 ---
@@ -802,7 +800,7 @@ Yes. It's included at no additional cost with any Microsoft 365 or Office 365 su
 
 3. What is the difference between Copilot Chat and Microsoft 365 Copilot?
 
-Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Copilot is the paid licence ($30/user/month for enterprise) — it adds work data grounding via Microsoft Graph, deep in-app integration, advanced agents like Researcher and Analyst, Notebooks, and priority access.
+Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Copilot is the paid licence (indicatively around $30/user/month for enterprise) — it adds work data grounding via Microsoft Graph, deep in-app integration, advanced agents like Researcher and Analyst, Notebooks, and priority access.
 
 </div>
 
@@ -842,7 +840,7 @@ Custom instructions let you tell Copilot how you prefer responses — your role,
 
 8. What model does Copilot Chat use?
 
-Copilot Chat uses a dynamic model router in Auto mode — GPT-5 for quick questions, deeper reasoning models for complex queries. Users can manually select Quick Response or Think Deeper mode.
+Copilot Chat uses a dynamic model router in Auto mode — a fast, high-throughput model for quick questions, and a deeper reasoning model (such as GPT-5) for complex queries. Users can manually select Quick Response or Think Deeper mode.
 
 </div>
 
