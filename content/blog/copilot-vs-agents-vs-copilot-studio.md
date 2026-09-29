@@ -4,7 +4,7 @@ list_title: "Copilot vs Agents vs Studio — Which Do You Use?"
 hub_id: "ai-agents"
 description: "Should you just ask Copilot, switch on a built-in agent, or build your own with Agent Builder, Copilot Studio or Foundry? A plain-English decision guide."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-09-29
 draft: false
 card_tag: "AI Agents"
 tag_class: "ai"
@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **A plain-English decision guide** to the whole ladder — from just asking Copilot, through the agents Microsoft ships, up to building your own with Agent Builder, Copilot Studio and Foundry. The landscape moves fast; confirm specifics in [Microsoft Learn — build agents for Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agents-overview). **Last verified: 23 June 2026.**
+🔄 **A plain-English decision guide** to the whole ladder — from just asking Copilot, through the agents Microsoft ships, up to building your own with Agent Builder, Copilot Studio and Foundry. The landscape moves fast; confirm specifics in [Microsoft Learn — build agents for Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview). **Last verified: 29 September 2026.**
 
 </div>
 
@@ -208,7 +208,7 @@ You don't need exact numbers to make the decision — you need the *shape* of th
 | Copilot Studio | **Metered** | Copilot Credits — you pay for what the agent *does* |
 | Foundry | **Consumption** | Azure bill — per use of models, compute and storage |
 
-The pattern is simple: the first three rungs are usually covered by your Copilot licence rather than metered (exact availability varies by agent and tenant), while the two build-your-own-power rungs are **pay-for-use**. Those are the ones to budget and keep an eye on — an agent that runs on its own can quietly add up.
+The pattern is simple: the first three rungs are usually covered by your Copilot licence rather than metered (exact availability varies by agent and tenant), while the two build-your-own-power rungs are **pay-for-use**. (Even then it's not all-or-nothing — some everyday Copilot Studio agent usage by licensed users is included within fair-use limits; the metered part is mainly autonomous actions and heavier use.) Those are the ones to budget and keep an eye on — an agent that runs on its own can quietly add up.
 
 > 💡 **For the actual numbers,** see [Copilot Studio pricing](/blog/copilot-studio-pricing/) for how credits work, and model a budget with the [AI Cost Calculator](/ai-cost-calculator/) and the [Licensing Simplifier](/licensing/).
 
@@ -229,7 +229,7 @@ You don't pick one rung forever. You move up when you hit a wall — and the wal
 
 ## Who keeps all this under control? {#govern}
 
-Once people start switching on and building agents, someone has to be able to see them all. **Agent 365** — generally available since May 2026 — is the single place IT can find every agent in the tenant, give each one a managed identity, see what it's touching, and govern what it's allowed to do.
+Once people start switching on and building agents, someone has to be able to see them all. **Agent 365** — generally available since May 2026 — is the single place IT can see the agents across the tenant, give each one a managed identity, see what it's touching, and govern what it's allowed to do.
 
 <p><img src="/images/blog/microsoft-365-built-in-agents/01-admin-agents-registry.webp" alt="The Microsoft 365 admin center All agents page with an Agent 365 badge, showing a Registry of every agent in the tenant — total agents, agents at risk, ownerless and blocked counts — and a table listing agents from Foundry, Copilot Studio, Microsoft and partners with their availability, risks and usage." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -257,12 +257,12 @@ Get those five straight and most of the noise disappears.
 
 ## Official Microsoft sources {#sources}
 
-- [Build agents for Microsoft 365 Copilot — overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agents-overview)
-- [Agent Builder in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder)
+- [Build agents for Microsoft 365 Copilot — overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview)
+- [Agent Builder in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder)
 - [What is Microsoft Copilot Studio?](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)
 - [Copilot Studio licensing and subscriptions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions)
-- [What is Microsoft Foundry?](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry)
-- [Microsoft 365 Copilot overview](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview)
+- [What is Microsoft Foundry?](https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry)
+- [Microsoft 365 Copilot overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview)
 
 ---
 
