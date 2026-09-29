@@ -4,7 +4,7 @@ list_title: "What Are Copilot Credits? Rates & Costs"
 hub_id: "copilot-pricing"
 description: "What are Copilot Credits? Microsoft's metered currency for agent work — what a credit costs, the per-action rate card, and what's zero-rated."
 date: 2026-06-16
-lastmod: 2026-08-10
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -54,13 +54,13 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, current as of June 2026; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm on the [Copilot Studio pricing page](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio) and in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing). **Last verified: 10 August 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, indicative only; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm on the [Copilot Studio pricing page](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio) and in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing). **Last verified: 29 September 2026.**
 
 </div>
 
 **The short version:** Copilot Credits are Microsoft's **metered currency for agent work** — the unit consumed when an agent answers, takes an action, or grounds on your data. They're not a Copilot plan or licence. You buy them pay-as-you-go ($0.01/credit) or in prepaid packs, and a lot of internal, licensed Microsoft 365 Copilot usage is zero-rated.
 
-<!-- 📸 Screenshot placeholder: Power Platform admin centre → Licensing → Copilot Studio (credit consumption view) — Sush to capture -->
+<!-- screenshot: Power Platform admin centre → Licensing → Copilot Studio (credit consumption view) -->
 
 ---
 

@@ -4,7 +4,7 @@ list_title: "Copilot Messages vs Credits — What Changed?"
 hub_id: "copilot-pricing"
 description: "Copilot Studio 'messages' became Copilot Credits on 1 Sept 2025 — and the way usage is counted changed too. What changed, what didn't, and what to do."
 date: 2026-06-16
-lastmod: 2026-08-10
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -48,13 +48,13 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** This page covers the *messages → Copilot Credits* transition. For current rates and pricing, see the [Copilot Credits guide](/blog/copilot-credits-explained/) and confirm figures in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing). **Last verified: 10 August 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** This page covers the *messages → Copilot Credits* transition. For current rates and pricing, see the [Copilot Credits guide](/blog/copilot-credits-explained/) and confirm figures in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing). **Last verified: 29 September 2026.**
 
 </div>
 
 **The short version:** On **1 September 2025**, Microsoft changed the Copilot Studio usage currency from messages to Copilot Credits. Your prepaid packs and the pay-as-you-go rate didn't change — a 25,000-message pack simply became a 25,000-credit pack. The practical point that trips people up: credits are metered at feature-based rates, so "one message = one credit" is no longer a safe assumption. The rename itself didn't create a new charge or make you re-buy anything — but feature-based rates can change how fast you use up capacity.
 
-<!-- 📸 Screenshot placeholder: Power Platform admin centre showing "Manage Copilot Studio credits and capacity" (note the legacy "messages" in the URL) — Sush to capture -->
+<!-- screenshot: Power Platform admin centre showing "Manage Copilot Studio credits and capacity" (note the legacy "messages" in the URL) -->
 
 ---
 

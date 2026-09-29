@@ -4,7 +4,7 @@ list_title: "Proving Copilot ROI — The Complete Field Guide"
 hub_id: "copilot-pricing"
 description: "Measure Microsoft 365 Copilot ROI: connect adoption, time saved and financial impact with practical formulas, dashboards and a CFO-ready scorecard."
 date: 2026-07-22
-lastmod: 2026-07-22
+lastmod: 2026-09-29
 draft: false
 card_tag: "Business Value"
 tag_class: "ai"

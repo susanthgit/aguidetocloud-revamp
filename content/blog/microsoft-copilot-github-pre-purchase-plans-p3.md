@@ -4,7 +4,7 @@ list_title: "Pre-Purchase Plans (P3): Copilot vs GitHub"
 hub_id: "copilot-pricing"
 description: "Microsoft and GitHub Pre-Purchase Plans (P3) in plain English — which plan covers Copilot, Cowork or GitHub, and whether GitHub credits work for Cowork."
 date: 2026-06-26
-lastmod: 2026-06-26
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -43,7 +43,7 @@ faq:
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Pre-purchase plans and their scopes are new and still expanding — figures and product coverage change. Always confirm the live detail on [Microsoft Learn](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/agent-pre-purchase) before you commit. **Last verified: 26 June 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Pre-purchase plans and their scopes are new and still expanding — figures and product coverage change. Always confirm the live detail on [Microsoft Learn](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/agent-pre-purchase) before you commit. **Last verified: 29 September 2026.**
 
 </div>
 

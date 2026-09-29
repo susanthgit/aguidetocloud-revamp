@@ -4,7 +4,7 @@ list_title: "Copilot Cost Management & Billing"
 hub_id: "copilot-pricing"
 description: "How Microsoft Copilot usage is billed and controlled: pay-as-you-go vs prepaid vs P3, spending policies, the Cost Management dashboard, and admin roles."
 date: 2026-06-23
-lastmod: 2026-06-25
+lastmod: 2026-09-29
 draft: false
 card_tag: "Copilot"
 tag_class: "ai"
@@ -46,12 +46,12 @@ sitemap:
 founder_note: |
   This is the page I wish existed every time a customer asks "okay, but how do we actually pay for this, and how do I stop it running away from us?" Copilot's move to usage-based billing — credits, spending policies, a whole Cost Management dashboard — caught a lot of admins off guard, and the questions repeat: pay-as-you-go or prepaid? what's this "P3"? was there a P1 and P2? where does cost management even live?
 
-  So here's the plain-English version of the whole thing — the billing models, the new dashboard, the roles, and the myths. Prices are US list rates as of June 2026; always confirm the live figure before you budget. — Sush
+  So here's the plain-English version of the whole thing — the billing models, the new dashboard, the roles, and the myths. Prices are US list rates, indicative only; always confirm the live figure before you budget. — Sush
 ---
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, current as of June 2026; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm in [Microsoft Learn — usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits). **Last verified: 25 June 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, indicative only; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm in [Microsoft Learn — usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits). **Last verified: 29 September 2026.**
 
 </div>
 
@@ -358,7 +358,7 @@ The bits enterprise buyers always ask about, with honest "confirm this" flags wh
 
 - **Azure Prepayment / monetary commitment:** the P3 pre-purchase is a **separate invoice line item** and is not drawn from your Azure Prepayment balance (per Microsoft's Azure docs).
 - **MACC (Azure consumption commitment):** whether the P3 plan **counts toward** a MACC isn't something Microsoft states in its public docs — confirm with your Microsoft licensing contact before you bank on it.
-- **Currency, region & tax:** the **$0.01/credit** and $200/25,000 figures are US list as of June 2026. Local currency, taxes, regional availability, and your agreement can all change the number — use Microsoft's billing portal or price sheet for the figure you'll actually pay.
+- **Currency, region & tax:** the **$0.01/credit** and $200/25,000 figures are US list, indicative only. Local currency, taxes, regional availability, and your agreement can all change the number — use Microsoft's billing portal or price sheet for the figure you'll actually pay.
 - **Adjacent costs bill separately:** anything an agent calls — premium connectors, Dataverse, Power Automate, Azure resources — has its **own** charges, distinct from Copilot Credits.
 
 ---

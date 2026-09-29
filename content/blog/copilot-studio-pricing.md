@@ -4,7 +4,7 @@ list_title: "Is Copilot Studio Free? Pricing & Credits Explained"
 hub_id: "copilot-pricing"
 description: "Is Copilot Studio free? What it costs in 2026 — the trial, what's included with Microsoft 365 Copilot, and Copilot Credits (pay-as-you-go vs prepaid)."
 date: 2026-06-16
-lastmod: 2026-08-10
+lastmod: 2026-09-29
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
@@ -41,7 +41,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, current as of June 2026; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm on the [Copilot Studio pricing page](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio). **Last verified: 10 August 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, indicative only; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm on the [Copilot Studio pricing page](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio). **Last verified: 29 September 2026.**
 
 </div>
 
@@ -49,7 +49,7 @@ founder_note: |
 
 *One 2026 caveat before you read on: this "free to build, pay to publish" model is the **standard harness**. The newer GitHub Copilot harness (production-ready preview) bills differently — usage-based from the moment you start building. [Jump to harnesses ↓](#harnesses)*
 
-<!-- 📸 Screenshot placeholder: Copilot Studio pricing page on microsoft.com (Sush to capture) -->
+<!-- screenshot: Copilot Studio pricing page on microsoft.com -->
 
 > 🏗️ Choosing *which* tool to build with (Agent Builder vs Copilot Studio vs Azure AI Foundry) is a different question — this guide is **only about Copilot Studio pricing**. For the build-tool comparison, see [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/).
 
@@ -112,7 +112,7 @@ Copilot Studio has three ways to pay (Microsoft labels them **Licence**, Pre-pur
 
 **Which should you choose?** Use pay-as-you-go for pilots and unpredictable or low volume; **prepaid capacity** once usage is steady and consistently near or above 25,000 credits/month; and the pre-purchase plan (CCCUs) for larger committed rollouts your procurement prefers to handle up front.
 
-<!-- 📸 Screenshot placeholder: Power Platform admin center → billing policy / pay-as-you-go setup (Sush to capture) -->
+<!-- screenshot: Power Platform admin center → billing policy / pay-as-you-go setup -->
 
 ---
 

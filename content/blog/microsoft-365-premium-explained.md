@@ -4,7 +4,7 @@ list_title: "Is Copilot Pro Discontinued? Meet Microsoft 365 Premium"
 hub_id: "copilot-pricing"
 description: "Copilot Pro was retired in 2025 — Microsoft 365 Premium ($19.99/mo) replaced it. What it includes, the price, and what existing Pro subscribers should do."
 date: 2026-06-16
-lastmod: 2026-06-16
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -43,7 +43,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices in USD, current as of June 2026; regional pricing varies. Microsoft updates packaging regularly — confirm the exact figure on [Microsoft's pricing page](https://www.microsoft.com/microsoft-365) before you buy. **Last verified: 16 June 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices in USD and indicative only; regional pricing and any bundle offers vary. Microsoft updates packaging regularly, so confirm the exact figure on [Microsoft's pricing page](https://www.microsoft.com/microsoft-365) before you buy. **Last verified: 29 September 2026.**
 
 </div>
 
@@ -51,7 +51,7 @@ founder_note: |
 
 > 💼 If you use Copilot through **work or school**, this is a different product — Microsoft 365 Premium is the *consumer* replacement, and this change doesn't affect the Microsoft 365 Copilot your employer deploys.
 
-<!-- 📸 Screenshot placeholder: Microsoft 365 Premium product page on microsoft.com (Sush to capture) -->
+<!-- screenshot: Microsoft 365 Premium product page on microsoft.com -->
 
 ---
 
@@ -112,7 +112,7 @@ Microsoft 365 Premium is Microsoft's **top consumer subscription** — think "Mi
 
 The headline difference from the old Copilot Pro: you don't bolt it onto a separate base plan. The Office apps and storage are *in the box*.
 
-<!-- 📸 Screenshot placeholder: Microsoft 365 Premium "what's included" / plan comparison on microsoft.com (Sush to capture) -->
+<!-- screenshot: Microsoft 365 Premium what's-included / plan comparison on microsoft.com -->
 
 ---
 
@@ -142,7 +142,7 @@ First, don't panic — **nothing is forced on you.** Microsoft isn't moving you 
 5. **Pick monthly vs annual** — annual ($199.99) is cheaper over a year than monthly.
 6. **Know where work differs** — if you actually need AI on *work* data, that's [Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/), not Premium.
 
-<!-- 📸 Screenshot placeholder: account.microsoft.com subscriptions page showing a subscription + renewal date (Sush to capture) -->
+<!-- screenshot: account.microsoft.com subscriptions page showing a subscription + renewal date -->
 
 ---
 

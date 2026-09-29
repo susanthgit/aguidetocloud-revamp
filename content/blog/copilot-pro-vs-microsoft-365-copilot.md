@@ -4,7 +4,7 @@ list_title: "Copilot Pro vs M365 Copilot — Which Do You Need?"
 hub_id: "copilot-pricing"
 description: "Copilot Pro ($20) vs Microsoft 365 Copilot ($30): feature comparison, hidden costs, real scenarios, and how to pick the right one in 2026."
 date: 2026-05-13
-lastmod: 2026-06-16
+lastmod: 2026-09-29
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -80,7 +80,7 @@ If you're reading this, you've probably been on Microsoft's pricing page going b
 
 <div class="living-doc-banner">
 
-🔄 **Living document. All prices in USD, current as of June 2026.** Heads-up: Microsoft retired the standalone Copilot Pro in late 2025 — the personal plan is now **Microsoft 365 Premium ($19.99/month)** (see the note at the top). This guide keeps the "Copilot Pro" wording because that's still how most people search — read it as "the personal plan" throughout. Microsoft tweaks pricing and features regularly, so [Microsoft's pricing pages](https://www.microsoft.com/microsoft-365) are the source of truth. Spotted something off? [Let me know](/feedback/) and I'll update.
+🔄 **Living document. All prices in USD, indicative only — they vary by region, agreement and discount.** Heads-up: Microsoft retired the standalone Copilot Pro in late 2025 — the personal plan is now **Microsoft 365 Premium ($19.99/month)** (see the note at the top). This guide keeps the "Copilot Pro" wording because that's still how most people search — read it as "the personal plan" throughout. Microsoft tweaks pricing and features regularly, so [Microsoft's pricing pages](https://www.microsoft.com/microsoft-365) are the source of truth. Spotted something off? [Let me know](/feedback/) and I'll update. **Last verified: 29 September 2026.**
 
 </div>
 
