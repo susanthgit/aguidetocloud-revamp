@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 16:23:08 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 22:11:20 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1483625</link>
+      <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides.</description>
+      <category>Microsoft Teams</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">TM1483625</guid>
+      <pubDate>Wed, 30 Sep 2026 20:14:26 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Intune] Some admins may be unable to register new Windows Autopilot devices or update Autopilot group tags in Microsoft Intune</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1483380</link>
@@ -127,6 +136,15 @@ A backend service that is used to retrieve service information and resource meta
       <pubDate>Thu, 24 Sep 2026 18:23:33 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Some users’ email messages may not be quarantined and fail to be stored in the quarantine folder</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1478331</link>
+      <description>[Exchange Online] Users’ email messages may not be quarantined and might fail to be stored in the quarantine folder.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1478331</guid>
+      <pubDate>Thu, 24 Sep 2026 11:38:38 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1478328</link>
       <description>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs. </description>
@@ -142,7 +160,7 @@ A backend service that is used to retrieve service information and resource meta
       <category>Exchange Online</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1478163</guid>
-      <pubDate>Thu, 24 Sep 2026 05:45:38 +0000</pubDate>
+      <pubDate>Wed, 23 Sep 2026 07:13:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to open the account view in Outlook on the web</title>
@@ -440,24 +458,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1465477</guid>
       <pubDate>Tue, 01 Sep 2026 07:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins may see delays in Copilot usage report data in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1465286</link>
-      <description>[Microsoft 365 suite] Admins may have seen delays in Copilot usage report data in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1465286</guid>
-      <pubDate>Tue, 01 Sep 2026 00:25:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Some users may be unable to perform searches in Microsoft Viva Engage</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1465260</link>
-      <description>[Microsoft Viva] Users may have been unable to perform searches in Microsoft Viva Engage.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1465260</guid>
-      <pubDate>Mon, 31 Aug 2026 21:45:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
