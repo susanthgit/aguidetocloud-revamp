@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 01:16:33 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 08:26:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may encounter failures or may be unable to use PowerPoint agents in Microsoft 365 Copilot</title>
@@ -21,7 +21,7 @@
       <link>https://www.aguidetocloud.com/service-health/#IT1482439</link>
       <description>[Microsoft Intune] Users may experience failures when registering devices in Microsoft Intune.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">IT1482439</guid>
       <pubDate>Tue, 29 Sep 2026 17:53:00 +0000</pubDate>
     </item>
