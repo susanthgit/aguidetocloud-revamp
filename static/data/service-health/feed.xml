@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 08:26:57 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 16:23:08 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Intune] Some admins may be unable to register new Windows Autopilot devices or update Autopilot group tags in Microsoft Intune</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1483380</link>
+      <description>[Microsoft Intune] Admins may have been unable to register new Windows Autopilot devices or update Autopilot group tags in Microsoft Intune</description>
+      <category>Microsoft Intune</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">IT1483380</guid>
+      <pubDate>Wed, 30 Sep 2026 13:17:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may encounter an error when accessing the context menu in the classic experience within SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1483357</link>
+      <description>[SharePoint Online] Users may have encountered an error when accessing the context menu in the classic experience within SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1483357</guid>
+      <pubDate>Wed, 30 Sep 2026 12:37:03 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may encounter failures or may be unable to use PowerPoint agents in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1482420</link>
@@ -30,7 +48,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1482212</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins may see stale data in the Copilot Health page in the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1482212</guid>
       <pubDate>Tue, 29 Sep 2026 16:33:38 +0000</pubDate>
     </item>
@@ -440,24 +458,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1465260</guid>
       <pubDate>Mon, 31 Aug 2026 21:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to connect to, or experience degraded functionality with Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1464935</link>
-      <description>[Exchange Online] Users may have been unable to connect to, or experienced degraded functionality with Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">EX1464935</guid>
-      <pubDate>Mon, 31 Aug 2026 14:56:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may experience issues when utilizing multiple Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1465074</link>
-      <description>[Microsoft 365 suite] Users may have experienced issues when utilizing multiple Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1465074</guid>
-      <pubDate>Mon, 31 Aug 2026 14:56:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
