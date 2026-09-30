@@ -1,6 +1,62 @@
 {
   "articles": [
     {
+      "id": "dbde2e73dbe1ab02e53b42953db0350c",
+      "title": "Amazon Bedrock expands Claude model availability to in-country inferencing in India",
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-09-30T01:13:14+00:00",
+      "snippet": "Anthropic's Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 are now available in India through Amazon Bedrock geographic cross-Region inference. You can access these models while processing data within the India Regions, and get started from the Amazon Bedrock console or with the Messages, InvokeModel, and Converse APIs.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/18/ML-21953-1.png",
+      "ai_summary": "",
+      "published_display": "36m ago"
+    },
+    {
+      "id": "7f378d52eb3ead9da28d3de6d867734e",
+      "title": "Introducing Anthropic models on Amazon Bedrock for in-region inference in Seoul and Singapore",
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-09-30T01:13:12+00:00",
+      "snippet": "Amazon Bedrock now supports Anthropic's Claude Opus 5 and Claude Sonnet 5 with in-region inference in Seoul, and Claude Sonnet 5 in Singapore. If you have local data processing requirements in South Korea or Singapore, you can now use these Anthropic models at scale, with inference processed entirely within the Region you call.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/29/ML-22088-1.png",
+      "ai_summary": "",
+      "published_display": "36m ago"
+    },
+    {
+      "id": "434993897a43294ff1178b2bb7e61dab",
+      "title": "America.gov gets really weird when you ask it about Minecraft, but it’s not a glitch",
+      "url": "https://techcrunch.com/2026/09/29/america-gov-gets-really-weird-when-you-ask-it-about-minecraft-but-its-not-a-glitch/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T23:30:55+00:00",
+      "snippet": "For the sake of national security, it's a relief to learn that America.gov is not hallucinating to the point that it's penning lengthy poetry.",
+      "image": "https://techcrunch.com/wp-content/uploads/2024/11/minecraft.jpg?w=700",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "32acf35767b0b447c8879f2013329563",
+      "title": "The internet is convinced Elon Musk’s xAI trolled OpenAI’s ‘Dots’ launch",
+      "url": "https://techcrunch.com/2026/09/29/the-internet-is-convinced-elon-musks-xai-trolled-openais-dots-launch/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-09-29T22:20:59+00:00",
+      "snippet": "Before OpenAI launched its new AI agent, Dots, on Tuesday, Elon Musk's xAI had already acquired the domain name \"dot.com,\" which now redirects to the Grok chatbot download page.",
+      "image": "https://techcrunch.com/wp-content/uploads/2025/02/elon-musk-election-afd-purple.jpg?resize=1200,826",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
       "id": "bec0e58e8988ae16675be854c8a09ea2",
       "title": "Zuckerberg touts enterprise AI push because Meta would never do anything to damage your reputation",
       "url": "https://www.theregister.com/ai-and-ml/2026/09/29/zuckerberg-touts-enterprise-ai-push-because-meta-would-never-do-anything-to-damage-your-reputation/5299655",
@@ -12,7 +68,7 @@
       "snippet": "New business unit to be led by former MongoDB CEO 'CJ' Desai",
       "image": "https://image.theregister.com/?imageId=260692&width=800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "eed8a63acffd1cd97dc883911511aed8",
@@ -26,7 +82,7 @@
       "snippet": "SPONSORED POST: How agentic AI, real-time visibility, and stronger governance can help enterprises protect critical services and manage increasingly complex IT environments.",
       "image": "https://image.theregister.com/?imageId=5299413&width=800",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "6a2922d6182ac5fe94cf8944132c3f04",
@@ -40,7 +96,21 @@
       "snippet": "Regular pricing starts at $6,799 - all that memory doesn't come cheap",
       "image": "https://image.theregister.com/?imageId=5243591&width=800",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
+    },
+    {
+      "id": "130299aef11bbc3f91fe7cd959c1113b",
+      "title": "Sam Altman says OpenAI won’t go public until its models are safe",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-ai-safety",
+      "source": "The Verge AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-09-29T20:19:13-04:00",
+      "snippet": "For months, people have wondered when OpenAI will go public. CEO Sam Altman says it won't happen until the company can make better promises about model safety, with no firm timeline in sight. \"We intend to continue with AI progress … but as the models have had this surge forward in capability, and we see [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/STK201_SAM_ALTMAN_CVIRGINIA2D_717b98.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "1h ago"
     },
     {
       "id": "da95dad9441fc1415cf4e3d50eed0679",
@@ -54,7 +124,7 @@
       "snippet": "OpenAI is building out the pieces of an alternative to the traditional app store model, turning ChatGPT into a place where software can be discovered and used by people and AI agents alike.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "c19115ba1c6d657ff4962ba2f83a0d16",
@@ -68,7 +138,21 @@
       "snippet": "The new round is anticipated to be the company's last before its delayed 2027 public debut.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2236544077.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "bd70d89f4142ace032657854e1821726",
+      "title": "OpenAI reportedly in talks to raise $30B round at $1.4T valuation",
+      "url": "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-09-29T19:52:37+00:00",
+      "snippet": "The new round is anticipated to be the company's last before its delayed 2027 public debut.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2236544077.jpg?resize=1200,800",
+      "ai_summary": "",
+      "published_display": "5h ago"
     },
     {
       "id": "b83788414c27b246abf6e204e8110796",
@@ -82,7 +166,7 @@
       "snippet": "Two questions remain: who is abusing the CVEs? And why did Citrix take so long to disclose?",
       "image": "https://image.theregister.com/?imageId=228319&width=800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "6e9419017e8dae89ce3512497d8c720a",
@@ -96,7 +180,7 @@
       "snippet": "GPT-6.1 Sol is now generally available on Amazon Bedrock, bringing stronger reasoning to coding, computer use, and professional workloads that run frequently.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/29/ML-22090-1.png",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "a20d51d3c59f59bdd4671eebaab626e7",
@@ -110,7 +194,7 @@
       "snippet": "Jevstiller targets 98% agreement by learning familiar requests on your hardware while sending uncertain and audited queries upstream",
       "image": "https://image.theregister.com/?imageId=5299863&width=800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "7ae0cd87ce10c5aedaf7784118972b21",
@@ -124,7 +208,7 @@
       "snippet": "As a repository administrator, you can now configure the runner type, optional custom label, and optional runner group for Dependabot version and security updates. This extends the runner configuration already&#8230;\nThe post Repository custom runner settings for Dependabot appeared first on The GitHub Blog.",
       "image": "https://github.com/user-attachments/assets/789b8f34-1a90-4ce1-af99-ac864321fc6e",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "e62bc46c61a4d79c45d8709618e9b42f",
@@ -138,7 +222,7 @@
       "snippet": "Google analysts warn that stolen AI credentials are being sold underground, and businesses are footing the bill.",
       "image": "https://www.zdnet.com/wp-content/uploads/sites/3/GettyImages-1818127161.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "124cddee55fa693ed1ea6761cfadd5ce",
@@ -152,7 +236,7 @@
       "snippet": "A nonprofit in California is doing what Hugging Face has not—attempting to hold OpenAI legally accountable for the actions of its agents.",
       "image": "https://media.wired.com/photos/6abbb935c1a080d8e4e23844/master/pass/GettyImages-2265991617.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "3cef0a2d80aad5f73bd907ce1f002bc2",
@@ -166,7 +250,7 @@
       "snippet": "Starliner-1 could fly by January, with astronauts to follow by 2028 if all goes well",
       "image": "https://image.theregister.com/?imageId=227845&width=800",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "326b7509d112c5880289f4fd3772a473",
@@ -180,7 +264,7 @@
       "snippet": "You can now seamlessly bring business context about your repositories from an external system of record (e.g., a configuration management database (CMDB), an internal developer portal, or an in-house system)&#8230;\nThe post Bring business context with external custom properties appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/09/657660083-b1c102e4-31bb-4066-87c9-535fa270cbd1.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "5f576c8aab8a25d470361678fc761098",
@@ -194,7 +278,21 @@
       "snippet": "OpenAI isn't a public supporter of Nvidia's Open Agent Safety Platform, but it is privately working with Nvidia, TechCrunch has learned.",
       "image": "https://techcrunch.com/wp-content/uploads/2023/11/Sam-Altman-OpenAI.jpg?resize=1200,680",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
+    },
+    {
+      "id": "36b227364141069fc8914f1e1aaa7d77",
+      "title": "Trump orders US government to call AI ‘Super Intelligence’",
+      "url": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T18:25:45-04:00",
+      "snippet": "The US executive branch is no longer acknowledging the existence of \"artificial intelligence.\" Going forward, official policy websites, policy documents, and press releases will refer only to \"Super Intelligence,\" thanks to a new executive order signed by President Donald Trump. \"The word super is the best word of all, and it's the simplest,\" Trump said [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2250207971.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "3h ago"
     },
     {
       "id": "ccf9bfd75b81b379f10f3ae4b991ff02",
@@ -208,7 +306,7 @@
       "snippet": "“The experiments are still in the queue. The PR is already live,” says one expert.",
       "image": "https://media.wired.com/photos/6abbc40baa4c41ce1b0d6fa0/master/pass/092926-AI%20Science%20Discovery.jpg",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "e1260d7797493237119762b330150e28",
@@ -222,7 +320,21 @@
       "snippet": "OpenAI now lets teams create documents, build presentations, and work with AI agents inside ChatGPT",
       "image": "https://www.zdnet.com/wp-content/uploads/sites/3/ChatGPT-space-2.jpg",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
+    },
+    {
+      "id": "a05b5d10a2dc3f1a3988defe03ccf129",
+      "title": "Elon Musk&#8217;s AI-powered Grokipedia is updating again",
+      "url": "https://www.theverge.com/tech/1002448/elon-musk-grokipedia-ai-updating-again",
+      "source": "The Verge AI",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-09-29T17:49:09-04:00",
+      "snippet": "Grokipedia, the AI-powered online encyclopedia from SpaceXAI, appears to be updating articles once again after a months-long pause. In August, Lawfare reported that articles on Grokipedia hadn't reviewed edits since April, but the platform's live updates site is now showing various recent changes to pages - though as I write this, many are just a [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/04/STK171_VRG_Illo_16_Normand_ElonMusk_16.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "4h ago"
     },
     {
       "id": "f2d59b7d58b4cd3c58e53650a93a33af",
@@ -236,7 +348,7 @@
       "snippet": "OpenAI's newly announced suite of office features puts it into mor direct competition with more traditional software companies.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/09/OpenAI.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "907c9261f6de0e70fb9886fb0519c3a1",
@@ -250,7 +362,7 @@
       "snippet": "Amazon’s free Kindle Unlimited deal only comes around a couple times a year – and I highly recommend it.",
       "image": "https://www.zdnet.com/wp-content/uploads/sites/3/b966cd19-e865-46c7-b313-15107e0dcf93.jpg",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "b3b3b6389d6a4ec7f083015536c8d1b4",
@@ -264,7 +376,7 @@
       "snippet": "Wabi is repositioning its prompt-based app builder as a personal AI agent that can create interfaces on demand, combining chat, apps and ongoing tasks.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/09/wabi-20.jpg?resize=1200,620",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "138c9517bf179c50823c41e6e8f92cae",
@@ -278,7 +390,63 @@
       "snippet": "Dots are meant to operate independent of any specific hardware or interface, pursuing user-defined goals continuously in the background with minimal oversight.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/09/Screenshot-2026-09-29-at-1.16.22-PM.jpg?w=988",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
+    },
+    {
+      "id": "e3d3f3656bb16b6ff721e48fbe8fbb63",
+      "title": "OpenAI gives Codex reusable cloud environments that work across devices",
+      "url": "https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-09-29T17:15:00+00:00",
+      "snippet": "OpenAI is expanding Codex with reusable cloud development environments, a revamped CLI with voice controls, new code review tools, and a security-focused product for scanning repositories and preparing fixes.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-green.jpg?w=1024",
+      "ai_summary": "",
+      "published_display": "8h ago"
+    },
+    {
+      "id": "626bec6c83fc54897caa07fd3e3f94e9",
+      "title": "OpenAI expands ChatGPT’s plug-ins with app-like interfaces and automations",
+      "url": "https://techcrunch.com/2026/09/29/openai-expands-chatgpts-plugins-with-app-like-interfaces-and-automations/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-09-29T17:15:00+00:00",
+      "snippet": "OpenAI is expanding ChatGPT plug-ins with dedicated sidebar homes, interactive panels, file viewers, improved discovery, and support for automations.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/09/plugins-.jpg?resize=1200,690",
+      "ai_summary": "",
+      "published_display": "8h ago"
+    },
+    {
+      "id": "34b2f62ada99f0cc61f8a27f4b59382d",
+      "title": "OpenAI launches GPT-6.1 Sol, says it nearly matches GPT-6 Astra and costs less",
+      "url": "https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-09-29T17:15:00+00:00",
+      "snippet": "OpenAI says GPT-6.1 Sol delivers significant improvements over GPT-6 Sol across complex professional tasks, including code writing and debugging, document understanding, and executing multistep business workflows.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?w=1024",
+      "ai_summary": "",
+      "published_display": "8h ago"
+    },
+    {
+      "id": "87acd98db24770b782096247edad1add",
+      "title": "OpenAI’s Dots Are Always-On AI Agents—and Its Answer to Meta’s Muse",
+      "url": "https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/",
+      "source": "Wired AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-09-29T17:15:00+00:00",
+      "snippet": "These cute agents are designed to connect to your apps and tackle multistep tasks.",
+      "image": "https://media.wired.com/photos/6abbcee9422fade848ea964d/master/pass/Dots%20Hero%20Image.png",
+      "ai_summary": "",
+      "published_display": "8h ago"
     },
     {
       "id": "d37f9720e82b1061dc37e5d16d9d7a4d",
@@ -292,7 +460,7 @@
       "snippet": "GPT-6.1 Sol, the latest model from OpenAI, is now generally available and rolling out in GitHub Copilot. You can use it for agentic coding and terminal workflows with strong multistep&#8230;\nThe post GPT-6.1 Sol in GitHub Copilot appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/09/660743826-cc455d62-b8e2-42b4-a489-ad43b1003d8e.png",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "07fe3bcc622c29f7e9c040e2b0812e39",
@@ -306,7 +474,7 @@
       "snippet": "America.gov is intended to simplify the process of navigating government bureaucracy, but language models are imperfect and remain prone to hallucinations, which could cause new issues.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2277839095.jpg?w=1024",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "fca5839b12daabe310aef7aa632d138a",
@@ -320,7 +488,7 @@
       "snippet": "Protesters want ministers to reject an extension of the US spy-tech firm's £330M NHS data platform deal",
       "image": "https://image.theregister.com/?imageId=5240357&width=800",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "14h ago"
     },
     {
       "id": "8caa52ba604461d08a0a2601158e3218",
@@ -334,7 +502,721 @@
       "snippet": "Flashbangs reportedly deployed during operation as crime group denies any connection to suspect",
       "image": "https://image.theregister.com/?imageId=232700&width=800",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "15h ago"
+    },
+    {
+      "id": "e155cafa0a1da6156eb35bba83768c69",
+      "title": "Reco raises $55M as AI agent security startups crowd the market",
+      "url": "https://techcrunch.com/2026/09/29/reco-raises-55m-as-ai-agent-security-startups-crowd-the-market/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T12:30:00+00:00",
+      "snippet": "The round builds on a $30 million fundraise in February, taking the company's total funding to $140 million.",
+      "image": "https://techcrunch.com/wp-content/uploads/2023/08/getty-keys-red-background-locks.jpg?resize=1200,800",
+      "ai_summary": "",
+      "published_display": "13h ago"
+    },
+    {
+      "id": "3c2f63df84a4cc959dc8312f8a90fb21",
+      "title": "The Download: climate tech companies to watch and AI’s discovery problem",
+      "url": "https://www.technologyreview.com/2026/09/29/1145249/the-download-climate-tech-ai-scientific-discovery/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T12:10:00+00:00",
+      "snippet": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Coming soon: our 2026 list of Climate Tech Companies to Watch With the planet nearing 1.5 °C of warming, climate policies being unraveled, and Big Tech backpedaling on its climate ambitions,&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/05/260511-drug-manufacturing-space-hero.jpg?fit=2128,1196",
+      "ai_summary": "",
+      "published_display": "13h ago"
+    },
+    {
+      "id": "3a767643d01a8e6f65b8620b29b01528",
+      "title": "Coming soon: Our 2026 list of Climate Tech Companies to Watch",
+      "url": "https://www.technologyreview.com/2026/09/29/1145183/2026-climate-tech-companies-to-watch-preview/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T11:00:00+00:00",
+      "snippet": "Earlier this month, the UN announced the planet will tip past 1.5 ˚C of warming, “likely within the next few years,” squashing any lingering hope that nations would cut emissions fast enough to achieve the loftiest goal of the Paris climate agreement. In the US, the world’s second-largest-emitting country, its leader continues to deny climate&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/09/CT10-batterypacks.jpg?resize=1200,600",
+      "ai_summary": "",
+      "published_display": "14h ago"
+    },
+    {
+      "id": "def445a2974ecce52284bae90be5abe7",
+      "title": "Making AI an asset, not an expense",
+      "url": "https://www.technologyreview.com/2026/09/29/1145186/making-ai-an-asset-not-an-expense/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T10:43:45+00:00",
+      "snippet": "When customers talk about AI costs, the conversation usually starts with token prices and ends with access to the latest, most capable model in the cloud. Do they always need that level of capability? Not necessarily. But that is often where the conversation goes. As AI moves from experimentation to production, model choice is only&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/09/Cheri-blog.jpg?w=840",
+      "ai_summary": "",
+      "published_display": "15h ago"
+    },
+    {
+      "id": "2bad4c78edcd9fd1515eaeae4d2836af",
+      "title": "Meta&#8217;s Muse AI sent a YouTuber’s address to a stranger",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1001886/meta-muse-ai-facebook-marketplace-security-concerns",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T10:08:21-04:00",
+      "snippet": "Tech YouTuber Matt Robb says that Muse gave out his home address to a total stranger this weekend, after authorizing the bot to handle his Facebook Marketplace account. That's despite Meta placing great emphasis on the security features of Muse when it launched the personal AI agent earlier this month as it tries to catch [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/STKB394_MUSE_AI_CVIRGINIA_A.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "11h ago"
+    },
+    {
+      "id": "097bd60147b49321f1799ba5d119ef04",
+      "title": "Will Chinese AI companies slow down? A top House Democrat wants answers",
+      "url": "https://www.theverge.com/policy/1001767/khanna-ai-safety-china-treaty",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T08:00:00-04:00",
+      "snippet": "As President Donald Trump prepares to meet tech and AI CEOs in Washington, Rep. Ro Khanna (D-CA) is calling for a treaty between the US and China to keep AI from wreaking havoc on the world. But wrangling leaders in both countries to take action could be a long shot. In letters shared exclusively with [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2292801324.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "13h ago"
+    },
+    {
+      "id": "495d2ec0f8debc1b26c88b6ab7248703",
+      "title": "B2B Marketing for Professional Services Firms",
+      "url": "https://www.akarnik.com/blog/b2b-marketing-professional-services",
+      "source": "Akarnik.com",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T01:46:24+00:00",
+      "snippet": "Most professional services firms only do one of two critical B2B marketing jobs. Arjun Karnik reveals how to run both and win more clients.",
+      "image": "https://akarnik.sites.aigrowthagent.co/wp-content/uploads/sites/98/2026/09/1790516459707-5967f1dadbfe-1024x572.webp",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:46"
+    },
+    {
+      "id": "110574badf89e4a33b9f08db0a8edee5",
+      "title": "Anthropic IPO leaks -- here are two big hot takes",
+      "url": "https://biztoc.com/x/b2ce04315421e1ec",
+      "source": "Biztoc.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-09-29T01:43:43+00:00",
+      "snippet": "And we have an IPO prospectus leak for Anthropic (ANTH.PVT).\nFor a company that has a founder warning about the end of the world at the hands of his tech, why isn't this a shock?\nAnthropic saw its 2025 sales surge 1,088% to $4.59 billion, according to a repor…",
+      "image": "https://biztoc.com/cdn/b2ce04315421e1ec_s.webp",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:43"
+    },
+    {
+      "id": "992c444cb763c54ed95dc489c68f32db",
+      "title": "llmloader 0.1.10",
+      "url": "https://pypi.org/project/llmloader/0.1.10/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-09-29T01:43:36+00:00",
+      "snippet": "Loads a Langchain LLM by model name as a string.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:43"
+    },
+    {
+      "id": "aab7aa704a811fac164d11f936312d03",
+      "title": "Anthropic's IPO prospectus shows sweeping AI vision, surging costs: Reuters",
+      "url": "https://biztoc.com/x/cd5334861db6ac75",
+      "source": "Biztoc.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-09-29T01:43:15+00:00",
+      "snippet": "Anthropic is making a massive bet that AI will transform the global economy more profoundly than industrialization, electricity and the internet, according to its IPO prospectus seen by Reuters.\nBut the cost to get there will be staggering. Anthropic reported…",
+      "image": "https://biztoc.com/cdn/cd5334861db6ac75_s.webp",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:43"
+    },
+    {
+      "id": "c72fb9f7ad2de3620695523c57270efc",
+      "title": "Anthropic warns of ‘existential risks to humanity’ in IPO prospectus",
+      "url": "https://biztoc.com/x/3e7f9e7a195f86ea",
+      "source": "Biztoc.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-09-29T01:41:48+00:00",
+      "snippet": "Long-awaited S1 filing reports Claude maker lost $8bn last year on $4.6bn in revenue",
+      "image": "https://biztoc.com/cdn/996/og.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:41"
+    },
+    {
+      "id": "ce830e7c5ace4d63333a737c688e3f46",
+      "title": "【10/8 オンライン】バックオフィス業務のAI活用を学ぶ「バックオフィス AI Forum｜AI Market Focus」を開催",
+      "url": "https://prtimes.jp/main/html/rd/p/000000141.000078849.html",
+      "source": "Prtimes.jp",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-09-29T01:41:13+00:00",
+      "snippet": "[BizTech株式会社]\n[画像1: https://prcdn.freetls.fastly.net/release_image/78849/141/78849-141-d85503eb449d7da22f51e0e27c66ccba-1600x900.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&a...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/78849/141/78849-141-d85503eb449d7da22f51e0e27c66ccba-1600x900.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:41"
+    },
+    {
+      "id": "ed2730d48349b501d9f488c6c7d3391e",
+      "title": "Nvidia, Anthropic, Palantir CEOs to meet Trump for AI risks lunch",
+      "url": "https://cryptobriefing.com/nvidia-anthropic-palantir-ceos-trump-ai-risks/",
+      "source": "Crypto Briefing",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-09-29T01:34:58+00:00",
+      "snippet": "The meeting underscores the tension between rapid AI advancement for global competitiveness and the need for regulatory safeguards.\nThe post Nvidia, Anthropic, Palantir CEOs to meet Trump for AI risks lunch appeared first on Crypto Briefing.",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/09/28213453/library-nvidia-anthropic-palantir-ceos-to-meet-trump-for-ai-risk-800x450.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:34"
+    },
+    {
+      "id": "17454d6ecc6f547115d4e69b9787556e",
+      "title": "Exclusive-Anthropic's IPO prospectus shows sweeping AI vision, surging costs",
+      "url": "https://biztoc.com/x/39a3371c98a9ec42",
+      "source": "Biztoc.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-09-29T01:27:51+00:00",
+      "snippet": "By Echo Wang\nSept 28 (Reuters) - Anthropic is making a massive bet that AI will transform the global economy more profoundly than industrialization, electricity and the internet, according to its IPO prospectus seen by Reuters.\nBut the cost to get there will …",
+      "image": "https://biztoc.com/cdn/39a3371c98a9ec42_s.webp",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:27"
+    },
+    {
+      "id": "9d00c0bbd204f5ac01dfbcc958e6c555",
+      "title": "Trump's AI lunch: Zuckerberg, Pichai, Musk and Huang head to the White House",
+      "url": "https://economictimes.indiatimes.com/news/international/world-news/trumps-ai-lunch-zuckerberg-pichai-musk-and-huang-head-to-the-white-house/articleshow/134553640.cms",
+      "source": "The Times of India",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-09-29T01:26:10+00:00",
+      "snippet": "President Donald Trump and House Speaker Mike Johnson plan to meet with AI executives at the White House. The discussion will focus on balancing innovation with the need for oversight amid growing public concern. Lawmakers face pressure to introduce regulatio…",
+      "image": "https://img.etimg.com/thumb/msid-134553643,width-1200,height-630,imgsize-76784,overlay-economictimes/articleshow.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:26"
+    },
+    {
+      "id": "f30e4b4c6e3c1f909b8295568c67565e",
+      "title": "answer-engine-benchmark 0.1.1",
+      "url": "https://pypi.org/project/answer-engine-benchmark/0.1.1/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-09-29T01:24:41+00:00",
+      "snippet": "Ask ChatGPT, Gemini, Perplexity and Claude your buyers' questions, several times each, and count who they cite.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:24"
+    },
+    {
+      "id": "9df0ef7836e9efec06067f810b1fee36",
+      "title": "Please reopen: McAfee identified trojan:win/suspiciousattachmentscript.a",
+      "url": "https://www.bleepingcomputer.com/forums/t/819020/please-reopen-mcafee-identified-trojanwinsuspiciousattachmentscripta/",
+      "source": "BleepingComputer",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-09-29T01:23:27+00:00",
+      "snippet": "Please reopen: McAfee identified trojan:win/suspiciousattachmentscript.a - posted in Virus, Trojan, Spyware, and Malware Removal Help: Hi!\n \nWe thought this issue was closed, but theres been another suspicious attachment script event. \n \nHeres the sequence of…",
+      "image": "https://www.bleepingcomputer.com/forums/public/style_images/master/meta_image.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:23"
+    },
+    {
+      "id": "6b78b3dbe2e0565214a05882f5107e1e",
+      "title": "Anthropic warns AI may pose 'existential risks to humanity' in IPO filing: Reuters",
+      "url": "https://www.cnbc.com/2026/09/29/anthropic-warns-ai-existential-risks-ipo-filing-reuters.html",
+      "source": "CNBC",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-09-29T01:23:15+00:00",
+      "snippet": "Anthropic plans to warn IPO investors that advanced AI could pose “catastrophic or existential risks to humanity.”",
+      "image": "https://image.cnbcfm.com/api/v1/image/108368277-1790360556847-108368277-17903603812026-09-25t180005z_1304128046_rc29lnaagwzx_rtrmadp_0_usa-pentagon-anthropic-lawsuit.jpg?v=1790360568&w=1920&h=1080",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:23"
+    },
+    {
+      "id": "320c51d4bec88b1253ab8b9bf1852558",
+      "title": "CNBC Daily Open: From need for speed to seatbelts — AI majors focus on risk aversion",
+      "url": "https://www.cnbc.com/2026/09/29/cnbc-daily-open-from-need-for-speed-to-seatbelts-ai-majors-focus-on-risk-aversion.html",
+      "source": "CNBC",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-09-29T01:21:12+00:00",
+      "snippet": "For the longest time, artificial intelligence companies competed to make each new model faster and smarter. Ostensibly, there's now a push to exercise restraint.",
+      "image": "https://image.cnbcfm.com/api/v1/image/108368702-1790598543513-Jensen4.jpg?v=1790598795&w=1920&h=1080",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:21"
+    },
+    {
+      "id": "fd368dc26ae4d7e4c1fd136524d3adb8",
+      "title": "torchlingo 0.2.3",
+      "url": "https://pypi.org/project/torchlingo/0.2.3/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-09-29T01:13:44+00:00",
+      "snippet": "Educational PyTorch NMT library for coursework and instruction.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:13"
+    },
+    {
+      "id": "9b9c20dc585fd010c8bf711a8e12edc0",
+      "title": "Google Rolls Out AI Mode Info Monitoring To All Users Globally via @sejournal, @MattGSouthern",
+      "url": "https://www.searchenginejournal.com/google-ai-mode-info-monitoring-global-rollout/591312/",
+      "source": "Search Engine Journal",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-09-29T01:11:42+00:00",
+      "snippet": "Google is rolling out AI Mode’s information monitoring globally, with ongoing updates and suggested monitoring tasks in Search.\nThe post Google Rolls Out AI Mode Info Monitoring To All Users Globally appeared first on Search Engine Journal.",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/09/google-ai-mode-info-monitoring-v3.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:11"
+    },
+    {
+      "id": "23595caea1ce3f3da3a22d2dd9a36c3d",
+      "title": "Anthropic warns IPO investors AI could pose 'catastrophic' risks to humanity: Report",
+      "url": "https://economictimes.indiatimes.com/ai/ai-insights/anthropic-warns-ipo-investors-ai-could-pose-catastrophic-risks-to-humanity/articleshow/134553542.cms",
+      "source": "The Times of India",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-09-29T01:07:57+00:00",
+      "snippet": "Anthropic has outlined significant risks associated with its advanced AI models in its IPO prospectus. It emphasizes the potential for AI technologies to cause irreversible harm if mismanaged and highlights self-preserving behaviors. The company admits that e…",
+      "image": "https://img.etimg.com/thumb/msid-134553542,width-1200,height-630,imgsize-70760,overlay-economictimes/articleshow.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:07"
+    },
+    {
+      "id": "d0cb205b2795be32cec2748cee1d4a33",
+      "title": "jebadiah-decide added to PyPI",
+      "url": "https://pypi.org/project/jebadiah-decide/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-09-29T01:06:05+00:00",
+      "snippet": "Typed decisions from a Jebadiah model on your own runtime: llama-server, Ollama, LM Studio, vLLM, MLX or a /v1/systemone server",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:06"
+    },
+    {
+      "id": "5f04af6944d488571055bc434dc90271",
+      "title": "jebadiah-decide 0.2.0",
+      "url": "https://pypi.org/project/jebadiah-decide/0.2.0/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-09-29T01:06:05+00:00",
+      "snippet": "Typed decisions from a Jebadiah model on your own runtime: llama-server, Ollama, LM Studio, vLLM, MLX or a /v1/systemone server",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 01:06"
+    },
+    {
+      "id": "8ece887946f5536343bd02b4f7881a22",
+      "title": "Anthropic establishes Founder LLC to prioritize public good over profits ahead of IPO",
+      "url": "https://cryptobriefing.com/anthropic-founder-llc-public-good-governance/",
+      "source": "Crypto Briefing",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-09-29T00:54:28+00:00",
+      "snippet": "Anthropic's governance model may set a precedent for balancing ethical AI development with investor interests, challenging traditional corporate norms.\nThe post Anthropic establishes Founder LLC to prioritize public good over profits ahead of IPO appeared fir…",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/09/28205424/library-anthropic-establishes-founder-llc-to-prioritize-public-g-800x450.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:54"
+    },
+    {
+      "id": "90e37365f545d9147b6fc1ee9fd347a1",
+      "title": "jammi-ai-native-cu12 0.50.0",
+      "url": "https://pypi.org/project/jammi-ai-native-cu12/0.50.0/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-09-29T00:53:07+00:00",
+      "snippet": "CUDA (cu12, sm_80+) build of the compiled in-process Jammi engine — the `jammi_native` PyO3 extension",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:53"
+    },
+    {
+      "id": "1b52890c1ceae448c3f69b7d21104e6e",
+      "title": "jammi-ai-native-cu12 added to PyPI",
+      "url": "https://pypi.org/project/jammi-ai-native-cu12/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-09-29T00:53:00+00:00",
+      "snippet": "CUDA (cu12, sm_80+) build of the compiled in-process Jammi engine — the `jammi_native` PyO3 extension",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:53"
+    },
+    {
+      "id": "c42d24c3d8121725c038ed23586a66e6",
+      "title": "OpenAI reportedly developing collaborative ‘Spaces’ environments ahead of DevDay",
+      "url": "https://cryptobriefing.com/openai-spaces-devday-collaborative-environments/",
+      "source": "Crypto Briefing",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-09-29T00:52:34+00:00",
+      "snippet": "OpenAI's focus on collaborative AI environments could redefine enterprise workflows, enhancing productivity and innovation across industries.\nThe post OpenAI reportedly developing collaborative ‘Spaces’ environments ahead of DevDay appeared first on Crypto Br…",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/09/28205230/library-openai-reportedly-developing-collaborative-spaces-enviro-800x450.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:52"
+    },
+    {
+      "id": "840a8eacdb34822fa3d022451bb16284",
+      "title": "India’s IPO pipeline swells despite muted equity market",
+      "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/have-money-will-invest-why-ipo-party-never-stops/articleshow/134553417.cms",
+      "source": "The Times of India",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-09-29T00:51:52+00:00",
+      "snippet": "India's primary market is thriving with a significant increase in the number of IPOs and issue amounts. In contrast, the secondary market has experienced notable declines in equity indices. While foreign investor interest in listed stocks has dwindled, they r…",
+      "image": "https://img.etimg.com/thumb/msid-134553467,width-1200,height-630,imgsize-214312,overlay-etmarkets/articleshow.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:51"
+    },
+    {
+      "id": "5f05675f106c89ed8e59c1261f0937c0",
+      "title": "Nvidia boosts buyback plan by record $150B amid AI competition",
+      "url": "https://cryptobriefing.com/nvidia-record-150b-buyback-ai-competition/",
+      "source": "Crypto Briefing",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-09-29T00:45:28+00:00",
+      "snippet": "Nvidia's massive buyback signals confidence in AI-driven growth, but competitive pressures may challenge its market dominance and pricing power.\nThe post Nvidia boosts buyback plan by record $150B amid AI competition appeared first on Crypto Briefing.",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/09/28204524/library-nvidia-boosts-buyback-plan-by-record-150b-amid-ai-compet-800x450.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:45"
+    },
+    {
+      "id": "a532083caddadb2ddca1cea27842c127",
+      "title": "perplexity-web-mcp-cli 0.14.14",
+      "url": "https://pypi.org/project/perplexity-web-mcp-cli/0.14.14/",
+      "source": "Pypi.org",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-09-29T00:36:40+00:00",
+      "snippet": "CLI, MCP server, and Anthropic/OpenAI API-compatible interface for Perplexity AI.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:36"
+    },
+    {
+      "id": "2e7f85960700176bbef649cad0e83a17",
+      "title": "rtdetr 0.6.9",
+      "url": "https://pypi.org/project/rtdetr/0.6.9/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-09-29T00:34:13+00:00",
+      "snippet": "Real-time object detection you can ship: RT-DETR with PyTorch training, OpenVINO inference, and a browser app. Apache-2.0 throughout.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:34"
+    },
+    {
+      "id": "e2d6a271a56e02e98531c45e874fc02f",
+      "title": "Prospecto do IPO da Anthropic revela visão abrangente de IA e custos crescentes",
+      "url": "https://www.infomoney.com.br/mercados/prospecto-do-ipo-da-anthropic-revela-visao-abrangente-de-ia-e-custos-crescentes/",
+      "source": "InfoMoney",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-09-29T00:32:47+00:00",
+      "snippet": "Prospecto do IPO da Anthropic revela visão abrangente de IA e custos crescentes\nThe post Prospecto do IPO da Anthropic revela visão abrangente de IA e custos crescentes appeared first on InfoMoney.",
+      "image": "https://www.infomoney.com.br/wp-content/uploads/2026/09/2026-09-16T034721Z_807224254_RC2VJNALBSAV_RTRMADP_3_AUSTRALIA-AI-DATACENTRE.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:32"
+    },
+    {
+      "id": "8b462ea32bfc0b02f7a00a5ad8accbb5",
+      "title": "pytorch-ignite 0.6.0.dev20260929",
+      "url": "https://pypi.org/project/pytorch-ignite/0.6.0.dev20260929/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-09-29T00:28:59+00:00",
+      "snippet": "A lightweight library to help with training neural networks in PyTorch.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:28"
+    },
+    {
+      "id": "721d7c7e59203ecad9cf4ab20ea3ec68",
+      "title": "answer-engine-benchmark 0.1.0",
+      "url": "https://pypi.org/project/answer-engine-benchmark/0.1.0/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-09-29T00:26:53+00:00",
+      "snippet": "Ask ChatGPT, Gemini, Perplexity and Claude your buyers' questions, several times each, and count who they cite.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:26"
+    },
+    {
+      "id": "ae5932ce7e0cc5c2f1e0bfc6163d5003",
+      "title": "answer-engine-benchmark added to PyPI",
+      "url": "https://pypi.org/project/answer-engine-benchmark/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-09-29T00:26:43+00:00",
+      "snippet": "Ask ChatGPT, Gemini, Perplexity and Claude your buyers' questions, several times each, and count who they cite.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:26"
+    },
+    {
+      "id": "659f7d58f435d262b5a46affe0b920f0",
+      "title": "cloakbrowser-agent added to PyPI",
+      "url": "https://pypi.org/project/cloakbrowser-agent/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-09-29T00:25:31+00:00",
+      "snippet": "Jev-powered stealth browser agent: TypeSafe Jev decides each step, CloakBrowser carries it out. MCP server, CLI and Python API.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:25"
+    },
+    {
+      "id": "e1769350a2a781a71538e96d62a2bd70",
+      "title": "Nvidia launches Open Agent Safety Platform with 100 partners to rein in rogue AI agents",
+      "url": "https://cryptobriefing.com/nvidia-open-agent-safety-platform-launch/",
+      "source": "Crypto Briefing",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-09-29T00:21:30+00:00",
+      "snippet": "Nvidia's platform could set a new industry standard for AI safety, influencing how companies manage autonomous AI and prioritize security.\nThe post Nvidia launches Open Agent Safety Platform with 100 partners to rein in rogue AI agents appeared first on Crypt…",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/09/28202126/library-nvidia-launches-open-agent-safety-platform-with-100-part-800x450.png",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:21"
+    },
+    {
+      "id": "3838885f6bfdc5528575b348745b497e",
+      "title": "mlx-cuda-13 0.32.3",
+      "url": "https://pypi.org/project/mlx-cuda-13/0.32.3/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-09-29T00:14:52+00:00",
+      "snippet": "A framework for machine learning on Apple silicon.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:14"
+    },
+    {
+      "id": "be546c589a85f08eb8189d92eb1aba70",
+      "title": "AI Agent Swarm Mass-Exploited 440 PaperCut Instances in 48 Countries-and Ignored Its Operators’ Exclusion List",
+      "url": "https://forkast.news/ai-agent-swarm-mass-exploited-440-papercut-instances-in-48-countries-and-ignored-its-operators-exclusion-list/",
+      "source": "Forkast.news",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-09-29T00:01:44+00:00",
+      "snippet": "The PaperCut NG/MF exploitation campaign compromised 11 organizations in 26 seconds. Once the full operation launched, a single United States high school moved from initial access to full domain administrator control in seven minutes. These metrics define the…",
+      "image": "https://forkast.news/wp-content/uploads/2026/09/papercut-ai-swarm-mass-exploitation-v2-1024x572.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:01"
+    },
+    {
+      "id": "5f549d5c4bb5b614b4469b5aefcf9100",
+      "title": "Helping personal agents shop more intelligently and reliably with Link",
+      "url": "https://stripe.com/blog/helping-personal-agents-shop-more-intelligently-and-reliably-with-link",
+      "source": "Stripe.com",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-09-29T00:00:00+00:00",
+      "snippet": "As agents take on more purchases, agent builders have increasingly asked us to help agents navigate checkout and earn consumer trust. Today, we’re sharing three major improvements to support this broader set of needs.",
+      "image": "https://images.stripeassets.com/fzn2n1nzq965/8FromBwDLequvuKUZ5fFW/a6f7738b05a688c72e4476204f261394/Link_MetaHatch_Logo_2000x1000.png?q=80",
+      "ai_summary": "",
+      "published_display": "Sep 29, 00:00"
+    },
+    {
+      "id": "eba8b8bf8c8ae784f3d4ad4fa55ed643",
+      "title": "Anthropic's path from AI startup to industry-defining IPO",
+      "url": "https://www.channelnewsasia.com/business/anthropics-path-ai-startup-industry-defining-ipo-6416996",
+      "source": "CNA",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-09-28T23:52:43+00:00",
+      "snippet": "Sept 28 : Anthropic's IPO prospectus, reviewed by Reuters, laid out a sweeping vision in which AI would reshape the global economy more profoundly than industrialization, electricity and the internet, as the Claude maker moved closer to what could be the firs…",
+      "image": "https://dam.mediacorp.sg/image/upload/s--stCFh3wk--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-09-29T000236Z_1_LYNXMPEM8S002_RTROPTP_3_ANTHROPIC-RESULTS.JPG?itok=j5LSH8P5",
+      "ai_summary": "",
+      "published_display": "Sep 28, 23:52"
+    },
+    {
+      "id": "292d8a07eff0884ffbdf939c9cf3663b",
+      "title": "DeepSeek paper says AI agents are learning reward hacking during training",
+      "url": "https://www.digitimes.com/news/a20260924PD231/deepseek-training-testing-infrastructure.html",
+      "source": "Digitimes",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-09-28T23:19:48+00:00",
+      "snippet": "DeepSeek founder Wen-Feng Liang's latest paper says AI agents are already learning to exploit system loopholes and bypass intended problem-solving methods during training, underscoring a new challenge for model development: how to stop models from taking shor…",
+      "image": "https://img.digitimes.com/newsshow/20260924pd231_files/2_s.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 28, 23:19"
+    },
+    {
+      "id": "0543277f6f5d213f18c94d6eac59b163",
+      "title": "askelie® launches askVERA, a new Easy Read AI platform to make complex documents easier to understand",
+      "url": "https://www.prnewswire.com/news-releases/askelie-launches-askvera-a-new-easy-read-ai-platform-to-make-complex-documents-easier-to-understand-302892055.html",
+      "source": "PRNewswire",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-09-28T23:10:00+00:00",
+      "snippet": "askVERA's Easy Read software is available in consumer (B2C) and business (B2B) versions, both with built-in Plain English. LONDON, Sept. 28, 2026 /PRNewswire/ -- askelie®, the UK-based AI platform company behind the ELIE (Ever Learning Intelligent Engine) pla…",
+      "image": "https://mmx.prnewswire.com/media/MS1738609/AskELIE-LOGO.jpg?id=OA2975185&p=facebook",
+      "ai_summary": "",
+      "published_display": "Sep 28, 23:10"
+    },
+    {
+      "id": "264b246bd817e62abef1d6b73ca171d9",
+      "title": "JAAM AUTOMATION LAUNCHES NEW AI PLATFORM TO BRING PEOPLE, SYSTEMS AND AI TOGETHER TO MANAGE COMPLEX BUSINESS PROCESSES",
+      "url": "https://www.prnewswire.com/news-releases/jaam-automation-launches-new-ai-platform-to-bring-people-systems-and-ai-together-to-manage-complex-business-processes-302891876.html",
+      "source": "PRNewswire",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-09-28T23:01:00+00:00",
+      "snippet": "M. by jaam brings Agentic Work Management to existing business processes, helping organisations understand how work gets done and gradually give AI more responsibility Launch comes as 88%[1] of organisations use AI, but only 7% have fully scaled it, highlight…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 28, 23:01"
+    },
+    {
+      "id": "0bb4095546ff46ad0c87350ffb19771b",
+      "title": "China Broadens Travel Curbs To Encompass Family of Top AI Talent",
+      "url": "https://slashdot.org/story/26/09/28/2052208/china-broadens-travel-curbs-to-encompass-family-of-top-ai-talent",
+      "source": "Slashdot.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-09-28T23:00:00+00:00",
+      "snippet": "Longtime Slashdot reader schwit1 shares a report from Business Standard: China has expanded overseas travel restrictions for top AI professionals in private firms to include the families of key personnel, further tightening measures designed to prevent the ou…",
+      "image": "https://a.fsdn.com/sd/topics/ai_64.png",
+      "ai_summary": "",
+      "published_display": "Sep 28, 23:00"
+    },
+    {
+      "id": "42069864f90135476733d211747ed491",
+      "title": "macOS 27: How to use the new ‘Notify Me’ feature in Safari",
+      "url": "https://9to5mac.com/2026/09/28/macos-27-how-to-use-the-new-notify-me-feature-in-safari/",
+      "source": "9to5Mac",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-09-28T22:53:05+00:00",
+      "snippet": "9to5Mac is brought to you by CleanMyMac by MacPaw. With the release of macOS 27 Golden Gate, use CleanMyMac first to free up space, optimize your system, and ensure your new Mac runs at 100% on day one. Learn more.\n\n\n\nOne of the many new features included in …",
+      "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/09/safari-notify-me-alert.jpg?quality=82&strip=all&resize=1200,628",
+      "ai_summary": "",
+      "published_display": "Sep 28, 22:53"
+    },
+    {
+      "id": "89ae40a61e56ebe35c14a6414e94efd1",
+      "title": "Anthropic, OpenAI sound AI doomsday warning, Nvidia may have an answer. Here's explainer",
+      "url": "https://economictimes.indiatimes.com/news/international/us/anthropic-openai-sound-ai-doomsday-warning-nvidia-may-have-an-answer-heres-explainer/articleshow/134553011.cms",
+      "source": "The Times of India",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-09-28T22:52:40+00:00",
+      "snippet": "AI safety debate has divided the industry, with the heads of Anthropic and OpenAI championing a coordinated slowdown of Artificial Intelligence development to let safety efforts catch up. However, Nvidia may have a plan.",
+      "image": "https://img.etimg.com/thumb/msid-134553037,width-1200,height-630,imgsize-87530,overlay-economictimes/articleshow.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 28, 22:52"
+    },
+    {
+      "id": "a707b56272e0e5b1927e17637c597bc7",
+      "title": "AMD to acquire AI startup World Labs for $8B in all-stock deal",
+      "url": "https://biztoc.com/x/9cd1a08425a2235b",
+      "source": "Biztoc.com",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-09-28T22:42:20+00:00",
+      "snippet": "The acquisition brings spatial intelligence technology and AI pioneer Fei-Fei Li to the chip maker as it competes with Nvidia.",
+      "image": "https://biztoc.com/cdn/9cd1a08425a2235b_s.webp",
+      "ai_summary": "",
+      "published_display": "Sep 28, 22:42"
+    },
+    {
+      "id": "0d974e4fd890508e64d39faa3cafa7e3",
+      "title": "Arizona Truck Driver Will Let You Become A VR Trucker On Quest This October",
+      "url": "https://www.uploadvr.com/arizona-truck-driver-will-let-you-become-a-vr-trucker-on-quest-this-october/",
+      "source": "UploadVR",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-09-28T22:28:42+00:00",
+      "snippet": "Arizona Truck Driver, a truck life sim from the team behind The Wizards & Hunt Together, hits Quest in Early Access this October.",
+      "image": "https://storage.ghost.io/c/2a/2f/2a2f38f0-4b71-407a-9c7e-18a9e2541980/content/images/size/w1200/2026/09/ATD_Hero_Art_2560x1440.png",
+      "ai_summary": "",
+      "published_display": "Sep 28, 22:28"
+    },
+    {
+      "id": "6ceb9cb8582cf6e757679867edbf2d98",
+      "title": "modelrelay added to PyPI",
+      "url": "https://pypi.org/project/modelrelay/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-09-28T22:16:28+00:00",
+      "snippet": "One small API to call LLMs anywhere: OpenAI-compatible APIs or job-queue gateways, with pluggable auth.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Sep 28, 22:16"
     },
     {
       "id": "55d59fffcfb61a0fee6d1ddd4fc9d723",
@@ -348,7 +1230,49 @@
       "snippet": "xAI's Grok 4.7 is now available on Amazon Bedrock: a frontier model for coding, long-running agents, and knowledge work. It offers a 500K token context window and four configurable reasoning effort levels, reachable through the Responses, Chat Completions, and Converse APIs.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/21/Screenshot-2026-09-21-at-10.54.29 AM.png",
       "ai_summary": "",
-      "published_display": "23h ago"
+      "published_display": "Sep 28, 22:13"
+    },
+    {
+      "id": "4b7c380ae86b223bb6d9db6a25c462ea",
+      "title": "This AI startup has only 14 employees — and a fresh $10 billion valuation",
+      "url": "https://biztoc.com/x/99b59f2a3bad22f9",
+      "source": "Biztoc.com",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-09-28T22:12:22+00:00",
+      "snippet": "Instinct is rapidly amassing investment dollars, illustrating the rush of excitement around personal AI assistants.",
+      "image": "https://biztoc.com/cdn/996/og.png",
+      "ai_summary": "",
+      "published_display": "Sep 28, 22:12"
+    },
+    {
+      "id": "f18200f9c8a8607d8ecf198927d8b1b2",
+      "title": "AI researchers claim we’re on track to create ‘new species’ of superintelligent machines in Post video debate",
+      "url": "https://nypost.com/2026/09/28/opinion/ai-researchers-claim-were-on-track-to-create-new-species-of-superintelligent-machines-in-post-video-debate/",
+      "source": "New York Post",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-09-28T22:00:00+00:00",
+      "snippet": "\"By default, machines should be given the least amount of access and power that they need to do their job.\"",
+      "image": "https://nypost.com/wp-content/uploads/sites/2/2026/09/newspress-collage-0j31gxgxo-1790629444333.jpg?quality=75&strip=all&1790615083&w=1200",
+      "ai_summary": "",
+      "published_display": "Sep 28, 22:00"
+    },
+    {
+      "id": "32285ac7e9ea995263be41aab6350949",
+      "title": "Nvidia creates chip to save humanity, hopefully",
+      "url": "https://www.bostonherald.com/2026/09/28/nvidia-creates-chip-to-save-humanity/",
+      "source": "Boston Herald",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-09-28T21:30:34+00:00",
+      "snippet": "Nvidia has unveiled a new security platform that the chipmaker said can stop artificial intelligence agents from going rogue.",
+      "image": "https://www.bostonherald.com/wp-content/uploads/2026/09/AP26271379369850.jpg?w=6000&h=3999",
+      "ai_summary": "",
+      "published_display": "Sep 28, 21:30"
     },
     {
       "id": "df6cc80685189c036b9c8d26e8f15597",
@@ -362,7 +1286,21 @@
       "snippet": "The new financing is expected to more than triples the AI infrastructure startup's valuation from just four months ago.",
       "image": "https://techcrunch.com/wp-content/uploads/2023/11/GettyImages-1411834236.jpg?resize=1200,831",
       "ai_summary": "",
-      "published_display": "23h ago"
+      "published_display": "Sep 28, 21:29"
+    },
+    {
+      "id": "9d9607a8a1013600746bbd4d1d8f53c2",
+      "title": "SiMa.ai raises $150mn to scale physical AI",
+      "url": "https://timesofindia.indiatimes.com/business/india-business/sima-ai-raises-150mn-to-scale-physical-ai/articleshow/134550132.cms",
+      "source": "The Times of India",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-09-28T21:21:53+00:00",
+      "snippet": "BENGALURU: SiMa.ai, a US-India AI platform company focused on physical AI, has raised $150 million at a $1.4 billion valuation.",
+      "image": "https://static.toiimg.com/thumb/msid-134550139,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 28, 21:21"
     },
     {
       "id": "a9119804c69b8083e5b7523d5d769971",
@@ -1317,6 +2255,20 @@
       "published_display": "Sep 28, 18:31"
     },
     {
+      "id": "484c9b50bdcaa58559628bf668d19611",
+      "title": "iPhone software patch fixes nasty iOS 27 freeze bug and more",
+      "url": "https://www.cultofmac.com/news/iphone-software-patch-fixes-nasty-ios-27-freeze-bug-and-more",
+      "source": "Cult of Mac",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-09-28T18:28:27+00:00",
+      "snippet": "The iOS 27.0.1 update fixes several bugs, including one that could cause new iPhone models to restart when Face ID fails.\n(via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals.)",
+      "image": "https://www.cultofmac.com/wp-content/uploads/2026/09/iOS-27-0-1.jpg.webp",
+      "ai_summary": "",
+      "published_display": "Sep 28, 18:28"
+    },
+    {
       "id": "2ca063b495e76f4b8edd60e8da5a85dd",
       "title": "AI startup calls for optimism in Europe despite safety fears",
       "url": "https://kuwaittimes.com/article/50581/business/ai-startup-calls-for-optimism-in-europe-despite-safety-fears/",
@@ -1373,6 +2325,20 @@
       "published_display": "Sep 28, 18:03"
     },
     {
+      "id": "798c4c3faf024ca2960a7963362db6f8",
+      "title": "With iOS 27, Apple Is Quietly Setting the Stage to Paywall Your iPhone",
+      "url": "https://uk.pcmag.com/ios/167542/with-ios-27-apple-is-quietly-setting-the-stage-to-paywall-your-iphone",
+      "source": "PCMag.com",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-09-28T17:58:35+00:00",
+      "snippet": "Apple has introduced an excellent conversational AI assistant, but it also exposes an uncomfortable corporate playbook that could soon monetize your mobile.\nUntil recently, the annual iOS update felt like the ultimate free lunch. It didn't matter if you had t…",
+      "image": "https://sm.pcmag.com/t/pcmag_uk/opinion/w/with-ios-2/with-ios-27-apple-is-quietly-setting-the-stage-to-paywall-yo_wa5y.1200.jpg",
+      "ai_summary": "",
+      "published_display": "Sep 28, 17:58"
+    },
+    {
       "id": "0059bba956ddfc8aca983b62a26d23e6",
       "title": "Definitely not Windows (Win 11 parody)",
       "url": "https://definitelynotwindows.com/",
@@ -1385,6 +2351,20 @@
       "image": "https://definitelynotwindows.com/social-preview.png",
       "ai_summary": "",
       "published_display": "Sep 28, 17:51"
+    },
+    {
+      "id": "0635e83fcd8e4bcfb358a75d9f6a4a87",
+      "title": "Apple releases macOS Golden Gate 27.0.1",
+      "url": "https://macdailynews.com/2026/09/28/apple-releases-macos-golden-gate-27-0-1/",
+      "source": "Macdailynews.com",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-09-28T17:46:04+00:00",
+      "snippet": "Apple today released macOS Golden Gate 27.0.1, the first point update to macOS 27 since Golden Gate shipped on September 14th…\nThe post Apple releases macOS Golden Gate 27.0.1 appeared first on MacDailyNews.",
+      "image": "https://macdailynews.com/wp-content/uploads/2026/06/260611_macos_27.png",
+      "ai_summary": "",
+      "published_display": "Sep 28, 17:46"
     },
     {
       "id": "7aab3614dfeda11aa8fef8f2a8183788",
@@ -1412,7 +2392,7 @@
       "snippet": "AMD announced today that it's acquiring World Labs, an AI research lab co-founded by the prominent researcher Dr. Fei-Fei Li, in an all-stock deal worth approximately $8.2 billion. World Labs launched in 2024 and was valued at $1 billion in a matter of months. The startup launched its first commercial product, a world generation model [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2279092788.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "23h ago"
+      "published_display": "Sep 28, 17:31"
     },
     {
       "id": "009da08de3d0bd29d91299bfee74cdc6",
@@ -34161,6 +35141,6 @@
       "published_display": "Aug 31, 00:00"
     }
   ],
-  "generated_at": "2026-09-29T21:16:30.574823+00:00",
+  "generated_at": "2026-09-30T01:49:51.418175+00:00",
   "period": "September 2026"
 }
