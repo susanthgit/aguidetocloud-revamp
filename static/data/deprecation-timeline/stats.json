@@ -1,28 +1,28 @@
 {
-  "generated": "2026-09-30T11:14:52.996605+00:00",
+  "generated": "2026-10-01T11:42:16.288329+00:00",
   "total": 52,
-  "active": 21,
-  "passed": 31,
-  "action_required": 20,
+  "active": 16,
+  "passed": 36,
+  "action_required": 15,
   "urgency": {
-    "critical": 16,
+    "critical": 11,
     "warning": 4,
     "watch": 1
   },
   "categories": {
-    "azure": 10,
-    "office-apps": 3,
     "exchange": 2,
     "entra": 1,
+    "azure": 6,
+    "office-apps": 2,
     "windows": 5
   },
   "types": {
-    "retirement": 12,
+    "retirement": 7,
     "end-of-support": 9
   },
   "next_deadline": {
-    "title": "Azure API for FHIR Retirement",
-    "deadline": "2026-09-30",
+    "title": "Exchange Web Services (EWS) Retirement in Exchange Online",
+    "deadline": "2026-10-01",
     "days_remaining": 0,
     "urgency": "critical"
   },
