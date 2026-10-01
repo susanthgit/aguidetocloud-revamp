@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 22:11:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 01:16:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may not receive responses from their Microsoft 365 Copilot agents within Microsoft PowerPoint</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1483845</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have not received responses from their Copilot agents within PowerPoint.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1483845</guid>
+      <pubDate>Wed, 30 Sep 2026 21:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1483625</link>
@@ -449,15 +458,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1465608</guid>
       <pubDate>Tue, 01 Sep 2026 13:23:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may have experienced delays or failures when receiving responses from Microsoft 365 Copilot </title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1465477</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have experienced delays or failures when receiving responses from Microsoft 365 Copilot. </description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1465477</guid>
-      <pubDate>Tue, 01 Sep 2026 07:50:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
