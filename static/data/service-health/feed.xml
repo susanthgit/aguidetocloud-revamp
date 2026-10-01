@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Oct 2026 01:16:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 08:49:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may not receive responses from their Microsoft 365 Copilot agents within Microsoft PowerPoint</title>
@@ -17,11 +17,25 @@
       <pubDate>Wed, 30 Sep 2026 21:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Azure] Azure incident affecting France Central, North Europe, Southeast Asia</title>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-20260901-1</link>
+      <description>[Azure] Between 20:30 UTC on 30 September 2026 and 02:15 UTC on 01 October 2026, a subset of customers using gateway services in multiple regions experienced degraded or interrupted network connectivity. Impacted customers may have observed gateways failing to load in the Azure Portal, along with failures or delays in network management operations across the following impacted services.
+Azure ExpressRoute Gateway
+Azure Firewall
+Azure Application Gateway and Web Application Firewall
+Azure VPN Gateway
+Azu</description>
+      <category>Azure</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">AZ-20260901-1</guid>
+      <pubDate>Wed, 30 Sep 2026 20:30:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1483625</link>
       <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides.</description>
       <category>Microsoft Teams</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1483625</guid>
       <pubDate>Wed, 30 Sep 2026 20:14:26 +0000</pubDate>
     </item>
@@ -53,15 +67,6 @@
       <pubDate>Tue, 29 Sep 2026 19:17:10 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Intune] Some users in North America may experience failures when registering devices in Microsoft Intune</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1482439</link>
-      <description>[Microsoft Intune] Users may experience failures when registering devices in Microsoft Intune.</description>
-      <category>Microsoft Intune</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">IT1482439</guid>
-      <pubDate>Tue, 29 Sep 2026 17:53:00 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some admins may see stale data in the Microsoft 365 Copilot Health page in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1482212</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins may see stale data in the Copilot Health page in the Microsoft 365 admin center.</description>
@@ -72,13 +77,13 @@
     </item>
     <item>
       <title>[Azure] Azure incident affecting Sweden Central</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-20260901-1</link>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-20260901-2</link>
       <description>[Azure] Between 10:03 UTC and 15:58 UTC on 29 September 2026, a platform issue resulted in impact to Azure OpenAI Service, Foundry Agent Service, Foundry Models, and Cognitive Services in the Sweden Central region. Impacted customers experienced intermittent request failures, increased latency, and HTTP 5XX errors when submitting requests to affected models and data-plane APIs hosted in this region.
 What do we know so far?
 A backend service that is used to retrieve service information and resource metad</description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-20260901-1</guid>
+      <guid isPermaLink="false">AZ-20260901-2</guid>
       <pubDate>Tue, 29 Sep 2026 15:58:00 +0000</pubDate>
     </item>
     <item>
