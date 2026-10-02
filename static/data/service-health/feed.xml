@@ -5,26 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 02 Oct 2026 12:26:36 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 19:14:20 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft OneDrive] Users may experience latency and get 503 service unavailable errors when accessing Microsoft OneDrive content</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1484739</link>
-      <description>[Microsoft OneDrive] Users may experience latency and get 503 service unavailable errors when accessing OneDrive content.</description>
-      <category>Microsoft OneDrive</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">OD1484739</guid>
-      <pubDate>Thu, 01 Oct 2026 17:28:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may experience latency and get 503 service unavailable errors in SharePoint Online </title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1484737</link>
-      <description>[SharePoint Online] Users may experience latency and get 503 service unavailable errors in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">SP1484737</guid>
-      <pubDate>Thu, 01 Oct 2026 17:28:07 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may not receive responses from their Microsoft 365 Copilot agents within Microsoft PowerPoint</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1483845</link>
@@ -168,15 +150,6 @@ A backend service that is used to retrieve service information and resource meta
       <pubDate>Thu, 24 Sep 2026 18:23:33 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online] Some users’ email messages may not be quarantined and fail to be stored in the quarantine folder</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1478331</link>
-      <description>[Exchange Online] Users’ email messages may not be quarantined and might fail to be stored in the quarantine folder.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1478331</guid>
-      <pubDate>Thu, 24 Sep 2026 11:38:38 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1478328</link>
       <description>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs. </description>
@@ -193,6 +166,15 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1478163</guid>
       <pubDate>Wed, 23 Sep 2026 07:13:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users’ email messages may not be quarantined and fail to be stored in the quarantine folder</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1478331</link>
+      <description>[Exchange Online] Users’ email messages may not have been quarantined and failed to be stored in the quarantine folder.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1478331</guid>
+      <pubDate>Wed, 23 Sep 2026 00:56:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to open the account view in Outlook on the web</title>
@@ -463,6 +445,24 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1466822</guid>
       <pubDate>Fri, 04 Sep 2026 00:23:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users' queries to Microsoft 365 Copilot Chat may return no response, and users receive an error</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1466621</link>
+      <description>[Microsoft 365 Copilot Chat] Users' queries to Copilot Chat may have returned no response, and users received an error.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1466621</guid>
+      <pubDate>Thu, 03 Sep 2026 06:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users may have been unable to open Google search links from email and Microsoft Teams messages</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1465962</link>
+      <description>[Microsoft 365 suite] Users may have been unable to open Google search links from email and Microsoft Teams messages.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1465962</guid>
+      <pubDate>Wed, 02 Sep 2026 02:53:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
