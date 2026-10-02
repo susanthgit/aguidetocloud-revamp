@@ -1,29 +1,28 @@
 {
-  "generated": "2026-10-01T11:42:16.288329+00:00",
+  "generated": "2026-10-02T11:13:59.081682+00:00",
   "total": 52,
-  "active": 16,
-  "passed": 36,
-  "action_required": 15,
+  "active": 11,
+  "passed": 41,
+  "action_required": 10,
   "urgency": {
-    "critical": 11,
+    "critical": 6,
     "warning": 4,
     "watch": 1
   },
   "categories": {
-    "exchange": 2,
-    "entra": 1,
-    "azure": 6,
     "office-apps": 2,
-    "windows": 5
+    "windows": 5,
+    "azure": 3,
+    "exchange": 1
   },
   "types": {
-    "retirement": 7,
+    "retirement": 2,
     "end-of-support": 9
   },
   "next_deadline": {
-    "title": "Exchange Web Services (EWS) Retirement in Exchange Online",
-    "deadline": "2026-10-01",
-    "days_remaining": 0,
+    "title": "Microsoft Publisher Retirement",
+    "deadline": "2026-10-13",
+    "days_remaining": 11,
     "urgency": "critical"
   },
   "category_meta": {
