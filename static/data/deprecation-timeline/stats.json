@@ -1,13 +1,12 @@
 {
-  "generated": "2026-10-02T11:13:59.081682+00:00",
+  "generated": "2026-10-03T10:29:26.244687+00:00",
   "total": 52,
   "active": 11,
   "passed": 41,
   "action_required": 10,
   "urgency": {
     "critical": 6,
-    "warning": 4,
-    "watch": 1
+    "warning": 5
   },
   "categories": {
     "office-apps": 2,
@@ -22,7 +21,7 @@
   "next_deadline": {
     "title": "Microsoft Publisher Retirement",
     "deadline": "2026-10-13",
-    "days_remaining": 11,
+    "days_remaining": 10,
     "urgency": "critical"
   },
   "category_meta": {
