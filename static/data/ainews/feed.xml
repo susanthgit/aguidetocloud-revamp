@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Oct 2026 02:22:03 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 10:48:32 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>The Agent Said It Was Done. The Database Disagreed.</title>
-      <link>https://huggingface.co/blog/microsoft/thinkingbox</link>
+      <title>Revive Raskin's 3 laws of software with humane work that considers a dev's duty of care</title>
+      <link>https://www.theregister.com/software/2026/10/04/revive-raskins-3-laws-of-software-with-humane-work-that-considers-a-devs-duty-of-care/5300539</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Sun, 04 Oct 2026 12:30:00 +0200</pubDate>
+      <guid>https://www.theregister.com/software/2026/10/04/revive-raskins-3-laws-of-software-with-humane-work-that-considers-a-devs-duty-of-care/5300539</guid>
+    </item>
+    <item>
+      <title>Spies, prime ministers, and balls: The BBC Domesday project @ 40</title>
+      <link>https://www.theregister.com/offbeat/2026/10/04/spies-prime-ministers-and-balls-the-bbc-domesday-project-40/5300383</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Sun, 04 Oct 2026 10:29:00 +0200</pubDate>
+      <guid>https://www.theregister.com/offbeat/2026/10/04/spies-prime-ministers-and-balls-the-bbc-domesday-project-40/5300383</guid>
+    </item>
+    <item>
+      <title>Rural Data Centers Are in for a Big Federal Tax Break</title>
+      <link>https://www.wired.com/story/rural-data-centers-are-in-for-a-big-federal-tax-break/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Sun, 04 Oct 2026 10:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/rural-data-centers-are-in-for-a-big-federal-tax-break/</guid>
+    </item>
+    <item>
+      <title>Meta is building one of the world’s biggest undersea cable networks—it’s just one piece of a growing seafloor empire spanning 6 continents</title>
+      <link>https://fortune.com/2026/10/03/meta-building-undersea-cables-petal-us-france-mark-zuckerberg/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:44:00 +0000</pubDate>
+      <guid>https://fortune.com/2026/10/03/meta-building-undersea-cables-petal-us-france-mark-zuckerberg/</guid>
+    </item>
+    <item>
+      <title>Show HN: Germany's new sovereign AI model Kolibri</title>
+      <link>https://tej.as/blog/aleph-alpha-kolibri</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:43:51 +0000</pubDate>
+      <guid>https://tej.as/blog/aleph-alpha-kolibri</guid>
+    </item>
+    <item>
+      <title>PixelLeak: AI Coding Agents Leaked 13,000 Internal Screenshots — Including Billing Records — to Public GitHub Repos</title>
+      <link>https://forkast.news/pixelleak-ai-coding-agents-leaked-13000-internal-screenshots-including-billing-records-to-public-github-repos/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 03 Oct 2026 10:41:23 +0000</pubDate>
+      <guid>https://forkast.news/pixelleak-ai-coding-agents-leaked-13000-internal-screenshots-including-billing-records-to-public-github-repos/</guid>
+    </item>
+    <item>
+      <title>marm-mcp-server 2.58.0</title>
+      <link>https://pypi.org/project/marm-mcp-server/2.58.0/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 03 Oct 2026 10:39:21 +0000</pubDate>
+      <guid>https://pypi.org/project/marm-mcp-server/2.58.0/</guid>
+    </item>
+    <item>
+      <title>docoracle added to PyPI</title>
+      <link>https://pypi.org/project/docoracle/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:37:35 +0000</pubDate>
+      <guid>https://pypi.org/project/docoracle/</guid>
+    </item>
+    <item>
+      <title>Claude Code の blockReadsOutsideWorkingDirectories で作業ディレクトリ外の読み取りを拒否してみた</title>
+      <link>https://dev.classmethod.jp/articles/claude-code-block-reads-outside-working-directories/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 03 Oct 2026 10:37:00 +0000</pubDate>
+      <guid>https://dev.classmethod.jp/articles/claude-code-block-reads-outside-working-directories/</guid>
+    </item>
+    <item>
+      <title>ntasker 3.12.0</title>
+      <link>https://pypi.org/project/ntasker/3.12.0/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 03 Oct 2026 10:36:45 +0000</pubDate>
+      <guid>https://pypi.org/project/ntasker/3.12.0/</guid>
+    </item>
+    <item>
+      <title>tribeai added to PyPI</title>
+      <link>https://pypi.org/project/tribeai/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:32:23 +0000</pubDate>
+      <guid>https://pypi.org/project/tribeai/</guid>
+    </item>
+    <item>
+      <title>Lit Hub Weekly: September 28 – October 3, 2026</title>
+      <link>https://lithub.com/lit-hub-weekly-september-28-october-3-2026/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 03 Oct 2026 10:30:53 +0000</pubDate>
+      <guid>https://lithub.com/lit-hub-weekly-september-28-october-3-2026/</guid>
+    </item>
+    <item>
+      <title>code-coordinator 0.5.581</title>
+      <link>https://pypi.org/project/code-coordinator/0.5.581/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sat, 03 Oct 2026 10:24:20 +0000</pubDate>
+      <guid>https://pypi.org/project/code-coordinator/0.5.581/</guid>
+    </item>
+    <item>
+      <title>ai-rulez 4.23.0</title>
+      <link>https://pypi.org/project/ai-rulez/4.23.0/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 03 Oct 2026 10:23:52 +0000</pubDate>
+      <guid>https://pypi.org/project/ai-rulez/4.23.0/</guid>
+    </item>
+    <item>
+      <title>neurosush 0.5.0</title>
+      <link>https://pypi.org/project/neurosush/0.5.0/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sat, 03 Oct 2026 10:21:17 +0000</pubDate>
+      <guid>https://pypi.org/project/neurosush/0.5.0/</guid>
+    </item>
+    <item>
+      <title>(VIDEO) Shivon Zilis Says Elon Musk Ended Their Relationship With No Warning</title>
+      <link>https://www.ibtimes.com.au/shivon-zilis-elon-musk-relationship-ended-1876216</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:15:26 +0000</pubDate>
+      <guid>https://www.ibtimes.com.au/shivon-zilis-elon-musk-relationship-ended-1876216</guid>
+    </item>
+    <item>
+      <title>Trump unveils voluntary AI safety accord with six tech giants</title>
+      <link>https://cryptobriefing.com/trump-voluntary-ai-safety-accord-tech-leaders/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 03 Oct 2026 10:14:57 +0000</pubDate>
+      <guid>https://cryptobriefing.com/trump-voluntary-ai-safety-accord-tech-leaders/</guid>
+    </item>
+    <item>
+      <title>ChatGPT-6 Astra plays World of Warcraft 'blind' and clears the orc starting zone in 40 minutes with no deaths</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=186012232</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:12:34 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=186012232</guid>
+    </item>
+    <item>
+      <title>Weekend reading: State Pension to fall out of lock step</title>
+      <link>https://monevator.com/weekend-reading-state-pension-to-fall-out-of-lock-step/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:09:11 +0000</pubDate>
+      <guid>https://monevator.com/weekend-reading-state-pension-to-fall-out-of-lock-step/</guid>
+    </item>
+    <item>
+      <title>As public fears of AI grow, Trump digs in on voluntary safeguards</title>
+      <link>https://economictimes.indiatimes.com/news/international/world-news/as-public-fears-of-ai-grow-trump-digs-in-on-voluntary-safeguards/articleshow/134656497.cms</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 03 Oct 2026 10:05:57 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/news/international/world-news/as-public-fears-of-ai-grow-trump-digs-in-on-voluntary-safeguards/articleshow/134656497.cms</guid>
+    </item>
+    <item>
+      <title>Sandbox Forking Completes the Agent Governance Stack</title>
+      <link>https://forkast.news/sandbox-forking-completes-the-agent-governance-stack/</link>
+      <description></description>
+      <category>M365 Copilot</category>
+      <pubDate>Sat, 03 Oct 2026 10:02:21 +0000</pubDate>
+      <guid>https://forkast.news/sandbox-forking-completes-the-agent-governance-stack/</guid>
+    </item>
+    <item>
+      <title>openai-agents-zambo 0.1.6</title>
+      <link>https://pypi.org/project/openai-agents-zambo/0.1.6/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 03 Oct 2026 10:01:55 +0000</pubDate>
+      <guid>https://pypi.org/project/openai-agents-zambo/0.1.6/</guid>
+    </item>
+    <item>
+      <title>langchain-zambo 0.1.1</title>
+      <link>https://pypi.org/project/langchain-zambo/0.1.1/</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Sat, 03 Oct 2026 22:56:48 +0000</pubDate>
-      <guid>https://huggingface.co/blog/microsoft/thinkingbox</guid>
+      <pubDate>Sat, 03 Oct 2026 10:01:48 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-zambo/0.1.1/</guid>
     </item>
     <item>
-      <title>Second Twin Cities Man Pleads Guilty in Minnesota Medicaid Housing Fraud Scheme That Took More Than $500,000</title>
-      <link>https://www.medicaldaily.com/pristine-health-minnesota-medicaid-housing-fraud-second-guilty-plea-479451</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 03 Oct 2026 02:20:15 +0000</pubDate>
-      <guid>https://www.medicaldaily.com/pristine-health-minnesota-medicaid-housing-fraud-second-guilty-plea-479451</guid>
-    </item>
-    <item>
-      <title>jev-lite 0.0.2</title>
-      <link>https://pypi.org/project/jev-lite/0.0.2/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 03 Oct 2026 02:18:50 +0000</pubDate>
-      <guid>https://pypi.org/project/jev-lite/0.0.2/</guid>
-    </item>
-    <item>
-      <title>syndrilla 2.3.0</title>
-      <link>https://pypi.org/project/syndrilla/2.3.0/</link>
+      <title>torchax 0.0.14.dev20261003</title>
+      <link>https://pypi.org/project/torchax/0.0.14.dev20261003/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Sat, 03 Oct 2026 02:17:59 +0000</pubDate>
-      <guid>https://pypi.org/project/syndrilla/2.3.0/</guid>
+      <pubDate>Sat, 03 Oct 2026 10:00:36 +0000</pubDate>
+      <guid>https://pypi.org/project/torchax/0.0.14.dev20261003/</guid>
     </item>
     <item>
-      <title>ranwhat 0.4.0</title>
-      <link>https://pypi.org/project/ranwhat/0.4.0/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 03 Oct 2026 02:16:54 +0000</pubDate>
-      <guid>https://pypi.org/project/ranwhat/0.4.0/</guid>
-    </item>
-    <item>
-      <title>xAI wins appeals court injunction against Minnesota’s anti-nudification law</title>
-      <link>https://cryptobriefing.com/xai-wins-injunction-minnesota-nudification-law/</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sat, 03 Oct 2026 02:15:02 +0000</pubDate>
-      <guid>https://cryptobriefing.com/xai-wins-injunction-minnesota-nudification-law/</guid>
-    </item>
-    <item>
-      <title>capt-hook 12.79.15</title>
-      <link>https://pypi.org/project/capt-hook/12.79.15/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 03 Oct 2026 02:11:15 +0000</pubDate>
-      <guid>https://pypi.org/project/capt-hook/12.79.15/</guid>
-    </item>
-    <item>
-      <title>The "I Totally Forgot It Was Friday" ONT</title>
-      <link>https://acecomments.mu.nu/?post=421619</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sat, 03 Oct 2026 02:00:36 +0000</pubDate>
-      <guid>https://acecomments.mu.nu/?post=421619</guid>
-    </item>
-    <item>
-      <title>The Biggest ChatGPT Update Yet Gives Entrepreneurs 7 New Ways to Grow Their Business Fast</title>
-      <link>https://www.entrepreneur.com/building-a-business/the-biggest-chatgpt-update-yet-gives-entrepreneurs-7-new-ways-to-grow-their-business-fast</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 03 Oct 2026 02:00:00 +0000</pubDate>
-      <guid>https://www.entrepreneur.com/building-a-business/the-biggest-chatgpt-update-yet-gives-entrepreneurs-7-new-ways-to-grow-their-business-fast</guid>
-    </item>
-    <item>
-      <title>ksp-source-annotator added to PyPI</title>
-      <link>https://pypi.org/project/ksp-source-annotator/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 03 Oct 2026 01:57:40 +0000</pubDate>
-      <guid>https://pypi.org/project/ksp-source-annotator/</guid>
-    </item>
-    <item>
-      <title>matrx-batch 0.2.130</title>
-      <link>https://pypi.org/project/matrx-batch/0.2.130/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 03 Oct 2026 01:56:14 +0000</pubDate>
-      <guid>https://pypi.org/project/matrx-batch/0.2.130/</guid>
-    </item>
-    <item>
-      <title>Jensen Huang's net worth crosses $200 billion, becomes world's 7th-richest person as Nvidia shares hit record</title>
-      <link>https://www.livemint.com/companies/news/jensen-huangs-net-worth-crosses-200-billion-becomes-worlds-7th-richest-person-as-nvidia-shares-hit-record-11790990983761.html</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 03 Oct 2026 01:55:07 +0000</pubDate>
-      <guid>https://www.livemint.com/companies/news/jensen-huangs-net-worth-crosses-200-billion-becomes-worlds-7th-richest-person-as-nvidia-shares-hit-record-11790990983761.html</guid>
-    </item>
-    <item>
-      <title>code-coordinator 0.5.571</title>
-      <link>https://pypi.org/project/code-coordinator/0.5.571/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 03 Oct 2026 01:50:24 +0000</pubDate>
-      <guid>https://pypi.org/project/code-coordinator/0.5.571/</guid>
-    </item>
-    <item>
-      <title>Show HN: Google Maps Scraper MCP</title>
-      <link>https://gmapscrawl.com/google-maps-scraper-mcp</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 03 Oct 2026 01:46:39 +0000</pubDate>
-      <guid>https://gmapscrawl.com/google-maps-scraper-mcp</guid>
-    </item>
-    <item>
-      <title>pyqrack-cuda-complex128 2.27.0</title>
-      <link>https://pypi.org/project/pyqrack-cuda-complex128/2.27.0/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 03 Oct 2026 01:46:15 +0000</pubDate>
-      <guid>https://pypi.org/project/pyqrack-cuda-complex128/2.27.0/</guid>
-    </item>
-    <item>
-      <title>pyqrack-cuda 2.27.0</title>
-      <link>https://pypi.org/project/pyqrack-cuda/2.27.0/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 03 Oct 2026 01:46:14 +0000</pubDate>
-      <guid>https://pypi.org/project/pyqrack-cuda/2.27.0/</guid>
-    </item>
-    <item>
-      <title>pyOrthomosaic 0.5.0</title>
-      <link>https://pypi.org/project/pyorthomosaic/0.5.0/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 03 Oct 2026 01:45:52 +0000</pubDate>
-      <guid>https://pypi.org/project/pyorthomosaic/0.5.0/</guid>
-    </item>
-    <item>
-      <title>'Cockroaches' to march to Delhi on October 10 if Gyanesh Kumar doesn't resign, CJP's Abhijeet Dipke announces new Jantar Mantar protest</title>
-      <link>https://timesofindia.indiatimes.com/city/mumbai/cockroaches-to-march-to-delhi-on-october-10-if-gyanesh-kumar-doesnt-resign-cjps-abhijeet-dipke-announces-new-jantar-mantar-protest/articleshow/134650476.cms</link>
+      <title>That book you keep saying you’ll write? This $49 AI tool can make it happen. </title>
+      <link>https://www.popsci.com/sponsored-content/this-ai-tool-can-make-that-book-you-keep-saying-youll-write-happen-sponsored-deal/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 03 Oct 2026 01:44:50 +0000</pubDate>
-      <guid>https://timesofindia.indiatimes.com/city/mumbai/cockroaches-to-march-to-delhi-on-october-10-if-gyanesh-kumar-doesnt-resign-cjps-abhijeet-dipke-announces-new-jantar-mantar-protest/articleshow/134650476.cms</guid>
+      <pubDate>Sat, 03 Oct 2026 10:00:00 +0000</pubDate>
+      <guid>https://www.popsci.com/sponsored-content/this-ai-tool-can-make-that-book-you-keep-saying-youll-write-happen-sponsored-deal/</guid>
     </item>
     <item>
-      <title>We Asked AI Which Coin Will Finish October on Top: XRP, Solana, Hyperliquid, or NEAR</title>
-      <link>https://biztoc.com/x/2cb9f420425e6df7</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 03 Oct 2026 01:42:48 +0000</pubDate>
-      <guid>https://biztoc.com/x/2cb9f420425e6df7</guid>
-    </item>
-    <item>
-      <title>Bitcoin, Ethereum or XRP: We Asked AI Models Which Gets Back to Its All-Time High First</title>
-      <link>https://biztoc.com/x/b9b11863a92383b8</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 03 Oct 2026 01:42:46 +0000</pubDate>
-      <guid>https://biztoc.com/x/b9b11863a92383b8</guid>
-    </item>
-    <item>
-      <title>ory-openai-agents 1.4.3</title>
-      <link>https://pypi.org/project/ory-openai-agents/1.4.3/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 03 Oct 2026 01:38:05 +0000</pubDate>
-      <guid>https://pypi.org/project/ory-openai-agents/1.4.3/</guid>
-    </item>
-    <item>
-      <title>ory-langchain 1.4.3</title>
-      <link>https://pypi.org/project/ory-langchain/1.4.3/</link>
+      <title>anlyon-langchain 0.2.1</title>
+      <link>https://pypi.org/project/anlyon-langchain/0.2.1/</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Sat, 03 Oct 2026 01:38:03 +0000</pubDate>
-      <guid>https://pypi.org/project/ory-langchain/1.4.3/</guid>
+      <pubDate>Sat, 03 Oct 2026 09:57:53 +0000</pubDate>
+      <guid>https://pypi.org/project/anlyon-langchain/0.2.1/</guid>
     </item>
     <item>
-      <title>unblend added to PyPI</title>
-      <link>https://pypi.org/project/unblend/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 03 Oct 2026 01:31:32 +0000</pubDate>
-      <guid>https://pypi.org/project/unblend/</guid>
-    </item>
-    <item>
-      <title>We Asked Grok Where Dogecoin Ends October After Whales Spent $110 Million</title>
-      <link>https://biztoc.com/x/c1c304446cb1acee</link>
+      <title>grok-setup-system 0.0.88</title>
+      <link>https://pypi.org/project/grok-setup-system/0.0.88/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Sat, 03 Oct 2026 01:12:54 +0000</pubDate>
-      <guid>https://biztoc.com/x/c1c304446cb1acee</guid>
+      <pubDate>Sat, 03 Oct 2026 09:50:51 +0000</pubDate>
+      <guid>https://pypi.org/project/grok-setup-system/0.0.88/</guid>
     </item>
     <item>
-      <title>NowBuilder™: Turning Long-Term Foresight Into This Year’s Strategic Priorities</title>
-      <link>https://bradenkelley.com/2026/10/nowbuilder-foresight-to-priorities/</link>
+      <title>October 2026 Horoscopes: Expect a text from your ex!</title>
+      <link>https://www.dazeddigital.com/beauty/article/71066/1/horoscopes-october-2026-venus-retrograde-disrupts-cuffing-season?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=october-2026-horoscopes-expect-a-text-from-your-ex</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 03 Oct 2026 01:10:00 +0000</pubDate>
-      <guid>https://bradenkelley.com/2026/10/nowbuilder-foresight-to-priorities/</guid>
+      <pubDate>Sat, 03 Oct 2026 09:46:00 +0000</pubDate>
+      <guid>https://www.dazeddigital.com/beauty/article/71066/1/horoscopes-october-2026-venus-retrograde-disrupts-cuffing-season?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=october-2026-horoscopes-expect-a-text-from-your-ex</guid>
     </item>
     <item>
-      <title>fenecdb 0.1.9</title>
-      <link>https://pypi.org/project/fenecdb/0.1.9/</link>
+      <title>madeonsol-x402 1.38.0</title>
+      <link>https://pypi.org/project/madeonsol-x402/1.38.0/</link>
       <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 03 Oct 2026 00:55:20 +0000</pubDate>
-      <guid>https://pypi.org/project/fenecdb/0.1.9/</guid>
+      <category>Open Source</category>
+      <pubDate>Sat, 03 Oct 2026 09:44:20 +0000</pubDate>
+      <guid>https://pypi.org/project/madeonsol-x402/1.38.0/</guid>
     </item>
     <item>
-      <title>Flydubai attack: Suspect identified as Hamam Alhamami was barred from flying in Oman over extremist concerns</title>
-      <link>https://timesofindia.indiatimes.com/world/middle-east/flydubai-attack-suspect-identified-as-hamam-alhamami-was-barred-from-oman-air-over-extremist-concerns/articleshow/134650245.cms</link>
+      <title>Kolibri Has Landed: A Sovereign Open-Weight Model</title>
+      <link>https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 03 Oct 2026 00:50:05 +0000</pubDate>
-      <guid>https://timesofindia.indiatimes.com/world/middle-east/flydubai-attack-suspect-identified-as-hamam-alhamami-was-barred-from-oman-air-over-extremist-concerns/articleshow/134650245.cms</guid>
+      <pubDate>Sat, 03 Oct 2026 09:36:04 +0000</pubDate>
+      <guid>https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/</guid>
     </item>
     <item>
-      <title>netcodex-agent-exporter added to PyPI</title>
-      <link>https://pypi.org/project/netcodex-agent-exporter/</link>
+      <title>duduclaw 1.68.1</title>
+      <link>https://pypi.org/project/duduclaw/1.68.1/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 03 Oct 2026 00:43:36 +0000</pubDate>
-      <guid>https://pypi.org/project/netcodex-agent-exporter/</guid>
+      <category>Google</category>
+      <pubDate>Sat, 03 Oct 2026 09:31:53 +0000</pubDate>
+      <guid>https://pypi.org/project/duduclaw/1.68.1/</guid>
     </item>
     <item>
-      <title>Trump’s striking the right balance for ensuring AI safety — and success</title>
-      <link>https://nypost.com/2026/10/02/opinion/trumps-striking-the-right-balance-for-ensuring-ais-safety-and-success/</link>
+      <title>The Year I Taught in a Former Coal Mining Town</title>
+      <link>https://www.thenation.com/?post_type=article&amp;p=611063</link>
       <description></description>
-      <category>xAI</category>
-      <pubDate>Sat, 03 Oct 2026 00:41:10 +0000</pubDate>
-      <guid>https://nypost.com/2026/10/02/opinion/trumps-striking-the-right-balance-for-ensuring-ais-safety-and-success/</guid>
+      <category>Mistral</category>
+      <pubDate>Sat, 03 Oct 2026 09:30:00 +0000</pubDate>
+      <guid>https://www.thenation.com/?post_type=article&amp;p=611063</guid>
     </item>
     <item>
-      <title>flexible-graphrag 0.8.2</title>
-      <link>https://pypi.org/project/flexible-graphrag/0.8.2/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 03 Oct 2026 00:41:03 +0000</pubDate>
-      <guid>https://pypi.org/project/flexible-graphrag/0.8.2/</guid>
-    </item>
-    <item>
-      <title>castia 0.14.0</title>
-      <link>https://pypi.org/project/castia/0.14.0/</link>
+      <title>ZoomInfo Ships Agent Teams Inside Its Existing Platform With No New Fee – the First GTM Data Vendor to Bundle Agent Orchestration</title>
+      <link>https://forkast.news/zoominfo-ships-agent-teams-inside-its-existing-platform-with-no-new-fee-the-first-gtm-data-vendor-to-bundle-agent-orchestration/</link>
       <description></description>
       <category>Microsoft</category>
-      <pubDate>Sat, 03 Oct 2026 00:07:17 +0000</pubDate>
-      <guid>https://pypi.org/project/castia/0.14.0/</guid>
+      <pubDate>Sat, 03 Oct 2026 09:25:02 +0000</pubDate>
+      <guid>https://forkast.news/zoominfo-ships-agent-teams-inside-its-existing-platform-with-no-new-fee-the-first-gtm-data-vendor-to-bundle-agent-orchestration/</guid>
     </item>
     <item>
-      <title>Data centre pre-leasing doubles amid rising AI demand</title>
-      <link>https://www.livemint.com/industry/infotech/data-centre-pre-leasing-doubles-amid-rising-ai-demand-11790836267049.html</link>
+      <title>tool-scorer 1.10.0</title>
+      <link>https://pypi.org/project/tool-scorer/1.10.0/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 03 Oct 2026 00:00:42 +0000</pubDate>
-      <guid>https://www.livemint.com/industry/infotech/data-centre-pre-leasing-doubles-amid-rising-ai-demand-11790836267049.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:15:17 +0000</pubDate>
+      <guid>https://pypi.org/project/tool-scorer/1.10.0/</guid>
     </item>
     <item>
-      <title>Daily Hacker News for 2026-10-02</title>
-      <link>https://www.daemonology.net/hn-daily/2026-10-02.html</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.daemonology.net/hn-daily/2026-10-02.html</guid>
-    </item>
-    <item>
-      <title>BNY and Kraken Parent Payward Eye Global Financial Infrastructure Partnership</title>
-      <link>https://www.pymnts.com/partnerships/2026/bny-and-kraken-parent-payward-eye-global-financial-infrastructure-partnership/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Fri, 02 Oct 2026 23:42:09 +0000</pubDate>
-      <guid>https://www.pymnts.com/partnerships/2026/bny-and-kraken-parent-payward-eye-global-financial-infrastructure-partnership/</guid>
-    </item>
-    <item>
-      <title>langchain-right-rudder added to PyPI</title>
-      <link>https://pypi.org/project/langchain-right-rudder/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Fri, 02 Oct 2026 23:40:11 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-right-rudder/</guid>
-    </item>
-    <item>
-      <title>edify-agents-cli added to PyPI</title>
-      <link>https://pypi.org/project/edify-agents-cli/</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Fri, 02 Oct 2026 23:34:48 +0000</pubDate>
-      <guid>https://pypi.org/project/edify-agents-cli/</guid>
-    </item>
-    <item>
-      <title>moju 1.1.4</title>
-      <link>https://pypi.org/project/moju/1.1.4/</link>
+      <title>torch-kirigami 0.1.0</title>
+      <link>https://pypi.org/project/torch-kirigami/0.1.0/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Fri, 02 Oct 2026 23:26:00 +0000</pubDate>
-      <guid>https://pypi.org/project/moju/1.1.4/</guid>
+      <pubDate>Sat, 03 Oct 2026 09:07:16 +0000</pubDate>
+      <guid>https://pypi.org/project/torch-kirigami/0.1.0/</guid>
     </item>
     <item>
-      <title>Anthropic Is Training 10,000 Engineers to Install Claude Inside the World’s Largest Enterprises</title>
-      <link>https://forkast.news/anthropic-is-training-10000-engineers-to-install-claude-inside-the-worlds-largest-enterprises/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Fri, 02 Oct 2026 23:25:15 +0000</pubDate>
-      <guid>https://forkast.news/anthropic-is-training-10000-engineers-to-install-claude-inside-the-worlds-largest-enterprises/</guid>
-    </item>
-    <item>
-      <title>TCL QM7L review: the best mid-range TV of 2026</title>
-      <link>https://www.techradar.com/televisions/an-almost-premium-tv-at-mid-range-prices-tcls-qm7l-mini-led-screen-is-one-of-the-best-affordable-sets-ive-tested-thanks-to-its-vibrant-colors-bright-highlights-and-great-gaming-features</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Fri, 02 Oct 2026 23:00:00 +0000</pubDate>
-      <guid>https://www.techradar.com/televisions/an-almost-premium-tv-at-mid-range-prices-tcls-qm7l-mini-led-screen-is-one-of-the-best-affordable-sets-ive-tested-thanks-to-its-vibrant-colors-bright-highlights-and-great-gaming-features</guid>
-    </item>
-    <item>
-      <title>Quordle hints and answers for Saturday, October 3 (game #1713)</title>
-      <link>https://www.techradar.com/computing/websites-apps/quordle-today-answers-clues-3-october-2026</link>
+      <title>torch-kirigami added to PyPI</title>
+      <link>https://pypi.org/project/torch-kirigami/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Fri, 02 Oct 2026 23:00:00 +0000</pubDate>
-      <guid>https://www.techradar.com/computing/websites-apps/quordle-today-answers-clues-3-october-2026</guid>
+      <pubDate>Sat, 03 Oct 2026 09:07:11 +0000</pubDate>
+      <guid>https://pypi.org/project/torch-kirigami/</guid>
     </item>
     <item>
-      <title>Adexo advertising bets on main street as ads go automated</title>
-      <link>https://www.digitaljournal.com/article/adexo-advertising-bets-on-main-street-as-ads-go-automated/</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 02 Oct 2026 22:57:53 +0000</pubDate>
-      <guid>https://www.digitaljournal.com/article/adexo-advertising-bets-on-main-street-as-ads-go-automated/</guid>
-    </item>
-    <item>
-      <title>Show HN: I found API keys in my coding agent history so I built Agent Scrub</title>
-      <link>https://github.com/thesubtlety/agent-scrub</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Fri, 02 Oct 2026 22:53:12 +0000</pubDate>
-      <guid>https://github.com/thesubtlety/agent-scrub</guid>
-    </item>
-    <item>
-      <title>Brooks and Atkins Stohr on GOP vulnerabilities in the midterms</title>
-      <link>https://www.pbs.org/newshour/show/brooks-and-atkins-stohr-on-gop-vulnerabilities-in-the-midterms</link>
+      <title>U.S. may have overthrown Venezuela due to chat with Grok</title>
+      <link>https://www.thedailybeast.com/jaw-dropping-way-trump-80-got-talked-into-a-war-is-leaked/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Fri, 02 Oct 2026 22:30:44 +0000</pubDate>
-      <guid>https://www.pbs.org/newshour/show/brooks-and-atkins-stohr-on-gop-vulnerabilities-in-the-midterms</guid>
+      <pubDate>Sat, 03 Oct 2026 08:40:38 +0000</pubDate>
+      <guid>https://www.thedailybeast.com/jaw-dropping-way-trump-80-got-talked-into-a-war-is-leaked/</guid>
     </item>
     <item>
-      <title>github-copilot-sdk 1.0.17rc3</title>
-      <link>https://pypi.org/project/github-copilot-sdk/1.0.17rc3/</link>
+      <title>Show HN: Offrun – manage every coding agent from one workspace</title>
+      <link>https://offrun.dev/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sat, 03 Oct 2026 08:40:17 +0000</pubDate>
+      <guid>https://offrun.dev/</guid>
+    </item>
+    <item>
+      <title>All Free Semrush Tools for Digital Marketing, SEO, Business Growth &amp; AI Visibility Fully Tested &amp; Explained</title>
+      <link>https://weandthecolor.com/all-free-semrush-tools-for-digital-marketing-seo-business-growth-ai-visibility-fully-tested-explained/212344</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Sat, 03 Oct 2026 08:22:53 +0000</pubDate>
+      <guid>https://weandthecolor.com/all-free-semrush-tools-for-digital-marketing-seo-business-growth-ai-visibility-fully-tested-explained/212344</guid>
+    </item>
+    <item>
+      <title>GPT, Claude, and Gemini in one browser tab for $39.99, for life</title>
+      <link>https://www.macworld.com/article/3249650/gpt-claude-and-gemini-in-one-browser-tab-for-39-99-for-life.html</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sat, 03 Oct 2026 08:00:00 +0000</pubDate>
+      <guid>https://www.macworld.com/article/3249650/gpt-claude-and-gemini-in-one-browser-tab-for-39-99-for-life.html</guid>
+    </item>
+    <item>
+      <title>session-to-obsidian 0.2.1</title>
+      <link>https://pypi.org/project/session-to-obsidian/0.2.1/</link>
       <description></description>
       <category>GitHub Copilot</category>
-      <pubDate>Fri, 02 Oct 2026 22:16:18 +0000</pubDate>
-      <guid>https://pypi.org/project/github-copilot-sdk/1.0.17rc3/</guid>
+      <pubDate>Sat, 03 Oct 2026 07:54:49 +0000</pubDate>
+      <guid>https://pypi.org/project/session-to-obsidian/0.2.1/</guid>
     </item>
     <item>
-      <title>3 Reasons To Buy A Used iPhone 17 Pro Right Now</title>
-      <link>https://www.bgr.com/2268626/reasons-to-buy-used-iphone-17-pro/</link>
+      <title>Apple’s Smart Home Play: Hardware Bundles vs. The Subscription Trap</title>
+      <link>https://forkast.news/apples-smart-home-play-hardware-bundles-vs-the-subscription-trap/</link>
       <description></description>
       <category>Apple</category>
-      <pubDate>Fri, 02 Oct 2026 21:32:00 +0000</pubDate>
-      <guid>https://www.bgr.com/2268626/reasons-to-buy-used-iphone-17-pro/</guid>
+      <pubDate>Sat, 03 Oct 2026 07:28:14 +0000</pubDate>
+      <guid>https://forkast.news/apples-smart-home-play-hardware-bundles-vs-the-subscription-trap/</guid>
     </item>
     <item>
-      <title>CEO Warns The 2028 Election Will Be A Brutal Referendum On This One Thing</title>
-      <link>https://biztoc.com/x/87bfef1a6636b483</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 02 Oct 2026 21:25:05 +0000</pubDate>
-      <guid>https://biztoc.com/x/87bfef1a6636b483</guid>
-    </item>
-    <item>
-      <title>Use Claude, ChatGPT, Gemini, and more with this $70 three-year plan (Reg. $120)</title>
-      <link>http://9to5toys.com/2026/10/02/use-claude-chatgpt-gemini-at-once/</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 02 Oct 2026 21:21:34 +0000</pubDate>
-      <guid>http://9to5toys.com/2026/10/02/use-claude-chatgpt-gemini-at-once/</guid>
-    </item>
-    <item>
-      <title>ambertraceai 2.7.0</title>
-      <link>https://pypi.org/project/ambertraceai/2.7.0/</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Fri, 02 Oct 2026 21:18:36 +0000</pubDate>
-      <guid>https://pypi.org/project/ambertraceai/2.7.0/</guid>
-    </item>
-    <item>
-      <title>FBI overhauls tech backbone to counter AI threats from foreign adversaries, reduce response times, Patel says</title>
-      <link>https://www.foxnews.com/us/fbi-overhauls-tech-backbone-counter-ai-threats-foreign-adversaries-reduce-response-times-patel-says</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 02 Oct 2026 21:08:31 +0000</pubDate>
-      <guid>https://www.foxnews.com/us/fbi-overhauls-tech-backbone-counter-ai-threats-foreign-adversaries-reduce-response-times-patel-says</guid>
-    </item>
-    <item>
-      <title>Who's making money on the govt's new name for AI?</title>
-      <link>https://san.com/cc/whos-making-money-on-the-governments-new-name-for-ai/</link>
+      <title>G20 Could Become Platform for Discussing AI Regulation – Russian Sherpa</title>
+      <link>https://sputnikglobe.com/20261003/g20-could-become-platform-for-discussing-ai-regulation--russian-sherpa-1124828231.html</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Fri, 02 Oct 2026 21:04:40 +0000</pubDate>
-      <guid>https://san.com/cc/whos-making-money-on-the-governments-new-name-for-ai/</guid>
+      <pubDate>Sat, 03 Oct 2026 07:15:27 +0000</pubDate>
+      <guid>https://sputnikglobe.com/20261003/g20-could-become-platform-for-discussing-ai-regulation--russian-sherpa-1124828231.html</guid>
+    </item>
+    <item>
+      <title>Coretexly – Turn real work into agent-ready process intelligence for automation</title>
+      <link>https://betalist.com/startups/coretexly</link>
+      <description></description>
+      <category>Copilot Studio</category>
+      <pubDate>Sat, 03 Oct 2026 07:05:00 +0000</pubDate>
+      <guid>https://betalist.com/startups/coretexly</guid>
+    </item>
+    <item>
+      <title>pyOrthomosaic 0.5.2</title>
+      <link>https://pypi.org/project/pyorthomosaic/0.5.2/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 03 Oct 2026 06:38:35 +0000</pubDate>
+      <guid>https://pypi.org/project/pyorthomosaic/0.5.2/</guid>
+    </item>
+    <item>
+      <title>bitnarrow added to PyPI</title>
+      <link>https://pypi.org/project/bitnarrow/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 03 Oct 2026 06:02:19 +0000</pubDate>
+      <guid>https://pypi.org/project/bitnarrow/</guid>
+    </item>
+    <item>
+      <title>Survey Finds 70% of Teens Use AI for Schoolwork as Test Scores Decline</title>
+      <link>https://www.naturalnews.com/2026-10-03-survey-finds-teens-ai-use-for-schoolwork.html</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 03 Oct 2026 06:00:00 +0000</pubDate>
+      <guid>https://www.naturalnews.com/2026-10-03-survey-finds-teens-ai-use-for-schoolwork.html</guid>
+    </item>
+    <item>
+      <title>FermionResearch/Phonon-2 · Hugging Face</title>
+      <link>https://huggingface.co/FermionResearch/Phonon-2</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 03 Oct 2026 05:47:01 +0000</pubDate>
+      <guid>https://huggingface.co/FermionResearch/Phonon-2</guid>
+    </item>
+    <item>
+      <title>Why Muse May Never Need Ads</title>
+      <link>https://www.mbi-deepdives.com/no-ads-muse/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 03 Oct 2026 05:47:01 +0000</pubDate>
+      <guid>https://www.mbi-deepdives.com/no-ads-muse/</guid>
+    </item>
+    <item>
+      <title>fastapi-mcp-azure-oauth 2.0.0</title>
+      <link>https://pypi.org/project/fastapi-mcp-azure-oauth/2.0.0/</link>
+      <description></description>
+      <category>Copilot Studio</category>
+      <pubDate>Sat, 03 Oct 2026 05:30:37 +0000</pubDate>
+      <guid>https://pypi.org/project/fastapi-mcp-azure-oauth/2.0.0/</guid>
     </item>
   </channel>
 </rss>
