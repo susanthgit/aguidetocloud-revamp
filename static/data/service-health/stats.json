@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T00:52:01.649927+00:00",
+  "generated_at": "2026-10-05T08:55:00.768719+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -45,13 +45,13 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 11,
-      "active_incidents": 2,
+      "total_incidents": 12,
+      "active_incidents": 3,
       "avg_duration_minutes": 7684,
-      "last_incident": "2026-09-25T15:52:36.097000+00:00",
+      "last_incident": "2026-09-30T16:54:26.190000+00:00",
       "classifications": {
-        "incident": 6,
-        "advisory": 5
+        "advisory": 6,
+        "incident": 6
       }
     },
     {
@@ -94,19 +94,6 @@
       }
     },
     {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 13883,
-      "last_incident": "2026-09-14T16:41:47.403000+00:00",
-      "classifications": {
-        "incident": 2,
-        "advisory": 2
-      }
-    },
-    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -141,6 +128,19 @@
       "last_incident": "2026-09-15T07:18:03.133000+00:00",
       "classifications": {
         "advisory": 4
+      }
+    },
+    {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 12122,
+      "last_incident": "2026-09-14T16:41:47.403000+00:00",
+      "classifications": {
+        "incident": 1,
+        "advisory": 2
       }
     },
     {
@@ -201,12 +201,12 @@
     },
     {
       "month": "2026-09",
-      "incident_count": 53,
+      "incident_count": 54,
       "services_affected": 13
     },
     {
       "month": "2026-08",
-      "incident_count": 48,
+      "incident_count": 47,
       "services_affected": 14
     },
     {

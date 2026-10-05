@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Oct 2026 00:52:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 08:55:01 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users' audio quality may be degraded during Microsoft Teams calls that have video or screensharing enabled</title>
@@ -38,6 +38,15 @@ Azu</description>
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-20260901-1</guid>
       <pubDate>Wed, 30 Sep 2026 20:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may intermittently be unable to access their calendars in Outlook on the web and the new Outlook desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1483540</link>
+      <description>[Exchange Online] Users may intermittently be unable to access their calendars in Outlook on the web and the new Outlook desktop client.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1483540</guid>
+      <pubDate>Wed, 30 Sep 2026 16:54:26 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Some admins may be unable to register new Windows Autopilot devices or update Autopilot group tags in Microsoft Intune</title>
@@ -454,15 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1466822</guid>
       <pubDate>Fri, 04 Sep 2026 00:23:39 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users' queries to Microsoft 365 Copilot Chat may return no response, and users receive an error</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1466621</link>
-      <description>[Microsoft 365 Copilot Chat] Users' queries to Copilot Chat may have returned no response, and users received an error.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1466621</guid>
-      <pubDate>Thu, 03 Sep 2026 06:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
