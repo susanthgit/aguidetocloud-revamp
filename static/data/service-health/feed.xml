@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Oct 2026 08:55:01 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 19:16:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[SharePoint Online] Some users may be unable to search using the search box in SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1488394</link>
+      <description>[SharePoint Online] Users may have been unable to search using the search box in SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1488394</guid>
+      <pubDate>Mon, 05 Oct 2026 13:39:01 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users' audio quality may be degraded during Microsoft Teams calls that have video or screensharing enabled</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1486352</link>
@@ -74,15 +83,6 @@ Azu</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1482420</guid>
       <pubDate>Tue, 29 Sep 2026 19:17:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some admins may see stale data in the Microsoft 365 Copilot Health page in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1482212</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may see stale data in the Copilot Health page in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1482212</guid>
-      <pubDate>Tue, 29 Sep 2026 16:33:38 +0000</pubDate>
     </item>
     <item>
       <title>[Azure] Azure incident affecting Sweden Central</title>
@@ -359,9 +359,9 @@ A backend service that is used to retrieve service information and resource meta
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view the Pay-As-You-Go (PAYG) breakdown in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1474143</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view the PAYG breakdown in the Microsoft 365 admin center.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may have been unable to view the PAYG breakdown in the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1474143</guid>
       <pubDate>Thu, 10 Sep 2026 12:00:00 +0000</pubDate>
     </item>
@@ -391,6 +391,15 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1474132</guid>
       <pubDate>Tue, 08 Sep 2026 20:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some admins may see stale data in the Microsoft 365 Copilot Health page in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1482212</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen stale data in the Copilot Health page in the Microsoft 365 admin center.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1482212</guid>
+      <pubDate>Tue, 08 Sep 2026 16:05:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to access https://m365.cloud.microsoft and receive an error</title>
@@ -454,15 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1467148</guid>
       <pubDate>Fri, 04 Sep 2026 02:53:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may see various issues with sharing of Agent Builders in Microsoft 365 Copilot Studio</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1466822</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen various issues with sharing of Agent Builders in Copilot Studio.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1466822</guid>
-      <pubDate>Fri, 04 Sep 2026 00:23:39 +0000</pubDate>
     </item>
   </channel>
 </rss>
