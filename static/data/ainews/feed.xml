@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Oct 2026 23:03:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 02:41:32 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Secret scanning adds detectors for Lovable, Supabase, and more</title>
-      <link>https://github.blog/changelog/2026-10-05-secret-scanning-adds-detectors-for-lovable-supabase-and-more</link>
+      <title>How to Evaluate Live &amp; Voice Agents in ADK</title>
+      <link>https://developers.googleblog.com/how-to-evaluate-live-voice-agents-in-adk/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Mon, 05 Oct 2026 22:42:14 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-10-05-secret-scanning-adds-detectors-for-lovable-supabase-and-more</guid>
+      <category>Google</category>
+      <pubDate>Tue, 06 Oct 2026 02:40:23 +0000</pubDate>
+      <guid>https://developers.googleblog.com/how-to-evaluate-live-voice-agents-in-adk/</guid>
     </item>
     <item>
-      <title>MCP for agent-to-agent comms may be the riskiest protocol you've never heard of</title>
-      <link>https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 22:26:35 +0000</pubDate>
-      <guid>https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/</guid>
-    </item>
-    <item>
-      <title>Cohere offers to put agents in lockdown mode with strict ACLs</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/10/05/cohere-offers-to-put-agents-in-lockdown-mode-with-strict-acls/5301219</link>
+      <title>Schneider Electric drops $22.6B on PTC as datacenter boom rains money on infra companies</title>
+      <link>https://www.theregister.com/systems/2026/10/05/schneider-electric-acquires-ptc-for-226-billion/5301254</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 21:47:57 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/10/05/cohere-offers-to-put-agents-in-lockdown-mode-with-strict-acls/5301219</guid>
+      <pubDate>Tue, 06 Oct 2026 00:48:15 +0200</pubDate>
+      <guid>https://www.theregister.com/systems/2026/10/05/schneider-electric-acquires-ptc-for-226-billion/5301254</guid>
     </item>
     <item>
-      <title>Get rid of Apple's AI bloatware and reclaim 12 GB of storage with this open source tool</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/10/05/get-rid-of-apples-ai-bloatware-and-reclaim-12-gb-of-storage-with-this-open-source-tool/5301213</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 21:24:19 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/10/05/get-rid-of-apples-ai-bloatware-and-reclaim-12-gb-of-storage-with-this-open-source-tool/5301213</guid>
-    </item>
-    <item>
-      <title>OpenAI will start watermarking ChatGPT’s text in the EU</title>
-      <link>https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 05 Oct 2026 20:36:48 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/</guid>
-    </item>
-    <item>
-      <title>FBI confirms 'multiple' arrests related to ShinyHunters hack</title>
-      <link>https://www.theregister.com/security/2026/10/05/fbi-confirms-multiple-arrests-related-to-shinyhunters-hack/5301178</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 19:46:22 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/10/05/fbi-confirms-multiple-arrests-related-to-shinyhunters-hack/5301178</guid>
-    </item>
-    <item>
-      <title>Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost</title>
-      <link>https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 19:33:53 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/</guid>
-    </item>
-    <item>
-      <title>This startup is issuing AI-generated acne prescriptions</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 16:14:57 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions</guid>
-    </item>
-    <item>
-      <title>Evaluating multi-agent systems for explainability and helpfulness with Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/evaluating-multi-agent-systems-for-explainability-and-helpfulness-with-amazon-bedrock-agentcore/</link>
+      <title>Introducing GLM 5.3 on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/</link>
       <description></description>
       <category>Amazon</category>
-      <pubDate>Mon, 05 Oct 2026 15:50:01 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/evaluating-multi-agent-systems-for-explainability-and-helpfulness-with-amazon-bedrock-agentcore/</guid>
+      <pubDate>Mon, 05 Oct 2026 23:25:17 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/</guid>
     </item>
     <item>
-      <title>All the drama around AI&amp;#8217;s takeover of mathematics</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1004933/ai-math-openai-breakthrough-solution</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 05 Oct 2026 15:28:59 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/1004933/ai-math-openai-breakthrough-solution</guid>
-    </item>
-    <item>
-      <title>Wikipedia operator says OpenAI&amp;#8217;s &amp;#8216;rogue&amp;#8217; bots may be linked to a May outage</title>
-      <link>https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 05 Oct 2026 15:05:19 -0400</pubDate>
-      <guid>https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage</guid>
-    </item>
-    <item>
-      <title>Open or closed AI? How founders are choosing what to build on at TechCrunch Disrupt 2026</title>
-      <link>https://techcrunch.com/2026/10/05/open-or-closed-ai-how-founders-are-choosing-what-to-build-on-at-techcrunch-disrupt-2026/</link>
+      <title>Citrix NetScaler security snafus get even worse amid more 0-day reports</title>
+      <link>https://www.theregister.com/security/2026/10/05/citrix-netscaler-security-snafus-get-even-worse-amid-more-0-day-reports/5301232</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 15:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/10/05/open-or-closed-ai-how-founders-are-choosing-what-to-build-on-at-techcrunch-disrupt-2026/</guid>
+      <pubDate>Mon, 05 Oct 2026 23:18:48 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/10/05/citrix-netscaler-security-snafus-get-even-worse-amid-more-0-day-reports/5301232</guid>
     </item>
     <item>
-      <title>Researchers are tracking a Chinese AI ‘agent fleet’</title>
-      <link>https://techcrunch.com/2026/10/05/researchers-are-tracking-a-chinese-ai-agent-fleet/</link>
+      <title>Gemini Call for Me might tell your mom you&amp;#8217;re running late</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 05 Oct 2026 19:09:55 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors</guid>
+    </item>
+    <item>
+      <title>Bringing predictive analytics to the agentic AI era</title>
+      <link>https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 14:35:09 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/10/05/researchers-are-tracking-a-chinese-ai-agent-fleet/</guid>
+      <pubDate>Mon, 05 Oct 2026 13:29:32 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/</guid>
     </item>
     <item>
-      <title>Meet the Startup Battlefield 200 judges who’ll decide the winner at TechCrunch Disrupt 2026</title>
-      <link>https://techcrunch.com/2026/10/05/meet-the-startup-battlefield-200-judges-wholl-decide-the-winner-at-techcrunch-disrupt-2026/</link>
+      <title>The Download: AI’s popularity paradox and EmTech Future 2026</title>
+      <link>https://www.technologyreview.com/2026/10/05/1145711/the-download-ai-popularity-paradox-emtech-future-2026/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 14:30:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/10/05/meet-the-startup-battlefield-200-judges-wholl-decide-the-winner-at-techcrunch-disrupt-2026/</guid>
+      <pubDate>Mon, 05 Oct 2026 12:10:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/10/05/1145711/the-download-ai-popularity-paradox-emtech-future-2026/</guid>
     </item>
     <item>
-      <title>OpenAI is adding text watermarking in ChatGPT and Codex</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act</link>
+      <title>Can Safeworld convince people that GenAI robots won’t hurt them?</title>
+      <link>https://techcrunch.com/2026/10/05/can-safeworld-convince-people-that-gen-ai-robots-wont-hurt-them/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/10/05/can-safeworld-convince-people-that-gen-ai-robots-wont-hurt-them/</guid>
+    </item>
+    <item>
+      <title>Legacy sign-on service comes back to bite school software provider Bromcom</title>
+      <link>https://www.theregister.com/security/2026/10/05/legacy-sign-on-service-comes-back-to-bite-school-software-provider-bromcom/5301156</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 05 Oct 2026 11:30:00 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/10/05/legacy-sign-on-service-comes-back-to-bite-school-software-provider-bromcom/5301156</guid>
+    </item>
+    <item>
+      <title>Sen. Adam Schiff on AI regulation, free speech, and impeaching Trump one more time</title>
+      <link>https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 05 Oct 2026 10:30:00 -0400</pubDate>
+      <guid>https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption</guid>
+    </item>
+    <item>
+      <title>AI companies have hijacked academic norms</title>
+      <link>https://blogs.bmj.com/medical-ethics/2026/10/05/ai-companies-have-hijacked-academic-norms/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Mon, 05 Oct 2026 14:08:39 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act</guid>
+      <pubDate>Mon, 05 Oct 2026 02:37:05 +0000</pubDate>
+      <guid>https://blogs.bmj.com/medical-ethics/2026/10/05/ai-companies-have-hijacked-academic-norms/</guid>
     </item>
     <item>
-      <title>The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026</title>
-      <link>https://techcrunch.com/2026/10/05/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 05 Oct 2026 14:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/10/05/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026/</guid>
-    </item>
-    <item>
-      <title>Sam Altman says ‘some bad things&amp;#8217; will happen, but AI is totally worth it</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff</link>
+      <title>swearbench added to PyPI</title>
+      <link>https://pypi.org/project/swearbench/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Mon, 05 Oct 2026 12:44:21 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff</guid>
+      <pubDate>Mon, 05 Oct 2026 02:36:13 +0000</pubDate>
+      <guid>https://pypi.org/project/swearbench/</guid>
     </item>
     <item>
-      <title>openrua 0.4.0</title>
-      <link>https://pypi.org/project/openrua/0.4.0/</link>
+      <title>Former Anthropic researcher Jacob Coxon to testify at New York City AI hearing</title>
+      <link>https://economictimes.indiatimes.com/tech/artificial-intelligence/former-anthropic-researcher-jacob-coxon-to-testify-at-new-york-city-ai-hearing/articleshow/134684235.cms</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 05 Oct 2026 02:35:03 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/artificial-intelligence/former-anthropic-researcher-jacob-coxon-to-testify-at-new-york-city-ai-hearing/articleshow/134684235.cms</guid>
+    </item>
+    <item>
+      <title>OpenAI's Sam Altman says AI benefits warrant accepting some risks</title>
+      <link>https://economictimes.indiatimes.com/tech/artificial-intelligence/openais-sam-altman-says-ai-benefits-warrant-accepting-some-risks/articleshow/134684200.cms</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 05 Oct 2026 02:32:51 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/artificial-intelligence/openais-sam-altman-says-ai-benefits-warrant-accepting-some-risks/articleshow/134684200.cms</guid>
+    </item>
+    <item>
+      <title>starwave 2.0.0</title>
+      <link>https://pypi.org/project/starwave/2.0.0/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 05 Oct 2026 02:31:25 +0000</pubDate>
+      <guid>https://pypi.org/project/starwave/2.0.0/</guid>
+    </item>
+    <item>
+      <title>hands-free-voice added to PyPI</title>
+      <link>https://pypi.org/project/hands-free-voice/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sun, 04 Oct 2026 23:01:39 +0000</pubDate>
-      <guid>https://pypi.org/project/openrua/0.4.0/</guid>
+      <pubDate>Mon, 05 Oct 2026 02:29:45 +0000</pubDate>
+      <guid>https://pypi.org/project/hands-free-voice/</guid>
     </item>
     <item>
-      <title>8 New Tech Products Worth a Look: AI Headphones, a Camera Phone, and More</title>
-      <link>https://the-gadgeteer.com/2026/10/04/new-tech-products/</link>
+      <title>hands-free-voice 0.1.0</title>
+      <link>https://pypi.org/project/hands-free-voice/0.1.0/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sun, 04 Oct 2026 23:00:00 +0000</pubDate>
-      <guid>https://the-gadgeteer.com/2026/10/04/new-tech-products/</guid>
+      <category>Anthropic</category>
+      <pubDate>Mon, 05 Oct 2026 02:29:45 +0000</pubDate>
+      <guid>https://pypi.org/project/hands-free-voice/0.1.0/</guid>
     </item>
     <item>
-      <title>Quordle hints and answers for Monday, October 5 (game #1715)</title>
-      <link>https://www.techradar.com/computing/websites-apps/quordle-today-answers-clues-5-october-2026</link>
+      <title>3tears-models 0.64.0</title>
+      <link>https://pypi.org/project/3tears-models/0.64.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Mon, 05 Oct 2026 02:29:35 +0000</pubDate>
+      <guid>https://pypi.org/project/3tears-models/0.64.0/</guid>
+    </item>
+    <item>
+      <title>MU, HPE, AMZN, META, SPCX: Why Retail Traders Couldn’t Take Their Eyes Off These Stocks Last Week</title>
+      <link>https://biztoc.com/x/d5180e41c012ddd4</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 05 Oct 2026 02:28:22 +0000</pubDate>
+      <guid>https://biztoc.com/x/d5180e41c012ddd4</guid>
+    </item>
+    <item>
+      <title>Center for AI Safety releases CheatBench to measure how often AI agents cheat</title>
+      <link>https://cryptobriefing.com/cais-cheatbench-measures-ai-agent-cheating/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 05 Oct 2026 02:24:10 +0000</pubDate>
+      <guid>https://cryptobriefing.com/cais-cheatbench-measures-ai-agent-cheating/</guid>
+    </item>
+    <item>
+      <title>Anthropic faces $42B net loss ahead of $2T IPO valuation</title>
+      <link>https://cryptobriefing.com/anthropic-faces-42b-net-loss-ahead-of-2t-ipo-valuation/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 05 Oct 2026 02:20:42 +0000</pubDate>
+      <guid>https://cryptobriefing.com/anthropic-faces-42b-net-loss-ahead-of-2t-ipo-valuation/</guid>
+    </item>
+    <item>
+      <title>lfx-google 0.2.5rc0</title>
+      <link>https://pypi.org/project/lfx-google/0.2.5rc0/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 05 Oct 2026 02:20:04 +0000</pubDate>
+      <guid>https://pypi.org/project/lfx-google/0.2.5rc0/</guid>
+    </item>
+    <item>
+      <title>lfx-bundles 1.1.36rc0</title>
+      <link>https://pypi.org/project/lfx-bundles/1.1.36rc0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Mon, 05 Oct 2026 02:19:03 +0000</pubDate>
+      <guid>https://pypi.org/project/lfx-bundles/1.1.36rc0/</guid>
+    </item>
+    <item>
+      <title>sublime-mcp 1.12.1</title>
+      <link>https://pypi.org/project/sublime-mcp/1.12.1/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 05 Oct 2026 02:16:22 +0000</pubDate>
+      <guid>https://pypi.org/project/sublime-mcp/1.12.1/</guid>
+    </item>
+    <item>
+      <title>Anthropic resignation linked to AI self-modification risks: Microsoft AI CEO</title>
+      <link>https://cryptobriefing.com/anthropic-resignation-linked-to-ai-self-modification-risks-microsoft-ai-ceo/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 05 Oct 2026 02:11:44 +0000</pubDate>
+      <guid>https://cryptobriefing.com/anthropic-resignation-linked-to-ai-self-modification-risks-microsoft-ai-ceo/</guid>
+    </item>
+    <item>
+      <title>gausscam added to PyPI</title>
+      <link>https://pypi.org/project/gausscam/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 05 Oct 2026 02:09:33 +0000</pubDate>
+      <guid>https://pypi.org/project/gausscam/</guid>
+    </item>
+    <item>
+      <title>「コンタクトセンター特化 生成AI実践研修コース」をミライブーストとFOXeeyが共同開発。マネジメント層向けAI人材リスキリングサービスを提供開始</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000002.000188085.html</link>
+      <description></description>
+      <category>M365 Copilot</category>
+      <pubDate>Mon, 05 Oct 2026 02:00:00 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000002.000188085.html</guid>
+    </item>
+    <item>
+      <title>日本語検索のAI Overview出現率が92.1%に到達、7ジャンルで100%。株式会社Itera、30ジャンル900クエリの実測を含む「2026年9月 LLMO/AIOトレンドレポート」を無料公開</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000068.000177930.html</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 05 Oct 2026 02:00:00 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000068.000177930.html</guid>
+    </item>
+    <item>
+      <title>fourier-samples added to PyPI</title>
+      <link>https://pypi.org/project/fourier-samples/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 05 Oct 2026 01:59:24 +0000</pubDate>
+      <guid>https://pypi.org/project/fourier-samples/</guid>
+    </item>
+    <item>
+      <title>dbeaver v26.2.2</title>
+      <link>https://kitploit.com/en/posts/dbeaver-03454b83e34d0138</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 05 Oct 2026 01:53:46 +0000</pubDate>
+      <guid>https://kitploit.com/en/posts/dbeaver-03454b83e34d0138</guid>
+    </item>
+    <item>
+      <title>What is the blue check mark in Merlin?</title>
+      <link>https://www.lifesciencesworld.com/what-is-the-blue-check-mark-in-merlin/</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 05 Oct 2026 01:52:49 +0000</pubDate>
+      <guid>https://www.lifesciencesworld.com/what-is-the-blue-check-mark-in-merlin/</guid>
+    </item>
+    <item>
+      <title>Menlo Ventures on AI slowdown; listed startups' investors cash out</title>
+      <link>https://economictimes.indiatimes.com/tech/newsletters/morning-dispatch/menlo-ventures-on-ai-slowdown-listed-startups-investors-cash-out/articleshow/134683599.cms</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 05 Oct 2026 01:52:41 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/tech/newsletters/morning-dispatch/menlo-ventures-on-ai-slowdown-listed-startups-investors-cash-out/articleshow/134683599.cms</guid>
+    </item>
+    <item>
+      <title>demucs-infer 4.4.0</title>
+      <link>https://pypi.org/project/demucs-infer/4.4.0/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Sun, 04 Oct 2026 23:00:00 +0000</pubDate>
-      <guid>https://www.techradar.com/computing/websites-apps/quordle-today-answers-clues-5-october-2026</guid>
+      <pubDate>Mon, 05 Oct 2026 01:41:42 +0000</pubDate>
+      <guid>https://pypi.org/project/demucs-infer/4.4.0/</guid>
     </item>
     <item>
-      <title>langchain-snaprender 0.1.1</title>
-      <link>https://pypi.org/project/langchain-snaprender/0.1.1/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 04 Oct 2026 22:56:46 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-snaprender/0.1.1/</guid>
-    </item>
-    <item>
-      <title>sublevel-flood added to PyPI</title>
-      <link>https://pypi.org/project/sublevel-flood/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 04 Oct 2026 22:54:46 +0000</pubDate>
-      <guid>https://pypi.org/project/sublevel-flood/</guid>
-    </item>
-    <item>
-      <title>Sam Altman to Decoded: ‘The world should accept some bad things happening’ for the benefits of AI - Politico</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=186024024</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 04 Oct 2026 22:53:40 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=186024024</guid>
-    </item>
-    <item>
-      <title>"No Vendor Lock-In" Is Code for "No Product"</title>
-      <link>https://ferran.sh/writing/no-vendor-lock-in-is-code-for-no-product</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 04 Oct 2026 22:51:42 +0000</pubDate>
-      <guid>https://ferran.sh/writing/no-vendor-lock-in-is-code-for-no-product</guid>
-    </item>
-    <item>
-      <title>wander-agent 0.1.5</title>
-      <link>https://pypi.org/project/wander-agent/0.1.5/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 04 Oct 2026 22:51:06 +0000</pubDate>
-      <guid>https://pypi.org/project/wander-agent/0.1.5/</guid>
-    </item>
-    <item>
-      <title>Trump Announces New AI Leadership For ‘Super Intelligence Force’</title>
-      <link>https://dailycaller.com/2026/10/04/trump-super-intelligence-force-jay-clayton</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 04 Oct 2026 22:50:23 +0000</pubDate>
-      <guid>https://dailycaller.com/2026/10/04/trump-super-intelligence-force-jay-clayton</guid>
-    </item>
-    <item>
-      <title>code-coordinator 0.5.597</title>
-      <link>https://pypi.org/project/code-coordinator/0.5.597/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 04 Oct 2026 22:39:26 +0000</pubDate>
-      <guid>https://pypi.org/project/code-coordinator/0.5.597/</guid>
-    </item>
-    <item>
-      <title>streamsnow 0.7.6</title>
-      <link>https://pypi.org/project/streamsnow/0.7.6/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 04 Oct 2026 22:38:19 +0000</pubDate>
-      <guid>https://pypi.org/project/streamsnow/0.7.6/</guid>
-    </item>
-    <item>
-      <title>Former SEC boss made AI Czar, Bitcoin may hit $600K this cycle: Hodler’s Digest</title>
-      <link>https://cointelegraph.com/magazine/former-sec-boss-made-ai-czar-bitcoin-may-hit-600k-this-cycle-hodlers-digest</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 04 Oct 2026 22:31:12 +0000</pubDate>
-      <guid>https://cointelegraph.com/magazine/former-sec-boss-made-ai-czar-bitcoin-may-hit-600k-this-cycle-hodlers-digest</guid>
-    </item>
-    <item>
-      <title>eqx-zoo 0.3.2</title>
-      <link>https://pypi.org/project/eqx-zoo/0.3.2/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 04 Oct 2026 22:22:52 +0000</pubDate>
-      <guid>https://pypi.org/project/eqx-zoo/0.3.2/</guid>
-    </item>
-    <item>
-      <title>3tears-models 0.63.1</title>
-      <link>https://pypi.org/project/3tears-models/0.63.1/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 04 Oct 2026 22:17:08 +0000</pubDate>
-      <guid>https://pypi.org/project/3tears-models/0.63.1/</guid>
-    </item>
-    <item>
-      <title>My new course at UT Austin: AI Alignment Theory</title>
-      <link>https://scottaaronson.blog/?p=10125</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 04 Oct 2026 22:13:33 +0000</pubDate>
-      <guid>https://scottaaronson.blog/?p=10125</guid>
-    </item>
-    <item>
-      <title>orthogonal-matching-pursuit-gpu added to PyPI</title>
-      <link>https://pypi.org/project/orthogonal-matching-pursuit-gpu/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 04 Oct 2026 22:03:31 +0000</pubDate>
-      <guid>https://pypi.org/project/orthogonal-matching-pursuit-gpu/</guid>
-    </item>
-    <item>
-      <title>Apple Readies OLED iPad mini Launch for October or November</title>
-      <link>https://www.iphoneincanada.ca/2026/10/04/apple-readies-oled-ipad-mini-launch-for-october-or-november/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sun, 04 Oct 2026 21:54:10 +0000</pubDate>
-      <guid>https://www.iphoneincanada.ca/2026/10/04/apple-readies-oled-ipad-mini-launch-for-october-or-november/</guid>
-    </item>
-    <item>
-      <title>awesome-osint — Updated!</title>
-      <link>https://kitploit.com/en/posts/awesome-osint-a40a376fc4204bd8</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Sun, 04 Oct 2026 21:53:21 +0000</pubDate>
-      <guid>https://kitploit.com/en/posts/awesome-osint-a40a376fc4204bd8</guid>
-    </item>
-    <item>
-      <title>Weekly poll: are you interested in the vivo X Fold6?</title>
-      <link>https://www.gsmarena.com/weekly_poll_are_you_interested_in_the_vivo_x_fold6-news-74860.php</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sun, 04 Oct 2026 21:31:02 +0000</pubDate>
-      <guid>https://www.gsmarena.com/weekly_poll_are_you_interested_in_the_vivo_x_fold6-news-74860.php</guid>
-    </item>
-    <item>
-      <title>US AI lead over China shrinks sharply as DeepSeek closes in</title>
-      <link>https://cryptobriefing.com/us-ai-lead-china-narrows-deepseek/</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sun, 04 Oct 2026 21:18:48 +0000</pubDate>
-      <guid>https://cryptobriefing.com/us-ai-lead-china-narrows-deepseek/</guid>
-    </item>
-    <item>
-      <title>Trump unveils voluntary AI accord as lawmakers push for real oversight</title>
-      <link>https://cryptobriefing.com/trump-ai-accord-lawmakers-oversight/</link>
+      <title>Trump names U.S. intelligence chief Jay Clayton as new AI czar</title>
+      <link>https://www.cbc.ca/news/world/jay-clayton-trump-ai-czar-9.7369075</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Sun, 04 Oct 2026 21:07:30 +0000</pubDate>
-      <guid>https://cryptobriefing.com/trump-ai-accord-lawmakers-oversight/</guid>
+      <pubDate>Mon, 05 Oct 2026 01:40:31 +0000</pubDate>
+      <guid>https://www.cbc.ca/news/world/jay-clayton-trump-ai-czar-9.7369075</guid>
     </item>
     <item>
-      <title>Anthropic’s Public S-1 Still Missing From EDGAR as October IPO Window Opens</title>
-      <link>https://forkast.news/anthropics-public-s-1-still-missing-from-edgar-as-october-ipo-window-opens/</link>
+      <title>Trump announces 'Super Intelligence Force' to oversee AI policy</title>
+      <link>https://www.bbc.co.uk/news/articles/cqj6jenp26zyo</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 05 Oct 2026 01:33:08 +0000</pubDate>
+      <guid>https://www.bbc.co.uk/news/articles/cqj6jenp26zyo</guid>
+    </item>
+    <item>
+      <title>torchrolling added to PyPI</title>
+      <link>https://pypi.org/project/torchrolling/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 05 Oct 2026 01:32:35 +0000</pubDate>
+      <guid>https://pypi.org/project/torchrolling/</guid>
+    </item>
+    <item>
+      <title>Now, requests sent to Claude to be processed within India</title>
+      <link>https://timesofindia.indiatimes.com/business/india-business/now-requests-sent-to-claude-to-be-processed-within-india/articleshow/134683523.cms</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Mon, 05 Oct 2026 01:24:25 +0000</pubDate>
+      <guid>https://timesofindia.indiatimes.com/business/india-business/now-requests-sent-to-claude-to-be-processed-within-india/articleshow/134683523.cms</guid>
+    </item>
+    <item>
+      <title>Z.ai GLM-5.3 security draws scrutiny as Anthropic flags weak defenses</title>
+      <link>https://www.digitimes.com/news/a20261005PD205/anthropic-z.ai-claude-startup.html</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 05 Oct 2026 01:23:21 +0000</pubDate>
+      <guid>https://www.digitimes.com/news/a20261005PD205/anthropic-z.ai-claude-startup.html</guid>
+    </item>
+    <item>
+      <title>torchspin 0.3.0</title>
+      <link>https://pypi.org/project/torchspin/0.3.0/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 05 Oct 2026 01:23:18 +0000</pubDate>
+      <guid>https://pypi.org/project/torchspin/0.3.0/</guid>
+    </item>
+    <item>
+      <title>torchspin added to PyPI</title>
+      <link>https://pypi.org/project/torchspin/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 05 Oct 2026 01:23:13 +0000</pubDate>
+      <guid>https://pypi.org/project/torchspin/</guid>
+    </item>
+    <item>
+      <title>stillvalid added to PyPI</title>
+      <link>https://pypi.org/project/stillvalid/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Mon, 05 Oct 2026 01:22:14 +0000</pubDate>
+      <guid>https://pypi.org/project/stillvalid/</guid>
+    </item>
+    <item>
+      <title>ベンチャーサポート税理士法人がGoogle Cloud「第6回 AI エージェント事例アワード」ファイナリストに選出</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000442.000044897.html</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 05 Oct 2026 01:00:00 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000442.000044897.html</guid>
+    </item>
+    <item>
+      <title>ログラス AI Opsマネージャー荒木が、「NewsPicks」のトピックスオーナーに就任</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000235.000052025.html</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Sun, 04 Oct 2026 21:03:49 +0000</pubDate>
-      <guid>https://forkast.news/anthropics-public-s-1-still-missing-from-edgar-as-october-ipo-window-opens/</guid>
+      <pubDate>Mon, 05 Oct 2026 01:00:00 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000235.000052025.html</guid>
     </item>
     <item>
-      <title>Show HN: Baloo, self-hosted AI code review for GitHub</title>
-      <link>https://github.com/bluebear-io/baloo-bear</link>
+      <title>demucs-infer 4.3.0</title>
+      <link>https://pypi.org/project/demucs-infer/4.3.0/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sun, 04 Oct 2026 21:01:45 +0000</pubDate>
-      <guid>https://github.com/bluebear-io/baloo-bear</guid>
+      <category>Meta</category>
+      <pubDate>Mon, 05 Oct 2026 00:49:54 +0000</pubDate>
+      <guid>https://pypi.org/project/demucs-infer/4.3.0/</guid>
     </item>
     <item>
-      <title>Show HN: I open-sourced the gradient picker from our design editor</title>
-      <link>https://github.com/rishimohan/colorshot</link>
+      <title>《十首新歌》：一位僧人走下山之后 (评论: Ten New Songs)</title>
+      <link>https://music.douban.com/review/17842633/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sun, 04 Oct 2026 21:01:12 +0000</pubDate>
-      <guid>https://github.com/rishimohan/colorshot</guid>
+      <category>DeepSeek</category>
+      <pubDate>Mon, 05 Oct 2026 00:47:31 +0000</pubDate>
+      <guid>https://music.douban.com/review/17842633/</guid>
     </item>
     <item>
-      <title>ASUS Googlebook 14 first impressions: A new OS meets some serious hardware</title>
-      <link>https://the-gadgeteer.com/2026/10/04/asus-googlebook-14-first-impressions-a-new-os-meets-some-serious-hardware/</link>
+      <title>pytorch-ignite 0.6.0.dev20261005</title>
+      <link>https://pypi.org/project/pytorch-ignite/0.6.0.dev20261005/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 04 Oct 2026 21:00:03 +0000</pubDate>
-      <guid>https://the-gadgeteer.com/2026/10/04/asus-googlebook-14-first-impressions-a-new-os-meets-some-serious-hardware/</guid>
+      <category>Meta</category>
+      <pubDate>Mon, 05 Oct 2026 00:31:09 +0000</pubDate>
+      <guid>https://pypi.org/project/pytorch-ignite/0.6.0.dev20261005/</guid>
     </item>
     <item>
-      <title>Show HN: Recly – turn your watch into a Plaud-style AI recorder</title>
-      <link>https://recly.dev/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Sun, 04 Oct 2026 20:52:38 +0000</pubDate>
-      <guid>https://recly.dev/</guid>
-    </item>
-    <item>
-      <title>docling-rs-cuda 1.93.3</title>
-      <link>https://pypi.org/project/docling-rs-cuda/1.93.3/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 04 Oct 2026 20:20:32 +0000</pubDate>
-      <guid>https://pypi.org/project/docling-rs-cuda/1.93.3/</guid>
-    </item>
-    <item>
-      <title>unrent added to PyPI</title>
-      <link>https://pypi.org/project/unrent/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Sun, 04 Oct 2026 20:19:46 +0000</pubDate>
-      <guid>https://pypi.org/project/unrent/</guid>
-    </item>
-    <item>
-      <title>docling-rs-cuda 1.93.2</title>
-      <link>https://pypi.org/project/docling-rs-cuda/1.93.2/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 04 Oct 2026 20:06:16 +0000</pubDate>
-      <guid>https://pypi.org/project/docling-rs-cuda/1.93.2/</guid>
-    </item>
-    <item>
-      <title>graphifyy 0.9.76</title>
-      <link>https://pypi.org/project/graphifyy/0.9.76/</link>
+      <title>netcodex-agent-exporter 0.8.2</title>
+      <link>https://pypi.org/project/netcodex-agent-exporter/0.8.2/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sun, 04 Oct 2026 20:03:42 +0000</pubDate>
-      <guid>https://pypi.org/project/graphifyy/0.9.76/</guid>
+      <pubDate>Mon, 05 Oct 2026 00:22:52 +0000</pubDate>
+      <guid>https://pypi.org/project/netcodex-agent-exporter/0.8.2/</guid>
     </item>
     <item>
-      <title>5 Most Protective Zodiac Signs</title>
-      <link>https://thoughtcatalog.com/stella-cereus/2026/10/5-most-protective-zodiac-signs-2/</link>
+      <title>thinqos 3.1.0</title>
+      <link>https://pypi.org/project/thinqos/3.1.0/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 04 Oct 2026 20:00:00 +0000</pubDate>
-      <guid>https://thoughtcatalog.com/stella-cereus/2026/10/5-most-protective-zodiac-signs-2/</guid>
+      <category>xAI</category>
+      <pubDate>Mon, 05 Oct 2026 00:19:15 +0000</pubDate>
+      <guid>https://pypi.org/project/thinqos/3.1.0/</guid>
     </item>
     <item>
-      <title>Remove and Disable Apple Macos27 AI Models Tool</title>
-      <link>https://github.com/omlahore/RemoveMacAI</link>
+      <title>Responsible use of large language models in digital health: an equity-first governance framework</title>
+      <link>https://www.nature.com/articles/s41598-026-72535-6.pdf</link>
       <description></description>
-      <category>Apple</category>
-      <pubDate>Sun, 04 Oct 2026 19:42:25 +0000</pubDate>
-      <guid>https://github.com/omlahore/RemoveMacAI</guid>
+      <category>DeepSeek</category>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.nature.com/articles/s41598-026-72535-6.pdf</guid>
     </item>
     <item>
-      <title>Bug Bounty Programs, Facebook Data Centers, Microsoft “Community Support”, More: ResearchBuzz AI Update, October 4, 2026</title>
-      <link>https://researchbuzz.me/2026/10/04/bug-bounty-programs-facebook-data-centers-microsoft-community-support-more-researchbuzz-ai-update-october-4-2026/</link>
+      <title>60 Minutes Transcript: Artificial intelligence and the future of work</title>
+      <link>https://www.cbsnews.com/news/will-ai-take-my-job-60-minutes-transcript/</link>
       <description></description>
-      <category>Perplexity</category>
-      <pubDate>Sun, 04 Oct 2026 19:09:47 +0000</pubDate>
-      <guid>https://researchbuzz.me/2026/10/04/bug-bounty-programs-facebook-data-centers-microsoft-community-support-more-researchbuzz-ai-update-october-4-2026/</guid>
+      <category>Top Stories</category>
+      <pubDate>Sun, 04 Oct 2026 23:54:22 +0000</pubDate>
+      <guid>https://www.cbsnews.com/news/will-ai-take-my-job-60-minutes-transcript/</guid>
     </item>
   </channel>
 </rss>

@@ -1,6 +1,62 @@
 {
   "articles": [
     {
+      "id": "0c618ff13b146b0f58abc0cf768b3b5f",
+      "title": "How to Evaluate Live & Voice Agents in ADK",
+      "url": "https://developers.googleblog.com/how-to-evaluate-live-voice-agents-in-adk/",
+      "source": "Google Developers Blog",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-10-06T02:40:23.510547+00:00",
+      "snippet": "Moving live voice agents from demo to production requires rigorous, automated testing to handle the unpredictability of real multi-turn conversations. ADK now provides native live evaluation, allowing developers to test graph-based agent workflows against LLM-driven simulated users that generate actual audio via Gemini TTS. By defining evaluation scenarios and natural-language rubrics, you can automatically score audio responses and tool executions, inspect the resulting transcripts in ADK Web, ",
+      "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_p97vqmp97v.2e16d0ba.fill-1200x600.jpg",
+      "ai_summary": "",
+      "published_display": "1m ago"
+    },
+    {
+      "id": "3ca644bb41fdbc1cca904a578beef55e",
+      "title": "Schneider Electric drops $22.6B on PTC as datacenter boom rains money on infra companies",
+      "url": "https://www.theregister.com/systems/2026/10/05/schneider-electric-acquires-ptc-for-226-billion/5301254",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-06T00:48:15+02:00",
+      "snippet": "Part of a bigger play for smarter power infra",
+      "image": "https://image.theregister.com/?imageId=5298032&width=800",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "00fa459137bf164f9e038b3746231fb3",
+      "title": "Introducing GLM 5.3 on Amazon Bedrock",
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-10-05T23:25:17+00:00",
+      "snippet": "GLM 5.3 from Z.ai is now available on Amazon Bedrock: a 753B-parameter mixture-of-experts model built for coding and long-horizon agentic tasks. Learn how to invoke it with the OpenAI-compatible APIs, cut cost and latency with prompt caching, and run an authorized security test with the open-source Strix agent.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/05/Screenshot-2026-10-05-at-6.11.23 PM.png",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "52d137fd9d4536f7b3a1e8397fd35fb0",
+      "title": "Citrix NetScaler security snafus get even worse amid more 0-day reports",
+      "url": "https://www.theregister.com/security/2026/10/05/citrix-netscaler-security-snafus-get-even-worse-amid-more-0-day-reports/5301232",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-05T23:18:48+02:00",
+      "snippet": "The new vuln, CVE-2026-88779, is a memory overflow bug that leads to denial of service",
+      "image": "https://image.theregister.com/?imageId=259122&width=800",
+      "ai_summary": "",
+      "published_display": "5h ago"
+    },
+    {
       "id": "4186340e8ab4792cdc42d54456ca593f",
       "title": "Secret scanning adds detectors for Lovable, Supabase, and more",
       "url": "https://github.blog/changelog/2026-10-05-secret-scanning-adds-detectors-for-lovable-supabase-and-more",
@@ -12,7 +68,7 @@
       "snippet": "Secret scanning now detects new secret types from Lovable Labs, Pydantic Services Inc., and Supabase. New secret scanning partner The following provider joined the secret scanning partnership program. When one&#8230;\nThe post Secret scanning adds detectors for Lovable, Supabase, and more appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/10/571554102-6349f5b6-b0b7-4130-9300-6d5d87e0b6e9.jpg",
       "ai_summary": "",
-      "published_display": "21m ago"
+      "published_display": "3h ago"
     },
     {
       "id": "0256781bc3542aa26d72bfcdfb7a8604",
@@ -26,7 +82,7 @@
       "snippet": "Trust gaps in the new protocol spread malicious prompts from one agent to another.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/ai-agents-1152x648.jpg",
       "ai_summary": "",
-      "published_display": "37m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "fd9727ab5c5330b7a2b366f8f7c6c7cf",
@@ -40,7 +96,7 @@
       "snippet": "Like OpenClaw but with access control",
       "image": "https://image.theregister.com/?imageId=5299357&width=800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "59b5c35d78daabca5c69942e9114b08a",
@@ -54,7 +110,7 @@
       "snippet": "Meet RemoveMacAI",
       "image": "https://image.theregister.com/?imageId=256031&width=800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "87e62608e1d6efd86bff3587496bc45b",
@@ -68,7 +124,7 @@
       "snippet": "OpenAI will watermark ChatGPT and Codex text in the EU to comply with the AI Act. Editing can make the invisible marks harder to detect, it says.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "02b3547b3d20e077439b6c79d88f9e3e",
@@ -82,7 +138,7 @@
       "snippet": "Another few bite the dust",
       "image": "https://image.theregister.com/?imageId=252487&width=800",
       "ai_summary": "",
-      "published_display": "5h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "badecd6ef200315c4c69e665923bc2ca",
@@ -95,6 +151,20 @@
       "published": "2026-10-05T19:33:53+00:00",
       "snippet": "Reflection is aiming Beam and future models at enterprises and sovereign nations. The pitch is to build “AI factories,” a product that would let institutions build their own customized, local AI system by training Reflection’s AI models on their own proprietary data.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/10/Reflection-AI-Beam.png?resize=1200,669",
+      "ai_summary": "",
+      "published_display": "7h ago"
+    },
+    {
+      "id": "d28e92c0782792de340b811afa220008",
+      "title": "Gemini Call for Me might tell your mom you&#8217;re running late",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors",
+      "source": "The Verge AI",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-10-05T19:09:55-04:00",
+      "snippet": "Google may be expanding its \"Call for Me\" AI feature beyond business calls so you can use it to send messages to friends and family. Android Authority reports finding a \"Gemini Calling\" introductory screen in an APK teardown with examples that include \"Call Mom and tell her I will be 15 minutes late\" and \"Call [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/Google-Pixel-11-Pro-Photos-of-Phone-7.jpg?quality=90&amp;strip=all&amp;crop=0%2C10.731298651824%2C100%2C78.537402696352&amp;w=1200",
       "ai_summary": "",
       "published_display": "3h ago"
     },
@@ -110,7 +180,7 @@
       "snippet": "People in Utah can now use AI to get a prescription for acne treatment. On Monday, healthcare startup Nolla Health announced that users in the state can scan their faces using its app, allowing its AI system to analyze acne severity and autonomously write a prescription, as reported earlier by Bloomberg. The service is launching [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/nolla-health-app.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "21264d1f545d5a69f81a5d726ff07257",
@@ -124,7 +194,7 @@
       "snippet": "Multi-agent systems need deeper guarantees than fluent responses: they must select the right tools, respect constraints, and explain their decisions. Learn how to build a Strands-based multi-agent supply chain decisioning system and evaluate it with Amazon Bedrock AgentCore Evaluations using built-in, custom, and explainability evaluators.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/02/ML-20163-1.png",
       "ai_summary": "",
-      "published_display": "7h ago"
+      "published_display": "10h ago"
     },
     {
       "id": "06f488c03d63176ad3c6a3a33debee6d",
@@ -138,7 +208,7 @@
       "snippet": "This past year, OpenAI, Anthropic, and other labs have announced breakthroughs on numerous long-standing mathematical problems, in some cases pushing well beyond what researchers expected current systems to be capable of — including resolving one of the famous Millennium Prize problems. But in classic Silicon Valley style, AI labs are moving fast and breaking things, [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/268684_OpenAI_claims_to_revolutionize_maths_CVirginia2-1.webp?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "438d72146085d4ebeb5848953dc7d85a",
@@ -152,7 +222,7 @@
       "snippet": "Following many recent disclosures about AI agents accessing third-party websites and services, the Wikimedia Foundation, which hosts Wikipedia, says that it \"can confirm that we have discovered some activity\" by \"rogue\" OpenAI agents on Wikimedia platforms. The activity includes edits to Wikimedia wikis, \"unsuccessful attempts\" to \"exploit\" the Etherpad note-taking tool that the Wikimedia Foundation [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/STKS533_AI_AGENTS_HACKING_D.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "a8e80de9cb273c437dc891cc53d813d0",
@@ -166,7 +236,7 @@
       "snippet": "Learn how founders are choosing between building on open or closed AI at TechCrunch Disrupt 2026. Register now to save up to $100 and get a second pass at 50% off.",
       "image": "https://techcrunch.com/wp-content/uploads/2025/09/Disrupt-2025-AI-Stage.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "8h ago"
+      "published_display": "11h ago"
     },
     {
       "id": "b31b0093846560f1e620a40f23a368c5",
@@ -180,7 +250,7 @@
       "snippet": "Independent researchers discovered an agent swarm that seems to be running on Tencent's infrastructure and targeting Alibaba's map service, Amap.",
       "image": "https://techcrunch.com/wp-content/uploads/2024/02/GettyImages-1424498694.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "8h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "1df6744ed4de2c086db3395cc88cd655",
@@ -194,7 +264,7 @@
       "snippet": "Meet the final five Startup Battlefield judges who'll decide who wins the pitch competition at TechCrunch Disrupt 2026. Get your pass now to save up to $100, and get a second at 50% off.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/10/SB200_Philpot-von-Tobel-Chien-Grayson-Reum.png?resize=1200,675",
       "ai_summary": "",
-      "published_display": "8h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "a2ad2eaa3dfa952413a1eb7f8987a909",
@@ -208,7 +278,7 @@
       "snippet": "An invisible, machine-readable watermark in text output is rolling out to ChatGPT and Codex, but only for users in the European Union at first. OpenAI says its textGrain watermarking \"matched or exceeded\" other approaches like Google DeepMind's SynthID for text, which is also the basis for the watermarking Anthropic announced in August. Like OpenAI, Anthropic [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STK155_OPEN_AI_CVirginia__C.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "ecb4580a6ca39e665b019924bd08f659",
@@ -222,7 +292,21 @@
       "snippet": "The full TechCrunch Disrupt Stage lineup revealed, featuring Max Hodak, Mark Wahlberg, Benchmark partners, and more. Register now to save up to $100 on your pass and get a second at 50% off.",
       "image": "https://techcrunch.com/wp-content/uploads/2025/01/Disrupt-2024-main-stage.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "9h ago"
+      "published_display": "12h ago"
+    },
+    {
+      "id": "12fb2f044da92fb78a2231f1f65fc212",
+      "title": "Bringing predictive analytics to the agentic AI era",
+      "url": "https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-05T13:29:32+00:00",
+      "snippet": "In 2026, the question for enterprise AI is no longer whether predictive models can outperform statistical forecasts—that argument is settled. The big question now is how to enable predictive systems to act on their own conclusions without drifting from business intent. The frontier has moved from prediction to autonomous decision making, and the gap between&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/09/MIT_TP_CoverPredictiveAnalyticsV9_9926.png?w=840",
+      "ai_summary": "",
+      "published_display": "13h ago"
     },
     {
       "id": "9a46a0ef243ee2e09febb938e27b2f79",
@@ -236,7 +320,679 @@
       "snippet": "Sam Altman thinks that the benefits of AI will be so great that \"the world should accept some bad things happening\" along the way. The OpenAI CEO pointed to hacks, scams, and \"other bad things\" as costs society should expect to tolerate because \"people will do tremendously orders of magnitude more good stuff\" with AI, [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/gettyimages-2294958253.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "6h ago"
+      "published_display": "9h ago"
+    },
+    {
+      "id": "eb83d880d079cb5a146bfc3285e81bd5",
+      "title": "The Download: AI’s popularity paradox and EmTech Future 2026",
+      "url": "https://www.technologyreview.com/2026/10/05/1145711/the-download-ai-popularity-paradox-emtech-future-2026/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-05T12:10:00+00:00",
+      "snippet": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. People really hate AI, so why can’t they get enough? —Will Douglas Heaven Over the summer I talked to the CEO of Springboards, a startup building an LLM designed to come&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/03/Clones-3.jpg?fit=2128,1196",
+      "ai_summary": "",
+      "published_display": "14h ago"
+    },
+    {
+      "id": "ee42faef0c3004ac30551b44a27afdfe",
+      "title": "Can Safeworld convince people that GenAI robots won’t hurt them?",
+      "url": "https://techcrunch.com/2026/10/05/can-safeworld-convince-people-that-gen-ai-robots-wont-hurt-them/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-05T12:00:00+00:00",
+      "snippet": "Safeworld is building digital humans to make sure robots don't hurt the real ones.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/10/Safeworld-Co-founders.jpg?resize=1200,800",
+      "ai_summary": "",
+      "published_display": "14h ago"
+    },
+    {
+      "id": "9fd19ff75974fab2921bc63196dd6292",
+      "title": "Legacy sign-on service comes back to bite school software provider Bromcom",
+      "url": "https://www.theregister.com/security/2026/10/05/legacy-sign-on-service-comes-back-to-bite-school-software-provider-bromcom/5301156",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-05T11:30:00+02:00",
+      "snippet": "Intruders retrieved email addresses from superseded tech kept running for an internal system",
+      "image": "https://image.theregister.com/?imageId=5251523&width=800",
+      "ai_summary": "",
+      "published_display": "17h ago"
+    },
+    {
+      "id": "e124d0f0633547350bad1e15f0c099bd",
+      "title": "Sen. Adam Schiff on AI regulation, free speech, and impeaching Trump one more time",
+      "url": "https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-05T10:30:00-04:00",
+      "snippet": "Today, I’m talking with Sen. Adam Schiff, a Democrat from California. Schiff sits on a number of committees with oversight into tech and AI: intellectual property, antitrust, privacy and technology — it’s all there. I really wanted to ask him about how we might regulate anything related to the tech industry at this moment in [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/DCD_2026-10-05_Schiff.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "12h ago"
+    },
+    {
+      "id": "dd7b19c657fb0da88ce3d91a40d589e6",
+      "title": "AI companies have hijacked academic norms",
+      "url": "https://blogs.bmj.com/medical-ethics/2026/10/05/ai-companies-have-hijacked-academic-norms/",
+      "source": "The BMJ",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-10-05T02:37:05+00:00",
+      "snippet": "By Brandon Yates Most people, upon becoming the subject of a Retraction Watch article, might wish to diminish that fact or move on quickly to try and course correct. I’m in the peculiar position of having a Retraction Watch article that largely exonerated my …",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:37"
+    },
+    {
+      "id": "f08ffd86fbe5acc04b3956ecd4f1a475",
+      "title": "swearbench added to PyPI",
+      "url": "https://pypi.org/project/swearbench/",
+      "source": "Pypi.org",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-10-05T02:36:13+00:00",
+      "snippet": "Rank AI coding models by how much they made you swear and how often their work shipped, from your own local chat logs.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:36"
+    },
+    {
+      "id": "06bbd5d8dcf07c297ec4e842bfbebd2e",
+      "title": "Former Anthropic researcher Jacob Coxon to testify at New York City AI hearing",
+      "url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/former-anthropic-researcher-jacob-coxon-to-testify-at-new-york-city-ai-hearing/articleshow/134684235.cms",
+      "source": "The Times of India",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-10-05T02:35:03+00:00",
+      "snippet": "Former Anthropic researcher Jacob Coxon will testify at a New York City hearing on artificial intelligence, Bloomberg News reported on Sunday, citing people familiar with the matter.",
+      "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-72642,resizemode-75,msid-134684235/tech/artificial-intelligence/former-anthropic-researcher-jacob-coxon-to-testify-at-new-york-city-ai-hearing.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:35"
+    },
+    {
+      "id": "c3fea6952c9dc5e3771c4f17335cda02",
+      "title": "OpenAI's Sam Altman says AI benefits warrant accepting some risks",
+      "url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/openais-sam-altman-says-ai-benefits-warrant-accepting-some-risks/articleshow/134684200.cms",
+      "source": "The Times of India",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-10-05T02:32:51+00:00",
+      "snippet": "OpenAI Chief Executive Sam Altman said the benefits of artificial intelligence justify accepting some risks and argued the technology should remain broadly accessible to the public \"",
+      "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-58026,resizemode-75,msid-134684200/tech/artificial-intelligence/openais-sam-altman-says-ai-benefits-warrant-accepting-some-risks.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:32"
+    },
+    {
+      "id": "3f687d6493c688f40f2f681b75692573",
+      "title": "starwave 2.0.0",
+      "url": "https://pypi.org/project/starwave/2.0.0/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-10-05T02:31:25+00:00",
+      "snippet": "Standalone scalar, VRZ, and Duveneck VTI CUDA wave propagation for PyTorch",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:31"
+    },
+    {
+      "id": "64d7b80462adf935e87f398914b25f8d",
+      "title": "hands-free-voice added to PyPI",
+      "url": "https://pypi.org/project/hands-free-voice/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-10-05T02:29:45+00:00",
+      "snippet": "Hands-free voice for Claude Code: the audio half of the hands-free-voice mod, and a standalone voice front end.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:29"
+    },
+    {
+      "id": "61ebe07bbca366653595b9ffa2eb0953",
+      "title": "hands-free-voice 0.1.0",
+      "url": "https://pypi.org/project/hands-free-voice/0.1.0/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-10-05T02:29:45+00:00",
+      "snippet": "Hands-free voice for Claude Code: the audio half of the hands-free-voice mod, and a standalone voice front end.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:29"
+    },
+    {
+      "id": "bc04530ac7ba286d195c01c0e0cf43b5",
+      "title": "3tears-models 0.64.0",
+      "url": "https://pypi.org/project/3tears-models/0.64.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-10-05T02:29:35+00:00",
+      "snippet": "LangChain-native AI model factories with capability metadata, circuit breakers, and usage tracking for the 3tears platform",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:29"
+    },
+    {
+      "id": "994f83f1919a3cefcb729bc1a9fc9fed",
+      "title": "MU, HPE, AMZN, META, SPCX: Why Retail Traders Couldn’t Take Their Eyes Off These Stocks Last Week",
+      "url": "https://biztoc.com/x/d5180e41c012ddd4",
+      "source": "Biztoc.com",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-10-05T02:28:22+00:00",
+      "snippet": "Micron posted record quarterly results, driven by strong AI data-center demand.\n- Amazon is considering an $8 billion Nvidia AI chip deal that could move some infrastructure assets off its balance sheet.\n- Elon Musk said SpaceX plans to rename its AI unit fro…",
+      "image": "https://biztoc.com/cdn/d5180e41c012ddd4_s.webp",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:28"
+    },
+    {
+      "id": "dbb88225a84ffb5eaa8e4e70ef85c5a3",
+      "title": "Center for AI Safety releases CheatBench to measure how often AI agents cheat",
+      "url": "https://cryptobriefing.com/cais-cheatbench-measures-ai-agent-cheating/",
+      "source": "Crypto Briefing",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-10-05T02:24:10+00:00",
+      "snippet": "CheatBench highlights the need for robust AI alignment strategies to prevent reward gaming, ensuring AI systems act in users' best interests.\nThe post Center for AI Safety releases CheatBench to measure how often AI agents cheat appeared first on Crypto Brief…",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/10/04222405/library-center-for-ai-safety-releases-cheatbench-to-measure-how--800x450.png",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:24"
+    },
+    {
+      "id": "fcca769d6ac7cec3ef99595c00e2a1d6",
+      "title": "Anthropic faces $42B net loss ahead of $2T IPO valuation",
+      "url": "https://cryptobriefing.com/anthropic-faces-42b-net-loss-ahead-of-2t-ipo-valuation/",
+      "source": "Crypto Briefing",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-10-05T02:20:42+00:00",
+      "snippet": "Anthropic's financial instability may deter investor confidence, impacting its competitive edge and market positioning in the AI sector.\nThe post Anthropic faces $42B net loss ahead of $2T IPO valuation appeared first on Crypto Briefing.",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/10/04222040/library-anthropic-faces-42b-net-loss-ahead-of-2t-ipo-valuation-1-800x450.png",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:20"
+    },
+    {
+      "id": "49a2541bec64b6e431e09517ca71e9d1",
+      "title": "lfx-google 0.2.5rc0",
+      "url": "https://pypi.org/project/lfx-google/0.2.5rc0/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-10-05T02:20:04+00:00",
+      "snippet": "Google and Gemini components as a standalone Langflow Extension Bundle.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:20"
+    },
+    {
+      "id": "85fae74f4b1672f23bc63bb55fd5b8bc",
+      "title": "lfx-bundles 1.1.36rc0",
+      "url": "https://pypi.org/project/lfx-bundles/1.1.36rc0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-10-05T02:19:03+00:00",
+      "snippet": "Langflow's long-tail provider bundles as a single manifest-less metapackage (the langchain-community model).",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:19"
+    },
+    {
+      "id": "886a2410b225e5aeacd9dd2ab305e35b",
+      "title": "sublime-mcp 1.12.1",
+      "url": "https://pypi.org/project/sublime-mcp/1.12.1/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-10-05T02:16:22+00:00",
+      "snippet": "MCP server for Sublime Text 4 — lets Claude Code read and control a running ST instance",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:16"
+    },
+    {
+      "id": "c753531e797985577380c9c1bcc103d9",
+      "title": "Anthropic resignation linked to AI self-modification risks: Microsoft AI CEO",
+      "url": "https://cryptobriefing.com/anthropic-resignation-linked-to-ai-self-modification-risks-microsoft-ai-ceo/",
+      "source": "Crypto Briefing",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-10-05T02:11:44+00:00",
+      "snippet": "The resignation highlights growing concerns over AI governance, potentially influencing industry standards and investor confidence in AI safety.\nThe post Anthropic resignation linked to AI self-modification risks: Microsoft AI CEO appeared first on Crypto Bri…",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/10/04221143/library-anthropic-resignation-linked-to-ai-self-modification-ris-1-800x450.png",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:11"
+    },
+    {
+      "id": "99a6b996849be3276eb92e934262f34c",
+      "title": "gausscam added to PyPI",
+      "url": "https://pypi.org/project/gausscam/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-10-05T02:09:33+00:00",
+      "snippet": "3D Gaussian Splatting sensor rendering for physics simulators (torch-free backends, MuJoCo adapter)",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:09"
+    },
+    {
+      "id": "7318e7767049575aec130c6184f19dcb",
+      "title": "「コンタクトセンター特化 生成AI実践研修コース」をミライブーストとFOXeeyが共同開発。マネジメント層向けAI人材リスキリングサービスを提供開始",
+      "url": "https://prtimes.jp/main/html/rd/p/000000002.000188085.html",
+      "source": "Prtimes.jp",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-10-05T02:00:00+00:00",
+      "snippet": "[株式会社ミライブースト]\n[画像1: https://prcdn.freetls.fastly.net/release_image/188085/2/188085-2-c03e35adbb547b088a4ee81f46dcd43f-2400x1256.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&am...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/188085/2/188085-2-c03e35adbb547b088a4ee81f46dcd43f-2400x1256.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:00"
+    },
+    {
+      "id": "62c522382d667ccb9c99446eabecd61c",
+      "title": "日本語検索のAI Overview出現率が92.1%に到達、7ジャンルで100%。株式会社Itera、30ジャンル900クエリの実測を含む「2026年9月 LLMO/AIOトレンドレポート」を無料公開",
+      "url": "https://prtimes.jp/main/html/rd/p/000000068.000177930.html",
+      "source": "Prtimes.jp",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-10-05T02:00:00+00:00",
+      "snippet": "[株式会社Itera]\n[画像1: https://prcdn.freetls.fastly.net/release_image/177930/68/177930-68-a6f6551c378598eec4858665a2d0e573-1672x941.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&a...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/177930/68/177930-68-a6f6551c378598eec4858665a2d0e573-1672x941.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "Oct 05, 02:00"
+    },
+    {
+      "id": "932e6267440c32f548b5a8e8ecede77b",
+      "title": "fourier-samples added to PyPI",
+      "url": "https://pypi.org/project/fourier-samples/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-10-05T01:59:24+00:00",
+      "snippet": "Curate a sample library into device-ready folders for hardware samplers",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:59"
+    },
+    {
+      "id": "24e6d009779b2faec890ce153551e1bc",
+      "title": "dbeaver v26.2.2",
+      "url": "https://kitploit.com/en/posts/dbeaver-03454b83e34d0138",
+      "source": "Kitploit.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-10-05T01:53:46+00:00",
+      "snippet": "Free universal database tool and SQL client",
+      "image": "https://assets.kitploit.com/production/public/tools/3039/293af935dddfc9daf9933c34392ad286c8231cd8bd5ccd6759ce9770736ae944.png",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:53"
+    },
+    {
+      "id": "0c7432d51c3853f48d44bd03b04c7c4f",
+      "title": "What is the blue check mark in Merlin?",
+      "url": "https://www.lifesciencesworld.com/what-is-the-blue-check-mark-in-merlin/",
+      "source": "Lifesciencesworld.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-10-05T01:52:49+00:00",
+      "snippet": "What is the Blue Check Mark in Merlin? The blue check mark in Merlin signifies a verified profile, indicating that Merlin AI has confirmed the authenticity and authority of the user or organization it represents, providing assurance to others interacting with…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:52"
+    },
+    {
+      "id": "fae2f51a96cdaee47fa68ed30d0170f4",
+      "title": "Menlo Ventures on AI slowdown; listed startups' investors cash out",
+      "url": "https://economictimes.indiatimes.com/tech/newsletters/morning-dispatch/menlo-ventures-on-ai-slowdown-listed-startups-investors-cash-out/articleshow/134683599.cms",
+      "source": "The Times of India",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-10-05T01:52:41+00:00",
+      "snippet": "Happy Monday! Menlo Ventures, an early Anthropic backer, says the real AI constraint is compute, not a slowdown in frontier models. This and more in today's ETtech Morning Dispatch.",
+      "image": "https://img.etimg.com/thumb/msid-134683599,width-1070,height-580,imgsize-926060,overlay-ettech/editionshow.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:52"
+    },
+    {
+      "id": "e7613f37e05d9aa23e9dddfd6266ed4d",
+      "title": "demucs-infer 4.4.0",
+      "url": "https://pypi.org/project/demucs-infer/4.4.0/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-10-05T01:41:42+00:00",
+      "snippet": "Music source separation in the waveform domain - Inference-only (PyTorch 2.x)",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:41"
+    },
+    {
+      "id": "efdcb2d1ee5d1104fb7552ef703dad37",
+      "title": "Trump names U.S. intelligence chief Jay Clayton as new AI czar",
+      "url": "https://www.cbc.ca/news/world/jay-clayton-trump-ai-czar-9.7369075",
+      "source": "CBC News",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-10-05T01:40:31+00:00",
+      "snippet": "Clayton, director of U.S. national intelligence, will head the Trump administration's newly created AI task force, the \"Super Intelligence Force.\"",
+      "image": "https://i.cbc.ca/ais/dcafa1ae-b417-4df0-b175-b944849ed7e8,1791162854693/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C401%2C4525%2C2545%29%3BResize%3D620",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:40"
+    },
+    {
+      "id": "5e3b69c0e32a327dd7698216619f76aa",
+      "title": "Trump announces 'Super Intelligence Force' to oversee AI policy",
+      "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo",
+      "source": "BBC News",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-10-05T01:33:08+00:00",
+      "snippet": "The president named his national intelligence chief will head the taskforce as worries over the technology grow.",
+      "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9a97/live/e8568220-c056-11f1-ba75-170165fdb734.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:33"
+    },
+    {
+      "id": "7951ee251768a792fdefa8fa88a6ce7d",
+      "title": "torchrolling added to PyPI",
+      "url": "https://pypi.org/project/torchrolling/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-10-05T01:32:35+00:00",
+      "snippet": "Pandas-style rolling and exponentially weighted statistics for PyTorch tensors, fast on GPU.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:32"
+    },
+    {
+      "id": "8d83d790ee249620ad9b558beb5cd816",
+      "title": "Now, requests sent to Claude to be processed within India",
+      "url": "https://timesofindia.indiatimes.com/business/india-business/now-requests-sent-to-claude-to-be-processed-within-india/articleshow/134683523.cms",
+      "source": "The Times of India",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-10-05T01:24:25+00:00",
+      "snippet": "Anthropic has introduced in-country inference for its Claude AI models in India using Amazon Bedrock. This advancement allows processing requests on local servers, fulfilling data residency requirements for regulated sectors. Companies like TCS, Infosys, and …",
+      "image": "https://static.toiimg.com/thumb/msid-134683527,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:24"
+    },
+    {
+      "id": "fbb9de538c056142d7bec4434600d5e4",
+      "title": "Z.ai GLM-5.3 security draws scrutiny as Anthropic flags weak defenses",
+      "url": "https://www.digitimes.com/news/a20261005PD205/anthropic-z.ai-claude-startup.html",
+      "source": "Digitimes",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-10-05T01:23:21+00:00",
+      "snippet": "Anthropic has warned that GLM-5.3, the latest model from Chinese AI startup Z.ai, approached Claude Mythos Preview on an exploit-development benchmark but lacks sufficient safety protections, raising concerns that malicious actors could use it for cyberattack…",
+      "image": "https://img.digitimes.com/newsshow/20261005pd205_files/1_b.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:23"
+    },
+    {
+      "id": "7135343908b72aa58450c7efa9e43a0a",
+      "title": "torchspin 0.3.0",
+      "url": "https://pypi.org/project/torchspin/0.3.0/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-10-05T01:23:18+00:00",
+      "snippet": "Differentiable PyTorch port of EasySpin - EPR/ESR spin Hamiltonian and spectrum simulation",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:23"
+    },
+    {
+      "id": "9b022d1125f0707152e937d4e9e19e37",
+      "title": "torchspin added to PyPI",
+      "url": "https://pypi.org/project/torchspin/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-10-05T01:23:13+00:00",
+      "snippet": "Differentiable PyTorch port of EasySpin - EPR/ESR spin Hamiltonian and spectrum simulation",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:23"
+    },
+    {
+      "id": "a5741390add901ca7904096832309877",
+      "title": "stillvalid added to PyPI",
+      "url": "https://pypi.org/project/stillvalid/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-10-05T01:22:14+00:00",
+      "snippet": "Is this information still valid? A validity layer between retrieval and action — deterministic checks first, learned survival probability where nothing deterministic exists.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:22"
+    },
+    {
+      "id": "59739ebdc541041e19c9bf30540d510f",
+      "title": "ベンチャーサポート税理士法人がGoogle Cloud「第6回 AI エージェント事例アワード」ファイナリストに選出",
+      "url": "https://prtimes.jp/main/html/rd/p/000000442.000044897.html",
+      "source": "Prtimes.jp",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-10-05T01:00:00+00:00",
+      "snippet": "[株式会社SoLabo]\n[画像1: https://prcdn.freetls.fastly.net/release_image/44897/442/44897-442-7b958f861c2630f9d1d7b66cf23bb009-1920x1280.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/44897/442/44897-442-7b958f861c2630f9d1d7b66cf23bb009-1920x1280.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:00"
+    },
+    {
+      "id": "d89f0c047c1b401206a9b50216497f53",
+      "title": "ログラス AI Opsマネージャー荒木が、「NewsPicks」のトピックスオーナーに就任",
+      "url": "https://prtimes.jp/main/html/rd/p/000000235.000052025.html",
+      "source": "Prtimes.jp",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-10-05T01:00:00+00:00",
+      "snippet": "[株式会社ログラス]\n[画像: https://prcdn.freetls.fastly.net/release_image/52025/235/52025-235-d5fc157c5dde95739f206145b753d727-1200x630.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&am...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/52025/235/52025-235-d5fc157c5dde95739f206145b753d727-1200x630.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "Oct 05, 01:00"
+    },
+    {
+      "id": "3d0272738edf6dfabfc44e29ddcafb1e",
+      "title": "demucs-infer 4.3.0",
+      "url": "https://pypi.org/project/demucs-infer/4.3.0/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-10-05T00:49:54+00:00",
+      "snippet": "Music source separation in the waveform domain - Inference-only (PyTorch 2.x)",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 00:49"
+    },
+    {
+      "id": "87c7aa1eed5a6787b56d2e6d2569eb81",
+      "title": "《十首新歌》：一位僧人走下山之后 (评论: Ten New Songs)",
+      "url": "https://music.douban.com/review/17842633/",
+      "source": "Douban.com",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-10-05T00:47:31+00:00",
+      "snippet": "威廉评论: Ten New Songs (https://music.douban.com/subject/1405187/)\n评价: 力荐\n\n{\"entityMap\": {\"0\": {\"type\": \"IMAGE\", \"data\": {\"caption\": \"\", \"id\": \"137...",
+      "image": "https://img9.doubanio.com/view/thing_review/large/public/p13727144.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 05, 00:47"
+    },
+    {
+      "id": "11de3956b950de7b3c645197b5e36273",
+      "title": "pytorch-ignite 0.6.0.dev20261005",
+      "url": "https://pypi.org/project/pytorch-ignite/0.6.0.dev20261005/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-10-05T00:31:09+00:00",
+      "snippet": "A lightweight library to help with training neural networks in PyTorch.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 00:31"
+    },
+    {
+      "id": "125d3d49820e7c5fccfb6bd22fbb1468",
+      "title": "netcodex-agent-exporter 0.8.2",
+      "url": "https://pypi.org/project/netcodex-agent-exporter/0.8.2/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-10-05T00:22:52+00:00",
+      "snippet": "Local-first exporter for AI agent conversations (Codex, Claude Code, Copilot, Cline, Cursor, Gemini CLI, OpenCode and more) to readable Markdown, HTML and PDF, in Spanish or English.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 00:22"
+    },
+    {
+      "id": "a69b547625d78b959a9ec47d700479f4",
+      "title": "thinqos 3.1.0",
+      "url": "https://pypi.org/project/thinqos/3.1.0/",
+      "source": "Pypi.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-10-05T00:19:15+00:00",
+      "snippet": "Connect Claude Code, Codex, Grok Build, VS Code, and Cline to your thinqOS Mind.",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Oct 05, 00:19"
+    },
+    {
+      "id": "5fc0fa64b55705b575fba6921aa0acf7",
+      "title": "Responsible use of large language models in digital health: an equity-first governance framework",
+      "url": "https://www.nature.com/articles/s41598-026-72535-6.pdf",
+      "source": "Nature.com",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-10-05T00:00:00+00:00",
+      "snippet": "Scientific Reports - Responsible use of large language models in digital health: an equity-first governance framework",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 05, 00:00"
+    },
+    {
+      "id": "3cf7e37a269ad54696e725aaa4bfeece",
+      "title": "60 Minutes Transcript: Artificial intelligence and the future of work",
+      "url": "https://www.cbsnews.com/news/will-ai-take-my-job-60-minutes-transcript/",
+      "source": "CBS News",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-04T23:54:22+00:00",
+      "snippet": "Some Americans are working to improve artificial intelligence, teaching it the skills and knowledge accrued over the course of a career.",
+      "image": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/10/02/ba5049b0-02ea-41e7-a375-8de5fafb92ee/thumbnail/1200x630/7d7fe8806c60a1ddf11682d0adce67cb/ai-economy-wertheim-video.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 04, 23:54"
+    },
+    {
+      "id": "fab42b4fe7dac806400696afddb6da61",
+      "title": "Experts are training AI how to do their jobs",
+      "url": "https://www.cbsnews.com/news/artificial-intelligence-trained-to-help-with-careers-60-minutes/",
+      "source": "CBS News",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-04T23:53:33+00:00",
+      "snippet": "It's become a booming industry: teaching artificial intelligence how to get better at doing all kinds of jobs. As AI advances, many fear what this tech means for the future of work.",
+      "image": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/10/02/a0e8300e-0204-4f98-9f7a-e58e7fc552ef/thumbnail/1200x630/edaa6d8c507cfdedae87286735da9fa3/60-minutes-full-episode-10-04-2026.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 04, 23:53"
+    },
+    {
+      "id": "c539b5324102fe6d4b578b2be1427f70",
+      "title": "tramamind added to PyPI",
+      "url": "https://pypi.org/project/tramamind/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-10-04T23:51:24+00:00",
+      "snippet": "Local proxy that caps chat context, keeps recent turns and code verbatim, and prints the tokens it did not send.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 04, 23:51"
+    },
+    {
+      "id": "4aaca261cd7f8408a802d725794720f3",
+      "title": "nexus-a2a-sdk added to PyPI",
+      "url": "https://pypi.org/project/nexus-a2a-sdk/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-10-04T23:44:29+00:00",
+      "snippet": "NEXUS SDK: deterministic governance for agent, tool, and payment execution",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Oct 04, 23:44"
+    },
+    {
+      "id": "633b38a5e1709be349d0eed92e5f6c61",
+      "title": "thinqos 3.0.6",
+      "url": "https://pypi.org/project/thinqos/3.0.6/",
+      "source": "Pypi.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-10-04T23:26:35+00:00",
+      "snippet": "Connect Claude Code, Codex, Grok Build, VS Code, and Cline to your thinqOS Mind.",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Oct 04, 23:26"
     },
     {
       "id": "9a4a60fb0baae5036e5e46b0e9eb4234",
@@ -391,6 +1147,20 @@
       "image": null,
       "ai_summary": "",
       "published_display": "Oct 04, 22:38"
+    },
+    {
+      "id": "c93a883038492f1bceb7a61a95ef3eeb",
+      "title": "It was Super Intelligence Day at the White House",
+      "url": "https://www.wnd.com/2026/10/it-was-super-intelligence-day-white-house/",
+      "source": "Wnd.com",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-10-04T22:36:50+00:00",
+      "snippet": "'If we do this right, if we work with the president and everyone here, we can win safely'",
+      "image": "https://www.wnd.com/wp-content/uploads/2026/09/artificial-intelligence-unsplash-1200x630.jpg",
+      "ai_summary": "",
+      "published_display": "Oct 04, 22:36"
     },
     {
       "id": "dd48689409ec383e1ea287c702337497",
@@ -699,6 +1469,20 @@
       "image": "https://s0.wp.com/_si/?t=eyJpbWciOiJodHRwczpcL1wvczAud3AuY29tXC9pXC9ibGFuay5qcGciLCJ0eHQiOiJSZXNlYXJjaEJ1enoiLCJ0ZW1wbGF0ZSI6ImhpZ2h3YXkiLCJmb250IjoiIiwiYmxvZ19pZCI6NDMyODc1Nn0.BjdcPIDlw4ZG0Ki13B-quwxnrzAxn9iB5rJXagRMNlcMQ",
       "ai_summary": "",
       "published_display": "Oct 04, 19:09"
+    },
+    {
+      "id": "8b162157930e8c1bedc679f6aa506a83",
+      "title": "Apple's biggest AI advantage may face new privacy challenge",
+      "url": "https://biztoc.com/x/419c54036e2a2618",
+      "source": "Biztoc.com",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-10-04T18:28:54+00:00",
+      "snippet": "Apple has spent years building its brand around one promise: Your data stays yours. That promise is now colliding head-on with a new generation of AI agents that need broad access to a computer to actually get work done.\nThe company confirmed on Oct. 2 that i…",
+      "image": "https://biztoc.com/cdn/419c54036e2a2618_s.webp",
+      "ai_summary": "",
+      "published_display": "Oct 04, 18:28"
     },
     {
       "id": "598473b90c4643cf94f8d14922d4570d",
@@ -5195,6 +5979,6 @@
       "published_display": "Sep 30, 13:00"
     }
   ],
-  "generated_at": "2026-10-05T23:03:52.640993+00:00",
+  "generated_at": "2026-10-06T02:41:32.165821+00:00",
   "period": "October 2026"
 }
