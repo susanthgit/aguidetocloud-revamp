@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Oct 2026 16:44:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 22:37:10 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1489909</link>
+      <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1489909</guid>
+      <pubDate>Tue, 06 Oct 2026 21:48:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Users are unable to create or edit new meeting or broadcast events in Microsoft Viva Engage</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1489881</link>
+      <description>[Microsoft Viva] Users are unable to create or edit new meeting or broadcast events in Viva Engage.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MV1489881</guid>
+      <pubDate>Tue, 06 Oct 2026 21:09:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Users may not see chart data when using the Power BI light theme dashboard</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1489649</link>
+      <description>[Power BI] Users may not see chart data when using the Power BI light theme dashboard.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1489649</guid>
+      <pubDate>Tue, 06 Oct 2026 19:32:12 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may encounter intermittent VDI2 optimization loss when using Microsoft Teams in a Citrix VDI environment</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1489450</link>
@@ -69,15 +96,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1488394</guid>
       <pubDate>Mon, 05 Oct 2026 13:39:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users' audio quality may be degraded during Microsoft Teams calls that have video or screensharing enabled</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1486352</link>
-      <description>[Microsoft Teams] Users' audio quality may be degraded during Microsoft Teams calls that have video or screensharing enabled.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1486352</guid>
-      <pubDate>Fri, 02 Oct 2026 22:58:23 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may not receive responses from their Microsoft 365 Copilot agents within Microsoft PowerPoint</title>
@@ -445,24 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1470143</guid>
       <pubDate>Thu, 10 Sep 2026 07:13:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be unable to see the suggestions pills after receiving a bot response in Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1469885</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have been unable to see the suggestion pills after receiving a bot response in Copilot Chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1469885</guid>
-      <pubDate>Wed, 09 Sep 2026 20:49:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users can't access Excel workbooks from Power BI and receive an error message </title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1474132</link>
-      <description>[Power BI] Users couldn't access Excel workbooks from Power BI and received an error message.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1474132</guid>
-      <pubDate>Tue, 08 Sep 2026 20:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
