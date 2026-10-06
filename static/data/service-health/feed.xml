@@ -5,15 +5,33 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Oct 2026 01:16:58 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 08:54:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Some users may be unable to create or update Ontology artifacts in Microsoft Fabric</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1488968</link>
+      <description>[Power BI] Users may have been unable to create or update Ontology artifacts in Microsoft Fabric.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1488968</guid>
+      <pubDate>Mon, 05 Oct 2026 22:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admins intermittently may be unable to access the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1488931</link>
       <description>[Microsoft 365 suite] Admins intermittently may have been unable to access the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1488931</guid>
+      <pubDate>Mon, 05 Oct 2026 22:28:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Admins intermittently may be unable to access the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1489051</link>
+      <description>[Microsoft 365 suite] Admins intermittently may have been unable to access the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1489051</guid>
       <pubDate>Mon, 05 Oct 2026 22:28:00 +0000</pubDate>
     </item>
     <item>
@@ -445,24 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">OP1470668</guid>
       <pubDate>Tue, 08 Sep 2026 10:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins' Microsoft 365 admin center usage report data may be delayed</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1467962</link>
-      <description>[Microsoft 365 suite] Admins' Microsoft 365 admin center usage report data may have been delayed.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1467962</guid>
-      <pubDate>Sun, 06 Sep 2026 01:47:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be unable to query Microsoft 365 Copilot Chat and receive an error</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1467407</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be unable to query Copilot Chat and receive an error.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1467407</guid>
-      <pubDate>Sat, 05 Sep 2026 01:45:26 +0000</pubDate>
     </item>
   </channel>
 </rss>
