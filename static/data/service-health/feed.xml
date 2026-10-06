@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Oct 2026 08:54:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 16:44:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may encounter intermittent VDI2 optimization loss when using Microsoft Teams in a Citrix VDI environment</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1489450</link>
+      <description>[Microsoft Teams] Users may encounter intermittent VDI2 optimization loss when using Microsoft Teams in a Citrix VDI environment.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1489450</guid>
+      <pubDate>Tue, 06 Oct 2026 13:19:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users may be unable to view contacts and Speed Dial entries in Microsoft Teams, Outlook desktop and mobile</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1489432</link>
+      <description>[Microsoft 365 suite] Users may be unable to view contacts and Speed Dial entries in Microsoft Teams, Outlook desktop and mobile.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1489432</guid>
+      <pubDate>Tue, 06 Oct 2026 11:45:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Users may encounter delays for alert, activity processing and unexpected CAAC policy behavior in Microsoft Defender XDR</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1489394</link>
+      <description>[Microsoft Defender XDR] Users may encounter delays for alert, activity processing and unexpected CAAC policy behavior in Microsoft Defender XDR.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1489394</guid>
+      <pubDate>Tue, 06 Oct 2026 10:52:44 +0000</pubDate>
+    </item>
     <item>
       <title>[Power BI] Some users may be unable to create or update Ontology artifacts in Microsoft Fabric</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1488968</link>
@@ -143,9 +170,9 @@ A backend service that is used to retrieve service information and resource meta
     <item>
       <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1483625</link>
-      <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides.</description>
+      <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may have been missing some slides.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1483625</guid>
       <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
     </item>
@@ -436,33 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1474132</guid>
       <pubDate>Tue, 08 Sep 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some admins may see stale data in the Microsoft 365 Copilot Health page in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1482212</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen stale data in the Copilot Health page in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1482212</guid>
-      <pubDate>Tue, 08 Sep 2026 16:05:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users may be unable to access https://m365.cloud.microsoft and receive an error</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1469271</link>
-      <description>[Microsoft 365 suite] Users may be unable to access https://m365.cloud.microsoft and receive an error message.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1469271</guid>
-      <pubDate>Tue, 08 Sep 2026 15:23:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Users may be unable to copy, paste, drag, or duplicate cells and worksheets in Microsoft Excel</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1470668</link>
-      <description>[Microsoft 365 apps] Users may have been unable to copy, paste, drag, or duplicate cells and worksheets in Microsoft Excel.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OP1470668</guid>
-      <pubDate>Tue, 08 Sep 2026 10:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
