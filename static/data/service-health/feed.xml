@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Oct 2026 19:16:07 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 01:16:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins intermittently may be unable to access the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1488931</link>
+      <description>[Microsoft 365 suite] Admins intermittently may have been unable to access the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1488931</guid>
+      <pubDate>Mon, 05 Oct 2026 22:28:00 +0000</pubDate>
+    </item>
     <item>
       <title>[SharePoint Online] Some users may be unable to search using the search box in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1488394</link>
@@ -123,6 +132,15 @@ A backend service that is used to retrieve service information and resource meta
       <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Some users' email with DocuSign URLs may not be delivered and may be quarantined due to URL reputation</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1483619</link>
+      <description>[Exchange Online] Users' email with DocuSign URLs may not have been delivered and may have been quarantined due to URL reputation.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1483619</guid>
+      <pubDate>Mon, 28 Sep 2026 02:36:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft 365 suite] Admins and users may be unable to access or utilize multiple features within some Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1479564</link>
       <description>[Microsoft 365 suite] Admins and users may have been unable to access or utilize multiple features within some Microsoft 365 services.</description>
@@ -130,6 +148,15 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1479564</guid>
       <pubDate>Fri, 25 Sep 2026 23:06:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users conferenced into a Microsoft Teams emergency call may not be automatically muted or able to mute themselves</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1488543</link>
+      <description>[Microsoft Teams] Users conferenced into a Microsoft Teams emergency call may not be automatically muted or able to mute themselves.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1488543</guid>
+      <pubDate>Fri, 25 Sep 2026 20:09:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users may be unable to reply or reply-all to email messages sent to Microsoft 365 groups in Exchange Online</title>
@@ -179,9 +206,9 @@ A backend service that is used to retrieve service information and resource meta
     <item>
       <title>[Exchange Online] Users may be unable to update calendar delegates in the classic Outlook desktop client </title>
       <link>https://www.aguidetocloud.com/service-health/#EX1478163</link>
-      <description>[Exchange Online] Users may be unable to update calendar delegates in the classic Outlook desktop client.</description>
+      <description>[Exchange Online] Users may have been unable to update calendar delegates in the classic Outlook desktop client.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1478163</guid>
       <pubDate>Wed, 23 Sep 2026 07:13:00 +0000</pubDate>
     </item>
@@ -436,33 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1467407</guid>
       <pubDate>Sat, 05 Sep 2026 01:45:26 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may not be able to open support central in Microsoft Intune and Microsoft Defender portals</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1467282</link>
-      <description>[Microsoft 365 suite] Users may have not been able to open support central in Microsoft Intune and Microsoft Defender portals.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1467282</guid>
-      <pubDate>Fri, 04 Sep 2026 18:44:09 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may experience delays sending and receiving email messages from external domains in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1467029</link>
-      <description>[Exchange Online] Users may have experienced a delay in sending and receiving email messages from external domains in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">EX1467029</guid>
-      <pubDate>Fri, 04 Sep 2026 09:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to access some third-party apps within Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1467148</link>
-      <description>[Microsoft Teams] Users may have been unable to access some third-party apps within Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1467148</guid>
-      <pubDate>Fri, 04 Sep 2026 02:53:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
