@@ -6,7 +6,7 @@ layout: "single"
 exam_code: "SPLUNK-CYBERSECURITY-DEFENSE-ARCHITECT"
 exam_title: "Splunk Certified Cybersecurity Defense Architect"
 exam_level: "advanced"
-exam_status: "planned"
+exam_status: "active"
 exam_category: "Splunk"
 vendor: "splunk"
 manual: false
