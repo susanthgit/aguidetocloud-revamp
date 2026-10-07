@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Oct 2026 22:37:10 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 05:50:23 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to interact with the Microsoft 365 Copilot voice experience</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1489980</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to interact with the Microsoft 365 Copilot voice experience.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1489980</guid>
+      <pubDate>Tue, 06 Oct 2026 23:07:44 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1489909</link>
@@ -19,9 +28,9 @@
     <item>
       <title>[Microsoft Viva] Users are unable to create or edit new meeting or broadcast events in Microsoft Viva Engage</title>
       <link>https://www.aguidetocloud.com/service-health/#MV1489881</link>
-      <description>[Microsoft Viva] Users are unable to create or edit new meeting or broadcast events in Viva Engage.</description>
+      <description>[Microsoft Viva] Users were unable to create or edit new meeting or broadcast events in Viva Engage.</description>
       <category>Microsoft Viva</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MV1489881</guid>
       <pubDate>Tue, 06 Oct 2026 21:09:18 +0000</pubDate>
     </item>
@@ -454,15 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1474143</guid>
       <pubDate>Thu, 10 Sep 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users in the United Kingdom may have been unable to access multiple Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1470143</link>
-      <description>[Microsoft 365 suite] Users in the United Kingdom may have been unable to access multiple Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1470143</guid>
-      <pubDate>Thu, 10 Sep 2026 07:13:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
