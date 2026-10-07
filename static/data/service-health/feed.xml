@@ -5,14 +5,23 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Oct 2026 13:14:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 19:57:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Some admins may be unable to access the Action center in the Microsoft Defender portal</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1490573</link>
+      <description>[Microsoft Defender XDR] Admins may be unable to access the Action center in the Microsoft Defender portal.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1490573</guid>
+      <pubDate>Wed, 07 Oct 2026 17:01:44 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to interact with the Microsoft 365 Copilot voice experience</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1489980</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to interact with the Microsoft 365 Copilot voice experience.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1489980</guid>
       <pubDate>Tue, 06 Oct 2026 23:07:44 +0000</pubDate>
     </item>
@@ -51,6 +60,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1489450</guid>
       <pubDate>Tue, 06 Oct 2026 13:19:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Some users' Microsoft 365 apps may not appear in the App launcher in SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1489449</link>
+      <description>[SharePoint Online] Users' Microsoft 365 apps may not appear in the App launcher in SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1489449</guid>
+      <pubDate>Tue, 06 Oct 2026 13:17:28 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may be unable to view contacts and Speed Dial entries in Microsoft Teams, Outlook desktop and mobile</title>
@@ -202,6 +220,15 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1483625</guid>
       <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Planner] Some users may see initial page loading failures and 500 errors within Microsoft Planner</title>
+      <link>https://www.aguidetocloud.com/service-health/#PL1490629</link>
+      <description>[Planner] Users may have seen initial page loading failures and 500 errors within Planner.</description>
+      <category>Planner</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PL1490629</guid>
+      <pubDate>Mon, 28 Sep 2026 11:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users' email with DocuSign URLs may not be delivered and may be quarantined due to URL reputation</title>
@@ -436,33 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1473907</guid>
       <pubDate>Mon, 14 Sep 2026 06:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins' usage reports may contain stale data in Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1471241</link>
-      <description>[Microsoft 365 suite] Admins' usage reports may contain stale data in Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1471241</guid>
-      <pubDate>Sun, 13 Sep 2026 04:56:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1470554</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CP1470554</guid>
-      <pubDate>Fri, 11 Sep 2026 03:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view the Pay-As-You-Go (PAYG) breakdown in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1474143</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may have been unable to view the PAYG breakdown in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1474143</guid>
-      <pubDate>Thu, 10 Sep 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
