@@ -96,20 +96,20 @@
       {{ $standaloneCount := 0 }}
       {{ $renderedClusters := slice }}
 
-      {{/* Pinned: explicitly render the Cowork cluster card FIRST. */}}
-      {{ $coworkCluster := index $clusters "cowork" }}
-      {{ if $coworkCluster }}
-        {{ $coworkMeta := index $clusterMeta "cowork" }}
-        {{ partial "blog-cluster-card.html" (dict "hub" $coworkCluster.hub "spokes" $coworkCluster.spokes "meta" $coworkMeta) }}
-        {{ $renderedClusters = $renderedClusters | append "cowork" }}
-      {{ end }}
-
-      {{/* Pinned: explicitly render the What's New cluster card SECOND. */}}
+      {{/* Pinned: explicitly render the What's New cluster card FIRST. */}}
       {{ $whatsNewCluster := index $clusters "whats-new" }}
       {{ if $whatsNewCluster }}
         {{ $whatsNewMeta := index $clusterMeta "whats-new" }}
         {{ partial "blog-cluster-card.html" (dict "hub" $whatsNewCluster.hub "spokes" $whatsNewCluster.spokes "meta" $whatsNewMeta) }}
         {{ $renderedClusters = $renderedClusters | append "whats-new" }}
+      {{ end }}
+
+      {{/* Pinned: explicitly render the Cowork cluster card SECOND. */}}
+      {{ $coworkCluster := index $clusters "cowork" }}
+      {{ if $coworkCluster }}
+        {{ $coworkMeta := index $clusterMeta "cowork" }}
+        {{ partial "blog-cluster-card.html" (dict "hub" $coworkCluster.hub "spokes" $coworkCluster.spokes "meta" $coworkMeta) }}
+        {{ $renderedClusters = $renderedClusters | append "cowork" }}
       {{ end }}
 
       {{/* Pinned: explicitly render the Copilot Skills cluster card THIRD. */}}
