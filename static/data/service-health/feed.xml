@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Oct 2026 05:55:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 13:20:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some admins may be unable to access the Action center in the Microsoft Defender portal</title>
@@ -71,13 +71,13 @@
       <pubDate>Tue, 06 Oct 2026 11:45:49 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Defender XDR] Users may encounter delays for alert, activity processing and unexpected CAAC policy behavior in Microsoft Defender XDR</title>
+      <title>[Microsoft Defender XDR] Users may have experienced alert and activity delays and unexpected CAAC policy behavior in Microsoft Defender XDR</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1489394</link>
-      <description>[Microsoft Defender XDR] Users may encounter delays for alert, activity processing and unexpected CAAC policy behavior in Microsoft Defender XDR.</description>
+      <description>[Microsoft Defender XDR] Users may have experienced alert and activity delays and unexpected CAAC policy behavior in Microsoft Defender XDR.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1489394</guid>
-      <pubDate>Tue, 06 Oct 2026 10:52:44 +0000</pubDate>
+      <pubDate>Tue, 06 Oct 2026 08:33:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Some users may be unable to create or update Ontology artifacts in Microsoft Fabric</title>
