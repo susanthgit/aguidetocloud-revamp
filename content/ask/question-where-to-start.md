@@ -32,8 +32,6 @@ Please don't feel you've missed your chance. You can start learning this without
 
 The Copilot chat you already use is enough for those first steps. For the next two weeks, try 15–20 minutes a day. Ask it to explain something unfamiliar, or help rewrite a sample email. Tell it who the answer is for and what you need. Then read the result, check it, and ask it to improve anything unclear.
 
-You could start with my free [AI at work foundations course](https://plainai.aguidetocloud.com/learn/at-work/work-foundations/). It has five short lessons for people in non-technical roles, covering practical uses and what to be careful with.
-
 Use public or made-up information while practising. Keep confidential work and customer details out, and check important facts against the original sources.
 
 Before spending money on a course or exam, tell me a little about the work you do now and whether you're hoping to grow in that field or change direction. No employer name or private details needed. That would help me give you advice that actually fits.
