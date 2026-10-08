@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Oct 2026 13:20:51 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 19:54:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Some users' email messages from on-premises Exchange servers to Exchange Online may intermittently fail</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1491694</link>
+      <description>[Exchange Online] Users' email messages from on-premises Exchange servers to Exchange Online may have intermittently failed.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1491694</guid>
+      <pubDate>Thu, 08 Oct 2026 14:39:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may receive failures when prompting Microsoft 365 Copilot in Outlook on the web or the Outlook desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1491697</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have received failures when prompting Copilot in Outlook on the web or the Outlook desktop client.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1491697</guid>
+      <pubDate>Thu, 08 Oct 2026 13:20:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Some admins may be unable to access the Action center in the Microsoft Defender portal</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1490573</link>
@@ -205,20 +223,20 @@ A backend service that is used to retrieve service information and resource meta
     </item>
     <item>
       <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1489909</link>
-      <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1489909</guid>
-      <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1483625</link>
       <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may have been missing some slides.</description>
       <category>Microsoft Teams</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1483625</guid>
+      <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1489909</link>
+      <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may have been missing some slides.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1489909</guid>
       <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
@@ -235,7 +253,7 @@ A backend service that is used to retrieve service information and resource meta
       <link>https://www.aguidetocloud.com/service-health/#EX1483619</link>
       <description>[Exchange Online] Users' email with DocuSign URLs may not have been delivered and may have been quarantined due to URL reputation.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1483619</guid>
       <pubDate>Mon, 28 Sep 2026 02:36:00 +0000</pubDate>
     </item>
@@ -445,24 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1473520</guid>
       <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Some admins may receive failures creating or updating Communications Compliance policies in Microsoft Purview</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1471821</link>
-      <description>[Microsoft Purview] Admins may receive failures creating or updating Communications Compliance policies in Microsoft Purview.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MP1471821</guid>
-      <pubDate>Mon, 14 Sep 2026 16:41:47 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Some users may experience delays accessing audit logs through the Microsoft Purview Management API</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1473907</link>
-      <description>[Microsoft Purview] Users may have experienced delays accessing audit logs through the Microsoft Purview Management API.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MP1473907</guid>
-      <pubDate>Mon, 14 Sep 2026 06:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
