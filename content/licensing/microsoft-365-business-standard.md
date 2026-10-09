@@ -109,3 +109,31 @@ Yes — it's a simple licence change in the admin centre. No data migration. You
 
 Yes. If you grow past 300 users, you must switch to Enterprise plans (E3 at $39/user/month). Plan the transition early.
 
+
+
+**4. Is Business Standard the same as Office 365 Business Premium?**
+
+Yes. Microsoft renamed Office 365 Business Premium to Microsoft 365 Business Standard in April 2020. Do not confuse it with today's Microsoft 365 Business Premium, which adds device and security management.
+
+
+
+**5. What is included in Microsoft 365 Business Standard?**
+
+Desktop Office apps (Word, Excel, PowerPoint, Outlook), Exchange Online (50 GB), Teams, SharePoint, OneDrive (1 TB), webinar hosting, Microsoft Bookings, and basic Power Apps/Power Automate. Up to 300 users.
+
+
+
+**6. Does Business Standard include security features?**
+
+Only basic Exchange Online Protection (spam/malware filtering). No Intune, no Defender, no Conditional Access. For security, upgrade to Business Premium ($22).
+
+
+
+**7. Can I add Copilot to Business Standard?**
+
+Yes. Microsoft 365 Copilot is available as a $30/user/month add-on for Business Standard. does Business Standard cost?**
+
+**8. How much does Business Standard cost?**
+
+The USD list price is $14 per user per month since July 2026, and existing customers stay on their current rate until renewal. Your price can differ by region and billing term, so confirm it on Microsoft's pricing page.
+

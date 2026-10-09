@@ -158,3 +158,27 @@ Yes — it's an instant upgrade in the Microsoft 365 admin centre. No data migra
 **6. Is Business Basic enough for a small team?**
 
 If your team only needs email, Teams, and cloud storage — and everyone works in web browsers — yes. But most businesses quickly outgrow it because desktop apps and [Copilot](/licensing/microsoft-365-copilot/) eligibility require Standard or Premium.
+
+
+
+**7. Does Business Basic include Teams?**
+
+Yes. Business Basic includes Microsoft Teams. Microsoft also sells a version without Teams in some cases, so check which one you are buying.
+
+
+
+**8. Is Business Basic the same as Office 365 Business Essentials?**
+
+Yes. Microsoft renamed Office 365 Business Essentials to Microsoft 365 Business Basic in April 2020. Searches for 'Office 365 Business Basic' are usually looking for this plan.
+
+
+
+**9. Does Business Basic include Microsoft Forms?**
+
+Yes. Forms is included as a web app, along with the web versions of Word, Excel, PowerPoint and Outlook.
+
+
+
+**10. How much does Business Basic cost?**
+
+The USD list price is $7 per user per month since July 2026, and existing customers stay on their current rate until renewal. Your price can differ by region and billing term, so confirm it on Microsoft's pricing page.

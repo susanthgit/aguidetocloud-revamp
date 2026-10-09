@@ -184,3 +184,15 @@ Yes. The [Microsoft 365 Copilot](/licensing/microsoft-365-copilot/) add-on ($30/
 
 Similar security features, different target audience. Business Premium ($22) is capped at 300 users with 50 GB mailboxes. [M365 E3](/licensing/microsoft-365-e3/) ($39) has unlimited users, 100 GB mailboxes, Windows Enterprise, and more compliance tools.
 
+
+
+**7. Is Office 365 Business Premium the same as Microsoft 365 Business Premium?**
+
+No. The old Office 365 Business Premium became Microsoft 365 Business Standard in April 2020. Microsoft 365 Business Premium is the higher plan that adds Intune, Defender and Entra ID P1 security.
+
+
+
+**8. How much does Business Premium cost?**
+
+The USD list price is $22 per user per month, unchanged in July 2026. Your price can differ by region and billing term, so confirm it on Microsoft's pricing page.
+
