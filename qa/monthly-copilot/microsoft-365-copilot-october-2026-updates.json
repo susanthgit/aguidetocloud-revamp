@@ -1,0 +1,752 @@
+{
+ "schema": 2,
+ "slug": "microsoft-365-copilot-october-2026-updates",
+ "tool_version": "1.0.0",
+ "generated_at": "2026-10-09T07:42:39.103179+00:00",
+ "post": {
+  "path": "content/blog/microsoft-365-copilot-october-2026-updates.md",
+  "sha256": "f31c02234c9a2d1580066f9d68aaf5e8d9d16bbe6d7eb1ec62cd2d190472a157",
+  "sections": 52
+ },
+ "roadmap_snapshot": {
+  "path": "static/data/roadmap/latest.json",
+  "generated_at": "2026-10-08T12:00:57.005053+00:00",
+  "item_count": 1900,
+  "sha256": "290879d0c40bd08ea7d0152fa6e392d1f38a6cad60dc73b7c63500fd5a0d968e"
+ },
+ "sections": [
+  {
+   "section": 1,
+   "title": "Home puts Chat and Cowork on one screen",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 2,
+   "title": "Chat can do long-running work, with a Tasks view",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 5 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 3,
+   "title": "Plugins replace the Agents entry in the navigation",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 4,
+   "title": "Chat shows which Skills it used",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 5,
+   "title": "Code builds trackers, dashboards and apps from a description",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 6,
+   "title": "Autopilot is the new name for Scout",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 7,
+   "title": "Copilot Managed Runtime is in preview",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 8,
+   "title": "The plugin registry is rolling out",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 9,
+   "title": "FinOps for AI expands to Code and Managed Runtime",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 10,
+   "title": "Fabric IQ is generally available in Chat and Cowork",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 8 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 11,
+   "title": "Dynamics 365 and Power Platform grounding is in public preview",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 6 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 12,
+   "title": "An admin-led Copilot onboarding experience arrives for Frontier",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 13,
+   "title": "GPT-6.1 Sol and Claude Sonnet 5.5 arrive under usage-based billing",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 3 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 14,
+   "title": "Copilot in SharePoint began general availability on 30 September",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 3 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 15,
+   "title": "Search and Chat work together",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 11 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 16,
+   "title": "Email attachments show as pills in search results",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 10 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 17,
+   "title": "Outlook Mail results can be sorted by date",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 8 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 18,
+   "title": "Copilot can find meetings by topic or keyword",
+   "roadmap_ids": [
+    "559110"
+   ],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "559110": "Launched"
+   }
+  },
+  {
+   "section": 19,
+   "title": "Notebooks get a new, lighter design in the Copilot app",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 10 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 20,
+   "title": "Add references to a Notebook from Quick Access in Search",
+   "roadmap_ids": [
+    "510099"
+   ],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "510099": "Launched"
+   }
+  },
+  {
+   "section": 21,
+   "title": "New Copilot Pages will be stored in OneDrive",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 22,
+   "title": "Buildings, rooms and desks get profile cards",
+   "roadmap_ids": [
+    "553219"
+   ],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "553219": "Launched"
+   }
+  },
+  {
+   "section": 23,
+   "title": "The Copilot app works with Apple CarPlay",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 24,
+   "title": "Copilot Cowork is documented as delegating outcomes",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 25,
+   "title": "Excel links straight to the changes Copilot made",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 26,
+   "title": "Excel's Show Changes pane attributes edits to Copilot",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 3 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 27,
+   "title": "Outlook triage grows: delete, move, copy, categorise, rules and folders",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 2,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 11 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 28,
+   "title": "Planner gets a built-in Planner Agent chat",
+   "roadmap_ids": [
+    "560532"
+   ],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "560532": "Launched"
+   }
+  },
+  {
+   "section": 29,
+   "title": "Federated Copilot connectors are generally available",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 2,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 7 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 30,
+   "title": "Connector admins get pre-setup guides and clearer errors",
+   "roadmap_ids": [
+    "502529"
+   ],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "502529": "Launched"
+   }
+  },
+  {
+   "section": 31,
+   "title": "Connector query strings and identity mapping can be edited",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 32,
+   "title": "A dedicated License Requests page",
+   "roadmap_ids": [
+    "561206"
+   ],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "561206": "Launched"
+   }
+  },
+  {
+   "section": 33,
+   "title": "Admins can add a policy link for blocked Copilot users",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 4 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 34,
+   "title": "A report on \"Everyone\" and \"Everyone except external users\"",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 7 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 35,
+   "title": "Admins can delete all People Skills data",
+   "roadmap_ids": [
+    "565905"
+   ],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "565905": "Launched"
+   }
+  },
+  {
+   "section": 36,
+   "title": "Cowork adoption and impact appear in the dashboards",
+   "roadmap_ids": [
+    "567005"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "567005": "Launched"
+   }
+  },
+  {
+   "section": 37,
+   "title": "The Copilot usage snapshot report updates daily",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 4 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 38,
+   "title": "More Power BI filters in Copilot analytics",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 2 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 39,
+   "title": "Viva Glint uses Copilot to assign topics",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 28 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 40,
+   "title": "Targeted release is retiring",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; no item shared two or more significant words with this title. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 41,
+   "title": "Teams Phone Agent answers calls for you",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 36 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 42,
+   "title": "Record captures conversations in the Copilot mobile app",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 8 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 43,
+   "title": "Copilot in Teams and Outlook gets the new look, and you can call agents and skills inline",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 40 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 44,
+   "title": "The Edge new tab page gets Copilot search, chat and suggested actions",
+   "roadmap_ids": [
+    "566703"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "566703": "In development"
+   }
+  },
+  {
+   "section": 45,
+   "title": "Copilot Chat matches scanned PDFs better",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 3 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 46,
+   "title": "Copilot in Word, Excel and PowerPoint reaches Android",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 18 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 47,
+   "title": "Word shows citations and can arrange images and shapes",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 2,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 48,
+   "title": "PowerPoint: admin-published Skills, Brand Kit Skills and long-running tasks",
+   "roadmap_ids": [
+    "569018"
+   ],
+   "source_urls": 2,
+   "images": 3,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "569018": "In development"
+   }
+  },
+  {
+   "section": 49,
+   "title": "SharePoint apps can show interactive UI in Chat, and Work IQ gets SharePoint tools",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 9 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 50,
+   "title": "Copilot in OneDrive is rebuilt, and Copilot Search becomes the default in SharePoint and OneDrive",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 2,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 31 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  },
+  {
+   "section": 51,
+   "title": "Targeted surveys in the Copilot Dashboard",
+   "roadmap_ids": [
+    "568072"
+   ],
+   "source_urls": 2,
+   "images": 2,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "568072": "In development"
+   }
+  },
+  {
+   "section": 52,
+   "title": "New connectors, plugins and agents from partners",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 1 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+  }
+ ],
+ "images": [
+  {
+   "section": 1,
+   "src": "/images/blog/copilot-october-2026/official-1-home-tabs.webp",
+   "alt": "Official Microsoft image of the new Copilot app on the Home tab. The top tabs read Home, Code and Autopilot. The greeting reads Hi Elvia, how can I help? and the prompt box holds Catch me up on the Caldova account and turn open items into a plan, with a Chat and Cowork toggle.",
+   "exists": true,
+   "sha256": "862fe20c5b6b0a3e72b04320a7b8cfb2ac2d01e92f1da61be5745a6efd9d4ed1",
+   "observed": true
+  },
+  {
+   "section": 5,
+   "src": "/images/blog/copilot-october-2026/official-5-code-tab.webp",
+   "alt": "Official Microsoft image of the Code tab in the Copilot app. The heading reads Let's build something great together. The prompt reads Make a dashboard of our pipeline by region and stage, with a model picker and Try these first cards below.",
+   "exists": true,
+   "sha256": "e6af4602a1b68bff44e88590038a655039219763fd990b5de66a1d61ff3fb4c1",
+   "observed": true
+  },
+  {
+   "section": 6,
+   "src": "/images/blog/copilot-october-2026/official-6-autopilot-tab.webp",
+   "alt": "Official Microsoft image of the Autopilot tab in the Copilot app. The side menu lists Overview, Routines and Plugins. The greeting reads Morning Elvia, you're in good shape, with a prompt Run the supplier review and a What's been happening list.",
+   "exists": true,
+   "sha256": "fa3d7f68914456ff7f570b42f07f3c624635d1f65fcc4664866548d193742a1d",
+   "observed": true
+  },
+  {
+   "section": 7,
+   "src": "/images/blog/copilot-october-2026/official-7-managed-runtime-host.webp",
+   "alt": "Official Microsoft diagram of Copilot Managed Runtime. A CLI and SDK box sits above a Host box that contains Identity and access, Governed data connectivity and Managed runtime, with a Microsoft Services row beneath.",
+   "exists": true,
+   "sha256": "5753313d790c323c8e1d27889c9dccb9c996b18ad5bb806d8a77bc6eba86ac97",
+   "observed": true
+  },
+  {
+   "section": 14,
+   "src": "/images/blog/copilot-october-2026/official-14-sharepoint-copilot-panel.webp",
+   "alt": "Official Microsoft image of a SharePoint site page called ZavaMesh Operational Hub with a Copilot pop-up open beside it. The pop-up lists suggestions: Summarize this page, Create a list, Improve this site, Create a document library and Create a page, with a prompt box and an Open chat link at the bottom. Callout: \u201cOpen Copilot from this button to get the page panel\u201d",
+   "exists": true,
+   "sha256": "2fa870b5fa7a31c28aae1ee8d6b3259a33c4b444796d919248cded3263e06f96",
+   "observed": true
+  },
+  {
+   "section": 24,
+   "src": "/images/blog/copilot-october-2026/official-24-cowork-home.webp",
+   "alt": "Official Microsoft screenshot of the Cowork home page. The greeting reads Hi Elvia, how can I help? with a Start a task box and suggested prompts Organize my inbox, Arrange my week and Research a company. Callout: \u201cDescribe the outcome you want, not one task\u201d",
+   "exists": true,
+   "sha256": "c2c80c01f946442fba2270f6f3f05616b79dfde2f83c04c33ea0b2827c40dd97",
+   "observed": true
+  },
+  {
+   "section": 27,
+   "src": "/images/blog/copilot-october-2026/official-27-triage-confirmation.webp",
+   "alt": "Official Microsoft screenshot of Copilot Chat. The prompt reads Pin emails from my manager this week. Copilot lists eight emails and shows Confirm and Cancel buttons before it acts. Callout: \u201cCopilot lists the 8 emails and waits for you to Confirm\u201d",
+   "exists": true,
+   "sha256": "07b4a038788dc578d19bf4569daa8870ae9447238b6dfbf470874a934b9a7644",
+   "observed": true
+  },
+  {
+   "section": 27,
+   "src": "/images/blog/copilot-october-2026/official-27-triage-pinned-full-page.webp",
+   "alt": "Official Microsoft screenshot of full-page Copilot Chat. The prompt reads Pin emails from my manager this week. Copilot answers that it found and pinned four emails, with Flag these emails and Summarize these emails chips. Callout: \u201cAfter pinning, it offers to flag or summarise them\u201d",
+   "exists": true,
+   "sha256": "df1bdb6aeba15e8503d5700c4d9b60967b61fdf51d01cc413bc3f55d8e5e09f0",
+   "observed": true
+  },
+  {
+   "section": 29,
+   "src": "/images/blog/copilot-october-2026/official-29-connectors-your-connections.webp",
+   "alt": "Official Microsoft screenshot of the Microsoft 365 admin center Connectors page on the Your connections tab. It lists data sources such as HubSpot, Notion, Confluence and Jira with a state of Ready and a staged rollout column. Callout: \u201cMCP connectors reach the source live, without a sync\u201d",
+   "exists": true,
+   "sha256": "11ed576410209bee0cfd90abf91a7fd127c91dab18415184d7f4a281a2d9107a",
+   "observed": true
+  },
+  {
+   "section": 29,
+   "src": "/images/blog/copilot-october-2026/official-29-federated-confirmation-card.webp",
+   "alt": "Official Microsoft screenshot of Copilot Chat with a Zava confirmation card. Copilot wants to create an issue status in Zava, shows the action parameters, and offers Cancel and Allow once buttons. Callout: \u201cYou approve each write action: Allow once\u201d",
+   "exists": true,
+   "sha256": "33058d19370c9b87ec470dc14cb7a87e17612612e66c189219c2bc0fc6344282",
+   "observed": true
+  },
+  {
+   "section": 36,
+   "src": "/images/blog/copilot-october-2026/official-36-cowork-usage-breakdown.webp",
+   "alt": "Official Microsoft chart from the Consumption dashboard. A bubble chart shows total usage and average assisted value per task category, with Analysis and research the largest bubble and a key insight panel on the left. Callout: \u201cEach bubble is a Cowork task type: credits used against hours saved\u201d",
+   "exists": true,
+   "sha256": "a04e7aaca6d90934128b372124758e837df2431429695b54b95de06e2eae8914",
+   "observed": true
+  },
+  {
+   "section": 41,
+   "src": "/images/blog/copilot-october-2026/official-41-teams-phone-agent-call-context.webp",
+   "alt": "Official Microsoft image of a Teams call window with a Call context panel open on the right, marked Private. Under Details of the previous call it reads Transferred to you by Teams phone agent. The Context of the previous call box lists Topics discussed in the call: Mortgage application enquiry, and a Reason for transfer summary, with the note AI-generated content may be incorrect. The caller&rsquo;s phone number has been masked by me. Callout: \u201cAI summary of the earlier call, handed to the person\u201d",
+   "exists": true,
+   "sha256": "ac3f0a6426231bf9b0ef8726750428e4c645af08a6da3337c55209286d671194",
+   "observed": true
+  },
+  {
+   "section": 42,
+   "src": "/images/blog/copilot-october-2026/official-42-mobile-record-in-copilot.webp",
+   "alt": "Official Microsoft image of three iPhone screens side by side. The first shows the attach menu with a red box already drawn round Record. The second shows New recording at 02:32 with a waveform and Pause and Done buttons. The third reads Uploading to Copilot, Saving to OneDrive and preparing a summary.",
+   "exists": true,
+   "sha256": "9a5a61638349bf77f2ea01d43b02ce0f24c5ba861f436a134f73d7da3d7ebdff",
+   "observed": true
+  },
+  {
+   "section": 43,
+   "src": "/images/blog/copilot-october-2026/official-43-copilot-in-teams-chat.webp",
+   "alt": "Official Microsoft image of the Copilot app inside a Teams window. The greeting reads Hi, what can I help you with? with Work IQ and Auto options beside the prompt box. The left rail lists New chat, Agents and Notebooks, then Pinned and Chats. Callout: \u201cNew layout: Agents, Notebooks and chats down the left\u201d",
+   "exists": true,
+   "sha256": "d06f1b41a79dae81d88e8e94253e08f7a80870ef07c3df6dd1bfd76c54e5b51e",
+   "observed": true
+  },
+  {
+   "section": 44,
+   "src": "/images/blog/copilot-october-2026/official-44-edge-new-tab-copilot.webp",
+   "alt": "Official Microsoft image of an Edge new tab page with a Copilot panel. Tabs at the top of the panel read Chat, Cowork and Code, cropped by me. The greeting reads Hi Adele, how can I help? and shortcut tiles below it include Loop, Outlook, SharePoint, OneDrive and Add. Callout: \u201cOne box for search, chat and web exploration\u201d",
+   "exists": true,
+   "sha256": "2cd8f5b0179d3a3832c0097a82de7680806b32c0574435c8efcf873d78b2b248",
+   "observed": true
+  },
+  {
+   "section": 45,
+   "src": "/images/blog/copilot-october-2026/official-45-scanned-pdf-search.webp",
+   "alt": "Official Microsoft image of a Copilot chat. The prompt reads find the scanned pdf file that says total amount due: $5,000.00. The answer reads Found it in your OneDrive and names the file github_repo_pdf_scanned_invoice, quoting TOTAL AMOUNT DUE: $5,000.00. Callout: \u201cFound by the text inside a scanned PDF\u201d",
+   "exists": true,
+   "sha256": "80492ba56d326b548137f4b27a69fa45b1b4dbfa08ee4d440bad9a5dec8676e4",
+   "observed": true
+  },
+  {
+   "section": 46,
+   "src": "/images/blog/copilot-october-2026/official-46-android-word-edit-with-copilot.webp",
+   "alt": "Official Microsoft image of three Android phones showing a Word document titled The Green Office Revolution. One shows an Edit with Copilot bar with suggestion chips, one shows the prompt Add introduction and conclusion, and one shows a message that Copilot edited your document, with edits 1 of 2. Callout: \u201cTap Edit with Copilot, then say what to change\u201d",
+   "exists": true,
+   "sha256": "6229e036c381d253218213a9ead63307658afae82c7a36b64e891050c9c0904f",
+   "observed": true
+  },
+  {
+   "section": 47,
+   "src": "/images/blog/copilot-october-2026/official-47-word-citations-footnote.webp",
+   "alt": "Official Microsoft image of a Word report on the civil rights movement. Footnote 1 reads Spotlight: Passage of the Civil Rights Act of 1964, shown as 1 of 14. The Copilot pane beside it holds the prompt Support the draft with citations. Callout: \u201cThe citation lands as a footnote in the document\u201d",
+   "exists": true,
+   "sha256": "ea46cd1fbc35e95a999a6d8660e26d40ffe88e317a4d11a33ce134cd209a2d16",
+   "observed": true
+  },
+  {
+   "section": 47,
+   "src": "/images/blog/copilot-october-2026/official-47-word-resize-image.webp",
+   "alt": "Official Microsoft image of a Word document titled Coffee-Blog-Post with a coffee cup picture selected. The Copilot prompt reads Resize this image to fit the section width, with Done and Undo buttons. Callout: \u201cCopilot resized the image and kept its aspect ratio\u201d",
+   "exists": true,
+   "sha256": "b16c43c233d602a3a11fef1628f0cdd1d21867745f8410d574eb4b49f0e7d116",
+   "observed": true
+  },
+  {
+   "section": 48,
+   "src": "/images/blog/copilot-october-2026/official-48-admin-published-skill.webp",
+   "alt": "Official Microsoft image of an admin page for a skill named Infographic Summary. It shows the status Available, the publisher, Overview and Users tabs, and Uninstall and Block buttons. The publisher&rsquo;s personal name has been masked by me. Callout: \u201cA published skill, with its version and dates\u201d",
+   "exists": true,
+   "sha256": "d8e1978cf1013483c935f97f0bcebaeb2edfb633f26512eec5b49b16fa8c4c7b",
+   "observed": true
+  },
+  {
+   "section": 48,
+   "src": "/images/blog/copilot-october-2026/official-48-brand-kit-create-skill.webp",
+   "alt": "Official Microsoft image of a Brand Kit Skills card with a Create a new skill form. The name reads infographic-summary, there is a box of instructions, an option to import a SKILL.md file, and Add and Cancel buttons. Callout: \u201cName it, describe it, write the instructions, then Add\u201d",
+   "exists": true,
+   "sha256": "2f571577e77bad300abfc9d8a1860fb51c0ae0f2eb5f9cb6a8eb602873dd8269",
+   "observed": true
+  },
+  {
+   "section": 48,
+   "src": "/images/blog/copilot-october-2026/official-48-powerpoint-plus-menu.webp",
+   "alt": "Official Microsoft image of the Copilot plus menu in PowerPoint. The entries are Add sources or skills, Upload, Designer, Select brand and Choose skills, and Change data sources is outlined by Microsoft. Callout: \u201cChoose skills adds a saved skill to your prompt\u201d",
+   "exists": true,
+   "sha256": "efae2de2f325c0c99bf8a0e4bf7f1b725e1fc1e7e7e8a26e6d02a50b7c929746",
+   "observed": true
+  },
+  {
+   "section": 49,
+   "src": "/images/blog/copilot-october-2026/official-49-agent-inline-ui-card.webp",
+   "alt": "Official Microsoft image of the Copilot app running an agent called ZavaRetail Agent. An interactive card inside the chat shows Zava Seattle Flagship with Today&rsquo;s sales of $45.5k, a satisfaction score of 4.5, a trend chart and an Open full dashboard link. A personal name at the bottom-left has been masked by me. Callout: \u201cAn interactive card, drawn inside the chat reply\u201d",
+   "exists": true,
+   "sha256": "4b616611ff62a7edeefa43c6d94e39f2545b19e5c0241f508b9424fb3ba3c952",
+   "observed": true
+  },
+  {
+   "section": 50,
+   "src": "/images/blog/copilot-october-2026/official-50-sharepoint-copilot-search.webp",
+   "alt": "Official Microsoft image of SharePoint search for the question What did the performance bench analysis say? An AI answer card with a citation sits above the file results, and a Try the new Copilot Search switch appears at the bottom left. Callout: \u201cCopilot Search answers first, with sources, then lists the files\u201d",
+   "exists": true,
+   "sha256": "2075cb1cff6b9591d7823373d469a21176f731633348bcb9d9a25857bdd0cf3d",
+   "observed": true
+  },
+  {
+   "section": 50,
+   "src": "/images/blog/copilot-october-2026/official-50-onedrive-copilot-panel.webp",
+   "alt": "Official Microsoft image of the OneDrive For you page with a Copilot pane open. The pane reads Hello Carole, here are some ideas, followed by suggestion chips. Callout: \u201cThe Copilot panel suggests file questions to start\u201d",
+   "exists": true,
+   "sha256": "2b62042bcd85b0d3ba3c04fc58b4ebc86c96931f7fb87ff513125a2ec024a95e",
+   "observed": true
+  },
+  {
+   "section": 51,
+   "src": "/images/blog/copilot-october-2026/official-51-copilot-impact-survey-button.webp",
+   "alt": "Official Microsoft image of the Copilot Dashboard in Viva Insights, cropped by me. Three survey result cards show Q1 3.3 out of 5.0, Q2 3.1 out of 5.0 and Q3 3.8 out of 5.0. Along the bottom a button reads Start Copilot Impact survey for active users, with the label 22 users match filters and a tooltip explaining the survey goes to matching Copilot users. Callout: \u201cSend the survey to everyone who matches your filters\u201d",
+   "exists": true,
+   "sha256": "b2f21342ba05a789d2e5e7e599a65db2fc52d44652237bd6ec255fc206f93210",
+   "observed": true
+  },
+  {
+   "section": 51,
+   "src": "/images/blog/copilot-october-2026/official-51-survey-results-preview.webp",
+   "alt": "Official Microsoft screenshot of the Adoption survey results preview. A Survey picker and the View all questions and Send a new Copilot adoption survey buttons are outlined in yellow, above question results such as 2.8 out of 5.",
+   "exists": true,
+   "sha256": "bf4c7d3c4ba90cc85d951daca6d423ff0aab4760ebbe02da753f14a0710802c1",
+   "observed": true
+  }
+ ],
+ "unresolved_sections": [],
+ "unobserved_images": [],
+ "state": "pass"
+}

@@ -1,0 +1,296 @@
+{
+  "_README": [
+    "Annotation disposition per image for this issue. EVERY image referenced in the post",
+    "must appear exactly once, so an issue where the annotation pass was skipped fails",
+    "loudly instead of being silently exempt.",
+    "",
+    "Dispositions: annotated | created_asset | microsoft_artwork | annotated_at_capture",
+    "",
+    "'annotated' records the pre-annotation source hash, the hash of the bytes now on the",
+    "page, and the batch spec that produced them. Coverage CANNOT be detected by counting",
+    "red pixels: a thin border scored 24 (false negative) while six untouched screenshots",
+    "scored 912-3561 on native red UI (false positive). Hashes are the only sound test.",
+    "",
+    "Every non-'annotated' entry needs a real reason. This file is NOT for silencing a",
+    "defect in the issue you are writing - fix the image instead."
+  ],
+  "slug": "microsoft-365-copilot-october-2026-updates",
+  "images": {
+    "official-1-home-tabs.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official Microsoft launch artwork already clean and self-explanatory; adding callouts would clutter it."
+    },
+    "official-5-code-tab.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official Microsoft launch artwork already clean and self-explanatory; adding callouts would clutter it."
+    },
+    "official-6-autopilot-tab.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official Microsoft launch artwork already clean and self-explanatory; adding callouts would clutter it."
+    },
+    "official-7-managed-runtime-host.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official Microsoft architecture diagram, already labelled; callouts would cover its small text."
+    },
+    "official-14-sharepoint-copilot-panel.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "76900cffa826cb50c3c7bd26e3a06ed49c2131f31c97ae150f251cb8cd4798d2",
+      "output_sha256": "2fa870b5fa7a31c28aae1ee8d6b3259a33c4b444796d919248cded3263e06f96",
+      "callout_texts": [
+        "Open Copilot from this button to get the page panel"
+      ]
+    },
+    "official-24-cowork-home.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "0314e539da07390c04669e518d2cac93d008316d8fd1d551d61e47bbe9b3549d",
+      "output_sha256": "c2c80c01f946442fba2270f6f3f05616b79dfde2f83c04c33ea0b2827c40dd97",
+      "callout_texts": [
+        "Describe the outcome you want, not one task"
+      ]
+    },
+    "official-27-triage-confirmation.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "f9d4ba0aa1dc7258db558da8c03af78a84703e44dd2309a5a881d657e45d8831",
+      "output_sha256": "07b4a038788dc578d19bf4569daa8870ae9447238b6dfbf470874a934b9a7644",
+      "callout_texts": [
+        "Copilot lists the 8 emails and waits for you to Confirm"
+      ]
+    },
+    "official-27-triage-pinned-full-page.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "10870c72134e2a246a01b53e68667d8194716f4a97bc370bababc2f40f9ad673",
+      "output_sha256": "df1bdb6aeba15e8503d5700c4d9b60967b61fdf51d01cc413bc3f55d8e5e09f0",
+      "callout_texts": [
+        "After pinning, it offers to flag or summarise them"
+      ]
+    },
+    "official-29-connectors-your-connections.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "b5ddc398d81bf0259691db7ef177ac7229c0c75ddffef279169e31bda6f0dff4",
+      "output_sha256": "11ed576410209bee0cfd90abf91a7fd127c91dab18415184d7f4a281a2d9107a",
+      "callout_texts": [
+        "MCP connectors reach the source live, without a sync"
+      ]
+    },
+    "official-29-federated-confirmation-card.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "2f89e93bcacb0979c7aab85994fbe80514917db4676aca022ad5a0ec0db048ce",
+      "output_sha256": "33058d19370c9b87ec470dc14cb7a87e17612612e66c189219c2bc0fc6344282",
+      "callout_texts": [
+        "You approve each write action: Allow once"
+      ]
+    },
+    "official-36-cowork-usage-breakdown.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "cb2c3c0476c1c108d050aaeaaef7c947036591883c519c1a10aa965dcd7eb005",
+      "output_sha256": "a04e7aaca6d90934128b372124758e837df2431429695b54b95de06e2eae8914",
+      "callout_texts": [
+        "Each bubble is a Cowork task type: credits used against hours saved"
+      ]
+    },
+    "official-41-teams-phone-agent-call-context.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "625561051b6f4f5aa97a1a5312cf6e12284f7715103c9e048c79a8ceb1c8f04d",
+      "output_sha256": "ac3f0a6426231bf9b0ef8726750428e4c645af08a6da3337c55209286d671194",
+      "callout_texts": [
+        "AI summary of the earlier call, handed to the person"
+      ]
+    },
+    "official-42-mobile-record-in-copilot.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft already drew a red box round Record on the first phone screen; a second callout would compete with it."
+    },
+    "official-43-copilot-in-teams-chat.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "21702389499cbe36669c0baa079d3fe6abef9abd9a2d5d853a91a4cfd1be064a",
+      "output_sha256": "d06f1b41a79dae81d88e8e94253e08f7a80870ef07c3df6dd1bfd76c54e5b51e",
+      "callout_texts": [
+        "New layout: Agents, Notebooks and chats down the left"
+      ]
+    },
+    "official-44-edge-new-tab-copilot.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "c6beb5ee31fcb410d9cdb6903516344e7aac22648cdf93614e7b5fb1ec564f3a",
+      "output_sha256": "2cd8f5b0179d3a3832c0097a82de7680806b32c0574435c8efcf873d78b2b248",
+      "callout_texts": [
+        "One box for search, chat and web exploration"
+      ]
+    },
+    "official-45-scanned-pdf-search.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "ef4b6df8499106765ecc5a66d8b97e19084518fc6f79acb09ce87ac1ae70fcfc",
+      "output_sha256": "80492ba56d326b548137f4b27a69fa45b1b4dbfa08ee4d440bad9a5dec8676e4",
+      "callout_texts": [
+        "Found by the text inside a scanned PDF"
+      ]
+    },
+    "official-46-android-word-edit-with-copilot.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "efbd9895baae83d3fb1c6cc01b6a4815c12b2ce4b12e83ae32cb23cea6efc6d5",
+      "output_sha256": "6229e036c381d253218213a9ead63307658afae82c7a36b64e891050c9c0904f",
+      "callout_texts": [
+        "Tap Edit with Copilot, then say what to change"
+      ]
+    },
+    "official-47-word-citations-footnote.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "c0efa3cb75106b6a8e4b9bb504174977c960193fe8ad0e000c76a63925bfb88b",
+      "output_sha256": "ea46cd1fbc35e95a999a6d8660e26d40ffe88e317a4d11a33ce134cd209a2d16",
+      "callout_texts": [
+        "The citation lands as a footnote in the document"
+      ]
+    },
+    "official-47-word-resize-image.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "c552d7e06753658170ab743463a736d07050c999345de67a416bbf48ac376d51",
+      "output_sha256": "b16c43c233d602a3a11fef1628f0cdd1d21867745f8410d574eb4b49f0e7d116",
+      "callout_texts": [
+        "Copilot resized the image and kept its aspect ratio"
+      ]
+    },
+    "official-48-admin-published-skill.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "f5e6f3af62f2af76b3355456d8a44a00fc8a47dac6fcfb683ad732593cd772aa",
+      "output_sha256": "d8e1978cf1013483c935f97f0bcebaeb2edfb633f26512eec5b49b16fa8c4c7b",
+      "callout_texts": [
+        "A published skill, with its version and dates"
+      ]
+    },
+    "official-48-brand-kit-create-skill.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "3e2408ed26b00998b75a1e211ba6eeaf320dd7448d4ee4a2be7fa9ab5642f66c",
+      "output_sha256": "2f571577e77bad300abfc9d8a1860fb51c0ae0f2eb5f9cb6a8eb602873dd8269",
+      "callout_texts": [
+        "Name it, describe it, write the instructions, then Add"
+      ]
+    },
+    "official-48-powerpoint-plus-menu.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "7d17f37d5d88d900eb020673c30371ad097f47a902718bc08932562afcd1dd8d",
+      "output_sha256": "efae2de2f325c0c99bf8a0e4bf7f1b725e1fc1e7e7e8a26e6d02a50b7c929746",
+      "callout_texts": [
+        "Choose skills adds a saved skill to your prompt"
+      ]
+    },
+    "official-49-agent-inline-ui-card.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "038605d23b13d1ee1edc00d77084baca262f3954676f6dfca3663f83600f184c",
+      "output_sha256": "4b616611ff62a7edeefa43c6d94e39f2545b19e5c0241f508b9424fb3ba3c952",
+      "callout_texts": [
+        "An interactive card, drawn inside the chat reply"
+      ]
+    },
+    "official-50-sharepoint-copilot-search.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "0fe6a76553ac5894f94abcee5a632e412a4517fee2b8341b198322932f94db48",
+      "output_sha256": "2075cb1cff6b9591d7823373d469a21176f731633348bcb9d9a25857bdd0cf3d",
+      "callout_texts": [
+        "Copilot Search answers first, with sources, then lists the files"
+      ]
+    },
+    "official-50-onedrive-copilot-panel.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "3433ad82485877b6ed96b0f88a9c06278673308bb19c119d36398e5bd264e8ae",
+      "output_sha256": "2b62042bcd85b0d3ba3c04fc58b4ebc86c96931f7fb87ff513125a2ec024a95e",
+      "callout_texts": [
+        "The Copilot panel suggests file questions to start"
+      ]
+    },
+    "official-51-copilot-impact-survey-button.webp": {
+      "disposition": "annotated",
+      "spec": "oct-annot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "c67af802b8c70001f0e19600deb765753855a0f51ef06f14ae992b64c4169ebe",
+      "output_sha256": "b2f21342ba05a789d2e5e7e599a65db2fc52d44652237bd6ec255fc206f93210",
+      "callout_texts": [
+        "Send the survey to everyone who matches your filters"
+      ]
+    },
+    "official-51-survey-results-preview.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft already outlined the key controls in yellow boxes; extra callouts would add noise."
+    }
+  }
+}
