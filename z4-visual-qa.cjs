@@ -4,7 +4,7 @@
  * Usage: node z4-visual-qa.cjs [batch_number]
  *   batch_number: 1-11 (tools divided into batches of 5)
  *   If omitted, runs ALL tools.
- * Output: z4-screenshots/{slug}/ with light/dark screenshots + JSON report
+ * Output: audit-output/z4-screenshots/{slug}/ with light/dark screenshots + JSON report
  */
 
 const { chromium } = require('playwright');
@@ -12,7 +12,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = 'http://localhost:1314';
-const SCREENSHOT_DIR = path.join(__dirname, 'z4-screenshots');
+const SCREENSHOT_DIR = path.join(__dirname, 'audit-output', 'z4-screenshots');
 
 const ALL_TOOLS = [
   // batch 1

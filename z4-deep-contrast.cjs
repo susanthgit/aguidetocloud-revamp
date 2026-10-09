@@ -12,7 +12,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = 'http://localhost:1314';
-const REPORT_PATH = path.join(__dirname, 'z4-screenshots', 'deep-contrast-report.json');
+const REPORT_PATH = path.join(__dirname, 'audit-output', 'z4-screenshots', 'deep-contrast-report.json');
 
 const ALL_SLUGS = [
   'acronym-battle','admin-badges','admin-bingo','admin-comms',
