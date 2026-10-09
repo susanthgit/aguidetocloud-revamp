@@ -1,6 +1,6 @@
 ---
 title: "Azure AI Foundry News — Model Catalog, Prompt Flow & AI Platform Updates"
-description: "Latest Azure AI Foundry news — model catalog, prompt flow updates, AI agent SDK releases, and Azure OpenAI changes. Updated 4x daily."
+description: "Latest Azure AI Foundry news — model catalog, prompt flow updates, AI agent SDK releases, and Azure OpenAI changes. Archived."
 type: "ai-news-category"
 category_filter: "ai-foundry"
 ---

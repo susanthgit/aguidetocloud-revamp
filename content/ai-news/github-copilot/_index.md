@@ -1,6 +1,6 @@
 ---
 title: "GitHub Copilot News — CLI, Coding Agent, Code Review & Extensions"
-description: "Latest GitHub Copilot updates — Copilot CLI, coding agent, code review, Copilot Workspace, and extension ecosystem. Updated 4x daily."
+description: "Latest GitHub Copilot updates — Copilot CLI, coding agent, code review, Copilot Workspace, and extension ecosystem. Archived."
 type: "ai-news-category"
 category_filter: "github-copilot"
 ---

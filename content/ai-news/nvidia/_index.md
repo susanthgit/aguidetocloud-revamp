@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA AI News — GPUs, Inference, NIM, Blackwell & Jensen Huang"
-description: "Latest NVIDIA AI news — GPU launches, inference platforms, NIM microservices, Blackwell architecture, and GTC announcements. Updated 4x daily."
+description: "Latest NVIDIA AI news — GPU launches, inference platforms, NIM microservices, Blackwell architecture, and GTC announcements. Archived."
 type: "ai-news-category"
 category_filter: "nvidia"
 ---

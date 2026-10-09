@@ -1,6 +1,6 @@
 ---
 title: "Google AI News — Gemini, DeepMind, Vertex AI & Android AI Updates"
-description: "Latest Google AI news — Gemini models, DeepMind research, Vertex AI updates, Android AI features, and Google I/O. Updated 4x daily."
+description: "Latest Google AI news — Gemini models, DeepMind research, Vertex AI updates, Android AI features, and Google I/O. Archived."
 type: "ai-news-category"
 category_filter: "google"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Meta AI News — Llama Models, PyTorch, Open Source AI & Research"
-description: "Latest Meta AI news — Llama models, PyTorch updates, open-source AI, Reality Labs AI, and FAIR research. Updated 4x daily."
+description: "Latest Meta AI news — Llama models, PyTorch updates, open-source AI, Reality Labs AI, and FAIR research. Archived."
 type: "ai-news-category"
 category_filter: "meta"
 ---

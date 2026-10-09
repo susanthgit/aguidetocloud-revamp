@@ -1,6 +1,6 @@
 ---
 title: "Amazon AI News — AWS Bedrock, SageMaker, Amazon Q & Alexa AI"
-description: "Latest Amazon AI news — AWS Bedrock models, SageMaker features, Amazon Q assistant, Trainium chips, and re:Invent. Updated 4x daily."
+description: "Latest Amazon AI news — AWS Bedrock models, SageMaker features, Amazon Q assistant, Trainium chips, and re:Invent. Archived."
 type: "ai-news-category"
 category_filter: "amazon"
 ---

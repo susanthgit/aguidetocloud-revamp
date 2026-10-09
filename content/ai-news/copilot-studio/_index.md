@@ -1,6 +1,6 @@
 ---
 title: "Copilot Studio News — Declarative Agents, Extensibility & Low-Code AI"
-description: "Latest Copilot Studio updates — declarative agents, API plugins, MCP integration, and no-code AI agent building. Updated 4x daily."
+description: "Latest Copilot Studio updates — declarative agents, API plugins, MCP integration, and no-code AI agent building. Archived."
 type: "ai-news-category"
 category_filter: "copilot-studio"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Apple AI News — Apple Intelligence, Siri AI & On-Device Machine Learning"
-description: "Latest Apple AI news — Apple Intelligence features, Siri AI improvements, on-device ML, Vision Pro AI, and WWDC. Updated 4x daily."
+description: "Latest Apple AI news — Apple Intelligence features, Siri AI improvements, on-device ML, Vision Pro AI, and WWDC. Archived."
 type: "ai-news-category"
 category_filter: "apple"
 ---

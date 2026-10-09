@@ -1,6 +1,6 @@
 ---
 title: "M365 Copilot News — Microsoft 365 Copilot Updates, Features & Roadmap"
-description: "Latest Microsoft 365 Copilot news — new features, wave updates, licensing changes, agent builder, and monthly roadmap. Updated 4x daily."
+description: "Latest Microsoft 365 Copilot news — new features, wave updates, licensing changes, agent builder, and monthly roadmap. Archived."
 type: "ai-news-category"
 category_filter: "m365-copilot"
 ---

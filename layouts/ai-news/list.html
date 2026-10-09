@@ -2,7 +2,7 @@
 <!-- Pagefind: hidden searchable content for this JS-rendered page -->
 <div data-pagefind-body style="display:none" aria-hidden="true">
   <h2>AI News — Real-Time AI Industry Updates</h2>
-  <p>Track the latest AI news from Microsoft, OpenAI, Google, Anthropic, Meta, DeepSeek, NVIDIA, Apple, Amazon, and more. Updated 4 times daily with curated articles across 20 categories.</p>
+  <p>Track the latest AI news from Microsoft, OpenAI, Google, Anthropic, Meta, DeepSeek, NVIDIA, Apple, Amazon, and more. Archived: no longer updated. Curated articles across 20 categories as of October 2026.</p>
   <p>Features: daily and monthly news views. Category filtering by vendor. Full-text search. RSS feed. CSV export. Breaking news detection. 3-tier TLDR summaries explaining why each story matters.</p>
   <p>Categories: Microsoft Copilot, Azure AI, GitHub Copilot, Copilot Studio, AI Foundry, OpenAI, Anthropic, Google AI, Meta AI, DeepSeek, NVIDIA, Apple AI, Amazon AI, Mistral, Perplexity, xAI.</p>
 </div>
@@ -31,6 +31,7 @@
 <div class="container zt-page">
 
 {{ partial "tool-header.html" (dict "page" . "title" .Title) }}
+{{ partial "ainews-archived-banner.html" . }}
 
   {{/* ── Glass Pill Tabs (top-level) ── */}}
   <div class="ainews-top-tabs" role="tablist" aria-label="AI News sections">

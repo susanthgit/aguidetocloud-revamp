@@ -1,6 +1,6 @@
 ---
 title: "DeepSeek News — R1, V3, Reasoning Models & Open Source AI from China"
-description: "Latest DeepSeek AI news — DeepSeek-R1, V3, reasoning model breakthroughs, and open-source releases. Updated 4x daily."
+description: "Latest DeepSeek AI news — DeepSeek-R1, V3, reasoning model breakthroughs, and open-source releases. Archived."
 type: "ai-news-category"
 category_filter: "deepseek"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Anthropic News — Claude, MCP Protocol, Glasswing, Safety & Research"
-description: "Latest Anthropic news — Claude models, MCP protocol updates, Project Glasswing, AI safety research, and enterprise partnerships. Updated 4x daily."
+description: "Latest Anthropic news — Claude models, MCP protocol updates, Project Glasswing, AI safety research, and enterprise partnerships. Archived."
 type: "ai-news-category"
 category_filter: "anthropic"
 ---

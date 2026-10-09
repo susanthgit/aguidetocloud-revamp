@@ -1,6 +1,6 @@
 ---
 title: "Microsoft AI News — Copilot, Azure AI, Foundry & Windows AI Updates"
-description: "Daily Microsoft AI news — M365 Copilot updates, Azure AI Foundry releases, Windows AI features, and Microsoft Build announcements. Updated 4x daily."
+description: "Daily Microsoft AI news — M365 Copilot updates, Azure AI Foundry releases, Windows AI features, and Microsoft Build announcements. Archived."
 type: "ai-news-category"
 category_filter: "microsoft"
 ---

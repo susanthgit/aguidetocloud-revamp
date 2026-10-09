@@ -1,6 +1,6 @@
 ---
 title: "OpenAI News — ChatGPT, GPT Models, Sora, API Updates & Sam Altman"
-description: "Latest OpenAI news — ChatGPT features, GPT-5 and o-series models, Sora video generation, API changes, and Codex. Updated 4x daily."
+description: "Latest OpenAI news — ChatGPT features, GPT-5 and o-series models, Sora video generation, API changes, and Codex. Archived."
 type: "ai-news-category"
 category_filter: "openai"
 ---
