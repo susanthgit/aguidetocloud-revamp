@@ -471,6 +471,20 @@ if (-not (Test-Path $pickerScript)) {
     }
 }
 
+# ─── ADVISORY: repo weight (non-blocking) ───
+# Added 2026-10-09. .git is ~400 MB; flags new files > 1 MB or folders > 10 MB before push.
+$sizeScript = Join-Path $PSScriptRoot "check-repo-size.mjs"
+if (Test-Path $sizeScript) {
+    Write-Host "`n[size] Repo weight (advisory)..." -NoNewline
+    $sizeOutput = & node $sizeScript 2>&1
+    if ($sizeOutput -match 'warnings') {
+        Write-Host " ⚠️" -ForegroundColor Yellow
+        $sizeOutput | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+    } else {
+        Write-Host " ✅" -ForegroundColor Green
+    }
+}
+
 # ─── RESULT ───
 Write-Host ""
 if ($failed) {

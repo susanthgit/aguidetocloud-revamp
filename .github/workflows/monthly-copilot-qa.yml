@@ -55,6 +55,10 @@ jobs:
         with:
           python-version: '3.12'
 
+      # annotate_screenshot.py imports Pillow; without it its mutation suite reports MISS.
+      - name: Install Pillow
+        run: python -m pip install pillow
+
       # The guard's own logic is verified before its verdict is trusted.
       # A check that has never been watched failing is not a check.
       - name: Self-tests

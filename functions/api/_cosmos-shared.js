@@ -72,16 +72,15 @@ export function corsPreflight() {
 
 // ── Cosmos taxonomy (mirrors src/data/atlas.json + planet-semantics.json) ──
 
-export const COSMOS_PLANETS = ['earth','guided','brainbar','shift','plainai','curriculum','agentic','claw','cosmos'];
+export const COSMOS_PLANETS = ['earth','guided','cosmos'];
 
 export const COSMOS_PLANET_KINDS = {
-  earth: 'planet', guided: 'moon', brainbar: 'planet', shift: 'planet',
-  plainai: 'planet', curriculum: 'moon', agentic: 'planet', claw: 'planet',
-  cosmos: 'hub'
+  earth: 'planet', guided: 'moon', cosmos: 'hub'
 };
 
 // hostName → list of (pathPrefix, slug). Resolved in order. Last entry is the
-// fallback (no prefix match → planet-level slug).
+// fallback (no prefix match → planet-level slug). Retired planet hosts
+// (cmd, shift, plainai, agents, claw) were removed 2026-10-09; they return 410.
 export const HOST_TO_PLANETS = {
   'www.aguidetocloud.com': [
     { prefix: '/guided/', slug: 'guided' },
@@ -91,14 +90,6 @@ export const HOST_TO_PLANETS = {
     { prefix: '/guided/', slug: 'guided' },
     { prefix: '/',        slug: 'earth' }
   ],
-  'plainai.aguidetocloud.com': [
-    { prefix: '/learn',   slug: 'curriculum' },  // matches /learn AND /learn/* (post-A1-fix)
-    { prefix: '/',        slug: 'plainai' }
-  ],
-  'cmd.aguidetocloud.com':    [{ prefix: '/', slug: 'brainbar' }],
-  'shift.aguidetocloud.com':  [{ prefix: '/', slug: 'shift' }],
-  'agents.aguidetocloud.com': [{ prefix: '/', slug: 'agentic' }],
-  'claw.aguidetocloud.com':   [{ prefix: '/', slug: 'claw' }],
   'cosmos.aguidetocloud.com': [{ prefix: '/', slug: 'cosmos' }]
 };
 
@@ -115,7 +106,6 @@ export function resolvePlanet(hostName, pagePath) {
 // ── Planet semantics (per-planet success criteria + action modes) ──
 // Bundled inline rather than reading planet-semantics.json at runtime so
 // Pages Functions doesn't depend on filesystem (which varies in workers).
-// Mirror of session-state/files/planet-semantics.json. Keep in sync.
 export const PLANET_SEMANTICS = {
   earth:      { name:'Earth',               kind:'planet', actionMode:'editorial',
                 bounceInterpretation:'default',
@@ -123,25 +113,6 @@ export const PLANET_SEMANTICS = {
   guided:     { name:'Guided',              kind:'moon',   parent:'earth', actionMode:'conversion',
                 bounceInterpretation:'default',
                 goal:'Cert-prep funnel — revenue surface' },
-  brainbar:   { name:'Brain Bar',           kind:'planet', actionMode:'utility',
-                bounceInterpretation:'single-answer visits are normal — high bounce is the success state',
-                goal:'Microsoft jargon lookup utility' },
-  shift:      { name:'Shift',               kind:'planet', actionMode:'editorial',
-                bounceInterpretation:'default',
-                goal:'Weekly newsletter — the wire' },
-  plainai:    { name:'Plain AI',            kind:'planet', actionMode:'editorial',
-                bounceInterpretation:'long single-page reads are good — high bounce with long engagement is success',
-                goal:'AI in plain English — calm, slow reading surface' },
-  curriculum: { name:'Plain AI Curriculum', kind:'moon',   parent:'plainai', actionMode:'commons',
-                bounceInterpretation:'irrelevant — commons does not optimise for engagement',
-                suppressGrowthPrompts:true, suppressConversionPrompts:true,
-                goal:'Voluntary commons — free-forever lessons' },
-  agentic:    { name:'Agentic',             kind:'planet', actionMode:'editorial',
-                bounceInterpretation:'default',
-                goal:'Technical reference cockpit for agent builders' },
-  claw:       { name:'Claw',                kind:'planet', actionMode:'editorial',
-                bounceInterpretation:'long single-page reads are good — reference reading is success',
-                goal:'OpenClaw study reference' },
   cosmos:     { name:'Cosmos Atlas',        kind:'hub',    actionMode:'hub',
                 bounceInterpretation:'default',
                 goal:'Navigation hub — atlas of the universe' }
