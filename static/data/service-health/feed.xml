@@ -5,14 +5,23 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Oct 2026 16:58:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 22:34:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to download webinar registration details from the Events app in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1492872</link>
+      <description>[Microsoft Teams] Users may be unable to download webinar registration details from the Events app in Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1492872</guid>
+      <pubDate>Fri, 09 Oct 2026 18:56:09 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may be unable to access Microsoft Teams transcripts and recordings</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1492711</link>
-      <description>[Microsoft Teams] Users may be unable to access Microsoft Teams transcripts and recordings.</description>
+      <description>[Microsoft Teams] Users may have been unable to access Microsoft Teams transcripts and recordings.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1492711</guid>
       <pubDate>Fri, 09 Oct 2026 13:42:43 +0000</pubDate>
     </item>
@@ -62,11 +71,11 @@
       <pubDate>Tue, 06 Oct 2026 21:09:18 +0000</pubDate>
     </item>
     <item>
-      <title>[Power BI] Users may not see chart data when using the Power BI light theme dashboard</title>
+      <title>[Power BI] Users may not see chart data when using standard light or dark themes on Power BI dashboards</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1489649</link>
-      <description>[Power BI] Users may not see chart data when using the Power BI light theme dashboard.</description>
+      <description>[Power BI] Users may not have seen chart data when using standard light or dark themes on Power BI dashboards.</description>
       <category>Power BI</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">PB1489649</guid>
       <pubDate>Tue, 06 Oct 2026 19:32:12 +0000</pubDate>
     </item>
@@ -213,9 +222,9 @@ A backend service that is used to retrieve service information and resource meta
       <pubDate>Tue, 29 Sep 2026 15:58:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 suite] Admins may see multiple usage report types experiencing varying delays in the Microsoft 365 admin center</title>
+      <title>[Microsoft 365 suite] Admins may see multiple usage reports not updating in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1481173</link>
-      <description>[Microsoft 365 suite] Admins may see multiple usage report types experiencing varying delays in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins may see multiple usage reports not updating in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1481173</guid>
@@ -278,9 +287,9 @@ A backend service that is used to retrieve service information and resource meta
     <item>
       <title>[Microsoft Teams] Some users conferenced into a Microsoft Teams emergency call may not be automatically muted or able to mute themselves</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1488543</link>
-      <description>[Microsoft Teams] Users conferenced into a Microsoft Teams emergency call may not be automatically muted or able to mute themselves.</description>
+      <description>[Microsoft Teams] Users conferenced into a Microsoft Teams emergency call were not automatically muted or able to mute themselves.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1488543</guid>
       <pubDate>Fri, 25 Sep 2026 20:09:00 +0000</pubDate>
     </item>
@@ -454,15 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1473059</guid>
       <pubDate>Tue, 15 Sep 2026 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1472181</link>
-      <description>[Power BI] Microsoft Fabric users may have experienced issues with creating new support cases through the Contact support page.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1472181</guid>
-      <pubDate>Tue, 15 Sep 2026 07:18:03 +0000</pubDate>
     </item>
   </channel>
 </rss>
