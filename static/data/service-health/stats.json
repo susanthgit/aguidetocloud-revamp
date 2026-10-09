@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T19:54:02.109507+00:00",
+  "generated_at": "2026-10-09T00:18:21.432985+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -59,12 +59,12 @@
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 4932,
-      "last_incident": "2026-10-06T13:17:28+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 4862,
+      "last_incident": "2026-10-05T13:39:01.720000+00:00",
       "classifications": {
-        "advisory": 2,
-        "incident": 5
+        "incident": 5,
+        "advisory": 2
       }
     },
     {
