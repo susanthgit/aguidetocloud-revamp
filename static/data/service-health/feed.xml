@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Oct 2026 08:56:43 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 16:58:00 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to access Microsoft Teams transcripts and recordings</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1492711</link>
+      <description>[Microsoft Teams] Users may be unable to access Microsoft Teams transcripts and recordings.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1492711</guid>
+      <pubDate>Fri, 09 Oct 2026 13:42:43 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Some users' email messages from on-premises Exchange servers to Exchange Online may intermittently fail</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1491694</link>
@@ -454,15 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1472181</guid>
       <pubDate>Tue, 15 Sep 2026 07:18:03 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may have encountered issues with the auto compose feature in Outlook mobile app for iOS</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1473520</link>
-      <description>[Exchange Online] Users may have encountered issues with the auto compose feature in Outlook mobile app for iOS.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1473520</guid>
-      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
