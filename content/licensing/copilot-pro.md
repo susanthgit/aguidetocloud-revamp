@@ -24,6 +24,10 @@ faq:
     a: "Copilot Pro is retired, so this is no longer a live option — but the answer applied to its replacement too. Consumer plans cannot access your organisation's data (emails, SharePoint, Teams); they only work with your personal files. For work use, your IT admin should deploy Microsoft 365 Copilot ($30/user/month) instead."
   - q: "Is Copilot Pro worth $20 a month?"
     a: "It is no longer available to buy. The live question now is whether Microsoft 365 Premium (about $19.99/month) is worth it — if you heavily use Word, Excel, and PowerPoint for personal or freelance work, the drafting and analysis features can save hours per week, and Premium bundles the Office apps and up to 6 TB of storage. If you only use web email and basic documents, free Copilot may be enough."
+  - q: "What features did Copilot Pro include?"
+    a: "Copilot Pro added AI to Word, Excel, PowerPoint, Outlook and OneNote (drafting, formulas and analysis, slides, email summaries), priority access to the latest AI models at peak times, and up to 100 AI-generated images a day instead of 15 on the free tier. It did not include access to company emails, files or Teams data."
+  - q: "Can I still upgrade to Copilot Pro?"
+    a: "No. Microsoft stopped selling Copilot Pro in late 2025 and support for existing subscribers ends on 1 August 2026. The replacement is Microsoft 365 Premium (about $19.99/month), which carries the full Copilot Pro feature set along with the Microsoft 365 apps and up to 6 TB of storage."
   - q: "Can my company buy Copilot Pro for employees?"
     a: "No — and it is no longer sold in any case. Consumer plans such as Microsoft 365 Premium are personal subscriptions. For business and enterprise use, deploy Microsoft 365 Copilot ($30/user/month) which requires M365 E3, E5, Business Standard, or Business Premium."
 ---
@@ -156,6 +160,18 @@ It is no longer available to buy. The live question now is whether Microsoft 365
 
 
 
-**6. Can my company buy Copilot Pro for employees?**
+**6. What features did Copilot Pro include?**
+
+Copilot Pro added AI to Word, Excel, PowerPoint, Outlook and OneNote (drafting, formulas and analysis, slides, email summaries), priority access to the latest AI models at peak times, and up to 100 AI-generated images a day instead of 15 on the free tier. It did not include access to company emails, files or Teams data.
+
+
+
+**7. Can I still upgrade to Copilot Pro?**
+
+No. Microsoft stopped selling Copilot Pro in late 2025 and support for existing subscribers ends on 1 August 2026. The replacement is [Microsoft 365 Premium](/blog/microsoft-365-premium-explained/) (about $19.99/month), which carries the full Copilot Pro feature set along with the Microsoft 365 apps and up to 6 TB of storage.
+
+
+
+**8. Can my company buy Copilot Pro for employees?**
 
 No — and it is no longer sold in any case. Consumer plans such as Microsoft 365 Premium are personal subscriptions. For business and enterprise use, deploy [Microsoft 365 Copilot](/licensing/microsoft-365-copilot/) ($30/user/month) which requires M365 E3, E5, Business Standard, or Business Premium.

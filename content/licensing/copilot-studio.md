@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Copilot Studio — Guide & Pricing (2026)"
-description: "Microsoft Copilot Studio — build custom AI agents billed in Copilot Credits: $200 per 25,000 credits/month, or pay-as-you-go at $0.01/credit. Verified August 2026."
+description: "What Microsoft Copilot Studio is, what it costs and how Copilot Credits work: $200 per 25,000 credits a month, or pay-as-you-go at $0.01 per credit."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft Copilot Studio"
@@ -18,6 +18,16 @@ faq:
     a: "Per tenant — a $200/month prepaid pack covers your whole organisation and includes 25,000 Copilot Credits/month (these were called 'messages' until Microsoft renamed the unit to Copilot Credits on 1 September 2025). You can also go pay-as-you-go at $0.01 per credit via an Azure subscription, with no prepaid commitment."
   - q: "What can I build with Copilot Studio?"
     a: "Custom chatbots, AI agents grounded on your data, automated workflows triggered by conversation, multi-channel bots (Teams, website, email). Uses generative AI with enterprise data grounding."
+  - q: "Is Copilot Studio included in M365 E7?"
+    a: "E7 includes Copilot and Copilot Studio agent builder capabilities. The standalone $200/tenant licence is for organisations on E3/E5 who want to build custom agents."
+  - q: "How many agents can I create?"
+    a: "Unlimited agents. The 25,000-Copilot-Credit prepaid allowance (or your pay-as-you-go spend) is pooled across all agents in your tenant."
+  - q: "What is Microsoft Copilot Studio?"
+    a: "Copilot Studio is Microsoft's tool for building custom AI agents and chatbots — for example HR bots, IT helpdesk agents and knowledge assistants. Agents can be grounded on your data (SharePoint, websites, Dataverse, custom APIs), connect to Power Automate workflows, and deploy to Teams, websites and email."
+  - q: "How much does Copilot Studio cost?"
+    a: "A prepaid pack is $200 per tenant per month and includes 25,000 Copilot Credits (no rollover). Pay-as-you-go is $0.01 per Copilot Credit, billed through an Azure subscription. These are USD list prices — check Microsoft's pricing page for your region and agreement."
+  - q: "Is Copilot Studio free?"
+    a: "Not fully. On the standard harness, building and testing is free and credits are charged once you publish and run agents at scale. The GitHub Copilot harness is different — usage-based billing starts as soon as you build, including testing and evaluation. Employee-facing agents used by licensed Microsoft 365 Copilot users inside Copilot, Teams or SharePoint don't consume paid credits within fair-use limits."
 ---
 
 ## Who Is Copilot Studio For?
@@ -76,3 +86,23 @@ E7 includes Copilot and Copilot Studio agent builder capabilities. The standalon
 **2. How many agents can I create?**
 
 Unlimited agents. The 25,000-Copilot-Credit prepaid allowance (or your pay-as-you-go spend) is pooled across all agents in your tenant.
+
+**3. What is Microsoft Copilot Studio?**
+
+Copilot Studio is Microsoft's tool for building custom AI agents and chatbots — for example HR bots, IT helpdesk agents and knowledge assistants. Agents can be grounded on your data (SharePoint, websites, Dataverse, custom APIs), connect to Power Automate workflows, and deploy to Teams, websites and email.
+
+**4. How much does Copilot Studio cost?**
+
+A prepaid pack is $200 per tenant per month and includes 25,000 Copilot Credits (no rollover). Pay-as-you-go is $0.01 per Copilot Credit, billed through an Azure subscription. These are USD list prices — check [Microsoft's pricing page](https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio/pricing) for your region and agreement.
+
+**5. Is Copilot Studio per user or per tenant?**
+
+Per tenant — a $200/month prepaid pack covers your whole organisation and includes 25,000 Copilot Credits/month (these were called 'messages' until Microsoft renamed the unit to Copilot Credits on 1 September 2025). You can also go pay-as-you-go at $0.01 per credit via an Azure subscription, with no prepaid commitment.
+
+**6. What can I build with Copilot Studio?**
+
+Custom chatbots, AI agents grounded on your data, automated workflows triggered by conversation, multi-channel bots (Teams, website, email). Uses generative AI with enterprise data grounding.
+
+**7. Is Copilot Studio free?**
+
+Not fully. On the standard harness, building and testing is free and credits are charged once you publish and run agents at scale. The GitHub Copilot harness is different — usage-based billing starts as soon as you build, including testing and evaluation. Employee-facing agents used by licensed Microsoft 365 Copilot users inside Copilot, Teams or SharePoint don't consume paid credits within fair-use limits.
