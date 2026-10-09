@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Copilot Chat (Free) — What's Included & Limitations (2026)"
+title: "Microsoft Copilot Chat (Free): What's Included (2026)"
 description: "Everything about the free Microsoft Copilot Chat — what it can and can't do, how it differs from the $30 Copilot add-on, and the April 2026 changes."
 type: "licensing"
 layout: "single"

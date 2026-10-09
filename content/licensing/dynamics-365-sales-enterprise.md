@@ -1,5 +1,5 @@
 ---
-title: "Dynamics 365 Sales Enterprise — Complete Guide & Pricing (2026)"
+title: "Dynamics 365 Sales Enterprise: Guide & Pricing (2026)"
 description: "Everything about Dynamics 365 Sales Enterprise — CRM with AI forecasting, relationship analytics, and LinkedIn integration. $95/user/month."
 type: "licensing"
 layout: "single"

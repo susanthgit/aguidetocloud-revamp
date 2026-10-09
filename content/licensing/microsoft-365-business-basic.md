@@ -1,5 +1,5 @@
 ---
-title: "Microsoft 365 Business Basic — Complete Guide, Pricing &"
+title: "Microsoft 365 Business Basic: Features & Pricing (2026)"
 description: "Everything about M365 Business Basic — web apps, Teams, Exchange, and OneDrive for $7/user/month. Compare with Standard and Premium."
 type: "licensing"
 layout: "single"
