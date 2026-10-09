@@ -42,7 +42,7 @@ permissions:
 jobs:
   invariants:
     name: Lint every monthly issue
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     timeout-minutes: 5
     env:
       PYTHONIOENCODING: utf-8
