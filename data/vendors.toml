@@ -262,3 +262,13 @@ logo_emoji = "PMI"
 official_url = "https://www.pmi.org/certifications"
 cert_path_note = "Choose a credential that matches your experience. PMP has education, project leadership experience and training requirements; practice exams alone do not satisfy the training requirement."
 order = 26
+
+[[vendor]]
+slug = "anthropic"
+name = "Anthropic"
+short_name = "Anthropic"
+accent = "#D97757"
+logo_emoji = "🔶"
+official_url = "https://www.anthropic.com/"
+cert_path_note = "Anthropic offers role-based Claude certifications through its partner programme. The Claude Certified Architect - Foundations credential focuses on designing reliable production systems with the Claude API, Agent SDK, Claude Code and MCP."
+order = 27

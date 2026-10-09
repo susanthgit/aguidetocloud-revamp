@@ -147,6 +147,7 @@ function getExamCategory(cert) {
     'salesforce': 'Salesforce',
   'servicenow': 'ServiceNow',
     'pmi': 'PMI',
+    'anthropic': 'Anthropic',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }
