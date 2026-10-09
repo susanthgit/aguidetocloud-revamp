@@ -1,6 +1,6 @@
 ---
 title: "Microsoft 365 Business Premium: Features & Pricing (2026)"
-description: "Microsoft 365 Business Premium — Intune, Defender, Entra ID P1 for SMBs. $22/user/month. Compare with Standard and E3."
+description: "Microsoft 365 Business Premium adds Intune, Defender and Entra ID P1 to Standard for $22/user/month (USD). Features and who it fits."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Business Premium"
@@ -14,6 +14,10 @@ ms_official: "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-3
 m365maps: "https://m365maps.com/files/Microsoft-365-Business-Premium.htm"
 last_verified: "April 2026"
 faq:
+  - q: "Is Office 365 Business Premium the same as Microsoft 365 Business Premium?"
+    a: "No. The old Office 365 Business Premium became Microsoft 365 Business Standard in April 2020. Microsoft 365 Business Premium is the higher plan that adds Intune, Defender and Entra ID P1 security."
+  - q: "How much does Business Premium cost?"
+    a: "The USD list price is $22 per user per month, unchanged in July 2026. Your price can differ by region and billing term, so confirm it on Microsoft's pricing page."
   - q: "What is the difference between Business Standard and Business Premium?"
     a: "Premium adds Intune P1 (device management), Defender for Business (endpoint protection), Defender for Office 365 P1 (email security), Entra ID P1 (Conditional Access), and DLP. Standard has none of these security features."
   - q: "Is Business Premium worth the extra $8 over Standard?"

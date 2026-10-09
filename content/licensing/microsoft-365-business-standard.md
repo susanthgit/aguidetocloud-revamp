@@ -1,6 +1,6 @@
 ---
 title: "Microsoft 365 Business Standard: Features & Pricing (2026)"
-description: "Microsoft 365 Business Standard — desktop Office apps, Teams, email for SMBs. $14/user/month. Free guide for the Business (≤300 users) family."
+description: "Microsoft 365 Business Standard adds desktop Office apps to Teams and email for $14/user/month (USD). Features, limits and how it compares to Basic."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Business Standard"
@@ -14,6 +14,10 @@ ms_official: "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-3
 m365maps: "https://m365maps.com/files/Microsoft-365-Business-Standard.htm"
 last_verified: "April 2026"
 faq:
+  - q: "Is Business Standard the same as Office 365 Business Premium?"
+    a: "Yes. Microsoft renamed Office 365 Business Premium to Microsoft 365 Business Standard in April 2020. Do not confuse it with today's Microsoft 365 Business Premium, which adds device and security management."
+  - q: "How much does Business Standard cost?"
+    a: "The USD list price is $14 per user per month since July 2026, and existing customers stay on their current rate until renewal. Your price can differ by region and billing term, so confirm it on Microsoft's pricing page."
   - q: "What is included in Microsoft 365 Business Standard?"
     a: "Desktop Office apps (Word, Excel, PowerPoint, Outlook), Exchange Online (50 GB), Teams, SharePoint, OneDrive (1 TB), webinar hosting, Microsoft Bookings, and basic Power Apps/Power Automate. Up to 300 users."
   - q: "Does Business Standard include security features?"

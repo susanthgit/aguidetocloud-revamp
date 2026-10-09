@@ -1,6 +1,6 @@
 ---
 title: "Microsoft 365 Business Basic: Features & Pricing (2026)"
-description: "Everything about M365 Business Basic — web apps, Teams, Exchange, and OneDrive for $7/user/month. Compare with Standard and Premium."
+description: "Microsoft 365 Business Basic includes Teams, email, 1 TB OneDrive and web Office apps for $7/user/month (USD). What it has and what it lacks."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Business Basic"
@@ -14,6 +14,14 @@ ms_official: "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-3
 m365maps: "https://m365maps.com/files/Microsoft-365-Business-Basic.htm"
 last_verified: "April 2026"
 faq:
+  - q: "Does Business Basic include Teams?"
+    a: "Yes. Business Basic includes Microsoft Teams. Microsoft also sells a version without Teams in some cases, so check which one you are buying."
+  - q: "Is Business Basic the same as Office 365 Business Essentials?"
+    a: "Yes. Microsoft renamed Office 365 Business Essentials to Microsoft 365 Business Basic in April 2020. Searches for 'Office 365 Business Basic' are usually looking for this plan."
+  - q: "Does Business Basic include Microsoft Forms?"
+    a: "Yes. Forms is included as a web app, along with the web versions of Word, Excel, PowerPoint and Outlook."
+  - q: "How much does Business Basic cost?"
+    a: "The USD list price is $7 per user per month since July 2026, and existing customers stay on their current rate until renewal. Your price can differ by region and billing term, so confirm it on Microsoft's pricing page."
   - q: "Does Business Basic include desktop Office apps?"
     a: "No. Business Basic only includes web and mobile versions of Office apps. For desktop apps (installed Word, Excel, PowerPoint), upgrade to Business Standard ($14) or Business Premium ($22)."
   - q: "Can I add Copilot to Business Basic?"
