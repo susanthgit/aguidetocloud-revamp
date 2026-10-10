@@ -5,12 +5,12 @@
     <link>https://www.aguidetocloud.com/deprecation-timeline/</link>
     <description>Microsoft 365 deprecation and retirement timeline — urgency-scored, filterable, with migration guidance.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Oct 2026 11:59:21 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 11:16:05 GMT</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/deprecation-timeline/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>⛔ Microsoft Publisher Retirement — 2026-10-13</title>
       <link>https://learn.microsoft.com/lifecycle/products/publisher-2021</link>
-      <description><![CDATA[🔴 4 days remaining — Microsoft Publisher will be fully retired. The application will no longer be included in Microsoft 365 or available as a standalone product.
+      <description><![CDATA[🔴 3 days remaining — Microsoft Publisher will be fully retired. The application will no longer be included in Microsoft 365 or available as a standalone product.
 
 Migration: Use Microsoft Designer, Word, or PowerPoint for desktop publishing. Use Canva or Adobe Express for marketing materials.]]></description>
       <category>Office Apps</category>
@@ -20,7 +20,7 @@ Migration: Use Microsoft Designer, Word, or PowerPoint for desktop publishing. U
     <item>
       <title>📅 Office LTSC 2021 End of Support — 2026-10-13</title>
       <link>https://learn.microsoft.com/lifecycle/products/office-ltsc-2021</link>
-      <description><![CDATA[🔴 4 days remaining — Office LTSC 2021 (perpetual license) reaches end of mainstream support. Includes Access, Excel, OneNote, Outlook, PowerPoint, Project, Publisher, Visio, Word, and Skype for Business LTSC 2021.
+      <description><![CDATA[🔴 3 days remaining — Office LTSC 2021 (perpetual license) reaches end of mainstream support. Includes Access, Excel, OneNote, Outlook, PowerPoint, Project, Publisher, Visio, Word, and Skype for Business LTSC 2021.
 
 Migration: Upgrade to Office LTSC 2024 or migrate to Microsoft 365 Apps (subscription).]]></description>
       <category>Office Apps</category>
@@ -30,7 +30,7 @@ Migration: Upgrade to Office LTSC 2024 or migrate to Microsoft 365 Apps (subscri
     <item>
       <title>📅 Windows 10 2016 LTSB End of Support — 2026-10-13</title>
       <link>https://learn.microsoft.com/lifecycle/products/windows-10-2016-ltsb</link>
-      <description><![CDATA[🔴 4 days remaining — Windows 10 Enterprise 2016 LTSB reaches end of extended support.
+      <description><![CDATA[🔴 3 days remaining — Windows 10 Enterprise 2016 LTSB reaches end of extended support.
 
 Migration: Upgrade to Windows 11 or Windows 10 IoT Enterprise LTSC 2021.]]></description>
       <category>Windows</category>
@@ -40,7 +40,7 @@ Migration: Upgrade to Windows 11 or Windows 10 IoT Enterprise LTSC 2021.]]></des
     <item>
       <title>📅 Windows Server 2012/R2 Extended Security Updates Year 3 End — 2026-10-13</title>
       <link>https://learn.microsoft.com/lifecycle/products/windows-server-2012-r2</link>
-      <description><![CDATA[🔴 4 days remaining — Windows Server 2012 and 2012 R2 ESU Year 3 ends. Absolutely no more updates after this date unless migrated to Azure.
+      <description><![CDATA[🔴 3 days remaining — Windows Server 2012 and 2012 R2 ESU Year 3 ends. Absolutely no more updates after this date unless migrated to Azure.
 
 Migration: Migrate to Windows Server 2022 or Azure. Azure provides free ESUs for Server 2012 workloads.]]></description>
       <category>Windows</category>
@@ -50,7 +50,7 @@ Migration: Migrate to Windows Server 2022 or Azure. Azure provides free ESUs for
     <item>
       <title>📅 Windows 11 Home and Pro Version 24H2 End of Servicing — 2026-10-13</title>
       <link>https://learn.microsoft.com/lifecycle/products/windows-11-home-and-pro</link>
-      <description><![CDATA[🔴 4 days remaining — Windows 11 Home and Pro version 24H2 reaches end of servicing.
+      <description><![CDATA[🔴 3 days remaining — Windows 11 Home and Pro version 24H2 reaches end of servicing.
 
 Migration: Update to the latest Windows 11 feature update.]]></description>
       <category>Windows</category>
@@ -60,7 +60,7 @@ Migration: Update to the latest Windows 11 feature update.]]></description>
     <item>
       <title>📅 Windows Server 2022 Moves to Extended Support — 2026-10-13</title>
       <link>https://learn.microsoft.com/lifecycle/products/windows-server-2022</link>
-      <description><![CDATA[🔴 4 days remaining — Windows Server 2022 mainstream support ends. Moves to extended support phase — security updates continue but no new features or non-security hotfixes.
+      <description><![CDATA[🔴 3 days remaining — Windows Server 2022 mainstream support ends. Moves to extended support phase — security updates continue but no new features or non-security hotfixes.
 
 Migration: No immediate action required. Security updates continue in extended support. Plan future migration to Windows Server 2025.]]></description>
       <category>Windows</category>
@@ -70,7 +70,7 @@ Migration: No immediate action required. Security updates continue in extended s
     <item>
       <title>📅 Azure Functions In-Process Model (.NET) End of Support — 2026-11-10</title>
       <link>https://azure.microsoft.com/updates/retirement-support-for-the-inprocess-model-for-net-apps-in-azure-functions-ends-10-november-2026/</link>
-      <description><![CDATA[🟠 32 days remaining — The in-process hosting model for .NET apps in Azure Functions reaches end of support. Functions continue to run but receive no patches.
+      <description><![CDATA[🟠 31 days remaining — The in-process hosting model for .NET apps in Azure Functions reaches end of support. Functions continue to run but receive no patches.
 
 Migration: Migrate to the isolated worker model for .NET Azure Functions.]]></description>
       <category>Azure</category>
@@ -80,7 +80,7 @@ Migration: Migrate to the isolated worker model for .NET Azure Functions.]]></de
     <item>
       <title>📅 .NET 8 LTS End of Support — 2026-11-10</title>
       <link>https://learn.microsoft.com/lifecycle/products/microsoft-net-and-net-core</link>
-      <description><![CDATA[🟠 32 days remaining — .NET 8 (Long Term Support) reaches end of support.
+      <description><![CDATA[🟠 31 days remaining — .NET 8 (Long Term Support) reaches end of support.
 
 Migration: Upgrade to .NET 10 (LTS).]]></description>
       <category>Azure</category>
@@ -90,7 +90,7 @@ Migration: Upgrade to .NET 10 (LTS).]]></description>
     <item>
       <title>📅 PowerShell 7.4 LTS End of Support — 2026-11-10</title>
       <link>https://learn.microsoft.com/lifecycle/products/powershell</link>
-      <description><![CDATA[🟠 32 days remaining — PowerShell 7.4 (Long Term Support) reaches end of support.
+      <description><![CDATA[🟠 31 days remaining — PowerShell 7.4 (Long Term Support) reaches end of support.
 
 Migration: Upgrade to PowerShell 7.6 (LTS) when available.]]></description>
       <category>Azure</category>
@@ -100,7 +100,7 @@ Migration: Upgrade to PowerShell 7.6 (LTS) when available.]]></description>
     <item>
       <title>📅 Windows 11 Enterprise and Education Version 23H2 End of Servicing — 2026-11-10</title>
       <link>https://learn.microsoft.com/lifecycle/products/windows-11-enterprise-and-education</link>
-      <description><![CDATA[🟠 32 days remaining — Windows 11 Enterprise and Education version 23H2 reaches end of servicing.
+      <description><![CDATA[🟠 31 days remaining — Windows 11 Enterprise and Education version 23H2 reaches end of servicing.
 
 Migration: Update to the latest Windows 11 feature update.]]></description>
       <category>Windows</category>
@@ -110,7 +110,7 @@ Migration: Update to the latest Windows 11 feature update.]]></description>
     <item>
       <title>⛔ Exchange Web Services (EWS) Full Retirement — All Exchange Online — 2027-04-01</title>
       <link>https://mc.merill.net/message/MC1227454</link>
-      <description><![CDATA[🟠 174 days remaining — Full and final retirement of EWS from Exchange Online. No EWS connections will be accepted from any application after this date.
+      <description><![CDATA[🟠 173 days remaining — Full and final retirement of EWS from Exchange Online. No EWS connections will be accepted from any application after this date.
 
 Migration: Complete migration of all EWS applications to Microsoft Graph API.]]></description>
       <category>Exchange</category>
