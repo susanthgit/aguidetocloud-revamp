@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 15:14:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 22:54:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users' Microsoft Teams contact cards may not fully display Out of office text</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1504581</link>
+      <description>[Microsoft Teams] Users' Microsoft Teams contact cards may not fully display Out of office text.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1504581</guid>
+      <pubDate>Mon, 12 Oct 2026 21:18:48 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Admins are unable to access the Exchange admin center (EAC)</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1500900</link>
@@ -98,9 +107,9 @@
       <pubDate>Tue, 06 Oct 2026 19:32:12 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Some users may encounter intermittent VDI2 optimization loss when using Microsoft Teams in a Citrix VDI environment</title>
+      <title>[Microsoft Teams] Some users may experience intermittent audio and video degradation when using Microsoft Teams through VDI 2.0</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1489450</link>
-      <description>[Microsoft Teams] Users may encounter intermittent VDI2 optimization loss when using Microsoft Teams in a Citrix VDI environment.</description>
+      <description>[Microsoft Teams] Users may experience intermittent audio and video degradation when using Microsoft Teams through VDI 2.0</description>
       <category>Microsoft Teams</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1489450</guid>
@@ -454,15 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>investigationSuspended</category>
       <guid isPermaLink="false">MO1472904</guid>
       <pubDate>Wed, 16 Sep 2026 13:22:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may intermittently be unable to launch Microsoft Teams from the web or desktop clients</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1473237</link>
-      <description>[Microsoft Teams] Users may have intermittently been unable to launch Microsoft Teams from the web or desktop clients.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1473237</guid>
-      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
