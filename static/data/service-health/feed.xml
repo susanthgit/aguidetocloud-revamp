@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 05:49:22 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 15:14:20 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Admins are unable to access the Exchange admin center (EAC)</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1500900</link>
+      <description>[Exchange Online] Admins are unable to access the EAC. </description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1500900</guid>
+      <pubDate>Mon, 12 Oct 2026 08:15:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Users may have been unable to access or protect content using Azure Rights Management (ARM) in Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1500833</link>
+      <description>[Microsoft 365 apps] Users may have been unable to access or protect content using ARM in Microsoft 365 services.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">OP1500833</guid>
+      <pubDate>Mon, 12 Oct 2026 07:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to download webinar registration details from the Events app in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1492872</link>
@@ -173,15 +191,6 @@ Azu</description>
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-20260901-1</guid>
       <pubDate>Wed, 30 Sep 2026 20:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may intermittently be unable to access their calendars in Outlook on the web and the new Outlook desktop client</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1483540</link>
-      <description>[Exchange Online] Users may intermittently be unable to access their calendars in Outlook on the web and the new Outlook desktop client.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1483540</guid>
-      <pubDate>Wed, 30 Sep 2026 16:54:26 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Some admins may be unable to register new Windows Autopilot devices or update Autopilot group tags in Microsoft Intune</title>
@@ -454,15 +463,6 @@ A backend service that is used to retrieve service information and resource meta
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1473237</guid>
       <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to access Outlook on the web from a specific Outlook link</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1473059</link>
-      <description>[Exchange Online] Users may have been unable to access Outlook on the web from a specific Outlook link.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1473059</guid>
-      <pubDate>Tue, 15 Sep 2026 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

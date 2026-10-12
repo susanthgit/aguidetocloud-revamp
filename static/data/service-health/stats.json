@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T05:49:22.259477+00:00",
+  "generated_at": "2026-10-12T15:14:19.856880+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -7,12 +7,12 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 18,
-      "active_incidents": 4,
-      "avg_duration_minutes": 4160,
+      "active_incidents": 5,
+      "avg_duration_minutes": 4455,
       "last_incident": "2026-10-06T11:45:49.047000+00:00",
       "classifications": {
-        "advisory": 12,
-        "incident": 6
+        "advisory": 13,
+        "incident": 5
       }
     },
     {
@@ -46,12 +46,12 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 12,
-      "active_incidents": 2,
-      "avg_duration_minutes": 6978,
-      "last_incident": "2026-10-08T14:39:42.280000+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 6369,
+      "last_incident": "2026-10-12T08:15:00+00:00",
       "classifications": {
-        "advisory": 6,
-        "incident": 6
+        "advisory": 5,
+        "incident": 7
       }
     },
     {
@@ -80,6 +80,19 @@
       }
     },
     {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 5,
+      "active_incidents": 0,
+      "avg_duration_minutes": 6876,
+      "last_incident": "2026-10-12T07:00:00+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 3
+      }
+    },
+    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -90,19 +103,6 @@
       "classifications": {
         "advisory": 3,
         "incident": 2
-      }
-    },
-    {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 6874,
-      "last_incident": "2026-09-24T18:23:33.737000+00:00",
-      "classifications": {
-        "advisory": 4,
-        "incident": 1
       }
     },
     {
@@ -196,8 +196,8 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 16,
-      "services_affected": 8
+      "incident_count": 18,
+      "services_affected": 9
     },
     {
       "month": "2026-09",
@@ -206,7 +206,7 @@
     },
     {
       "month": "2026-08",
-      "incident_count": 28,
+      "incident_count": 26,
       "services_affected": 12
     },
     {
