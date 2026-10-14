@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Oct 2026 13:38:48 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 18:33:06 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users may see 1:1 Microsoft Teams calls drop or fail to start</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1507756</link>
+      <description>[Microsoft Teams] Users may see 1:1 Microsoft Teams calls drop or fail to start.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1507756</guid>
+      <pubDate>Wed, 14 Oct 2026 18:24:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Purview] Admins may encounter delays in accessing audit log data results in Microsoft Purview</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1507695</link>
+      <description>[Microsoft Purview] Admins may encounter delays in accessing audit log data results in Microsoft Purview.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MP1507695</guid>
+      <pubDate>Wed, 14 Oct 2026 16:14:28 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users were unable to see model selection options in Microsoft 365 Copilot chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1507178</link>
@@ -82,9 +100,9 @@
     <item>
       <title>[SharePoint Online] Users may be unable to view or modify custom forms in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1503038</link>
-      <description>[SharePoint Online] Users may be unable to view or modify custom forms in SharePoint Online.</description>
+      <description>[SharePoint Online] Users may have been unable to view or modify custom forms in SharePoint Online.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1503038</guid>
       <pubDate>Mon, 12 Oct 2026 01:00:00 +0000</pubDate>
     </item>
@@ -444,24 +462,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1478331</guid>
       <pubDate>Wed, 23 Sep 2026 00:56:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to open the account view in Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1476802</link>
-      <description>[Exchange Online] Users may have been unable to open the account view in Outlook on the web.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1476802</guid>
-      <pubDate>Tue, 22 Sep 2026 12:13:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1478444</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or receive prompt responses with Microsoft 365 Copilot or Copilot Notebooks.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1478444</guid>
-      <pubDate>Tue, 22 Sep 2026 02:50:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
