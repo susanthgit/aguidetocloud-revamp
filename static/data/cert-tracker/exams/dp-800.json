@@ -11,12 +11,296 @@
   ],
   "category": "Data",
   "status": "beta",
-  "updated_at": "",
-  "skills_date": null,
-  "skills_at_a_glance": [],
-  "skills_detailed": {},
+  "updated_at": "2026-08-20 22:22:00+00:00",
+  "skills_date": "March 12, 2026",
+  "skills_at_a_glance": [
+    {
+      "area": "Design and develop database solutions",
+      "weight": "35-40%"
+    },
+    {
+      "area": "Secure, optimize, and deploy database solutions",
+      "weight": "35-40%"
+    },
+    {
+      "area": "Implement AI capabilities in database solutions",
+      "weight": "25-30%"
+    }
+  ],
+  "skills_detailed": {
+    "Design and develop database solutions (35–40%)": {
+      "Design and implement database objects": [
+        "Design and implement tables, including data types, size, columns, indexes, and column store indexes",
+        "Design and implement specialized tables, including in-memory, temporal, external, ledger, and graph",
+        "Design and implement JSON columns and indexes",
+        "Design and implement database constraints, including PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, and DEFAULT",
+        "Design and implement SEQUENCES",
+        "Design and implement partitioning for tables and indexes"
+      ],
+      "Implement programmability objects": [
+        "Create views",
+        "Create scalar functions",
+        "Create table-valued functions",
+        "Create stored procedures",
+        "Create triggers"
+      ],
+      "Write advanced T-SQL code": [
+        "Write common table expressions (CTEs)",
+        "Write queries that include window functions",
+        "Write queries that include JSON functions, such as JSON\\_OBJECT, JSON\\_ARRAY, JSON\\_ARRAYAGG, JSON\\_CONTAINS, OPENJSON, and JSON\\_VALUE",
+        "Write queries that include regular expressions, such as REGEXP\\_LIKE, REGEXP\\_REPLACE, REGEXP\\_SUBSTR, REGEXP\\_INSTR, REGEXP\\_COUNT, REGEXP\\_MATCHES, and REGEXP\\_SPLIT\\_TO\\_TABLE",
+        "Write queries that include fuzzy string matching functions, such as EDIT\\_DISTANCE, EDIT\\_DISTANCE\\_SIMILARITY, and JARO\\_WINKLER\\_DISTANCE",
+        "Write graph queries that use the MATCH operator",
+        "Write correlated queries",
+        "Implement error handling"
+      ],
+      "Design and implement SQL solutions by using AI-assisted tools": [
+        "Interpret security impact of using AI-assisted tools",
+        "Enable GitHub Copilot and Microsoft Copilot in Fabric",
+        "Configure model and Model Context Protocol (MCP) tool options in a GitHub Copilot or Copilot in Fabric chat session",
+        "Create and configure GitHub Copilot instruction files",
+        "Connect to MCP server endpoints, including Microsoft SQL Server and Fabric lakehouse"
+      ]
+    },
+    "Secure, optimize, and deploy database solutions (35–40%)": {
+      "Implement data security and compliance": [
+        "Design and implement data encryption, including Always Encrypted and column-level encryption",
+        "Design and implement Dynamic Data Masking",
+        "Design and implement Row-Level Security (RLS)",
+        "Design and implement object-level permissions",
+        "Implement secure database access, including passwordless",
+        "Implement auditing",
+        "Secure model endpoints, including Managed Identity",
+        "Secure GraphQL, REST, and MCP endpoints"
+      ],
+      "Optimize database performance": [
+        "Recommend database configurations",
+        "Preserve data integrity and consistency by using transaction isolation levels and concurrency controls",
+        "Evaluate query performance by using query execution plans, dynamic management views (DMVs), Query Store, and Query Performance Insight",
+        "Identify and resolve query performance issues, including blocking and deadlocks"
+      ],
+      "Implement CI/CD by using SQL Database Projects": [
+        "Design and implement a testing strategy, including unit tests and integration tests",
+        "Create and manage reference/static data in source control",
+        "Create, build, and validate database models by using SQL Database Projects, including SDK-style models",
+        "Configure source control for SQL Database Projects",
+        "Manage branching, pull requests, and conflict resolution",
+        "Implement secrets management",
+        "Detect schema drift by using SQL Database Projects",
+        "Update an SQL database project and deploy changes",
+        "Design and implement controls for deployment pipelines, including branching policies, triggers in approvals, authentication tables, and code owners"
+      ],
+      "Integrate SQL solutions with Azure services": [
+        "Create configuration files for Data API builder (DAB)",
+        "Configure entities for REST and GraphQL, including data caching, pagination, searching, and filtering",
+        "Configure REST or GraphQL endpoints",
+        "Expose database objects, stored procedures, and views, including GraphQL relationships",
+        "Configure and implement DAB deployment",
+        "Recommend Azure Monitor configurations, including Application Insights and Log Analytics",
+        "Handle changes by using change event streaming (CES), change data capture (CDC), Change Tracking, Azure Functions with SQL trigger binding, or Azure Logic Apps"
+      ]
+    },
+    "Implement AI capabilities in database solutions (25–30%)": {
+      "Design and implement models and embeddings": [
+        "Evaluate external models, including multimodal, multilanguage, sizes, and structured output",
+        "Create and manage external models",
+        "Choose an embedding maintenance method, including table triggers, Change Tracking, Azure Functions with SQL trigger binding, Azure Logic Apps, CDC, CES, and Microsoft Foundry",
+        "Identify which columns to include in embeddings",
+        "Design and implement chunks for embeddings",
+        "Generate embeddings"
+      ],
+      "Design and implement intelligent search": [
+        "Choose from full-text, semantic vector, and hybrid search",
+        "Implement full-text search",
+        "Design for vector data, including vector data type, vector indexes, and size",
+        "Identify when to use vector-related types and functions for semantic searching, including VECTOR\\_NORMALIZE, VECTOR\\_DISTANCE, VECTORPROPERTY, and VECTOR\\_SEARCH",
+        "Choose between using ANN and ENN for vector search",
+        "Evaluate vector index types and metrics",
+        "Implement vector search",
+        "Implement hybrid search",
+        "Implement reciprocal rank fusion (RRF)",
+        "Evaluate performance of vector and hybrid search"
+      ],
+      "Design and implement retrieval-augmented generation (RAG)": [
+        "Identify use cases for RAG",
+        "Create a prompt by using the sp\\_invoke\\_external\\_rest\\_endpoint stored procedure",
+        "Convert structured data to JSON for language model processing",
+        "Send results to language model",
+        "Extract language model responses"
+      ]
+    }
+  },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "DP-800",
+      "title": "SQL AI Developer Associate",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": null,
+      "current_skills_date": "March 12, 2026",
+      "summary": "73 added, 0 removed",
+      "added_count": 73,
+      "removed_count": 0,
+      "weight_changes": [
+        {
+          "area": "Secure, optimize, and deploy database solutions",
+          "previous_weight": null,
+          "current_weight": "35-40%"
+        },
+        {
+          "area": "Design and develop database solutions",
+          "previous_weight": null,
+          "current_weight": "35-40%"
+        },
+        {
+          "area": "Implement AI capabilities in database solutions",
+          "previous_weight": null,
+          "current_weight": "25-30%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (35–40%) > Design and implement SQL solutions by using AI-assisted tools",
+          "bullets": [
+            "Configure model and Model Context Protocol (MCP) tool options in a GitHub Copilot or Copilot in Fabric chat session",
+            "Connect to MCP server endpoints, including Microsoft SQL Server and Fabric lakehouse",
+            "Create and configure GitHub Copilot instruction files",
+            "Enable GitHub Copilot and Microsoft Copilot in Fabric",
+            "Interpret security impact of using AI-assisted tools"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (35–40%) > Design and implement database objects",
+          "bullets": [
+            "Design and implement JSON columns and indexes",
+            "Design and implement SEQUENCES",
+            "Design and implement database constraints, including PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, and DEFAULT",
+            "Design and implement partitioning for tables and indexes",
+            "Design and implement specialized tables, including in-memory, temporal, external, ledger, and graph",
+            "Design and implement tables, including data types, size, columns, indexes, and column store indexes"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (35–40%) > Implement programmability objects",
+          "bullets": [
+            "Create scalar functions",
+            "Create stored procedures",
+            "Create table-valued functions",
+            "Create triggers",
+            "Create views"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (35–40%) > Write advanced T-SQL code",
+          "bullets": [
+            "Implement error handling",
+            "Write common table expressions (CTEs)",
+            "Write correlated queries",
+            "Write graph queries that use the MATCH operator",
+            "Write queries that include JSON functions, such as JSON\\_OBJECT, JSON\\_ARRAY, JSON\\_ARRAYAGG, JSON\\_CONTAINS, OPENJSON, and JSON\\_VALUE",
+            "Write queries that include fuzzy string matching functions, such as EDIT\\_DISTANCE, EDIT\\_DISTANCE\\_SIMILARITY, and JARO\\_WINKLER\\_DISTANCE",
+            "Write queries that include regular expressions, such as REGEXP\\_LIKE, REGEXP\\_REPLACE, REGEXP\\_SUBSTR, REGEXP\\_INSTR, REGEXP\\_COUNT, REGEXP\\_MATCHES, and REGEXP\\_SPLIT\\_TO\\_TABLE",
+            "Write queries that include window functions"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement AI capabilities in database solutions (25–30%) > Design and implement intelligent search",
+          "bullets": [
+            "Choose between using ANN and ENN for vector search",
+            "Choose from full-text, semantic vector, and hybrid search",
+            "Design for vector data, including vector data type, vector indexes, and size",
+            "Evaluate performance of vector and hybrid search",
+            "Evaluate vector index types and metrics",
+            "Identify when to use vector-related types and functions for semantic searching, including VECTOR\\_NORMALIZE, VECTOR\\_DISTANCE, VECTORPROPERTY, and VECTOR\\_SEARCH",
+            "Implement full-text search",
+            "Implement hybrid search",
+            "Implement reciprocal rank fusion (RRF)",
+            "Implement vector search"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement AI capabilities in database solutions (25–30%) > Design and implement models and embeddings",
+          "bullets": [
+            "Choose an embedding maintenance method, including table triggers, Change Tracking, Azure Functions with SQL trigger binding, Azure Logic Apps, CDC, CES, and Microsoft Foundry",
+            "Create and manage external models",
+            "Design and implement chunks for embeddings",
+            "Evaluate external models, including multimodal, multilanguage, sizes, and structured output",
+            "Generate embeddings",
+            "Identify which columns to include in embeddings"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement AI capabilities in database solutions (25–30%) > Design and implement retrieval-augmented generation (RAG)",
+          "bullets": [
+            "Convert structured data to JSON for language model processing",
+            "Create a prompt by using the sp\\_invoke\\_external\\_rest\\_endpoint stored procedure",
+            "Extract language model responses",
+            "Identify use cases for RAG",
+            "Send results to language model"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (35–40%) > Implement CI/CD by using SQL Database Projects",
+          "bullets": [
+            "Configure source control for SQL Database Projects",
+            "Create and manage reference/static data in source control",
+            "Create, build, and validate database models by using SQL Database Projects, including SDK-style models",
+            "Design and implement a testing strategy, including unit tests and integration tests",
+            "Design and implement controls for deployment pipelines, including branching policies, triggers in approvals, authentication tables, and code owners",
+            "Detect schema drift by using SQL Database Projects",
+            "Implement secrets management",
+            "Manage branching, pull requests, and conflict resolution",
+            "Update an SQL database project and deploy changes"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (35–40%) > Implement data security and compliance",
+          "bullets": [
+            "Design and implement Dynamic Data Masking",
+            "Design and implement Row-Level Security (RLS)",
+            "Design and implement data encryption, including Always Encrypted and column-level encryption",
+            "Design and implement object-level permissions",
+            "Implement auditing",
+            "Implement secure database access, including passwordless",
+            "Secure GraphQL, REST, and MCP endpoints",
+            "Secure model endpoints, including Managed Identity"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (35–40%) > Integrate SQL solutions with Azure services",
+          "bullets": [
+            "Configure REST or GraphQL endpoints",
+            "Configure and implement DAB deployment",
+            "Configure entities for REST and GraphQL, including data caching, pagination, searching, and filtering",
+            "Create configuration files for Data API builder (DAB)",
+            "Expose database objects, stored procedures, and views, including GraphQL relationships",
+            "Handle changes by using change event streaming (CES), change data capture (CDC), Change Tracking, Azure Functions with SQL trigger binding, or Azure Logic Apps",
+            "Recommend Azure Monitor configurations, including Application Insights and Log Analytics"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (35–40%) > Optimize database performance",
+          "bullets": [
+            "Evaluate query performance by using query execution plans, dynamic management views (DMVs), Query Store, and Query Performance Insight",
+            "Identify and resolve query performance issues, including blocking and deadlocks",
+            "Preserve data integrity and consistency by using transaction isolation levels and concurrency controls",
+            "Recommend database configurations"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "DP-300",
@@ -31,16 +315,9 @@
       "level": "beginner",
       "status": "active",
       "category": "Data"
-    },
-    {
-      "code": "AI-102",
-      "title": "Designing and Implementing a Microsoft Azure AI Solution",
-      "level": "intermediate",
-      "status": "retired",
-      "category": "AI"
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-800/",
-  "study_guide_url": "",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-800",
   "practice_assessment_url": ""
 }

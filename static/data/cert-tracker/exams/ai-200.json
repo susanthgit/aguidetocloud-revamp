@@ -11,12 +11,199 @@
   ],
   "category": "AI",
   "status": "beta",
-  "updated_at": "",
+  "updated_at": "2026-05-05 15:02:00+00:00",
   "skills_date": null,
-  "skills_at_a_glance": [],
-  "skills_detailed": {},
+  "skills_at_a_glance": [
+    {
+      "area": "Develop containerized solutions on Azure",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Develop AI solutions by using Azure data management services",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Connect to and consume Azure services",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Secure, monitor, troubleshoot Azure solutions",
+      "weight": "20-25%"
+    }
+  ],
+  "skills_detailed": {
+    "Develop containerized solutions on Azure (20–25%)": {
+      "Implement container application hosting": [
+        "Build, store, version, and manage container images by using Azure Container Registry",
+        "Build and run images by using Azure Container Registry Tasks",
+        "Deploy containers to Azure App Service, including configuring App Service to supply environment variables and secrets"
+      ],
+      "Implement container-orchestrated solutions": [
+        "Deploy applications to Azure Container Apps, including environment configuration and revision management",
+        "Implement event-driven scaling by using Kubernetes Event‑driven Autoscaling (KEDA) in Container Apps",
+        "Deploy and manage applications to Azure Kubernetes Service (AKS) by using manifest files",
+        "Monitor and troubleshoot solutions on AKS and Container Apps by inspecting logs, events, and end-to-end connectivity"
+      ]
+    },
+    "Develop AI solutions by using Azure data management services (25–30%)": {
+      "Develop AI solutions by using Azure Cosmos DB for NoSQL": [
+        "Connect to Azure Cosmos DB for NoSQL by using the SDK and run queries",
+        "Optimize query performance and Request Units (RUs) consumption by using indexing policies and consistency levels",
+        "Store and retrieve embeddings and execute vector similarity search for semantic retrieval",
+        "Implement a change feed processor to detect and handle new or updated items"
+      ],
+      "Develop AI solutions by using Azure Database for PostgreSQL": [
+        "Connect and query Azure Database for PostgreSQL by using SDKs",
+        "Model schemas and implement indexing strategies, including designing tables and choosing appropriate data types",
+        "Implement indexing strategies, including optimizing query latency and reducing pgvector compute overhead",
+        "Configure compute, memory, and storage resources to support vector workloads",
+        "Run vector similarity search, including storing embeddings, semantic retrieval, and implementing retrieval-augmented generation (RAG) patterns by using metadata filter",
+        "Implement connection optimization to improve throughput and minimize latency"
+      ],
+      "Integrate Azure Managed Redis in AI solutions": [
+        "Implement Azure Managed Redis data operations, including caching, expiration, and invalidation",
+        "Implement vector indexing to enable similarity search"
+      ]
+    },
+    "Connect to and consume Azure services (20–25%)": {
+      "Develop event- and message-based AI solutions": [
+        "Queue and process back-end operations by using Azure Service Bus, including dead-letter queue handling, messages, topics, and subscriptions",
+        "Implement event-driven workflows by using Azure Event Grid, including filters, custom events, and retries"
+      ],
+      "Develop and implement Azure Functions": [
+        "Build serverless APIs, including implementing triggers and bindings",
+        "Configure and deploy function apps"
+      ]
+    },
+    "Secure, monitor, and troubleshoot Azure solutions (20–25%)": {
+      "Implement secure Azure solutions": [
+        "Secure secrets by using Azure Key Vault, including rotation and retrieval",
+        "Store and retrieve app configuration information by using Azure App Configuration"
+      ],
+      "Monitor and troubleshoot Azure solutions": [
+        "Trace distributed systems by using OpenTelemetry SDKs",
+        "Write KQL queries to analyze logs and metrics"
+      ]
+    }
+  },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "AI-200",
+      "title": "Azure AI Cloud Developer Associate",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": null,
+      "current_skills_date": null,
+      "summary": "27 added, 0 removed",
+      "added_count": 27,
+      "removed_count": 0,
+      "weight_changes": [
+        {
+          "area": "Secure, monitor, troubleshoot Azure solutions",
+          "previous_weight": null,
+          "current_weight": "20-25%"
+        },
+        {
+          "area": "Connect to and consume Azure services",
+          "previous_weight": null,
+          "current_weight": "20-25%"
+        },
+        {
+          "area": "Develop AI solutions by using Azure data management services",
+          "previous_weight": null,
+          "current_weight": "25-30%"
+        },
+        {
+          "area": "Develop containerized solutions on Azure",
+          "previous_weight": null,
+          "current_weight": "20-25%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "area_added",
+          "area": "Connect to and consume Azure services (20–25%) > Develop and implement Azure Functions",
+          "bullets": [
+            "Build serverless APIs, including implementing triggers and bindings",
+            "Configure and deploy function apps"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Connect to and consume Azure services (20–25%) > Develop event- and message-based AI solutions",
+          "bullets": [
+            "Implement event-driven workflows by using Azure Event Grid, including filters, custom events, and retries",
+            "Queue and process back-end operations by using Azure Service Bus, including dead-letter queue handling, messages, topics, and subscriptions"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Develop AI solutions by using Azure data management services (25–30%) > Develop AI solutions by using Azure Cosmos DB for NoSQL",
+          "bullets": [
+            "Connect to Azure Cosmos DB for NoSQL by using the SDK and run queries",
+            "Implement a change feed processor to detect and handle new or updated items",
+            "Optimize query performance and Request Units (RUs) consumption by using indexing policies and consistency levels",
+            "Store and retrieve embeddings and execute vector similarity search for semantic retrieval"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Develop AI solutions by using Azure data management services (25–30%) > Develop AI solutions by using Azure Database for PostgreSQL",
+          "bullets": [
+            "Configure compute, memory, and storage resources to support vector workloads",
+            "Connect and query Azure Database for PostgreSQL by using SDKs",
+            "Implement connection optimization to improve throughput and minimize latency",
+            "Implement indexing strategies, including optimizing query latency and reducing pgvector compute overhead",
+            "Model schemas and implement indexing strategies, including designing tables and choosing appropriate data types",
+            "Run vector similarity search, including storing embeddings, semantic retrieval, and implementing retrieval-augmented generation (RAG) patterns by using metadata filter"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Develop AI solutions by using Azure data management services (25–30%) > Integrate Azure Managed Redis in AI solutions",
+          "bullets": [
+            "Implement Azure Managed Redis data operations, including caching, expiration, and invalidation",
+            "Implement vector indexing to enable similarity search"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Develop containerized solutions on Azure (20–25%) > Implement container application hosting",
+          "bullets": [
+            "Build and run images by using Azure Container Registry Tasks",
+            "Build, store, version, and manage container images by using Azure Container Registry",
+            "Deploy containers to Azure App Service, including configuring App Service to supply environment variables and secrets"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Develop containerized solutions on Azure (20–25%) > Implement container-orchestrated solutions",
+          "bullets": [
+            "Deploy and manage applications to Azure Kubernetes Service (AKS) by using manifest files",
+            "Deploy applications to Azure Container Apps, including environment configuration and revision management",
+            "Implement event-driven scaling by using Kubernetes Event‑driven Autoscaling (KEDA) in Container Apps",
+            "Monitor and troubleshoot solutions on AKS and Container Apps by inspecting logs, events, and end-to-end connectivity"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, monitor, and troubleshoot Azure solutions (20–25%) > Implement secure Azure solutions",
+          "bullets": [
+            "Secure secrets by using Azure Key Vault, including rotation and retrieval",
+            "Store and retrieve app configuration information by using Azure App Configuration"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, monitor, and troubleshoot Azure solutions (20–25%) > Monitor and troubleshoot Azure solutions",
+          "bullets": [
+            "Trace distributed systems by using OpenTelemetry SDKs",
+            "Write KQL queries to analyze logs and metrics"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "AI-103",
@@ -31,16 +218,9 @@
       "level": "intermediate",
       "status": "beta",
       "category": "AI"
-    },
-    {
-      "code": "AZ-204",
-      "title": "Developing Solutions for Microsoft Azure",
-      "level": "intermediate",
-      "status": "retired",
-      "category": "Azure"
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-200/",
-  "study_guide_url": "",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-200",
   "practice_assessment_url": ""
 }

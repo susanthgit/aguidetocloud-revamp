@@ -113,13 +113,6 @@
   "change_history": [],
   "related_exams": [
     {
-      "code": "AI-102",
-      "title": "Designing and Implementing a Microsoft Azure AI Solution",
-      "level": "intermediate",
-      "status": "retired",
-      "category": "AI"
-    },
-    {
       "code": "AZ-900",
       "title": "Microsoft Azure Fundamentals",
       "level": "beginner",
@@ -135,6 +128,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-900",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/practice/assessment?assessment-type=practice"
 }

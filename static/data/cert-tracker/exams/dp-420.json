@@ -116,7 +116,436 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "DP-420",
+      "title": "Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "April 20, 2026",
+      "current_skills_date": "October 6, 2026",
+      "summary": "56 added, 132 removed",
+      "added_count": 56,
+      "removed_count": 132,
+      "weight_changes": [
+        {
+          "area": "Secure, optimize, and deploy database solutions",
+          "previous_weight": null,
+          "current_weight": "30-35%"
+        },
+        {
+          "area": "Design and implement data distribution",
+          "previous_weight": "5-10%",
+          "current_weight": null
+        },
+        {
+          "area": "Optimize an Azure Cosmos DB solution",
+          "previous_weight": "15-20%",
+          "current_weight": null
+        },
+        {
+          "area": "Design and implement data models",
+          "previous_weight": "35-40%",
+          "current_weight": null
+        },
+        {
+          "area": "Maintain an Azure Cosmos DB solution",
+          "previous_weight": "25-30%",
+          "current_weight": null
+        },
+        {
+          "area": "Design and develop database solutions",
+          "previous_weight": null,
+          "current_weight": "40-45%"
+        },
+        {
+          "area": "Integrate an Azure Cosmos DB solution",
+          "previous_weight": "5-10%",
+          "current_weight": null
+        },
+        {
+          "area": "Implement AI and Analytics capabilities in database solutions",
+          "previous_weight": null,
+          "current_weight": "20-25%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (40–45%) > Design and implement Azure Cosmos DB solutions by using AI-assisted tools",
+          "bullets": [
+            "Implement Agent Kit to accelerate AI application development",
+            "Implement Agent Kit to follow Azure Cosmos DB development recommended solutions"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (40–45%) > Design and implement data models and partitioning strategies",
+          "bullets": [
+            "Design and select partition keys based on cardinality, access patterns, and write distribution requirements",
+            "Design data models for access patterns and operational requirements",
+            "Determine when to embed or reference related data",
+            "Estimate workload cost requirements",
+            "Evaluate the impact of partition key selection on scalability and performance",
+            "Identify partitioning anti-patterns and partitioning issues during solution reviews",
+            "Implement hierarchical partition keys (HPKs) and multi-tenant partitioning strategies",
+            "Implement synthetic partition keys"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (40–45%) > Evaluate resource models and SDK solutions",
+          "bullets": [
+            "Configure account-level and container-level settings",
+            "Create and manage database and containers",
+            "Evaluate Request Unit (RU) consumption requirements",
+            "Evaluate consistency levels",
+            "Evaluating and configuring appropriate throughput",
+            "Initialize SDK clients and connections"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (40–45%) > Implement change feed",
+          "bullets": [
+            "Configure lease containers",
+            "Differentiate between change feed processor and pull mode models",
+            "Implement change feed operations",
+            "Implement change feed processing using latest mode or all versions and delete",
+            "Implement copy container jobs"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design and develop database solutions (40–45%) > Implement database operations",
+          "bullets": [
+            "Configure Time to Live (TTL)",
+            "Implement bulk, batch, and transactional operations",
+            "Implement concurrency control mechanisms",
+            "Implement create, replace, update, patch and delete operations",
+            "Implement point read operations",
+            "Implement queries, parameterized queries, paging, and continuation tokens"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data distribution (5–10%) > Design and implement a replication strategy for Azure Cosmos DB",
+          "bullets": [
+            "Choose a consistency model",
+            "Choose when to distribute data",
+            "Define automatic failover policies for regional failure for Azure Cosmos DB for NoSQL",
+            "Evaluate the impact of consistency model choices on availability and associated request unit (RU) cost",
+            "Evaluate the impact of consistency model choices on performance and latency",
+            "Identify use cases for different consistency models",
+            "Perform manual failovers to move single master write regions",
+            "Specify application connections to replicated data"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data distribution (5–10%) > Design and implement multi-region writes",
+          "bullets": [
+            "Choose when to use multi-region writes",
+            "Implement a custom conflict resolution policy for Azure Cosmos DB for NoSQL",
+            "Implement multi-region writes"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data models (35–40%) > Design a data partitioning strategy for Azure Cosmos DB for NoSQL",
+          "bullets": [
+            "Calculate and evaluate data distribution based on partition key selection",
+            "Calculate and evaluate throughput distribution based on partition key selection",
+            "Choose a partition key",
+            "Choose a partitioning strategy based on a specific workload",
+            "Construct and implement a synthetic partition key",
+            "Design and implement a hierarchical partition key",
+            "Design partitioning for workloads that require multiple partition keys",
+            "Evaluate the cost of using a cross-partition query",
+            "Plan for transactions when choosing a partition key"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data models (35–40%) > Design and implement a non-relational data model for Azure Cosmos DB for NoSQL",
+          "bullets": [
+            "Develop a design by referencing between documents",
+            "Develop a design by storing multiple entity types in the same container",
+            "Develop a design by storing multiple related entities in the same document",
+            "Develop a design for document schema versioning",
+            "Develop a design for versioning documents",
+            "Develop a model that denormalizes data across documents",
+            "Identify data and associated access patterns",
+            "Identify partition key, id, and unique keys",
+            "Specify a default time to live (TTL) on a container for a transactional store"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data models (35–40%) > Implement client connectivity options in the Azure Cosmos DB SDK",
+          "bullets": [
+            "Choose a connectivity mode (gateway versus direct)",
+            "Configure client-side threading and parallelism options",
+            "Create a connection to a database",
+            "Enable SDK logging",
+            "Enable offline development by using the Azure Cosmos DB emulator",
+            "Handle connection errors",
+            "Implement a connectivity mode",
+            "Implement a singleton for the client",
+            "Specify a region for global distribution"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data models (35–40%) > Implement data access by using Azure Cosmos DB for NoSQL SDKs",
+          "bullets": [
+            "Choose when to use a point operation versus a query operation",
+            "Handle transient errors and 429s",
+            "Implement a point operation that creates, updates, and deletes items",
+            "Implement a query operation by using a continuation token",
+            "Implement a query operation that includes pagination",
+            "Implement an update by using a patch operation",
+            "Implement optimistic concurrency control using ETags",
+            "Implement session consistency by using session tokens",
+            "Manage multi-item transactions using SDK Transactional Batch",
+            "Override default consistency by using query request options",
+            "Perform a multi-item load using Bulk Support in the SDK",
+            "Retrieve and use query metrics",
+            "Specify TTL for an item"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data models (35–40%) > Implement data access by using the SQL language for Azure Cosmos DB for NoSQL",
+          "bullets": [
+            "Implement a correlated subquery",
+            "Implement queries based on variable data",
+            "Implement queries that use array and type-checking functions",
+            "Implement queries that use arrays, nested objects, aggregation, and ordering",
+            "Implement queries that use mathematical, string, and date functions"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data models (35–40%) > Implement server-side programming in Azure Cosmos DB for NoSQL by using JavaScript",
+          "bullets": [
+            "Design stored procedures to work with multiple items within the same logical partition transactionally",
+            "Implement a user-defined function",
+            "Implement and call triggers",
+            "Write, deploy, and call a stored procedure"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design and implement data models (35–40%) > Plan and implement sizing and scaling for a database created with Azure Cosmos DB",
+          "bullets": [
+            "Choose between serverless, provisioned and free tier",
+            "Choose when to use database-level provisioned throughput",
+            "Configure throughput for Azure Cosmos DB by using the Azure portal",
+            "Design for granular scale units and resource governance",
+            "Evaluate the cost of the global distribution of data",
+            "Evaluate the throughput and data storage requirements for a specific workload"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement AI and analytics capabilities in database solutions (20–25%) > Design and implement AI retrieval",
+          "bullets": [
+            "Design and implement Retrieval-Augmented Generation (RAG)",
+            "Design and implement full-text search",
+            "Design and implement hybrid search",
+            "Design and implement vector partitioning and sharded DiskANN implementations",
+            "Design for vector data, including vector data type, vector indexes, and size",
+            "Implement vector search",
+            "Optimize full-text and vector performance"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement AI and analytics capabilities in database solutions (20–25%) > Design and implement agent memory stores",
+          "bullets": [
+            "Design durable memory stores",
+            "Implement conversation state",
+            "Implement semantic memory"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement AI and analytics capabilities in database solutions (20–25%) > Design and implement operational analytics on Azure Cosmos DB",
+          "bullets": [
+            "Choose between Azure Cosmos DB and Cosmos DB in Microsoft Fabric",
+            "Configure and monitor data mirroring into Microsoft Fabric",
+            "Query Azure Cosmos DB mirrored JSON data in Microsoft Fabric with T-SQL and Spark",
+            "Read and write data into Azure Cosmos DB from Microsoft Fabric with Cosmos DB Spark connector"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Integrate an Azure Cosmos DB solution (5–10%) > Enable Azure Cosmos DB analytical workloads",
+          "bullets": [
+            "Choose between Azure Cosmos DB Mirroring and the Azure Cosmos DB Spark connector",
+            "Configure Azure Cosmos DB Mirroring for Microsoft Fabric",
+            "Enable a connection to an analytical store and query from Azure Synapse Spark or Azure Synapse SQL",
+            "Enable the analytical store on a container",
+            "Implement Change Data Capture in the Azure Cosmos DB analytical store",
+            "Implement time travel in Warehouse in Microsoft Fabric",
+            "Perform a query against the transactional store from Spark",
+            "Write data back to the transactional store from Spark"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Integrate an Azure Cosmos DB solution (5–10%) > Implement solutions across services",
+          "bullets": [
+            "Aggregate data by using Change Feed and Azure Functions, including reporting",
+            "Archive data by using Change Feed and Azure Functions",
+            "Denormalize data by using Change Feed and Azure Functions",
+            "Enforce referential integrity by using Change Feed and Azure Functions",
+            "Implement Azure AI Search for an Azure Cosmos DB solution",
+            "Integrate events with other applications by using Azure Functions and Azure Event Hubs"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Maintain an Azure Cosmos DB solution (25–30%) > Implement a DevOps process for an Azure Cosmos DB solution",
+          "bullets": [
+            "Choose when to use declarative versus imperative operations",
+            "Initiate a regional failover by using PowerShell or Azure CLI",
+            "Maintain indexing policies in production by using Azure Resource Manager templates",
+            "Migrate between standard and autoscale throughput by using PowerShell or Azure CLI",
+            "Provision and manage Azure Cosmos DB resources by using Azure Resource Manager templates"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Maintain an Azure Cosmos DB solution (25–30%) > Implement backup and restore for an Azure Cosmos DB solution",
+          "bullets": [
+            "Choose between periodic and continuous backup",
+            "Configure continuous backup and point-in-time restore",
+            "Configure periodic backup",
+            "Locate a restore point for a point-in-time restore",
+            "Restore a database or container from a restore point"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Maintain an Azure Cosmos DB solution (25–30%) > Implement data movement for an Azure Cosmos DB solution",
+          "bullets": [
+            "Choose a data movement strategy",
+            "Configure Azure Cosmos DB as a custom endpoint for an Azure IoT Hub",
+            "Move data by using Azure Data Factory and Azure Synapse pipelines",
+            "Move data by using Azure Stream Analytics",
+            "Move data by using a Kafka connector",
+            "Move data by using client SDK bulk operations",
+            "Move data by using the Azure Cosmos DB Spark connector"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Maintain an Azure Cosmos DB solution (25–30%) > Implement security for an Azure Cosmos DB solution",
+          "bullets": [
+            "Choose between service-managed and customer-managed encryption keys",
+            "Configure cross-origin resource sharing (CORS) settings",
+            "Configure data encryption for Azure Cosmos DB",
+            "Configure network-level access control for Azure Cosmos DB",
+            "Implement Always Encrypted",
+            "Implement customer-managed keys for encryption",
+            "Manage account keys by using Azure Key Vault",
+            "Manage control plane access to Azure Cosmos DB Data Explorer by using Azure role-based access control (RBAC)",
+            "Manage control plane access to Azure Cosmos DB by using Azure role-based access control (RBAC)",
+            "Manage data plane access to Azure Cosmos DB by using Microsoft Entra ID"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Maintain an Azure Cosmos DB solution (25–30%) > Monitor and troubleshoot an Azure Cosmos DB solution",
+          "bullets": [
+            "Configure Azure Monitor alerts for Azure Cosmos DB",
+            "Evaluate response status code and failure metrics",
+            "Implement and query Azure Monitor resource logs for Azure Cosmos DB",
+            "Monitor data replication in relation to latency and availability",
+            "Monitor distribution of data across partitions",
+            "Monitor security by using logging and auditing",
+            "Monitor server-side latency metrics by using Azure Monitor",
+            "Monitor the Normalized RU Consumption metric by using Azure Monitor",
+            "Monitor throughput across partitions"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Optimize an Azure Cosmos DB solution (15–20%) > Define and implement an indexing strategy for Azure Cosmos DB for NoSQL",
+          "bullets": [
+            "Choose an appropriate index type",
+            "Choose when to use a read-heavy versus write-heavy index strategy",
+            "Configure a custom indexing policy by using the Azure portal",
+            "Implement a composite index",
+            "Optimize index performance"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Optimize an Azure Cosmos DB solution (15–20%) > Design and implement change feeds for Azure Cosmos DB for NoSQL",
+          "bullets": [
+            "Consume a change feed from within an application by using the SDK",
+            "Develop an Azure Functions trigger to process a change feed",
+            "Implement aggregation persistence by using a change feed",
+            "Implement data archiving by using a change feed",
+            "Implement denormalization by using a change feed",
+            "Implement referential enforcement by using a change feed",
+            "Manage the number of change feed instances by using the change feed estimator"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Optimize an Azure Cosmos DB solution (15–20%) > Optimize query performance when using the API for Azure Cosmos DB for NoSQL",
+          "bullets": [
+            "Adjust indexes on the database",
+            "Calculate the cost of the query",
+            "Implement Azure Cosmos DB integrated cache",
+            "Retrieve request unit cost of a point operation or query"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (30–35%) > Implement Fleet management and monitoring across multiple accounts and subscriptions",
+          "bullets": [
+            "Configure Fleet level throughput management",
+            "Configure Fleet monitoring with fleet analytics"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (30–35%) > Implement availability and recovery solutions",
+          "bullets": [
+            "Configure backup and restore solutions",
+            "Configure partition failover solutions",
+            "Implement multi-region read and write configurations"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (30–35%) > Implement database security controls",
+          "bullets": [
+            "Configure authentication mechanisms",
+            "Configure authorization controls",
+            "Configure dynamic data masking",
+            "Configure network security"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure, optimize, and deploy database solutions (30–35%) > Optimize and remediate database performance",
+          "bullets": [
+            "Analyze diagnostic logs in Log Analytics",
+            "Analyze index performance metrics",
+            "Analyze query performance metrics",
+            "Configure Azure Monitor alerts",
+            "Monitor end-to-end latency against service objectives",
+            "Optimize query performance"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "DP-300",
@@ -124,13 +553,6 @@
       "level": "intermediate",
       "status": "active",
       "category": "Data"
-    },
-    {
-      "code": "AZ-204",
-      "title": "Developing Solutions for Microsoft Azure",
-      "level": "intermediate",
-      "status": "retired",
-      "category": "Azure"
     },
     {
       "code": "DP-900",
@@ -141,6 +563,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-420/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-420",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-420",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-420/practice/assessment?assessment-type=practice"
 }

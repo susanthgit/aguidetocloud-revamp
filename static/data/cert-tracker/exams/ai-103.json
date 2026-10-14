@@ -11,18 +11,330 @@
   ],
   "category": "AI",
   "status": "beta",
-  "updated_at": "",
-  "skills_date": null,
-  "skills_at_a_glance": [],
-  "skills_detailed": {},
+  "updated_at": "2026-07-07 18:58:00+00:00",
+  "skills_date": "April 16, 2026",
+  "skills_at_a_glance": [
+    {
+      "area": "Plan and manage an Azure AI solution",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Implement generative AI and agentic solutions",
+      "weight": "30-35%"
+    },
+    {
+      "area": "Implement computer vision solutions",
+      "weight": "10-15%"
+    },
+    {
+      "area": "Implement text analysis solutions",
+      "weight": "10-15%"
+    },
+    {
+      "area": "Implement information extraction solutions",
+      "weight": "10-15%"
+    }
+  ],
+  "skills_detailed": {
+    "Plan and manage an Azure AI solution (25–30%)": {
+      "Choose the appropriate Foundry services for generative AI and agents": [
+        "Choose an appropriate model for each task, including large language models (LLMs), small language models, multimodal models, and Foundry Tools",
+        "Choose the appropriate Foundry services for generative tasks, grounding, vector search, agent workflows, or multimodal processing",
+        "Choose an appropriate method for retrieval and indexing",
+        "Choose appropriate memory, tool, and knowledge integration services for agent solutions"
+      ],
+      "Set up AI solutions in Foundry": [
+        "Design Azure infrastructure for AI apps and agent-based solutions",
+        "Choose appropriate deployment options",
+        "Configure model and agent deployments",
+        "Integrate Foundry projects with continuous integration and continuous deployment (CI/CD) pipelines"
+      ],
+      "Manage, monitor, and secure AI systems": [
+        "Manage quotas, scaling, rate limits, and cost footprints for model and agent workloads",
+        "Monitor model performance, drift, safety events, and grounding quality",
+        "Monitor data ingestion quality, search index health, and relevance performance",
+        "Configure security, including managed identity, private networking, keyless credentials, and role policies"
+      ],
+      "Implement responsible AI across generative AI and agentic systems": [
+        "Configure safety filters, guardrails, risk detection, and content moderation",
+        "Apply responsible AI instrumentation, including evaluators, safety evaluations, and explanation tooling",
+        "Implement auditing through trace logging, provenance metadata, and approval workflows",
+        "Govern agent behavior with oversight modes, constraints, and tool-access controls"
+      ]
+    },
+    "Implement generative AI and agentic solutions (30–35%)": {
+      "Build generative applications by using Foundry": [
+        "Deploy and consume LLMs, small models, code models, and multimodal models",
+        "Implement retrieval-augmented generation (RAG) in an application",
+        "Design workflows, tool-augmented flows, and multistep reasoning pipelines",
+        "Evaluate models and apps, including detecting fabrications, relevance, quality, and safety",
+        "Integrate generative workflows into applications by using Foundry SDKs and connectors",
+        "Configure an application to connect to a Foundry project"
+      ],
+      "Build agents by using Foundry": [
+        "Define agent roles, goals, conversation-tracking approach, and tool schemas",
+        "Build agents that integrate retrieval, function-calling, and conversation memory",
+        "Integrate agent tools, including APIs, knowledge stores, search, content understanding, and custom functions",
+        "Implement orchestrated multi-agent solutions",
+        "Build autonomous or semiautonomous workflows with safeguards and approval flow controls",
+        "Integrate monitoring into deployed agents, evaluate agent behavior, and perform error analysis"
+      ],
+      "Optimize and operationalize generative AI systems": [
+        "Tune generation behavior, such as prompt engineering and adjusting model parameters",
+        "Implement model reflection, chain-of-thought evaluations, and self-critique loops",
+        "Set up observability by implementing tracing, token analytics, safety signals, and latency breakdowns",
+        "Orchestrate multiple models, flows, or hybrid LLM and rules engines"
+      ]
+    },
+    "Implement computer vision solutions (10–15%)": {
+      "Design and implement image- and video-generation solutions": [
+        "Implement a solution that generates images from text prompts and reference media",
+        "Implement a solution that generates videos from text prompts and reference media",
+        "Configure image-editing workflows, including inpainting, mask‑based edits, and prompt‑driven modifications",
+        "Implement workflows to edit generated videos",
+        "Select and apply appropriate generation and editing controls provided by the platform"
+      ],
+      "Design and implement multimodal understanding workflows": [
+        "Build a solution that analyzes visual context by using multimodal models",
+        "Configure apps to produce concise or detailed captions for single or multiple images",
+        "Implement a solution that enables question‑answering grounded in visual evidence",
+        "Configure generation of alt‑text and extended image descriptions aligned to accessibility guidelines",
+        "Implement visual understanding by configuring Azure Content Understanding in Foundry Tools to extract visual characteristics",
+        "Implement video analysis workflows to process and interpret video segments",
+        "Configure single‑task and pro‑mode Content Understanding pipelines",
+        "Implement solutions that identify objects, components, or regions within images or video"
+      ],
+      "Implement responsible AI for multimodal content": [
+        "Implement filters to classify unsafe or disallowed visual content",
+        "Detect and mitigate indirect prompt injection by using embedded text in images",
+        "Enforce visual policy rules, such as applying watermarks, flagging prohibited symbols, upholding brand usage requirements, and detecting potentially inappropriate content"
+      ]
+    },
+    "Implement text analysis solutions (10–15%)": {
+      "Apply language model text analysis": [
+        "Implement solutions to extract entities, topics, summaries, and structured JSON outputs by using generative prompting and Foundry Tools",
+        "Configure detection of sentiment, tone, safety issues, and sensitive content",
+        "Build solutions that translate text by using Azure Translator in Foundry Tools or LLM‑powered translation flows",
+        "Customize language model outputs for domain tasks, such as compliance summarization and domain extraction"
+      ],
+      "Implement speech solutions": [
+        "Implement workflows to convert speech to text and text to speech for agentic interactions",
+        "Integrate speech as an agent modality, including custom speech models",
+        "Enable multimodal reasoning from audio inputs",
+        "Translate speech into other languages by using language models and Foundry Tools"
+      ]
+    },
+    "Implement information extraction solutions (10–15%)": {
+      "Build retrieval and grounding pipelines": [
+        "Ingest and index content, such as documents, images, audio, and video",
+        "Configure semantic search, hybrid search, and vector search for grounding",
+        "Implement enrichment by using custom or built-in skills for text, images, and layout",
+        "Configure RAG ingestion flow, including documents and using optical character recognition (OCR)",
+        "Connect retrieval pipelines directly to workflows and agent tools"
+      ],
+      "Extract content from documents": [
+        "Extract information by using multimodal pipelines that combine OCR, layout analysis, and field extraction",
+        "Produce clean, grounded representations to use with agents and RAG by using Content Understanding",
+        "Implement analyzers for generating structured or markdown outputs for downstream reasoning by using Content Understanding"
+      ]
+    }
+  },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "AI-103",
+      "title": "Azure AI App and Agent Developer Associate",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": null,
+      "current_skills_date": "April 16, 2026",
+      "summary": "64 added, 0 removed",
+      "added_count": 64,
+      "removed_count": 0,
+      "weight_changes": [
+        {
+          "area": "Implement information extraction solutions",
+          "previous_weight": null,
+          "current_weight": "10-15%"
+        },
+        {
+          "area": "Implement computer vision solutions",
+          "previous_weight": null,
+          "current_weight": "10-15%"
+        },
+        {
+          "area": "Plan and manage an Azure AI solution",
+          "previous_weight": null,
+          "current_weight": "25-30%"
+        },
+        {
+          "area": "Implement generative AI and agentic solutions",
+          "previous_weight": null,
+          "current_weight": "30-35%"
+        },
+        {
+          "area": "Implement text analysis solutions",
+          "previous_weight": null,
+          "current_weight": "10-15%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "area_added",
+          "area": "Implement computer vision solutions (10–15%) > Design and implement image- and video-generation solutions",
+          "bullets": [
+            "Configure image-editing workflows, including inpainting, mask‑based edits, and prompt‑driven modifications",
+            "Implement a solution that generates images from text prompts and reference media",
+            "Implement a solution that generates videos from text prompts and reference media",
+            "Implement workflows to edit generated videos",
+            "Select and apply appropriate generation and editing controls provided by the platform"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement computer vision solutions (10–15%) > Design and implement multimodal understanding workflows",
+          "bullets": [
+            "Build a solution that analyzes visual context by using multimodal models",
+            "Configure apps to produce concise or detailed captions for single or multiple images",
+            "Configure generation of alt‑text and extended image descriptions aligned to accessibility guidelines",
+            "Configure single‑task and pro‑mode Content Understanding pipelines",
+            "Implement a solution that enables question‑answering grounded in visual evidence",
+            "Implement solutions that identify objects, components, or regions within images or video",
+            "Implement video analysis workflows to process and interpret video segments",
+            "Implement visual understanding by configuring Azure Content Understanding in Foundry Tools to extract visual characteristics"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement computer vision solutions (10–15%) > Implement responsible AI for multimodal content",
+          "bullets": [
+            "Detect and mitigate indirect prompt injection by using embedded text in images",
+            "Enforce visual policy rules, such as applying watermarks, flagging prohibited symbols, upholding brand usage requirements, and detecting potentially inappropriate content",
+            "Implement filters to classify unsafe or disallowed visual content"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement generative AI and agentic solutions (30–35%) > Build agents by using Foundry",
+          "bullets": [
+            "Build agents that integrate retrieval, function-calling, and conversation memory",
+            "Build autonomous or semiautonomous workflows with safeguards and approval flow controls",
+            "Define agent roles, goals, conversation-tracking approach, and tool schemas",
+            "Implement orchestrated multi-agent solutions",
+            "Integrate agent tools, including APIs, knowledge stores, search, content understanding, and custom functions",
+            "Integrate monitoring into deployed agents, evaluate agent behavior, and perform error analysis"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement generative AI and agentic solutions (30–35%) > Build generative applications by using Foundry",
+          "bullets": [
+            "Configure an application to connect to a Foundry project",
+            "Deploy and consume LLMs, small models, code models, and multimodal models",
+            "Design workflows, tool-augmented flows, and multistep reasoning pipelines",
+            "Evaluate models and apps, including detecting fabrications, relevance, quality, and safety",
+            "Implement retrieval-augmented generation (RAG) in an application",
+            "Integrate generative workflows into applications by using Foundry SDKs and connectors"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement generative AI and agentic solutions (30–35%) > Optimize and operationalize generative AI systems",
+          "bullets": [
+            "Implement model reflection, chain-of-thought evaluations, and self-critique loops",
+            "Orchestrate multiple models, flows, or hybrid LLM and rules engines",
+            "Set up observability by implementing tracing, token analytics, safety signals, and latency breakdowns",
+            "Tune generation behavior, such as prompt engineering and adjusting model parameters"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement information extraction solutions (10–15%) > Build retrieval and grounding pipelines",
+          "bullets": [
+            "Configure RAG ingestion flow, including documents and using optical character recognition (OCR)",
+            "Configure semantic search, hybrid search, and vector search for grounding",
+            "Connect retrieval pipelines directly to workflows and agent tools",
+            "Implement enrichment by using custom or built-in skills for text, images, and layout",
+            "Ingest and index content, such as documents, images, audio, and video"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement information extraction solutions (10–15%) > Extract content from documents",
+          "bullets": [
+            "Extract information by using multimodal pipelines that combine OCR, layout analysis, and field extraction",
+            "Implement analyzers for generating structured or markdown outputs for downstream reasoning by using Content Understanding",
+            "Produce clean, grounded representations to use with agents and RAG by using Content Understanding"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement text analysis solutions (10–15%) > Apply language model text analysis",
+          "bullets": [
+            "Build solutions that translate text by using Azure Translator in Foundry Tools or LLM‑powered translation flows",
+            "Configure detection of sentiment, tone, safety issues, and sensitive content",
+            "Customize language model outputs for domain tasks, such as compliance summarization and domain extraction",
+            "Implement solutions to extract entities, topics, summaries, and structured JSON outputs by using generative prompting and Foundry Tools"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement text analysis solutions (10–15%) > Implement speech solutions",
+          "bullets": [
+            "Enable multimodal reasoning from audio inputs",
+            "Implement workflows to convert speech to text and text to speech for agentic interactions",
+            "Integrate speech as an agent modality, including custom speech models",
+            "Translate speech into other languages by using language models and Foundry Tools"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Plan and manage an Azure AI solution (25–30%) > Choose the appropriate Foundry services for generative AI and agents",
+          "bullets": [
+            "Choose an appropriate method for retrieval and indexing",
+            "Choose an appropriate model for each task, including large language models (LLMs), small language models, multimodal models, and Foundry Tools",
+            "Choose appropriate memory, tool, and knowledge integration services for agent solutions",
+            "Choose the appropriate Foundry services for generative tasks, grounding, vector search, agent workflows, or multimodal processing"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Plan and manage an Azure AI solution (25–30%) > Implement responsible AI across generative AI and agentic systems",
+          "bullets": [
+            "Apply responsible AI instrumentation, including evaluators, safety evaluations, and explanation tooling",
+            "Configure safety filters, guardrails, risk detection, and content moderation",
+            "Govern agent behavior with oversight modes, constraints, and tool-access controls",
+            "Implement auditing through trace logging, provenance metadata, and approval workflows"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Plan and manage an Azure AI solution (25–30%) > Manage, monitor, and secure AI systems",
+          "bullets": [
+            "Configure security, including managed identity, private networking, keyless credentials, and role policies",
+            "Manage quotas, scaling, rate limits, and cost footprints for model and agent workloads",
+            "Monitor data ingestion quality, search index health, and relevance performance",
+            "Monitor model performance, drift, safety events, and grounding quality"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Plan and manage an Azure AI solution (25–30%) > Set up AI solutions in Foundry",
+          "bullets": [
+            "Choose appropriate deployment options",
+            "Configure model and agent deployments",
+            "Design Azure infrastructure for AI apps and agent-based solutions",
+            "Integrate Foundry projects with continuous integration and continuous deployment (CI/CD) pipelines"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "AI-901",
       "title": "Microsoft Azure AI Fundamentals (Updated)",
       "level": "beginner",
-      "status": "beta",
+      "status": "active",
       "category": "AI"
     },
     {
@@ -31,16 +343,9 @@
       "level": "intermediate",
       "status": "beta",
       "category": "AI"
-    },
-    {
-      "code": "AZ-204",
-      "title": "Developing Solutions for Microsoft Azure",
-      "level": "intermediate",
-      "status": "retired",
-      "category": "Azure"
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-103/",
-  "study_guide_url": "",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103",
   "practice_assessment_url": ""
 }

@@ -94,7 +94,132 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "DP-900",
+      "title": "Microsoft Azure Data Fundamentals",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "November 1, 2024",
+      "current_skills_date": "July 21, 2026",
+      "summary": "14 added, 13 removed",
+      "added_count": 14,
+      "removed_count": 13,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "area_removed",
+          "area": "Describe an analytics workload (25–30%) > Describe consideration for real-time data analytics",
+          "bullets": [
+            "Describe the difference between batch and streaming data",
+            "Identify Microsoft cloud services for real-time analytics"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Describe an analytics workload (25–30%) > Describe considerations for real-time data analytics",
+          "bullets": [
+            "Describe the difference between batch and streaming data",
+            "Identify Microsoft cloud services for real-time analytics"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe an analytics workload (25–30%) > Describe data visualization in Microsoft Power BI",
+          "items": [
+            "Identify the capabilities of Power BI"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe an analytics workload (25–30%) > Describe data visualization in Microsoft Power BI",
+          "items": [
+            "Identify capabilities of Power BI"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Describe considerations for working with non-relational data on Azure (15–20%) > Describe capabilities and features of Azure Cosmos DB",
+          "bullets": [
+            "Describe Azure Cosmos DB APIs",
+            "Identify use cases for Azure Cosmos DB"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Describe considerations for working with non-relational data on Azure (15–20%) > Describe capabilities of Azure storage",
+          "bullets": [
+            "Describe Azure Blob storage",
+            "Describe Azure File storage",
+            "Describe Azure Table storage"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Describe considerations for working with non-relational data on Azure (15–20%) > Describe the capabilities and features of Azure Cosmos DB",
+          "bullets": [
+            "Describe Azure Cosmos DB APIs",
+            "Identify use cases for Azure Cosmos DB"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Describe considerations for working with non-relational data on Azure (15–20%) > Describe the capabilities of Azure storage",
+          "bullets": [
+            "Describe features of Azure Blob storage",
+            "Describe features of Azure Files",
+            "Describe features of Azure Table storage"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe core data concepts (25–30%) > Describe ways to represent data",
+          "items": [
+            "Describe the features of semi-structured data",
+            "Describe the features of structured data",
+            "Describe the features of unstructured data"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe core data concepts (25–30%) > Describe ways to represent data",
+          "items": [
+            "Describe features of semi-structured",
+            "Describe features of structured data",
+            "Describe features of unstructured data"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe core data concepts (25–30%) > Identify options for data storage",
+          "items": [
+            "Describe features of common data stores including databases",
+            "Identify Azure datastores for common use cases"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe core data concepts (25–30%) > Identify options for data storage",
+          "items": [
+            "Describe types of databases"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Identify considerations for relational data on Azure (20–25%) > Describe relational Azure data services",
+          "items": [
+            "Describe the Azure SQL family of products, including Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure Virtual Machines"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Identify considerations for relational data on Azure (20–25%) > Describe relational Azure data services",
+          "items": [
+            "Describe the Azure SQL family of products including Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure Virtual Machines"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "DP-300",
@@ -104,28 +229,14 @@
       "category": "Data"
     },
     {
-      "code": "DP-100",
-      "title": "Designing and Implementing a Data Science Solution on Azure",
-      "level": "intermediate",
-      "status": "retired",
-      "category": "Data"
-    },
-    {
       "code": "AZ-900",
       "title": "Microsoft Azure Fundamentals",
       "level": "beginner",
       "status": "active",
       "category": "Azure"
-    },
-    {
-      "code": "AI-900",
-      "title": "Microsoft Azure AI Fundamentals",
-      "level": "beginner",
-      "status": "retired",
-      "category": "AI"
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-900/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-900",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-900/practice/assessment?assessment-type=practice"
 }

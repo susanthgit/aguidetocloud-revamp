@@ -559,7 +559,10 @@
     .then(function(d){
       if (!d || !d.related_exams || !d.related_exams.length) return;
       var levelLabels = {beginner:"Fundamentals",intermediate:"Associate",advanced:"Expert"};
-      var html = d.related_exams.map(function(r){
+      // Guard against stale JSON: never suggest a retired exam
+      var live = d.related_exams.filter(function(r){ return r.status !== "retired"; });
+      if (!live.length) return;
+      var html = live.map(function(r){
         return '<a href="/cert-tracker/' + r.code.toLowerCase() + '/" class="cert-related-card">'
           + '<span class="cert-card-code">' + r.code + '</span> '
           + '<span class="cert-card-title">' + r.title + '</span>'

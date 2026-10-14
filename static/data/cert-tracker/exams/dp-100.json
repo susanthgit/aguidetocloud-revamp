@@ -143,13 +143,6 @@
       "category": "Data"
     },
     {
-      "code": "AI-900",
-      "title": "Microsoft Azure AI Fundamentals",
-      "level": "beginner",
-      "status": "retired",
-      "category": "AI"
-    },
-    {
       "code": "AI-300",
       "title": "Machine Learning Operations (MLOps) Engineer Associate",
       "level": "intermediate",
@@ -158,6 +151,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-100",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-100",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/practice/assessment?assessment-type=practice"
 }

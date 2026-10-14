@@ -129,7 +129,72 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "SC-900",
+      "title": "Microsoft Security, Compliance, and Identity Fundamentals",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "November 7, 2025",
+      "current_skills_date": "July 28, 2026",
+      "summary": "4 added, 5 removed",
+      "added_count": 4,
+      "removed_count": 5,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Describe the capabilities of Microsoft Entra (25–30%) > Describe access management capabilities of Microsoft Entra ID",
+          "items": [
+            "Describe Microsoft Entra Conditional Access"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe the capabilities of Microsoft Entra (25–30%) > Describe access management capabilities of Microsoft Entra ID",
+          "items": [
+            "Describe Conditional Access"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe the capabilities of Microsoft Entra (25–30%) > Describe function and identity types of Microsoft Entra ID",
+          "items": [
+            "Describe types of identities, including agent ID"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe the capabilities of Microsoft Entra (25–30%) > Describe function and identity types of Microsoft Entra ID",
+          "items": [
+            "Describe types of identities"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe the capabilities of Microsoft compliance solutions (20–25%) > Describe Microsoft Service Trust Portal and privacy principles",
+          "items": [
+            "Describe Microsoft Priva"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe the capabilities of Microsoft security solutions (35–40%) > Describe core infrastructure security services in Azure",
+          "items": [
+            "Describe Azure DDoS Protection",
+            "Describe Azure Web Application Firewall (WAF)"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe the capabilities of Microsoft security solutions (35–40%) > Describe core infrastructure security services in Azure",
+          "items": [
+            "Describe Azure distributed denial-of-service (DDoS) Protection",
+            "Describe Web Application Firewall (WAF)"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "SC-300",
@@ -151,16 +216,9 @@
       "level": "beginner",
       "status": "active",
       "category": "Azure"
-    },
-    {
-      "code": "MS-900",
-      "title": "Microsoft 365 Fundamentals",
-      "level": "beginner",
-      "status": "retired",
-      "category": "Microsoft 365"
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-900/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-900",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-900",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-900/practice/assessment?assessment-type=practice"
 }

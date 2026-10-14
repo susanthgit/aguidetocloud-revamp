@@ -121,16 +121,9 @@
       "level": "advanced",
       "status": "active",
       "category": "Azure"
-    },
-    {
-      "code": "AI-102",
-      "title": "Designing and Implementing a Microsoft Azure AI Solution",
-      "level": "intermediate",
-      "status": "retired",
-      "category": "AI"
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-204",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/practice/assessment?assessment-type=practice"
 }

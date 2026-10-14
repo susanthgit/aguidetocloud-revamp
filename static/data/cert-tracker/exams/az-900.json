@@ -116,7 +116,63 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "AZ-900",
+      "title": "Microsoft Azure Fundamentals",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "January 14, 2026",
+      "current_skills_date": "July 20, 2026",
+      "summary": "3 added, 3 removed",
+      "added_count": 3,
+      "removed_count": 3,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Describe Azure architecture and services (35–40%) > Describe Azure compute and networking services",
+          "items": [
+            "Describe virtual networking, including the purpose of Azure virtual networks, subnets, peering, Azure DNS, Azure VPN Gateway, and ExpressRoute"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe Azure architecture and services (35–40%) > Describe Azure compute and networking services",
+          "items": [
+            "Describe virtual networking, including the purpose of Azure virtual networks, Azure virtual subnets, peering, Azure DNS, Azure VPN Gateway, and ExpressRoute"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe Azure management and governance (30–35%) > Describe features and tools for managing and deploying Azure resources",
+          "items": [
+            "Describe Azure Cloud Shell, Azure CLI, and Azure PowerShell"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe Azure management and governance (30–35%) > Describe features and tools for managing and deploying Azure resources",
+          "items": [
+            "Describe Azure Cloud Shell, including Azure Command-Line Interface (CLI) and Azure PowerShell"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe Azure management and governance (30–35%) > Describe monitoring tools in Azure",
+          "items": [
+            "Describe Azure Monitor, including Log Analytics, Azure Monitor alerts, and Azure Monitor Application Insights"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe Azure management and governance (30–35%) > Describe monitoring tools in Azure",
+          "items": [
+            "Describe Azure Monitor, including Log Analytics, Azure Monitor alerts, and Application Insights"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "AZ-104",
@@ -131,13 +187,6 @@
       "level": "advanced",
       "status": "active",
       "category": "Azure"
-    },
-    {
-      "code": "AI-900",
-      "title": "Microsoft Azure AI Fundamentals",
-      "level": "beginner",
-      "status": "retired",
-      "category": "AI"
     },
     {
       "code": "DP-900",
@@ -155,6 +204,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-900",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/practice/assessment?assessment-type=practice"
 }
