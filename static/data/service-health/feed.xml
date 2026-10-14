@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Oct 2026 21:12:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 01:10:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Intune] Admin may see status cards displaying "Unknown" instead of the expected summary counts in Intune admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1506313</link>
-      <description>[Microsoft Intune] Admin may see status cards displaying "Unknown" instead of the expected summary counts in Intune admin center.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">IT1506313</guid>
-      <pubDate>Tue, 13 Oct 2026 19:01:47 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users' Microsoft 365 Copilot document editing prompts may fail in the Microsoft Word desktop app and web clients</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1506243</link>
@@ -37,7 +28,7 @@
     <item>
       <title>[Microsoft 365 suite] Users may be unable to access multiple Microsoft 365 services using Global Secure Access (GSA)</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1505952</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access multiple Microsoft 365 services using GSA.</description>
+      <description>[Microsoft 365 suite] Users may have been unable to access multiple Microsoft 365 services using GSA. </description>
       <category>Microsoft 365 suite</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1505952</guid>
@@ -132,6 +123,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1490573</guid>
       <pubDate>Wed, 07 Oct 2026 17:01:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Admin may see status cards displaying "Unknown" instead of the expected summary counts in Intune admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1506313</link>
+      <description>[Microsoft Intune] Admin may have seen status cards displaying "Unknown" instead of the expected summary counts in Intune admin center.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">IT1506313</guid>
+      <pubDate>Tue, 06 Oct 2026 23:17:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to interact with the Microsoft 365 Copilot voice experience</title>
