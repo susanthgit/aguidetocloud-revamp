@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T07:31:05.627648+00:00",
+  "generated_at": "2026-10-14T13:38:47.713403+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 16,
+      "total_incidents": 15,
       "active_incidents": 2,
-      "avg_duration_minutes": 4937,
+      "avg_duration_minutes": 4964,
       "last_incident": "2026-10-12T21:18:48.690000+00:00",
       "classifications": {
         "advisory": 8,
-        "incident": 8
+        "incident": 7
       }
     },
     {
@@ -55,13 +55,26 @@
       }
     },
     {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 7,
+      "active_incidents": 0,
+      "avg_duration_minutes": 1656,
+      "last_incident": "2026-10-14T03:34:00+00:00",
+      "classifications": {
+        "incident": 5,
+        "advisory": 2
+      }
+    },
+    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 3355,
-      "last_incident": "2026-10-13T03:48:20.163000+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 6260,
+      "last_incident": "2026-10-06T19:32:12.240000+00:00",
       "classifications": {
         "advisory": 7
       }
@@ -74,19 +87,6 @@
       "active_incidents": 1,
       "avg_duration_minutes": 1671,
       "last_incident": "2026-10-12T01:00:00+00:00",
-      "classifications": {
-        "incident": 4,
-        "advisory": 2
-      }
-    },
-    {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 6,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1873,
-      "last_incident": "2026-10-13T18:12:48.033000+00:00",
       "classifications": {
         "incident": 4,
         "advisory": 2
@@ -201,12 +201,12 @@
     },
     {
       "month": "2026-09",
-      "incident_count": 58,
+      "incident_count": 59,
       "services_affected": 14
     },
     {
       "month": "2026-08",
-      "incident_count": 18,
+      "incident_count": 17,
       "services_affected": 12
     },
     {

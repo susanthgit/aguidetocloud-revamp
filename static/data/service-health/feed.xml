@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Oct 2026 07:31:06 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 13:38:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users were unable to see model selection options in Microsoft 365 Copilot chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1507178</link>
+      <description>[Microsoft 365 Copilot Chat] Users were unable to see model selection options in Microsoft 365 Copilot chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1507178</guid>
+      <pubDate>Wed, 14 Oct 2026 03:34:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users' Microsoft 365 Copilot document editing prompts may fail in the Microsoft Word desktop app and web clients</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1506243</link>
@@ -35,15 +44,6 @@
       <pubDate>Tue, 13 Oct 2026 07:40:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Power BI] Users may not see chart data when using standard light or dark themes on Power BI dashboards</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1505699</link>
-      <description>[Power BI] Users may not have seen chart data when using standard light or dark themes on Power BI dashboards.</description>
-      <category>Power BI</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">PB1505699</guid>
-      <pubDate>Tue, 13 Oct 2026 03:48:20 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft 365 suite] Admins may be unable to review Service health or Message center postings in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1506255</link>
       <description>[Microsoft 365 suite] Admins may have been unable to review Service health or Message center postings in the Microsoft 365 admin center.</description>
@@ -66,7 +66,7 @@
       <link>https://www.aguidetocloud.com/service-health/#EX1500900</link>
       <description>[Exchange Online] Admins are unable to access the EAC. </description>
       <category>Exchange Online</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">EX1500900</guid>
       <pubDate>Mon, 12 Oct 2026 08:15:00 +0000</pubDate>
     </item>
@@ -82,9 +82,9 @@
     <item>
       <title>[SharePoint Online] Users may be unable to view or modify custom forms in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1503038</link>
-      <description>[SharePoint Online] Users may have beem unable to view or modify custom forms in SharePoint Online.</description>
+      <description>[SharePoint Online] Users may be unable to view or modify custom forms in SharePoint Online.</description>
       <category>SharePoint Online</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1503038</guid>
       <pubDate>Mon, 12 Oct 2026 01:00:00 +0000</pubDate>
     </item>
@@ -356,6 +356,15 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <pubDate>Mon, 28 Sep 2026 02:36:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Power BI] Users may have been unable to view chart data on Power BI dashboards when using standard light or dark themes</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1505699</link>
+      <description>[Power BI] Users may have been unable to view chart data on Power BI dashboards when using standard light or dark themes. </description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1505699</guid>
+      <pubDate>Sun, 27 Sep 2026 13:10:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft 365 suite] Admins and users may be unable to access or utilize multiple features within some Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1479564</link>
       <description>[Microsoft 365 suite] Admins and users may have been unable to access or utilize multiple features within some Microsoft 365 services.</description>
@@ -452,15 +461,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1478444</guid>
-      <pubDate>Tue, 22 Sep 2026 02:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may be unable to access or receive prompt responses with Microsoft 365 Copilot Chat or Copilot Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1478470</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have been unable to access or receive prompt responses with Copilot Chat or Copilot Notebooks.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1478470</guid>
       <pubDate>Tue, 22 Sep 2026 02:50:00 +0000</pubDate>
     </item>
   </channel>
