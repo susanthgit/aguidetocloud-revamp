@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-14T18:33:01.130555+00:00",
+  "generated_at": "2026-10-14T23:10:37.252206+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 18,
-      "active_incidents": 3,
-      "avg_duration_minutes": 3328,
+      "total_incidents": 19,
+      "active_incidents": 4,
+      "avg_duration_minutes": 3291,
       "last_incident": "2026-10-13T07:40:00+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 13,
         "incident": 6
       }
     },
@@ -19,13 +19,13 @@
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 16,
+      "total_incidents": 17,
       "active_incidents": 3,
-      "avg_duration_minutes": 4964,
+      "avg_duration_minutes": 4809,
       "last_incident": "2026-10-14T18:24:03.660000+00:00",
       "classifications": {
-        "advisory": 9,
-        "incident": 7
+        "incident": 7,
+        "advisory": 10
       }
     },
     {
@@ -45,26 +45,13 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 12,
+      "total_incidents": 13,
       "active_incidents": 1,
-      "avg_duration_minutes": 6369,
+      "avg_duration_minutes": 7636,
       "last_incident": "2026-10-12T08:15:00+00:00",
       "classifications": {
         "advisory": 5,
-        "incident": 7
-      }
-    },
-    {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 7,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1656,
-      "last_incident": "2026-10-14T03:34:00+00:00",
-      "classifications": {
-        "incident": 5,
-        "advisory": 2
+        "incident": 8
       }
     },
     {
@@ -80,15 +67,28 @@
       }
     },
     {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 5,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2154,
+      "last_incident": "2026-10-14T03:34:00+00:00",
+      "classifications": {
+        "incident": 3,
+        "advisory": 2
+      }
+    },
+    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
-      "total_incidents": 6,
+      "total_incidents": 5,
       "active_incidents": 0,
-      "avg_duration_minutes": 2023,
+      "avg_duration_minutes": 1754,
       "last_incident": "2026-10-12T01:00:00+00:00",
       "classifications": {
-        "incident": 4,
+        "incident": 3,
         "advisory": 2
       }
     },
@@ -196,18 +196,18 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 28,
+      "incident_count": 30,
       "services_affected": 12
     },
     {
       "month": "2026-09",
-      "incident_count": 59,
+      "incident_count": 60,
       "services_affected": 14
     },
     {
       "month": "2026-08",
-      "incident_count": 15,
-      "services_affected": 11
+      "incident_count": 12,
+      "services_affected": 9
     },
     {
       "month": "2026-07",

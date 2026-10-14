@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Oct 2026 18:33:06 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 23:10:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users may see 1:1 Microsoft Teams calls drop or fail to start</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1507756</link>
       <description>[Microsoft Teams] Users may see 1:1 Microsoft Teams calls drop or fail to start.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">TM1507756</guid>
       <pubDate>Wed, 14 Oct 2026 18:24:03 +0000</pubDate>
     </item>
@@ -35,13 +35,13 @@
       <pubDate>Wed, 14 Oct 2026 03:34:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 Copilot Chat] Users' Microsoft 365 Copilot document editing prompts may fail in the Microsoft Word desktop app and web clients</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1506243</link>
-      <description>[Microsoft 365 Copilot Chat] Users' Microsoft 365 Copilot document editing prompts may have failed in the Microsoft Word desktop app and web clients.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">CW1506243</guid>
-      <pubDate>Tue, 13 Oct 2026 18:12:48 +0000</pubDate>
+      <title>[Microsoft Teams] Users may be unable to join Microsoft Teams meetings and see sign-in errors</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1506205</link>
+      <description>[Microsoft Teams] Users may be unable to join Microsoft Teams meetings and see sign-in errors.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1506205</guid>
+      <pubDate>Tue, 13 Oct 2026 16:54:23 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 apps] Some users may be unable to create or publish assignments in Microsoft OneNote </title>
@@ -78,6 +78,24 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1504581</guid>
       <pubDate>Mon, 12 Oct 2026 21:18:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users may be missing the "Meeting options" button for Microsoft Teams meetings in multiple Microsoft 365 apps</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1507859</link>
+      <description>[Microsoft 365 suite] Users may have been missing the "Meeting options" button for Microsoft Teams meetings in multiple Microsoft 365 apps.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1507859</guid>
+      <pubDate>Mon, 12 Oct 2026 20:48:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may be missing the "Meeting options" button for Microsoft Teams meetings in multiple Microsoft 365 apps</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1507676</link>
+      <description>[Microsoft Teams] Users may be missing the "Meeting options" button for Microsoft Teams meetings in multiple Microsoft 365 apps.</description>
+      <category>Microsoft Teams</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">TM1507676</guid>
+      <pubDate>Mon, 12 Oct 2026 20:48:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Admins are unable to access the Exchange admin center (EAC)</title>
@@ -301,6 +319,15 @@ Azu</description>
       <pubDate>Wed, 30 Sep 2026 12:37:03 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Some users' mailbox syncs may fail with an error in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1507783</link>
+      <description>[Exchange Online] Users' mailbox syncs may have failed with an error in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1507783</guid>
+      <pubDate>Tue, 29 Sep 2026 22:06:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may encounter failures or may be unable to use PowerPoint agents in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1482420</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have encountered failures or may have been unable to use PowerPoint agents in Copilot.</description>
@@ -401,15 +428,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <pubDate>Fri, 25 Sep 2026 20:09:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online] Users may be unable to reply or reply-all to email messages sent to Microsoft 365 groups in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1479349</link>
-      <description>[Exchange Online] Users may be unable to reply or reply-all to email messages sent to Microsoft 365 groups in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1479349</guid>
-      <pubDate>Fri, 25 Sep 2026 15:52:36 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Teams] Users may not be able to create, schedule, or update Microsoft Teams meetings</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1478719</link>
       <description>[Microsoft Teams] Users may have not been able to create, schedule, or update Microsoft Teams meetings.</description>
@@ -444,24 +462,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1478328</guid>
       <pubDate>Thu, 24 Sep 2026 08:17:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to update calendar delegates in the classic Outlook desktop client </title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1478163</link>
-      <description>[Exchange Online] Users may have been unable to update calendar delegates in the classic Outlook desktop client.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1478163</guid>
-      <pubDate>Wed, 23 Sep 2026 07:13:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users’ email messages may not be quarantined and fail to be stored in the quarantine folder</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1478331</link>
-      <description>[Exchange Online] Users’ email messages may not have been quarantined and failed to be stored in the quarantine folder.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1478331</guid>
-      <pubDate>Wed, 23 Sep 2026 00:56:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
