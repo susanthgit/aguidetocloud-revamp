@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2026 11:20:25 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 16:53:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may not receive meeting-started notifications on Android devices</title>
@@ -33,6 +33,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MP1507695</guid>
       <pubDate>Wed, 14 Oct 2026 16:14:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Some users may encounter refresh failures when using the Dynamics 365 Business Central connector in Power BI</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1508905</link>
+      <description>[Power BI] Users may have encountered refresh failures when using the Dynamics 365 Business Central connector in Power BI.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1508905</guid>
+      <pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users were unable to see model selection options in Microsoft 365 Copilot chat</title>
@@ -448,15 +457,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1478587</guid>
       <pubDate>Thu, 24 Sep 2026 18:49:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Users may be unable to convert Microsoft Word desktop app documents to PDFs using Save As to SharePoint locations</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1478558</link>
-      <description>[Microsoft 365 apps] Users may have been unable to convert Word desktop app documents to PDFs using Save As to SharePoint locations.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OP1478558</guid>
-      <pubDate>Thu, 24 Sep 2026 18:23:33 +0000</pubDate>
     </item>
   </channel>
 </rss>
