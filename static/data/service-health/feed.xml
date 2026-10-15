@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Oct 2026 23:10:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 04:29:55 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users may see 1:1 Microsoft Teams calls drop or fail to start</title>
@@ -287,14 +287,9 @@
       <pubDate>Wed, 30 Sep 2026 21:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Azure] Azure incident affecting France Central, North Europe, Southeast Asia</title>
+      <title>[Azure] Azure incident affecting Australia Central, Australia Southeast, Canada East</title>
       <link>https://www.aguidetocloud.com/service-health/#AZ-7QL5-Z50</link>
-      <description>[Azure] Between 20:30 UTC on 30 September 2026 and 02:15 UTC on 01 October 2026, a subset of customers using gateway services in multiple regions experienced degraded or interrupted network connectivity. Impacted customers may have observed gateways failing to load in the Azure Portal, along with failures or delays in network management operations across the following impacted services.
-Azure ExpressRoute Gateway
-Azure Firewall
-Azure Application Gateway and Web Application Firewall
-Azure VPN Gateway
-Azu</description>
+      <description>[Azure] Between 20:30 UTC on 30 September 2026 and 02:15 UTC on 1 October 2026, customers using several Azure networking services – including Azure ExpressRoute Gateway, Azure Application Gateway, Azure Firewall, Azure Bastion, Azure Virtual WAN, and Azure VPN Gateway – experienced intermittent failures when performing service management operations. In addition, a subset of upgraded Azure ExpressRoute gateways could not retrieve their required configuration from the control plane service, resulting in t</description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-7QL5-Z50</guid>
