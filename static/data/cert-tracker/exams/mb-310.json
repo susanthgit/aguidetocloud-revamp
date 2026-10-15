@@ -175,7 +175,337 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "MB-310",
+      "title": "Microsoft Dynamics 365 Finance Functional Consultant",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "July 25, 2025",
+      "current_skills_date": "August 14, 2026",
+      "summary": "59 added, 71 removed",
+      "added_count": 59,
+      "removed_count": 71,
+      "weight_changes": [
+        {
+          "area": "Implement financial management",
+          "previous_weight": "40-45%",
+          "current_weight": "35-40%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Implement accounts receivable, credit, collections, and subscription billing (15–20%) > Configure and manage subscription billing",
+          "items": [
+            "Configure and process expense deferrals and recognition",
+            "Configure and process revenue deferrals and recognition, including charges",
+            "Configure deferral defaults and items deferred by default"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement accounts receivable, credit, collections, and subscription billing (15–20%) > Configure and manage subscription billing",
+          "items": [
+            "Configure and use expense deferrals and recognition",
+            "Configure and use revenue deferrals and recognition, including for charges, deferral defaults, and items deferred by default"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement accounts receivable, credit, collections, and subscription billing (15–20%) > Implement and manage accounts receivable",
+          "items": [
+            "Configure billing classification",
+            "Process intercompany invoices",
+            "Process sales order invoices and credit memos, including prepayments"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement accounts receivable, credit, collections, and subscription billing (15–20%) > Implement and manage accounts receivable",
+          "items": [
+            "Configure and use billing classification",
+            "Configure batch processing of free text and sales order invoicing",
+            "Configure customer change approvals",
+            "Manage customer holds",
+            "Process sales order invoices and credit memos"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement accounts receivable, credit, collections, and subscription billing (15–20%) > Manage credit and collections",
+          "items": [
+            "Configure and process customer write-offs"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement accounts receivable, credit, collections, and subscription billing (15–20%) > Manage credit and collections",
+          "items": [
+            "Configure and use customer write-offs",
+            "Prepare and send customer account statements"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement and manage accounts payable and expenses (10–15%) > Configure and use expense management",
+          "bullets": [
+            "Configure expense management including categories, per diem options, mileage expenses, intercompany expenses, and personal expenses",
+            "Create and manage expense reports"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement and manage accounts payable and expenses (10–15%) > Configure expense management",
+          "bullets": [
+            "Configure expense management including categories, per diem options, mileage expenses, intercompany expenses, and personal expenses",
+            "Create and manage expense reports, including expense report policies"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement and manage accounts payable and expenses (10–15%) > Implement and manage accounts payable",
+          "items": [
+            "Configure and process recurring vendor invoices",
+            "Configure vendor bank accounts",
+            "Process intercompany vendor invoices",
+            "Process invoices and credit memos, with and without associated purchase orders, including prepayments",
+            "Process the vendor invoice journal"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement and manage accounts payable and expenses (10–15%) > Implement and manage accounts payable",
+          "items": [
+            "Configure and use recurring vendor invoices",
+            "Configure bank accounts and bank account approvals for vendors",
+            "Configure vendor change approvals",
+            "Configure vendor invoice automation",
+            "Process purchase order invoices and credit memos, including prepayments",
+            "Process the vendor invoice journal including voyage cost"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement financial management (35–40%) > Configure ledgers and currencies",
+          "bullets": [
+            "Configure a currency revaluation posting profile",
+            "Configure accounting and reporting currencies",
+            "Configure and process ledger allocation rules",
+            "Configure currency exchange types and rates",
+            "Configure ledger calendar and fiscal calendar",
+            "Configure posting layers for ledger transactions"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement financial management (35–40%) > Configure, collect, and report taxes",
+          "bullets": [
+            "Calculate and adjust sales tax",
+            "Configure sales tax groups, item sales tax groups, tax codes, settlement periods, authorities, and tax exemptions",
+            "Configure tax ledger posting groups",
+            "Configure withholding tax groups, tax codes, and authorities",
+            "Settle and post sales tax"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement financial management (35–40%) > Design and configure the chart of accounts and financial dimensions",
+          "bullets": [
+            "Configure and manage account structures and advanced rules",
+            "Configure derived dimensions and financial dimension default templates",
+            "Configure legal entity overrides for financial dimensions and main accounts",
+            "Configure main account categories, ledger account aliases, and balance control accounts",
+            "Design and configure financial dimensions",
+            "Design and configure financial tags",
+            "Design and configure the chart of accounts and main accounts"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement financial management (35–40%) > Implement and manage cash and bank",
+          "bullets": [
+            "Configure and process customer and vendor netting",
+            "Configure bank reconciliations, including advanced bank reconciliations",
+            "Configure payment formats",
+            "Configure shared payment setup for customers and vendors",
+            "Configure the cash flow forecast setup, including automation setup",
+            "Create and manage bank groups and bank accounts",
+            "Perform bank foreign currency revaluation",
+            "Process manual and advanced bank reconciliations"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement financial management (35–40%) > Implement and manage journals",
+          "bullets": [
+            "Configure and process periodic journals",
+            "Configure batch processing of journals",
+            "Configure intercompany accounting",
+            "Configure journal controls and posting restriction rules",
+            "Configure journal names and vouchers",
+            "Create and modify templates to edit journals in Microsoft Excel",
+            "Create, validate, and post journal entries manually and by using Microsoft Excel",
+            "Reverse financial transaction entries"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Implement financial management (35–40%) > Perform periodic processes",
+          "bullets": [
+            "Configure and process ledger settlements",
+            "Design and configure financial period workspaces and closing schedules",
+            "Design and configure legal entity for consolidation and elimination by using Consolidation online",
+            "Design and configure periodic closing processes and end-of-year processes, including main accounts, reports, and templates",
+            "Perform financial consolidation and elimination processes"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement financial management (40–45%) > Configure ledgers and currencies",
+          "bullets": [
+            "Configure a currency revaluation posting profile",
+            "Configure accounting and reporting currencies",
+            "Configure currency exchange types and rates"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement financial management (40–45%) > Configure, collect, and report taxes",
+          "bullets": [
+            "Calculate and adjust sales tax",
+            "Configure tax groups, tax codes, settlement periods, and authorities",
+            "Configure tax ledger posting groups",
+            "Configure withholding tax groups, tax codes, and authorities",
+            "Settle and post sales tax"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement financial management (40–45%) > Design and configure the chart of accounts",
+          "bullets": [
+            "Configure and manage account structures and advanced rules",
+            "Configure legal entity overrides for financial dimensions and main accounts",
+            "Configure main accounts categories, ledger account aliases, and balance control accounts",
+            "Design and configure financial dimensions",
+            "Design and configure financial tags",
+            "Design and configure the chart of accounts and main accounts"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement financial management (40–45%) > Implement and manage cash and bank",
+          "bullets": [
+            "Configure and process customer and vendor netting",
+            "Configure bank reconciliations, including advanced bank reconciliations",
+            "Configure payment formats",
+            "Configure shared payment setup for customers and vendors",
+            "Configure the cash flow forecast setup, including automation setup",
+            "Create and manage bank groups and bank accounts",
+            "Perform bank foreign currency revaluation",
+            "Process manual and advanced bank reconciliations"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement financial management (40–45%) > Implement and manage journals",
+          "bullets": [
+            "Configure and use periodic journals",
+            "Configure batch processing of journals",
+            "Configure default descriptions",
+            "Configure intercompany accounting",
+            "Configure journal controls and posting restriction rules",
+            "Configure journal names and vouchers",
+            "Create and use journal entries, including validation and posting manually and by using Microsoft Excel",
+            "Create templates to edit journals in Microsoft Excel",
+            "Implement journal approvals, including workflows",
+            "Reverse financial transaction entries"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement financial management (40–45%) > Implement cost management",
+          "bullets": [
+            "Configure cost groups",
+            "Configure inventory costing versions",
+            "Configure item groups and inventory posting profiles",
+            "Configure item model groups",
+            "Differentiate between inventory costing methodologies",
+            "Perform inventory recalculation, closing, and adjustment processes"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Implement financial management (40–45%) > Perform periodic processes",
+          "bullets": [
+            "Configure and process ledger settlements",
+            "Create and manage financial reports, including modifying row, column, and report definitions, and reporting trees",
+            "Design and configure financial period workspaces and closing schedules",
+            "Design and configure legal entity for consolidation and elimination by using Consolidation online",
+            "Design and configure periodic closing processes and end-of-year processes, including main accounts, reports, and templates",
+            "Design consolidation and elimination by using financial reports",
+            "Manage the ledger calendar",
+            "Perform financial consolidation and elimination processes by using Consolidation online",
+            "Perform general ledger foreign currency revaluation"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Manage budgeting (10–15%) > Configure and manage budget controls",
+          "items": [
+            "Validate budget control on transactions"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Manage budgeting (10–15%) > Configure and manage budget controls",
+          "items": [
+            "Activate or deactivate budget control configurations"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Manage budgeting (10–15%) > Configure and manage budget planning",
+          "bullets": [
+            "Configure budget planning process, including organization hierarchy",
+            "Create and manage budget plans, including scenarios and allocations"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Manage fixed assets (10–15%) > Implement and manage fixed assets",
+          "items": [
+            "Configure fixed asset books, including derived books"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Manage fixed assets (10–15%) > Implement and manage fixed assets",
+          "items": [
+            "Configure fixed asset books",
+            "Configure fixed asset parameters"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Manage fixed assets (10–15%) > Process fixed asset transactions",
+          "items": [
+            "Process fixed asset depreciation, including multi-company",
+            "Process fixed asset split, reclassification, transfer, disposals and other transactions by using the fixed asset journal"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Manage fixed assets (10–15%) > Process fixed asset transactions",
+          "items": [
+            "Process acquisition and depreciation for derived books",
+            "Process fixed asset depreciation",
+            "Process fixed asset disposals and other transactions by using the fixed asset journal",
+            "Process fixed asset split, reclassification, and transfer"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "MB-330",
@@ -200,6 +530,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-310/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-310",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-310",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-310/practice/assessment?assessment-type=practice"
 }

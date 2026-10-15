@@ -9,13 +9,250 @@
     "m365"
   ],
   "category": "Security",
-  "status": "beta",
-  "updated_at": "",
+  "status": "retired",
+  "updated_at": "2026-07-09 18:04:00+00:00",
   "skills_date": null,
-  "skills_at_a_glance": [],
-  "skills_detailed": {},
+  "skills_at_a_glance": [
+    {
+      "area": "Understand cybersecurity concepts",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Understand cybersecurity risks and threats",
+      "weight": "30-35%"
+    },
+    {
+      "area": "Apply basic security policies to protect the organization",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Report and respond to security incidents",
+      "weight": "10-15%"
+    }
+  ],
+  "skills_detailed": {
+    "Understand cybersecurity concepts (25–30%)": {
+      "Explain roles and responsibilities in cybersecurity": [
+        "Explain the cybersecurity shared responsibility model",
+        "Identify activities that demonstrate employee participation in security awareness initiatives within an organization",
+        "Describe accountability practices",
+        "Identify activities that enhance security"
+      ],
+      "Apply simple organizational policies and data-handling standards": [
+        "Understand security and privacy policies applicable to work tasks",
+        "Identify types of data that shouldn’t be shared with AI tools",
+        "Describe the benefits of using a password manager to protect credentials"
+      ],
+      "Describe security benefits and risk awareness": [
+        "Describe the security benefits of using multifactor authentication",
+        "Identify business processes that may be targeted or infiltrated by threat actors",
+        "Describe the risks of working in a remote environment",
+        "Understand the importance of required software updates and security patches",
+        "Describe the impact of security events, such as ransomware"
+      ],
+      "Define cybersecurity concepts and emerging threats": [
+        "Define the terms vulnerability, threat, risk, encryption, and exploit",
+        "Describe what deepfakes are"
+      ]
+    },
+    "Understand cybersecurity risks and threats (30–35%)": {
+      "Identify common cybersecurity risks": [
+        "Describe the risks associated with using public Wi-Fi networks",
+        "Describe psychological social engineering techniques, such as phishing, pretexting, and baiting"
+      ],
+      "Detect indicators of malicious activity": [
+        "Identify indicators of malware",
+        "Identify potential indicators of insider threats",
+        "Describe abnormal system behavior or infection symptoms"
+      ],
+      "Evaluate and verify digital communications": [
+        "Identify suspicious emails, malicious links, and unexpected attachments",
+        "Identify potential privacy and security risks",
+        "Verify the legitimacy of requests for access, payments, or sensitive data",
+        "Identify appropriate controls to limit access to systems and data"
+      ]
+    },
+    "Apply basic security practices to protect the organization (25–30%)": {
+      "Understand the basics of securing devices, accounts, and workspaces": [
+        "Understand the basics of securing remote and mobile devices and workspaces, including using strong passwords, multifactor authentication, and other essential security practices"
+      ],
+      "Understand how to protect sensitive and proprietary data": [
+        "Recognize and classify sensitive data",
+        "Understand the different types of document sensitivity labeling and when to apply each",
+        "Understand rights management"
+      ],
+      "Understand safe internet and data-handling practices": [
+        "Apply proper data-handling techniques",
+        "Understand how to collect, use, transfer, store, retain, and destroy data"
+      ],
+      "Understand backup and recovery measures": [
+        "Understand how to help ensure that data is backed up to support recovery from incidents",
+        "Identify and follow basic recovery measures for data loss or system issues"
+      ]
+    },
+    "Report and respond to security incidents (10–15%)": {
+      "Report on security incidents and policy violations": [
+        "Identify situations that require reporting (for example, a phishing attempt, a lost device, or unauthorized access)",
+        "Select the correct information to include in a report (for example, the date, type of incident, and affected data)",
+        "Choose the appropriate reporting channel (for example, email, help desk, or incident form)"
+      ],
+      "Take appropriate action during data breaches": [
+        "Follow basic steps when a breach occurs (for example, stop sharing data, disconnect devices, and notify IT)",
+        "Recognize when escalation is required (for example, sensitive data exposure or a ransomware incident)"
+      ]
+    }
+  },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "SC-730",
+      "title": "Cybersecurity Business Professional",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": null,
+      "current_skills_date": null,
+      "summary": "36 added, 0 removed",
+      "added_count": 36,
+      "removed_count": 0,
+      "weight_changes": [
+        {
+          "area": "Understand cybersecurity risks and threats",
+          "previous_weight": null,
+          "current_weight": "30-35%"
+        },
+        {
+          "area": "Apply basic security policies to protect the organization",
+          "previous_weight": null,
+          "current_weight": "25-30%"
+        },
+        {
+          "area": "Understand cybersecurity concepts",
+          "previous_weight": null,
+          "current_weight": "25-30%"
+        },
+        {
+          "area": "Report and respond to security incidents",
+          "previous_weight": null,
+          "current_weight": "10-15%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "area_added",
+          "area": "Apply basic security practices to protect the organization (25–30%) > Understand backup and recovery measures",
+          "bullets": [
+            "Identify and follow basic recovery measures for data loss or system issues",
+            "Understand how to help ensure that data is backed up to support recovery from incidents"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Apply basic security practices to protect the organization (25–30%) > Understand how to protect sensitive and proprietary data",
+          "bullets": [
+            "Recognize and classify sensitive data",
+            "Understand rights management",
+            "Understand the different types of document sensitivity labeling and when to apply each"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Apply basic security practices to protect the organization (25–30%) > Understand safe internet and data-handling practices",
+          "bullets": [
+            "Apply proper data-handling techniques",
+            "Understand how to collect, use, transfer, store, retain, and destroy data"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Apply basic security practices to protect the organization (25–30%) > Understand the basics of securing devices, accounts, and workspaces",
+          "bullets": [
+            "Understand the basics of securing remote and mobile devices and workspaces, including using strong passwords, multifactor authentication, and other essential security practices"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Report and respond to security incidents (10–15%) > Report on security incidents and policy violations",
+          "bullets": [
+            "Choose the appropriate reporting channel (for example, email, help desk, or incident form)",
+            "Identify situations that require reporting (for example, a phishing attempt, a lost device, or unauthorized access)",
+            "Select the correct information to include in a report (for example, the date, type of incident, and affected data)"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Report and respond to security incidents (10–15%) > Take appropriate action during data breaches",
+          "bullets": [
+            "Follow basic steps when a breach occurs (for example, stop sharing data, disconnect devices, and notify IT)",
+            "Recognize when escalation is required (for example, sensitive data exposure or a ransomware incident)"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Understand cybersecurity concepts (25–30%) > Apply simple organizational policies and data-handling standards",
+          "bullets": [
+            "Describe the benefits of using a password manager to protect credentials",
+            "Identify types of data that shouldn’t be shared with AI tools",
+            "Understand security and privacy policies applicable to work tasks"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Understand cybersecurity concepts (25–30%) > Define cybersecurity concepts and emerging threats",
+          "bullets": [
+            "Define the terms vulnerability, threat, risk, encryption, and exploit",
+            "Describe what deepfakes are"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Understand cybersecurity concepts (25–30%) > Describe security benefits and risk awareness",
+          "bullets": [
+            "Describe the impact of security events, such as ransomware",
+            "Describe the risks of working in a remote environment",
+            "Describe the security benefits of using multifactor authentication",
+            "Identify business processes that may be targeted or infiltrated by threat actors",
+            "Understand the importance of required software updates and security patches"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Understand cybersecurity concepts (25–30%) > Explain roles and responsibilities in cybersecurity",
+          "bullets": [
+            "Describe accountability practices",
+            "Explain the cybersecurity shared responsibility model",
+            "Identify activities that demonstrate employee participation in security awareness initiatives within an organization",
+            "Identify activities that enhance security"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Understand cybersecurity risks and threats (30–35%) > Detect indicators of malicious activity",
+          "bullets": [
+            "Describe abnormal system behavior or infection symptoms",
+            "Identify indicators of malware",
+            "Identify potential indicators of insider threats"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Understand cybersecurity risks and threats (30–35%) > Evaluate and verify digital communications",
+          "bullets": [
+            "Identify appropriate controls to limit access to systems and data",
+            "Identify potential privacy and security risks",
+            "Identify suspicious emails, malicious links, and unexpected attachments",
+            "Verify the legitimacy of requests for access, payments, or sensitive data"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Understand cybersecurity risks and threats (30–35%) > Identify common cybersecurity risks",
+          "bullets": [
+            "Describe psychological social engineering techniques, such as phishing, pretexting, and baiting",
+            "Describe the risks associated with using public Wi-Fi networks"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "SC-900",
@@ -33,6 +270,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-730/",
-  "study_guide_url": "",
-  "practice_assessment_url": ""
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-730",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-730/practice/assessment?assessment-type=practice"
 }

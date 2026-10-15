@@ -1,0 +1,127 @@
+{
+  "code": "DP-600",
+  "title": "Implementing Analytics Solutions Using Microsoft Fabric",
+  "level": "intermediate",
+  "roles": [
+    "data-analyst",
+    "data-engineer"
+  ],
+  "products": [
+    "fabric"
+  ],
+  "category": "Data",
+  "status": "active",
+  "updated_at": "2026-09-18 21:09:00+00:00",
+  "skills_date": "October 19, 2026",
+  "skills_at_a_glance": [
+    {
+      "area": "Maintain a data analytics solution",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Prepare data",
+      "weight": "45-50%"
+    },
+    {
+      "area": "Implement and manage semantic models",
+      "weight": "25-30%"
+    }
+  ],
+  "skills_detailed": {
+    "Maintain a data analytics solution (25–30%)": {
+      "Implement security and governance": [
+        "Implement workspace-level access controls",
+        "Implement item-level access controls",
+        "Implement row-level, column-level, object-level, and file-level access control",
+        "Apply sensitivity labels to items",
+        "Endorse items"
+      ],
+      "Maintain the analytics development lifecycle": [
+        "Configure version control for a workspace",
+        "Create and manage a Power BI Desktop project (.pbip)",
+        "Create and configure deployment pipelines",
+        "Perform impact analysis of downstream dependencies from lakehouses, warehouses, dataflows, and semantic models",
+        "Deploy and manage semantic models by using the XMLA endpoint",
+        "Create and update reusable assets, including Power BI template (.pbit) files, Power BI data source (.pbids) files, and shared semantic models"
+      ]
+    },
+    "Prepare data (45–50%)": {
+      "Get data": [
+        "Create a data connection",
+        "Discover data by using OneLake catalog and Real-Time hub",
+        "Ingest or access data as needed",
+        "Choose between different data stores",
+        "Implement OneLake integration for Eventhouse and semantic models"
+      ],
+      "Transform data": [
+        "Create views, functions, and stored procedures",
+        "Enrich data by adding new columns or tables",
+        "Implement a star schema for a lakehouse or warehouse",
+        "Denormalize data",
+        "Aggregate data",
+        "Merge or join data",
+        "Identify and resolve duplicate data, missing data, or null values",
+        "Convert column data types",
+        "Filter data"
+      ],
+      "Query and analyze data": [
+        "Select, filter, and aggregate data by using the Visual query editor",
+        "Select, filter, and aggregate data by using SQL",
+        "Select, filter, and aggregate data by using KQL",
+        "Select, filter, and aggregate data by using DAX"
+      ]
+    },
+    "Implement and manage semantic models (25–30%)": {
+      "Design and build semantic models": [
+        "Choose a storage mode",
+        "Implement a star schema for a semantic model",
+        "Implement relationships, such as bridge tables and many-to-many relationships",
+        "Write calculations that use DAX variables and functions, such as iterators, table filtering, windowing, and information functions",
+        "Implement calculation groups, dynamic format strings, and field parameters",
+        "Identify use cases for and configure large semantic model storage format",
+        "Design and build composite models"
+      ],
+      "Optimize enterprise-scale semantic models": [
+        "Implement performance improvements in queries and report visuals",
+        "Improve DAX performance",
+        "Configure Direct Lake, including default fallback and refresh behavior",
+        "Choose between Direct Lake on OneLake and Direct Lake on SQL analytics endpoint",
+        "Implement incremental refresh for semantic models"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [
+    {
+      "code": "DP-600",
+      "title": "Implementing Analytics Solutions Using Microsoft Fabric",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "July 21, 2026",
+      "current_skills_date": "October 19, 2026",
+      "summary": "1 added, 1 removed",
+      "added_count": 1,
+      "removed_count": 1,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Prepare data (45–50%) > Query and analyze data",
+          "items": [
+            "Select, filter, and aggregate data by using the Visual query editor"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Prepare data (45–50%) > Query and analyze data",
+          "items": [
+            "Select, filter, and aggregate data by using the Visual Query Editor"
+          ]
+        }
+      ]
+    }
+  ],
+  "related_exams": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-600/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-600/practice/assessment?assessment-type=practice"
+}

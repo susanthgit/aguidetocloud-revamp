@@ -215,7 +215,67 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "AZ-700",
+      "title": "Designing and Implementing Microsoft Azure Networking Solutions",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "April 24, 2026",
+      "current_skills_date": "July 27, 2026",
+      "summary": "5 added, 5 removed",
+      "added_count": 5,
+      "removed_count": 5,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Design and implement Azure network security services (15–20%) > Implement and manage network security groups",
+          "items": [
+            "Associate a NSG to a subnet or network interface"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design and implement Azure network security services (15–20%) > Implement and manage network security groups",
+          "items": [
+            "Associate a NSG to a resource"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Design and implement core networking infrastructure (25–30%) > Design and implement IP addressing for Azure resources",
+          "items": [
+            "Create a Public IP Prefix",
+            "Plan and implement a Custom IP address prefix (bring your own IP)"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design and implement core networking infrastructure (25–30%) > Design and implement IP addressing for Azure resources",
+          "items": [
+            "Create a prefix for public IP addresses",
+            "Plan and implement a custom public IP address prefix (bring your own IP)"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Design and implement core networking infrastructure (25–30%) > Monitor networks",
+          "items": [
+            "Evaluate network security recommendations identified by Microsoft Defender for Cloud attack path analysis",
+            "Identify network resources by using Cloud Security Explorer in Microsoft Defender for Cloud"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design and implement core networking infrastructure (25–30%) > Monitor networks",
+          "items": [
+            "Evaluate network security recommendations identified by Microsoft Defender for Cloud attack oaths",
+            "Identify network resources by using Microsoft Defender for Cloud Security Explorer"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "AZ-104",
@@ -233,6 +293,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-700",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-700",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/practice/assessment?assessment-type=practice"
 }

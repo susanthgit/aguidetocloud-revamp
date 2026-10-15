@@ -12,8 +12,8 @@
   ],
   "category": "Security",
   "status": "active",
-  "updated_at": "2026-06-26 19:26:00+00:00",
-  "skills_date": "July 28, 2026",
+  "updated_at": "2026-09-21 20:22:00+00:00",
+  "skills_date": "October 21, 2026",
   "skills_at_a_glance": [
     {
       "area": "Describe the concepts of security, compliance, and identity",
@@ -53,7 +53,7 @@
     "Describe the capabilities of Microsoft Entra (25–30%)": {
       "Describe function and identity types of Microsoft Entra ID": [
         "Describe Microsoft Entra ID",
-        "Describe types of identities, including agent ID",
+        "Describe types of identities, including workload identities",
         "Describe hybrid identity"
       ],
       "Describe authentication capabilities of Microsoft Entra ID": [
@@ -99,7 +99,7 @@
         "Describe Microsoft Defender for Cloud Apps",
         "Describe Microsoft Defender for Identity",
         "Describe Microsoft Defender Vulnerability Management",
-        "Describe Microsoft Defender Threat Intelligence (Defender TI)",
+        "Describe Microsoft Threat Intelligence",
         "Describe the Microsoft Defender portal"
       ]
     },
@@ -130,6 +130,47 @@
   },
   "change_log_official": [],
   "change_history": [
+    {
+      "code": "SC-900",
+      "title": "Microsoft Security, Compliance, and Identity Fundamentals",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "July 28, 2026",
+      "current_skills_date": "October 21, 2026",
+      "summary": "2 added, 2 removed",
+      "added_count": 2,
+      "removed_count": 2,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Describe the capabilities of Microsoft Entra (25–30%) > Describe function and identity types of Microsoft Entra ID",
+          "items": [
+            "Describe types of identities, including workload identities"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe the capabilities of Microsoft Entra (25–30%) > Describe function and identity types of Microsoft Entra ID",
+          "items": [
+            "Describe types of identities, including agent ID"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Describe the capabilities of Microsoft security solutions (35–40%) > Describe threat protection with Microsoft Defender XDR",
+          "items": [
+            "Describe Microsoft Threat Intelligence"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Describe the capabilities of Microsoft security solutions (35–40%) > Describe threat protection with Microsoft Defender XDR",
+          "items": [
+            "Describe Microsoft Defender Threat Intelligence (Defender TI)"
+          ]
+        }
+      ]
+    },
     {
       "code": "SC-900",
       "title": "Microsoft Security, Compliance, and Identity Fundamentals",

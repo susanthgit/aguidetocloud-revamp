@@ -208,7 +208,416 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "MB-800",
+      "title": "Microsoft Dynamics 365 Business Central Functional Consultant",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "December 17, 2025",
+      "current_skills_date": "June 30, 2026",
+      "summary": "89 added, 85 removed",
+      "added_count": 89,
+      "removed_count": 85,
+      "weight_changes": [
+        {
+          "area": "Set up Business Central",
+          "previous_weight": "25-30%",
+          "current_weight": "20-25%"
+        },
+        {
+          "area": "Perform Business Central operations",
+          "previous_weight": "25-30%",
+          "current_weight": "30-35%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Configure financials (30–35%) > Configure fixed assets",
+          "items": [
+            "Configure fixed asset settings, including depreciation books and fixed asset classes and subclasses",
+            "Create and modify fixed assets, main assets, and components"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure financials (30–35%) > Configure fixed assets",
+          "items": [
+            "Configure fixed asset settings including depreciation books, fixed asset classes and subclasses, and fixed asset posting groups",
+            "Configure fixed assets, main assets, and components"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Configure financials (30–35%) > Manage the chart of accounts",
+          "items": [
+            "Set up general ledger allocations"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Configure financials (30–35%) > Set up accounts receivables",
+          "items": [
+            "Create customer accounts, including payment terms, payment methods, customer bank accounts, and related records"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure financials (30–35%) > Set up accounts receivables",
+          "items": [
+            "Configure customer payment methods",
+            "Create customer accounts, including payment terms, customer bank accounts, and related records"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Configure financials (30–35%) > Set up journals and bank accounts",
+          "items": [
+            "Create templates for recurring journals"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure financials (30–35%) > Set up journals and bank accounts",
+          "items": [
+            "Implement recurring journals"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Configure financials (30–35%) > Set up posting groups",
+          "items": [
+            "Allow multiple posting groups",
+            "Create specific posting groups"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure financials (30–35%) > Set up posting groups",
+          "items": [
+            "Create specific posting groups including bank, customer, vendor, and inventory"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Configure sales and purchasing (10–15%) > Set up inventory",
+          "items": [
+            "Configure inventory setup",
+            "Configure stockkeeping units"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure sales and purchasing (10–15%) > Set up inventory",
+          "items": [
+            "Configure inventory set up",
+            "Configure stock keeping units"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Perform Business Central operations (25–30%) > Perform basic tasks in Business Central",
+          "bullets": [
+            "Apply and save filters",
+            "Configure and use data analysis mode",
+            "Customize pages",
+            "Differentiate between designing, customizing, and personalizing pages",
+            "Find documents and related entries",
+            "Manage files by using Microsoft OneDrive and drag and drop",
+            "Perform data updates by using the Edit in Excel feature",
+            "Use the Inspect pages and data feature"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Perform Business Central operations (25–30%) > Process financial documents",
+          "bullets": [
+            "Combine purchase receipts into a single purchase invoice",
+            "Combine sales shipments into a single sales invoice",
+            "Correct a posted purchase invoice",
+            "Correct a posted sales invoice",
+            "Process prepayment invoices for purchases and sales",
+            "Process purchase credit memos",
+            "Process purchase invoices",
+            "Process sales credit memos",
+            "Process sales invoices",
+            "Release and reopen documents"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Perform Business Central operations (25–30%) > Process fixed asset transactions",
+          "bullets": [
+            "Process fixed asset acquisitions",
+            "Process fixed asset depreciations",
+            "Process fixed asset disposals"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Perform Business Central operations (25–30%) > Process payments and journals",
+          "bullets": [
+            "Adjust currency exchange rates",
+            "Apply ledger entries and undo applied entries",
+            "Perform bank account reconciliation",
+            "Process payment registrations",
+            "Process payments by using payment journals",
+            "Process receipts by using the cash receipt journal",
+            "Process recurring transactions by using the recurring journals",
+            "Reverse posted journals",
+            "Utilize general ledger allocations"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Perform Business Central operations (25–30%) > Process purchases",
+          "bullets": [
+            "Configure recurring purchase lines",
+            "Create a posted invoice from a purchase order",
+            "Create a purchase order",
+            "Manage blanket purchase orders",
+            "Manage quotes",
+            "Receive items for a purchase order",
+            "Reverse a receipt",
+            "Utilize deferrals with purchasing documents",
+            "Utilize the over-receipt feature"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Perform Business Central operations (25–30%) > Process sales",
+          "bullets": [
+            "Analyze item availability",
+            "Configure recurring sales lines",
+            "Convert a sales quote into a sales order or sales invoice",
+            "Create a sales invoice from a sales order",
+            "Manage blanket sales orders",
+            "Manage quotes",
+            "Reverse a shipment",
+            "Ship items for a sales order",
+            "Utilize deferrals with sales documents"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Perform Business Central operations (30–35%) > Perform basic tasks in Business Central",
+          "bullets": [
+            "Apply and save filters",
+            "Configure and use data analysis mode",
+            "Customize pages",
+            "Differentiate between designing, customizing, and personalizing pages",
+            "Find documents and related entries",
+            "Inspect pages",
+            "Perform data updates by using the Edit in Excel feature",
+            "Personalize pages"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Perform Business Central operations (30–35%) > Process financial documents",
+          "bullets": [
+            "Combine purchase receipts into a single purchase invoice",
+            "Combine sales shipments into a single sales invoice",
+            "Correct a posted purchase invoice",
+            "Correct a posted sales invoice",
+            "Process prepayment invoices for purchases and sales",
+            "Process purchase credit memos",
+            "Process purchase invoices",
+            "Process sales credit memos",
+            "Process sales invoices",
+            "Release and reopen documents"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Perform Business Central operations (30–35%) > Process fixed asset transactions",
+          "bullets": [
+            "Process fixed asset acquisitions",
+            "Process fixed asset depreciations",
+            "Process fixed asset disposals"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Perform Business Central operations (30–35%) > Process inventory transactions",
+          "bullets": [
+            "Adjust item cost",
+            "Count inventory",
+            "Process inventory receipts",
+            "Process inventory shipments",
+            "Reclassify inventory",
+            "Transfer items between locations"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Perform Business Central operations (30–35%) > Process journals and payments",
+          "bullets": [
+            "Adjust currency exchange rates",
+            "Apply ledger entries and undo applied entries",
+            "Correct posted dimensions using the Dimension Correction Tool",
+            "Perform bank account reconciliation",
+            "Process payment registrations",
+            "Process payments by using payment journals",
+            "Process receipts by using the cash receipt journal",
+            "Process recurring transactions by using the recurring journals",
+            "Revalue general ledger account balances",
+            "Reverse posted journals",
+            "Use general ledger allocations"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Perform Business Central operations (30–35%) > Process purchases",
+          "bullets": [
+            "Configure recurring purchase lines",
+            "Create a posted invoice from a purchase order",
+            "Create a purchase order",
+            "Manage blanket purchase orders",
+            "Manage quotes",
+            "Receive items for a purchase order",
+            "Receive more items than ordered",
+            "Reverse a receipt",
+            "Use deferrals with purchasing documents"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Perform Business Central operations (30–35%) > Process sales",
+          "bullets": [
+            "Analyze item availability",
+            "Configure recurring sales lines",
+            "Convert a sales quote into a sales order or sales invoice",
+            "Create a sales invoice from a sales order",
+            "Manage blanket sales orders",
+            "Manage quotes",
+            "Reverse a shipment",
+            "Ship items for a sales order",
+            "Use deferrals with sales documents"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Set up Business Central (20–25%) > Create and configure a company",
+          "bullets": [
+            "Create a company by using Assisted Setup",
+            "Create a configuration worksheet",
+            "Create and use a configuration package",
+            "Create journal opening balances",
+            "Migrate data to and within Business Central"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Set up Business Central (20–25%) > Manage approvals by using workflows",
+          "bullets": [
+            "Set up a notification system",
+            "Set up native workflows",
+            "Set up users for approval and workflow user groups"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Set up Business Central (20–25%) > Manage security",
+          "bullets": [
+            "Apply security filters",
+            "Assign user permissions by using security groups and permission sets",
+            "Configure and use security auditing in Business Central",
+            "Create and assign user profiles",
+            "Create permissions and permission sets",
+            "Set up a new user"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Set up Business Central (20–25%) > Set up core functionality",
+          "bullets": [
+            "Enable Copilot and agent capabilities",
+            "Set up and use job queues",
+            "Set up number series",
+            "Set up reports and configure report layouts"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Set up Business Central (20–25%) > Set up dimensions",
+          "bullets": [
+            "Set up blocking combinations of dimensions and dimension values",
+            "Set up default dimension priorities",
+            "Set up default dimensions for account types",
+            "Set up default dimensions for master data",
+            "Set up dimensions and dimension values",
+            "Set up global dimensions and shortcut dimensions"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Set up Business Central (25–30%) > Create and configure a company",
+          "bullets": [
+            "Create a company by using Assisted Setup",
+            "Create a company in Business Central",
+            "Create a configuration worksheet",
+            "Create and use a configuration package",
+            "Create journal opening balances",
+            "Migrate data to and within Business Central"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Set up Business Central (25–30%) > Describe Business Central integrations with other products",
+          "bullets": [
+            "Configure Microsoft 365 integrations, including Microsoft Excel, OneDrive, Outlook, Teams, and Word",
+            "Define uses cases for Microsoft Power Platform integrations with Business Central"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Set up Business Central (25–30%) > Manage approvals by using workflows",
+          "bullets": [
+            "Set up a notification system",
+            "Set up native workflows",
+            "Set up users for approval and workflow user groups"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Set up Business Central (25–30%) > Manage security",
+          "bullets": [
+            "Apply security filters",
+            "Assign user permissions by using security groups and permission sets",
+            "Configure and use security auditing in Business Central",
+            "Create and manage user profiles",
+            "Create permissions and permission sets",
+            "Set up a new user"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Set up Business Central (25–30%) > Set up core functionality",
+          "bullets": [
+            "Set up and use job queues",
+            "Set up company information",
+            "Set up email accounts",
+            "Set up number series",
+            "Set up reports and configure report layouts"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Set up Business Central (25–30%) > Set up dimensions",
+          "bullets": [
+            "Set up blocking combinations of dimensions and dimension values",
+            "Set up default dimension priorities",
+            "Set up default dimensions for account types",
+            "Set up default dimensions for master data",
+            "Set up dimensions and dimension values",
+            "Set up global dimensions and shortcut dimensions",
+            "Update posted dimensions by using the Dimension Correction Tool"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "PL-200",
@@ -226,6 +635,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-800/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-800",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-800",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-800/practice/assessment?assessment-type=practice"
 }

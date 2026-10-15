@@ -10,12 +10,366 @@
   ],
   "category": "Data",
   "status": "beta",
-  "updated_at": "",
-  "skills_date": null,
-  "skills_at_a_glance": [],
-  "skills_detailed": {},
+  "updated_at": "2026-09-18 21:09:00+00:00",
+  "skills_date": "October 19, 2026",
+  "skills_at_a_glance": [
+    {
+      "area": "Set up and configure an Azure Databricks environment",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Secure and govern Unity Catalog objects",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Prepare and process data",
+      "weight": "30-35%"
+    },
+    {
+      "area": "Deploy and maintain data pipelines and workloads",
+      "weight": "30-35%"
+    }
+  ],
+  "skills_detailed": {
+    "Set up and configure an Azure Databricks environment (15–20%)": {
+      "Select and configure compute in a workspace": [
+        "Choose an appropriate compute type, including job compute, serverless, warehouse, classic compute, and shared compute",
+        "Configure compute performance settings, including CPU, node count, autoscaling, termination, node type, cluster size, and pooling",
+        "Configure compute feature settings, including Photon acceleration, Azure Databricks runtime/Spark version, and machine learning",
+        "Install libraries for a compute resource",
+        "Configure access permissions to a compute resource"
+      ],
+      "Create and organize objects in Unity Catalog": [
+        "Apply naming conventions based on requirements, including isolation, development environment, and external sharing",
+        "Create a catalog based on requirements",
+        "Create a schema based on requirements",
+        "Create volumes based on requirements",
+        "Create tables, views, and materialized views",
+        "Implement a foreign catalog by configuring connections",
+        "Implement data definition language (DDL) operations on managed and external tables",
+        "Configure AI/BI Genie instructions for data discovery"
+      ]
+    },
+    "Secure and govern Unity Catalog objects (15–20%)": {
+      "Secure Unity Catalog objects": [
+        "Grant privileges to a principal (user, service principal, or group) for securable objects in Unity Catalog",
+        "Implement table- and column-level access control and row-level security",
+        "Access Azure Key Vault secrets from within Azure Databricks",
+        "Authenticate data access by using service principals",
+        "Authenticate resource access by using managed identities"
+      ],
+      "Govern Unity Catalog objects": [
+        "Create, implement, and preserve table and column definitions and descriptions for data discovery",
+        "Configure attribute-based access control (ABAC) by using tags and policies",
+        "Configure row filters and column masks",
+        "Apply data retention policies",
+        "Set up and manage data lineage tracking by using Catalog Explorer, including owner, history, dependencies, and lineage",
+        "Configure audit logging",
+        "Design and implement a secure strategy for Delta Sharing"
+      ]
+    },
+    "Prepare and process data (30–35%)": {
+      "Design and implement data modeling in Unity Catalog": [
+        "Design logic for data ingestion and data source configuration, including extraction type and file type",
+        "Choose an appropriate data ingestion tool, including Lakeflow Connect, notebooks, and Azure Data Factory",
+        "Choose a data loading method, including batch and streaming",
+        "Choose a data table format, such as Parquet, Delta, CSV, JSON, or Iceberg",
+        "Design and implement a data partitioning scheme",
+        "Choose a slowly changing dimension (SCD) type",
+        "Choose granularity on a column or table based on requirements",
+        "Design and implement a temporal (history) table to record changes over time",
+        "Design and implement a clustering strategy, including liquid clustering and Z-ordering",
+        "Choose between managed and unmanaged tables"
+      ],
+      "Ingest data into Unity Catalog": [
+        "Ingest data by using Lakeflow Connect, including batch and streaming",
+        "Ingest data by using notebooks, including batch and streaming",
+        "Ingest data by using SQL methods, including CREATE TABLE … AS (CTAS), CREATE OR REPLACE TABLE, and COPY INTO",
+        "Ingest data by using a change data capture (CDC) feed",
+        "Ingest data by using Spark Structured Streaming",
+        "Ingest streaming data from Azure Event Hubs",
+        "Ingest data by using Lakeflow Spark Declarative Pipelines, including Auto Loader"
+      ],
+      "Cleanse, transform, and load data into Unity Catalog": [
+        "Profile data to generate summary statistics and assess data distributions",
+        "Choose appropriate column data types",
+        "Identify and resolve duplicate, missing, and null values",
+        "Transform data, including filtering, grouping, and aggregating data",
+        "Transform data by using join, union, intersect, and except operators",
+        "Transform data by denormalizing, pivoting, and unpivoting data",
+        "Load data by using merge, insert, and append operations"
+      ],
+      "Implement and manage data quality constraints in Unity Catalog": [
+        "Implement validation checks, including nullability, data cardinality, and range checking",
+        "Implement data type checks",
+        "Implement schema enforcement and manage schema drift",
+        "Manage data quality with pipeline expectations in Lakeflow Spark Declarative Pipelines"
+      ]
+    },
+    "Deploy and maintain data pipelines and workloads (30–35%)": {
+      "Design and implement data pipelines": [
+        "Design order of operations for a data pipeline",
+        "Choose between notebook and Lakeflow Spark Declarative Pipelines",
+        "Design task logic for Lakeflow Jobs",
+        "Design and implement error handling in data pipelines, notebooks, and jobs",
+        "Create a data pipeline by using a notebook, including precedence constraints",
+        "Create a data pipeline by using Lakeflow Spark Declarative Pipelines"
+      ],
+      "Implement Lakeflow Jobs": [
+        "Create a job, including setup and configuration",
+        "Configure job triggers",
+        "Schedule a job",
+        "Configure alerts for a job",
+        "Configure automatic restarts for a job or a data pipeline"
+      ],
+      "Implement development lifecycle processes in Azure Databricks": [
+        "Apply version control best practices using Git",
+        "Manage branching, pull requests, and conflict resolution",
+        "Implement a testing strategy, including unit tests, integration tests, end-to-end tests, and user acceptance testing (UAT)",
+        "Configure and package Declarative Automation Bundles",
+        "Deploy a bundle by using the Databricks CLI",
+        "Deploy a bundle by using REST APIs"
+      ],
+      "Monitor, troubleshoot, and optimize workloads in Azure Databricks": [
+        "Monitor and manage cluster consumption to optimize performance and cost",
+        "Troubleshoot and repair issues in Lakeflow Jobs, including repair, restart, stop, and run functions",
+        "Troubleshoot and repair issues in Apache Spark jobs and notebooks, including performance tuning, resolving resource bottlenecks, and cluster restart",
+        "Investigate and resolve caching, skewing, spilling, and shuffle issues by using a Directed Acyclic Graph (DAG), the Spark UI, and query profile",
+        "Optimize Delta tables for performance and cost, including OPTIMIZE and VACUUM commands",
+        "Implement log streaming by using Log Analytics in Azure Monitor",
+        "Configure alerts by using Azure Monitor"
+      ]
+    }
+  },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "DP-750",
+      "title": "Azure Databricks Data Engineer Associate",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "March 11, 2026",
+      "current_skills_date": "October 19, 2026",
+      "summary": "3 added, 3 removed",
+      "added_count": 3,
+      "removed_count": 3,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Deploy and maintain data pipelines and workloads (30–35%) > Implement development lifecycle processes in Azure Databricks",
+          "items": [
+            "Configure and package Declarative Automation Bundles",
+            "Deploy a bundle by using the Databricks CLI"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Deploy and maintain data pipelines and workloads (30–35%) > Implement development lifecycle processes in Azure Databricks",
+          "items": [
+            "Configure and package Databricks Asset Bundles",
+            "Deploy a bundle by using the Azure Databricks command-line interface (CLI)"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Prepare and process data (30–35%) > Design and implement data modeling in Unity Catalog",
+          "items": [
+            "Design and implement a clustering strategy, including liquid clustering and Z-ordering"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Prepare and process data (30–35%) > Design and implement data modeling in Unity Catalog",
+          "items": [
+            "Design and implement a clustering strategy, including liquid clustering, Z-ordering, and deletion vectors"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DP-750",
+      "title": "Azure Databricks Data Engineer Associate",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": null,
+      "current_skills_date": "March 11, 2026",
+      "summary": "77 added, 0 removed",
+      "added_count": 77,
+      "removed_count": 0,
+      "weight_changes": [
+        {
+          "area": "Deploy and maintain data pipelines and workloads",
+          "previous_weight": null,
+          "current_weight": "30-35%"
+        },
+        {
+          "area": "Secure and govern Unity Catalog objects",
+          "previous_weight": null,
+          "current_weight": "15-20%"
+        },
+        {
+          "area": "Prepare and process data",
+          "previous_weight": null,
+          "current_weight": "30-35%"
+        },
+        {
+          "area": "Set up and configure an Azure Databricks environment",
+          "previous_weight": null,
+          "current_weight": "15-20%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "area_added",
+          "area": "Deploy and maintain data pipelines and workloads (30–35%) > Design and implement data pipelines",
+          "bullets": [
+            "Choose between notebook and Lakeflow Spark Declarative Pipelines",
+            "Create a data pipeline by using Lakeflow Spark Declarative Pipelines",
+            "Create a data pipeline by using a notebook, including precedence constraints",
+            "Design and implement error handling in data pipelines, notebooks, and jobs",
+            "Design order of operations for a data pipeline",
+            "Design task logic for Lakeflow Jobs"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Deploy and maintain data pipelines and workloads (30–35%) > Implement Lakeflow Jobs",
+          "bullets": [
+            "Configure alerts for a job",
+            "Configure automatic restarts for a job or a data pipeline",
+            "Configure job triggers",
+            "Create a job, including setup and configuration",
+            "Schedule a job"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Deploy and maintain data pipelines and workloads (30–35%) > Implement development lifecycle processes in Azure Databricks",
+          "bullets": [
+            "Apply version control best practices using Git",
+            "Configure and package Databricks Asset Bundles",
+            "Deploy a bundle by using REST APIs",
+            "Deploy a bundle by using the Azure Databricks command-line interface (CLI)",
+            "Implement a testing strategy, including unit tests, integration tests, end-to-end tests, and user acceptance testing (UAT)",
+            "Manage branching, pull requests, and conflict resolution"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Deploy and maintain data pipelines and workloads (30–35%) > Monitor, troubleshoot, and optimize workloads in Azure Databricks",
+          "bullets": [
+            "Configure alerts by using Azure Monitor",
+            "Implement log streaming by using Log Analytics in Azure Monitor",
+            "Investigate and resolve caching, skewing, spilling, and shuffle issues by using a Directed Acyclic Graph (DAG), the Spark UI, and query profile",
+            "Monitor and manage cluster consumption to optimize performance and cost",
+            "Optimize Delta tables for performance and cost, including OPTIMIZE and VACUUM commands",
+            "Troubleshoot and repair issues in Apache Spark jobs and notebooks, including performance tuning, resolving resource bottlenecks, and cluster restart",
+            "Troubleshoot and repair issues in Lakeflow Jobs, including repair, restart, stop, and run functions"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Prepare and process data (30–35%) > Cleanse, transform, and load data into Unity Catalog",
+          "bullets": [
+            "Choose appropriate column data types",
+            "Identify and resolve duplicate, missing, and null values",
+            "Load data by using merge, insert, and append operations",
+            "Profile data to generate summary statistics and assess data distributions",
+            "Transform data by denormalizing, pivoting, and unpivoting data",
+            "Transform data by using join, union, intersect, and except operators",
+            "Transform data, including filtering, grouping, and aggregating data"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Prepare and process data (30–35%) > Design and implement data modeling in Unity Catalog",
+          "bullets": [
+            "Choose a data loading method, including batch and streaming",
+            "Choose a data table format, such as Parquet, Delta, CSV, JSON, or Iceberg",
+            "Choose a slowly changing dimension (SCD) type",
+            "Choose an appropriate data ingestion tool, including Lakeflow Connect, notebooks, and Azure Data Factory",
+            "Choose between managed and unmanaged tables",
+            "Choose granularity on a column or table based on requirements",
+            "Design and implement a clustering strategy, including liquid clustering, Z-ordering, and deletion vectors",
+            "Design and implement a data partitioning scheme",
+            "Design and implement a temporal (history) table to record changes over time",
+            "Design logic for data ingestion and data source configuration, including extraction type and file type"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Prepare and process data (30–35%) > Implement and manage data quality constraints in Unity Catalog",
+          "bullets": [
+            "Implement data type checks",
+            "Implement schema enforcement and manage schema drift",
+            "Implement validation checks, including nullability, data cardinality, and range checking",
+            "Manage data quality with pipeline expectations in Lakeflow Spark Declarative Pipelines"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Prepare and process data (30–35%) > Ingest data into Unity Catalog",
+          "bullets": [
+            "Ingest data by using Lakeflow Connect, including batch and streaming",
+            "Ingest data by using Lakeflow Spark Declarative Pipelines, including Auto Loader",
+            "Ingest data by using SQL methods, including CREATE TABLE … AS (CTAS), CREATE OR REPLACE TABLE, and COPY INTO",
+            "Ingest data by using Spark Structured Streaming",
+            "Ingest data by using a change data capture (CDC) feed",
+            "Ingest data by using notebooks, including batch and streaming",
+            "Ingest streaming data from Azure Event Hubs"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure and govern Unity Catalog objects (15–20%) > Govern Unity Catalog objects",
+          "bullets": [
+            "Apply data retention policies",
+            "Configure attribute-based access control (ABAC) by using tags and policies",
+            "Configure audit logging",
+            "Configure row filters and column masks",
+            "Create, implement, and preserve table and column definitions and descriptions for data discovery",
+            "Design and implement a secure strategy for Delta Sharing",
+            "Set up and manage data lineage tracking by using Catalog Explorer, including owner, history, dependencies, and lineage"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure and govern Unity Catalog objects (15–20%) > Secure Unity Catalog objects",
+          "bullets": [
+            "Access Azure Key Vault secrets from within Azure Databricks",
+            "Authenticate data access by using service principals",
+            "Authenticate resource access by using managed identities",
+            "Grant privileges to a principal (user, service principal, or group) for securable objects in Unity Catalog",
+            "Implement table- and column-level access control and row-level security"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Set up and configure an Azure Databricks environment (15–20%) > Create and organize objects in Unity Catalog",
+          "bullets": [
+            "Apply naming conventions based on requirements, including isolation, development environment, and external sharing",
+            "Configure AI/BI Genie instructions for data discovery",
+            "Create a catalog based on requirements",
+            "Create a schema based on requirements",
+            "Create tables, views, and materialized views",
+            "Create volumes based on requirements",
+            "Implement a foreign catalog by configuring connections",
+            "Implement data definition language (DDL) operations on managed and external tables"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Set up and configure an Azure Databricks environment (15–20%) > Select and configure compute in a workspace",
+          "bullets": [
+            "Choose an appropriate compute type, including job compute, serverless, warehouse, classic compute, and shared compute",
+            "Configure access permissions to a compute resource",
+            "Configure compute feature settings, including Photon acceleration, Azure Databricks runtime/Spark version, and machine learning",
+            "Configure compute performance settings, including CPU, node count, autoscaling, termination, node type, cluster size, and pooling",
+            "Install libraries for a compute resource"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "DP-900",
@@ -33,6 +387,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-750/",
-  "study_guide_url": "",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-750",
   "practice_assessment_url": ""
 }

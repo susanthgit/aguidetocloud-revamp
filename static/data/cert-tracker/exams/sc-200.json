@@ -11,8 +11,8 @@
   ],
   "category": "Security",
   "status": "active",
-  "updated_at": "2026-06-26 19:26:00+00:00",
-  "skills_date": "July 28, 2026",
+  "updated_at": "2026-09-21 20:22:00+00:00",
+  "skills_date": "October 21, 2026",
   "skills_at_a_glance": [
     {
       "area": "Manage a security operations environment",
@@ -53,7 +53,7 @@
         "Configure collection of Windows Security events by using Windows Security Events via AMA, including data collection rules",
         "Plan and configure collection of Windows Security events by using Windows Event Forwarding (WEF)",
         "Plan and configure Syslog via AMA and Common Event Format (CEF) via AMA connectors",
-        "Configure collection of Azure activities by using Azure Policy and resource diagnostic settings",
+        "Configure collection of Azure activity logs by using Azure Policy and resource diagnostic settings",
         "Ingest threat indicators into Microsoft Sentinel",
         "Create custom log tables in the workspace to store ingested data"
       ],
@@ -108,7 +108,78 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "SC-200",
+      "title": "Microsoft Security Operations Analyst",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "July 28, 2026",
+      "current_skills_date": "October 21, 2026",
+      "summary": "1 added, 1 removed",
+      "added_count": 1,
+      "removed_count": 1,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Manage a security operations environment (40–45%) > Ingest data into the Microsoft Sentinel SIEM and platform",
+          "items": [
+            "Configure collection of Azure activity logs by using Azure Policy and resource diagnostic settings"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Manage a security operations environment (40–45%) > Ingest data into the Microsoft Sentinel SIEM and platform",
+          "items": [
+            "Configure collection of Azure activities by using Azure Policy and resource diagnostic settings"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SC-200",
+      "title": "Microsoft Security Operations Analyst",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "April 16, 2026",
+      "current_skills_date": "July 28, 2026",
+      "summary": "3 added, 3 removed",
+      "added_count": 3,
+      "removed_count": 3,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Respond to security incidents (35–40%) > Investigate Microsoft 365 activities to identify threats",
+          "items": [
+            "Investigate threats by using Content search in Microsoft Purview eDiscovery",
+            "Investigate threats by using Microsoft Purview Audit"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Respond to security incidents (35–40%) > Investigate Microsoft 365 activities to identify threats",
+          "items": [
+            "Investigate threats by using Audit from Microsoft Purview",
+            "Investigate threats by using Content Search in Microsoft Purview"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Respond to security incidents (35–40%) > Respond to alerts and incidents in Microsoft Defender XDR",
+          "items": [
+            "Investigate incidents by using agentic AI, including embedded Microsoft Security Copilot"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Respond to security incidents (35–40%) > Respond to alerts and incidents in Microsoft Defender XDR",
+          "items": [
+            "Investigate incidents by using agentic AI, including embedded Copilot for Security"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "SC-300",
@@ -133,6 +204,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-200/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-200",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-200",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-200/practice/assessment?assessment-type=practice"
 }

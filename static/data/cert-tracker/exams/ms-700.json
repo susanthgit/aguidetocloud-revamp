@@ -11,8 +11,8 @@
   ],
   "category": "Microsoft 365",
   "status": "active",
-  "updated_at": "2026-06-29 18:17:00+00:00",
-  "skills_date": "July 29, 2026",
+  "updated_at": "2026-09-25 22:18:00+00:00",
+  "skills_date": "October 27, 2026",
   "skills_at_a_glance": [
     {
       "area": "Configure and manage a Teams environment",
@@ -35,7 +35,7 @@
     "Configure and manage a Teams environment (40–45%)": {
       "Plan network settings for Teams": [
         "Calculate network bandwidth capacity for Teams voice, video, meetings, and events",
-        "Analyze network impact by using Network planner",
+        "Analyze network impact by using Teams Network planner",
         "Specify network ports and protocols used by Teams",
         "Assess network readiness and connectivity by using the Microsoft Teams Network Assessment Tool and Microsoft 365 network connectivity test tool"
       ],
@@ -68,10 +68,10 @@
       "Configure and manage external collaboration": [
         "Identify licensing requirements for external collaboration",
         "Configure SharePoint Online and OneDrive external sharing settings",
-        "Configure External access in the Microsoft Teams admin center",
+        "Configure External access in the Teams admin center",
         "Control External Access by Domain for Specific Users and Groups",
         "Configure External collaboration settings in Microsoft Entra ID for guest access",
-        "Configure guest access and sharing in the Microsoft Teams admin center, Microsoft 365 admin center, Microsoft Entra admin center, or the SharePoint admin center",
+        "Configure guest access and sharing in the Teams admin center, Microsoft 365 admin center, Microsoft Entra admin center, or the SharePoint admin center",
         "Control guest access to a specific team by using Microsoft Purview and Microsoft Entra ID",
         "Remove guests from Teams, including from a team or a tenant",
         "Configure shared channels for external access",
@@ -91,13 +91,13 @@
     },
     "Manage teams, channels, chats, and apps (20–25%)": {
       "Create and manage teams": [
-        "Plan for a Teams rollout by using Advisor for Teams",
-        "Create a team by using the Microsoft Teams admin center, Teams client, the Teams PowerShell module, or Microsoft Graph",
+        "Plan for a Teams rollout by using Teams Advisor",
+        "Create a team by using the Teams admin center, Teams client, the Teams PowerShell module, or Microsoft Graph",
         "Create a team from an existing Microsoft 365 group, SharePoint site, or team",
         "Create a team from a template",
         "Create and manage templates and template policies for teams",
         "Manage the membership and roles for a team",
-        "Manage a team in the Microsoft Teams admin center",
+        "Manage a team in the Teams admin center",
         "Manage Teams environment settings",
         "Configure privacy and sensitivity settings for a team",
         "Create and manage frontline teams and experiences"
@@ -111,7 +111,7 @@
         "Create and manage messaging policies"
       ],
       "Manage apps for Teams": [
-        "Manage Org-wide app settings in the Microsoft Teams admin center",
+        "Manage Org-wide app settings in the Teams admin center",
         "Create and manage app assignments and app setup policies",
         "Manage permissions and consent for apps, including blocking apps",
         "Recommend appropriate extensibility options, including apps, tabs, meetings, messaging extensions, and workflows",
@@ -155,7 +155,7 @@
         "Clear the Teams client cache",
         "Troubleshoot issues by using self-help diagnostics for Teams",
         "Troubleshoot Teams client installation and update issues",
-        "Troubleshoot Teams client health and issues in the Microsoft Teams admin center",
+        "Troubleshoot Teams client health and issues in the Teams admin center",
         "Troubleshoot sign-in issues to Teams",
         "Troubleshoot Microsoft 365 Copilot and AI experiences in Teams",
         "Troubleshoot issues with joining meetings and accessing features in meetings"
@@ -163,7 +163,146 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "MS-700",
+      "title": "Managing Microsoft Teams",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "July 29, 2026",
+      "current_skills_date": "October 27, 2026",
+      "summary": "8 added, 8 removed",
+      "added_count": 8,
+      "removed_count": 8,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Configure and manage a Teams environment (40–45%) > Configure and manage external collaboration",
+          "items": [
+            "Configure External access in the Teams admin center",
+            "Configure guest access and sharing in the Teams admin center, Microsoft 365 admin center, Microsoft Entra admin center, or the SharePoint admin center"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure and manage a Teams environment (40–45%) > Configure and manage external collaboration",
+          "items": [
+            "Configure External access in the Microsoft Teams admin center",
+            "Configure guest access and sharing in the Microsoft Teams admin center, Microsoft 365 admin center, Microsoft Entra admin center, or the SharePoint admin center"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Configure and manage a Teams environment (40–45%) > Plan network settings for Teams",
+          "items": [
+            "Analyze network impact by using Teams Network planner"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure and manage a Teams environment (40–45%) > Plan network settings for Teams",
+          "items": [
+            "Analyze network impact by using Network planner"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Manage teams, channels, chats, and apps (20–25%) > Create and manage teams",
+          "items": [
+            "Create a team by using the Teams admin center, Teams client, the Teams PowerShell module, or Microsoft Graph",
+            "Manage a team in the Teams admin center",
+            "Plan for a Teams rollout by using Teams Advisor"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Manage teams, channels, chats, and apps (20–25%) > Create and manage teams",
+          "items": [
+            "Create a team by using the Microsoft Teams admin center, Teams client, the Teams PowerShell module, or Microsoft Graph",
+            "Manage a team in the Microsoft Teams admin center",
+            "Plan for a Teams rollout by using Advisor for Teams"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Manage teams, channels, chats, and apps (20–25%) > Manage apps for Teams",
+          "items": [
+            "Manage Org-wide app settings in the Teams admin center"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Manage teams, channels, chats, and apps (20–25%) > Manage apps for Teams",
+          "items": [
+            "Manage Org-wide app settings in the Microsoft Teams admin center"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Monitor, report on, and troubleshoot Teams (15–20%) > Troubleshoot audio, video, and client issues",
+          "items": [
+            "Troubleshoot Teams client health and issues in the Teams admin center"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Monitor, report on, and troubleshoot Teams (15–20%) > Troubleshoot audio, video, and client issues",
+          "items": [
+            "Troubleshoot Teams client health and issues in the Microsoft Teams admin center"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MS-700",
+      "title": "Managing Microsoft Teams",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "April 28, 2026",
+      "current_skills_date": "July 29, 2026",
+      "summary": "6 added, 6 removed",
+      "added_count": 6,
+      "removed_count": 6,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Configure and manage a Teams environment (40–45%) > Manage security and compliance settings for Teams",
+          "items": [
+            "Identify appropriate use cases for Microsoft Purview Communication Compliance and Microsoft Purview Insider Risk Management",
+            "Plan and configure threat policies in Microsoft Defender for Office 365",
+            "Specify Microsoft Purview Data Loss Prevention (DLP) policies",
+            "Specify Microsoft Purview Information Barriers policies",
+            "Specify sensitivity labels and publishing policies, including for Teams meetings"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Configure and manage a Teams environment (40–45%) > Manage security and compliance settings for Teams",
+          "items": [
+            "Identify appropriate use cases for communication compliance and insider risk management",
+            "Plan and configure threat policies in Microsoft Defender XDR",
+            "Specify data loss prevention (DLP) policies",
+            "Specify information barrier (IB) policies",
+            "Specify sensitivity labels and publishing policies, including Teams meeting policies"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Manage meetings and calling (15–20%) > Manage meetings and events",
+          "items": [
+            "Recommend meeting types based on business requirements, including Appointments with Microsoft Teams, webinars, Teams town halls, and meetings"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Manage meetings and calling (15–20%) > Manage meetings and events",
+          "items": [
+            "Recommend meeting types based on business requirements, including Virtual appointments, Webinars, Teams town halls, and meetings"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "MS-102",
@@ -181,6 +320,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-700",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-700",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/practice/assessment?assessment-type=practice"
 }

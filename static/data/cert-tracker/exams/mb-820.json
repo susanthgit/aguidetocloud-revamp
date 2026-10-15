@@ -1,0 +1,170 @@
+{
+  "code": "MB-820",
+  "title": "Microsoft Dynamics 365 Business Central Developer",
+  "level": "intermediate",
+  "roles": [
+    "developer"
+  ],
+  "products": [
+    "dynamics-365"
+  ],
+  "category": "Dynamics 365",
+  "status": "active",
+  "updated_at": "2025-12-05 03:46:00+00:00",
+  "skills_date": "June 10, 2025",
+  "skills_at_a_glance": [
+    {
+      "area": "Describe Business Central",
+      "weight": "10-15%"
+    },
+    {
+      "area": "Install, develop, and deploy for Business Central",
+      "weight": "10-15%"
+    },
+    {
+      "area": "Develop by using AL objects",
+      "weight": "35-40%"
+    },
+    {
+      "area": "Develop by using AL",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Work with development tools",
+      "weight": "10-15%"
+    },
+    {
+      "area": "Integrate Business Central with other applications",
+      "weight": "10-15%"
+    }
+  ],
+  "skills_detailed": {
+    "Describe Business Central (10–15%)": {
+      "Describe the Business Central architecture": [
+        "Describe the components and capabilities of Business Central",
+        "Describe the core solution and extensions approach for Business Central",
+        "Describe the update lifecycle for customizations of Business Central",
+        "Differentiate Business Central online and Business Central on-premises features"
+      ],
+      "Describe Business Central apps": [
+        "Differentiate between the base app and the system app",
+        "Describe the functionality of apps",
+        "Describe the process of bringing an app to AppSource"
+      ]
+    },
+    "Install, develop, and deploy for Business Central (10–15%)": {
+      "Install and configure a Business Central development environment": [
+        "Describe the development environment for Business Central",
+        "Install and configure the development environment",
+        "Manage configuration files for an AL extension",
+        "Manage multiple AL extensions in one workspace"
+      ],
+      "Create, debug, and deploy an extension in Business Central": [
+        "Debug an extension with Visual Studio Code",
+        "Deploy an extension",
+        "Create or modify a Business Central extension in Visual Studio Code",
+        "Manage multilanguage development",
+        "Maintain extensions"
+      ]
+    },
+    "Develop by using AL objects (35–40%)": {
+      "Build and extend tables and pages in Business Central": [
+        "Develop Role Center pages",
+        "Identify different page types",
+        "Build and extend page objects",
+        "Build and extend tables",
+        "Build and extend enums"
+      ],
+      "Build and extend reports": [
+        "Substitute a report",
+        "Create a report layout",
+        "Create document reports",
+        "Design the data model of a report",
+        "Implement multilanguage in reports",
+        "Use report triggers, functions, and processing-only reports",
+        "Develop the report request page"
+      ],
+      "Design and create an XMLport": [
+        "Configure different XMLport properties",
+        "Configure nodes and their properties",
+        "Use XMLports in AL code"
+      ],
+      "Develop codeunits": [
+        "Create and access codeunits",
+        "Use events and triggers",
+        "Implement interfaces",
+        "Create installation and upgrade codeunits"
+      ],
+      "Create entitlement and permission set objects": [
+        "Create and extend permission sets",
+        "Override entitlements with inherent permissions",
+        "Troubleshoot permission sets"
+      ],
+      "Create queries in Business Central": [
+        "Link and join data items",
+        "Apply filters in query objects",
+        "Use queries instead of record variables",
+        "Aggregate data in query objects",
+        "Use a query to create a report"
+      ]
+    },
+    "Develop by using AL (15–20%)": {
+      "Customize the UI experience, and implement onboarding techniques": [
+        "Create profiles in AL",
+        "Use and create views in AL",
+        "Develop the UI by using the user assistance model",
+        "Integrate assisted setup",
+        "Create teaching tips and in-app tours to onboard users",
+        "Create an onboarding checklist"
+      ],
+      "Describe the essential development standards": [
+        "Implement the data process model in Business Central",
+        "Define the different functional table types and characteristics",
+        "Use document standards in Business Central",
+        "Implement master data standards and design patterns"
+      ],
+      "Use AL to extend Business Central": [
+        "Create custom procedures",
+        "Use data types in code",
+        "Manage files",
+        "Manipulate data by using code",
+        "Describe the basics of the AL",
+        "Use the different types of expressions",
+        "Use AL built-in functions and AL statements",
+        "Work with variables and define them in AL code",
+        "Manage errors",
+        "Use access modifiers to limit access"
+      ]
+    },
+    "Work with development tools (10–15%)": {
+      "Implement semiautomated test processes, and run standard Business Central tests": [
+        "Test applications in Business Central",
+        "Install and run the Test Toolkit",
+        "Develop test codeunits and procedures"
+      ],
+      "Manage and analyze telemetry": [
+        "Monitor and analyze telemetry",
+        "Configure telemetry",
+        "Create custom telemetry signals"
+      ]
+    },
+    "Integrate Business Central with other applications (10–15%)": {
+      "Access Representational State Transfer (REST) services from within Business Central": [
+        "Use the different HTTP classes and their functions",
+        "Get data from and send data to an external REST service",
+        "Use and read JSON"
+      ],
+      "Implement APIs": [
+        "Create and work with APIs",
+        "Create and manage OData bound and unbound actions",
+        "Use Read Scale-Out to improve performance"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "related_exams": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-820/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-820",
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-820/practice/assessment?assessment-type=practice"
+}

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-14T20:01:01Z",
-  "exam_count": 55,
+  "generated_at": "2026-10-15T19:21:11Z",
+  "exam_count": 59,
   "categories": [
     "AI",
     "Azure",
@@ -10,8 +10,8 @@
     "Power Platform",
     "Security"
   ],
-  "last_change_detected": "2026-09-14T00:10:05Z",
-  "total_changes": 24,
+  "last_change_detected": "2026-10-15T19:21:11Z",
+  "total_changes": 37,
   "exams": [
     {
       "code": "AI-901",
@@ -47,6 +47,143 @@
       "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-901/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-901"
+    },
+    {
+      "code": "AI-103",
+      "title": "Azure AI App and Agent Developer Associate",
+      "level": "intermediate",
+      "roles": [
+        "ai-engineer",
+        "developer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "AI-102",
+      "beta_since": "",
+      "updated_at": "2026-07-07 18:58:00+00:00",
+      "skills_date": "April 16, 2026",
+      "skill_areas": 5,
+      "total_objectives": 64,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan and manage an Azure AI solution",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Implement generative AI and agentic solutions",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Implement computer vision solutions",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement text analysis solutions",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement information extraction solutions",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": true,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-103/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103"
+    },
+    {
+      "code": "AI-200",
+      "title": "Azure AI Cloud Developer Associate",
+      "level": "intermediate",
+      "roles": [
+        "developer",
+        "ai-engineer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-05-05 15:02:00+00:00",
+      "skills_date": null,
+      "skill_areas": 4,
+      "total_objectives": 27,
+      "skills_at_a_glance": [
+        {
+          "area": "Develop containerized solutions on Azure",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Develop AI solutions by using Azure data management services",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Connect to and consume Azure services",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Secure, monitor, troubleshoot Azure solutions",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": true,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-200/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-200"
+    },
+    {
+      "code": "AI-300",
+      "title": "Machine Learning Operations (MLOps) Engineer Associate",
+      "level": "intermediate",
+      "roles": [
+        "ai-engineer",
+        "devops-engineer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "DP-100",
+      "beta_since": "",
+      "updated_at": "2026-03-05 17:45:00+00:00",
+      "skills_date": null,
+      "skill_areas": 5,
+      "total_objectives": 58,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and implement an MLOps infrastructure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement machine learning model lifecycle and operations",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design and implement a GenAIOps infrastructure",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement generative AI quality assurance and observability",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Optimize generative AI systems and model performance",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": true,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-300/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-300"
     },
     {
       "code": "AZ-900",
@@ -222,6 +359,61 @@
       "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-700"
+    },
+    {
+      "code": "AZ-802",
+      "title": "Windows Server Hybrid Administrator",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "azure",
+        "windows-server"
+      ],
+      "category": "Azure",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "AZ-800 + AZ-801",
+      "beta_since": "",
+      "updated_at": "2026-10-02 23:05:00+00:00",
+      "skills_date": null,
+      "skill_areas": 7,
+      "total_objectives": 115,
+      "skills_at_a_glance": [
+        {
+          "area": "Deploy and manage AD DS",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Manage Windows Server instances and workloads in a hybrid environment",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage virtual machines",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement and manage an on-premises and hybrid networking infrastructure",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage storage and file services",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Secure Windows Server infrastructure",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Monitor and troubleshoot Windows Server environments",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": true,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-802/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-802"
     },
     {
       "code": "AZ-120",
@@ -414,8 +606,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-03-26 06:04:00+00:00",
-      "skills_date": "April 24, 2026",
+      "updated_at": "2026-09-25 22:18:00+00:00",
+      "skills_date": "October 27, 2026",
       "skill_areas": 5,
       "total_objectives": 94,
       "skills_at_a_glance": [
@@ -440,7 +632,7 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-300/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300"
     },
@@ -461,7 +653,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-09-09 21:48:00+00:00",
+      "updated_at": "2026-09-16 17:28:00+00:00",
       "skills_date": "October 6, 2026",
       "skill_areas": 3,
       "total_objectives": 56,
@@ -500,8 +692,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-06-22 23:35:00+00:00",
-      "skills_date": "July 21, 2026",
+      "updated_at": "2026-09-18 21:09:00+00:00",
+      "skills_date": "October 19, 2026",
       "skill_areas": 3,
       "total_objectives": 41,
       "skills_at_a_glance": [
@@ -518,7 +710,7 @@
           "weight": "25-30%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-600/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600"
     },
@@ -538,8 +730,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-06-23 18:41:00+00:00",
-      "skills_date": "July 21, 2026",
+      "updated_at": "2026-09-18 21:09:00+00:00",
+      "skills_date": "October 19, 2026",
       "skill_areas": 3,
       "total_objectives": 54,
       "skills_at_a_glance": [
@@ -556,7 +748,7 @@
           "weight": "30-35%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-700/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-700"
     },
@@ -748,8 +940,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2025-12-05 03:46:00+00:00",
-      "skills_date": "June 20, 2025",
+      "updated_at": "2026-09-21 20:22:00+00:00",
+      "skills_date": "October 21, 2026",
       "skill_areas": 5,
       "total_objectives": 101,
       "skills_at_a_glance": [
@@ -774,7 +966,7 @@
           "weight": "10-15%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-330/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-330"
     },
@@ -941,8 +1133,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-07-27 23:48:00+00:00",
-      "skills_date": "July 24, 2026",
+      "updated_at": "2026-09-25 22:18:00+00:00",
+      "skills_date": "October 27, 2026",
       "skill_areas": 5,
       "total_objectives": 83,
       "skills_at_a_glance": [
@@ -1030,8 +1222,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-06-29 18:17:00+00:00",
-      "skills_date": "July 29, 2026",
+      "updated_at": "2026-09-25 22:18:00+00:00",
+      "skills_date": "October 27, 2026",
       "skill_areas": 4,
       "total_objectives": 97,
       "skills_at_a_glance": [
@@ -1073,8 +1265,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-03-27 23:35:00+00:00",
-      "skills_date": "April 28, 2026",
+      "updated_at": "2026-09-28 23:35:00+00:00",
+      "skills_date": "October 29, 2026",
       "skill_areas": 4,
       "total_objectives": 173,
       "skills_at_a_glance": [
@@ -1095,7 +1287,7 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-721/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-721"
     },
@@ -1245,7 +1437,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-09-09 21:48:00+00:00",
+      "updated_at": "2026-09-16 17:28:00+00:00",
       "skills_date": "October 16, 2026",
       "skill_areas": 4,
       "total_objectives": 88,
@@ -1289,8 +1481,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-06-26 19:26:00+00:00",
-      "skills_date": "July 28, 2026",
+      "updated_at": "2026-09-21 20:22:00+00:00",
+      "skills_date": "October 21, 2026",
       "skill_areas": 4,
       "total_objectives": 58,
       "skills_at_a_glance": [
@@ -1332,8 +1524,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-06-26 19:26:00+00:00",
-      "skills_date": "July 28, 2026",
+      "updated_at": "2026-09-21 20:22:00+00:00",
+      "skills_date": "October 21, 2026",
       "skill_areas": 3,
       "total_objectives": 54,
       "skills_at_a_glance": [
@@ -1371,8 +1563,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-03-27 23:35:00+00:00",
-      "skills_date": "April 27, 2026",
+      "updated_at": "2026-09-28 23:35:00+00:00",
+      "skills_date": "October 28, 2026",
       "skill_areas": 4,
       "total_objectives": 98,
       "skills_at_a_glance": [
@@ -1393,7 +1585,7 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-300"
     },
@@ -1440,8 +1632,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-06-29 23:01:00+00:00",
-      "skills_date": "July 28, 2026",
+      "updated_at": "2026-09-21 20:22:00+00:00",
+      "skills_date": "October 21, 2026",
       "skill_areas": 4,
       "total_objectives": 81,
       "skills_at_a_glance": [
@@ -1525,7 +1717,7 @@
       "replacement": "AZ-802",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-04-02 15:58:00+00:00",
+      "updated_at": "2026-09-30 20:12:00+00:00",
       "skills_date": "January 21, 2026",
       "skill_areas": 5,
       "total_objectives": 101,
@@ -1572,7 +1764,7 @@
       "replacement": "AZ-802",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-04-02 15:58:00+00:00",
+      "updated_at": "2026-09-30 20:12:00+00:00",
       "skills_date": "October 6, 2025",
       "skill_areas": 5,
       "total_objectives": 115,
@@ -1603,58 +1795,86 @@
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-801"
     },
     {
-      "code": "AI-103",
-      "title": "Azure AI App and Agent Developer Associate",
+      "code": "AB-620",
+      "title": "Designing and Building Integrated AI Solutions in Copilot Studio",
       "level": "intermediate",
       "roles": [
-        "ai-engineer",
         "developer"
       ],
       "products": [
-        "azure"
+        "power-platform"
       ],
       "category": "AI",
       "status": "beta",
       "retirement_date": "",
       "replacement": "",
-      "replaces": "AI-102",
+      "replaces": "",
       "beta_since": "2026-04",
-      "updated_at": "2026-07-07 18:58:00+00:00",
-      "skills_date": "April 16, 2026",
-      "skill_areas": 5,
-      "total_objectives": 64,
+      "updated_at": "2026-10-14 20:34:00+00:00",
+      "skills_date": null,
+      "skill_areas": 3,
+      "total_objectives": 44,
       "skills_at_a_glance": [
         {
-          "area": "Plan and manage an Azure AI solution",
-          "weight": "25-30%"
-        },
-        {
-          "area": "Implement generative AI and agentic solutions",
+          "area": "Plan and configure agent solutions",
           "weight": "30-35%"
         },
         {
-          "area": "Implement computer vision solutions",
-          "weight": "10-15%"
+          "area": "Integrate and extend agents in Copilot Studio",
+          "weight": "40-45%"
         },
         {
-          "area": "Implement text analysis solutions",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Implement information extraction solutions",
-          "weight": "10-15%"
+          "area": "Test and manage agents",
+          "weight": "20-25%"
         }
       ],
-      "has_changes": true,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-103/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103"
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-620/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-620"
     },
     {
-      "code": "AI-200",
-      "title": "Azure AI Cloud Developer Associate",
+      "code": "AB-650",
+      "title": "Administering Microsoft 365 and AI Services",
       "level": "intermediate",
       "roles": [
-        "developer",
+        "administrator"
+      ],
+      "products": [
+        "m365"
+      ],
+      "category": "AI",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "2026-08",
+      "updated_at": "2026-07-27 21:34:00+00:00",
+      "skills_date": null,
+      "skill_areas": 3,
+      "total_objectives": 58,
+      "skills_at_a_glance": [
+        {
+          "area": "Configure and manage Microsoft 365 tenants and workloads",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Govern and secure Microsoft 365 tenants and workloads",
+          "weight": "40-45%"
+        },
+        {
+          "area": "Manage and secure AI services in Microsoft 365",
+          "weight": "35-40%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-650/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-650"
+    },
+    {
+      "code": "AI-500",
+      "title": "Designing and Implementing Multi-Agent AI Solutions",
+      "level": "expert",
+      "roles": [
         "ai-engineer"
       ],
       "products": [
@@ -1665,134 +1885,32 @@
       "retirement_date": "",
       "replacement": "",
       "replaces": "",
-      "beta_since": "2026-05",
-      "updated_at": "2026-05-05 15:02:00+00:00",
+      "beta_since": "",
+      "updated_at": "2026-07-16 18:23:00+00:00",
       "skills_date": null,
       "skill_areas": 4,
-      "total_objectives": 27,
+      "total_objectives": 55,
       "skills_at_a_glance": [
         {
-          "area": "Develop containerized solutions on Azure",
-          "weight": "20-25%"
-        },
-        {
-          "area": "Develop AI solutions by using Azure data management services",
-          "weight": "25-30%"
-        },
-        {
-          "area": "Connect to and consume Azure services",
-          "weight": "20-25%"
-        },
-        {
-          "area": "Secure, monitor, troubleshoot Azure solutions",
-          "weight": "20-25%"
-        }
-      ],
-      "has_changes": true,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-200/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-200"
-    },
-    {
-      "code": "AI-300",
-      "title": "Machine Learning Operations (MLOps) Engineer Associate",
-      "level": "intermediate",
-      "roles": [
-        "ai-engineer",
-        "devops-engineer"
-      ],
-      "products": [
-        "azure"
-      ],
-      "category": "AI",
-      "status": "beta",
-      "retirement_date": "",
-      "replacement": "",
-      "replaces": "DP-100",
-      "beta_since": "2026-03",
-      "updated_at": "2026-03-05 17:45:00+00:00",
-      "skills_date": null,
-      "skill_areas": 5,
-      "total_objectives": 58,
-      "skills_at_a_glance": [
-        {
-          "area": "Design and implement an MLOps infrastructure",
+          "area": "Architect multi-agent solutions",
           "weight": "15-20%"
         },
         {
-          "area": "Implement machine learning model lifecycle and operations",
-          "weight": "25-30%"
+          "area": "Develop multi-agent solutions in Azure",
+          "weight": "30-35%"
         },
         {
-          "area": "Design and implement a GenAIOps infrastructure",
+          "area": "Evaluate, optimize, and monitor multi-agent solutions",
           "weight": "20-25%"
         },
         {
-          "area": "Implement generative AI quality assurance and observability",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Optimize generative AI systems and model performance",
-          "weight": "10-15%"
-        }
-      ],
-      "has_changes": true,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-300/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-300"
-    },
-    {
-      "code": "AZ-802",
-      "title": "Windows Server Hybrid Administrator",
-      "level": "intermediate",
-      "roles": [
-        "administrator"
-      ],
-      "products": [
-        "azure",
-        "windows-server"
-      ],
-      "category": "Azure",
-      "status": "beta",
-      "retirement_date": "",
-      "replacement": "",
-      "replaces": "AZ-800 + AZ-801",
-      "beta_since": "2026-06",
-      "updated_at": "2026-07-06 21:43:00+00:00",
-      "skills_date": null,
-      "skill_areas": 7,
-      "total_objectives": 115,
-      "skills_at_a_glance": [
-        {
-          "area": "Deploy and manage AD DS",
+          "area": "Secure, govern, and deploy multi-agent solutions",
           "weight": "20-25%"
-        },
-        {
-          "area": "Manage Windows Server instances and workloads in a hybrid environment",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Manage virtual machines",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Implement and manage an on-premises and hybrid networking infrastructure",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Manage storage and file services",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Secure Windows Server infrastructure",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Monitor and troubleshoot Windows Server environments",
-          "weight": "15-20%"
         }
       ],
-      "has_changes": true,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-802/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-802"
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-500/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-500"
     },
     {
       "code": "DP-750",
@@ -1810,8 +1928,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "2026-03",
-      "updated_at": "2026-07-14 21:04:00+00:00",
-      "skills_date": "March 11, 2026",
+      "updated_at": "2026-09-18 21:09:00+00:00",
+      "skills_date": "October 19, 2026",
       "skill_areas": 4,
       "total_objectives": 77,
       "skills_at_a_glance": [
@@ -1853,8 +1971,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "2026-03",
-      "updated_at": "2026-08-20 22:22:00+00:00",
-      "skills_date": "March 12, 2026",
+      "updated_at": "2026-09-18 21:09:00+00:00",
+      "skills_date": "October 19, 2026",
       "skill_areas": 3,
       "total_objectives": 73,
       "skills_at_a_glance": [
@@ -1876,46 +1994,50 @@
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-800"
     },
     {
-      "code": "SC-730",
-      "title": "Cybersecurity Business Professional",
-      "level": "beginner",
+      "code": "AB-210",
+      "title": "Dynamics 365 Sales AI Consultant Associate",
+      "level": "intermediate",
       "roles": [
-        "administrator"
+        "functional-consultant"
       ],
       "products": [
-        "m365"
+        "dynamics-365"
       ],
-      "category": "Security",
+      "category": "Dynamics 365",
       "status": "beta",
       "retirement_date": "",
       "replacement": "",
       "replaces": "",
-      "beta_since": "2026-04",
-      "updated_at": "2026-07-09 18:04:00+00:00",
+      "beta_since": "",
+      "updated_at": "2026-10-14 20:34:00+00:00",
       "skills_date": null,
-      "skill_areas": 4,
-      "total_objectives": 36,
+      "skill_areas": 5,
+      "total_objectives": 46,
       "skills_at_a_glance": [
         {
-          "area": "Understand cybersecurity concepts",
+          "area": "Configure Dynamics 365 Sales core features for AI",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Optimize AI-driven sales",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Qualify and prioritize leads by using AI",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Develop deals by using intelligent opportunity research",
           "weight": "25-30%"
         },
         {
-          "area": "Understand cybersecurity risks and threats",
-          "weight": "30-35%"
-        },
-        {
-          "area": "Apply basic security policies to protect the organization",
-          "weight": "25-30%"
-        },
-        {
-          "area": "Report and respond to security incidents",
+          "area": "Extend and enhance Sales",
           "weight": "10-15%"
         }
       ],
-      "has_changes": true,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-730/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-730"
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-210/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-210"
     },
     {
       "code": "SC-500",
@@ -2396,6 +2518,48 @@
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-600/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-600"
+    },
+    {
+      "code": "SC-730",
+      "title": "Cybersecurity Business Professional",
+      "level": "beginner",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365"
+      ],
+      "category": "Security",
+      "status": "retired",
+      "retirement_date": "",
+      "replacement": "SC-900",
+      "replaces": "",
+      "beta_since": "2026-04",
+      "updated_at": "2026-07-09 18:04:00+00:00",
+      "skills_date": null,
+      "skill_areas": 4,
+      "total_objectives": 36,
+      "skills_at_a_glance": [
+        {
+          "area": "Understand cybersecurity concepts",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Understand cybersecurity risks and threats",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Apply basic security policies to protect the organization",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Report and respond to security incidents",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": true,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-730/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-730"
     }
   ]
 }

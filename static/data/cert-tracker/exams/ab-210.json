@@ -1,0 +1,125 @@
+{
+  "code": "AB-210",
+  "title": "Dynamics 365 Sales AI Consultant Associate",
+  "level": "intermediate",
+  "roles": [
+    "functional-consultant"
+  ],
+  "products": [
+    "dynamics-365"
+  ],
+  "category": "Dynamics 365",
+  "status": "beta",
+  "updated_at": "2026-10-14 20:34:00+00:00",
+  "skills_date": null,
+  "skills_at_a_glance": [
+    {
+      "area": "Configure Dynamics 365 Sales core features for AI",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Optimize AI-driven sales",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Qualify and prioritize leads by using AI",
+      "weight": "15-20%"
+    },
+    {
+      "area": "Develop deals by using intelligent opportunity research",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Extend and enhance Sales",
+      "weight": "10-15%"
+    }
+  ],
+  "skills_detailed": {
+    "Configure Dynamics 365 Sales core features for AI (15–20%)": {
+      "Configure Sales": [
+        "Evaluate prerequisites for deploying Sales",
+        "Configure mailboxes",
+        "Set up and configure business process flows",
+        "Configure the timeline",
+        "Evaluate options for importing and exporting data",
+        "Examine the Sales security model",
+        "Configure Microsoft 365 functionality, including Microsoft Teams, SharePoint, Outlook, and OneDrive"
+      ],
+      "Create and manage the product catalog": [
+        "Configure products and product families",
+        "Create and manage price lists, including currencies"
+      ]
+    },
+    "Optimize AI-driven sales (20–25%)": {
+      "Design an AI-first sales strategy": [
+        "Augment seller workflows by using Copilot and agents",
+        "Design the sales data model in Dataverse",
+        "Evaluate options for reporting and visualization",
+        "Differentiate features in Sales plans"
+      ],
+      "Prepare to deploy agents": [
+        "Configure prerequisites for deploying agents",
+        "Configure capacity, billing, and credits"
+      ],
+      "Configure AI-powered intelligence and insights features": [
+        "Configure the Sales accelerator",
+        "Configure work assignment and distribution",
+        "Set up conversational intelligence",
+        "Configure predictive scoring",
+        "Set up relationship intelligence",
+        "Configure Copilot features, including record summarization",
+        "Configure and use forecasts to help improve sales performance",
+        "Set up goals and goal metrics"
+      ]
+    },
+    "Qualify and prioritize leads by using AI (15–20%)": {
+      "Generate and nurture leads": [
+        "Configure the lead and opportunity experience",
+        "Fine-tune the predictive scoring model"
+      ],
+      "Automate lead qualification by using the Sales Qualification Agent": [
+        "Evaluate use cases for Research-only mode configuration versus Research and engage mode configuration",
+        "Configure the Sales Qualification Agent",
+        "Interpret the actions of the Sales Qualification Agent",
+        "Monitor the Sales Qualification Agent"
+      ]
+    },
+    "Develop deals by using intelligent opportunity research (25–30%)": {
+      "Optimize opportunity management": [
+        "Coordinate opportunity management with the Sales Close Agent",
+        "Add Opportunity Products, and configure pricing",
+        "Configure the opportunity pipeline view",
+        "Set up and configure the Sales Opportunity Agent"
+      ],
+      "Automate deal closing by using the Sales Close Agent": [
+        "Set up and configure the Sales Close Agent",
+        "Interpret the actions of the Sales Close Agent",
+        "Monitor the Sales Close Agent",
+        "Collaborate with the Sales Close Agent"
+      ],
+      "Gather intelligence on sales deals by using the Sales Research Agent": [
+        "Evaluate use cases for the Sales Research Agent",
+        "Configure the Sales Research Agent",
+        "Analyze sales performance by using research canvas"
+      ]
+    },
+    "Extend and enhance Sales (10–15%)": {
+      "Configure supporting apps and services": [
+        "Deploy and configure the Sales mobile app",
+        "Set up Teams calling",
+        "Configure an SMS channel"
+      ],
+      "Expand the sales footprint by using Microsoft Power Platform": [
+        "Create Power Automate flows",
+        "Embed Power Apps components and controls",
+        "Embed Power BI reports"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "related_exams": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-210/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-210",
+  "practice_assessment_url": ""
+}

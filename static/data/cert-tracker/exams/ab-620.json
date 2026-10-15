@@ -1,0 +1,105 @@
+{
+  "code": "AB-620",
+  "title": "Designing and Building Integrated AI Solutions in Copilot Studio",
+  "level": "intermediate",
+  "roles": [
+    "developer"
+  ],
+  "products": [
+    "power-platform"
+  ],
+  "category": "AI",
+  "status": "beta",
+  "updated_at": "2026-10-14 20:34:00+00:00",
+  "skills_date": null,
+  "skills_at_a_glance": [
+    {
+      "area": "Plan and configure agent solutions",
+      "weight": "30-35%"
+    },
+    {
+      "area": "Integrate and extend agents in Copilot Studio",
+      "weight": "40-45%"
+    },
+    {
+      "area": "Test and manage agents",
+      "weight": "20-25%"
+    }
+  ],
+  "skills_detailed": {
+    "Plan and configure agent solutions (30–35%)": {
+      "Plan an agent solution": [
+        "Plan integration with enterprise systems",
+        "Plan identity strategy",
+        "Plan channels and deployment",
+        "Plan responsible AI strategy",
+        "Evaluate security and governance considerations",
+        "Plan reuseable agent components",
+        "Design agents for internal or external audiences"
+      ],
+      "Create and monitor agent flows in Copilot Studio": [
+        "Create an agent flow",
+        "Create a human-in-the-loop agent flow",
+        "Configure actions and connectors",
+        "Monitor agent flows",
+        "Add input and output parameters",
+        "Implement error handling in agent flows"
+      ],
+      "Configure topics": [
+        "Add agent flows to a topic",
+        "Configure agent response formatting",
+        "Add tools to a topic",
+        "Configure advanced agent responses with custom prompts",
+        "Configure advanced agent responses with custom knowledge sources",
+        "Configure advanced agent responses with API and Send HTTP requests",
+        "Configure generative answers node",
+        "Configure adaptive cards",
+        "Manage variables"
+      ]
+    },
+    "Integrate and extend agents in Copilot Studio (40–45%)": {
+      "Connect to enterprise knowledge sources": [
+        "Connect to Copilot connectors",
+        "Connect to Microsoft Power Platform connectors",
+        "Connect to Azure AI Search"
+      ],
+      "Add tools to agents": [
+        "Configure and monitor computer use for an agent",
+        "Configure MCP tools",
+        "Add a tool by using an existing custom connector",
+        "Add REST APIs to an agent"
+      ],
+      "Configure multi-agent collaboration from Copilot Studio": [
+        "Design multi-agent solutions in Copilot Studio",
+        "Integrate a Foundry agent",
+        "Integrate an existing agent in Copilot Studio",
+        "Integrate a Fabric data agent",
+        "Create a multi-agent solution by using A2A protocol"
+      ],
+      "Integrate agents with Azure": [
+        "Configure generative answers by using Azure AI Search with Foundry",
+        "Configure custom prompts to use the Foundry model catalog",
+        "Monitor agents by using Application Insights"
+      ]
+    },
+    "Test and manage agents (20–25%)": {
+      "Evaluate agent performance": [
+        "Create a test set",
+        "Choose an evaluation method",
+        "Review test results"
+      ],
+      "Implement application lifecycle management (ALM) for agents in Copilot Studio": [
+        "Create a solution",
+        "Add existing agents to a solution",
+        "Create and use environment variables",
+        "Implement and extend Microsoft Power Platform Pipelines"
+      ]
+    }
+  },
+  "change_log_official": [],
+  "change_history": [],
+  "related_exams": [],
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-620/",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-620",
+  "practice_assessment_url": ""
+}

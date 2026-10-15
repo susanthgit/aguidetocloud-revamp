@@ -10,8 +10,8 @@
   ],
   "category": "Dynamics 365",
   "status": "active",
-  "updated_at": "2025-12-05 03:46:00+00:00",
-  "skills_date": "June 20, 2025",
+  "updated_at": "2026-09-21 20:22:00+00:00",
+  "skills_date": "October 21, 2026",
   "skills_at_a_glance": [
     {
       "area": "Implement product information management",
@@ -65,12 +65,12 @@
     },
     "Implement inventory and asset management (20–25%)": {
       "Manage and process inventory activities": [
-        "Create and process journals, including BOMs, item arrival, output order, transfer, movement, inventory adjustment, and counting journals",
+        "Create and process journals, including BOM, item arrival, transfer, movement, inventory adjustment, and counting journals",
         "Create and process transfer orders",
         "Configure and manage the inventory closing and adjustment process",
         "Apply and remove inventory blocking manually",
         "Create batch disposition codes",
-        "Configure and run inventory reports including ABC classification"
+        "Configure and run inventory reports, including ABC classification"
       ],
       "Manage quality": [
         "Configure and process nonconformances",
@@ -111,9 +111,9 @@
       ],
       "Implement landed cost": [
         "Configure landed cost parameters and voyage statuses",
-        "Create and process voyage with purchase orders or transfer orders",
+        "Create and process voyages with purchase orders or transfer orders",
         "Configure cost estimations, tracking control center, over/under tolerance setup, and journey templates",
-        "Configure cost type codes and auto-costs",
+        "Configure cost type codes and auto costs",
         "Track inbound voyages and shipping container journeys"
       ],
       "Implement common sales and marketing features": [
@@ -123,7 +123,7 @@
         "Configure sales groups and commissions",
         "Configure and process intercompany orders",
         "Configure and process customer rebates",
-        "Configure and manage delivery schedule, available-to-promise (ATP), and capable-to-promise (CTP)",
+        "Configure and manage delivery schedules, available-to-promise (ATP), and capable-to-promise (CTP)",
         "Configure and use product bundles"
       ]
     },
@@ -141,7 +141,7 @@
       ],
       "Perform warehouse management processes": [
         "Configure and process replenishment",
-        "Manage inbound and outbound load planning workbench",
+        "Manage inbound and outbound load planning workbenches",
         "Configure and process inventory movements via warehouse work",
         "Create cycle counting work and perform cycle counting",
         "Process inbound and outbound orders by using the Warehouse Management mobile app",
@@ -173,16 +173,106 @@
         "Configure period templates"
       ],
       "Manage master plans": [
-        "Run master planning and analyze the results",
+        "Run Planning Optimization and analyze the results",
         "Evaluate and process planned purchase and transfer orders",
-        "Set up and use the Supply Schedule form",
+        "Set up and use the Supply schedule page",
         "Configure safety margins",
         "Configure and process safety stock journals"
       ]
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "MB-330",
+      "title": "Microsoft Dynamics 365 Supply Chain Management Functional Consultant",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "June 20, 2025",
+      "current_skills_date": "October 21, 2026",
+      "summary": "8 added, 8 removed",
+      "added_count": 8,
+      "removed_count": 8,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Implement and manage supply chain processes (15–20%) > Implement common sales and marketing features",
+          "items": [
+            "Configure and manage delivery schedules, available-to-promise (ATP), and capable-to-promise (CTP)"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement and manage supply chain processes (15–20%) > Implement common sales and marketing features",
+          "items": [
+            "Configure and manage delivery schedule, available-to-promise (ATP), and capable-to-promise (CTP)"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement and manage supply chain processes (15–20%) > Implement landed cost",
+          "items": [
+            "Configure cost type codes and auto costs",
+            "Create and process voyages with purchase orders or transfer orders"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement and manage supply chain processes (15–20%) > Implement landed cost",
+          "items": [
+            "Configure cost type codes and auto-costs",
+            "Create and process voyage with purchase orders or transfer orders"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement inventory and asset management (20–25%) > Manage and process inventory activities",
+          "items": [
+            "Configure and run inventory reports, including ABC classification",
+            "Create and process journals, including BOM, item arrival, transfer, movement, inventory adjustment, and counting journals"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement inventory and asset management (20–25%) > Manage and process inventory activities",
+          "items": [
+            "Configure and run inventory reports including ABC classification",
+            "Create and process journals, including BOMs, item arrival, output order, transfer, movement, inventory adjustment, and counting journals"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement master planning (10–15%) > Manage master plans",
+          "items": [
+            "Run Planning Optimization and analyze the results",
+            "Set up and use the Supply schedule page"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement master planning (10–15%) > Manage master plans",
+          "items": [
+            "Run master planning and analyze the results",
+            "Set up and use the Supply Schedule form"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement warehouse management and transportation management (20–25%) > Perform warehouse management processes",
+          "items": [
+            "Manage inbound and outbound load planning workbenches"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement warehouse management and transportation management (20–25%) > Perform warehouse management processes",
+          "items": [
+            "Manage inbound and outbound load planning workbench"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "MB-310",
@@ -207,6 +297,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-330/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-330",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-330",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-330/practice/assessment?assessment-type=practice"
 }

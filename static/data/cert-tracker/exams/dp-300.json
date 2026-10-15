@@ -10,8 +10,8 @@
   ],
   "category": "Data",
   "status": "active",
-  "updated_at": "2026-03-26 06:04:00+00:00",
-  "skills_date": "April 24, 2026",
+  "updated_at": "2026-09-25 22:18:00+00:00",
+  "skills_date": "October 27, 2026",
   "skills_at_a_glance": [
     {
       "area": "Plan and implement data platform resources",
@@ -81,7 +81,7 @@
         "Implement object-level encryption",
         "Configure server- and database-level firewall rules",
         "Implement Always Encrypted",
-        "Implement Always Encrypted with VBS enclaves",
+        "Implement Always Encrypted with secure enclaves",
         "Configure private links and service endpoints"
       ],
       "Implement compliance controls for sensitive data": [
@@ -171,7 +171,35 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "DP-300",
+      "title": "Administering Microsoft Azure SQL Solutions",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "April 24, 2026",
+      "current_skills_date": "October 27, 2026",
+      "summary": "1 added, 1 removed",
+      "added_count": 1,
+      "removed_count": 1,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Implement a secure environment (20–25%) > Implement security for data at rest and data in transit",
+          "items": [
+            "Implement Always Encrypted with secure enclaves"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement a secure environment (20–25%) > Implement security for data at rest and data in transit",
+          "items": [
+            "Implement Always Encrypted with VBS enclaves"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "DP-900",
@@ -196,6 +224,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-300/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-300",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-300/practice/assessment?assessment-type=practice"
 }

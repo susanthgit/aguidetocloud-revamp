@@ -10,7 +10,7 @@
     "azure"
   ],
   "category": "AI",
-  "status": "beta",
+  "status": "active",
   "updated_at": "2026-05-05 15:02:00+00:00",
   "skills_date": null,
   "skills_at_a_glance": [
@@ -209,18 +209,18 @@
       "code": "AI-103",
       "title": "Azure AI App and Agent Developer Associate",
       "level": "intermediate",
-      "status": "beta",
+      "status": "active",
       "category": "AI"
     },
     {
       "code": "AI-300",
       "title": "Machine Learning Operations (MLOps) Engineer Associate",
       "level": "intermediate",
-      "status": "beta",
+      "status": "active",
       "category": "AI"
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-200/",
   "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-200",
-  "practice_assessment_url": ""
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-200/practice/assessment?assessment-type=practice"
 }

@@ -12,8 +12,8 @@
   ],
   "category": "Security",
   "status": "active",
-  "updated_at": "2026-06-29 23:01:00+00:00",
-  "skills_date": "July 28, 2026",
+  "updated_at": "2026-09-21 20:22:00+00:00",
+  "skills_date": "October 21, 2026",
   "skills_at_a_glance": [
     {
       "area": "Design solutions that align with security best practices and priorities",
@@ -59,7 +59,7 @@
         "Design a solution for detection and response that includes extended detection and response (XDR) and security information and event management (SIEM)",
         "Design a solution for centralized logging and auditing, including Microsoft Purview Audit",
         "Design monitoring to support hybrid and multicloud environments",
-        "Design a solution for security orchestration and automated response (SOAR), including Microsoft Sentinel and Microsoft Defender XDR",
+        "Design a solution for security orchestration, automation, and response (SOAR), including Microsoft Sentinel and Microsoft Defender XDR",
         "Design and evaluate security workflows, including incident response, threat hunting, and incident management",
         "Design and evaluate threat detection coverage by using MITRE ATT&CK matrices, including Enterprise, Mobile, and industrial control systems (ICS)"
       ],
@@ -128,7 +128,7 @@
         "Evaluate solutions that include Microsoft Defender for Office 365 and Microsoft Defender for Cloud Apps",
         "Evaluate device management solutions that include Microsoft Intune",
         "Evaluate solutions for securing data in Microsoft 365 by using Microsoft Purview",
-        "Evaluate data security and compliance controls in Microsoft Copilot for Microsoft 365 services"
+        "Evaluate data security and compliance controls in Microsoft 365 Copilot"
       ],
       "Design solutions for securing applications": [
         "Evaluate the security posture of existing application portfolios",
@@ -152,7 +152,137 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "SC-100",
+      "title": "Microsoft Cybersecurity Architect",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "July 28, 2026",
+      "current_skills_date": "October 21, 2026",
+      "summary": "2 added, 2 removed",
+      "added_count": 2,
+      "removed_count": 2,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Design security operations, identity, and compliance capabilities (25–30%) > Design solutions for security operations",
+          "items": [
+            "Design a solution for security orchestration, automation, and response (SOAR), including Microsoft Sentinel and Microsoft Defender XDR"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design security operations, identity, and compliance capabilities (25–30%) > Design solutions for security operations",
+          "items": [
+            "Design a solution for security orchestration and automated response (SOAR), including Microsoft Sentinel and Microsoft Defender XDR"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Design security solutions for applications and data (20–25%) > Evaluate solutions for securing Microsoft 365",
+          "items": [
+            "Evaluate data security and compliance controls in Microsoft 365 Copilot"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design security solutions for applications and data (20–25%) > Evaluate solutions for securing Microsoft 365",
+          "items": [
+            "Evaluate data security and compliance controls in Microsoft Copilot for Microsoft 365 services"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SC-100",
+      "title": "Microsoft Cybersecurity Architect",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "April 27, 2026",
+      "current_skills_date": "July 28, 2026",
+      "summary": "12 added, 9 removed",
+      "added_count": 12,
+      "removed_count": 9,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Design security operations, identity, and compliance capabilities (25–30%) > Design solutions for identity and access management",
+          "items": [
+            "Design a solution for agent identities using Microsoft Entra Agent ID and conditional access policies"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design security operations, identity, and compliance capabilities (25–30%) > Design solutions for regulatory compliance",
+          "items": [
+            "Design a solution to address privacy requirements, including Microsoft Priva"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Design security solutions for applications and data (20–25%) > Design solutions for securing an organization's data",
+          "items": [
+            "Design security for data used in AI workloads"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Design security solutions for infrastructure (25–30%) > Design solutions for security posture management in hybrid and multicloud environments",
+          "items": [
+            "Evaluate security posture by using Microsoft Defender for Cloud, including the Microsoft Cloud Security Benchmark (MCSB)"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design security solutions for infrastructure (25–30%) > Design solutions for security posture management in hybrid and multicloud environments",
+          "items": [
+            "Evaluate security posture by using Microsoft Defender for Cloud, including the Microsoft cloud security benchmark (MCSB)"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design solutions that align with security best practices and priorities (20–25%) > Design solutions that align with the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework",
+          "bullets": [
+            "Design a DevSecOps process that aligns with best practices in the Microsoft Cloud Adoption Framework for Azure (CAF)",
+            "Design a new or evaluate an existing strategy for security and governance based on the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework (WAF)",
+            "Design a strategy for secure AI adoption",
+            "Design solutions for implementing and governing security by using Azure landing zones",
+            "Recommend solutions for security and governance based on the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design solutions that align with security best practices and priorities (20–25%) > Design solutions that align with the Microsoft Cloud Adoption Framework for Azure and the Microsoft Azure Well-Architected Framework",
+          "bullets": [
+            "Design a DevSecOps process that aligns with best practices in the Microsoft Cloud Adoption Framework for Azure (CAF)",
+            "Design a new or evaluate an existing strategy for security and governance based on the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework (WAF)",
+            "Design solutions for implementing and governing security by using Azure landing zones",
+            "Recommend solutions for security and governance based on the Microsoft Cloud Adoption Framework for Azure (CAF) and the Microsoft Azure Well-Architected Framework"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Design solutions that align with security best practices and priorities (20–25%) > Design solutions that align with the Microsoft Cybersecurity Reference Architectures (MCRA) and Microsoft Cloud Security Benchmark (MCSB)",
+          "bullets": [
+            "Design AI solutions that align to the Microsoft Cloud Security Benchmark.",
+            "Design solutions that align with best practices for cybersecurity capabilities and controls",
+            "Design solutions that align with best practices for protecting against insider, external, and supply chain attacks",
+            "Design solutions that align with the Zero Trust adoption framework"
+          ]
+        },
+        {
+          "type": "area_removed",
+          "area": "Design solutions that align with security best practices and priorities (20–25%) > Design solutions that align with the Microsoft Cybersecurity Reference Architectures (MCRA) and Microsoft cloud security benchmark (MCSB)",
+          "bullets": [
+            "Design solutions that align with best practices for Zero Trust security, including A Rapid modernization plan for Zero Trust (RaMP)",
+            "Design solutions that align with best practices for cybersecurity capabilities and controls",
+            "Design solutions that align with best practices for protecting against insider, external, and supply chain attacks"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "SC-300",
@@ -184,6 +314,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-100/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-100",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-100",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-100/practice/assessment?assessment-type=practice"
 }

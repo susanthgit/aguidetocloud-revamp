@@ -11,8 +11,8 @@
   ],
   "category": "Security",
   "status": "active",
-  "updated_at": "2026-03-27 23:35:00+00:00",
-  "skills_date": "April 27, 2026",
+  "updated_at": "2026-09-28 23:35:00+00:00",
+  "skills_date": "October 28, 2026",
   "skills_at_a_glance": [
     {
       "area": "Implement and manage user identities",
@@ -71,7 +71,7 @@
     "Implement authentication and access management (20–25%)": {
       "Plan, implement, and manage Microsoft Entra user authentication": [
         "Plan for authentication",
-        "Implement and manage authentication methods, including certificate-based authentication, Temporary Access Pass, OAuth 2.0 tokens, Microsoft Authenticator, and passkeys (FIDO2)",
+        "Implement and manage authentication methods, including certificate-based authentication, Temporary Access Pass, Microsoft Authenticator, and passkeys (FIDO2)",
         "Implement and manage tenant-wide multifactor authentication (MFA) settings",
         "Configure and deploy self-service password reset (SSPR)",
         "Implement and manage Windows Hello for Business",
@@ -100,9 +100,9 @@
       ],
       "Implement Global Secure Access": [
         "Deploy Global Secure Access clients",
-        "Deploy and manage Private Access",
-        "Deploy and manage Internet Access",
-        "Deploy and manage Internet Access for Microsoft 365"
+        "Deploy and manage Microsoft Entra Private Access",
+        "Deploy and manage Microsoft Entra Internet Access",
+        "Deploy and manage the Microsoft traffic profile for Microsoft 365"
       ]
     },
     "Plan and implement workload identities (20–25%)": {
@@ -160,7 +160,7 @@
         "Plan and configure PIM for Groups",
         "Manage the PIM request and approval process",
         "Analyze PIM audit history and reports",
-        "Create and manage break-glass accounts"
+        "Create and manage emergency access accounts"
       ],
       "Monitor identity activity by using logs, workbooks, and reports": [
         "Review and analyze sign-in, audit, and provisioning logs by using the Microsoft Entra admin center",
@@ -172,7 +172,67 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "SC-300",
+      "title": "Microsoft Identity and Access Administrator",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "April 27, 2026",
+      "current_skills_date": "October 28, 2026",
+      "summary": "5 added, 5 removed",
+      "added_count": 5,
+      "removed_count": 5,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Implement authentication and access management (20–25%) > Implement Global Secure Access",
+          "items": [
+            "Deploy and manage Microsoft Entra Internet Access",
+            "Deploy and manage Microsoft Entra Private Access",
+            "Deploy and manage the Microsoft traffic profile for Microsoft 365"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement authentication and access management (20–25%) > Implement Global Secure Access",
+          "items": [
+            "Deploy and manage Internet Access",
+            "Deploy and manage Internet Access for Microsoft 365",
+            "Deploy and manage Private Access"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement authentication and access management (20–25%) > Plan, implement, and manage Microsoft Entra user authentication",
+          "items": [
+            "Implement and manage authentication methods, including certificate-based authentication, Temporary Access Pass, Microsoft Authenticator, and passkeys (FIDO2)"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement authentication and access management (20–25%) > Plan, implement, and manage Microsoft Entra user authentication",
+          "items": [
+            "Implement and manage authentication methods, including certificate-based authentication, Temporary Access Pass, OAuth 2.0 tokens, Microsoft Authenticator, and passkeys (FIDO2)"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Plan and automate identity governance (20–25%) > Plan and implement privileged access",
+          "items": [
+            "Create and manage emergency access accounts"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Plan and automate identity governance (20–25%) > Plan and implement privileged access",
+          "items": [
+            "Create and manage break-glass accounts"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "SC-200",
@@ -197,6 +257,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-300",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-300",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/practice/assessment?assessment-type=practice"
 }

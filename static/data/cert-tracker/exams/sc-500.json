@@ -11,12 +11,343 @@
   ],
   "category": "Security",
   "status": "beta",
-  "updated_at": "",
+  "updated_at": "2026-07-31 19:59:00+00:00",
   "skills_date": null,
-  "skills_at_a_glance": [],
-  "skills_detailed": {},
+  "skills_at_a_glance": [
+    {
+      "area": "Manage identity, access, and governance",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Secure storage, databases, and networking",
+      "weight": "25-30%"
+    },
+    {
+      "area": "Secure compute",
+      "weight": "20-25%"
+    },
+    {
+      "area": "Manage and monitor security posture",
+      "weight": "20-25%"
+    }
+  ],
+  "skills_detailed": {
+    "Manage identity, access, and governance (20–25%)": {
+      "Secure access to resources by using Microsoft Entra ID": [
+        "Implement and configure Privileged Identity Management (PIM)",
+        "Implement conditional access policies",
+        "Implement and configure authentication methods, including multifactor authentication (MFA) and passwordless",
+        "Implement and configure identity for applications, including enterprise applications and app registrations",
+        "Manage OAuth permission grants and consent settings",
+        "Implement and configure managed identities for Azure resources"
+      ],
+      "Secure secrets and keys by using Azure Key Vault": [
+        "Deploy Key Vault",
+        "Configure Key Vault settings",
+        "Configure access to Key Vault",
+        "Configure firewall settings on Key Vault",
+        "Manage keys, secrets, and certificates",
+        "Scan for secrets by using Defender Cloud Security Posture Management (Defender CSPM)",
+        "Implement Defender for Key Vault"
+      ],
+      "Implement governance to enforce security and regulatory compliance": [
+        "Implement and configure security controls by using Azure Policy, including built-in and custom policy definitions",
+        "Evaluate regulatory compliance by using Microsoft Defender for Cloud",
+        "Implement and configure security controls in Defender for Cloud, including security standards and recommendations",
+        "Implement resource locks",
+        "Manage Azure built-in role assignments",
+        "Manage custom roles, including Azure roles and Microsoft Entra roles",
+        "Evaluate and remediate overprivileged access assignments by using Azure role-based access control (RBAC)",
+        "Configure security controls for backup protection by using Azure Backup security features",
+        "Implement and configure security controls by using infrastructure as code"
+      ]
+    },
+    "Secure storage, databases, and networking (25–30%)": {
+      "Implement security for storage accounts": [
+        "Implement and configure security for storage accounts",
+        "Configure Azure Storage firewall rules",
+        "Implement Defender for Storage threat protection configurations",
+        "Manage access to storage, including access policies"
+      ],
+      "Implement security for databases": [
+        "Implement platform-level security configurations in Azure SQL",
+        "Configure database auditing for Azure SQL Database and Azure SQL Managed Instance",
+        "Configure Defender for Databases protection across Azure database services"
+      ],
+      "Implement security for Azure network services": [
+        "Implement and manage network security groups (NSGs) and application security groups (ASGs)",
+        "Implement and configure network access policies by using Azure Virtual Network Manager",
+        "Configure security for an Azure Virtual WAN",
+        "Implement and configure security for virtual private network (VPN) connections",
+        "Implement and configure Microsoft Entra Private Access",
+        "Configure Azure private endpoints to secure access to Azure platform as a service (PaaS) resources",
+        "Configure Azure Private Link services to secure access to network resources",
+        "Implement and configure Azure Firewall",
+        "Evaluate effective security rules by using Azure Network Watcher diagnostics"
+      ]
+    },
+    "Secure compute (20–25%)": {
+      "Implement security for AI": [
+        "Identify overexposure of data in SharePoint",
+        "Identify risks related to Microsoft Copilot and AI apps by using Microsoft Purview Data Security Posture Management (DSPM)",
+        "Enable and configure real-time protection for Microsoft Copilot Studio agents",
+        "Implement conditional access for Microsoft Entra Agent ID",
+        "Analyze blast radius for security risks related to Entra Agent ID by using Defender XDR",
+        "Manage Entra Agent ID access",
+        "Configure and deploy AI Gateway in Azure API Management for Microsoft Foundry",
+        "Enable Defender for AI Service in Cloud Workload Protection in Defender for Cloud",
+        "Configure guardrails for agent security in Foundry",
+        "Monitor AI security by using the Data and AI security dashboard in Defender for Cloud",
+        "Manage agents in Microsoft 365 admin center"
+      ],
+      "Implement security for servers and virtual machines (VMs)": [
+        "Implement and configure disk encryption",
+        "Plan and implement Azure Bastion",
+        "Enable and enforce use of just-in-time (JIT) VM access",
+        "Extend security controls to hybrid and multicloud servers by using Azure Arc",
+        "Onboard servers to Defender for Servers in Defender for Cloud, including hybrid and multicloud scenarios",
+        "Configure Defender for Servers settings, including vulnerability scanning, and endpoint detection and response (EDR)",
+        "Implement and manage agentless scanning for VMs in Defender for Servers",
+        "Configure security features on a VM, including secure boot, virtual Trusted Platform Module (vTPM), integrity monitoring, and security type",
+        "Enforce security configuration of Azure-managed servers by using Azure Machine Configuration"
+      ],
+      "Implement security for application platform services": [
+        "Detect misconfigurations and runtime risks in container workloads by using Defender for Containers",
+        "Implement and configure security controls for Azure Kubernetes Service (AKS)",
+        "Implement and configure security controls for Azure Container Registry",
+        "Implement and configure security controls for Azure Container Instances and Azure Container Apps",
+        "Implement and configure security controls for Azure Functions, including authentication and network access",
+        "Implement and configure security controls for Azure Logic Apps",
+        "Implement and configure security controls for Azure App Service",
+        "Implement and configure Azure Web Application Firewall",
+        "Implement security policies for back-end API protection by using API Management"
+      ]
+    },
+    "Manage and monitor security posture (20–25%)": {
+      "Manage security posture by using Defender for Cloud": [
+        "Identify security risks by using Defender CSPM",
+        "Evaluate compliance against security frameworks by using Defender for Cloud",
+        "Enable and configure Defender for Cloud workload protection plans",
+        "Connect hybrid cloud and multicloud environments to Defender for Cloud, including Amazon Web Services (AWS) and Google Cloud Platform (GCP)",
+        "Configure Microsoft Defender Vulnerability Management settings for Azure VMs",
+        "Discover unprotected assets and vulnerabilities by using Microsoft Defender External Attack Surface Management (EASM)"
+      ],
+      "Implement activity and event collection in Microsoft Sentinel": [
+        "Create and connect workspaces in Microsoft Sentinel",
+        "Assign roles in Microsoft Sentinel",
+        "Implement and use content hub solutions",
+        "Configure and use Microsoft data connectors for Azure resources",
+        "Implement and configure syslog and Common Event Format (CEF) event collections",
+        "Implement and configure collection of Windows Security events by using data collection rules, including Windows Event Forwarding (WEF)",
+        "Create custom log tables in the workspace to store ingested data",
+        "Implement automation rules and playbooks in Microsoft Sentinel",
+        "Implement data retention in Microsoft Sentinel data stores",
+        "Query Microsoft Purview Audit in Defender XDR"
+      ],
+      "Implement Microsoft Security Copilot": [
+        "Configure workspaces for Security Copilot",
+        "Manage permissions and roles in Security Copilot",
+        "Enable and configure plugins",
+        "Enable and configure Microsoft agents and Security Store agents"
+      ]
+    }
+  },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "SC-500",
+      "title": "Cloud and AI Security Engineer Associate",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": null,
+      "current_skills_date": null,
+      "summary": "87 added, 0 removed",
+      "added_count": 87,
+      "removed_count": 0,
+      "weight_changes": [
+        {
+          "area": "Secure compute",
+          "previous_weight": null,
+          "current_weight": "20-25%"
+        },
+        {
+          "area": "Secure storage, databases, and networking",
+          "previous_weight": null,
+          "current_weight": "25-30%"
+        },
+        {
+          "area": "Manage identity, access, and governance",
+          "previous_weight": null,
+          "current_weight": "20-25%"
+        },
+        {
+          "area": "Manage and monitor security posture",
+          "previous_weight": null,
+          "current_weight": "20-25%"
+        }
+      ],
+      "changes": [
+        {
+          "type": "area_added",
+          "area": "Manage and monitor security posture (20–25%) > Implement Microsoft Security Copilot",
+          "bullets": [
+            "Configure workspaces for Security Copilot",
+            "Enable and configure Microsoft agents and Security Store agents",
+            "Enable and configure plugins",
+            "Manage permissions and roles in Security Copilot"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Manage and monitor security posture (20–25%) > Implement activity and event collection in Microsoft Sentinel",
+          "bullets": [
+            "Assign roles in Microsoft Sentinel",
+            "Configure and use Microsoft data connectors for Azure resources",
+            "Create and connect workspaces in Microsoft Sentinel",
+            "Create custom log tables in the workspace to store ingested data",
+            "Implement and configure collection of Windows Security events by using data collection rules, including Windows Event Forwarding (WEF)",
+            "Implement and configure syslog and Common Event Format (CEF) event collections",
+            "Implement and use content hub solutions",
+            "Implement automation rules and playbooks in Microsoft Sentinel",
+            "Implement data retention in Microsoft Sentinel data stores",
+            "Query Microsoft Purview Audit in Defender XDR"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Manage and monitor security posture (20–25%) > Manage security posture by using Defender for Cloud",
+          "bullets": [
+            "Configure Microsoft Defender Vulnerability Management settings for Azure VMs",
+            "Connect hybrid cloud and multicloud environments to Defender for Cloud, including Amazon Web Services (AWS) and Google Cloud Platform (GCP)",
+            "Discover unprotected assets and vulnerabilities by using Microsoft Defender External Attack Surface Management (EASM)",
+            "Enable and configure Defender for Cloud workload protection plans",
+            "Evaluate compliance against security frameworks by using Defender for Cloud",
+            "Identify security risks by using Defender CSPM"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Manage identity, access, and governance (20–25%) > Implement governance to enforce security and regulatory compliance",
+          "bullets": [
+            "Configure security controls for backup protection by using Azure Backup security features",
+            "Evaluate and remediate overprivileged access assignments by using Azure role-based access control (RBAC)",
+            "Evaluate regulatory compliance by using Microsoft Defender for Cloud",
+            "Implement and configure security controls by using Azure Policy, including built-in and custom policy definitions",
+            "Implement and configure security controls by using infrastructure as code",
+            "Implement and configure security controls in Defender for Cloud, including security standards and recommendations",
+            "Implement resource locks",
+            "Manage Azure built-in role assignments",
+            "Manage custom roles, including Azure roles and Microsoft Entra roles"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Manage identity, access, and governance (20–25%) > Secure access to resources by using Microsoft Entra ID",
+          "bullets": [
+            "Implement and configure Privileged Identity Management (PIM)",
+            "Implement and configure authentication methods, including multifactor authentication (MFA) and passwordless",
+            "Implement and configure identity for applications, including enterprise applications and app registrations",
+            "Implement and configure managed identities for Azure resources",
+            "Implement conditional access policies",
+            "Manage OAuth permission grants and consent settings"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Manage identity, access, and governance (20–25%) > Secure secrets and keys by using Azure Key Vault",
+          "bullets": [
+            "Configure Key Vault settings",
+            "Configure access to Key Vault",
+            "Configure firewall settings on Key Vault",
+            "Deploy Key Vault",
+            "Implement Defender for Key Vault",
+            "Manage keys, secrets, and certificates",
+            "Scan for secrets by using Defender Cloud Security Posture Management (Defender CSPM)"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure compute (20–25%) > Implement security for AI",
+          "bullets": [
+            "Analyze blast radius for security risks related to Entra Agent ID by using Defender XDR",
+            "Configure and deploy AI Gateway in Azure API Management for Microsoft Foundry",
+            "Configure guardrails for agent security in Foundry",
+            "Enable Defender for AI Service in Cloud Workload Protection in Defender for Cloud",
+            "Enable and configure real-time protection for Microsoft Copilot Studio agents",
+            "Identify overexposure of data in SharePoint",
+            "Identify risks related to Microsoft Copilot and AI apps by using Microsoft Purview Data Security Posture Management (DSPM)",
+            "Implement conditional access for Microsoft Entra Agent ID",
+            "Manage Entra Agent ID access",
+            "Manage agents in Microsoft 365 admin center",
+            "Monitor AI security by using the Data and AI security dashboard in Defender for Cloud"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure compute (20–25%) > Implement security for application platform services",
+          "bullets": [
+            "Detect misconfigurations and runtime risks in container workloads by using Defender for Containers",
+            "Implement and configure Azure Web Application Firewall",
+            "Implement and configure security controls for Azure App Service",
+            "Implement and configure security controls for Azure Container Instances and Azure Container Apps",
+            "Implement and configure security controls for Azure Container Registry",
+            "Implement and configure security controls for Azure Functions, including authentication and network access",
+            "Implement and configure security controls for Azure Kubernetes Service (AKS)",
+            "Implement and configure security controls for Azure Logic Apps",
+            "Implement security policies for back-end API protection by using API Management"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure compute (20–25%) > Implement security for servers and virtual machines (VMs)",
+          "bullets": [
+            "Configure Defender for Servers settings, including vulnerability scanning, and endpoint detection and response (EDR)",
+            "Configure security features on a VM, including secure boot, virtual Trusted Platform Module (vTPM), integrity monitoring, and security type",
+            "Enable and enforce use of just-in-time (JIT) VM access",
+            "Enforce security configuration of Azure-managed servers by using Azure Machine Configuration",
+            "Extend security controls to hybrid and multicloud servers by using Azure Arc",
+            "Implement and configure disk encryption",
+            "Implement and manage agentless scanning for VMs in Defender for Servers",
+            "Onboard servers to Defender for Servers in Defender for Cloud, including hybrid and multicloud scenarios",
+            "Plan and implement Azure Bastion"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure storage, databases, and networking (25–30%) > Implement security for Azure network services",
+          "bullets": [
+            "Configure Azure Private Link services to secure access to network resources",
+            "Configure Azure private endpoints to secure access to Azure platform as a service (PaaS) resources",
+            "Configure security for an Azure Virtual WAN",
+            "Evaluate effective security rules by using Azure Network Watcher diagnostics",
+            "Implement and configure Azure Firewall",
+            "Implement and configure Microsoft Entra Private Access",
+            "Implement and configure network access policies by using Azure Virtual Network Manager",
+            "Implement and configure security for virtual private network (VPN) connections",
+            "Implement and manage network security groups (NSGs) and application security groups (ASGs)"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure storage, databases, and networking (25–30%) > Implement security for databases",
+          "bullets": [
+            "Configure Defender for Databases protection across Azure database services",
+            "Configure database auditing for Azure SQL Database and Azure SQL Managed Instance",
+            "Implement platform-level security configurations in Azure SQL"
+          ]
+        },
+        {
+          "type": "area_added",
+          "area": "Secure storage, databases, and networking (25–30%) > Implement security for storage accounts",
+          "bullets": [
+            "Configure Azure Storage firewall rules",
+            "Implement Defender for Storage threat protection configurations",
+            "Implement and configure security for storage accounts",
+            "Manage access to storage, including access policies"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "SC-200",
@@ -41,6 +372,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-500/",
-  "study_guide_url": "",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-500",
   "practice_assessment_url": ""
 }

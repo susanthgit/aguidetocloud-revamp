@@ -144,7 +144,95 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "AZ-140",
+      "title": "Configuring and Operating Microsoft Azure Virtual Desktop",
+      "detected_at": "2026-09-14T00:10:05Z",
+      "previous_skills_date": "April 17, 2026",
+      "current_skills_date": "July 20, 2026",
+      "summary": "7 added, 7 removed",
+      "added_count": 7,
+      "removed_count": 7,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Plan and implement identity and security (15–20%) > Plan and implement identity integration",
+          "items": [
+            "Configure Microsoft Entra single sign-on"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Plan and implement identity and security (15–20%) > Plan and implement identity integration",
+          "items": [
+            "Configure single sign-on"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Plan and implement identity and security (15–20%) > Plan and implement security",
+          "items": [
+            "Plan and implement Windows threat protection features on Azure Virtual Desktop session hosts, including App Control for Business and Controlled Folder Access"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Plan and implement identity and security (15–20%) > Plan and implement security",
+          "items": [
+            "Plan and implement Windows threat protection features on Azure Virtual Desktop session hosts, including Windows Defender Application Control and Controlled Folder Access"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Plan and implement user environments and apps (20–25%) > Install and configure apps on a session host",
+          "items": [
+            "Configure dynamic application delivery by using App attach",
+            "Create an application package for App attach",
+            "Implement and manage Microsoft 365 Apps on Azure Virtual Desktop session hosts"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Plan and implement user environments and apps (20–25%) > Install and configure apps on a session host",
+          "items": [
+            "Configure dynamic application delivery by using app attach",
+            "Create an application package for app attach",
+            "Implement and manage Microsoft 365 apps on Azure Virtual Desktop session hosts"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Plan and implement user environments and apps (20–25%) > Plan and implement FSLogix",
+          "items": [
+            "Configure FSLogix ODFC containers"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Plan and implement user environments and apps (20–25%) > Plan and implement FSLogix",
+          "items": [
+            "Configure FSLogix Office Profile Containers (ODFC)"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Plan and implement user environments and apps (20–25%) > Plan and implement user experience and client settings",
+          "items": [
+            "Implement the Start VM on Connect feature"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Plan and implement user environments and apps (20–25%) > Plan and implement user experience and client settings",
+          "items": [
+            "Implement the Start Virtual Machine on Connect feature"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "AZ-104",
@@ -162,6 +250,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-140/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-140",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-140",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-140/practice/assessment?assessment-type=practice"
 }

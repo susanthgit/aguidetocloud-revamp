@@ -11,8 +11,8 @@
   ],
   "category": "Microsoft 365",
   "status": "active",
-  "updated_at": "2026-03-27 23:35:00+00:00",
-  "skills_date": "April 28, 2026",
+  "updated_at": "2026-09-28 23:35:00+00:00",
+  "skills_date": "October 29, 2026",
   "skills_at_a_glance": [
     {
       "area": "Plan and design collaboration communications systems",
@@ -37,8 +37,8 @@
         "Plan for Teams meetings, webinars, and town halls",
         "Plan and design Teams meeting policies and settings",
         "Plan for PSTN audio conferencing",
-        "Recommend when to use Teams Premium, including Microsoft 365 Copilot",
-        "Recommend meeting types based on business requirements, including virtual appointments, webinars, town halls, and meetings",
+        "Recommend when to use Teams Premium and Microsoft 365 Copilot",
+        "Recommend meeting types based on business requirements, including appointments with Microsoft Teams, webinars, town halls, and meetings",
         "Recommend methods for assigning policies",
         "Plan and design Teams policy packages"
       ],
@@ -173,7 +173,7 @@
         "Assign phone numbers in bulk by using PowerShell",
         "Assign Teams Phone policies to a specific user",
         "Create and assign policy packages",
-        "Configure and assign Teams Phone policies by using group policy"
+        "Configure and assign Teams Phone policies by using group policy assignment"
       ],
       "Configure and manage calling features for Teams Phone": [
         "Configure Cloud Voicemail",
@@ -253,7 +253,51 @@
     }
   },
   "change_log_official": [],
-  "change_history": [],
+  "change_history": [
+    {
+      "code": "MS-721",
+      "title": "Collaboration Communications Systems Engineer",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "April 28, 2026",
+      "current_skills_date": "October 29, 2026",
+      "summary": "3 added, 3 removed",
+      "added_count": 3,
+      "removed_count": 3,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Implement and configure Teams Phone (30–35%) > Assign Teams Phone licenses, phone numbers, and policies",
+          "items": [
+            "Configure and assign Teams Phone policies by using group policy assignment"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement and configure Teams Phone (30–35%) > Assign Teams Phone licenses, phone numbers, and policies",
+          "items": [
+            "Configure and assign Teams Phone policies by using group policy"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Plan and design collaboration communications systems (20–25%) > Plan and design Teams meetings",
+          "items": [
+            "Recommend meeting types based on business requirements, including appointments with Microsoft Teams, webinars, town halls, and meetings",
+            "Recommend when to use Teams Premium and Microsoft 365 Copilot"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Plan and design collaboration communications systems (20–25%) > Plan and design Teams meetings",
+          "items": [
+            "Recommend meeting types based on business requirements, including virtual appointments, webinars, town halls, and meetings",
+            "Recommend when to use Teams Premium, including Microsoft 365 Copilot"
+          ]
+        }
+      ]
+    }
+  ],
   "related_exams": [
     {
       "code": "MS-700",
@@ -271,6 +315,6 @@
     }
   ],
   "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-721/",
-  "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-721",
+  "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-721",
   "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-721/practice/assessment?assessment-type=practice"
 }

@@ -11,8 +11,8 @@
   ],
   "category": "Data",
   "status": "beta",
-  "updated_at": "2026-08-20 22:22:00+00:00",
-  "skills_date": "March 12, 2026",
+  "updated_at": "2026-09-18 21:09:00+00:00",
+  "skills_date": "October 19, 2026",
   "skills_at_a_glance": [
     {
       "area": "Design and develop database solutions",
@@ -30,7 +30,7 @@
   "skills_detailed": {
     "Design and develop database solutions (35–40%)": {
       "Design and implement database objects": [
-        "Design and implement tables, including data types, size, columns, indexes, and column store indexes",
+        "Design and implement tables, including data types, size, columns, indexes, and columnstore indexes",
         "Design and implement specialized tables, including in-memory, temporal, external, ledger, and graph",
         "Design and implement JSON columns and indexes",
         "Design and implement database constraints, including PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, and DEFAULT",
@@ -56,7 +56,7 @@
       ],
       "Design and implement SQL solutions by using AI-assisted tools": [
         "Interpret security impact of using AI-assisted tools",
-        "Enable GitHub Copilot and Microsoft Copilot in Fabric",
+        "Enable GitHub Copilot and Copilot in Fabric",
         "Configure model and Model Context Protocol (MCP) tool options in a GitHub Copilot or Copilot in Fabric chat session",
         "Create and configure GitHub Copilot instruction files",
         "Connect to MCP server endpoints, including Microsoft SQL Server and Fabric lakehouse"
@@ -104,7 +104,7 @@
       "Design and implement models and embeddings": [
         "Evaluate external models, including multimodal, multilanguage, sizes, and structured output",
         "Create and manage external models",
-        "Choose an embedding maintenance method, including table triggers, Change Tracking, Azure Functions with SQL trigger binding, Azure Logic Apps, CDC, CES, and Microsoft Foundry",
+        "Choose an embedding maintenance method, including table triggers, Change Tracking, Azure Functions with SQL trigger binding, Azure Logic Apps, CDC, and Microsoft Foundry",
         "Identify which columns to include in embeddings",
         "Design and implement chunks for embeddings",
         "Generate embeddings"
@@ -114,7 +114,7 @@
         "Implement full-text search",
         "Design for vector data, including vector data type, vector indexes, and size",
         "Identify when to use vector-related types and functions for semantic searching, including VECTOR\\_NORMALIZE, VECTOR\\_DISTANCE, VECTORPROPERTY, and VECTOR\\_SEARCH",
-        "Choose between using ANN and ENN for vector search",
+        "Choose between using ANN and KNN for vector search",
         "Evaluate vector index types and metrics",
         "Implement vector search",
         "Implement hybrid search",
@@ -132,6 +132,75 @@
   },
   "change_log_official": [],
   "change_history": [
+    {
+      "code": "DP-800",
+      "title": "SQL AI Developer Associate",
+      "detected_at": "2026-10-15T19:21:11Z",
+      "previous_skills_date": "March 12, 2026",
+      "current_skills_date": "October 19, 2026",
+      "summary": "4 added, 4 removed",
+      "added_count": 4,
+      "removed_count": 4,
+      "weight_changes": [],
+      "changes": [
+        {
+          "type": "objectives_added",
+          "area": "Design and develop database solutions (35–40%) > Design and implement SQL solutions by using AI-assisted tools",
+          "items": [
+            "Enable GitHub Copilot and Copilot in Fabric"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design and develop database solutions (35–40%) > Design and implement SQL solutions by using AI-assisted tools",
+          "items": [
+            "Enable GitHub Copilot and Microsoft Copilot in Fabric"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Design and develop database solutions (35–40%) > Design and implement database objects",
+          "items": [
+            "Design and implement tables, including data types, size, columns, indexes, and columnstore indexes"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Design and develop database solutions (35–40%) > Design and implement database objects",
+          "items": [
+            "Design and implement tables, including data types, size, columns, indexes, and column store indexes"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement AI capabilities in database solutions (25–30%) > Design and implement intelligent search",
+          "items": [
+            "Choose between using ANN and KNN for vector search"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement AI capabilities in database solutions (25–30%) > Design and implement intelligent search",
+          "items": [
+            "Choose between using ANN and ENN for vector search"
+          ]
+        },
+        {
+          "type": "objectives_added",
+          "area": "Implement AI capabilities in database solutions (25–30%) > Design and implement models and embeddings",
+          "items": [
+            "Choose an embedding maintenance method, including table triggers, Change Tracking, Azure Functions with SQL trigger binding, Azure Logic Apps, CDC, and Microsoft Foundry"
+          ]
+        },
+        {
+          "type": "objectives_removed",
+          "area": "Implement AI capabilities in database solutions (25–30%) > Design and implement models and embeddings",
+          "items": [
+            "Choose an embedding maintenance method, including table triggers, Change Tracking, Azure Functions with SQL trigger binding, Azure Logic Apps, CDC, CES, and Microsoft Foundry"
+          ]
+        }
+      ]
+    },
     {
       "code": "DP-800",
       "title": "SQL AI Developer Associate",
