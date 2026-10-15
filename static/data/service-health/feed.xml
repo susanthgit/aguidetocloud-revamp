@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2026 16:53:45 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 21:18:28 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may not receive meeting-started notifications on Android devices</title>
@@ -15,15 +15,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1508612</guid>
       <pubDate>Thu, 15 Oct 2026 08:29:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may see 1:1 Microsoft Teams calls drop or fail to start</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1507756</link>
-      <description>[Microsoft Teams] Users may see 1:1 Microsoft Teams calls drop or fail to start.</description>
-      <category>Microsoft Teams</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">TM1507756</guid>
-      <pubDate>Wed, 14 Oct 2026 18:24:03 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview] Admins may encounter delays in accessing audit log data results in Microsoft Purview</title>
@@ -104,15 +95,6 @@
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1507859</guid>
-      <pubDate>Mon, 12 Oct 2026 20:48:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may be missing the "Meeting options" button for Microsoft Teams meetings in multiple Microsoft 365 apps</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1507676</link>
-      <description>[Microsoft Teams] Users may be missing the "Meeting options" button for Microsoft Teams meetings in multiple Microsoft 365 apps.</description>
-      <category>Microsoft Teams</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">TM1507676</guid>
       <pubDate>Mon, 12 Oct 2026 20:48:00 +0000</pubDate>
     </item>
     <item>
@@ -457,6 +439,24 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1478587</guid>
       <pubDate>Thu, 24 Sep 2026 18:49:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Users may be unable to convert Microsoft Word desktop app documents to PDFs using Save As to SharePoint locations</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1478558</link>
+      <description>[Microsoft 365 apps] Users may have been unable to convert Word desktop app documents to PDFs using Save As to SharePoint locations.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">OP1478558</guid>
+      <pubDate>Thu, 24 Sep 2026 18:23:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1478328</link>
+      <description>[Microsoft Defender XDR] Users may have been unable to access Microsoft Defender for Endpoint public APIs. </description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1478328</guid>
+      <pubDate>Thu, 24 Sep 2026 08:17:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:53:44.544177+00:00",
+  "generated_at": "2026-10-15T21:18:28.492351+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 18,
+      "total_incidents": 16,
       "active_incidents": 4,
-      "avg_duration_minutes": 4809,
+      "avg_duration_minutes": 5373,
       "last_incident": "2026-10-15T08:29:28.080000+00:00",
       "classifications": {
-        "advisory": 11,
+        "advisory": 9,
         "incident": 7
       }
     },
@@ -106,6 +106,18 @@
       }
     },
     {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2576,
+      "last_incident": "2026-10-07T17:01:44.137000+00:00",
+      "classifications": {
+        "advisory": 4
+      }
+    },
+    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -129,18 +141,6 @@
       "classifications": {
         "advisory": 2,
         "incident": 1
-      }
-    },
-    {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1033,
-      "last_incident": "2026-10-07T17:01:44.137000+00:00",
-      "classifications": {
-        "advisory": 3
       }
     },
     {
@@ -179,12 +179,24 @@
       "classifications": {
         "advisory": 1
       }
+    },
+    {
+      "service": "Microsoft Bookings",
+      "short_name": "Bookings",
+      "icon": "📅",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 1830,
+      "last_incident": "2026-08-26T04:00:00+00:00",
+      "classifications": {
+        "incident": 1
+      }
     }
   ],
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 32,
+      "incident_count": 30,
       "services_affected": 12
     },
     {
@@ -194,8 +206,8 @@
     },
     {
       "month": "2026-08",
-      "incident_count": 10,
-      "services_affected": 7
+      "incident_count": 12,
+      "services_affected": 9
     },
     {
       "month": "2026-07",
