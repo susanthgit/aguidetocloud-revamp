@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T07:05:11.614155+00:00",
+  "generated_at": "2026-10-16T13:12:04.647557+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 17,
-      "active_incidents": 4,
+      "total_incidents": 18,
+      "active_incidents": 5,
       "avg_duration_minutes": 5968,
-      "last_incident": "2026-10-15T08:29:28.080000+00:00",
+      "last_incident": "2026-10-16T02:15:48.513000+00:00",
       "classifications": {
-        "advisory": 10,
-        "incident": 7
+        "incident": 8,
+        "advisory": 10
       }
     },
     {
@@ -106,18 +106,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2576,
-      "last_incident": "2026-10-07T17:01:44.137000+00:00",
-      "classifications": {
-        "advisory": 4
-      }
-    },
-    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -141,6 +129,18 @@
       "classifications": {
         "advisory": 2,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 1033,
+      "last_incident": "2026-10-07T17:01:44.137000+00:00",
+      "classifications": {
+        "advisory": 3
       }
     },
     {
@@ -184,7 +184,7 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 31,
+      "incident_count": 32,
       "services_affected": 12
     },
     {
@@ -194,8 +194,8 @@
     },
     {
       "month": "2026-08",
-      "incident_count": 11,
-      "services_affected": 8
+      "incident_count": 10,
+      "services_affected": 7
     },
     {
       "month": "2026-07",
