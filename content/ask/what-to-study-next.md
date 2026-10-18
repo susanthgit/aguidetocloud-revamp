@@ -9,8 +9,8 @@ ask_category: "Bug Report"
 ask_asker: "alek"
 ask_discussion_url: "https://github.com/susanthgit/aguidetocloud-feedback/discussions/55"
 ask_question: "Hello Susanth, many thanks for your answer and for fixing the guide AI-901 that was previously displayed in Beta version, I do appreciate. I would like to draw your attention also on the sections \"What to Study Next\". Apparently, they do not filter out and still suggest certifications already retired. I don't know if the source cause is again the broken URL, but I am confident you will not take long to spot it. Thanks and regards alek"
-ask_answer_count: 1
-ask_answer_plain: "Hi Alek, Thank you for spotting this, and for the kind words. You were right. The \"What to Study Next\" lists were still suggesting retired exams (for example AI-900, AI-102 and AZ-204). It was not a broken URL. The lists were built without checking whether each exam was retired. I've fixed it in two places, so it can't come back. The list is now built without retired exams, and the page also ignores any retired exam that slips through. I checked all 52 study guides in a browser: no retired exams are suggested and every link works. For example, AZ-900 now points to AZ-104, AZ-305, DP-900 and SC-900. It's live now, so a refresh will show it. If you spot anything else that looks off, please tell me. Thanks again, Sush"
+ask_answer_count: 2
+ask_answer_plain: "Hi Alek, Thank you for spotting this, and for the kind words. You were right. The \"What to Study Next\" lists were still suggesting retired exams (for example AI-900, AI-102 and AZ-204). It was not a broken URL. The lists were built without checking whether each exam was retired. I've fixed it in two places, so it can't come back. The list is now built without retired exams, and the page also ignores any retired exam that slips through. I checked all 52 study guides in a browser: no retired exams are suggested and every link works. For example, AZ-900 now points to AZ-104, AZ-305, DP-900 and SC-900. It's live now, so a refresh will show it. If you spot anything else that looks off, please tell me. Thanks again, Sush A final update, Alek: your follow-up in 56 exposed gaps in my first fix. I had filtered one recommendation source but missed the duplicate static section and Cert Compass's separate catalog. The broader fix is now deployed and checked on the live site. AI-103 has one \"What to Study Next\" heading, and the retired entries no longer appear in Compass's recommendations or comparison list. The weekly generator has been changed too, so it no longer writes the duplicate section back into the guides. I've put the full completion update on your follow-up thread. Thank you for checking again rather than assuming my first answer meant everything was covered. Sush"
 sitemap:
   priority: 0.6
   changefreq: "monthly"
@@ -44,4 +44,12 @@ I've fixed it in two places, so it can't come back. The list is now built withou
 It's live now, so a refresh will show it. If you spot anything else that looks off, please tell me.
 
 Thanks again,
+Sush
+
+A final update, Alek: your follow-up in #56 exposed gaps in my first fix. I had filtered one recommendation source but missed the duplicate static section and Cert Compass's separate catalog.
+
+The broader fix is now deployed and checked on the live site. AI-103 has one "What to Study Next" heading, and the retired entries no longer appear in Compass's recommendations or comparison list. The weekly generator has been changed too, so it no longer writes the duplicate section back into the guides.
+
+I've put the full completion update on [your follow-up thread](https://github.com/susanthgit/aguidetocloud-feedback/discussions/56). Thank you for checking again rather than assuming my first answer meant everything was covered.
+
 Sush

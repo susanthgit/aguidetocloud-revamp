@@ -9,8 +9,8 @@ ask_category: "Question"
 ask_asker: "Hussam"
 ask_discussion_url: "https://github.com/susanthgit/aguidetocloud-feedback/discussions/47"
 ask_question: "Hi, when I try to pay for jounos exam 250 questions but when I try to pay to shows pay 9$. For 200 questions, I need a clarification is it 200 or 250,and the exam is it jn0-106 or other version? Thank you"
-ask_answer_count: 1
-ask_answer_plain: "Hi Hussam, the full bank has 250 practice questions for $9 USD, and it is aimed at JN0-106 (JNCIA-Junos). You were right to ask. I checked the live question bank, and the 200 shown at checkout is old wording that still needs correcting. Sorry for the confusion. The 250 includes the 20 questions you can try for free. Paying unlocks the full bank for one year. This is practice access, separate from Juniper's official exam booking and fee. Juniper introduced JN0-106 on 6 April 2026, replacing JN0-105. You can see the current exam code on Juniper's official certification page. Thanks for flagging this, Hussam. Sush"
+ask_answer_count: 2
+ask_answer_plain: "Hi Hussam, the full bank has 250 practice questions for $9 USD, and it is aimed at JN0-106 (JNCIA-Junos). You were right to ask. I checked the live question bank, and the 200 shown at checkout is old wording that still needs correcting. Sorry for the confusion. The 250 includes the 20 questions you can try for free. Paying unlocks the full bank for one year. This is practice access, separate from Juniper's official exam booking and fee. Juniper introduced JN0-106 on 6 April 2026, replacing JN0-105. You can see the current exam code on Juniper's official certification page. Thanks for flagging this, Hussam. Sush Hi Hussam — one follow-up on my earlier answer. I acknowledged the old checkout wording, but I haven't yet verified that it has been corrected on the live checkout. I shouldn't leave that looking like a completed fix. My earlier check found 250 questions in the bank; the 200-question wording was the inconsistency you correctly spotted. The checkout correction still needs to be verified before I call this resolved. Sorry for leaving that loose end, and thank you again for asking before buying. Sush"
 sitemap:
   priority: 0.6
   changefreq: "monthly"
@@ -33,5 +33,11 @@ The 250 includes the 20 questions you can try for free. Paying unlocks the full 
 Juniper introduced JN0-106 on 6 April 2026, replacing JN0-105. You can see the current exam code on [Juniper's official certification page](https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14354).
 
 Thanks for flagging this, Hussam.
+
+Sush
+
+Hi Hussam — one follow-up on my earlier answer. I acknowledged the old checkout wording, but I haven't yet verified that it has been corrected on the live checkout. I shouldn't leave that looking like a completed fix.
+
+My earlier check found 250 questions in the bank; the 200-question wording was the inconsistency you correctly spotted. The checkout correction still needs to be verified before I call this resolved. Sorry for leaving that loose end, and thank you again for asking before buying.
 
 Sush

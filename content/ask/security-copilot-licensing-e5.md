@@ -9,8 +9,8 @@ ask_category: "Tool Feedback"
 ask_asker: "Dean Gross"
 ask_discussion_url: "https://github.com/susanthgit/aguidetocloud-feedback/discussions/15"
 ask_question: "The Security Copilot licensing discussion needs to include information about how it is made available to orgs with M365 E5"
-ask_answer_count: 1
-ask_answer_plain: "Hey Dean — thanks for flagging this, great spot. I've just updated the page with a proper M365 E5 section (give Cloudflare ~2 min to deploy). Quick answer for the page-update record: Security Copilot is NOT bundled with M365 E5 — it's a standalone pay-per-use product at $4 per Security Compute Unit (SCU) per hour. That said, E5 customers are the natural buyer. Security Copilot's superpower is reasoning across signals it doesn't generate itself — and E5 is what provides those signals: | E5 component | What Security Copilot uses it for | |---|---| | Defender XDR (endpoint, email, identity, cloud apps) | Cross-workload incident investigation | | Entra ID P2 | User risk + conditional access context | | Purview | Insider risk + DLP correlation | | Intune | Device compliance signals | Microsoft Sentinel is the one most people get caught by — Sentinel is NOT in E5, it's billed separately by GB ingested. You can still use Security Copilot without Sentinel, but cross-source threat hunting gets much weaker. Microsoft Learn references (added to the page): - Security Copilot overview - Getting started - Manage SCU usage Two questions back to you so I can keep improving the page: 1. Anything missing? Specifically — would a worked cost example for a specific org size help, or is the table good? 2. Anything else you'd like added or clarified on the licensing site? Always happy for more feedback. Cheers Sush"
+ask_answer_count: 2
+ask_answer_plain: "Hey Dean — thanks for flagging this, great spot. I've just updated the page with a proper M365 E5 section (give Cloudflare ~2 min to deploy). Quick answer for the page-update record: Security Copilot is NOT bundled with M365 E5 — it's a standalone pay-per-use product at $4 per Security Compute Unit (SCU) per hour. That said, E5 customers are the natural buyer. Security Copilot's superpower is reasoning across signals it doesn't generate itself — and E5 is what provides those signals: | E5 component | What Security Copilot uses it for | |---|---| | Defender XDR (endpoint, email, identity, cloud apps) | Cross-workload incident investigation | | Entra ID P2 | User risk + conditional access context | | Purview | Insider risk + DLP correlation | | Intune | Device compliance signals | Microsoft Sentinel is the one most people get caught by — Sentinel is NOT in E5, it's billed separately by GB ingested. You can still use Security Copilot without Sentinel, but cross-source threat hunting gets much weaker. Microsoft Learn references (added to the page): - Security Copilot overview - Getting started - Manage SCU usage Two questions back to you so I can keep improving the page: 1. Anything missing? Specifically — would a worked cost example for a specific org size help, or is the table good? 2. Anything else you'd like added or clarified on the licensing site? Always happy for more feedback. Cheers Sush Hi Dean, I owe you a correction. My earlier answer said Security Copilot was not included with Microsoft 365 E5. That answer was wrong, and the licensing page still repeats it. I'm sorry — you asked about exactly the point I should have checked more carefully. Microsoft's Security Copilot inclusion documentation explains availability for eligible Microsoft 365 E5 and E7 customers, including the phased rollout and included capacity. It should not be described as something every E5 customer must always purchase separately. Please use that Microsoft page rather than my earlier answer for this point. The site correction is still outstanding; I haven't fixed the published page yet, and I don't want this reply to suggest otherwise. Thank you for raising it in the first place. Sush"
 sitemap:
   priority: 0.6
   changefreq: "monthly"
@@ -53,4 +53,14 @@ Microsoft Sentinel is the one most people get caught by — Sentinel is **NOT in
 2. Anything else you'd like added or clarified on the licensing site? Always happy for more feedback.
 
 Cheers
+Sush
+
+Hi Dean, I owe you a correction. My earlier answer said Security Copilot was not included with Microsoft 365 E5. That answer was wrong, and the licensing page still repeats it. I'm sorry — you asked about exactly the point I should have checked more carefully.
+
+Microsoft's [Security Copilot inclusion documentation](https://learn.microsoft.com/en-us/copilot/security/security-copilot-inclusion) explains availability for eligible Microsoft 365 E5 and E7 customers, including the phased rollout and included capacity. It should not be described as something every E5 customer must always purchase separately.
+
+Please use that Microsoft page rather than my earlier answer for this point. The site correction is still outstanding; I haven't fixed the published page yet, and I don't want this reply to suggest otherwise.
+
+Thank you for raising it in the first place.
+
 Sush
