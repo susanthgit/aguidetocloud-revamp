@@ -4,7 +4,7 @@ description: "AI-900: the Microsoft Azure AI Fundamentals exam. Free guide cover
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-ai-900"
+robots: "noindex, nofollow"
 sitemap:
-  priority: 0.65
-  changefreq: monthly
+  disable: true
 ---

@@ -4,7 +4,7 @@ description: "DP-203: the Microsoft Azure Data Engineer exam. Free guide coverin
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-dp-203"
+robots: "noindex, nofollow"
 sitemap:
-  priority: 0.65
-  changefreq: monthly
+  disable: true
 ---

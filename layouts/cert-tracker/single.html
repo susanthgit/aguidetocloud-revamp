@@ -559,8 +559,11 @@
     .then(function(d){
       if (!d || !d.related_exams || !d.related_exams.length) return;
       var levelLabels = {beginner:"Fundamentals",intermediate:"Associate",advanced:"Expert"};
-      // Guard against stale JSON: never suggest a retired exam
-      var live = d.related_exams.filter(function(r){ return r.status !== "retired"; });
+      // Keep recommendations aligned with the current exam lifecycle.
+      var today = new Date().toISOString().slice(0, 10);
+      var live = d.related_exams.filter(function(r){
+        return r.status !== "retired" && !(r.status === "retiring" && r.retirement_date && r.retirement_date < today);
+      });
       if (!live.length) return;
       var html = live.map(function(r){
         return '<a href="/cert-tracker/' + r.code.toLowerCase() + '/" class="cert-related-card">'

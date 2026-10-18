@@ -28,6 +28,10 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PAGES_DIR = join(ROOT, 'content', 'cert-tracker');
 const DATA_FILE = join(ROOT, 'static', 'data', 'cert-tracker', 'latest.json');
 const REGISTRY_FILE = join(ROOT, 'data', 'all_certs.toml');
+const COMPASS_FILE = join(ROOT, 'data', 'cert_compass', 'certifications.toml');
+const COMPASS_INDEX = join(ROOT, 'public', 'cert-compass', 'index.html');
+const TRACKER_TEMPLATE = join(ROOT, 'layouts', 'cert-tracker', 'single.html');
+const SITEMAP_FILE = join(ROOT, 'public', 'sitemap.xml');
 
 // Present-tense claims only — these are false once an exam is GA.
 const STALE_CLAIMS = [
@@ -87,6 +91,7 @@ function claimIsAboutOtherExam(line, ownCode, re) {
 }
 
 const failures = [];
+let latestData = null;
 
 // --- Check 1: active pages must not carry present-tense beta/discount claims ---
 const files = readdirSync(PAGES_DIR).filter(f => f.endsWith('.md') && f !== '_index.md');
@@ -100,6 +105,10 @@ for (const file of files) {
   pageStatus.set(code, status);
 
   const lines = raw.split(/\r?\n/);
+  const duplicateHeading = lines.findIndex(line => /^## What to Study Next\s*$/.test(line));
+  if (duplicateHeading !== -1) {
+    failures.push(`${file}:${duplicateHeading + 1}  static "What to Study Next" section duplicates the template-rendered section`);
+  }
 
   // Price-figure claims are false on every page, beta or not.
   for (const { re, msg } of ALWAYS_FALSE_CLAIMS) {
@@ -123,6 +132,7 @@ for (const file of files) {
 const MS_CODE = /^(?:AZ|AI|DP|SC|MS|MB|PL|AB|GH|MD|MO)-\d{3}$/;
 if (existsSync(DATA_FILE)) {
   const data = JSON.parse(readFileSync(DATA_FILE, 'utf8'));
+  latestData = data;
   const inData = new Set();
   for (const exam of data.exams || []) {
     const code = String(exam.code).toUpperCase();
@@ -190,6 +200,92 @@ if (existsSync(REGISTRY_FILE)) {
   });
 } else {
   failures.push(`missing registry file: ${REGISTRY_FILE}`);
+}
+
+// --- Check 5: tracker recommendations have one renderer, and Cert Compass hides
+// every retired Microsoft cert in both its catalog and direct-detail routes.
+if (existsSync(TRACKER_TEMPLATE)) {
+  const template = readFileSync(TRACKER_TEMPLATE, 'utf8');
+  const headings = template.match(/<h2>What to Study Next<\/h2>/g) || [];
+  if (headings.length !== 1) {
+    failures.push(`layouts/cert-tracker/single.html must render exactly one "What to Study Next" heading (found ${headings.length})`);
+  }
+} else {
+  failures.push(`missing tracker template: ${TRACKER_TEMPLATE}`);
+}
+
+if (existsSync(COMPASS_FILE) && latestData) {
+  const raw = readFileSync(COMPASS_FILE, 'utf8');
+  const compassCerts = raw.split(/^\[\[certs\]\]\s*$/m).slice(1).map(block => {
+    const value = name => block.match(new RegExp(`^${name}\\s*=\\s*"([^"]*)"`, 'm'))?.[1] || '';
+    return { id: value('id'), provider: value('provider'), exam_code: value('exam_code'), status: value('status') };
+  });
+  const today = new Date().toISOString().slice(0, 10);
+  const lifecycle = new Map((latestData.exams || []).map(exam => {
+    const expired = exam.status === 'retiring' && exam.retirement_date && exam.retirement_date < today;
+    return [String(exam.code).toUpperCase(), expired ? 'retired' : exam.status];
+  }));
+  const retired = compassCerts.filter(cert => {
+    const status = cert.provider === 'microsoft'
+      ? (lifecycle.get(cert.exam_code.toUpperCase()) || cert.status)
+      : cert.status;
+    return status === 'retired';
+  });
+
+  if (!existsSync(COMPASS_INDEX)) {
+    failures.push(`missing built Cert Compass index: ${COMPASS_INDEX}`);
+  } else {
+    const html = readFileSync(COMPASS_INDEX, 'utf8');
+    const payloads = new Map();
+    for (const name of ['Certs', 'Groups', 'Paths', 'Signals', 'Quiz', 'TopicDefs', 'CertTopics']) {
+      const assignment = html.match(new RegExp(`^window\\.__compass${name}\\s*=\\s*(.+);$`, 'm'));
+      if (!assignment) {
+        failures.push(`built Cert Compass page is missing its ${name} data payload`);
+        continue;
+      }
+      try {
+        const payload = JSON.parse(assignment[1]);
+        payloads.set(name, payload);
+        const serialized = JSON.stringify(payload);
+        for (const cert of retired) {
+          if (serialized.includes(cert.id) || serialized.includes(cert.exam_code)) {
+            failures.push(`${cert.exam_code} (${cert.id}) remains in the built Cert Compass ${name} data`);
+          }
+        }
+      } catch (error) {
+        failures.push(`could not parse built Cert Compass ${name} data: ${error.message}`);
+      }
+    }
+    const certPayload = payloads.get('Certs');
+    if (certPayload && !certPayload.some(cert => cert.id === 'ms-az-900')) {
+      failures.push('active AZ-900 is missing from the built Cert Compass catalog');
+    }
+  }
+
+  const sitemap = existsSync(SITEMAP_FILE) ? readFileSync(SITEMAP_FILE, 'utf8') : '';
+  if (!sitemap) failures.push(`missing built sitemap: ${SITEMAP_FILE}`);
+  for (const cert of retired) {
+    const page = join(ROOT, 'public', 'cert-compass', cert.id, 'index.html');
+    if (!existsSync(page)) {
+      failures.push(`${cert.exam_code} (${cert.id}) retired detail route is missing its non-indexable fallback`);
+      continue;
+    }
+    const html = readFileSync(page, 'utf8');
+    if (!/<meta name="robots" content="noindex, nofollow">/i.test(html)) {
+      failures.push(`${cert.exam_code} (${cert.id}) retired detail route is missing noindex`);
+    }
+    if (!html.includes('This certification has been retired and is no longer listed in Cert Compass.')) {
+      failures.push(`${cert.exam_code} (${cert.id}) retired detail route still exposes certification details`);
+    }
+    if (/"@type"\s*:\s*"Course"/.test(html)) {
+      failures.push(`${cert.exam_code} (${cert.id}) retired detail route still emits Course structured data`);
+    }
+    if (sitemap.includes(`/cert-compass/${cert.id}/`)) {
+      failures.push(`${cert.exam_code} (${cert.id}) retired detail route is still in the sitemap`);
+    }
+  }
+} else {
+  failures.push(`missing Compass certification data or cert-tracker lifecycle data`);
 }
 
 if (failures.length) {

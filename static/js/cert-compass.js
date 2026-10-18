@@ -37,7 +37,7 @@
   // ── My Certs (localStorage) ───────────────────────────────────────────
   const MYCERTS_KEY = 'compass_mycerts_v1';
   let myCerts = new Set();
-  try { const s = localStorage.getItem(MYCERTS_KEY); if (s) myCerts = new Set(JSON.parse(s)); } catch (e) {}
+  try { const s = localStorage.getItem(MYCERTS_KEY); if (s) myCerts = new Set(JSON.parse(s).filter(id => certMap[id])); } catch (e) {}
 
   function saveMyCerts() { try { localStorage.setItem(MYCERTS_KEY, JSON.stringify([...myCerts])); } catch (e) {} renderMyCertsBar(); renderDashboard(); }
 
@@ -458,7 +458,7 @@
       }, 0);
       const threeYearCost = totalFee + Math.round(renewalYearly * 2); // initial + 2 renewal cycles
       return { prov, certs, totalFee, totalHoursMin, totalHoursMax, renewalYearly: Math.round(renewalYearly), threeYearCost };
-    }).filter(Boolean);
+    }).filter(pc => pc && pc.certs.length);
 
     html += `<div class="compass-cost-compare"><table class="compass-compare-table">
       <thead><tr><th></th>${providerCosts.map(pc => `<th style="color:var(--text-primary)">${pc.prov.emoji} ${esc(pc.prov.name)}</th>`).join('')}</tr></thead>
@@ -480,6 +480,7 @@
         const tracker = c.tracker_slug ? ` <a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent);font-size:0.72rem">[guide]</a>` : '';
         return `<div class="compass-career-step" style="border-left:3px solid ${prov.hex}">${esc(c.name)}<br><span style="font-size:0.7rem;color:var(--text-muted)">${esc(c.exam_code)} · $${c.fee_usd}</span>${tracker}</div>`;
       }).filter(Boolean);
+      if (!steps.length) return;
 
       html += `<div class="compass-career-provider">
         <div class="compass-career-provider-name" style="color:var(--text-primary)">${prov.emoji} ${esc(prov.name)}</div>
@@ -487,7 +488,9 @@
       </div>`;
     });
 
-    html += `<div class="compass-career-tip"><strong>If you only have time for one:</strong> ${esc(tipName)}<br><span style="font-size:0.78rem;color:var(--text-tertiary)">${esc(path.if_only_one_reason)}</span></div>`;
+    if (tipCert) {
+      html += `<div class="compass-career-tip"><strong>If you only have time for one:</strong> ${esc(tipName)}<br><span style="font-size:0.78rem;color:var(--text-tertiary)">${esc(path.if_only_one_reason)}</span></div>`;
+    }
 
     careerDetail.innerHTML = html;
     careerDetail.style.display = 'block';
@@ -506,8 +509,8 @@
   const PRESETS = {
     fundamentals: { label: 'Cloud Fundamentals', ids: ['ms-az-900', 'aws-cloud-practitioner', 'gcp-cloud-digital-leader'] },
     architect: { label: 'Architecture', ids: ['ms-az-305', 'aws-solutions-architect-assoc', 'gcp-prof-cloud-architect'] },
-    security: { label: 'Security', ids: ['ms-az-500', 'aws-security-specialty', 'gcp-prof-cloud-security'] },
-    data: { label: 'Data Engineering', ids: ['ms-dp-203', 'aws-data-engineer-assoc', 'gcp-prof-data-engineer'] },
+    security: { label: 'Security', ids: ['aws-security-specialty', 'gcp-prof-cloud-security'] },
+    data: { label: 'Data Engineering', ids: ['aws-data-engineer-assoc', 'gcp-prof-data-engineer'] },
     devops: { label: 'DevOps', ids: ['ms-az-400', 'aws-devops-pro', 'gcp-prof-cloud-devops'] }
   };
 

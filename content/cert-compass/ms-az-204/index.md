@@ -4,7 +4,7 @@ description: "AZ-204: the Microsoft Azure Developer exam. Free guide covering CI
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-az-204"
+robots: "noindex, nofollow"
 sitemap:
-  priority: 0.65
-  changefreq: monthly
+  disable: true
 ---

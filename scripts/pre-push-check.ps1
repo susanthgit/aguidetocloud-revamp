@@ -413,15 +413,18 @@ if (-not $certChanged) {
     }
 }
 
-# ─── CHECK 12: Cert lifecycle truthfulness ───
+# ─── CHECK 12: Cert lifecycle and recommendation truthfulness ───
 # Added 2026-09-14. Five exams had gone GA months earlier but their pages still
 # said "in beta" and promised an 80% beta discount, and three genuinely-beta
 # exams rendered as "Active" because they were missing from latest.json.
 # A reader trusted that copy enough to ask about it. This check fails a push when
 # an active page still carries present-tense beta/discount language, or when a
 # page's status disagrees with the data the index renders from.
-Write-Host "`n[12/13] Cert lifecycle truthfulness..." -NoNewline
-$lifecycleChanged = $changedFiles | Where-Object { $_ -match '^(content/cert-tracker/|static/data/cert-tracker/|layouts/cert-tracker/|data/all_certs\.toml|static/js/cert-tracker\.js)' }
+Write-Host "`n[12/13] Cert lifecycle and recommendation truthfulness..." -NoNewline
+$lifecycleChanged = $changedFiles | Where-Object {
+    $_ -match '^(content/cert-tracker/|content/cert-compass/|static/data/cert-tracker/|layouts/cert-tracker/|layouts/cert-compass/|data/cert_compass/)' -or
+    $_ -match '^(data/all_certs\.toml|static/js/cert-tracker\.js|static/js/cert-compass\.js|layouts/_default/baseof\.html|layouts/partials/cert-compass-retired-ids\.html|scripts/check-cert-lifecycle\.mjs)$'
+}
 if (-not $lifecycleChanged) {
     Write-Host " ⏭ No cert-tracker changes (skip)" -ForegroundColor DarkGray
 } else {
@@ -434,7 +437,7 @@ if (-not $lifecycleChanged) {
             Write-Host "  An exam that has gone GA must not still be advertised as beta." -ForegroundColor Yellow
             $failed = $true
         } else {
-            Write-Host " ✅ Cert statuses agree with page copy" -ForegroundColor Green
+            Write-Host " ✅ Lifecycle, single-renderer, Compass catalog, retired detail and sitemap checks pass" -ForegroundColor Green
         }
     } else {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red

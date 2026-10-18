@@ -1,14 +1,63 @@
 {{ define "main" }}
 {{- $data := index hugo.Data "cert_compass" -}}
 {{- $providers := $data.providers.providers -}}
-{{- $certs := $data.certifications.certs -}}
-{{- $groups := $data.equivalents.groups -}}
-{{- $paths := $data.career_paths.paths -}}
-{{- $signals := $data.market_signals.signals -}}
+{{- $retired := partial "cert-compass-retired-ids.html" . -}}
+{{- $certs := slice -}}
+{{- range $data.certifications.certs -}}
+  {{- if not (index $retired .id) -}}
+    {{- $certs = $certs | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $groups := slice -}}
+{{- range $data.equivalents.groups -}}
+  {{- $group := . -}}
+  {{- $certIDs := slice -}}
+  {{- range .cert_ids -}}
+    {{- if not (index $retired .) -}}
+      {{- $certIDs = $certIDs | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $groups = $groups | append (merge $group (dict "cert_ids" $certIDs)) -}}
+{{- end -}}
+{{- $paths := slice -}}
+{{- range $data.career_paths.paths -}}
+  {{- $path := . -}}
+  {{- $orders := slice -}}
+  {{- range .recommended_order -}}
+    {{- $order := . -}}
+    {{- $certIDs := slice -}}
+    {{- range .certs -}}
+      {{- if not (index $retired .) -}}
+        {{- $certIDs = $certIDs | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if gt (len $certIDs) 0 -}}
+      {{- $orders = $orders | append (merge $order (dict "certs" $certIDs)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $onlyOne := $path.if_only_one -}}
+  {{- $onlyOneReason := $path.if_only_one_reason -}}
+  {{- if index $retired $onlyOne -}}
+    {{- $onlyOne = "" -}}
+    {{- $onlyOneReason = "" -}}
+  {{- end -}}
+  {{- $paths = $paths | append (merge $path (dict "recommended_order" $orders "if_only_one" $onlyOne "if_only_one_reason" $onlyOneReason)) -}}
+{{- end -}}
+{{- $signals := slice -}}
+{{- range $data.market_signals.signals -}}
+  {{- if not (index $retired .cert_id) -}}
+    {{- $signals = $signals | append . -}}
+  {{- end -}}
+{{- end -}}
 {{- $quiz := $data.quiz.questions -}}
 {{- $examPrep := $data.quiz.exam_prep -}}
 {{- $topicDefs := $data.topics.topics -}}
-{{- $certTopics := $data.topics.cert_topics -}}
+{{- $certTopics := slice -}}
+{{- range $data.topics.cert_topics -}}
+  {{- if not (index $retired .cert_id) -}}
+    {{- $certTopics = $certTopics | append . -}}
+  {{- end -}}
+{{- end -}}
 
 
 

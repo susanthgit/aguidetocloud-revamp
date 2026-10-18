@@ -4,7 +4,7 @@ description: "AZ-500: the Microsoft Azure Security Engineer exam. Free guide cov
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-az-500"
+robots: "noindex, nofollow"
 sitemap:
-  priority: 0.65
-  changefreq: monthly
+  disable: true
 ---

@@ -22,9 +22,9 @@ description = "Entry-level AI/ML literacy. Proves you understand AI concepts, re
 icon = "🤖"
 role_match = "strong"
 level_match = "moderate"
-cert_ids = ["ms-ai-900", "aws-ai-practitioner", "gcp-genai-leader"]
-comparison_notes = "Microsoft covers traditional AI + Azure services. AWS is broader AI/ML practitioner scope. Google is specifically GenAI and business-strategy focused. Scope differs but all target foundational understanding."
-recommendation = "AI-900 if you work with Microsoft tools. AWS AIF if you want broader ML coverage."
+cert_ids = ["aws-ai-practitioner", "gcp-genai-leader"]
+comparison_notes = "AWS covers AI and ML practitioner skills. Google focuses on generative AI and business strategy. Their scopes differ, so choose based on the work you expect to do."
+recommendation = "Compare the AWS and Google exam scopes against your role and preferred platform."
 
 [[groups]]
 id = "cloud-admin"
@@ -55,9 +55,9 @@ description = "Building, deploying, and debugging cloud-native applications and 
 icon = "💻"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["ms-az-204", "aws-developer-assoc", "gcp-prof-cloud-developer"]
-comparison_notes = "Role alignment is strong. Microsoft and AWS are Associate-level; Google is Professional (harder). All emphasise serverless, containers, and CI/CD. Google's is the most architecture-oriented."
-recommendation = "AWS DVA or Azure AZ-204 first (associate level), then Google PCD for multi-cloud breadth."
+cert_ids = ["aws-developer-assoc", "gcp-prof-cloud-developer"]
+comparison_notes = "Both certifications focus on building and operating cloud-native applications. Google Cloud's certification is Professional-level; AWS's is Associate-level."
+recommendation = "Compare the exam scopes with your target platform and current experience."
 
 [[groups]]
 id = "devops"
@@ -77,9 +77,9 @@ description = "Designing and implementing security controls, identity management
 icon = "🛡️"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["ms-az-500", "aws-security-specialty", "gcp-prof-cloud-security"]
-comparison_notes = "Good role alignment. Microsoft AZ-500 is Associate-level, focused on Azure security controls. AWS SCS is Specialty ($300, broader scope). Google PCSE is Professional. AWS is the most expensive and broadest."
-recommendation = "AZ-500 for Microsoft shops. AWS SCS if you need deep cloud security credentials. All are highly valued."
+cert_ids = ["aws-security-specialty", "gcp-prof-cloud-security"]
+comparison_notes = "Both certifications cover cloud security, but their levels and provider-specific scopes differ. Review each official exam outline before choosing."
+recommendation = "Choose the certification that matches the cloud platform and security responsibilities in your role."
 
 [[groups]]
 id = "networking"
@@ -99,9 +99,9 @@ description = "Designing data pipelines, managing data stores, and building anal
 icon = "📊"
 role_match = "strong"
 level_match = "moderate"
-cert_ids = ["ms-dp-203", "aws-data-engineer-assoc", "gcp-prof-data-engineer"]
-comparison_notes = "Good alignment. Microsoft and AWS are Associate-level. Google PDE is Professional (harder, more ML-integrated). Google PDE is one of the oldest and most respected GCP certs."
-recommendation = "AWS DEA is the newest and most modern. GCP PDE has the strongest industry reputation in data."
+cert_ids = ["aws-data-engineer-assoc", "gcp-prof-data-engineer"]
+comparison_notes = "Both certifications focus on building and operating data solutions in their respective cloud platforms. Google Cloud's certification is Professional-level; AWS's is Associate-level."
+recommendation = "Compare the exam scopes with your target platform and data-engineering responsibilities."
 
 [[groups]]
 id = "database"
@@ -121,9 +121,9 @@ description = "Building, training, deploying, and monitoring AI/ML models in pro
 icon = "🧠"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["ms-ai-102", "aws-ml-engineer-assoc", "gcp-prof-ml-engineer"]
-comparison_notes = "Microsoft AI-102 is Associate-level, focused on Azure AI services integration. AWS MLA is Associate-level (newer exam). Google PMLE is Professional (hardest). Google's is the most respected ML cert in the industry."
-recommendation = "AI-102 for Microsoft AI services. AWS MLA for broader ML engineering. Google PMLE is the gold standard."
+cert_ids = ["aws-ml-engineer-assoc", "gcp-prof-ml-engineer"]
+comparison_notes = "Both certifications focus on production machine-learning work in their respective cloud platforms. Google Cloud's certification is Professional-level; AWS's is Associate-level."
+recommendation = "Compare the exam scopes with your target platform and machine-learning responsibilities."
 
 [[groups]]
 id = "security-operations"

@@ -1,0 +1,26 @@
+{{- $data := index hugo.Data "cert_compass" -}}
+{{- $registry := transform.Unmarshal (os.ReadFile "static/data/cert-tracker/latest.json") -}}
+{{- $today := now.UTC.Format "2006-01-02" -}}
+{{- $statuses := dict -}}
+{{- range $registry.exams -}}
+  {{- $status := .status -}}
+  {{- if and (eq $status "retiring") .retirement_date (lt .retirement_date $today) -}}
+    {{- $status = "retired" -}}
+  {{- end -}}
+  {{- $statuses = merge $statuses (dict (upper .code) $status) -}}
+{{- end -}}
+{{- $retired := dict -}}
+{{- range $data.certifications.certs -}}
+  {{- if eq .provider "microsoft" -}}
+    {{- $status := .status -}}
+    {{- with index $statuses (upper .exam_code) -}}
+      {{- $status = . -}}
+    {{- end -}}
+    {{- if eq $status "retired" -}}
+      {{- $retired = merge $retired (dict .id true) -}}
+    {{- end -}}
+  {{- else if eq .status "retired" -}}
+    {{- $retired = merge $retired (dict .id true) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $retired -}}

@@ -39,7 +39,7 @@ icon = "💻"
 description = "Build cloud-native applications — serverless, containers, APIs, and microservices."
 demand = "High"
 recommended_order = [
-  { provider = "microsoft", certs = ["ms-az-900", "ms-az-204"] },
+  { provider = "microsoft", certs = ["ms-az-900"] },
   { provider = "aws", certs = ["aws-cloud-practitioner", "aws-developer-assoc"] },
   { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-cloud-developer"] }
 ]
@@ -54,12 +54,12 @@ icon = "🛡️"
 description = "Secure cloud workloads — identity, access control, data protection, compliance, and threat response."
 demand = "Very High"
 recommended_order = [
-  { provider = "microsoft", certs = ["ms-sc-900", "ms-az-500", "ms-sc-200"] },
+  { provider = "microsoft", certs = ["ms-sc-900", "ms-sc-200"] },
   { provider = "aws", certs = ["aws-cloud-practitioner", "aws-security-specialty"] },
   { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-cloud-security", "gcp-prof-secops-engineer"] }
 ]
-if_only_one = "ms-az-500"
-if_only_one_reason = "Most enterprises use Azure AD/Entra for identity. AZ-500 covers the most in-demand security skills."
+if_only_one = ""
+if_only_one_reason = ""
 related_groups = ["security-fundamentals", "cloud-security", "security-operations"]
 
 [[paths]]
@@ -69,7 +69,7 @@ icon = "📊"
 description = "Build data pipelines, manage data lakes, and enable analytics and ML at scale."
 demand = "High"
 recommended_order = [
-  { provider = "microsoft", certs = ["ms-dp-900", "ms-dp-203"] },
+  { provider = "microsoft", certs = ["ms-dp-900"] },
   { provider = "aws", certs = ["aws-cloud-practitioner", "aws-data-engineer-assoc"] },
   { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-data-engineer"] }
 ]
@@ -99,7 +99,7 @@ icon = "🧠"
 description = "Build, train, deploy, and monitor machine learning models in production."
 demand = "Very High"
 recommended_order = [
-  { provider = "microsoft", certs = ["ms-ai-900", "ms-ai-102"] },
+  { provider = "microsoft", certs = [] },
   { provider = "aws", certs = ["aws-ai-practitioner", "aws-ml-engineer-assoc", "aws-ml-specialty"] },
   { provider = "gcp", certs = ["gcp-genai-leader", "gcp-prof-ml-engineer"] }
 ]

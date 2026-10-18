@@ -8,7 +8,7 @@
 #         prerequisites[], description, official_url, match_group,
 #         tracker_slug (Microsoft only),
 #         guided_slug (all vendors -- links to /guided/ practice exams),
-#         status, last_verified
+#         status, retirement_date, last_verified
 #
 # normalized_level values: foundational, associate, professional, expert, specialty
 # focus_areas = normalized cross-cloud taxonomy
@@ -216,8 +216,9 @@ official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azu
 match_group = "data-engineering"
 tracker_slug = "dp-203"
 guided_slug = ""
-status = "active"
-last_verified = "2026-04-17"
+status = "retired"
+retirement_date = "2025-03-31"
+last_verified = "2026-10-17"
 
 [[certs]]
 id = "ms-dp-300"

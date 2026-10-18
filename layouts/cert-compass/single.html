@@ -1,6 +1,12 @@
 {{ define "main" }}
 {{- $data := index hugo.Data "cert_compass" -}}
-{{- $certs := $data.certifications.certs -}}
+{{- $retired := partial "cert-compass-retired-ids.html" . -}}
+{{- $certs := slice -}}
+{{- range $data.certifications.certs -}}
+  {{- if not (index $retired .id) -}}
+    {{- $certs = $certs | append . -}}
+  {{- end -}}
+{{- end -}}
 {{- $groups := $data.equivalents.groups -}}
 {{- $signals := $data.market_signals.signals -}}
 {{- $certId := .Params.cert_id -}}
@@ -96,5 +102,21 @@
   "offers": { "@type": "Offer", "price": {{ printf "%d" $cert.fee_usd | jsonify | safeJS }}, "priceCurrency": "USD" }
 }
 </script>
+{{ else if index $retired $certId }}
+<div class="compass-page">
+  <div style="max-width:800px;margin:0 auto">
+    <h1>Certification unavailable</h1>
+    <p>This certification has been retired and is no longer listed in Cert Compass.</p>
+    <a href="/cert-compass/" class="compass-btn compass-btn-outline">← Back to Cert Compass</a>
+  </div>
+</div>
+{{ else }}
+<div class="compass-page">
+  <div style="max-width:800px;margin:0 auto">
+    <h1>Certification details unavailable</h1>
+    <p>This certification is no longer included in Cert Compass.</p>
+    <a href="/cert-compass/" class="compass-btn compass-btn-outline">← Back to Cert Compass</a>
+  </div>
+</div>
 {{ end }}
 {{ end }}
