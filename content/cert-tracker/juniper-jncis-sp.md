@@ -9,20 +9,20 @@ exam_level: "specialty"
 exam_status: "active"
 exam_category: "Juniper"
 vendor: "juniper"
-manual: false
+manual: true
 guided_slug: "juniper-jncis-sp"
 ---
 ## About the JNCIS-SP Exam
 
-> Specialist-level Juniper service provider certification on Junos OS - protocol-independent routing (static, aggregate, generated routes, RIB groups, load balancing, filter-based forwarding), OSPF and IS-IS link-state routing, BGP path selection and iBGP/eBGP, Layer 2 bridging and VLANs (provider bridging / Q-in-Q, IRB), spanning-tree (STP/RSTP/MSTP/VSTP), MPLS with RSVP, LDP and segment-routing LSPs, IPv6 (OSPFv3, IS-IS, BGP inet6, v6-over-v4 tunneling), GRE/IP tunnels, and high availability (LAG, GR/GRES/NSR/NSB, BFD, VRRP)
+> JNCIS-SP practice for exam JN0-364, based on Junos OS 25.2. Covers protocol-independent routing, OSPF, IS-IS, BGP, Layer 2 bridging and VLANs, spanning-tree protocols, MPLS, IPv6, tunnels, and high availability.
 
 250 original practice questions for the Juniper Networks Certified Specialist Service Provider Routing and Switching (JNCIS-SP, exam JN0-364). Covers protocol-independent routing (static, aggregate, and generated routes, Martian addresses, routing instances and RIB groups, per-flow vs per-packet load balancing, and filter-based forwarding), OSPF (link-state database, packet and LSA types, DR/BDR election, area types including stub/totally-stubby/NSSA, and router types), IS-IS (PDUs and TLVs, NET and system-ID addressing, Level 1/Level 2 areas, DIS election, and narrow vs wide metrics), BGP (message types, attributes and the Junos path-selection process, iBGP vs eBGP, and next-hop-self as a policy action), Layer 2 bridging and VLANs (frame processing, virtual switches, provider bridging and Q-in-Q with 802.1ad, access/trunk port modes, 802.1Q tagging, and Integrated Routing and Bridging), spanning-tree protocols (STP/RSTP/MSTP/VSTP, port roles and states, BPDU protection, loop protection, and root protect), MPLS (labels and the label information base, inet.3 and mpls.0, RSVP-signaled and LDP-signaled LSPs, and segment routing / SPRING), IPv6 (addressing, OSPFv3, IS-IS and BGP for IPv6, and IPv6-over-IPv4 tunneling), GRE and IP tunnels (gr- interfaces, keepalives, MTU and recursive-routing considerations), and high availability (aggregated Ethernet LAGs, graceful restart, GRES, nonstop active routing and nonstop bridging, BFD, and VRRP). Each question is a realistic Junos OS service-provider scenario on MX, PTX, ACX, and EX platforms with a named character, a detailed explanation, and per-option rationale.
 
 ## Who Should Take This Exam?
 
-The JNCIS-SP is designed for **network engineers who build and operate Juniper MX, PTX, and ACX service-provider and carrier networks**. JNCIA-Junos (the Junos Associate) is the recommended prerequisite, and hands-on Junos CLI experience with OSPF, IS-IS, BGP, and MPLS helps a lot.
+The JNCIS-SP is designed for **network engineers who build and operate Juniper MX, PTX, and ACX service-provider and carrier networks**. Juniper lists **JNCIA-Junos as the prerequisite certification**. Hands-on Junos CLI experience with OSPF, IS-IS, BGP, and MPLS also helps.
 
-**Prerequisites:** JNCIA-Junos recommended (no hard prerequisite)
+**Prerequisites:** JNCIA-Junos certification required
 
 **Typical study time:** 6-10 weeks of focused study
 
@@ -30,16 +30,17 @@ The JNCIS-SP is designed for **network engineers who build and operate Juniper M
 
 | Detail | Value |
 |--------|-------|
-| **Exam Code** | JNCIS-SP |
+| **Exam Code** | JN0-364 (JNCIS-SP) |
+| **Software version** | Junos OS 25.2 |
 | **Title** | Juniper Networks Certified Specialist Service Provider Routing and Switching (JNCIS-SP) |
 | **Duration** | 90 minutes |
 | **Questions** | 65 |
 | **Cost** | $300 USD |
 | **Provider** | Pearson VUE |
 | **Validity** | 3 years |
-| **Prerequisites** | JNCIA-Junos recommended (no hard prerequisite) |
+| **Prerequisites** | JNCIA-Junos certification required |
 | **Question Types** | Multiple choice |
-| **Official Page** | [View on Juniper →](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncis-sp.html) |
+| **Official Page** | [View on Juniper →](https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14325) |
 
 ## Exam Domains & Weights
 
@@ -92,4 +93,4 @@ If you're studying for the JNCIS-SP, you might also be interested in these Junip
 2. **Use our practice exam** — try the 20 free questions first to gauge your readiness
 3. **Review explanations** — don't just check if you got it right; read why each answer is correct
 4. **Simulate exam conditions** — use the timed exam mode to practice under pressure
-5. **Check the official page** — [official exam details](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncis-sp.html) always have the latest objectives
+5. **Check the official page** — [official exam details](https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14325) always have the latest objectives

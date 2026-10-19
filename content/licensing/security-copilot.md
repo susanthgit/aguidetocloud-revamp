@@ -1,55 +1,57 @@
 ---
 title: "Microsoft Security Copilot — Guide & Pricing (2026)"
-description: "Microsoft Security Copilot — pay-per-use AI for security teams at $4 per Security Compute Unit per hour. How it works with M365 E5, pricing, and what it actually does."
+description: "Security Copilot for Microsoft 365 E5 and E7: included monthly capacity, phased activation, paid SCUs, and which costs remain separate."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft Security Copilot"
 plan_id: "security-copilot"
-price: 4
-price_note: "Per SCU/hour (pay-per-use)"
+price_display: "Included capacity or paid usage"
+price_note: "Eligible Microsoft 365 E5/E7 inclusion; standalone capacity also available"
 tagline: "AI for security teams — investigate threats, hunt risks, generate reports"
 plan_category: "Copilot & AI"
 badge: ""
-ms_official: "https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot"
+ms_official: "https://www.microsoft.com/en-us/security/pricing/microsoft-security-copilot"
 m365maps: ""
-last_verified: "June 2026"
+last_verified: "October 2026"
 faq:
   - q: "Is Security Copilot included in M365 E5?"
-    a: "No. Security Copilot is a standalone pay-per-use product billed separately at $4 per Security Compute Unit (SCU) per hour. M365 E5 is not a prerequisite, but E5 customers get the most value because E5 already provides the signal sources Security Copilot reasons over — Defender XDR, Entra ID P2, and Purview."
+    a: "Yes. Eligible Microsoft 365 E5 and E7 customers receive shared monthly Security Copilot capacity through a phased rollout: 400 SCUs per 1,000 paid user licences, up to 10,000 SCUs per month. This scales below 1,000 licences, with no minimum licence count. Check your tenant notification and activation status; inclusion is not unlimited usage."
   - q: "How does Security Copilot pricing work?"
-    a: "Security Copilot uses Security Compute Units (SCUs) billed at $4/SCU/hour. You provision SCU capacity in the Azure portal and pay for what you use. It's consumption-based, not per-user. 1 SCU running 24/7 for a month ≈ $2,920."
+    a: "Eligible, activated E5/E7 tenants use an included monthly SCU pool, which resets each month without rollover. For customers without qualifying licences, provisioned capacity is billed by the hour and overage capacity by actual consumption. Check Microsoft's Security Copilot pricing page for current paid rates."
   - q: "Do I need Microsoft Sentinel?"
-    a: "No, but Sentinel makes Security Copilot significantly more powerful. Without Sentinel you still get Defender XDR integration; with Sentinel you also get cross-source threat hunting across all your log sources."
+    a: "No. Security Copilot can work with other supported products you have licensed. Eligible E5/E7 customers who also use Sentinel can apply their included SCUs to Security Copilot scenarios in Sentinel, but Sentinel data lake compute and storage costs are not included."
 ---
 
 ## What Is Security Copilot?
 
-Security Copilot is an **AI assistant for security operations teams**. It uses GPT-4 class models trained on Microsoft's threat intelligence to help analysts investigate incidents, hunt threats, and generate reports.
+Security Copilot helps security and IT teams investigate incidents, understand device and identity risks, and review recommended actions. It is available through a standalone portal and supported experiences in Defender, Entra, Intune, Purview, and Sentinel. What it can access depends on your licensed products, configured integrations, and permissions.
 
 ## How Pricing Works
 
-Unlike most Microsoft licences, Security Copilot uses a **consumption model**:
+Security Copilot measures compute in **Security Compute Units (SCUs)**. There are two different ways to obtain capacity:
 
-| Component | Detail |
+| Capacity model | Detail |
 |-----------|--------|
-| **Unit** | Security Compute Unit (SCU) |
-| **Price** | $4 per SCU per hour |
-| **Billing** | Provision capacity in Azure, pay for usage |
-| **Minimum** | 1 SCU |
-| **Per-user cost** | None — pricing is by compute, not by seat |
+| **Microsoft 365 E5/E7 inclusion** | Shared monthly capacity for eligible, activated tenants: 400 SCUs per 1,000 paid user licences, capped at 10,000 SCUs per month |
+| **Below 1,000 licences** | Capacity scales with the paid licence count; there is no minimum licence count |
+| **Unused included capacity** | Resets monthly; unused SCUs do not roll over |
+| **Paid provisioned capacity** | Available without qualifying E5/E7 licences; a minimum of one SCU, billed by the hour for provisioned capacity, not just the amount consumed |
+| **Paid overage capacity** | Additional capacity above paid provisioned capacity, billed by actual consumption within the configured overage limit |
 
-> **💡 Think of it like Azure:** You provision capacity (SCUs) and pay for what you use. A small SOC team might start with 1–3 SCUs; a large enterprise security team might use 10+.
+The included monthly pool is **not** hourly provisioned capacity. Do not multiply an included SCU allocation by an hourly price. For current paid rates, use the [official Security Copilot pricing page](https://www.microsoft.com/en-us/security/pricing/microsoft-security-copilot).
 
-### Real cost examples
+### Capacity examples
 
-| Scenario | SCU sizing | Monthly cost (24/7) |
-|---|---|---|
-| Small SOC team trialling it | 1 SCU | ≈ $2,920 |
-| Mid-size team, business hours only (10h × 22d) | 2 SCUs | ≈ $1,760 |
-| Mid-size team, always-on | 3 SCUs | ≈ $8,760 |
-| Large enterprise SOC | 10 SCUs | ≈ $29,200 |
+Microsoft gives these examples for the included model:
 
-You can scale SCUs up or down at any time. Most teams start with 1 SCU and add capacity as adoption grows.
+| Paid E5/E7 user licences | Included monthly capacity |
+|---|---|
+| 400 | 160 SCUs |
+| 4,000 | 1,600 SCUs |
+
+These are shared tenant allocations, not a separate allowance for each analyst. Track actual consumption in the Security Copilot usage dashboard.
+
+Microsoft's inclusion FAQ describes future throttling and a paid option beyond the monthly allocation, with 30 days' advance notice. It does **not** establish that this option is already enabled in every tenant. Check the [current inclusion FAQ and your tenant notification](https://learn.microsoft.com/en-us/copilot/security/security-copilot-inclusion#usage-and-billing) before planning around it.
 
 ## Security Copilot + M365 E5
 
@@ -57,8 +59,10 @@ This is the question people ask most: **how does Security Copilot fit if I alrea
 
 The short version:
 
-- ❌ Security Copilot is **NOT bundled** with M365 E5 — you pay for it separately
-- ✅ E5 customers are the **natural buyer** because E5 already provides the data Security Copilot needs
+- Eligible **Microsoft 365 E5 and E7 customers receive included monthly capacity** at no additional cost.
+- Rollout started on **November 18, 2025**, for existing Security Copilot customers with E5, then expanded in phases. Eligibility does not prove your tenant is already activated.
+- Once an eligible tenant is notified and enabled, the included capacity is **automatically provisioned**. No separate Azure setup or manual SCU provisioning is needed for that inclusion.
+- Review the preselected data-processing settings, access roles, and integrations. Agents still require your organisation to set them up and deploy them.
 
 ### What E5 unlocks for Security Copilot
 
@@ -69,22 +73,23 @@ The short version:
 | **Purview** | Insider risk and DLP signal correlation |
 | **Microsoft Intune** | Device compliance and management context |
 
-Without those data sources Security Copilot is a thin shell — that's the real *"works best with E5"* reason.
+Included capacity does not replace product permissions or grant access to data your organisation has not licensed or configured.
 
-### What E5 does NOT unlock
+### What inclusion does NOT cover
 
-- **Microsoft Sentinel** is **not included in E5** — Sentinel is consumption-billed separately (per GB ingested + per GB retained)
-- For full cross-source threat hunting, you still need Sentinel
-- Sentinel-only customers (no E5) can still use Security Copilot — they just lose the Defender XDR integration
+- **Sentinel data lake compute and storage** remain separate costs. If you also use Sentinel, your included SCUs can cover Security Copilot scenarios in it.
+- **Azure Logic Apps charges**, partner-agent licences purchased through Security Store, and prerequisites outside E5/E7 are not included.
+- Microsoft's FAQ also excludes the **non-agentic Data Security Investigations experience in Purview**. Check the relevant workload's licensing before enabling it.
+- Partner-built agents' **SCU costs** are included until further notice, but that does not include the partner's licence charge.
 
 ### The clean buying picture for E5 customers
 
 | You have | You need to add for Security Copilot |
 |---|---|
-| **M365 E5** | Security Copilot SCUs only |
-| **M365 E5 + Sentinel** | Security Copilot SCUs only (most common setup) |
-| **M365 E3** | Defender add-ons + Security Copilot SCUs |
-| **Sentinel only (no E5)** | Security Copilot SCUs (limited XDR integration) |
+| **Eligible M365 E5 or E7** | Check activation; use the included monthly pool after enablement |
+| **Eligible E5/E7 + Sentinel** | Use included SCUs for Security Copilot scenarios; budget separately for Sentinel workload costs |
+| **No qualifying E5/E7 licence** | Arrange paid SCU capacity and the licences needed for the products you will connect |
+| **Already provisioned paid capacity** | Do not delete existing capacity just because you qualify; Microsoft says to retain it to ensure continued access |
 
 ## What It Does
 
@@ -99,38 +104,38 @@ Without those data sources Security Copilot is a thin shell — that's the real 
 
 | Profile | Fit |
 |---|---|
-| E5 customer with a SOC team | ✅ Strong fit — your existing signals make it work day one |
-| E3 customer running Defender add-ons | ✅ Works, but you'll get more from upgrading data sources first |
-| Sentinel customer without E5 | ⚠️ Partial fit — you'll lose Defender XDR depth |
-| Org with no SOC team or analyst | ❌ Skip — you need humans to act on what it surfaces |
+| Eligible E5/E7 customer | Check activation and start with a focused use case in your existing security or endpoint tools |
+| Customer without qualifying E5/E7 licences | Compare paid capacity with the actual workloads and integrations you need |
+| Sentinel customer without qualifying E5/E7 licences | Paid Security Copilot remains available; Sentinel alone does not qualify for inclusion |
+| Team considering automated agents | Decide who reviews recommendations and which actions the agent is authorised to perform |
 
 ## Frequently Asked Questions
 
 **1. Do I need M365 E5 to use Security Copilot?**
 
-No. Security Copilot is a standalone pay-per-use product. M365 E5 is not a prerequisite. But E5 customers get the most value because E5 already provides the Defender XDR, Entra ID P2, and Purview signals Security Copilot reasons over.
+No. Customers without qualifying E5/E7 licences can use paid capacity. Eligible E5/E7 customers instead receive included monthly capacity after tenant activation. Connect only the products and data sources you are licensed and authorised to use.
 
 **2. Is this the same as M365 Copilot?**
 
-No. M365 Copilot ($30/user) is for productivity (Word, Excel, Outlook). Security Copilot is for security operations teams and billed by compute usage, not per user.
+No. Microsoft 365 Copilot supports productivity work in apps such as Word, Excel, and Outlook. Security Copilot supports security and IT operations. Its SCU capacity and inclusion rules are different.
 
 **3. How do I provision SCUs?**
 
-You provision SCU capacity in the Azure portal under Security Copilot. You pay through your Azure subscription. Microsoft's [Getting Started guide](https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot) walks through the setup.
+For eligible, activated E5/E7 tenants, included capacity is provisioned automatically without separate Azure setup. Customers using the paid model provision capacity through Azure. See Microsoft's [capacity model guide](https://learn.microsoft.com/en-us/copilot/security/security-compute-units-capacity). Existing customers should not delete previously provisioned capacity merely because they qualify for inclusion.
 
 **4. Can I try it before committing?**
 
-Yes — Microsoft has run promotional free trial periods in the past. Check the [official pricing page](https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot) for current offers.
+Eligible E5/E7 customers can begin with their included capacity once activated. For customers outside that inclusion, check the [official pricing page](https://www.microsoft.com/en-us/security/pricing/microsoft-security-copilot) for current offers and paid terms; do not assume a trial is available.
 
 **5. Does it work outside Microsoft's security stack?**
 
-Yes, via plugins. Security Copilot supports third-party plugins for ServiceNow, CrowdStrike, and other tools — though Microsoft-native integrations are deepest.
+Yes, supported plugins and partner agents can connect other tools. Their availability, permissions, partner licences, and associated service charges still apply; included SCUs do not make every connected service free.
 
 ## Official Microsoft references
 
-- [Security Copilot product page](https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot)
-- [Microsoft Learn — Security Copilot overview](https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot)
-- [Microsoft Learn — Getting started](https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot)
+- [Security Copilot pricing and availability](https://www.microsoft.com/en-us/security/pricing/microsoft-security-copilot)
+- [Microsoft Learn — E5/E7 inclusion, eligibility, and exclusions](https://learn.microsoft.com/en-us/copilot/security/security-copilot-inclusion)
+- [Microsoft Learn — SCUs and capacity models](https://learn.microsoft.com/en-us/copilot/security/security-compute-units-capacity)
 - [Microsoft Learn — Manage SCU usage](https://learn.microsoft.com/en-us/copilot/security/manage-usage)
 - [Microsoft Learn — Authentication and data handling](https://learn.microsoft.com/en-us/copilot/security/authentication)
 - [Microsoft Learn — Plugins and extensibility](https://learn.microsoft.com/en-us/copilot/security/plugin-microsoft)

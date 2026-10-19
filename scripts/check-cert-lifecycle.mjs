@@ -23,6 +23,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runInNewContext } from 'node:vm';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PAGES_DIR = join(ROOT, 'content', 'cert-tracker');
@@ -59,6 +60,30 @@ function frontmatter(raw) {
 function field(fm, name) {
   const m = fm.match(new RegExp(`^${name}:\\s*"?([^"\\n]*)"?\\s*$`, 'm'));
   return m ? m[1].trim() : null;
+}
+
+function compassData(html) {
+  const sandbox = Object.create(null);
+  sandbox.window = sandbox;
+  for (const match of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script\s*>/gi)) {
+    if (!/^\s*window\.__compass\w+\s*=/.test(match[1])) continue;
+    // Hugo minification turns JSON into JavaScript literals and chains assignments.
+    runInNewContext(match[1], sandbox, {
+      timeout: 1000,
+      contextCodeGeneration: { strings: false, wasm: false },
+      microtaskMode: 'afterEvaluate',
+    });
+  }
+  return sandbox;
+}
+
+function hasNoindex(html) {
+  return [...html.matchAll(/<meta\b[^>]*>/gi)].some(([tag]) => {
+    const attributes = new Map([...tag.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/g)]
+      .map(([, name, double, single, bare]) => [name.toLowerCase(), (double ?? single ?? bare).toLowerCase()]));
+    const directives = (attributes.get('content') || '').split(/[,\s]+/);
+    return attributes.get('name') === 'robots' && directives.includes('noindex') && directives.includes('nofollow');
+  });
 }
 
 // A line is exempt when it is an FAQ question (reader phrasing, not a site claim)
@@ -237,14 +262,20 @@ if (existsSync(COMPASS_FILE) && latestData) {
   } else {
     const html = readFileSync(COMPASS_INDEX, 'utf8');
     const payloads = new Map();
+    let data;
+    try {
+      data = compassData(html);
+    } catch (error) {
+      failures.push(`could not read built Cert Compass data script: ${error.message}`);
+      data = Object.create(null);
+    }
     for (const name of ['Certs', 'Groups', 'Paths', 'Signals', 'Quiz', 'TopicDefs', 'CertTopics']) {
-      const assignment = html.match(new RegExp(`^window\\.__compass${name}\\s*=\\s*(.+);$`, 'm'));
-      if (!assignment) {
+      const payload = data[`__compass${name}`];
+      if (!payload || typeof payload !== 'object') {
         failures.push(`built Cert Compass page is missing its ${name} data payload`);
         continue;
       }
       try {
-        const payload = JSON.parse(assignment[1]);
         payloads.set(name, payload);
         const serialized = JSON.stringify(payload);
         for (const cert of retired) {
@@ -257,7 +288,7 @@ if (existsSync(COMPASS_FILE) && latestData) {
       }
     }
     const certPayload = payloads.get('Certs');
-    if (certPayload && !certPayload.some(cert => cert.id === 'ms-az-900')) {
+    if (certPayload && (!Array.isArray(certPayload) || !certPayload.some(cert => cert.id === 'ms-az-900'))) {
       failures.push('active AZ-900 is missing from the built Cert Compass catalog');
     }
   }
@@ -271,7 +302,7 @@ if (existsSync(COMPASS_FILE) && latestData) {
       continue;
     }
     const html = readFileSync(page, 'utf8');
-    if (!/<meta name="robots" content="noindex, nofollow">/i.test(html)) {
+    if (!hasNoindex(html)) {
       failures.push(`${cert.exam_code} (${cert.id}) retired detail route is missing noindex`);
     }
     if (!html.includes('This certification has been retired and is no longer listed in Cert Compass.')) {

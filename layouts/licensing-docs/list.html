@@ -45,7 +45,7 @@
     </p>
 
     {{/* Disclosure — be honest about prices */}}
-    <p class="zt-hub-disclosure">Prices in USD per user/month, retail (no enterprise discounts). Last refreshed monthly. <a href="/feedback/">Report issues →</a></p>
+    <p class="zt-hub-disclosure">Seat prices are in USD per user/month, retail (no enterprise discounts). Some products use included capacity or usage-based billing instead; see each guide for its terms. Last refreshed monthly. <a href="/feedback/">Report issues →</a></p>
 
     {{/* Search */}}
     <div class="zt-sg-search-wrap">
@@ -88,7 +88,7 @@
           <a href="{{ .RelPermalink }}" class="zt-lic-card" data-plan="{{ .Params.plan_name }}" data-category="{{ .Params.plan_category }}">
             <div class="zt-lic-card-row">
               <span class="zt-lic-card-name">{{ .Params.plan_name }}</span>
-              <span class="zt-lic-card-value">{{ if eq .Params.price 0 }}<span class="zt-lic-card-price--free">Free</span>{{ else }}<span class="zt-lic-card-price">${{ .Params.price }}/mo</span>{{ end }}</span>
+              <span class="zt-lic-card-value">{{ with .Params.price_display }}{{ . }}{{ else }}{{ if eq .Params.price 0 }}<span class="zt-lic-card-price--free">Free</span>{{ else }}<span class="zt-lic-card-price">${{ .Params.price }}/mo</span>{{ end }}{{ end }}</span>
             </div>
             {{ with .Params.tagline }}<span class="zt-lic-card-tagline">{{ . | truncate 80 }}</span>{{ end }}
             {{ with .Params.badge }}<span class="zt-lic-card-badge{{ if (findRE `(?i)popular|favourite` .) }} zt-lic-badge--popular{{ else if (findRE `(?i)best value` .) }} zt-lic-badge--value{{ else if (findRE `(?i)coming` .) }} zt-lic-badge--coming{{ end }}">{{ . }}</span>{{ end }}

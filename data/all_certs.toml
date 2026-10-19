@@ -4927,7 +4927,7 @@ slug = "juniper-jncis-sp"
 vendor = "juniper"
 code = "JNCIS-SP"
 name = "Juniper Networks Certified Specialist Service Provider Routing and Switching (JNCIS-SP)"
-tagline = "Specialist-level Juniper service provider certification on Junos OS - protocol-independent routing (static, aggregate, generated routes, RIB groups, load balancing, filter-based forwarding), OSPF and IS-IS link-state routing, BGP path selection and iBGP/eBGP, Layer 2 bridging and VLANs (provider bridging / Q-in-Q, IRB), spanning-tree (STP/RSTP/MSTP/VSTP), MPLS with RSVP, LDP and segment-routing LSPs, IPv6 (OSPFv3, IS-IS, BGP inet6, v6-over-v4 tunneling), GRE/IP tunnels, and high availability (LAG, GR/GRES/NSR/NSB, BFD, VRRP)"
+tagline = "JNCIS-SP practice for exam JN0-364, based on Junos OS 25.2. Covers protocol-independent routing, OSPF, IS-IS, BGP, Layer 2 bridging and VLANs, spanning-tree protocols, MPLS, IPv6, tunnels, and high availability."
 exam_category = "Juniper"
 level = "advanced"
 status = "active"
@@ -4937,11 +4937,17 @@ domains = 10
 order = 216
 featured = false
 price_practice = 9
-exam_url = "https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncis-sp.html"
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14325"
 exam_cost = "$300 USD"
 exam_duration = 90
 exam_passing_score = ""
 guided_url = "/guided/juniper-jncis-sp/"
+
+
+# ═══════════════════════════════════════════════════
+# Keyed map — use (index site.Data.all_certs.cert_map "slug")
+# for single-page lookups (replaces guided_certs.toml)
+# ═══════════════════════════════════════════════════
 
 [[cert]]
 slug = "juniper-jncip-dc"
@@ -11953,7 +11959,7 @@ practice_url = "/guided/juniper-jncis-sec/practice/"
 vendor = "juniper"
 code = "JNCIS-SP"
 name = "Juniper Networks Certified Specialist Service Provider Routing and Switching (JNCIS-SP)"
-tagline = "Specialist-level Juniper service provider certification on Junos OS - protocol-independent routing (static, aggregate, generated routes, RIB groups, load balancing, filter-based forwarding), OSPF and IS-IS link-state routing, BGP path selection and iBGP/eBGP, Layer 2 bridging and VLANs (provider bridging / Q-in-Q, IRB), spanning-tree (STP/RSTP/MSTP/VSTP), MPLS with RSVP, LDP and segment-routing LSPs, IPv6 (OSPFv3, IS-IS, BGP inet6, v6-over-v4 tunneling), GRE/IP tunnels, and high availability (LAG, GR/GRES/NSR/NSB, BFD, VRRP)"
+tagline = "JNCIS-SP practice for exam JN0-364, based on Junos OS 25.2. Covers protocol-independent routing, OSPF, IS-IS, BGP, Layer 2 bridging and VLANs, spanning-tree protocols, MPLS, IPv6, tunnels, and high availability."
 exam_category = "Juniper"
 level = "advanced"
 status = "active"
@@ -11963,14 +11969,14 @@ domains = 10
 order = 216
 featured = false
 price_practice = 9
-exam_url = "https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncis-sp.html"
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14325"
 exam_cost = "$300 USD"
 exam_duration = 90
 exam_passing_score = ""
 exam_questions_real = "65"
 exam_provider = "Pearson VUE"
 exam_validity = "3 years"
-exam_prerequisites = "JNCIA-Junos recommended (no hard prerequisite)"
+exam_prerequisites = "JNCIA-Junos certification required"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/juniper-jncis-sp/"
 practice_url = "/guided/juniper-jncis-sp/practice/"

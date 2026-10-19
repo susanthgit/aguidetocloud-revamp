@@ -29,6 +29,9 @@
     {{/* Price + badges */}}
     <div class="zt-lic-header">
       <div class="zt-lic-price-block">
+        {{ with .Params.price_display }}
+        <span class="zt-lic-price-note">{{ . }}</span>
+        {{ else }}
         {{ if isset .Params "price" }}
           {{ if eq .Params.price 0 }}
           <span class="zt-lic-price">Free</span>
@@ -38,6 +41,7 @@
           {{ end }}
         {{ else }}
         <span class="zt-lic-price">{{ with .Params.price_label }}{{ . }}{{ else }}Contact Microsoft for pricing{{ end }}</span>
+        {{ end }}
         {{ end }}
         {{ with .Params.price_note }}<span class="zt-lic-price-note">{{ . }}</span>{{ end }}
       </div>
@@ -116,11 +120,14 @@
     <details class="zt-lic-disclaimer-wrap">
       <summary class="zt-lic-disclaimer-toggle">Disclaimer</summary>
       <div class="zt-lic-disclaimer">
-        {{ if isset .Params "price" }}
-        Pricing is in USD (list price, per user, per month) sourced from official Microsoft pricing pages as of {{ .Params.last_verified }} — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and contact your Microsoft representative for local pricing, volume discounts, and tailored offers. The views expressed on this page are personal and do not represent official positions of Microsoft.
+        {{ if .Params.price_display }}
+        Included capacity, paid capacity, and availability depend on your subscription and tenant activation. Details were checked as of {{ .Params.last_verified }} and can change. Check the <a href="{{ .Params.ms_official }}" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for current terms.
+        {{ else if isset .Params "price" }}
+        Pricing is in USD (list price, per user, per month) sourced from official Microsoft pricing pages as of {{ .Params.last_verified }} — pricing, features, and availability are subject to change. Always check the <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener noreferrer">official Microsoft pricing page</a> for the latest information, and contact your Microsoft representative for local pricing, volume discounts, and tailored offers.
         {{ else }}
-        {{ with .Params.price_disclaimer }}{{ . }}{{ else }}Microsoft's linked public sources do not list a dollar price for this plan. Contact Microsoft or your licensing provider for a current quote.{{ end }} The views expressed on this page are personal and do not represent official positions of Microsoft.
+        {{ with .Params.price_disclaimer }}{{ . }}{{ else }}Microsoft's linked public sources do not list a dollar price for this plan. Contact Microsoft or your licensing provider for a current quote.{{ end }}
         {{ end }}
+        The views expressed on this page are personal and do not represent official positions of Microsoft.
       </div>
     </details>
 
@@ -149,7 +156,7 @@
   "brand": {
     "@type": "Brand",
     "name": "Microsoft"
-  }{{ if and (isset .Params "price") (ne .Params.price_status "historical") }},
+  }{{ if and (isset .Params "price") (ne .Params.price_status "historical") (not .Params.price_display) }},
   "offers": {
     "@type": "Offer",
     "price": "{{ .Params.price }}",
