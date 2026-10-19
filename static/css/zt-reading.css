@@ -452,6 +452,14 @@ pre:hover .code-copy-btn { opacity: 1; }
 }
 
 /* Tables — Z21: wrapped in .zt-table-wrap by JS */
+.zt-reading--lic .zt-reading-body > table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .zt-table-wrap {
   border: 1px solid var(--border, #262626);
   border-radius: var(--radius-md, 10px);
