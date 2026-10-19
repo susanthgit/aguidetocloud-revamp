@@ -1,0 +1,212 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "t0",
+      "type": "text",
+      "x": 60,
+      "y": 45,
+      "width": 1222.0,
+      "height": 100.0,
+      "text": "Another pair of eyes, without agent-edit access",
+      "fontSize": 40,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t1",
+      "type": "text",
+      "x": 60,
+      "y": 115,
+      "width": 926.25,
+      "height": 62.5,
+      "text": "Conceptual illustration - not product UI or a tenant test",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r0",
+      "type": "rectangle",
+      "x": 60,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t3",
+      "type": "text",
+      "x": 83,
+      "y": 243,
+      "width": 84.5,
+      "height": 65.0,
+      "text": "MAKER",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t4",
+      "type": "text",
+      "x": 83,
+      "y": 335,
+      "width": 438.75,
+      "height": 187.5,
+      "text": "Builds the agent.\nSets up its evaluations.\nKeeps control of authoring.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r1",
+      "type": "rectangle",
+      "x": 550,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t6",
+      "type": "text",
+      "x": 573,
+      "y": 243,
+      "width": 304.2,
+      "height": 65.0,
+      "text": "EVALUATION RESULTS",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t7",
+      "type": "text",
+      "x": 573,
+      "y": 335,
+      "width": 422.5,
+      "height": 187.5,
+      "text": "Show what the tests found.\nGive reviewers evidence\nto inspect and discuss.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r2",
+      "type": "rectangle",
+      "x": 1040,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t9",
+      "type": "text",
+      "x": 1063,
+      "y": 243,
+      "width": 287.3,
+      "height": 65.0,
+      "text": "EVALUATION VIEWER",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t10",
+      "type": "text",
+      "x": 1063,
+      "y": 335,
+      "width": 471.25,
+      "height": 187.5,
+      "text": "Can see evaluation results\nwithout agent-editing rights.\nCan raise review questions.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t11",
+      "type": "text",
+      "x": 60,
+      "y": 580,
+      "width": 1131.0,
+      "height": 72.5,
+      "text": "Reviewing the evidence is different from changing the agent.",
+      "fontSize": 29,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t12",
+      "type": "text",
+      "x": 60,
+      "y": 685,
+      "width": 1341.6000000000001,
+      "height": 60.0,
+      "text": "Conceptual role boundary, not a complete permissions matrix or a role-assignment test.",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t13",
+      "type": "text",
+      "x": 60,
+      "y": 775,
+      "width": 819.0,
+      "height": 52.5,
+      "text": "Microsoft Studio September roundup, published 7 October 2026",
+      "fontSize": 21,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

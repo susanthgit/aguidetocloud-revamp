@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820">
+<rect width="1500" height="820" fill="#f3efe3"/>
+<text x="60" y="85" font-family="Segoe UI,Arial,sans-serif" font-size="40" font-weight="600" fill="#000000">One knowledge base, separate agent connections</text>
+<text x="60" y="140" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Conceptual illustration - not product UI or a tenant test</text>
+<rect x="60" y="210" width="400" height="315" rx="12" fill="none" stroke="#243953" stroke-width="3"/>
+<text x="83" y="269" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="600" fill="#000000">AGENT A</text>
+<text x="83" y="360" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Connects to the existing</text>
+<text x="83" y="397" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Foundry IQ knowledge base</text>
+<text x="83" y="434" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">for its own purpose.</text>
+<rect x="550" y="210" width="400" height="315" rx="12" fill="none" stroke="#a3854c" stroke-width="3"/>
+<text x="573" y="269" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="600" fill="#000000">FOUNDRY IQ</text>
+<text x="573" y="360" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Sources and retrieval settings</text>
+<text x="573" y="397" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">are maintained in Foundry.</text>
+<text x="573" y="434" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">One reusable knowledge base.</text>
+<rect x="1040" y="210" width="400" height="315" rx="12" fill="none" stroke="#243953" stroke-width="3"/>
+<text x="1063" y="269" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="600" fill="#000000">AGENT B</text>
+<text x="1063" y="360" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Has its own connection</text>
+<text x="1063" y="397" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">to that same knowledge base.</text>
+<text x="1063" y="434" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Test its answers separately.</text>
+<text x="60" y="609" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="600" fill="#000000">Reuse the knowledge base. Keep each agent&#x27;s connection and access clear.</text>
+<text x="60" y="709" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">One Foundry IQ connection per agent; access is required.</text>
+<text x="60" y="796" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#000000">Microsoft Learn: Connect to Foundry IQ from an agent (GitHub Copilot)</text>
+</svg>

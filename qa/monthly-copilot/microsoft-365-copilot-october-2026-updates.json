@@ -2,17 +2,17 @@
  "schema": 2,
  "slug": "microsoft-365-copilot-october-2026-updates",
  "tool_version": "1.0.0",
- "generated_at": "2026-10-19T05:54:25.653021+00:00",
+ "generated_at": "2026-10-19T21:04:10.700571+00:00",
  "post": {
   "path": "content/blog/microsoft-365-copilot-october-2026-updates.md",
-  "sha256": "6bc24ee74145278291105045857353795c2969195cc6f0157496dd1b596e5527",
+  "sha256": "a6180723eca41e842b0adf9b08c18453c3c1532e0dc8704eeb71c89aec8e09b7",
   "sections": 81
  },
  "roadmap_snapshot": {
   "path": "static/data/roadmap/latest.json",
-  "generated_at": "2026-10-17T09:17:08.529765+00:00",
-  "item_count": 2082,
-  "sha256": "f14fa5f3a6e3398df11675648d630fb36ce08c90561eb819fb5944b41d8fb010"
+  "generated_at": "2026-10-19T10:48:58.648658+00:00",
+  "item_count": 2077,
+  "sha256": "ba148b3c2ac724b3ec29707521b5936da8e2eb66eeaf4bfa29aa8c2f4017c1e9"
  },
  "sections": [
   {
@@ -666,7 +666,7 @@
    "title": "Build an app beside your agents and workflows",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft's Studio September roundup was published 7 October; primary text and applicable Learn instructions directly fetched 19 October. Preview/GA is asserted only where source states it; otherwise no separate rollout date is claimed."
   },
@@ -684,7 +684,7 @@
    "title": "Foundry IQ integration moves to general availability",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft's Studio September roundup was published 7 October; primary text and applicable Learn instructions directly fetched 19 October. Preview/GA is asserted only where source states it; otherwise no separate rollout date is claimed."
   },
@@ -711,7 +711,7 @@
    "title": "Keep custom graders in a shared library",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft's Studio September roundup was published 7 October; primary text and applicable Learn instructions directly fetched 19 October. Preview/GA is asserted only where source states it; otherwise no separate rollout date is claimed."
   },
@@ -729,7 +729,7 @@
    "title": "An Evaluation Viewer can review results without editing",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft's Studio September roundup was published 7 October; primary text and applicable Learn instructions directly fetched 19 October. Preview/GA is asserted only where source states it; otherwise no separate rollout date is claimed."
   },
@@ -747,7 +747,7 @@
    "title": "An extract node turns documents into fields a workflow can use",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft Learn What's new lists this capability under September 2026; primary linked instructions directly fetched 19 October. Preview/GA qualifiers and engine scope are retained, without inventing a first launch date."
   },
@@ -756,7 +756,7 @@
    "title": "A workflow can call Chat, an agent or a Cowork task",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft Learn What's new lists this capability under September 2026; primary linked instructions directly fetched 19 October. Preview/GA qualifiers and engine scope are retained, without inventing a first launch date."
   },
@@ -765,7 +765,7 @@
    "title": "Model choice gets a dropdown and clear release labels",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft Learn What's new lists this capability under September 2026; primary linked instructions directly fetched 19 October. Preview/GA qualifiers and engine scope are retained, without inventing a first launch date."
   },
@@ -774,7 +774,7 @@
    "title": "Studio conversation attachments add Word, Excel and PowerPoint",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft Learn What's new lists this capability under September 2026; primary linked instructions directly fetched 19 October. Preview/GA qualifiers and engine scope are retained, without inventing a first launch date."
   },
@@ -783,7 +783,7 @@
    "title": "Dataverse knowledge can reach notes and file columns",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft Learn What's new lists this capability under September 2026; primary linked instructions directly fetched 19 October. Preview/GA qualifiers and engine scope are retained, without inventing a first launch date."
   },
@@ -792,7 +792,7 @@
    "title": "Standard-harness evaluations add configurable content-safety tests",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Explicitly labelled September catch-up, not an October launch or a new roadmap-date assertion. Microsoft Learn What's new lists this capability under September 2026; primary linked instructions directly fetched 19 October. Preview/GA qualifiers and engine scope are retained, without inventing a first launch date."
   }
@@ -1423,11 +1423,27 @@
    "observed": true
   },
   {
+   "section": 67,
+   "src": "/images/blog/copilot-october-2026/official-67-studio-app-home.webp",
+   "alt": "Microsoft&#x27;s Studio home example shows Agent, Workflow and App (Preview) tiles. A red outline frames the App (Preview) tile.",
+   "exists": true,
+   "sha256": "047bc7e75d9527b34f816da959a2861f047da57d6b3e9f7ef33573b4c235a90f",
+   "observed": true
+  },
+  {
    "section": 68,
    "src": "/images/blog/copilot-october-2026/official-68-studio-hooks.webp",
    "alt": "Microsoft's Hooks dialog lists Pre Raise Purchase Order with event type Pre tool use and On session start with Start pre-loop. A red outline frames those two configured rows.",
    "exists": true,
    "sha256": "242a231fde0e43f82ba845dfe5d5c1200b0c6fc34ce1b00a21d5f4e707913882",
+   "observed": true
+  },
+  {
+   "section": 69,
+   "src": "/images/blog/copilot-october-2026/created-69-foundry-knowledge-reuse.webp",
+   "alt": "Author illustration shows Agent A and Agent B each connecting separately to the same reusable Foundry IQ knowledge base. It notes one Foundry IQ connection per agent and required access.",
+   "exists": true,
+   "sha256": "50c970f7a0fcf9fef51d28ac859a186b19284484e309dfc486c937d72542160d",
    "observed": true
   },
   {
@@ -1447,6 +1463,14 @@
    "observed": true
   },
   {
+   "section": 72,
+   "src": "/images/blog/copilot-october-2026/created-72-shared-grader-library.webp",
+   "alt": "Author illustration explains defining a custom grader, keeping it as a reusable library asset, and reusing it across agents and test sets. It warns that a reusable grader is not automatically correct.",
+   "exists": true,
+   "sha256": "639c3b78a26f5718b35df1646c6742a59a03c9896ae915126ae2b3a6fc56fe6b",
+   "observed": true
+  },
+  {
    "section": 73,
    "src": "/images/blog/copilot-october-2026/official-73-generated-grader.webp",
    "alt": "Microsoft's Review suggested test method dialog shows a proposed grader, evaluation instructions, label criteria, a suggestion reason and a Keep it button. A red outline frames the proposed evaluation instructions.",
@@ -1455,11 +1479,67 @@
    "observed": true
   },
   {
+   "section": 74,
+   "src": "/images/blog/copilot-october-2026/created-74-evaluation-viewer.webp",
+   "alt": "Author illustration separates a maker, evaluation results and an Evaluation Viewer who can see results without agent-editing rights. It is explicitly not a complete permissions matrix or role-assignment test.",
+   "exists": true,
+   "sha256": "4741216ee5667affbd75d3df8772e03fa2f276da537a705fc4a7a27f4f1d3fb8",
+   "observed": true
+  },
+  {
    "section": 75,
    "src": "/images/blog/copilot-october-2026/official-75-review-panel.webp",
    "alt": "Microsoft's Review problems panel shows two warnings: No evaluation run and No channel or trigger configured. Microsoft's red outline surrounds the Review button and its badge showing two issues.",
    "exists": true,
    "sha256": "52f0292e100f5f5f9b0b026ddc45c1e485ed124343863321a34aa8838457e25e",
+   "observed": true
+  },
+  {
+   "section": 76,
+   "src": "/images/blog/copilot-october-2026/official-76-extract-node.webp",
+   "alt": "Microsoft&#x27;s workflow example connects Start to an Extract node. A red outline frames the Output setup with Suggest fields from sample document, Select a template and Add manually.",
+   "exists": true,
+   "sha256": "5202eea60bd623307caed23c825791c795ef7d5c9758df179bd4ce94cd786660",
+   "observed": true
+  },
+  {
+   "section": 77,
+   "src": "/images/blog/copilot-october-2026/lab-77-copilot-node-options.webp",
+   "alt": "My Copilot node configuration shows an existing connection with its account name hidden. A red outline frames Run Copilot Chat and Run a Cowork task; the Cowork card says it uses Copilot Credits.",
+   "exists": true,
+   "sha256": "319167b7cc2842cb457c949a059a29c241bf01ffd6949a55a51034eb6ccf4152",
+   "observed": true
+  },
+  {
+   "section": 78,
+   "src": "/images/blog/copilot-october-2026/lab-78-studio-model-menu.webp",
+   "alt": "My Studio model menu shows grouped model choices and a More models submenu. A red outline frames Claude Opus 5.5 and its Default badge. No Preview or Experimental release labels are visible.",
+   "exists": true,
+   "sha256": "fd3f8865c3722a4ad881cf6fc188fccdbc11068f4c4254eafca04fbc9f008419",
+   "observed": true
+  },
+  {
+   "section": 79,
+   "src": "/images/blog/copilot-october-2026/lab-79-office-attachments.webp",
+   "alt": "My agent message composer has two staged attachments with shortened names beginning Supplier Shortlis and Meeting Transcr. A red outline surrounds the attachment chips; the message field is empty and no response is shown.",
+   "exists": true,
+   "sha256": "efe70bc10d8abf4794e978ac25f8a17ecb4925f00fc5bb40f1d3a16678ef91ba",
+   "observed": true
+  },
+  {
+   "section": 80,
+   "src": "/images/blog/copilot-october-2026/created-80-dataverse-notes-files.webp",
+   "alt": "Author illustration connects Dataverse table fields, Multiline Text and File-column content with configured searchable columns and authenticated agent knowledge. It names the preview, 15-table limit and possible two-day backfill.",
+   "exists": true,
+   "sha256": "8512ebc00cfd321e3816201bfc0e678f865e6ce42885422858b0de6bce6286d7",
+   "observed": true
+  },
+  {
+   "section": 81,
+   "src": "/images/blog/copilot-october-2026/created-81-standard-content-safety.webp",
+   "alt": "Author illustration for the standard harness shows choosing a content type, setting its permitted severity threshold, and reviewing evaluation results. It calls for one test method per type and says a pass is not a safety guarantee.",
+   "exists": true,
+   "sha256": "cd31b58ae7b5f8d94c90527b1d7eb99e8fa83969709594e921eae7b789763714",
    "observed": true
   }
  ],

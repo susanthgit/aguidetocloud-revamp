@@ -1,0 +1,212 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "t0",
+      "type": "text",
+      "x": 60,
+      "y": 45,
+      "width": 1248.0,
+      "height": 100.0,
+      "text": "The explanation can live beyond the status field",
+      "fontSize": 40,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t1",
+      "type": "text",
+      "x": 60,
+      "y": 115,
+      "width": 926.25,
+      "height": 62.5,
+      "text": "Conceptual illustration - not product UI or a tenant test",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r0",
+      "type": "rectangle",
+      "x": 60,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t3",
+      "type": "text",
+      "x": 83,
+      "y": 243,
+      "width": 287.3,
+      "height": 65.0,
+      "text": "DATAVERSE CONTENT",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t4",
+      "type": "text",
+      "x": 83,
+      "y": 335,
+      "width": 373.75,
+      "height": 187.5,
+      "text": "Structured table fields\nMultiline Text columns\nFile-column content",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r1",
+      "type": "rectangle",
+      "x": 550,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t6",
+      "type": "text",
+      "x": 573,
+      "y": 243,
+      "width": 287.3,
+      "height": 65.0,
+      "text": "CONFIGURED SEARCH",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t7",
+      "type": "text",
+      "x": 573,
+      "y": 335,
+      "width": 438.75,
+      "height": 187.5,
+      "text": "Dataverse search enabled\nRelevant columns searchable\nQuick Find configuration",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r2",
+      "type": "rectangle",
+      "x": 1040,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t9",
+      "type": "text",
+      "x": 1063,
+      "y": 243,
+      "width": 253.5,
+      "height": 65.0,
+      "text": "AGENT KNOWLEDGE",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t10",
+      "type": "text",
+      "x": 1063,
+      "y": 335,
+      "width": 503.75,
+      "height": 187.5,
+      "text": "Microsoft authentication\nAccess to the underlying data\nTest questions over the content",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t11",
+      "type": "text",
+      "x": 60,
+      "y": 580,
+      "width": 1187.55,
+      "height": 72.5,
+      "text": "The preview extends reasoning to notes and file-column content.",
+      "fontSize": 29,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t12",
+      "type": "text",
+      "x": 60,
+      "y": 685,
+      "width": 1450.8,
+      "height": 60.0,
+      "text": "Up to 15 tables per source. File-content limits apply; later setup can need two-day backfill.",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t13",
+      "type": "text",
+      "x": 60,
+      "y": 775,
+      "width": 996.45,
+      "height": 52.5,
+      "text": "Microsoft Learn: Add Dataverse tables to your agent as a knowledge source",
+      "fontSize": 21,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

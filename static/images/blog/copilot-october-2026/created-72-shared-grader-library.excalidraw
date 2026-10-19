@@ -1,0 +1,212 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "t0",
+      "type": "text",
+      "x": 60,
+      "y": 45,
+      "width": 858.0,
+      "height": 100.0,
+      "text": "Agree on the check, then reuse it",
+      "fontSize": 40,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t1",
+      "type": "text",
+      "x": 60,
+      "y": 115,
+      "width": 926.25,
+      "height": 62.5,
+      "text": "Conceptual illustration - not product UI or a tenant test",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r0",
+      "type": "rectangle",
+      "x": 60,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t3",
+      "type": "text",
+      "x": 83,
+      "y": 243,
+      "width": 287.3,
+      "height": 65.0,
+      "text": "DEFINE THE GRADER",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t4",
+      "type": "text",
+      "x": 83,
+      "y": 335,
+      "width": 487.5,
+      "height": 187.5,
+      "text": "Write the evaluation criteria.\nDefine what passes or fails.\nCheck the grader itself.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r1",
+      "type": "rectangle",
+      "x": 550,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t6",
+      "type": "text",
+      "x": 573,
+      "y": 243,
+      "width": 371.8,
+      "height": 65.0,
+      "text": "KEEP IT IN THE LIBRARY",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t7",
+      "type": "text",
+      "x": 573,
+      "y": 335,
+      "width": 503.75,
+      "height": 187.5,
+      "text": "Manage the custom grader\nas a reusable evaluation asset.\nAvoid duplicate rule copies.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "r2",
+      "type": "rectangle",
+      "x": 1040,
+      "y": 210,
+      "width": 400,
+      "height": 315,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "t9",
+      "type": "text",
+      "x": 1063,
+      "y": 243,
+      "width": 236.6,
+      "height": 65.0,
+      "text": "REUSE IN TESTS",
+      "fontSize": 26,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t10",
+      "type": "text",
+      "x": 1063,
+      "y": 335,
+      "width": 455.0,
+      "height": 187.5,
+      "text": "Use it across agents\nand test sets.\nReview what the scores mean.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t11",
+      "type": "text",
+      "x": 60,
+      "y": 580,
+      "width": 999.0500000000001,
+      "height": 72.5,
+      "text": "The same marking guide makes comparisons more useful.",
+      "fontSize": 29,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t12",
+      "type": "text",
+      "x": 60,
+      "y": 685,
+      "width": 873.6,
+      "height": 60.0,
+      "text": "A reusable grader is not automatically a correct grader.",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "t13",
+      "type": "text",
+      "x": 60,
+      "y": 775,
+      "width": 819.0,
+      "height": 52.5,
+      "text": "Microsoft Studio September roundup, published 7 October 2026",
+      "fontSize": 21,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

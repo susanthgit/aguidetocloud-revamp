@@ -817,6 +817,76 @@
       "disposition": "annotated_at_capture",
       "reason": "Microsoft's Studio roundup image already red-outlines Review and badge 2. Cropped to the panel and retained the published highlight; no redundant callout.",
       "output_sha256": "52f0292e100f5f5f9b0b026ddc45c1e485ed124343863321a34aa8838457e25e"
+    },
+    "official-67-studio-app-home.webp": {
+      "disposition": "annotated",
+      "spec": "studio-gaps.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "79ed108166257113ca77d43ea7f757fa307b4b33abaa39b1de3c54d0d43bb44e",
+      "output_sha256": "047bc7e75d9527b34f816da959a2861f047da57d6b3e9f7ef33573b4c235a90f"
+    },
+    "official-76-extract-node.webp": {
+      "disposition": "annotated",
+      "spec": "studio-gaps.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "d4c02df5742c76a484ad8a8bbd854f2256e8d464734b54aa22d246e56c8e1987",
+      "output_sha256": "5202eea60bd623307caed23c825791c795ef7d5c9758df179bd4ce94cd786660"
+    },
+    "lab-77-copilot-node-options.webp": {
+      "disposition": "annotated",
+      "spec": "studio-gaps.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "dececa5992096d71cbcf95ee1336092408a1f2ac061c38b41922482ba6532f49",
+      "output_sha256": "319167b7cc2842cb457c949a059a29c241bf01ffd6949a55a51034eb6ccf4152"
+    },
+    "lab-78-studio-model-menu.webp": {
+      "disposition": "annotated",
+      "spec": "studio-gaps.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "93dbc591491718e3898e0f9b9f5f5937c8784e18fde7ff9fe54e77a0966f0ebb",
+      "output_sha256": "fd3f8865c3722a4ad881cf6fc188fccdbc11068f4c4254eafca04fbc9f008419"
+    },
+    "lab-79-office-attachments.webp": {
+      "disposition": "annotated",
+      "spec": "studio-gaps.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "c9555e9f0397499a2f66795c082615d8e7ce28a2666ac0ab91ea3b57e70dfb4d",
+      "output_sha256": "efe70bc10d8abf4794e978ac25f8a17ecb4925f00fc5bb40f1d3a16678ef91ba"
+    },
+    "created-69-foundry-knowledge-reuse.webp": {
+      "disposition": "created_asset",
+      "reason": "Original conceptual illustration from the section's public Microsoft source; explicitly labelled not product UI or a tenant test. No invented data or test scores.",
+      "output_sha256": "50c970f7a0fcf9fef51d28ac859a186b19284484e309dfc486c937d72542160d"
+    },
+    "created-72-shared-grader-library.webp": {
+      "disposition": "created_asset",
+      "reason": "Original conceptual illustration from the section's public Microsoft source; explicitly labelled not product UI or a tenant test. No invented data or test scores.",
+      "output_sha256": "639c3b78a26f5718b35df1646c6742a59a03c9896ae915126ae2b3a6fc56fe6b"
+    },
+    "created-74-evaluation-viewer.webp": {
+      "disposition": "created_asset",
+      "reason": "Original conceptual illustration from the section's public Microsoft source; explicitly labelled not product UI or a tenant test. No invented data or test scores.",
+      "output_sha256": "4741216ee5667affbd75d3df8772e03fa2f276da537a705fc4a7a27f4f1d3fb8"
+    },
+    "created-80-dataverse-notes-files.webp": {
+      "disposition": "created_asset",
+      "reason": "Original conceptual illustration from the section's public Microsoft source; explicitly labelled not product UI or a tenant test. No invented data or test scores.",
+      "output_sha256": "8512ebc00cfd321e3816201bfc0e678f865e6ce42885422858b0de6bce6286d7"
+    },
+    "created-81-standard-content-safety.webp": {
+      "disposition": "created_asset",
+      "reason": "Original conceptual illustration from the section's public Microsoft source; explicitly labelled not product UI or a tenant test. No invented data or test scores.",
+      "output_sha256": "cd31b58ae7b5f8d94c90527b1d7eb99e8fa83969709594e921eae7b789763714"
     }
   }
 }

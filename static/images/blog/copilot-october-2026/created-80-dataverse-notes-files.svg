@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820">
+<rect width="1500" height="820" fill="#f3efe3"/>
+<text x="60" y="85" font-family="Segoe UI,Arial,sans-serif" font-size="40" font-weight="600" fill="#000000">The explanation can live beyond the status field</text>
+<text x="60" y="140" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Conceptual illustration - not product UI or a tenant test</text>
+<rect x="60" y="210" width="400" height="315" rx="12" fill="none" stroke="#243953" stroke-width="3"/>
+<text x="83" y="269" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="600" fill="#000000">DATAVERSE CONTENT</text>
+<text x="83" y="360" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Structured table fields</text>
+<text x="83" y="397" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Multiline Text columns</text>
+<text x="83" y="434" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">File-column content</text>
+<rect x="550" y="210" width="400" height="315" rx="12" fill="none" stroke="#a3854c" stroke-width="3"/>
+<text x="573" y="269" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="600" fill="#000000">CONFIGURED SEARCH</text>
+<text x="573" y="360" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Dataverse search enabled</text>
+<text x="573" y="397" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Relevant columns searchable</text>
+<text x="573" y="434" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Quick Find configuration</text>
+<rect x="1040" y="210" width="400" height="315" rx="12" fill="none" stroke="#243953" stroke-width="3"/>
+<text x="1063" y="269" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="600" fill="#000000">AGENT KNOWLEDGE</text>
+<text x="1063" y="360" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Microsoft authentication</text>
+<text x="1063" y="397" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Access to the underlying data</text>
+<text x="1063" y="434" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Test questions over the content</text>
+<text x="60" y="609" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="600" fill="#000000">The preview extends reasoning to notes and file-column content.</text>
+<text x="60" y="709" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">Up to 15 tables per source. File-content limits apply; later setup can need two-day backfill.</text>
+<text x="60" y="796" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#000000">Microsoft Learn: Add Dataverse tables to your agent as a knowledge source</text>
+</svg>

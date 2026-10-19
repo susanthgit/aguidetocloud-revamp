@@ -1,5 +1,97 @@
 # Image observation ledger - October 2026
 
+## §67 (Studio image completion, 20 October 2026) — official-67-studio-app-home.webp
+
+**File:** `official-67-studio-app-home.webp`
+**SHA256:** `047bc7e75d9527b34f816da959a2861f047da57d6b3e9f7ef33573b4c235a90f`
+
+**Observed while viewing:** Studio home tiles Agent, Workflow and App (Preview); red outline surrounds the App tile. Greeting and account chrome are excluded.
+
+**Verdict:** MATCH: official app entry point, not an execution claim.
+
+## §69 (Studio image completion, 20 October 2026) — created-69-foundry-knowledge-reuse.webp
+
+**File:** `created-69-foundry-knowledge-reuse.webp`
+**SHA256:** `50c970f7a0fcf9fef51d28ac859a186b19284484e309dfc486c937d72542160d`
+
+**Observed while viewing:** Ivory diagram with Agent A, Foundry IQ and Agent B cards. Both agent cards describe their own connection to the same knowledge base. The footer states one connection per agent and required access.
+
+**Verdict:** MATCH: explains reuse without inventing a configured tenant.
+
+## §72 (Studio image completion, 20 October 2026) — created-72-shared-grader-library.webp
+
+**File:** `created-72-shared-grader-library.webp`
+**SHA256:** `639c3b78a26f5718b35df1646c6742a59a03c9896ae915126ae2b3a6fc56fe6b`
+
+**Observed while viewing:** Three cards read Define the grader, Keep it in the library, and Reuse in tests. Text covers evaluation criteria, reusable assets and agents/test sets; no scores or product controls appear.
+
+**Verdict:** MATCH: library concept, not the unrelated evaluation-results capture.
+
+## §74 (Studio image completion, 20 October 2026) — created-74-evaluation-viewer.webp
+
+**File:** `created-74-evaluation-viewer.webp`
+**SHA256:** `4741216ee5667affbd75d3df8772e03fa2f276da537a705fc4a7a27f4f1d3fb8`
+
+**Observed while viewing:** Maker, Evaluation results and Evaluation Viewer cards distinguish authoring from inspecting results. Footer states conceptual role boundary, not a complete permissions matrix or role-assignment test.
+
+**Verdict:** MATCH: bounded role explanation without simulated access denial.
+
+## §76 (Studio image completion, 20 October 2026) — official-76-extract-node.webp
+
+**File:** `official-76-extract-node.webp`
+**SHA256:** `5202eea60bd623307caed23c825791c795ef7d5c9758df179bd4ce94cd786660`
+
+**Observed while viewing:** Start connects to Extract on a dotted canvas. Right-hand panel has Document input and Output choices; red outline encloses sample-document, template and manual field setup. Connection is already masked in Microsoft's source.
+
+**Verdict:** MATCH: exact extraction configuration, not output.
+
+## §77 (Studio image completion, 20 October 2026) — lab-77-copilot-node-options.webp
+
+**File:** `lab-77-copilot-node-options.webp`
+**SHA256:** `319167b7cc2842cb457c949a059a29c241bf01ffd6949a55a51034eb6ccf4152`
+
+**Observed while viewing:** Copilot Configure panel shows Connection label with identity pixels removed, then Run Copilot Chat and Run a Cowork task cards inside a red outline. Cowork card mentions Copilot Credits. No run result is present.
+
+**Verdict:** MATCH: configuration choices; account identity permanently masked.
+
+## §78 (Studio image completion, 20 October 2026) — lab-78-studio-model-menu.webp
+
+**File:** `lab-78-studio-model-menu.webp`
+**SHA256:** `fd3f8865c3722a4ad881cf6fc188fccdbc11068f4c4254eafca04fbc9f008419`
+
+**Observed while viewing:** Open Model menu has grouped choices, More models submenu and unavailable-model entry. Claude Opus 5.5 has a check and Default badge inside a red outline. No Preview or Experimental release badge is shown.
+
+**Verdict:** MATCH: actual model menu and Default marker only.
+
+## §79 (Studio image completion, 20 October 2026) — lab-79-office-attachments.webp
+
+**File:** `lab-79-office-attachments.webp`
+**SHA256:** `efe70bc10d8abf4794e978ac25f8a17ecb4925f00fc5bb40f1d3a16678ef91ba`
+
+**Observed while viewing:** Cropped composer has two attachment chips with shortened Supplier Shortlis and Meeting Transcr names inside a red outline. Message field is empty; plus and send controls are visible, with no agent response.
+
+**Verdict:** MATCH: staged attachments; Excel/Word identification comes from the user's report, not visible extensions.
+
+## §80 (Studio image completion, 20 October 2026) — created-80-dataverse-notes-files.webp
+
+**File:** `created-80-dataverse-notes-files.webp`
+**SHA256:** `8512ebc00cfd321e3816201bfc0e678f865e6ce42885422858b0de6bce6286d7`
+
+**Observed while viewing:** Dataverse content, Configured search and Agent knowledge cards list text/file columns, Quick Find setup, Microsoft authentication and underlying-data access. Footer notes 15 tables, file limits and possible two-day backfill.
+
+**Verdict:** MATCH: source prerequisites and preview scope, no fabricated rows or answers.
+
+## §81 (Studio image completion, 20 October 2026) — created-81-standard-content-safety.webp
+
+**File:** `created-81-standard-content-safety.webp`
+**SHA256:** `cd31b58ae7b5f8d94c90527b1d7eb99e8fa83969709594e921eae7b789763714`
+
+**Observed while viewing:** Choose content type, Set the threshold and Review the results cards explain response checks. STANDARD HARNESS is prominent below; footer says a pass is not a safety guarantee or replacement for runtime filters.
+
+**Verdict:** MATCH: standard-harness configuration concept, explicitly not a test result.
+
+
+
 ## §29 (final editorial review, 19 October 2026) — official-29-federated-confirmation-card.webp
 
 **File:** `official-29-federated-confirmation-card.webp`

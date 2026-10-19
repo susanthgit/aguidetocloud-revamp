@@ -1751,6 +1751,10 @@ This is also one of the destinations for the App Builder migration in [section 5
 <p><strong>Why this matters:</strong> Some jobs need a form, a list and a button rather than another chat window. Studio adds that option alongside agents and workflows, without making every maker start by writing code.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-october-2026/official-67-studio-app-home.webp" alt="Microsoft&#x27;s Studio home example shows Agent, Workflow and App (Preview) tiles. A red outline frames the App (Preview) tile." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft&#x27;s example, cropped with a red outline added by me. It shows where app building starts, not an app I built or tested.</em></p>
+
 📖 [Build apps in Copilot Cowork and Copilot Studio](https://www.microsoft.com/en-us/copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/)
 
 ### 68. Hooks run a workflow at a set point in an agent's work
@@ -1785,6 +1789,10 @@ You need access to the knowledge base, and Learn currently allows one Foundry IQ
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> If one team has already organised and tuned a useful set of knowledge, another team should not have to rebuild it before making an agent. Reuse the work, then test whether it answers your agent's questions well.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-october-2026/created-69-foundry-knowledge-reuse.webp" alt="Author illustration shows Agent A and Agent B each connecting separately to the same reusable Foundry IQ knowledge base. It notes one Foundry IQ connection per agent and required access." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My conceptual illustration based on Microsoft Learn and the Studio roundup, not product UI or a tenant test. The knowledge base is reused; each agent still has its own connection and access requirements.</em></p>
 
 📖 [Microsoft's Studio September roundup](https://www.microsoft.com/en-us/copilot/blog/copilot-studio/new-and-improved-build-apps-extend-agents-and-transform-business-processes-in-microsoft-copilot-studio/) · [Connect to Foundry IQ](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/foundry-iq-connect)
 
@@ -1840,6 +1848,10 @@ This is about consistency in testing, not a guarantee that the shared rule is co
 <p><strong>Why this matters:</strong> Teams can agree on what a good result looks like and test against the same definition. That makes comparisons more useful than everyone bringing their own private checklist.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-october-2026/created-72-shared-grader-library.webp" alt="Author illustration explains defining a custom grader, keeping it as a reusable library asset, and reusing it across agents and test sets. It warns that a reusable grader is not automatically correct." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My conceptual illustration of the shared-library idea, not a screenshot of the library or a claim that I tested it. Define the check, reuse it, and validate the grader itself.</em></p>
+
 📖 [Studio September roundup: Custom Graders Library](https://www.microsoft.com/en-us/copilot/blog/copilot-studio/new-and-improved-build-apps-extend-agents-and-transform-business-processes-in-microsoft-copilot-studio/#evaluate-more-dimensions-of-agent-performance)
 
 ### 73. Studio can draft a grader for your evaluation scenario
@@ -1874,6 +1886,10 @@ Microsoft describes the role as view access for evaluations; it is not a grant o
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> You can invite another pair of eyes into the review without also handing them the controls. That is a small but practical improvement for teams that separate building from approval.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-october-2026/created-74-evaluation-viewer.webp" alt="Author illustration separates a maker, evaluation results and an Evaluation Viewer who can see results without agent-editing rights. It is explicitly not a complete permissions matrix or role-assignment test." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My conceptual illustration of the role boundary described in Microsoft&#x27;s roundup, not a role-assignment screen or a complete permissions matrix. I have not tested this role in the demo environment.</em></p>
 
 📖 [Studio September roundup: Evaluation Viewer](https://www.microsoft.com/en-us/copilot/blog/copilot-studio/new-and-improved-build-apps-extend-agents-and-transform-business-processes-in-microsoft-copilot-studio/#evaluate-more-dimensions-of-agent-performance)
 
@@ -1910,6 +1926,10 @@ Test with representative documents and check the output before connecting it to 
 <p><strong>Why this matters:</strong> A person can read an invoice and pick out its total. A workflow needs that total in a named field before it can use it reliably. This step helps make that handover.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-october-2026/official-76-extract-node.webp" alt="Microsoft&#x27;s workflow example connects Start to an Extract node. A red outline frames the Output setup with Suggest fields from sample document, Select a template and Add manually." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft Learn&#x27;s example, cropped with a red outline added by me. It shows extraction setup options, not extracted invoice data or my test results.</em></p>
+
 📖 [Add an extract node](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/extract-node-workflow) · [Studio September release notes](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new#september-2026)
 
 ### 77. A workflow can call Chat, an agent or a Cowork task
@@ -1925,6 +1945,10 @@ For example, a workflow could ask Researcher for a brief, save the result as a d
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> You can put an existing Copilot capability inside a repeatable process rather than rebuilding it. Keep the account, permissions and review step clear before letting later actions use the result.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-october-2026/lab-77-copilot-node-options.webp" alt="My Copilot node configuration shows an existing connection with its account name hidden. A red outline frames Run Copilot Chat and Run a Cowork task; the Cowork card says it uses Copilot Credits." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My demo capture shows the two configuration choices, with the connection account hidden. It is not a completed Chat or Cowork run, and does not demonstrate the output or its later use.</em></p>
 
 📖 [Add a Copilot node](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/microsoft-365-copilot-node-workflow)
 
@@ -1942,6 +1966,10 @@ Try your own test set before switching a working agent. A more capable model may
 <p><strong>Why this matters:</strong> Choosing a model is choosing how the agent behaves, not just changing a label. Clear release tags make it easier to separate an experiment from a choice you are comfortable supporting.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-october-2026/lab-78-studio-model-menu.webp" alt="My Studio model menu shows grouped model choices and a More models submenu. A red outline frames Claude Opus 5.5 and its Default badge. No Preview or Experimental release labels are visible." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The Preview and Experimental release labels discussed above are not visible in this capture. My demo shows the model picker and Default marker, highlighted by me; the available names are environment-specific, not a universal model list.</em></p>
+
 📖 [Model availability and controls](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-agent-model-availability)
 
 ### 79. Studio conversation attachments add Word, Excel and PowerPoint
@@ -1957,6 +1985,10 @@ For example, someone could attach a particular supplier's proposal for review wi
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Often the useful question is about the file in front of you, not the whole company library. This widens the file types you can bring into that conversation, without confusing an upload with a permanent knowledge connection.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-october-2026/lab-79-office-attachments.webp" alt="My agent message composer has two staged attachments with shortened names beginning Supplier Shortlis and Meeting Transcr. A red outline surrounds the attachment chips; the message field is empty and no response is shown." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My demo capture shows an Excel file and a Word file attached before sending. Their filenames are shortened on screen. It does not show the agent processing them, a PowerPoint upload, or a completed response.</em></p>
 
 📖 [Attach files to a conversation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/attachments-overview) · [Studio September release notes](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new#september-2026)
 
@@ -1974,6 +2006,10 @@ There are limits: up to **15 tables per knowledge source**, and no support for t
 <p><strong>Why this matters:</strong> The status field might say "Waiting", while the reason is buried in a case note. Reaching that explanatory text can make an answer more useful, provided you configure and test the search properly.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-october-2026/created-80-dataverse-notes-files.webp" alt="Author illustration connects Dataverse table fields, Multiline Text and File-column content with configured searchable columns and authenticated agent knowledge. It names the preview, 15-table limit and possible two-day backfill." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My conceptual illustration based on Microsoft Learn, not a configured Dataverse search or a tenant test. The preview needs searchable columns, the right authentication and access; file-content limitations still apply.</em></p>
+
 📖 [Add Dataverse tables and search text/file columns](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-add-dataverse-tables)
 
 ### 81. Standard-harness evaluations add configurable content-safety tests
@@ -1989,6 +2025,10 @@ Run representative test cases and review failures. Passing these checks does not
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A team can state what it is checking for and make that check repeatable. Keep it as one part of the review, not a green badge that ends the conversation.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-october-2026/created-81-standard-content-safety.webp" alt="Author illustration for the standard harness shows choosing a content type, setting its permitted severity threshold, and reviewing evaluation results. It calls for one test method per type and says a pass is not a safety guarantee." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My conceptual illustration based on Microsoft&#x27;s standard-harness instructions, not a product screenshot or a tenant test. We could not locate the setting in the demo; this is not the newer grader screen in section 71.</em></p>
 
 📖 [Choose evaluation methods: Content safety](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-overview#content-safety) · [Studio September release notes](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new#september-2026)
 
