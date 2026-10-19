@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-19T13:01:16.203192+00:00",
+  "generated_at": "2026-10-19T19:51:41.042851+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 18,
-      "active_incidents": 4,
+      "total_incidents": 19,
+      "active_incidents": 5,
       "avg_duration_minutes": 1504,
-      "last_incident": "2026-10-13T07:40:00+00:00",
+      "last_incident": "2026-10-19T18:35:18.653000+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 13,
         "incident": 6
       }
     },
@@ -19,13 +19,13 @@
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 16,
-      "active_incidents": 2,
+      "total_incidents": 17,
+      "active_incidents": 3,
       "avg_duration_minutes": 6497,
-      "last_incident": "2026-10-16T02:15:48.513000+00:00",
+      "last_incident": "2026-10-19T07:56:42+00:00",
       "classifications": {
-        "advisory": 10,
-        "incident": 6
+        "incident": 7,
+        "advisory": 10
       }
     },
     {
@@ -33,12 +33,12 @@
       "short_name": "Copilot",
       "icon": "🤖",
       "total_incidents": 14,
-      "active_incidents": 0,
-      "avg_duration_minutes": 6604,
-      "last_incident": "2026-10-08T13:20:00+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 6992,
+      "last_incident": "2026-10-19T17:45:50.650000+00:00",
       "classifications": {
-        "incident": 6,
-        "advisory": 8
+        "incident": 7,
+        "advisory": 7
       }
     },
     {
@@ -55,28 +55,28 @@
       }
     },
     {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 8,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5659,
-      "last_incident": "2026-10-19T08:03:44.620000+00:00",
-      "classifications": {
-        "advisory": 8
-      }
-    },
-    {
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 1804,
-      "last_incident": "2026-10-19T09:27:49.230000+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 1642,
+      "last_incident": "2026-10-19T07:20:00+00:00",
       "classifications": {
-        "advisory": 3,
-        "incident": 4
+        "incident": 4,
+        "advisory": 3
+      }
+    },
+    {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 7,
+      "active_incidents": 0,
+      "avg_duration_minutes": 6443,
+      "last_incident": "2026-10-19T07:05:00+00:00",
+      "classifications": {
+        "advisory": 7
       }
     },
     {
@@ -144,19 +144,6 @@
       }
     },
     {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 4174,
-      "last_incident": "2026-10-06T23:17:00+00:00",
-      "classifications": {
-        "advisory": 2,
-        "incident": 1
-      }
-    },
-    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -166,6 +153,19 @@
       "last_incident": "2026-09-30T20:30:00+00:00",
       "classifications": {
         "incident": 3
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 5033,
+      "last_incident": "2026-10-06T23:17:00+00:00",
+      "classifications": {
+        "advisory": 1,
+        "incident": 1
       }
     },
     {
@@ -184,7 +184,7 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 36,
+      "incident_count": 39,
       "services_affected": 12
     },
     {
@@ -194,8 +194,8 @@
     },
     {
       "month": "2026-08",
-      "incident_count": 6,
-      "services_affected": 6
+      "incident_count": 3,
+      "services_affected": 3
     },
     {
       "month": "2026-07",

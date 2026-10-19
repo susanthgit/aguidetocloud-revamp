@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Oct 2026 13:01:16 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 19:51:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Users and admins can't view or manage device group configurations through the Microsoft Defender portal</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1515549</link>
+      <description>[Microsoft 365 suite] Users and admins can't view or manage device group configurations through the Microsoft Defender portal.</description>
+      <category>Microsoft 365 suite</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MO1515549</guid>
+      <pubDate>Mon, 19 Oct 2026 18:35:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may not see options to select GPT models in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1515501</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may not see options to select GPT models in Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1515501</guid>
+      <pubDate>Mon, 19 Oct 2026 17:45:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to join town hall meetings in Microsoft Teams and are redirected to a registration page</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1514781</link>
+      <description>[Microsoft Teams] Users may be unable to join town hall meetings in Microsoft Teams and are redirected to a registration page.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1514781</guid>
+      <pubDate>Mon, 19 Oct 2026 07:56:42 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may have been unable to send messages in Microsoft 365 Copilot chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1515013</link>
@@ -14,7 +41,7 @@
       <category>Microsoft 365 Copilot Chat</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1515013</guid>
-      <pubDate>Mon, 19 Oct 2026 09:27:49 +0000</pubDate>
+      <pubDate>Mon, 19 Oct 2026 07:20:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Some users may have experienced intermittent failures with sensitivity-labeled items in Microsoft Fabric</title>
@@ -23,14 +50,14 @@
       <category>Power BI</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1514788</guid>
-      <pubDate>Mon, 19 Oct 2026 08:03:44 +0000</pubDate>
+      <pubDate>Mon, 19 Oct 2026 07:05:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be unable to see GPT within the model selection options in Microsoft 365 Copilot chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1514746</link>
       <description>[Microsoft 365 Copilot Chat] Users may be unable to see GPT within the model selection options in Copilot chat.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">CW1514746</guid>
       <pubDate>Mon, 19 Oct 2026 06:59:12 +0000</pubDate>
     </item>
@@ -430,33 +457,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1489909</guid>
       <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Planner] Some users may see initial page loading failures and 500 errors within Microsoft Planner</title>
-      <link>https://www.aguidetocloud.com/service-health/#PL1490629</link>
-      <description>[Planner] Users may have seen initial page loading failures and 500 errors within Planner.</description>
-      <category>Planner</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PL1490629</guid>
-      <pubDate>Mon, 28 Sep 2026 11:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users' email with DocuSign URLs may not be delivered and may be quarantined due to URL reputation</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1483619</link>
-      <description>[Exchange Online] Users' email with DocuSign URLs may not have been delivered and may have been quarantined due to URL reputation.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1483619</guid>
-      <pubDate>Mon, 28 Sep 2026 02:36:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may have been unable to view chart data on Power BI dashboards when using standard light or dark themes</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1505699</link>
-      <description>[Power BI] Users may have been unable to view chart data on Power BI dashboards when using standard light or dark themes. </description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1505699</guid>
-      <pubDate>Sun, 27 Sep 2026 13:10:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
