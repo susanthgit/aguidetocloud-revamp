@@ -504,3 +504,47 @@ name = "Visual Studio Enterprise"
 description = "Pro + advanced testing, $150/mo Azure credits, IntelliTest"
 category = "Windows & Dev"
 icon = "💻"
+
+# ── EDUCATION STUDENT USE BENEFITS ───────────
+
+[[features]]
+id = "edu-o365-a3-sub"
+name = "Office 365 A3 Student Use Benefit"
+description = "Student-use entitlement listed for Microsoft 365 Education A3 in Microsoft Product Terms"
+category = "Education Student Use Benefit"
+icon = "🎓"
+
+[[features]]
+id = "edu-ems-a3-sub"
+name = "Enterprise Mobility + Security A3 Student Use Benefit"
+description = "Student-use entitlement listed for Microsoft 365 Education A3 in Microsoft Product Terms"
+category = "Education Student Use Benefit"
+icon = "🎓"
+
+[[features]]
+id = "edu-o365-a5-sub"
+name = "Office 365 A5 Student Use Benefit"
+description = "Student-use entitlement listed for Microsoft 365 Education A5 and A7 in Microsoft Product Terms"
+category = "Education Student Use Benefit"
+icon = "🎓"
+
+[[features]]
+id = "edu-ems-a5-sub"
+name = "Enterprise Mobility + Security A5 Student Use Benefit"
+description = "Student-use entitlement listed for Microsoft 365 Education A5 and A7 in Microsoft Product Terms"
+category = "Education Student Use Benefit"
+icon = "🎓"
+
+[[features]]
+id = "edu-windows-a3-sub"
+name = "Windows Education A3 Student Use Benefit"
+description = "Student-use entitlement listed for Microsoft 365 Education A3, A5, and A7 in Microsoft Product Terms"
+category = "Education Student Use Benefit"
+icon = "🎓"
+
+[[features]]
+id = "edu-minecraft"
+name = "Minecraft: Education Edition"
+description = "Student-use entitlement listed for Microsoft 365 Education A3, A5, and A7 in Microsoft Product Terms"
+category = "Education Student Use Benefit"
+icon = "🎓"

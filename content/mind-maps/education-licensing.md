@@ -1,21 +1,27 @@
 ---
-title: "Microsoft 365 Education Licensing (A1/A3/A5) — Free Mind Map"
-description: "Visual breakdown of Microsoft 365 Education plans — A1 (free), A3, A5. Faculty vs student pricing, what's included, eligibility."
-intro: "Three Education plans with massive faculty discounts and free student licences. Here's what each tier includes — plus the eligibility gotchas."
+title: "Microsoft 365 Education A7 Student Use Benefit Map"
+description: "Visual guide to Microsoft 365 Education plans and the exact A3, A5 and A7 Student Use Benefit entitlements listed in Microsoft Product Terms."
+intro: "Compare Microsoft's public Education plan descriptions and see which specific student-use products the A3, A5 and A7 terms list."
 category: "licensing"
 format: "comparison"
 renderer: "static"
 data_file: "education_licensing"
-lastmod: 2026-05-03
+lastmod: 2026-10-20
 images:
   - images/og/mind-maps/education-licensing.jpg
 faq:
-  - question: "Is Microsoft 365 A1 really free?"
-    answer: "Yes, for verified accredited educational institutions. A1 includes Teams for Education, web/mobile Office apps, Exchange + OneDrive (small mailbox/storage quotas), and the basic Education tools (Class Notebook, Forms). It's a real free tier, not a trial. Limitations: no desktop Office apps, smaller mailboxes, no advanced security. Most institutions start here for students and upgrade faculty to A3 or A5."
-  - question: "How do A3 and A5 prices work for students vs faculty?"
-    answer: "Faculty pricing: A3 ~$3.30/user/month, A5 ~$7.25/user/month (list, before academic discounts). Students: A3 is FREE (no charge per student) and A5 has a much lower per-student price (varies by region). This is dramatically cheaper than Enterprise tiers. The catch: 'Student Use Benefit' means students get those licences without per-user payment — but the institution still has to be properly licensed for faculty/staff to make students eligible."
-  - question: "Who qualifies as 'education' for these prices?"
-    answer: "Accredited educational institutions: K-12 schools, colleges, universities, vocational schools. Microsoft verifies via standard education accreditation databases per region. Doesn't qualify: corporate training providers, online-only courses without accreditation, library-only programmes. There's also Education+ (some private schools, NGOs in education space). Microsoft does periodic audits — running edu prices for non-edu use is a licensing-compliance risk and Microsoft will reclaim the difference."
-  - question: "Is M365 Copilot included in A5?"
-    answer: "No. Microsoft 365 Copilot is a paid add-on for Education plans, similar to Enterprise — A3/A5 + Copilot add-on (~$30/user/month full price, education discounts vary). Microsoft has piloted Copilot in some education contexts at reduced pricing or as part of specific offers. The general rule: Copilot is NOT bundled into A1/A3/A5 base pricing as of 2026. Watch for Microsoft education-specific Copilot announcements."
+  - question: "What does the A7 Student Use Benefit provide?"
+    answer: "Microsoft Product Terms lists Office 365 A5 Student Use Benefit, Enterprise Mobility + Security A5 Student Use Benefit, Windows Education A3 Student Use Benefit, and Minecraft: Education Edition. The table lists EES and CSP availability and 40 student instances per qualifying paid faculty/staff, Education Qualified User, or Knowledge Worker license."
+  - question: "How many A7 student-use instances are listed?"
+    answer: "Microsoft Product Terms lists 40 per qualifying paid Faculty/Staff, Education Qualified User, or Knowledge Worker license for Microsoft 365 Education A7. Check the institution's qualifying program and agreement."
+  - question: "Does Microsoft publish A3, A5, or A7 prices on its Education page?"
+    answer: "Microsoft's public page directs institutions to talk with an expert about pricing. It does not show a dollar amount for these plans on that page."
+  - question: "Does the A7 Student Use Benefit include Copilot?"
+    answer: "Copilot is not listed in the A7 Student Use Benefit entitlements table. Confirm any separate Copilot offer against current Microsoft terms and the institution's agreement."
 ---
+
+## Official sources
+
+- [Microsoft 365 Education plan comparison](https://www.microsoft.com/en-us/education/products/microsoft-365/compare-microsoft-365-education-plans)
+- [Microsoft Student Use Benefits and Academic Programs](https://www.microsoft.com/licensing/terms/product/StudentUseBenefitsandAcademicPrograms/all)
+- [Microsoft 365 Education plan information and pricing contact](https://www.microsoft.com/en-us/education/products/microsoft-365)

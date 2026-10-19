@@ -858,12 +858,11 @@ detail_url = "/licensing/microsoft-365-education/"
 id = "m365-a1"
 name = "Microsoft 365 Education A1"
 category = "education"
-price = 0
-price_note = "Free for qualifying institutions"
-tagline = "Free cloud tools for education"
-description = "Web Office apps, Teams, Exchange (50 GB), SharePoint, and OneDrive (1 TB). Free for qualifying educational institutions. No desktop apps."
-who = "Schools and universities needing free cloud tools for students and staff"
-badge = "Free"
+price_note = "Check Microsoft's current Education offer and eligibility."
+tagline = "Foundational web-based productivity and collaboration"
+description = "Microsoft describes Education A1 as essential web-based productivity and collaboration. The public comparison separately states that Office 365 A1 is donated at no cost to eligible institutions; confirm the exact SKU and eligibility."
+who = "Schools and universities seeking foundational web-based education apps"
+badge = ""
 m365maps = "https://m365maps.com/files/Microsoft-365-Education-A1-(Legacy).htm"
 ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
 features = ["web-mobile-apps", "exchange-50gb", "teams", "sharepoint", "onedrive-1tb"]
@@ -873,30 +872,42 @@ detail_url = "/licensing/microsoft-365-education/"
 id = "m365-a3"
 name = "Microsoft 365 Education A3"
 category = "education"
-price = 3.25
-price_note = "Per user/month (faculty)"
+price_note = "Microsoft directs institutions to talk with an expert about plan pricing."
 tagline = "Desktop apps + security for education"
 description = "Everything in A1 plus desktop Office apps, Intune for Education, Windows Enterprise, advanced security, and 100 GB Exchange mailbox."
 who = "Educational institutions needing desktop apps and device management"
 badge = ""
 m365maps = "https://m365maps.com/files/Microsoft-365-Education-A3.htm"
 ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
-features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "intune-p1", "entra-p1", "windows-e3"]
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "sharepoint", "onedrive-unlimited", "intune-p1", "entra-p1", "windows-e3", "edu-o365-a3-sub", "edu-ems-a3-sub", "edu-windows-a3-sub", "edu-minecraft"]
 
 [[plans]]
 detail_url = "/licensing/microsoft-365-education/"
 id = "m365-a5"
 name = "Microsoft 365 Education A5"
 category = "education"
-price = 8
-price_note = "Per user/month (faculty)"
+price_note = "Microsoft directs institutions to talk with an expert about plan pricing."
 tagline = "Full security + analytics for education"
 description = "Everything in A3 plus advanced security (Defender P2, Entra P2), Power BI Pro, Teams Phone, and advanced compliance. The most comprehensive education plan."
 who = "Large educational institutions needing enterprise-grade security and analytics"
 badge = ""
 m365maps = "https://m365maps.com/files/Microsoft-365-Education-A5.htm"
 ms_official = "https://www.microsoft.com/en-us/education/products/microsoft-365"
-features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "entra-p2", "intune-p1", "defender-endpoint-p2", "defender-o365-p2", "power-bi-pro", "windows-e5"]
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "entra-p2", "intune-p1", "defender-endpoint-p2", "defender-o365-p2", "power-bi-pro", "windows-e5", "edu-o365-a5-sub", "edu-ems-a5-sub", "edu-windows-a3-sub", "edu-minecraft"]
+
+[[plans]]
+detail_url = "/licensing/microsoft-365-education/"
+id = "m365-a7-student-use"
+name = "Microsoft 365 Education A7 — Student Use Benefit"
+category = "education"
+price_note = "No A7 price is listed on Microsoft's public Education pages."
+tagline = "A qualifying product for specific student-use entitlements"
+description = "Microsoft Product Terms lists A7 as qualifying for Office 365 A5, Enterprise Mobility + Security A5, Windows Education A3, and Minecraft: Education Edition Student Use Benefits through EES and CSP, with 40 student instances per paid Faculty/Staff, Education Qualified User, or Knowledge Worker license. These are student entitlements, not a full A7 faculty feature list or student A7 license."
+who = "Institutions checking Student Use Benefit eligibility under EES or CSP"
+badge = "Student Use Benefit"
+m365maps = ""
+ms_official = "https://www.microsoft.com/licensing/terms/product/StudentUseBenefitsandAcademicPrograms/all"
+features = ["edu-o365-a5-sub", "edu-ems-a5-sub", "edu-windows-a3-sub", "edu-minecraft"]
 
 # ── WINDOWS & DEVELOPER ──────────────────────
 
@@ -1039,7 +1050,7 @@ id = "education"
 name = "Education Plans"
 emoji = "🎓"
 accent = "#eab308"
-description = "Discounted plans for qualifying schools and universities."
+description = "Education plans and documented Student Use Benefit entitlements. Check Microsoft for current pricing."
 m365maps_all = "https://m365maps.com/files/Microsoft-365-Education-All.htm"
 
 [[categories]]
@@ -1065,6 +1076,4 @@ emoji = "👷"
 accent = "#f97316"
 description = "For shift workers, retail staff, and field workers."
 m365maps_all = "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"
-
-
 

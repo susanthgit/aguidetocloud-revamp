@@ -29,6 +29,12 @@
   const planMap = {};
   plans.forEach(p => { planMap[p.id] = p; });
 
+  function formatPlanPrice(plan, suffix) {
+    if (plan.price === 0) return 'Free';
+    if (Number.isFinite(plan.price)) return `$${plan.price}${suffix || ''}`;
+    return plan.price_note || 'Contact Microsoft for pricing';
+  }
+
   // Selected plans for comparison
   let compareSet = new Set();
 
@@ -57,7 +63,11 @@
       if (!catPlans.length) return;
 
       // Sort plans by price descending (highest first)
-      catPlans.sort((a, b) => b.price - a.price);
+      catPlans.sort((a, b) => {
+        const aPrice = Number.isFinite(a.price) ? a.price : -1;
+        const bPrice = Number.isFinite(b.price) ? b.price : -1;
+        return bPrice - aPrice;
+      });
 
       const accent = cat.accent || '#F43F5E';
 
@@ -99,11 +109,13 @@
   }
 
   function renderPlanCard(plan) {
-    const priceDisplay = plan.price === 0
-      ? '<span class="lic-price-unit">Free</span>'
-      : `$${plan.price}<span class="lic-price-unit">/user/mo</span>`;
+    const priceDisplay = Number.isFinite(plan.price)
+      ? plan.price === 0
+        ? '<span class="lic-price-unit">Free</span>'
+        : `$${plan.price}<span class="lic-price-unit">/user/mo</span>`
+      : `<span class="lic-price-unit">${esc(formatPlanPrice(plan))}</span>`;
 
-    const noteHtml = plan.price_note
+    const noteHtml = Number.isFinite(plan.price) && plan.price_note
       ? `<span class="lic-price-note">${esc(plan.price_note)}</span>`
       : '';
 
@@ -194,7 +206,7 @@
     // Build table
     let html = '<thead><tr><th>Feature</th>';
     selectedPlans.forEach(p => {
-      html += `<th>${esc(p.name)}<br><small style="color:#F43F5E">$${p.price}/mo</small></th>`;
+      html += `<th>${esc(p.name)}<br><small style="color:#F43F5E">${esc(formatPlanPrice(p, '/user/mo'))}</small></th>`;
     });
     html += '</tr></thead><tbody>';
 
@@ -384,7 +396,7 @@
       const pct = Math.round((r.score / maxScore) * 100);
       const plan = r.plan;
 
-      const priceText = plan.price === 0 ? 'Free' : `$${plan.price}/user/month`;
+      const priceText = esc(formatPlanPrice(plan, '/user/month'));
 
       let actions = '';
       if (plan.m365maps) {
@@ -399,7 +411,7 @@
       <div class="lic-result-card">
         <div class="lic-result-rank">${labels[idx] || 'Also Consider'} — ${pct}% match</div>
         <div class="lic-result-name">${esc(plan.name)}</div>
-        <div class="lic-result-price">${priceText}${plan.price_note ? ' · ' + esc(plan.price_note) : ''}</div>
+        <div class="lic-result-price">${priceText}${Number.isFinite(plan.price) && plan.price_note ? ' · ' + esc(plan.price_note) : ''}</div>
         <p class="lic-result-why">${esc(plan.description)}</p>
         <div class="lic-card-actions">${actions}</div>
       </div>`;
@@ -525,7 +537,7 @@
         name: p.name,
         tagline: p.tagline,
         category: cat ? cat.name : p.category,
-        price: p.price,
+        price: formatPlanPrice(p),
         searchText: [p.name, p.tagline, p.who, p.description, p.id, p.category].join(' ').toLowerCase()
       };
     });
@@ -547,7 +559,7 @@
             <span class="lic-search-result-name">${m.name}</span>
             <span class="lic-search-result-cat">${m.category}</span>
           </div>
-          <span class="lic-search-result-price">${m.price === 0 ? 'Free' : '$' + m.price}</span>
+          <span class="lic-search-result-price">${esc(m.price)}</span>
         </div>
       `).join('');
       resultsEl.classList.add('visible');

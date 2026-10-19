@@ -5,7 +5,7 @@ type: "licensing"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
-lastmod: 2026-05-13
+lastmod: 2026-10-20
 images: ["images/og/licensing.jpg"]
 faq:
   - question: "How do I use the Licensing Simplifier?"
@@ -17,7 +17,7 @@ faq:
   - question: "Is my data private when using the Licensing Simplifier?"
     answer: "Yes. All plan data is embedded in the page and every comparison runs in your browser. Your selections and cost calculations never leave your device."
   - question: "How often is the pricing data updated?"
-    answer: "Every plan page carries its own 'last checked' date, so you can see how fresh that particular price is. When Microsoft announces a change, the tool gets updated and the What Changed tab logs it."
+    answer: "Each plan page carries a last-verified date. Prices are shown only when a Microsoft public source lists them; where Microsoft directs buyers to an expert, the page says to request a quote instead of estimating."
   - question: "Is this tool still being improved?"
     answer: "Yes! This is a V1 release and we're actively improving it based on user feedback. If you have suggestions, find a bug, or want a new feature, please visit our Community Feedback page at aguidetocloud.com/feedback/ — every piece of feedback is read and acted on."
 ---

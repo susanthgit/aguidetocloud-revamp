@@ -1,11 +1,11 @@
 {
   "id": "education-licensing",
-  "name": "M365 Education — A Plans",
+  "name": "Microsoft 365 Education — Plans and Student Use Benefit",
   "palette": ["#92400E", "#7C2D12", "#5B21B6", "#155E75", "#3F6212"],
   "children": [
     {
       "id": "free",
-      "name": "M365 A1 — Free for Edu",
+      "name": "Office 365 A1 — no cost for eligible institutions",
       "color": 0,
       "children": [
         { "id": "f-online", "name": "Online apps only" },
@@ -16,25 +16,40 @@
     },
     {
       "id": "a3",
-      "name": "M365 A3 — $3.30/u/mo",
+      "name": "Microsoft 365 Education A3",
       "color": 1,
       "children": [
-        { "id": "a3-cost", "name": "$3.30 (faculty) / FREE (student)" },
         { "id": "a3-desktop", "name": "Desktop Office apps" },
         { "id": "a3-intune", "name": "Intune for Education" },
-        { "id": "a3-defender", "name": "Defender for Endpoint P1" }
+        { "id": "a3-defender", "name": "Defender for Endpoint P1" },
+        { "id": "a3-sub", "name": "Student benefit: Office 365 A3, EMS A3, Windows Education A3, Minecraft" },
+        { "id": "a3-ratio", "name": "40 student instances per qualifying paid license · EES/CSP" }
       ]
     },
     {
       "id": "a5",
-      "name": "M365 A5 — $7.25/u/mo",
+      "name": "Microsoft 365 Education A5",
       "color": 2,
       "children": [
-        { "id": "a5-cost", "name": "$7.25 (faculty) / lower (student)" },
-        { "id": "a5-defender", "name": "Full Defender suite" },
+        { "id": "a5-defender", "name": "Student Use Benefit terms do not itemize Defender components" },
         { "id": "a5-purview", "name": "Purview Premium" },
         { "id": "a5-phone", "name": "Teams Phone Standard" },
-        { "id": "a5-equiv", "name": "Roughly = E5 with edu pricing" }
+        { "id": "a5-sub", "name": "Student benefit: Office 365 A5, EMS A5, Windows Education A3, Minecraft" },
+        { "id": "a5-ratio", "name": "40 student instances per qualifying paid license · EES/CSP" }
+      ]
+    },
+    {
+      "id": "a7",
+      "name": "Microsoft 365 Education A7 — Student Use Benefit",
+      "color": 2,
+      "children": [
+        { "id": "a7-qualifier", "name": "A7 is listed as a qualifying product in Microsoft Product Terms" },
+        { "id": "a7-o365", "name": "Office 365 A5 Student Use Benefit" },
+        { "id": "a7-ems", "name": "Enterprise Mobility + Security A5 Student Use Benefit" },
+        { "id": "a7-windows", "name": "Windows Education A3 Student Use Benefit" },
+        { "id": "a7-minecraft", "name": "Minecraft: Education Edition" },
+        { "id": "a7-ratio", "name": "40 student instances per qualifying paid license · EES/CSP" },
+        { "id": "a7-scope", "name": "Specific student entitlements, not a full A7 faculty license" }
       ]
     },
     {
@@ -42,10 +57,9 @@
       "name": "vs Enterprise (E plans)",
       "color": 3,
       "children": [
-        { "id": "v-cheaper", "name": "10-20x cheaper than E" },
-        { "id": "v-eligibility", "name": "Eligibility: accredited edu", "tag": "Verified" },
-        { "id": "v-mix", "name": "Faculty + student mix" },
-        { "id": "v-classroom", "name": "Adds Class Notebook, Insights" }
+        { "id": "v-eligibility", "name": "Institution eligibility must be verified by Microsoft" },
+        { "id": "v-mix", "name": "Check faculty and student entitlements separately" },
+        { "id": "v-pricing", "name": "A3/A5/A7 prices: ask Microsoft for current pricing" }
       ]
     },
     {
@@ -53,10 +67,9 @@
       "name": "Watch out",
       "color": 4,
       "children": [
-        { "id": "w-copilot", "name": "Copilot is paid add-on" },
-        { "id": "w-gov", "name": "Edu vs Gov tenants different" },
-        { "id": "w-eligibility", "name": "Microsoft audits eligibility" },
-        { "id": "w-grad", "name": "Students lose access on grad" }
+        { "id": "w-copilot", "name": "Copilot is not listed in A7 student entitlements" },
+        { "id": "w-terms", "name": "Confirm program and agreement terms before assigning benefits" },
+        { "id": "w-pricing", "name": "Do not infer a student or faculty price from the benefit ratio" }
       ]
     }
   ]
