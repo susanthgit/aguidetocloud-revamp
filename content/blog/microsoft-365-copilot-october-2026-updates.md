@@ -40,7 +40,7 @@ founder_note: |
 
 October brings more than a new Copilot home screen. You can edit Office files beside a conversation, do more work inside Notebooks and get help cleaning Excel data. Some changes are generally available; others are still early access. Start with the status line under each heading.
 
-**What "81" means here.** These are numbered entries, not 81 shipped features. They include October announcements, the 25 September launch, release-note catch-up and admin notices. A release-note date is not necessarily a feature's first availability date. This draft covers public sources available through 18 October, rechecked on 19 October; the month is still in progress.
+**What "81" means here.** These are numbered entries, not 81 shipped features. They include October announcements, the 25 September launch, release-note catch-up and admin notices. A release-note date is not necessarily a feature's first availability date. This issue covers public sources available through 18 October, rechecked on 19 October; the month is still in progress.
 
 For the new October material, start at [section 53](#53-office-files-open-for-editing-inside-copilot). Makers can jump to the [Studio catch-up](#copilot-studio-and-power-platform-september-catch-up). The original sections keep their numbers, with the expanded Notebooks update in [section 19](#19-notebooks-get-a-new-lighter-design-in-the-copilot-app).
 
@@ -612,7 +612,7 @@ Buildings, rooms and desks added to the Places directory have profile cards, rea
 
 *For: Copilot mobile · iOS · Released per Microsoft Learn, 23 September 2026*
 
-You can use the Copilot app hands-free on CarPlay. Microsoft's steps say to connect your iPhone, pick Microsoft Copilot on the CarPlay screen, and say "Hey Siri, ask Copilot".
+You can use the Copilot app hands-free on CarPlay with a supported iPhone running iOS 26.4 or later, the latest Copilot app, a compatible vehicle and Copilot voice access. Microsoft's steps say to connect your iPhone, pick Microsoft Copilot on the CarPlay screen, and say "Hey Siri, ask Copilot".
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Voice access can reduce the need to handle your phone, but hands-free does not mean distraction-free. Set up while parked and follow local road rules.</p>
@@ -634,7 +634,7 @@ You can use the Copilot app hands-free on CarPlay. Microsoft's steps say to conn
 
 *For: Copilot Cowork · Android, Windows, iOS, Mac, Web · Listed in Microsoft Learn release notes, 23 September 2026*
 
-Microsoft's release note frames Cowork as "delegate an outcome, not just a task": you describe the result, Cowork gathers context from your emails, meetings, chats, files and business data, shows a plan, and asks for approval on actions. This is a catch-up entry, because earlier issues covered Cowork's features as they shipped.
+Microsoft's 23 September release notes frame Cowork as "delegate an outcome, not just a task": you describe the result, Cowork gathers context from your emails, meetings, chats, files and business data, shows a plan, and asks for approval on actions. This is a catch-up entry, because earlier issues covered Cowork's features as they shipped.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is Microsoft's plain statement of what Cowork is for. Use it when someone asks.</p>
@@ -650,7 +650,7 @@ Microsoft's release note frames Cowork as "delegate an outcome, not just a task"
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft example from Microsoft Learn, not a feature test in my tenant.</em></p>
 
-📖 [Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new)
+📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new)
 
 ---
 
@@ -732,7 +732,7 @@ Beyond pin and flag, you can ask Copilot Chat in Outlook to delete, move, copy a
 
 *For: Planner · Windows, Web · Released per Microsoft Learn, 23 September 2026 · Roadmap 560532*
 
-Planner has a Copilot icon at the bottom right that opens chat for natural-language questions, task discovery and in-plan updates. This is separate from the Planner Agent items in the September issue.
+For users with a Microsoft Copilot licence, Planner basic plans have a Copilot button at the bottom right that opens chat for natural-language questions, task discovery and in-plan updates. This is separate from the Planner Agent items in the September issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Ask "show me tasks due this week" instead of building a filter.</p>
@@ -872,9 +872,9 @@ When the Copilot app is blocked by policy, you can show users a link to your com
 
 <p><img src="/images/blog/copilot-october-2026/official-33-blocked-policy-link.webp" alt="Official Microsoft screenshot. Copilot Chat was turned off for your organization heading, an admin-enable message and View info from your organization link above Find files and more, Get creative and Use your apps tiles. Callout: “Link to your organisation&#x27;s policy”." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's documentation shows the blocked-access screen and View info from your organization link. This is the user-facing message, not the admin configuration screen. <a href="https://learn.microsoft.com/en-us/copilot/manage#provide-a-company-policy-url">Source: Microsoft</a>.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's documentation shows the blocked-access screen and View info from your organization link. This is the user-facing message, not the admin configuration screen. <a href="https://learn.microsoft.com/en-us/copilot/manage#provide-company-policy-url">Source: Microsoft</a>.</em></p>
 
-📖 [Manage Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/manage#provide-a-company-policy-url)
+📖 [Manage Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/manage#provide-company-policy-url)
 
 ### 34. A report on "Everyone" and "Everyone except external users"
 
@@ -1116,7 +1116,7 @@ The full-screen Copilot and the side pane in Teams and Outlook now follow the wi
 
 ### 44. The Edge new tab page gets Copilot search, chat and suggested actions
 
-*For: Microsoft Edge · Rolling out October 2026 (Microsoft roundup)*
+*For: Microsoft Edge · Roundup announced an October rollout; the 19 October roadmap still lists it In development, GA November 2026*
 
 Search, chat and web exploration share one box on the Edge new tab page, with Copilot-suggested actions and curated work content beside it.
 
@@ -1308,7 +1308,7 @@ Copilot in OneDrive now sits on the same foundation as Copilot in SharePoint and
 
 ### 51. Targeted surveys in the Copilot Dashboard
 
-*For: Admins and leaders · Rolled out September 2026 (Microsoft roundup)*
+*For: Admins and leaders · Roundup reported a September rollout; the 19 October roadmap still lists it In development, GA November 2026*
 
 Leaders can send Pulse surveys to dynamic lists built from Copilot adoption data, so sentiment sits next to adoption numbers. Microsoft says reporting is aggregated, with no individual visibility.
 
@@ -1768,7 +1768,7 @@ For example, a purchase-order agent could check a request against your approval 
 Save the hook configuration and publish the agent before expecting it to apply for users.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> "Please remember to check first" is an instruction. A configured hook puts that check at the point where the action happens. That is useful when the check must not depend on the agent deciding it is relevant.</p>
+<p><strong>Why this matters:</strong> "Please remember to check first" is an instruction. A configured hook runs at its event point, so the check does not depend on the agent deciding it is relevant. But if the hook's workflow fails, times out or returns something unreadable, the agent carries on as though the hook returned nothing. Microsoft says not to rely on a hook as your only safeguard for a business-critical rule.</p>
 </blockquote>
 
 <p><img src="/images/blog/copilot-october-2026/official-68-studio-hooks.webp" alt="Microsoft's Hooks dialog lists Pre Raise Purchase Order with event type Pre tool use and On session start with Start pre-loop. A red outline frames those two configured rows." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
@@ -1804,7 +1804,7 @@ An **evaluation** is a repeatable test: give the agent or a step in your process
 
 For example, a workflow may read an email, extract details and route a request. If the final result is wrong, testing the extraction step separately helps you find where the mistake started.
 
-Microsoft describes testing with datasets, setting rules for what counts as a pass and comparing results across versions. Use inputs that resemble the real work, including awkward cases, rather than only the easiest example.
+Use test sets with defined pass criteria, then rerun the same evaluation after changing the agent and compare the saved runs, as [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/analytics-agent-evaluation-results) describes. Use inputs that resemble the real work, including awkward cases, rather than only the easiest example.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A finished workflow can look fine while one small step quietly gets things wrong. Testing the parts as well as the whole gives you a better place to start fixing it.</p>
@@ -1996,7 +1996,7 @@ For example, someone could attach a particular supplier's proposal for review wi
 
 *For: Copilot Studio makers · Multiline Text and File-column reasoning in preview · September release-note catch-up*
 
-[September's Dataverse entry](/blog/microsoft-365-copilot-september-2026-updates/#75-dataverse-as-a-native-knowledge-source) covered tables as a knowledge source. This preview goes further: the agent can reason over content in **Multiline Text** and **File** columns, such as case notes, descriptions and attached documents, rather than only structured fields.
+[September's Dataverse entry](/blog/microsoft-365-copilot-september-2026-updates/#75-dataverse-as-a-native-knowledge-source) covered tables as a knowledge source. This preview goes further: the agent can reason over content in **Multiline Text** and **File** columns, such as case notes, descriptions and attached documents, rather than only structured fields. Microsoft notes that preview availability can vary by tenant or rollout group.
 
 Dataverse search must be enabled, the relevant columns must be searchable, and the agent must use **Authenticate with Microsoft**. Setup needs the right access; creating the search index also uses Dataverse capacity.
 
@@ -2050,7 +2050,7 @@ Also announced at the launch: **Today** in Home (private preview in October) and
 
 **Plugin registry support in Studio** is another one to watch. The [Studio roundup published on 7 October](https://www.microsoft.com/en-us/copilot/blog/copilot-studio/new-and-improved-build-apps-extend-agents-and-transform-business-processes-in-microsoft-copilot-studio/#discover-reusable-capabilities-with-the-centralized-plugin-registry) says it is rolling out over the coming weeks. That wording does not confirm it is available in every Studio environment.
 
-**One more dated check before publication:** Microsoft has announced a [OneDrive + Copilot event for 20 October](https://techcommunity.microsoft.com/blog/onedriveblog/save-the-date-join-us-october-20-for-the-onedrive--copilot-digital-event/4556814). That event has not happened at this draft's 18 October source cut-off. Its eventual announcements are not counted here.
+**One more dated item:** Microsoft announced a [OneDrive + Copilot event for 20 October](https://techcommunity.microsoft.com/blog/onedriveblog/save-the-date-join-us-october-20-for-the-onedrive--copilot-digital-event/4556814). It falls after this issue's 18 October source cut-off, so its announcements are not counted here.
 
 ---
 
@@ -2063,6 +2063,7 @@ If these apply to you, they are worth checking. Wording is conditional because t
 - **If you restricted Copilot in SharePoint with PowerShell**, those controls are honoured only until 1 November ([Learn](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
 - **If you own an App Builder app**, plan and test its replacement before 30 November ([migration guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/app-builder-migration)).
 - **If you own `.agent` files**, plan for the November creation change and March 2027 retirement of the file format ([upgrade guidance](https://learn.microsoft.com/en-us/sharepoint/upgrade-sharepoint-agents)).
+- **If you use Microsoft-built or Microsoft-platform agents**, watch for the late-October rollout of foundational Agent 365 usage and activity insights in the Microsoft 365 admin center. Metrics can be incomplete for up to 30 days while activity builds, and broader governance still needs Agent 365 or ME7 licensing ([MC1506727](https://mc.merill.net/message/MC1506727)).
 - **If users ask why they can see Code but cannot open it**, check their spending policy and the new Request access settings ([MC1479277](https://mc.merill.net/message/MC1479277)).
 
 *Disclaimer: this is my reading of public posts, not official guidance.*
@@ -2071,7 +2072,7 @@ If these apply to you, they are worth checking. Wording is conditional because t
 
 ## How this issue was put together
 
-**The source cut-off is 18 October.** This draft combines public Microsoft product posts and Learn documentation with the release-note batches of 23 September and 6 October, the 25 September launch and publicly archived Message Center posts. Sections 53 to 66 hold the newer October material and admin notices; the expanded Notebooks entry stays at section 19 so existing links keep working.
+**The source cut-off is 18 October.** This issue combines public Microsoft product posts and Learn documentation with the release-note batches of 23 September and 6 October, the 25 September launch and publicly archived Message Center posts. Sections 53 to 66 hold the newer October material and admin notices; the expanded Notebooks entry stays at section 19 so existing links keep working.
 
 **Microsoft's September roundup arrived late.** The official *What's New in Microsoft Copilot | September 2026* post was published after my September issue. Items not already covered are kept in a labelled catch-up (sections 41 to 52), with their original dates.
 
