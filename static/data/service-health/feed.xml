@@ -5,8 +5,44 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Oct 2026 04:32:23 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 13:01:16 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may have been unable to send messages in Microsoft 365 Copilot chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1515013</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have been unable to send messages in Copilot chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1515013</guid>
+      <pubDate>Mon, 19 Oct 2026 09:27:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Some users may have experienced intermittent failures with sensitivity-labeled items in Microsoft Fabric</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1514788</link>
+      <description>[Power BI] Users may have experienced intermittent failures with sensitivity-labeled items in Microsoft Fabric.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1514788</guid>
+      <pubDate>Mon, 19 Oct 2026 08:03:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may be unable to see GPT within the model selection options in Microsoft 365 Copilot chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1514746</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to see GPT within the model selection options in Copilot chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1514746</guid>
+      <pubDate>Mon, 19 Oct 2026 06:59:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Some users may be unable to access or protect content using Azure Rights Management (ARM) across Microsoft 365 services </title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1514821</link>
+      <description>[Microsoft 365 apps] Users may be unable to access or protect content using ARM across Microsoft 365 services. </description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">OP1514821</guid>
+      <pubDate>Mon, 19 Oct 2026 06:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users' calls may fail in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1509890</link>
@@ -421,42 +457,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1505699</guid>
       <pubDate>Sun, 27 Sep 2026 13:10:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins and users may be unable to access or utilize multiple features within some Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1479564</link>
-      <description>[Microsoft 365 suite] Admins and users may have been unable to access or utilize multiple features within some Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1479564</guid>
-      <pubDate>Fri, 25 Sep 2026 23:06:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users conferenced into a Microsoft Teams emergency call may not be automatically muted or able to mute themselves</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1488543</link>
-      <description>[Microsoft Teams] Users conferenced into a Microsoft Teams emergency call were not automatically muted or able to mute themselves.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1488543</guid>
-      <pubDate>Fri, 25 Sep 2026 20:09:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may not be able to create, schedule, or update Microsoft Teams meetings</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1478719</link>
-      <description>[Microsoft Teams] Users may have not been able to create, schedule, or update Microsoft Teams meetings.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1478719</guid>
-      <pubDate>Thu, 24 Sep 2026 19:57:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Users may be unable to publish posts in Microsoft Viva Engage</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1478587</link>
-      <description>[Microsoft Viva] Users may have been unable to publish posts in Viva Engage.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1478587</guid>
-      <pubDate>Thu, 24 Sep 2026 18:49:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
