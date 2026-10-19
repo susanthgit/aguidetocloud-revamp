@@ -1,0 +1,168 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "text-0",
+      "type": "text",
+      "x": 60,
+      "y": 29,
+      "width": 982.08,
+      "height": 90.0,
+      "text": "From the Copilot reply to the changed object",
+      "fontSize": 36,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 60,
+      "y": 88,
+      "width": 968.4399999999999,
+      "height": 55.0,
+      "text": "Excel change navigation | Author illustration, not a product screenshot",
+      "fontSize": 22,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-0",
+      "type": "rectangle",
+      "x": 60,
+      "y": 160,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "x": 90,
+      "y": 186,
+      "width": 178.56,
+      "height": 60.0,
+      "text": "IN THE REPLY",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "x": 90,
+      "y": 246,
+      "width": 550.56,
+      "height": 180.0,
+      "text": "Copilot reports a workbook change\nA supported link points to the object\nSelect the link to review it",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-1",
+      "type": "rectangle",
+      "x": 735,
+      "y": 160,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-6",
+      "type": "text",
+      "x": 765,
+      "y": 186,
+      "width": 223.2,
+      "height": 60.0,
+      "text": "IN THE WORKBOOK",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-7",
+      "type": "text",
+      "x": 765,
+      "y": 246,
+      "width": 610.08,
+      "height": 180.0,
+      "text": "The changed object is highlighted\nSheets, tables, ranges, charts and shapes\nInspect the result before relying on it",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-8",
+      "type": "text",
+      "x": 60,
+      "y": 448,
+      "width": 1054.62,
+      "height": 67.5,
+      "text": "A sheet name printed in a reply is not proof of a working link.",
+      "fontSize": 27,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-9",
+      "type": "text",
+      "x": 60,
+      "y": 507,
+      "width": 1254.8799999999999,
+      "height": 57.5,
+      "text": "Our capture did not expose a clickable reference; this explains the announced behaviour.",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-10",
+      "type": "text",
+      "x": 60,
+      "y": 580,
+      "width": 781.2,
+      "height": 50.0,
+      "text": "Source: Microsoft 365 Copilot release notes, 23 September 2026.",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "text-0",
+      "type": "text",
+      "x": 60,
+      "y": 29,
+      "width": 1026.72,
+      "height": 90.0,
+      "text": "New Pages: two storage paths during the change",
+      "fontSize": 36,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 60,
+      "y": 88,
+      "width": 1091.2,
+      "height": 55.0,
+      "text": "After rollout reaches the tenant | Author illustration, not a product screenshot",
+      "fontSize": 22,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-0",
+      "type": "rectangle",
+      "x": 60,
+      "y": 160,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "x": 90,
+      "y": 186,
+      "width": 163.68,
+      "height": 60.0,
+      "text": "NEW CONTENT",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "x": 90,
+      "y": 246,
+      "width": 610.08,
+      "height": 180.0,
+      "text": "Pages from Chat, the app or new Notebooks\nStored in OneDrive for Business\nOneDrive governance policies apply",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-1",
+      "type": "rectangle",
+      "x": 735,
+      "y": 160,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-6",
+      "type": "text",
+      "x": 765,
+      "y": 186,
+      "width": 238.07999999999998,
+      "height": 60.0,
+      "text": "EXISTING CONTENT",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-7",
+      "type": "text",
+      "x": 765,
+      "y": 246,
+      "width": 520.8,
+      "height": 180.0,
+      "text": "Existing pages are not migrated\nExisting Notebooks keep using\nSharePoint Embedded for their pages",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-8",
+      "type": "text",
+      "x": 60,
+      "y": 448,
+      "width": 451.98,
+      "height": 67.5,
+      "text": "New does not mean migrated.",
+      "fontSize": 27,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-9",
+      "type": "text",
+      "x": 60,
+      "y": 507,
+      "width": 955.42,
+      "height": 57.5,
+      "text": "Check both storage locations when planning retention and discovery.",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-10",
+      "type": "text",
+      "x": 60,
+      "y": 580,
+      "width": 706.8,
+      "height": 50.0,
+      "text": "Source: Message Center MC1449182, updated 8 October 2026.",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

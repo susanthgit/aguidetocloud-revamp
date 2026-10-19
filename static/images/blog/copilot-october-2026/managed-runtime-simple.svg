@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 0 1380 695" width="1380" height="695" role="img" aria-labelledby="title">
+<title id="title">Copilot Managed Runtime: simplified author illustration, based on MC1479277</title>
+<rect x="30" y="0" width="1380" height="695" fill="#f3efe3" />
+<defs>
+  <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1e1e1e" />
+  </marker>
+</defs>
+<rect x="60" y="185" width="530" height="235" rx="20" ry="20" fill="#fffdf5" stroke="#203958" stroke-width="3" />
+<rect x="730" y="185" width="650" height="235" rx="20" ry="20" fill="none" stroke="#203958" stroke-width="3" />
+<rect x="755" y="270" width="600" height="125" rx="20" ry="20" fill="#fffdf5" stroke="#a48750" stroke-width="2" />
+<rect x="60" y="460" width="1320" height="105" rx="20" ry="20" fill="#fffdf5" stroke="#a48750" stroke-width="2" />
+<polyline points="605,300 705,300" fill="none" stroke="#a48750" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowhead)" />
+<text x="60" y="64" font-family='Helvetica, Arial, sans-serif' font-size="40" fill="#000000" text-anchor="start" xml:space="preserve">Copilot Managed Runtime</text>
+<text x="60" y="116.25" font-family='Helvetica, Arial, sans-serif' font-size="25" fill="#000000" text-anchor="start" xml:space="preserve">A managed place to run code | Public preview | Illustrative, not a screenshot</text>
+<text x="90" y="233.8" font-family='Helvetica, Arial, sans-serif' font-size="28" fill="#000000" text-anchor="start" xml:space="preserve">BUILD AN APP</text>
+<text x="90" y="268.8" font-family='Helvetica, Arial, sans-serif' font-size="28" fill="#000000" text-anchor="start" xml:space="preserve">Code, Cowork or Copilot Studio</text>
+<text x="90" y="303.8" font-family='Helvetica, Arial, sans-serif' font-size="28" fill="#000000" text-anchor="start" xml:space="preserve">Also supported: CLI and SDKs</text>
+<text x="760" y="227.1" font-family='Helvetica, Arial, sans-serif' font-size="26" fill="#000000" text-anchor="start" xml:space="preserve">MICROSOFT 365 TENANT BOUNDARY</text>
+<text x="785" y="310.5" font-family='Helvetica, Arial, sans-serif' font-size="30" fill="#000000" text-anchor="start" xml:space="preserve">Run apps in Managed Runtime</text>
+<text x="785" y="348" font-family='Helvetica, Arial, sans-serif' font-size="30" fill="#000000" text-anchor="start" xml:space="preserve">under IT governance</text>
+<text x="90" y="503.8" font-family='Helvetica, Arial, sans-serif' font-size="28" fill="#000000" text-anchor="start" xml:space="preserve">MANAGE APPS: Microsoft 365 admin center</text>
+<text x="60" y="620.4" font-family='Helvetica, Arial, sans-serif' font-size="24" fill="#000000" text-anchor="start" xml:space="preserve">Simplified author illustration based on MC1479277. Preview access varies by tenant.</text>
+</svg>

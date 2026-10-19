@@ -11,7 +11,24 @@
     "and not worth rewriting.",
     "",
     "Codes: no-for-line | no-source-line | no-source-url | numbering",
-    "       roadmap-not-in-feed | roadmap-link-mismatch"
+    "       roadmap-not-in-feed | roadmap-link-mismatch | heading-separator"
+  ],
+
+  "microsoft-365-copilot-august-2026-updates": [
+    { "code": "heading-separator", "section": 1, "why": "Existing published category/item adjacency; recorded when the October layout guard was added. Do not rewrite this live issue as part of the October draft." },
+    { "code": "heading-separator", "section": 25, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 38, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 47, "why": "Existing published category/item adjacency." }
+  ],
+  "microsoft-365-copilot-september-2026-updates": [
+    { "code": "heading-separator", "section": 1, "why": "Existing published category/item adjacency; recorded when the October layout guard was added. Do not rewrite this live issue as part of the October draft." },
+    { "code": "heading-separator", "section": 31, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 41, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 46, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 49, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 54, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 59, "why": "Existing published category/item adjacency." },
+    { "code": "heading-separator", "section": 90, "why": "Existing published category/item adjacency." }
   ],
 
   "microsoft-365-copilot-may-2026-updates": [

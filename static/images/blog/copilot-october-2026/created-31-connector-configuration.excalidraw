@@ -1,0 +1,198 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "text-0",
+      "type": "text",
+      "x": 60,
+      "y": 32,
+      "width": 965.96,
+      "height": 95.0,
+      "text": "Adjust a connector without starting again",
+      "fontSize": 38,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 60,
+      "y": 89,
+      "width": 926.9,
+      "height": 57.5,
+      "text": "Existing supported connections  |  Illustrative, not a screenshot",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-2",
+      "type": "rectangle",
+      "x": 60,
+      "y": 155,
+      "width": 625,
+      "height": 230,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "x": 90,
+      "y": 179,
+      "width": 171.12,
+      "height": 57.5,
+      "text": "QUERY STRING",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "x": 90,
+      "y": 228,
+      "width": 635.5,
+      "height": 125.0,
+      "text": "Choose which source content is indexed.\nAdjust the filter when the scope changes.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-5",
+      "type": "rectangle",
+      "x": 715,
+      "y": 155,
+      "width": 625,
+      "height": 230,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-6",
+      "type": "text",
+      "x": 745,
+      "y": 179,
+      "width": 299.46,
+      "height": 57.5,
+      "text": "USER IDENTITY MAPPING",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-7",
+      "type": "text",
+      "x": 745,
+      "y": 229,
+      "width": 699.36,
+      "height": 120.0,
+      "text": "Map source users to Microsoft Entra identities.\nCorrect a mapping when identities change.",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-8",
+      "type": "rectangle",
+      "x": 60,
+      "y": 420,
+      "width": 1280,
+      "height": 120,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-9",
+      "type": "text",
+      "x": 90,
+      "y": 436,
+      "width": 1021.14,
+      "height": 67.5,
+      "text": "Open existing connection  >  Edit supported settings  >  Save",
+      "fontSize": 27,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-10",
+      "type": "text",
+      "x": 90,
+      "y": 483,
+      "width": 961.0,
+      "height": 62.5,
+      "text": "Check the next crawl, then verify results as an affected user.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-11",
+      "type": "text",
+      "x": 60,
+      "y": 563,
+      "width": 967.2,
+      "height": 60.0,
+      "text": "Source permissions still matter. This is not a permission bypass.",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-12",
+      "type": "text",
+      "x": 60,
+      "y": 607,
+      "width": 1376.4,
+      "height": 50.0,
+      "text": "Based on Microsoft Learn release notes (6 October 2026); ServiceNow settings confirmed in the management guide.",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

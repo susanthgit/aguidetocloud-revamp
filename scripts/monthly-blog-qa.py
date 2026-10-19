@@ -564,6 +564,18 @@ def lint_post(post: Path, exc: dict,
     warns: list[str] = []
     secs = parse_sections(text)
 
+    # Notebook headings are inline-block: blank Markdown lines do not force
+    # adjacent category/item headings onto separate rendered lines.
+    layout_text = visible(FENCE_RE.sub("\n[code block]\n", text))
+    layout_text = re.sub(r"\A---[ \t]*\n.*?\n---[ \t]*\n", "", layout_text, flags=re.S)
+    for pair in re.finditer(
+            r"^##[ \t]+(?!\d+\.)[^\n]+\n(?:[ \t]*\n)*"
+            r"###[ \t]+(\d+)\.[ \t]+", layout_text, re.M):
+        n = int(pair.group(1))
+        (warns if excused(exc, slug, "heading-separator", n) else errs).append(
+            f"{slug} §{n}: adjacent category/item headings need a <br /> "
+            "separator; blank lines can render on the same line")
+
     if not secs:
         return ([f"{slug}: parsed ZERO numbered sections - the parser or the "
                  f"post grammar changed. Never treat this as a pass."], [])

@@ -1,0 +1,212 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "text-0",
+      "type": "text",
+      "x": 60,
+      "y": 27,
+      "width": 942.4,
+      "height": 95.0,
+      "text": "Keep the summary, not a saved transcript",
+      "fontSize": 38,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 60,
+      "y": 87,
+      "width": 1026.72,
+      "height": 57.5,
+      "text": "Teams scheduled meetings | Author illustration, not a product screenshot",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-2",
+      "type": "rectangle",
+      "x": 60,
+      "y": 155,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "x": 90,
+      "y": 181,
+      "width": 267.84,
+      "height": 60.0,
+      "text": "DURING THE MEETING",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "x": 90,
+      "y": 236,
+      "width": 624.96,
+      "height": 180.0,
+      "text": "Live meeting context generates a summary\nTemporary transcription data is processed\nThe service cache is purged within one day",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-5",
+      "type": "rectangle",
+      "x": 735,
+      "y": 155,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-6",
+      "type": "text",
+      "x": 765,
+      "y": 181,
+      "width": 252.96,
+      "height": 60.0,
+      "text": "AFTER THE MEETING",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-7",
+      "type": "text",
+      "x": 765,
+      "y": 236,
+      "width": 520.8,
+      "height": 240.0,
+      "text": "AI summary available from Recap\nRead-only Word document in OneDrive\nNo saved transcript or recording\nas part of this experience",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-8",
+      "type": "rectangle",
+      "x": 60,
+      "y": 435,
+      "width": 1280,
+      "height": 115,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-9",
+      "type": "text",
+      "x": 90,
+      "y": 451,
+      "width": 619.38,
+      "height": 67.5,
+      "text": "A summary is still a retained record.",
+      "fontSize": 27,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-10",
+      "type": "text",
+      "x": 90,
+      "y": 495,
+      "width": 899.0,
+      "height": 62.5,
+      "text": "Review its access, expiration and compliance requirements.",
+      "fontSize": 25,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-11",
+      "type": "text",
+      "x": 60,
+      "y": 576,
+      "width": 1324.32,
+      "height": 60.0,
+      "text": "Requires a Copilot-licensed organiser, supported meeting policy and feature availability.",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-12",
+      "type": "text",
+      "x": 60,
+      "y": 621,
+      "width": 1130.8799999999999,
+      "height": 60.0,
+      "text": "We could not find the option in our environments; this is not a tenant test.",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-13",
+      "type": "text",
+      "x": 60,
+      "y": 675,
+      "width": 1314.4,
+      "height": 50.0,
+      "text": "Source: Microsoft Learn, Intelligent recap in Teams meetings without saving transcripts (14 October 2026).",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

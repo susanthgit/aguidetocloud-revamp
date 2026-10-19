@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="660" viewBox="0 0 1400 660">
+<rect width="1400" height="660" fill="#f3efe3"/>
+<text x="60" y="70.0" font-family="Segoe UI,Arial,sans-serif" font-size="38" font-weight="600" fill="#000000">Adjust a connector without starting again</text>
+<text x="60" y="112.0" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#000000">Existing supported connections  |  Illustrative, not a screenshot</text>
+<rect x="60" y="155" width="625" height="230" rx="12" fill="#fcfbf5" stroke="#243953" stroke-width="2"/>
+<text x="90" y="202.0" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600" fill="#000000">QUERY STRING</text>
+<text x="90" y="253.0" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Choose which source content is indexed.</text>
+<text x="90" y="290.5" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Adjust the filter when the scope changes.</text>
+<rect x="715" y="155" width="625" height="230" rx="12" fill="#fcfbf5" stroke="#a3854c" stroke-width="2"/>
+<text x="745" y="202.0" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600" fill="#000000">USER IDENTITY MAPPING</text>
+<text x="745" y="253.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">Map source users to Microsoft Entra identities.</text>
+<text x="745" y="289.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">Correct a mapping when identities change.</text>
+<rect x="60" y="420" width="1280" height="120" rx="12" fill="#fcfbf5" stroke="#a3854c" stroke-width="2"/>
+<text x="90" y="463.0" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="600" fill="#000000">Open existing connection  &gt;  Edit supported settings  &gt;  Save</text>
+<text x="90" y="508.0" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Check the next crawl, then verify results as an affected user.</text>
+<text x="60" y="587.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="600" fill="#000000">Source permissions still matter. This is not a permission bypass.</text>
+<text x="60" y="627.0" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#000000">Based on Microsoft Learn release notes (6 October 2026); ServiceNow settings confirmed in the management guide.</text>
+</svg>

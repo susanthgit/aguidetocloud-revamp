@@ -59,7 +59,7 @@ def section(n: int, title: str = "A thing shipped", *, for_line: bool = True,
 
 def post(*sections: str) -> str:
     return ("---\ntitle: Test\ndraft: true\n---\n\n"
-            "## Microsoft 365 apps\n\n" + "\n".join(sections))
+            "## Microsoft 365 apps\n\n<br />\n\n" + "\n".join(sections))
 
 
 def lint(text: str, feed=FEED, exc=None):
@@ -99,6 +99,25 @@ def has(errs: list[str], needle: str) -> bool:
 
 errs, warns = lint(post(section(1, body_extra=IMG)))
 check("clean post produces no errors", not errs, "; ".join(errs))
+
+# ----------------------------------------- notebook category/item separation
+for gap in ["\n", "\n\n", "\n\n<!-- hidden note -->\n\n"]:
+    text = post(section(1)).replace("\n\n<br />\n\n", gap)
+    errs, _ = lint(text)
+    check(f"adjacent headings rejected with {gap!r}",
+          has(errs, "heading-separator") or has(errs, "need a <br />"))
+for gap in ["\n\n<br>\n\n", "\n\nAn introduction.\n\n",
+            "\n\n```\nexample\n```\n\n"]:
+    errs, _ = lint(post(section(1)).replace("\n\n<br />\n\n", gap))
+    check(f"rendered block separates headings with {gap!r}", not errs, "; ".join(errs))
+errs, _ = lint(post(section(1)) + "\n```\n## Example\n\n### 2. Example\n```\n")
+check("fenced heading example ignored", not errs, "; ".join(errs))
+errs, _ = lint(post(section(1)).replace("<br />\n\n### 1.", "### Unnumbered\n\n### 1."))
+check("unnumbered subheading not treated as numbered item", not errs, "; ".join(errs))
+errs, warns = lint(post(section(1)).replace("\n\n<br />\n\n", "\n\n"),
+                  exc={"microsoft-365-copilot-testmonth-2026-updates": [
+                      {"code": "heading-separator", "section": 1, "why": "historical"}]})
+check("exact historical heading exception warns", not errs and has(warns, "need a <br />"))
 
 # ------------------------------------------------- roadmap id absent from feed
 # The shape that motivated the check: a well-formed id that does not exist.

@@ -16,21 +16,49 @@
   ],
   "slug": "microsoft-365-copilot-october-2026-updates",
   "images": {
+    "official-37-usage-snapshot-freshness.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Official Microsoft Learn report-card example already highlights Data through in yellow. Retained as published, converted to WebP; no redundant author callout. Caption identifies the documentation example, preview badge and sample date.",
+      "output_sha256": "fbb8a1fa3068aa2e16abb467a5743ca26ee66b4e4c89f2a00e97b697c29423a4"
+    },
     "official-1-home-tabs.webp": {
-      "disposition": "microsoft_artwork",
-      "reason": "Official Microsoft launch artwork already clean and self-explanatory; adding callouts would clutter it."
+      "disposition": "annotated",
+      "spec": "october-s01-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 2,
+      "boxes": 2,
+      "source_sha256": "862fe20c5b6b0a3e72b04320a7b8cfb2ac2d01e92f1da61be5745a6efd9d4ed1",
+      "output_sha256": "fac5baf18451b0281879a4569aeb5a7adbbbcc9c16919fb6d99fd8a2010291a2",
+      "callout_texts": [
+        "1. Start on Home",
+        "2. Choose Chat or Cowork"
+      ]
     },
     "official-5-code-tab.webp": {
-      "disposition": "microsoft_artwork",
-      "reason": "Official Microsoft launch artwork already clean and self-explanatory; adding callouts would clutter it."
+      "disposition": "annotated",
+      "spec": "october-batch-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 2,
+      "boxes": 2,
+      "source_sha256": "e6af4602a1b68bff44e88590038a655039219763fd990b5de66a1d61ff3fb4c1",
+      "output_sha256": "4a0a778ee33aec56f27c879a2cae0dfa7b051ebeaa34f03fbd1e7e466b76de4d",
+      "callout_texts": [
+        "Open the Code tab",
+        "Describe what to build"
+      ]
     },
     "official-6-autopilot-tab.webp": {
-      "disposition": "microsoft_artwork",
-      "reason": "Official Microsoft launch artwork already clean and self-explanatory; adding callouts would clutter it."
-    },
-    "official-7-managed-runtime-host.webp": {
-      "disposition": "microsoft_artwork",
-      "reason": "Official Microsoft architecture diagram, already labelled; callouts would cover its small text."
+      "disposition": "annotated",
+      "spec": "october-batch-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 2,
+      "boxes": 2,
+      "source_sha256": "fa3d7f68914456ff7f570b42f07f3c624635d1f65fcc4664866548d193742a1d",
+      "output_sha256": "d6357f59ccb3a2cc875d0e58aebe950bec2b492b0b3cb53d27ec55a4b2b1b834",
+      "callout_texts": [
+        "Scout is now Autopilot",
+        "Routines has its own entry"
+      ]
     },
     "official-14-sharepoint-copilot-panel.webp": {
       "disposition": "annotated",
@@ -58,27 +86,21 @@
     },
     "official-27-triage-confirmation.webp": {
       "disposition": "annotated",
-      "spec": "oct-annot.spec.json",
-      "scale": 1.0,
-      "callouts": 1,
-      "boxes": 0,
-      "source_sha256": "f9d4ba0aa1dc7258db558da8c03af78a84703e44dd2309a5a881d657e45d8831",
-      "output_sha256": "07b4a038788dc578d19bf4569daa8870ae9447238b6dfbf470874a934b9a7644",
-      "callout_texts": [
-        "Copilot lists the 8 emails and waits for you to Confirm"
-      ]
+      "spec": "october-27-focus.spec.json",
+      "scale": 1.5,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "c8d8663e4d046d0759a3152ee56bc6a8fdaa26e1d9614b041fb9b96265ed1b3e",
+      "output_sha256": "8b7398deaca1359fa6df999249355c2141f83619ca774076d6c027a4d2243275"
     },
     "official-27-triage-pinned-full-page.webp": {
       "disposition": "annotated",
-      "spec": "oct-annot.spec.json",
-      "scale": 1.0,
-      "callouts": 1,
-      "boxes": 0,
-      "source_sha256": "10870c72134e2a246a01b53e68667d8194716f4a97bc370bababc2f40f9ad673",
-      "output_sha256": "df1bdb6aeba15e8503d5700c4d9b60967b61fdf51d01cc413bc3f55d8e5e09f0",
-      "callout_texts": [
-        "After pinning, it offers to flag or summarise them"
-      ]
+      "spec": "october-27-focus.spec.json",
+      "scale": 1.5,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "8c4e6680445b8eaee348a2e8b076d0abfa9fabece6011f0bbd2012f13d5c77e4",
+      "output_sha256": "96236e2eb252eebaf0a7c27e75e84c6df177c43c3d821715cb705a79c28b2b47"
     },
     "official-29-connectors-your-connections.webp": {
       "disposition": "annotated",
@@ -94,26 +116,23 @@
     },
     "official-29-federated-confirmation-card.webp": {
       "disposition": "annotated",
-      "spec": "oct-annot.spec.json",
-      "scale": 1.0,
-      "callouts": 1,
-      "boxes": 0,
-      "source_sha256": "2f89e93bcacb0979c7aab85994fbe80514917db4676aca022ad5a0ec0db048ce",
-      "output_sha256": "33058d19370c9b87ec470dc14cb7a87e17612612e66c189219c2bc0fc6344282",
-      "callout_texts": [
-        "You approve each write action: Allow once"
-      ]
+      "spec": "section29-approval.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "c209523116046170a100bc5abcac7adf2d90883a0dd821d80120856801715f69",
+      "output_sha256": "39d0139d4ed2160863e83ba73b76ae7372aab205493a650dc3d0d3c7615f9033"
     },
     "official-36-cowork-usage-breakdown.webp": {
       "disposition": "annotated",
-      "spec": "oct-annot.spec.json",
+      "spec": "official-sweep-polish.spec.json",
       "scale": 1.0,
       "callouts": 1,
       "boxes": 0,
-      "source_sha256": "cb2c3c0476c1c108d050aaeaaef7c947036591883c519c1a10aa965dcd7eb005",
-      "output_sha256": "a04e7aaca6d90934128b372124758e837df2431429695b54b95de06e2eae8914",
+      "source_sha256": "a04e7aaca6d90934128b372124758e837df2431429695b54b95de06e2eae8914",
+      "output_sha256": "379e879b5de8f27505527890c8ab6b04dff00c3f9b7d4f8b778132ddc112c305",
       "callout_texts": [
-        "Each bubble is a Cowork task type: credits used against hours saved"
+        "Credits used against estimated assisted hours"
       ]
     },
     "official-41-teams-phone-agent-call-context.webp": {
@@ -291,6 +310,513 @@
     "official-51-survey-results-preview.webp": {
       "disposition": "annotated_at_capture",
       "reason": "Microsoft already outlined the key controls in yellow boxes; extra callouts would add noise."
+    },
+    "02-chat-cowork-choice.webp": {
+      "disposition": "annotated",
+      "spec": "october-batch-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "b8c79cc9375c59a6ec09ba96b877b1f5c4b6eaca9b2057c21c0d44baac48cfb0",
+      "output_sha256": "7140391ae5b846aadde18aac3b34cc2f7eb69bb278f66be1016753f65c3f4a45",
+      "callout_texts": [
+        "Choose where the work continues"
+      ]
+    },
+    "03-plugins-chat.webp": {
+      "disposition": "annotated",
+      "spec": "october-batch-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 2,
+      "boxes": 2,
+      "source_sha256": "2d5803558b3c450db7a2cb26e6f7e86113d51a59e445667f2d4375dfa4b8d303",
+      "output_sha256": "06260ccc6b8363b92cb1aabdeed83a482ee6000741c4a384cd35107249c0914b",
+      "callout_texts": [
+        "Plugins replaces Agents",
+        "Chat and Cowork tabs"
+      ]
+    },
+    "04-share-skill.webp": {
+      "disposition": "annotated",
+      "spec": "october-batch-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "7e812a39b3467f8a38262b06364f58e5d607f1c6adc537e38912313050a3b131",
+      "output_sha256": "e0e4519798219a960618487cfac65c2b4731660ce996d3edf92aa23b81370c8b",
+      "callout_texts": [
+        "Only you keeps the audience private"
+      ]
+    },
+    "08-plugins-user-view.webp": {
+      "disposition": "annotated",
+      "spec": "october-batch-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "72af5b76b676132620b6bfaed748093afe0f11e1e7098612c73800a655036253",
+      "output_sha256": "ac9d0788706666f331de14e6952dba2a168dc5e812c7ed2cd971c1fdbacfe1fd",
+      "callout_texts": [
+        "The user-facing Plugins page"
+      ]
+    },
+    "07-managed-runtime-simple.webp": {
+      "disposition": "created_asset",
+      "reason": "Author-created Excalidraw concept based on public MC1479277, restyled to the previous issue's ivory cards with navy/brass borders. Explicitly not an official architecture diagram or tenant test; editable JSON and SVG retained."
+    },
+    "09-runtime-policy.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "98d9048af54f5cf79ff3273983dd28efc9c8a98887e5548a670cf9545601f051",
+      "output_sha256": "2c3bcb9cdbb99877dd408d6dd79fec17f8cbcb12d4a7cfc3b2b62359db249d1d",
+      "callout_texts": [
+        "Managed Runtime is listed"
+      ]
+    },
+    "09-credit-overview.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "c017f7a40d4af4b6685eaf102a488b6b01c7b192c43fa0031e91d0f063568114",
+      "output_sha256": "7766c60f62aed6b4c89dec4b405565889bf32fd5519aede941972586412b4791",
+      "callout_texts": [
+        "Credits used, not dollars"
+      ]
+    },
+    "10-power-bi-picker.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "c9c5e0bb8d59cbe4814c185cbbb4969c966aa3ae71e01dd566059363342ac3a2",
+      "output_sha256": "0df37f9924b680915c0ba223814ec5f44c76185fb409832279e5c7130f407513",
+      "callout_texts": [
+        "Power BI has its own tab"
+      ]
+    },
+    "11-business-apps-setting.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "9e32e8e248bd0181a5bb3e312c95c3ddfe2a864b35827241c9e5f846fe593fad",
+      "output_sha256": "a0956dfa8632cb2e136f604155e9e050e9684d0e10404067210ee842c6021fee",
+      "callout_texts": [
+        "Check both access steps"
+      ]
+    },
+    "12-official-onboarding.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "31b63c3d401ec727b5892ac1f0da0877dab2111a3b168c3095d852a3e3641b2a",
+      "output_sha256": "29a07e86b2ac7a5667d9b88876e4482e8c518cc5bc81fe5e38f607e6a5944f76",
+      "callout_texts": [
+        "Add your AI policy"
+      ]
+    },
+    "13-sonnet-model.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "9f0c8109dbf1def9a89a3bb49eecaba468114a3bb30c1198835fddd88736307a",
+      "output_sha256": "8fb78f871fc6d83a73e590961c2542afa108f736677e7e5abaa76e2c3b3930b2",
+      "callout_texts": [
+        "Sonnet 5.5 is listed"
+      ]
+    },
+    "15-search-answer.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "863d206561d0e1dde7d68195aaf82a597e4e46ab220b7ae6e3bb702ca1ff9ddc",
+      "output_sha256": "51e3480936e355f1387e9faafdefb7b9c96cd527182bf12494de00e3b9c0f43c",
+      "callout_texts": [
+        "An answer within Search"
+      ]
+    },
+    "16-mail-attachments.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "a7ef8d5701c8958c706a3bcd8fe1de6d81eb084541eba910b017ddfb1ff92709",
+      "output_sha256": "a396560edd5ffcdccb78b58ee47bdcccb0ad582298ca32f09519f36db2b15d3b",
+      "callout_texts": [
+        "Attachments on the email result"
+      ]
+    },
+    "17-mail-sort.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "838774e423012f272c26405b88d0556a5530f8e54d681d8bce2b68a1c9222109",
+      "output_sha256": "72a4f624fe83af7c3d01fda971645d3ec211a7387b607c5b3e6597006307439e",
+      "callout_texts": [
+        "Most Recent, not a date filter"
+      ]
+    },
+    "18-meeting-search.webp": {
+      "disposition": "annotated",
+      "spec": "october-through18.spec.json",
+      "scale": 1,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "4e16f7703f9b8171275f87013a745ae644e1acb9f6a13c62c3831cbfb57b08f5",
+      "output_sha256": "22fd9e8129cf4de3931d9a3309c8e3865fdc4470fad797c48208101f8d169586",
+      "callout_texts": [
+        "A meeting found by topic"
+      ]
+    },
+    "official-19-notebooks-workspace.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "68ab2361ea65460bbfabd4469f72f0d1d984fc0c37aa44b7c18733a2f5491d21",
+      "output_sha256": "ab673a98202e296adeace8bf51e22222e7f80f08ecb43c1e4bcb4787e6a5f5ce",
+      "callout_texts": [
+        "Content stays beside the notebook"
+      ]
+    },
+    "official-19-notebooks-office-editing.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "d821adf8154d7327c5bf61c6d6249ea25d75a628627d18c63a20db0fea2176a5",
+      "output_sha256": "3877a5edcf74ef85f4519a08977fcafe86fa02f85080dc6e97056bd8b3ea9fac",
+      "callout_texts": [
+        "Edit Office files inside the notebook"
+      ]
+    },
+    "official-22-places-room-card.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "cd8ff5e5382278f64caa8fab4b3132a0c482cc5824bd730e4fa4f114ecd8d6fc",
+      "output_sha256": "6c1fc39c8f82ed949ba022760a04d3249be28943f84682b54bc77f4a779b86c7",
+      "callout_texts": [
+        "Room details at a glance"
+      ]
+    },
+    "official-33-blocked-policy-link.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "98cb02cbb9a03698fcc88ba3df89552d7e0872c16ffcf2ba576bf32c87d31451",
+      "output_sha256": "f870420206b7891dd743a755def0988d4273a5b9adee0134ced45b019e921292",
+      "callout_texts": [
+        "Link to your organisation's policy"
+      ]
+    },
+    "official-34-special-groups-reports.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "b5813b937c7ee2aae17cd409e5a3b7c19ab3e4a8199682ab8a8e09ef73eb9288",
+      "output_sha256": "f923391b06c86f54aeea7ddc2b8f82306b487c910c23028375ba45632341ca33",
+      "callout_texts": [
+        "Separate reports for both groups"
+      ]
+    },
+    "official-35-people-skills-settings.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "2d306f4fa72af84e84a8005daf28747dbb7c472f9c75311a25b20a07d16a15e4",
+      "output_sha256": "942aefcdb21784930dce00b39815b165463e38f7ce49c75536ac167292ed7ebe",
+      "callout_texts": [
+        "Org-wide People Skills deletion"
+      ]
+    },
+    "official-35-people-skills-confirmation.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "023a739d8f04b95a46cb407f3713ec8faa75a60f130a3583f95264b8275c79e9",
+      "output_sha256": "34ebf818f1525e85f85376904733c6359b868dbe2ddfb1df58a50c20bf9a03de",
+      "callout_texts": [
+        "Permanent deletion needs confirmation"
+      ]
+    },
+    "official-32-license-requests.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft's original feature highlight retained; no redundant annotation."
+    },
+    "official-38-attribute-filters.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft's original feature highlight retained; no redundant annotation."
+    },
+    "official-40-release-audiences.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official Microsoft explanatory diagram; no annotation over artwork. Depicts replacement release audiences, not a screenshot of the upcoming unified admin screen."
+    },
+    "official-58-app-destination.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep-second.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "62efa02a44994d5a40344f5714a5d99c1537a686cddb6411e720d12266c15e64",
+      "output_sha256": "73aac966da5ee4f2c7006648fb28cc206ceef0d0c7469b6a7be2dbe4e1932ae7",
+      "callout_texts": [
+        "An example app-building destination"
+      ]
+    },
+    "official-62-published-html.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep-polish.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "1d6dddc4ddf9346c3b0edb0c3c8bfde7e2e75547166649b2304b9131bb767a28",
+      "output_sha256": "f8af2abbbb6dbf27ec0d89d8ffdd4e8d0eca04b853639c3023dc44f62f23462f",
+      "callout_texts": [
+        "HTML published as a SharePoint page"
+      ]
+    },
+    "official-63-workflow-plan.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep-second.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "5305bab4e16801d59b45cdda37f47856c9fef02924bbf8324f1718ebb5e2f16d",
+      "output_sha256": "0b9a767dbdb3cf8d9af02eef3cf9b1758b209b363c4c246c3dbe9aff06c628f9",
+      "callout_texts": [
+        "Review the workflow before creating it"
+      ]
+    },
+    "official-63-skills-picker.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep-second.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "b51a43be17ed36eddccac96f31580c406a559c5b5749d76f197cdaf9cb27dd22",
+      "output_sha256": "ab14b5d9b050b18e7f83dc9ed1cb7886b38e7b44a403d159a64fc3e12a598045",
+      "callout_texts": [
+        "Find skills in the conversation"
+      ]
+    },
+    "official-59-agent-upgrade.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft original highlights retained."
+    },
+    "official-59-agent-after-upgrade.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft original highlights retained."
+    },
+    "official-64-trust-aware-flow.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official Microsoft chart/diagram, not product UI."
+    },
+    "official-28-planner-chat-button.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft's original red rectangle highlights the bottom-right Copilot button."
+    },
+    "official-54-data-preparation.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep-third.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "7a2913246a97afdfcda01ce4eef3154cfbba91ee7c0df35547dd8ddbd5744958",
+      "output_sha256": "a2e54fc3eba50faa78ed39d6bc10f0b847367e0a39212321fd657b947a7d7d0a",
+      "callout_texts": [
+        "Review proposed data changes"
+      ]
+    },
+    "official-54-power-query-preview.webp": {
+      "disposition": "annotated",
+      "spec": "official-sweep-third.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "b82d184255e22e5be89e98a70b45b694823cc6ce4ea245a3043af00f205666bc",
+      "output_sha256": "bf1efd71c762c16fa50aae99a537d6aac376c61670454cfc028400b82dca3208",
+      "callout_texts": [
+        "Preview before loading the data"
+      ]
+    },
+    "official-55-knowledgebase-flow.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official explanatory architecture figure; personally verified as substantive, contrary to the research agent's decorative classification."
+    },
+    "created-31-connector-configuration.webp": {
+      "disposition": "created_asset",
+      "reason": "Author-created explanation of query strings versus identity mapping based on public Microsoft Learn. Ivory cards with navy/brass borders, explicitly illustrative, not a screenshot or tenant test. Editable Excalidraw and SVG sources retained."
+    },
+    "lab-52-partner-catalogue.webp": {
+      "disposition": "annotated",
+      "spec": "through57-annotations.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "3bbc348fc16004138e2195c42495fdcc32a3b5d24a2051ccf4a10e27182745d9",
+      "output_sha256": "476f6c07f0529c68d04a1951ef98ecb9cf316242994768dbb70aad102a8005be"
+    },
+    "lab-53-excel-beside-chat.webp": {
+      "disposition": "annotated",
+      "spec": "through57-annotations.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "5a6bfb78ad07f8872f20c6760f217c91a9483cd97bfb064705b5b01eeac1c088",
+      "output_sha256": "9decb8d671275946c7327347f152d309f116d03571a5725247bf02006b7d7739"
+    },
+    "capture-56-approved-precedent.webp": {
+      "disposition": "annotated",
+      "spec": "through57-annotations.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "8e43a2cbae6393325613388fbe79a2be0319603fc2d76f3cdf81ab34cad0930d",
+      "output_sha256": "674d727e2107ec184380633bb2b9960cb68486b35378d8f7d7c273b3b739a069"
+    },
+    "capture-56-template-fields.webp": {
+      "disposition": "annotated",
+      "spec": "through57-annotations.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "bc937b9a4b6c68fe11c26274a4848b4a2160f7491e2bd60553b48ed217fc4e63",
+      "output_sha256": "d9ace6e15760137f7efafad73cae35beecf63d03a55ecf9819dc6de7831318d6"
+    },
+    "capture-56-playbook-review.webp": {
+      "disposition": "annotated",
+      "spec": "through57-annotations.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "c1b668030cd970407d695c9b19611b1e027b8a36871bcf563f53bc3ceab71d4e",
+      "output_sha256": "5633ba0571dad040e8be034e682b83d1f49856ad362b0c4881de1e945bf82c5e"
+    },
+    "lab-57-personalization-no-signals.webp": {
+      "disposition": "annotated",
+      "spec": "through57-annotations.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "368f90f8352e6c150307ca6ed4832bea96150307c601fd9badd0a9f567ffb5d1",
+      "output_sha256": "be03986911ab7807b52efb00952b78c5057623ee33e6f9457f88a21d863912cf"
+    },
+    "lab-26-copilot-changes.webp": {
+      "disposition": "annotated",
+      "spec": "section26-annotations.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "42e141f2eb97c05a92a10a2ec70e395b97bb1f254b1515b36044cd0f477e3950",
+      "output_sha256": "99b717e4c23b78bba293eaa2bc270930074408a0618fd64a2621ec05f8cb6d5a"
+    },
+    "created-21-pages-storage.webp": {
+      "disposition": "created_asset",
+      "reason": "Ivory two-card illustration headed New content and Existing content. New Pages go to OneDrive; existing pages are not migrated and older Notebooks keep SharePoint Embedded. Explicit author-illustration label; all text fits. Public-source explanatory illustration; editable SVG and Excalidraw sources retained."
+    },
+    "created-23-carplay-voice.webp": {
+      "disposition": "created_asset",
+      "reason": "Ivory Connect and Use voice cards. iPhone/CarPlay connection and Siri request shown as text only. Explicit not-a-product-screenshot label and safely-parked instruction. No car dashboard simulated. Public-source explanatory illustration; editable SVG and Excalidraw sources retained."
+    },
+    "created-25-excel-change-navigation.webp": {
+      "disposition": "created_asset",
+      "reason": "Ivory In the reply and In the workbook cards explain supported links and changed objects. Footer explicitly says our capture did not expose a clickable reference. No Excel interface simulated. Public-source explanatory illustration; editable SVG and Excalidraw sources retained."
+    },
+    "created-39-glint-topic-assignment.webp": {
+      "disposition": "created_asset",
+      "reason": "Ivory diagram shows survey comments/context, Copilot-enhanced assignment and Reports > Comments > Topics. Existing org-wide setting, no separate toggle, confidentiality and human-review warnings are explicit; no employee metrics. Public-source explanatory illustration; editable SVG and Excalidraw sources retained."
+    },
+    "lab-60-pdf-reorder-response.webp": {
+      "disposition": "annotated",
+      "spec": "final-captures.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "5b34aa6787f9c2ef9038afbd0619f84c730a90ec499f3b465d9700aa97157bd8",
+      "output_sha256": "9bafe163ab054bb00eeceaccca14db236aa4a3465296e9e2ce41924d28b9e2dd"
+    },
+    "lab-66-cowork-request-access.webp": {
+      "disposition": "annotated",
+      "spec": "final-captures.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "d948bc76cde2838acbfbf80041af770bb07cd236307dcb8e612ec0eaaafe7207",
+      "output_sha256": "b3c683e8ffa5c2bfc8cf32a080596b1e5c222e86b2428193ec5fbafb95f5afca"
+    },
+    "created-65-recap-without-saved-transcript.webp": {
+      "disposition": "created_asset",
+      "reason": "Original explanatory illustration based on Microsoft Learn intelligent-recap-without-saving-transcripts. Explicitly not a screenshot or tenant test; distinguishes temporary processing from summary retention. Editable SVG/Excalidraw sources retained."
+    },
+    "official-68-studio-hooks.webp": {
+      "disposition": "annotated",
+      "spec": "studio-images.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "b3335cc8010db206dafe2201dc1ed5f88ab0da280bc0c1fa6a114587592acbb6",
+      "output_sha256": "242a231fde0e43f82ba845dfe5d5c1200b0c6fc34ce1b00a21d5f4e707913882"
+    },
+    "official-70-node-evaluation.webp": {
+      "disposition": "annotated",
+      "spec": "studio-images.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "4e9611f0cfb85be838cfecdd1b52b2aa38ec7af7d1311e2f662b8992567df299",
+      "output_sha256": "2602d95cad9827b387fb53adef328da432a3625b46a3c0cc234fd73d1d008777"
+    },
+    "official-71-agent-graders.webp": {
+      "disposition": "annotated",
+      "spec": "studio-images.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "ae12b446e944acc5be137211cf263f4c1b7323aa3f04307f4760caef73bff7bf",
+      "output_sha256": "9dc12b5ba4f0ec7aff6e28819d69618db1a0b4cfd57f7bfb583a92192628d16d"
+    },
+    "official-73-generated-grader.webp": {
+      "disposition": "annotated",
+      "spec": "studio-images.spec.json",
+      "scale": 1,
+      "callouts": 0,
+      "boxes": 1,
+      "source_sha256": "1a016266de7e2c3751cd39c1d7c435f010062320d390ffda1ae8d6b6c093a4b2",
+      "output_sha256": "14f3fde55c24905cca0d0581f0df1193f2519e16918dc79a3bd08deb7f75102a"
+    },
+    "official-75-review-panel.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft's Studio roundup image already red-outlines Review and badge 2. Cropped to the panel and retained the published highlight; no redundant callout.",
+      "output_sha256": "52f0292e100f5f5f9b0b026ddc45c1e485ed124343863321a34aa8838457e25e"
     }
   }
 }

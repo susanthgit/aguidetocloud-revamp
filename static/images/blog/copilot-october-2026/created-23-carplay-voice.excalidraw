@@ -1,0 +1,168 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "author-created",
+  "elements": [
+    {
+      "id": "text-0",
+      "type": "text",
+      "x": 60,
+      "y": 29,
+      "width": 781.2,
+      "height": 90.0,
+      "text": "Copilot voice through Apple CarPlay",
+      "fontSize": 36,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 60,
+      "y": 88,
+      "width": 1091.2,
+      "height": 55.0,
+      "text": "Concept only | Author illustration, not an Apple or Microsoft product screenshot",
+      "fontSize": 22,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-0",
+      "type": "rectangle",
+      "x": 60,
+      "y": 160,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#243953",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "x": 90,
+      "y": 186,
+      "width": 104.16,
+      "height": 60.0,
+      "text": "CONNECT",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "x": 90,
+      "y": 246,
+      "width": 416.64,
+      "height": 180.0,
+      "text": "Connect an iPhone to CarPlay\nOpen Microsoft Copilot\non the CarPlay display",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "box-1",
+      "type": "rectangle",
+      "x": 735,
+      "y": 160,
+      "width": 605,
+      "height": 245,
+      "strokeColor": "#a3854c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 0,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-6",
+      "type": "text",
+      "x": 765,
+      "y": 186,
+      "width": 133.92,
+      "height": 60.0,
+      "text": "USE VOICE",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-7",
+      "type": "text",
+      "x": 765,
+      "y": 246,
+      "width": 565.4399999999999,
+      "height": 180.0,
+      "text": "Microsoft describes the Siri request:\n\"Hey Siri, ask Copilot\"\nNo simulated dashboard or answer shown",
+      "fontSize": 24,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-8",
+      "type": "text",
+      "x": 60,
+      "y": 448,
+      "width": 870.48,
+      "height": 67.5,
+      "text": "Set up and familiarise yourself while safely parked.",
+      "fontSize": 27,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-9",
+      "type": "text",
+      "x": 60,
+      "y": 507,
+      "width": 1283.4,
+      "height": 57.5,
+      "text": "Not tested in a car. Follow local road rules; do not interact with a screen while driving.",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "id": "text-10",
+      "type": "text",
+      "x": 60,
+      "y": 580,
+      "width": 818.4,
+      "height": 50.0,
+      "text": "Source: Microsoft Support, Use Microsoft Copilot in Apple CarPlay.",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f3efe3"
+  }
+}

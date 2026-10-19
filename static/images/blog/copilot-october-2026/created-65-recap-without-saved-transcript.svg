@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="730" viewBox="0 0 1400 730">
+<rect width="1400" height="730" fill="#f3efe3"/>
+<text x="60" y="65.0" font-family="Segoe UI,Arial,sans-serif" font-size="38" font-weight="600" fill="#000000">Keep the summary, not a saved transcript</text>
+<text x="60" y="110.0" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#000000">Teams scheduled meetings | Author illustration, not a product screenshot</text>
+<rect x="60" y="155" width="605" height="245" rx="12" fill="#fcfbf5" stroke="#243953" stroke-width="2"/>
+<text x="90" y="205.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="600" fill="#000000">DURING THE MEETING</text>
+<text x="90" y="260.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">Live meeting context generates a summary</text>
+<text x="90" y="296.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">Temporary transcription data is processed</text>
+<text x="90" y="332.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">The service cache is purged within one day</text>
+<rect x="735" y="155" width="605" height="245" rx="12" fill="#fcfbf5" stroke="#a3854c" stroke-width="2"/>
+<text x="765" y="205.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="600" fill="#000000">AFTER THE MEETING</text>
+<text x="765" y="260.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">AI summary available from Recap</text>
+<text x="765" y="296.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">Read-only Word document in OneDrive</text>
+<text x="765" y="332.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">No saved transcript or recording</text>
+<text x="765" y="368.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">as part of this experience</text>
+<rect x="60" y="435" width="1280" height="115" rx="12" fill="#fcfbf5" stroke="#a3854c" stroke-width="2"/>
+<text x="90" y="478.0" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="600" fill="#000000">A summary is still a retained record.</text>
+<text x="90" y="520.0" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#000000">Review its access, expiration and compliance requirements.</text>
+<text x="60" y="600.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">Requires a Copilot-licensed organiser, supported meeting policy and feature availability.</text>
+<text x="60" y="645.0" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#000000">We could not find the option in our environments; this is not a tenant test.</text>
+<text x="60" y="695.0" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#000000">Source: Microsoft Learn, Intelligent recap in Teams meetings without saving transcripts (14 October 2026).</text>
+</svg>

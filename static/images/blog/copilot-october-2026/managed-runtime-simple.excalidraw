@@ -1,0 +1,20 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "Copilot Managed Runtime: simplified author illustration, based on MC1479277",
+  "appState": {"viewBackgroundColor": "#f3efe3"},
+  "elements": [
+    {"id":"title","type":"text","x":60,"y":30,"width":1320,"height":100,"text":"Copilot Managed Runtime","fontSize":40,"fontFamily":2,"strokeColor":"#000000"},
+    {"id":"subtitle","type":"text","x":60,"y":95,"width":1320,"height":65,"text":"A managed place to run code | Public preview | Illustrative, not a screenshot","fontSize":25,"fontFamily":2,"strokeColor":"#000000"},
+    {"id":"build","type":"rectangle","x":60,"y":185,"width":530,"height":235,"strokeColor":"#203958","backgroundColor":"#fffdf5","fillStyle":"solid","strokeWidth":3,"roundness":{"type":3}},
+    {"id":"build-text","type":"text","x":90,"y":210,"width":470,"height":200,"text":"BUILD AN APP\nCode, Cowork or Copilot Studio\nAlso supported: CLI and SDKs","fontSize":28,"fontFamily":2,"strokeColor":"#000000"},
+    {"id":"flow","type":"arrow","x":605,"y":300,"width":100,"height":0,"points":[[0,0],[100,0]],"strokeColor":"#a48750","strokeWidth":3},
+    {"id":"boundary","type":"rectangle","x":730,"y":185,"width":650,"height":235,"strokeColor":"#203958","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":3,"roundness":{"type":3}},
+    {"id":"boundary-title","type":"text","x":760,"y":205,"width":590,"height":70,"text":"MICROSOFT 365 TENANT BOUNDARY","fontSize":26,"fontFamily":2,"strokeColor":"#000000"},
+    {"id":"runtime","type":"rectangle","x":755,"y":270,"width":600,"height":125,"strokeColor":"#a48750","backgroundColor":"#fffdf5","fillStyle":"solid","strokeWidth":2,"roundness":{"type":3}},
+    {"id":"runtime-text","type":"text","x":785,"y":285,"width":540,"height":140,"text":"Run apps in Managed Runtime\nunder IT governance","fontSize":30,"fontFamily":2,"strokeColor":"#000000"},
+    {"id":"admin-card","type":"rectangle","x":60,"y":460,"width":1320,"height":105,"strokeColor":"#a48750","backgroundColor":"#fffdf5","fillStyle":"solid","strokeWidth":2,"roundness":{"type":3}},
+    {"id":"admin","type":"text","x":90,"y":480,"width":1260,"height":75,"text":"MANAGE APPS: Microsoft 365 admin center","fontSize":28,"fontFamily":2,"strokeColor":"#000000"},
+    {"id":"disclaimer","type":"text","x":60,"y":600,"width":1320,"height":65,"text":"Simplified author illustration based on MC1479277. Preview access varies by tenant.","fontSize":24,"fontFamily":2,"strokeColor":"#000000"}
+  ]
+}
