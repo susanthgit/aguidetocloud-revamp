@@ -8,8 +8,8 @@ ask_number: 50
 ask_category: "Question"
 ask_discussion_url: "https://github.com/susanthgit/aguidetocloud-feedback/discussions/50"
 ask_question: "Does your JNCIS-SP cover the new exam code JN0-364? https://www.aguidetocloud.com/guided/juniper-jncis-sp/"
-ask_answer_count: 2
-ask_answer_plain: "Thanks for checking the version before relying on it. That's exactly the right instinct. Short answer: the practice bank is built around Juniper's current JN0-364 objectives, on Junos OS 25.2, and the 250 questions cover all ten topic areas (protocol-independent routing, OSPF, IS-IS, BGP, Layer 2 and VLANs, spanning tree, MPLS, IPv6, tunnels, and high availability). So yes, it lines up with JN0-364. One honest caveat: these are my own practice questions, not real exam items, so I can't promise every one matches the exact phrasing or depth of the live exam. Use them to find your weak spots, then confirm against Juniper's official objectives. You also helped me catch two things on my own page, which I'm fixing now: it called JNCIA-Junos \"recommended\" when Juniper actually requires it, and it didn't clearly show the JN0-364 code or the Junos 25.2 version. Thank you for the nudge. — Sush A follow-up I owe you: I checked the published page again, and the prerequisite correction I mentioned in my earlier reply has not made it onto the live page. It still says JNCIA-Junos is only recommended. I should have closed that loop properly. Juniper's official JNCIS-SP page currently lists JN0-364, Junos OS 25.2, and JNCIA-Junos as the prerequisite certification. Please use that as the reference for booking and eligibility, not the incorrect wording on my page. The page correction is still outstanding. Sorry for leaving you with a promised change rather than a completed one. Sush"
+ask_answer_count: 3
+ask_answer_plain: "Thanks for checking the version before relying on it. That's exactly the right instinct. Short answer: the practice bank is built around Juniper's current JN0-364 objectives, on Junos OS 25.2, and the 250 questions cover all ten topic areas (protocol-independent routing, OSPF, IS-IS, BGP, Layer 2 and VLANs, spanning tree, MPLS, IPv6, tunnels, and high availability). So yes, it lines up with JN0-364. One honest caveat: these are my own practice questions, not real exam items, so I can't promise every one matches the exact phrasing or depth of the live exam. Use them to find your weak spots, then confirm against Juniper's official objectives. You also helped me catch two things on my own page, which I'm fixing now: it called JNCIA-Junos \"recommended\" when Juniper actually requires it, and it didn't clearly show the JN0-364 code or the Junos 25.2 version. Thank you for the nudge. — Sush A follow-up I owe you: I checked the published page again, and the prerequisite correction I mentioned in my earlier reply has not made it onto the live page. It still says JNCIA-Junos is only recommended. I should have closed that loop properly. Juniper's official JNCIS-SP page currently lists JN0-364, Junos OS 25.2, and JNCIA-Junos as the prerequisite certification. Please use that as the reference for booking and eligibility, not the incorrect wording on my page. The page correction is still outstanding. Sorry for leaving you with a promised change rather than a completed one. Sush A quick follow-up: the JNCIS-SP page and study guide now clearly identify JN0-364 and Junos OS 25.2. Both also say that JNCIA-Junos certification is required, not just recommended. Those details match Juniper's published exam information. This correction is to the page information; I haven't repeated a full question-by-question audit of the bank as part of it. Thanks again for checking the version before relying on it. Sush"
 sitemap:
   priority: 0.6
   changefreq: "monthly"
@@ -39,5 +39,13 @@ A follow-up I owe you: I checked the published page again, and the prerequisite 
 Juniper's [official JNCIS-SP page](https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14325) currently lists JN0-364, Junos OS 25.2, and JNCIA-Junos as the prerequisite certification. Please use that as the reference for booking and eligibility, not the incorrect wording on my page.
 
 The page correction is still outstanding. Sorry for leaving you with a promised change rather than a completed one.
+
+Sush
+
+A quick follow-up: the [JNCIS-SP page](https://www.aguidetocloud.com/guided/juniper-jncis-sp/) and [study guide](https://www.aguidetocloud.com/cert-tracker/juniper-jncis-sp/) now clearly identify JN0-364 and Junos OS 25.2. Both also say that JNCIA-Junos certification is required, not just recommended.
+
+Those details match [Juniper's published exam information](https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14325). This correction is to the page information; I haven't repeated a full question-by-question audit of the bank as part of it.
+
+Thanks again for checking the version before relying on it.
 
 Sush
