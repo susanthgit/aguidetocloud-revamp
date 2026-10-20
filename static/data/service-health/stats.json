@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T11:28:33.657741+00:00",
+  "generated_at": "2026-10-20T16:56:01.223355+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -32,12 +32,12 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 15,
+      "total_incidents": 16,
       "active_incidents": 1,
-      "avg_duration_minutes": 6888,
-      "last_incident": "2026-10-16T15:46:18.743000+00:00",
+      "avg_duration_minutes": 6433,
+      "last_incident": "2026-10-20T14:54:29.203000+00:00",
       "classifications": {
-        "incident": 8,
+        "incident": 9,
         "advisory": 7
       }
     },
@@ -45,25 +45,25 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 13,
+      "total_incidents": 12,
       "active_incidents": 1,
-      "avg_duration_minutes": 7636,
+      "avg_duration_minutes": 7964,
       "last_incident": "2026-10-12T08:15:00+00:00",
       "classifications": {
         "advisory": 5,
-        "incident": 8
+        "incident": 7
       }
     },
     {
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 7,
+      "total_incidents": 8,
       "active_incidents": 0,
-      "avg_duration_minutes": 1642,
-      "last_incident": "2026-10-19T07:20:00+00:00",
+      "avg_duration_minutes": 1448,
+      "last_incident": "2026-10-20T14:29:11+00:00",
       "classifications": {
-        "incident": 4,
+        "incident": 5,
         "advisory": 3
       }
     },
@@ -106,19 +106,6 @@
       }
     },
     {
-      "service": "Microsoft Viva",
-      "short_name": "Viva",
-      "icon": "🌱",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 222,
-      "last_incident": "2026-10-06T21:09:18.037000+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 1
-      }
-    },
-    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -141,6 +128,19 @@
       "last_incident": "2026-10-07T17:01:44.137000+00:00",
       "classifications": {
         "advisory": 3
+      }
+    },
+    {
+      "service": "Microsoft Viva",
+      "short_name": "Viva",
+      "icon": "🌱",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 202,
+      "last_incident": "2026-10-06T21:09:18.037000+00:00",
+      "classifications": {
+        "advisory": 2,
+        "incident": 1
       }
     },
     {
@@ -184,18 +184,13 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 40,
+      "incident_count": 42,
       "services_affected": 12
     },
     {
       "month": "2026-09",
       "incident_count": 60,
       "services_affected": 14
-    },
-    {
-      "month": "2026-08",
-      "incident_count": 2,
-      "services_affected": 2
     },
     {
       "month": "2026-07",

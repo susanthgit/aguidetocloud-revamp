@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Oct 2026 11:28:34 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 16:56:01 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may not receive responses from Microsoft 365 Copilot in the web and desktop apps</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1517145</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may not have received responses from Copilot in the web and desktop apps.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1517145</guid>
+      <pubDate>Tue, 20 Oct 2026 14:54:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may not receive responses from Microsoft 365 Copilot Chat in the web and desktop apps</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1517097</link>
+      <description>[Microsoft 365 Copilot Chat] Users may not have received responses from Copilot Chat in the web and desktop apps.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1517097</guid>
+      <pubDate>Tue, 20 Oct 2026 14:29:11 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users and admins couldn't view or manage device group configurations through the Microsoft Defender portal</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1515549</link>
@@ -439,24 +457,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1481173</guid>
       <pubDate>Mon, 28 Sep 2026 22:36:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Users may not be able to access Microsoft Viva Glint</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1481028</link>
-      <description>[Microsoft Viva] Users may have not been able to access Viva Glint.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1481028</guid>
-      <pubDate>Mon, 28 Sep 2026 21:48:07 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may be missing some slides</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1483625</link>
-      <description>[Microsoft Teams] Users' recordings of presentations using PowerPoint Live in Microsoft Teams may have been missing some slides.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1483625</guid>
-      <pubDate>Mon, 28 Sep 2026 13:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
