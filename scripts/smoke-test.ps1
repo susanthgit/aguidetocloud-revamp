@@ -15,10 +15,11 @@
 
 param(
     [ValidateSet('all','quick','ainews','prompts','roadmap','blog','seo','security','redirects','youtube','search')]
-    [string]$Section = 'all'
+    [string]$Section = 'all',
+    [string]$BaseUrl = 'https://www.aguidetocloud.com'
 )
 
-$BASE = "https://www.aguidetocloud.com"
+$BASE = $BaseUrl.TrimEnd('/')
 $pass = 0; $fail = 0; $warn = 0
 $failDetails = @()
 
@@ -144,26 +145,68 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
 # 3. AI NEWS
 # ═══════════════════════════════════════════
 if ($Section -eq 'all' -or $Section -eq 'ainews') {
-    Write-Host "`n📰 AI NEWS" -ForegroundColor Cyan
+    Write-Host "`n📰 AI NEWS ARCHIVE" -ForegroundColor Cyan
 
-    # JSON data
-    $raw = Fetch-Page "$BASE/data/ainews/latest.json"
-    $jsonOk = $null -ne $raw
-    Test-Check "latest.json loads" $jsonOk
+    $archiveCutoff = [DateTimeOffset]::Parse('2026-10-10T00:00:00+13:00')
+    $feeds = @(
+        @{ Name = 'latest.json'; Count = 80; Generated = '2026-10-09T02:45:11.188378+00:00' },
+        @{ Name = 'weekly.json'; Count = 541; Generated = '2026-10-09T02:45:11.451721+00:00' },
+        @{ Name = 'monthly.json'; Count = 722; Generated = '2026-10-09T02:45:11.508810+00:00' }
+    )
+    $latestData = $null
 
-    if ($jsonOk) {
-        $data = $raw.Content | ConvertFrom-Json
-        $articles = $data.articles
-        Test-Check "Has articles ($($articles.Count))" ($articles.Count -gt 0)
-        Test-Check "generated_at present" ($null -ne $data.generated_at)
+    # These are frozen snapshots. Changes require an intentional archive review.
+    foreach ($feed in $feeds) {
+        $raw = Fetch-Page "$BASE/data/ainews/$($feed.Name)"
+        if ($null -eq $raw) {
+            Test-Check "$($feed.Name) loads" $false
+            continue
+        }
 
-        # Tier distribution
-        $headlines = ($articles | Where-Object { $_.tier -eq 'headline' }).Count
-        $deepDives = ($articles | Where-Object { $_.tier -eq 'deep_dive' -or -not $_.tier }).Count
-        $quick = ($articles | Where-Object { $_.tier -eq 'quick' }).Count
-        Test-Check "Has headlines ($headlines)" ($headlines -gt 0)
-        Test-Check "Has deep dives ($deepDives)" ($deepDives -gt 0)
+        try {
+            $data = $raw.Content | ConvertFrom-Json -ErrorAction Stop
+        } catch {
+            Test-Check "$($feed.Name) is valid JSON" $false $_.Exception.Message
+            continue
+        }
 
+        $articles = @($data.articles)
+        $generatedAtMatch = [regex]::Match($raw.Content, '"generated_at"\s*:\s*"([^"]+)"')
+        $generatedAt = if ($generatedAtMatch.Success) { $generatedAtMatch.Groups[1].Value } else { '' }
+        Test-Check "$($feed.Name) article count ($($articles.Count))" ($articles.Count -eq $feed.Count)
+        Test-Check "$($feed.Name) archive timestamp" ($generatedAt -eq $feed.Generated) "Expected $($feed.Generated); got $generatedAt"
+
+        $publishedDates = [regex]::Matches($raw.Content, '"published"\s*:\s*"([^"]+)"')
+        $invalidDates = 0
+        $futureDates = 0
+        foreach ($published in $publishedDates) {
+            $publishedAt = [DateTimeOffset]::MinValue
+            if (-not [DateTimeOffset]::TryParse(
+                $published.Groups[1].Value,
+                [Globalization.CultureInfo]::InvariantCulture,
+                [Globalization.DateTimeStyles]::RoundtripKind,
+                [ref]$publishedAt
+            )) {
+                $invalidDates++
+            } elseif ($publishedAt -ge $archiveCutoff) {
+                $futureDates++
+            }
+        }
+        Test-Check "$($feed.Name) publication dates stay within archive cutoff" ($publishedDates.Count -eq $articles.Count -and $invalidDates -eq 0 -and $futureDates -eq 0) "Dates=$($publishedDates.Count), invalid=$invalidDates, after cutoff=$futureDates"
+
+        if ($feed.Name -eq 'latest.json') { $latestData = $data }
+    }
+
+    $archivePage = Fetch-Page "$BASE/ai-news/"
+    Test-Check "AI News archive page loads" ($null -ne $archivePage -and $archivePage.StatusCode -eq 200)
+    if ($null -ne $archivePage) {
+        Test-Check "Archive notice is present" ($archivePage.Content -match 'ainews-archived' -and $archivePage.Content -match 'October 2026')
+        Test-Check "Pagefind copy describes an archive" ($archivePage.Content -match 'Archived AI News')
+        Test-Check "Pagefind copy has no active-news claims" ($archivePage.Content -notmatch 'Real-Time AI Industry Updates|Track the latest AI news|3-tier TLDR summaries')
+    }
+
+    if ($null -ne $latestData) {
+        $articles = @($latestData.articles)
         # Image coverage
         $withImg = ($articles | Where-Object { $_.image -and $_.image -ne '' }).Count
         $pct = [math]::Round($withImg / $articles.Count * 100, 0)
@@ -181,23 +224,60 @@ if ($Section -eq 'all' -or $Section -eq 'ainews') {
 
     # JS has onerror fallback
     $ainewsJs = (Fetch-Page "$BASE/js/ainews.js?v=$bust").Content
-    Test-Check "ainews.js has onerror fallback" ($ainewsJs.Contains('onerror'))
-    Test-Check "No dead Clearbit reference" (-not $ainewsJs.Contains('clearbit'))
+    Test-Check "ainews.js has onerror fallback" ($null -ne $ainewsJs -and $ainewsJs.Contains('onerror'))
+    Test-Check "No dead Clearbit reference" ($null -ne $ainewsJs -and -not $ainewsJs.Contains('clearbit'))
+    Test-Check "Article dates are absolute" ($null -ne $ainewsJs -and $ainewsJs.Contains('formatPublishedDate(article.published)') -and $ainewsJs.Contains('publishedDate:'))
+    Test-Check "No visit-based NEW state" ($null -ne $ainewsJs -and -not $ainewsJs.Contains('ainews_last_visit') -and -not $ainewsJs.Contains('isNewSinceLastVisit') -and -not $ainewsJs.Contains('ainews-new-badge'))
 
-    # Category pages (spot check 2)
-    foreach ($cat in @('microsoft', 'openai')) {
-        $catResp = Fetch-Head "$BASE/ai-news/$cat/"
+    # Every category must be visibly identified as a frozen archive.
+    $categoryRoot = Join-Path $PSScriptRoot '..\content\ai-news'
+    $categoryDirs = @(Get-ChildItem -LiteralPath $categoryRoot -Directory | Where-Object {
+        Test-Path -LiteralPath (Join-Path $_.FullName '_index.md')
+    } | Sort-Object Name)
+    Test-Check "All 13 archived category sources exist" ($categoryDirs.Count -eq 13) "Found $($categoryDirs.Count)"
+    foreach ($categoryDir in $categoryDirs) {
+        $cat = $categoryDir.Name
+        $categoryText = Get-Content -LiteralPath (Join-Path $categoryDir.FullName '_index.md') -Raw
+        $archiveCopy = $categoryText -match 'description:\s*"Archive of .* through 9 October 2026:' -and
+            $categoryText -match '(?m)^Browse archived stories collected through 9 October 2026\.'
+        $activeCopy = $categoryText -match '(?im)^(?:description:.*\b(?:Latest|Daily)\b|(?:Follow|Track|Stay current|Stay on top|Keep up with)\b)'
+        Test-Check "Category copy is archival: $cat" ($archiveCopy -and -not $activeCopy)
+
+        $catResp = Fetch-Page "$BASE/ai-news/$cat/"
         Test-Check "Category page: $cat" ($null -ne $catResp -and $catResp.StatusCode -eq 200)
+        if ($null -ne $catResp) {
+            Test-Check "Category archive notice: $cat" ($catResp.Content -match 'ainews-archived' -and $catResp.Content -match 'October 2026')
+            Test-Check "Category intro shows archive cutoff: $cat" ($catResp.Content -match 'Browse archived stories collected through 9 October 2026')
+        }
     }
-
-    # Weekly/monthly JSON
-    $weekly = Fetch-Head "$BASE/data/ainews/weekly.json"
-    if ($null -ne $weekly) { Test-Check "weekly.json available" $true }
-    else { Test-Warn "weekly.json not available" "May not exist yet" }
 
     # RSS feed
     $rss = Fetch-Page "$BASE/data/ainews/feed.xml"
-    Test-Check "AI News RSS feed" ($null -ne $rss -and $rss.Content.Contains('<rss'))
+    $rssOk = $null -ne $rss -and $rss.Content.Contains('<rss')
+    Test-Check "AI News RSS archive loads" $rssOk
+    if ($rssOk) {
+        try {
+            [xml]$rssXml = $rss.Content
+            $rssItems = @($rssXml.rss.channel.item)
+            Test-Check "RSS channel describes an archive" ([string]$rssXml.rss.channel.description -match 'Archived AI news')
+            Test-Check "RSS archive item count ($($rssItems.Count))" ($rssItems.Count -eq 50)
+            $rssBuildDate = [DateTimeOffset]::MinValue
+            $validBuildDate = [DateTimeOffset]::TryParse(
+                [string]$rssXml.rss.channel.lastBuildDate,
+                [Globalization.CultureInfo]::InvariantCulture,
+                [Globalization.DateTimeStyles]::AssumeUniversal,
+                [ref]$rssBuildDate
+            )
+            Test-Check "RSS snapshot timestamp" ($validBuildDate -and $rssBuildDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ") -eq '2026-10-09T02:45:11Z')
+            $rssFutureDates = @($rssItems | Where-Object {
+                $itemDate = [DateTimeOffset]::MinValue
+                -not [DateTimeOffset]::TryParse([string]$_.pubDate, [Globalization.CultureInfo]::InvariantCulture, [Globalization.DateTimeStyles]::AssumeUniversal, [ref]$itemDate) -or $itemDate -ge $archiveCutoff
+            }).Count
+            Test-Check "RSS items stay within archive cutoff" ($rssFutureDates -eq 0) "After cutoff or invalid: $rssFutureDates"
+        } catch {
+            Test-Check "RSS archive is valid XML" $false $_.Exception.Message
+        }
+    }
 }
 
 # ═══════════════════════════════════════════
@@ -442,5 +522,7 @@ if ($fail -eq 0) {
     foreach ($d in $failDetails) {
         Write-Host "  ❌ $d" -ForegroundColor Red
     }
+    exit 1
 }
 Write-Host ""
+exit 0

@@ -46,8 +46,8 @@ jobs:
         id: freshness
         run: |
           echo "## Data Freshness" > /tmp/freshness.md
-          echo "| Tool | Data File | Last Modified | Days Old | Status |" >> /tmp/freshness.md
-          echo "|------|-----------|---------------|----------|--------|" >> /tmp/freshness.md
+          echo "| Tool | Data File | File / generation date | Days Old | Status |" >> /tmp/freshness.md
+          echo "|------|-----------|------------------------|----------|--------|" >> /tmp/freshness.md
           
           check_file() {
             local name="$1" file="$2" warn_days="$3"
@@ -63,9 +63,27 @@ jobs:
               echo "| $name | \`$file\` | — | — | ❌ Missing |" >> /tmp/freshness.md
             fi
           }
+
+          check_archived_file() {
+            local name="$1" file="$2" expected_generated_at="$3" expected_count="$4"
+            if [ ! -f "$file" ]; then
+              echo "| $name | \`$file\` | — | — | ❌ Missing |" >> /tmp/freshness.md
+              return 0
+            fi
+            local generated_at article_count
+            generated_at=$(jq -r '.generated_at // empty' "$file" 2>/dev/null || true)
+            article_count=$(jq -r 'if (.articles | type) == "array" then (.articles | length) else -1 end' "$file" 2>/dev/null || true)
+            if [ "$generated_at" = "$expected_generated_at" ] && [ "$article_count" = "$expected_count" ]; then
+              echo "| $name | \`$file\` | ${generated_at:0:10} | — | 🗃️ Archived (intentional) |" >> /tmp/freshness.md
+            else
+              echo "| $name | \`$file\` | ${generated_at:-—} | — | ⚠️ Archive snapshot mismatch (expected $expected_generated_at / $expected_count items; got ${generated_at:-missing} / ${article_count:-invalid}) |" >> /tmp/freshness.md
+            fi
+          }
           
           # Automated pipelines (should be recent)
-          check_file "AI News" "static/data/ainews/latest.json" 2
+          check_archived_file "AI News latest archive" "static/data/ainews/latest.json" "2026-10-09T02:45:11.188378+00:00" 80
+          check_archived_file "AI News weekly archive" "static/data/ainews/weekly.json" "2026-10-09T02:45:11.451721+00:00" 541
+          check_archived_file "AI News monthly archive" "static/data/ainews/monthly.json" "2026-10-09T02:45:11.508810+00:00" 722
           check_file "M365 Roadmap" "static/data/roadmap/latest.json" 3
           check_file "Service Health" "static/data/service-health/latest.json" 1
           check_file "Cert Tracker" "static/data/cert-tracker/latest.json" 10

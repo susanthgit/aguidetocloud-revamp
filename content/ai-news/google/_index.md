@@ -1,10 +1,10 @@
 ---
 title: "Google AI News — Gemini, DeepMind, Vertex AI & Android AI Updates"
-description: "Latest Google AI news — Gemini models, DeepMind research, Vertex AI updates, Android AI features, and Google I/O. Archived."
+description: "Archive of Google AI news through 9 October 2026: Gemini models, DeepMind research, Vertex AI, Android AI features, and Google I/O."
 type: "ai-news-category"
 category_filter: "google"
 ---
 
-Stay current with Google's AI ecosystem. Gemini model launches, DeepMind breakthroughs, Vertex AI platform updates, Android AI features, and Google I/O announcements.
+Browse archived stories collected through 9 October 2026. This collection covers Google's AI ecosystem, including Gemini models, DeepMind research, Vertex AI, Android AI features, and Google I/O.
 
 **See also:** [OpenAI News](/ai-news/openai/) | [Anthropic News](/ai-news/anthropic/) | [Meta AI News](/ai-news/meta/)

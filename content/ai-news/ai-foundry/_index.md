@@ -1,10 +1,10 @@
 ---
 title: "Azure AI Foundry News — Model Catalog, Prompt Flow & AI Platform Updates"
-description: "Latest Azure AI Foundry news — model catalog, prompt flow updates, AI agent SDK releases, and Azure OpenAI changes. Archived."
+description: "Archive of Azure AI Foundry news through 9 October 2026: model catalog additions, prompt flow, AI agent SDK releases, and Azure OpenAI service changes."
 type: "ai-news-category"
 category_filter: "ai-foundry"
 ---
 
-Keep up with Azure AI Foundry and the broader Azure AI platform. Model catalog additions, prompt flow updates, the AI agent SDK, and Azure OpenAI service changes.
+Browse archived stories collected through 9 October 2026. This collection covers Azure AI Foundry and the broader Azure AI platform, including model catalog additions, prompt flow, the AI agent SDK, and Azure OpenAI service changes.
 
 **See also:** [Microsoft AI News](/ai-news/microsoft/) | [OpenAI News](/ai-news/openai/)

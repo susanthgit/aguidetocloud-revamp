@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     } catch (e) {
       // If weekly/monthly not available yet, fall back to daily
       if (view !== 'daily') {
-        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No ' + view + ' data available yet — showing today\'s news instead.</p>';
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">The archived ' + view + ' collection could not be loaded. Trying the latest available archive instead.</p>';
         setTimeout(function() { loadView('daily'); }, 1500);
       } else {
         grid.innerHTML = '<div style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;"><p>Could not load AI News data.</p><button onclick="location.reload()" style="margin-top:0.8rem;padding:0.4rem 1.2rem;border-radius:8px;border:1px solid var(--neon-cyan);background:rgba(102,255,255,0.08);color:var(--neon-cyan);cursor:pointer;font-weight:600">Retry</button></div>';
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     if (!data || !data.articles) {
-      grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No articles available yet.</p>';
+      grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No archived articles are available.</p>';
       return;
     }
 
@@ -129,10 +129,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 // Init share button directly (no MutationObserver needed — tabs are in DOM from Hugo)
   // [REMOVED: share button — UX audit 2026-04-10]
 
-  // Mark last visit timestamp for "new" badges
-  var lastVisit = localStorage.getItem('ainews_last_visit');
-  window.__ainewsLastVisit = lastVisit ? new Date(lastVisit) : null;
-  localStorage.setItem('ainews_last_visit', new Date().toISOString());
 });
 
 // Microsoft-related categories get unlimited articles, others capped at 10
@@ -197,18 +193,16 @@ function isAiRelated(article) {
   return AI_KEYWORDS.some(function (kw) { return text.indexOf(kw) !== -1; });
 }
 
-function timeAgo(dateStr) {
+function formatPublishedDate(dateStr) {
   if (!dateStr) return '';
-  var now = new Date();
   var then = new Date(dateStr);
-  var diffMs = now - then;
-  var mins = Math.floor(diffMs / 60000);
-  if (mins < 60) return mins + 'm ago';
-  var hours = Math.floor(mins / 60);
-  if (hours < 24) return hours + 'h ago';
-  var days = Math.floor(hours / 24);
-  if (days < 7) return days + 'd ago';
-  return then.toLocaleDateString('en-NZ', { month: 'short', day: 'numeric' });
+  if (isNaN(then.getTime())) return '';
+  return then.toLocaleDateString('en-NZ', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'Pacific/Auckland'
+  });
 }
 
 function escapeHtml(str) {
@@ -313,7 +307,7 @@ function renderNews(data, view) {
   var breakingArticles = articles.filter(function (a) { return a.is_breaking; });
   if (breakingArticles.length > 0) {
     html += '<div class="ainews-breaking" style="grid-column:1/-1">';
-    html += '<span class="ainews-breaking-label">BREAKING</span>';
+    html += '<span class="ainews-breaking-label">Breaking at the time</span>';
     html += '<ul class="ainews-breaking-list">';
     html += breakingArticles.map(function (a) {
       return '<li><a href="' + escapeHtml(a.url || a.link || '#') + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(decodeEntities(a.title)) + '</a></li>';
@@ -325,7 +319,7 @@ function renderNews(data, view) {
   var briefing = data.briefing;
   if (briefing && briefing.length > 0) {
     html += '<div class="ainews-briefing" style="grid-column:1/-1">';
-    html += '<div class="ainews-briefing-header">Today\'s AI Briefing</div>';
+    html += '<div class="ainews-briefing-header">Archived AI briefing</div>';
     html += '<ul class="ainews-briefing-list">';
     briefing.forEach(function (bullet) {
       html += '<li>' + escapeHtml(decodeEntities(bullet)) + '</li>';
@@ -379,10 +373,10 @@ function renderNews(data, view) {
       html += '<div class="ainews-compact-header">';
       html += '<span class="ainews-compact-cat" data-cat="' + escapeHtml(v.cat) + '">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>';
       html += '<span class="ainews-compact-title" role="button" tabindex="0">';
-      html += (v.isNew ? '<span class="ainews-new-badge">NEW</span> ' : '') + escapeHtml(v.title);
+      html += escapeHtml(v.title);
       if (entry.related.length > 0) html += ' <span class="ainews-cluster-badge">+' + entry.related.length + ' source' + (entry.related.length > 1 ? 's' : '') + '</span>';
       html += '</span>';
-      html += '<span class="ainews-compact-time">' + v.time + '</span>';
+      html += '<span class="ainews-compact-time">' + v.publishedDate + '</span>';
       html += '<button class="ainews-compact-expand" aria-label="Show details" aria-expanded="' + (i < 10 ? 'true' : 'false') + '">' + (i < 10 ? '▲' : '▼') + '</button>';
       html += '</div>';
       html += '<div class="ainews-compact-detail' + (i < 10 ? ' ainews-detail-open' : '') + '"' + (i < 10 ? '' : ' inert') + '>';
@@ -682,13 +676,12 @@ function getArticleVars(article) {
     source: article.source || '',
     url: article.url || article.link || '#',
     title: decodeEntities(article.title || 'Untitled'),
-    time: timeAgo(article.published),
+    publishedDate: formatPublishedDate(article.published),
     readTime: estimateReadTime(summary + ' ' + (article.why_it_matters || '')),
     favicon: getFaviconUrl(article.url || article.link || ''),
     image: article.image || '',
     logo: getLogoUrl(article.url || article.link || ''),
-    cluster: article.cluster || '',
-    isNew: isNewSinceLastVisit(article.published)
+    cluster: article.cluster || ''
   };
 }
 
@@ -713,7 +706,6 @@ function renderHeroCard(article) {
   return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-card-hero" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
     '<div class="ainews-thumb-wrap">' + buildThumbHtml(v) + '</div>' +
     '<div class="ainews-card-body">' +
-    (v.isNew ? '<span class="ainews-new-badge">NEW</span>' : '') +
     '<span class="ainews-cat">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>' +
     '<h3>' + escapeHtml(v.title) + '</h3>' +
     '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>' +
@@ -721,7 +713,7 @@ function renderHeroCard(article) {
     '<div class="ainews-meta">' +
       (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
       '<span class="ainews-source">' + escapeHtml(v.source) + '</span>' +
-      '<span class="ainews-time">' + v.time + '</span>' +
+      '<span class="ainews-time">' + v.publishedDate + '</span>' +
       (v.readTime ? '<span class="ainews-readtime">' + v.readTime + '</span>' : '') +
     '</div></div>' +
   '</a>';
@@ -733,7 +725,6 @@ function renderCard(article) {
   var extraClass = isRumour ? ' ainews-card-rumour' : '';
   return '<a href="' + escapeHtml(v.url) + '" target="_blank" rel="noopener noreferrer" class="ainews-card' + extraClass + '" data-category="' + escapeHtml(v.cat) + '"' + buildClickAttr(v) + '>' +
     '<div class="ainews-thumb-wrap">' + buildThumbHtml(v) + '</div>' +
-    (v.isNew ? '<span class="ainews-new-badge">NEW</span>' : '') +
     '<span class="ainews-cat">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>' +
     '<h3>' + escapeHtml(v.title) + '</h3>' +
     '<p class="ainews-summary">' + escapeHtml(v.summary) + '</p>' +
@@ -741,32 +732,23 @@ function renderCard(article) {
     '<div class="ainews-meta">' +
       (v.favicon ? '<img src="' + v.favicon + '" alt="" class="ainews-favicon" loading="lazy">' : '') +
       '<span class="ainews-source">' + escapeHtml(v.source) + '</span>' +
-      '<span class="ainews-time">' + v.time + '</span>' +
+      '<span class="ainews-time">' + v.publishedDate + '</span>' +
     '</div>' +
   '</a>';
 }
 
 function renderFreshnessBadge(generatedAt) {
   if (!generatedAt) return;
+  var gen = new Date(generatedAt);
+  if (isNaN(gen.getTime())) return;
   var badge = document.createElement('div');
   badge.className = 'ainews-freshness';
-  var now = new Date();
-  var gen = new Date(generatedAt);
-  var diffMs = now - gen;
-  var hours = Math.floor(diffMs / 3600000);
-  var label, statusClass;
-  if (hours < 6) {
-    label = 'Updated ' + (hours < 1 ? 'just now' : hours + 'h ago');
-    statusClass = 'ainews-fresh';
-  } else if (hours < 18) {
-    label = 'Updated ' + hours + 'h ago';
-    statusClass = 'ainews-stale';
-  } else {
-    var days = Math.floor(hours / 24);
-    label = 'Updated ' + (days < 1 ? hours + 'h' : days + 'd') + ' ago';
-    statusClass = 'ainews-old';
-  }
-  badge.innerHTML = '<span class="ainews-fresh-dot ' + statusClass + '"></span> ' + label;
+  badge.textContent = 'Archive captured ' + gen.toLocaleDateString('en-NZ', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Pacific/Auckland'
+  });
   var tabsEl = document.querySelector('.ainews-tabs');
   if (tabsEl) tabsEl.appendChild(badge);
 }
@@ -791,14 +773,6 @@ function getOrderedCategories(articles) {
 
 // === TAB COUNTS ===
 // Removed in V2 audit — tab counts are noise per V3 design principles
-
-// === "NEW" BADGES ===
-function isNewSinceLastVisit(publishedStr) {
-  if (!window.__ainewsLastVisit || !publishedStr) return false;
-  try {
-    return new Date(publishedStr) > window.__ainewsLastVisit;
-  } catch (e) { return false; }
-}
 
 // === CLICK ANALYTICS ===
 function trackArticleClick(category, title) {

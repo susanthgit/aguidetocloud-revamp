@@ -1,10 +1,10 @@
 ---
 title: "Meta AI News — Llama Models, PyTorch, Open Source AI & Research"
-description: "Latest Meta AI news — Llama models, PyTorch updates, open-source AI, Reality Labs AI, and FAIR research. Archived."
+description: "Archive of Meta AI news through 9 October 2026: Llama models, PyTorch, open-source AI, Reality Labs, and FAIR research."
 type: "ai-news-category"
 category_filter: "meta"
 ---
 
-Track Meta's open-source AI leadership. Llama model releases, PyTorch updates, cutting-edge FAIR research, Reality Labs AI, and the open-source AI ecosystem.
+Browse archived stories collected through 9 October 2026. This collection covers Meta's Llama models, PyTorch, FAIR research, Reality Labs AI, and open-source work.
 
 **See also:** [OpenAI News](/ai-news/openai/) | [Google AI News](/ai-news/google/) | [DeepSeek News](/ai-news/deepseek/)

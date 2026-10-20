@@ -1,10 +1,10 @@
 ---
 title: "Copilot Studio News — Declarative Agents, Extensibility & Low-Code AI"
-description: "Latest Copilot Studio updates — declarative agents, API plugins, MCP integration, and no-code AI agent building. Archived."
+description: "Archive of Copilot Studio news through 9 October 2026: declarative agents, API plugins, MCP integration, and low-code AI tools."
 type: "ai-news-category"
 category_filter: "copilot-studio"
 ---
 
-Track every Copilot Studio update. Declarative agents, API plugins, MCP server integration, connector updates, and the evolving low-code AI builder ecosystem.
+Browse archived stories collected through 9 October 2026. This collection covers Copilot Studio declarative agents, API plugins, MCP server integration, connectors, and low-code AI tools.
 
 **See also:** [Microsoft AI News](/ai-news/microsoft/) | [M365 Copilot News](/ai-news/m365-copilot/)

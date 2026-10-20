@@ -237,11 +237,14 @@ CATEGORY_PATTERNS = {
 
 # Internal reuses the Community grid pattern
 CATEGORY_PATTERNS["Internal"] = CATEGORY_PATTERNS["Community"]
+# Archive uses the existing Stay Informed wave pattern.
+CATEGORY_PATTERNS["Archive"] = CATEGORY_PATTERNS["Stay Informed"]
 
 # Pattern opacity per category
 CATEGORY_OPACITIES = {
     "Copilot": 0.55,
     "Stay Informed": 0.58,
+    "Archive": 0.58,
     "Admin": 0.52,
     "Prompt": 0.52,
     "Compare": 0.48,
@@ -253,7 +256,9 @@ CATEGORY_OPACITIES = {
 
 def compute_tool_hash(tool):
     """Hash ALL inputs that affect the OG image."""
-    tmpl_h = hashlib.md5(TEMPLATE_PATH.read_bytes()).hexdigest()[:8]
+    # Keep the template hash stable across Windows and Linux checkouts.
+    template_bytes = TEMPLATE_PATH.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    tmpl_h = hashlib.md5(template_bytes).hexdigest()[:8]
     # Include the category pattern SVG in the hash so pattern changes trigger regen
     pattern_svg = CATEGORY_PATTERNS.get(tool["category"], "")
     pat_h = hashlib.md5(pattern_svg.encode()).hexdigest()[:8]

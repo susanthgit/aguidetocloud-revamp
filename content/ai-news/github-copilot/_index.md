@@ -1,10 +1,10 @@
 ---
 title: "GitHub Copilot News — CLI, Coding Agent, Code Review & Extensions"
-description: "Latest GitHub Copilot updates — Copilot CLI, coding agent, code review, Copilot Workspace, and extension ecosystem. Archived."
+description: "Archive of GitHub Copilot news through 9 October 2026: CLI, coding agent, code review, Copilot Workspace, and extensions."
 type: "ai-news-category"
 category_filter: "github-copilot"
 ---
 
-Follow GitHub Copilot's rapid evolution. CLI updates, the coding agent, Copilot Workspace, code review features, and the extension ecosystem.
+Browse archived stories collected through 9 October 2026. This collection covers GitHub Copilot CLI, the coding agent, Copilot Workspace, code review, and extensions.
 
 **See also:** [Microsoft AI News](/ai-news/microsoft/) | [OpenAI News](/ai-news/openai/)

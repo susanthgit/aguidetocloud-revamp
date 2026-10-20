@@ -141,7 +141,7 @@ category = "Copilot"
 css_namespace = "roi-*"
 body_class = "page-roi-calculator"
 
-# ── Stay Informed ─────────────────────────────────────────────────────────────
+# ── News & Status Tools ────────────────────────────────────────────────────────
 
 [[tools]]
 name = "AI News"
@@ -149,7 +149,7 @@ slug = "ai-news"
 hex = "#ff66ff"
 hue = 300
 name_friendly = "Magenta"
-category = "Stay Informed"
+category = "Archive"
 css_namespace = "ainews-*"
 body_class = "page-ainews"
 

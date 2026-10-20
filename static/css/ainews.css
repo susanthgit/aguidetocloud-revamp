@@ -1073,25 +1073,6 @@
   100% { background-position: -200% 0; }
 }
 
-/* ── AI NEWS: NEW BADGE ─────────────────── */
-.ainews-new-badge {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--text-primary);
-  font-size: 0.6rem;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  animation: ainews-pulse 2s infinite;
-  margin-bottom: 4px;
-}
-@keyframes ainews-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-
 
 /* ── RESPONSIVE: AI NEWS TIERS ──────────── */
 @media (max-width: 768px) {
