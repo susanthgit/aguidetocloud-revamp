@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T23:35:03.196641+00:00",
+  "generated_at": "2026-10-20T04:41:38.279632+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -20,12 +20,12 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 17,
-      "active_incidents": 3,
-      "avg_duration_minutes": 6497,
+      "active_incidents": 2,
+      "avg_duration_minutes": 6133,
       "last_incident": "2026-10-19T07:56:42+00:00",
       "classifications": {
-        "incident": 7,
-        "advisory": 10
+        "advisory": 10,
+        "incident": 7
       }
     },
     {
