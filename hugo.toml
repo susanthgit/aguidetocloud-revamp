@@ -74,7 +74,7 @@ cache_version = "2026102002"
 [[module.mounts]]
   source = "static"
   target = "static"
-  excludeFiles = ["**/{~$}*"]
+  files = ["! /~$*", "! /**/~$*"]
 
 [[module.mounts]]
   source = "content"
