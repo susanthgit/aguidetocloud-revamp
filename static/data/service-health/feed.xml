@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Oct 2026 04:41:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 11:28:34 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users and admins couldn't view or manage device group configurations through the Microsoft Defender portal</title>
@@ -73,9 +73,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may not see options to select GPT models in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1515501</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may not see options to select GPT models in Copilot.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may not have seen options to select GPT models in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1515501</guid>
       <pubDate>Fri, 16 Oct 2026 07:23:00 +0000</pubDate>
     </item>
