@@ -10,11 +10,11 @@ Strict-fail checks (block deploy in -Strict mode):
 - title length > 60 chars (Google SERP truncation)
 - description length > 155 chars (Google SERP truncation)
 - frontmatter `images:` references a file that doesn't exist on disk
-- frontmatter `og_headline:` is missing (V3-blog generator skips these blogs)
+- frontmatter `og_headline:` is missing on direct blog posts (V3-blog generator skips these blogs)
 
 Warn-only checks (advisory, never block):
-- og_headline > 40 chars (V3-blog adaptive font may shrink uncomfortably)
-- og_glyph is set but not one of [calendar, compare, layers, list]
+- blog og_headline > 40 chars (V3-blog adaptive font may shrink uncomfortably)
+- blog og_glyph is set but not one of [calendar, compare, layers, list]
   (will silently fall back to 'layers' default — see scripts/og-generator-blog/README.md)
 - OG image file > 50 KB (heuristic: V3-blog "B2 Editorial-Light" OGs are 20-35 KB;
   larger usually means the legacy Python dark-glass generator was used and the
@@ -32,7 +32,8 @@ Exit 1 when any strict-fail issue is present. Default: warn-only.
 
 .PARAMETER All
 Scan every .md under content/, not just content/blog/. Includes cert-tracker,
-licensing, AI Hub, etc. Useful for full audits.
+licensing, AI Hub, etc. Title, description, and image checks apply to all files;
+V3-blog-specific frontmatter checks apply only to direct content/blog/*.md files.
 
 .PARAMETER ContentDir
 Override the content directory. Defaults to ../content relative to script.
@@ -171,11 +172,18 @@ foreach ($f in Get-ChildItem $ContentDir -Recurse -File -Filter '*.md' -ErrorAct
   $titleOver = $titleLen -gt $TitleMax
   $descOver  = $descLen  -gt $DescMax
 
+  $relativeFile = [IO.Path]::GetRelativePath(
+    [IO.Path]::GetFullPath($ContentDir),
+    [IO.Path]::GetFullPath($f.FullName)
+  )
+  $relativeDirectory = [IO.Path]::GetDirectoryName($relativeFile)
+  $isBlogPost = if ($All) { $relativeDirectory -ceq 'blog' } else { [string]::IsNullOrEmpty($relativeDirectory) }
+
   # V3-blog OG format checks
-  $ogHeadlineLen     = if ($ogHeadline) { $ogHeadline.Length } else { 0 }
-  $ogHeadlineMissing = [string]::IsNullOrWhiteSpace($ogHeadline)
-  $ogHeadlineOver    = (-not $ogHeadlineMissing) -and ($ogHeadlineLen -gt $OgHeadlineMaxChar)
-  $ogGlyphInvalid    = (-not [string]::IsNullOrWhiteSpace($ogGlyph)) -and ($ValidGlyphs -notcontains $ogGlyph.ToLower())
+  $ogHeadlineLen     = if ($isBlogPost -and $ogHeadline) { $ogHeadline.Length } else { 0 }
+  $ogHeadlineMissing = $isBlogPost -and [string]::IsNullOrWhiteSpace($ogHeadline)
+  $ogHeadlineOver    = $isBlogPost -and (-not $ogHeadlineMissing) -and ($ogHeadlineLen -gt $OgHeadlineMaxChar)
+  $ogGlyphInvalid    = $isBlogPost -and (-not [string]::IsNullOrWhiteSpace($ogGlyph)) -and ($ValidGlyphs -notcontains $ogGlyph.ToLower())
 
   $images = Get-FrontmatterImages -Frontmatter $fm
   $missingImages = @()
@@ -256,12 +264,13 @@ $problemCount = ($rows | Where-Object {
 }).Count
 
 $scopeLabel = if ($All) { 'all content' } else { 'content/blog/ only' }
+$blogOgScope = if ($All) { 'direct content/blog/*.md only' } else { 'direct files in the selected blog-only directory' }
 
 Write-Host ""
 Write-Host "=== SEO + OG image guardrail ==="
 Write-Host ("Scope: {0} ({1})" -f $scopeLabel, $ContentDir)
 Write-Host ("Static dir for image resolution: {0}" -f $StaticDir)
-Write-Host ("Thresholds: title <= {0}, description <= {1}, og_headline required (<= {2} chars), og_glyph in [{3}], OG image <= {4} KB (V3-blog new format)" -f $TitleMax, $DescMax, $OgHeadlineMaxChar, ($ValidGlyphs -join ','), $OgImageSizeWarnKB)
+Write-Host ("Thresholds: title <= {0}, description <= {1}; blog OG checks ({2}): og_headline required (<= {3} chars), og_glyph in [{4}], OG image <= {5} KB (V3-blog new format)" -f $TitleMax, $DescMax, $blogOgScope, $OgHeadlineMaxChar, ($ValidGlyphs -join ','), $OgImageSizeWarnKB)
 Write-Host ("Pages scanned: {0}" -f $total)
 Write-Host ""
 
