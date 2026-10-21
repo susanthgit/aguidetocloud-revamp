@@ -439,6 +439,24 @@ if ($Section -eq 'all' -or $Section -eq 'redirects') {
             Test-Check "Redirect: $($r[0])" ($statusCode -eq 301 -or $statusCode -eq 302) "Got $statusCode"
         }
     }
+
+    $legacyBuilder = Fetch-Page "$BASE/agent-instructions/"
+    $legacyBuilderResolves = $null -ne $legacyBuilder -and
+        $legacyBuilder.StatusCode -eq 200 -and
+        $legacyBuilder.Content -match '(?is)<meta[^>]+http-equiv=["'']refresh["''][^>]+instruct-builder/'
+    Test-Check "Legacy Agent Instruction Builder route resolves" $legacyBuilderResolves
+
+    $builderGuide = Fetch-Page "$BASE/agent-builder-guide/"
+    $guideLinksResolve = $null -ne $builderGuide -and
+        $builderGuide.Content.Contains('/instruct-builder/') -and
+        -not $builderGuide.Content.Contains('/agent-instructions/')
+    Test-Check "Agent Builder Helper links to the live instruction builder" $guideLinksResolve
+
+    $builderScript = Fetch-Page "$BASE/js/agent-builder-guide.js"
+    $exportLinkResolves = $null -ne $builderScript -and
+        $builderScript.Content.Contains('/instruct-builder/') -and
+        -not $builderScript.Content.Contains('/agent-instructions/')
+    Test-Check "Exported Agent Plan links to the live instruction builder" $exportLinkResolves
 }
 
 # ═══════════════════════════════════════════
