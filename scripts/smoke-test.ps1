@@ -124,7 +124,7 @@ if ($Section -eq 'all' -or $Section -eq 'quick') {
     $promptsPage = Fetch-Page "$BASE/prompts/"
     Test-Check "Prompts page loads" ($null -ne $promptsPage -and $promptsPage.StatusCode -eq 200)
     if ($null -ne $promptsPage) {
-        Test-Check "Prompts has platform filter" ($promptsPage.Content -match 'filter-platform')
+        Test-Check "Prompts has role picker controls" ($promptsPage.Content.Contains('prompts-role-picker') -and $promptsPage.Content.Contains('prompts-role-grid'))
         Test-Check "Prompts has category groups" ($promptsPage.Content -match 'prompts-category-group')
         Test-Check "Prompts JS loaded" ($promptsPage.Content -match 'prompts-v3\.js')
         Test-Check "Prompts CSS loaded" ($promptsPage.Content -match 'prompts\.css')
@@ -337,11 +337,6 @@ if ($Section -eq 'all' -or $Section -eq 'blog') {
 if ($Section -eq 'all' -or $Section -eq 'youtube') {
     Write-Host "`n🎬 YOUTUBE INTEGRATION" -ForegroundColor Cyan
 
-    # Check homepage has video cards with YouTube thumbnails
-    $homePage = (Fetch-Page "$BASE/").Content
-    $hasYtThumb = $homePage -match 'i\.ytimg\.com' -or $homePage -match 'img\.youtube\.com'
-    Test-Check "Homepage has YouTube thumbnails" $hasYtThumb
-
     # Pick a section page and verify video embeds work
     $aiHub = Fetch-Page "$BASE/ai-hub/"
     if ($null -ne $aiHub) {
@@ -401,7 +396,7 @@ if ($Section -eq 'all' -or $Section -eq 'security') {
     $h = $resp.Headers
 
     Test-Check "X-Content-Type-Options" ([string]$h['X-Content-Type-Options'] -eq 'nosniff')
-    Test-Check "X-Frame-Options" ([string]$h['X-Frame-Options'] -eq 'DENY')
+    Test-Check "X-Frame-Options" ([string]$h['X-Frame-Options'] -eq 'SAMEORIGIN')
     Test-Check "Strict-Transport-Security" ($null -ne $h['Strict-Transport-Security'])
     Test-Check "Referrer-Policy" ($null -ne $h['Referrer-Policy'])
     Test-Check "Permissions-Policy" ($null -ne $h['Permissions-Policy'])
@@ -409,6 +404,7 @@ if ($Section -eq 'all' -or $Section -eq 'security') {
     $csp = [string]$h['Content-Security-Policy']
     Test-Check "CSP present" ($csp.Length -gt 0)
     if ($csp) {
+        Test-Check "CSP restricts framing to same origin" ($csp.Contains("frame-ancestors 'self'"))
         Test-Check "CSP allows self scripts" ($csp.Contains("script-src") -and $csp.Contains("'self'"))
         Test-Check "CSP allows HTTPS images" ($csp.Contains('img-src') -and $csp.Contains('https:'))
         Test-Check "CSP allows YouTube frames" ($csp.Contains('youtube.com'))
@@ -502,38 +498,23 @@ if ($Section -eq 'all' -or $Section -eq 'search') {
 }
 
 # ═══════════════════════════════════════════
-# 11. HOMEPAGE STATS VALIDATION
+# 11. HOMEPAGE CONTENT VALIDATION
 # ═══════════════════════════════════════════
 if ($Section -eq 'all' -or $Section -eq 'quick') {
-    Write-Host "`n📊 HOMEPAGE STATS" -ForegroundColor Cyan
+    Write-Host "`n🏠 HOMEPAGE CONTENT" -ForegroundColor Cyan
 
     $hp = (Fetch-Page "$BASE/").Content
-    # V3 redesign: stats are in a single inline line (hp-proof-stats-inline)
-    $statsLine = [regex]::Match($hp, 'hp-proof-stats-inline[^>]*>(.+?)</div>')
-    if ($statsLine.Success) {
-        $nums = [regex]::Matches($statsLine.Groups[1].Value, '<strong>(\d+)</strong>') | ForEach-Object { [int]$_.Groups[1].Value }
-        if ($nums.Count -ge 4) {
-            $tools   = $nums[0]
-            $videos  = $nums[1]
-            $prompts = $nums[2]
-            $certs   = $nums[3]
-            Test-Check "Tools count ($tools) > 0" ($tools -gt 0)
-            Test-Check "Videos count ($videos) > 0" ($videos -gt 0)
-            Test-Check "Prompts count ($prompts) > 0" ($prompts -gt 0)
-            Test-Check "Cert Guides count ($certs) > 0" ($certs -gt 0)
-            Write-Host "    📈 Stats: $tools tools, $videos videos, $prompts prompts, $certs guides" -ForegroundColor DarkGray
-        } else {
-            Test-Check "Homepage has stats inline" $false
-        }
-    } else {
-        Test-Check "Homepage has stats inline" $false
-    }
+    Test-Check "Homepage has welcome section" ($hp.Contains('zh-welcome'))
 
-    # Verify Latest Videos section only shows actual videos (not tool sub-pages)
-    $videoCards = [regex]::Matches($hp, 'class=.?video-card')
-    $ytThumbs = [regex]::Matches($hp, 'i\.ytimg\.com')
-    Test-Check "Latest Videos has cards ($($videoCards.Count))" ($videoCards.Count -gt 0)
-    Test-Check "No placeholder images in video grid" ($hp -notmatch 'video-grid.*?via\.placeholder\.com')
+    $pathwaysMatch = [regex]::Match($hp, '(?is)<section\b[^>]*zh-pathways[^>]*>(.*?)</section>')
+    $pathways = if ($pathwaysMatch.Success) { $pathwaysMatch.Groups[1].Value } else { '' }
+    $pathwayCount = [regex]::Matches($pathways, 'zh-path-label').Count
+    Test-Check "Homepage has at least four pathways ($pathwayCount)" ($pathwayCount -ge 4)
+    Test-Check "Homepage pathways include Video Tutorials" ($pathways.Contains('/videos/'))
+    Test-Check "Homepage pathways include Free Tools" ($pathways.Contains('/free-tools/'))
+
+    $recentItems = [regex]::Matches($hp, 'zh-latest-item').Count
+    Test-Check "Homepage has recent posts ($recentItems)" ($recentItems -gt 0)
 }
 
 # ═══════════════════════════════════════════

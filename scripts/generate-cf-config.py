@@ -91,9 +91,8 @@ def generate_headers(config):
                 lines.append(f"  {key}: {value}")
         lines.append("")
 
-    # Override global X-Frame-Options for /countdown/* (allows embed)
-    # The global rule sets DENY, but countdown needs SAMEORIGIN
-    # CF Pages: more specific path rules override /* rules
+    # Keep /countdown/* explicit for same-origin embeds; the global policy is also SAMEORIGIN.
+    # CSP frame-ancestors 'self' still restricts framing to this origin.
 
     return "\n".join(lines) + "\n"
 
