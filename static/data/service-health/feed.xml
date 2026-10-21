@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Oct 2026 07:31:34 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 13:43:12 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[SharePoint Online] Users may be unable to perform migrations</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1518858</link>
+      <description>[SharePoint Online] Users may be unable to perform migrations</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1518858</guid>
+      <pubDate>Wed, 21 Oct 2026 10:10:45 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users may not receive notifications when added to or removed from tags in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1517449</link>
@@ -448,15 +457,6 @@ Note that the Azure OpenAI Service processes customer requests through model eng
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-20260901-2</guid>
       <pubDate>Tue, 29 Sep 2026 15:58:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins may see multiple usage reports not updating in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1481173</link>
-      <description>[Microsoft 365 suite] Admins may see multiple usage reports not updating in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1481173</guid>
-      <pubDate>Mon, 28 Sep 2026 22:36:21 +0000</pubDate>
     </item>
   </channel>
 </rss>
