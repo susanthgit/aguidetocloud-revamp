@@ -30,6 +30,11 @@ jobs:
           EXIT_CODE=$?
           echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
           echo "$OUTPUT" > /tmp/build-output.txt
+          if [ "$EXIT_CODE" -ne 0 ]; then
+            echo "::group::Hugo build output (exit code $EXIT_CODE)"
+            printf '%s\n' "$OUTPUT"
+            echo "::endgroup::"
+          fi
           # Extract page count. Hugo's stats table uses Unicode box-drawing
           # characters (│ U+2502), not ASCII pipes — older regex 'Pages\s+\|'
           # silently matched nothing and reported "0 pages" forever.
@@ -212,3 +217,10 @@ jobs:
               body: body,
               labels: ['health-check']
             });
+
+      # Keep the health issue and make the workflow status match its build result.
+      - name: Fail workflow if Hugo build failed
+        if: ${{ steps.build.outputs.exit_code != '0' }}
+        run: |
+          echo "::error::Hugo build failed with exit code ${{ steps.build.outputs.exit_code }}. See the Build site step logs."
+          exit 1
