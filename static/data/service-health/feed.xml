@@ -5,12 +5,30 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Oct 2026 13:43:12 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 18:34:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[SharePoint Online] Users may be unable to perform migrations</title>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users' Microsoft 365 Copilot agents may intermittently disappear and then reappear in Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1519162</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users' Copilot agents may intermittently disappear and then reappear in Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">CP1519162</guid>
+      <pubDate>Wed, 21 Oct 2026 15:43:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Users may be unable to access the group feed in Microsoft Viva Engage</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1519166</link>
+      <description>[Microsoft Viva] Users may have been unable to access the group feed with Microsoft Viva Engage.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1519166</guid>
+      <pubDate>Wed, 21 Oct 2026 14:01:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may be unable to perform migrations </title>
       <link>https://www.aguidetocloud.com/service-health/#SP1518858</link>
-      <description>[SharePoint Online] Users may be unable to perform migrations</description>
+      <description>[SharePoint Online] Users may be unable to perform migrations using the Migration Manager Platform (MMP) API.</description>
       <category>SharePoint Online</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1518858</guid>
@@ -84,7 +102,7 @@
       <link>https://www.aguidetocloud.com/service-health/#OP1514821</link>
       <description>[Microsoft 365 apps] Users may be unable to access or protect content using ARM across Microsoft 365 services. </description>
       <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">OP1514821</guid>
       <pubDate>Mon, 19 Oct 2026 06:30:00 +0000</pubDate>
     </item>
@@ -438,25 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1507783</guid>
       <pubDate>Tue, 29 Sep 2026 22:06:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may encounter failures or may be unable to use PowerPoint agents in Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1482420</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have encountered failures or may have been unable to use PowerPoint agents in Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1482420</guid>
-      <pubDate>Tue, 29 Sep 2026 19:17:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Azure] Azure incident affecting Sweden Central</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-20260901-2</link>
-      <description>[Azure] Between 10:03 UTC and 15:58 UTC on 29 September 2026, a platform issue resulted in impact to Azure OpenAI Service, Foundry Agent Service, Foundry Models, and Azure AI services in the Sweden Central region. Impacted customers experienced intermittent request failures, increased latency, and/or HTTP 500 and 503 errors when submitting requests to affected models and data plane APIs hosted in this region. 
-Note that the Azure OpenAI Service processes customer requests through model engines deployed </description>
-      <category>Azure</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-20260901-2</guid>
-      <pubDate>Tue, 29 Sep 2026 15:58:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
