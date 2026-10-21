@@ -441,9 +441,13 @@ if ($Section -eq 'all' -or $Section -eq 'redirects') {
     }
 
     $legacyBuilder = Fetch-Page "$BASE/agent-instructions/"
+    $legacyRefresh = if ($null -ne $legacyBuilder) {
+        [regex]::Match($legacyBuilder.Content, '(?is)<meta[^>]*http-equiv\s*=\s*["'']?refresh["'']?[^>]*>')
+    }
     $legacyBuilderResolves = $null -ne $legacyBuilder -and
         $legacyBuilder.StatusCode -eq 200 -and
-        $legacyBuilder.Content -match '(?is)<meta[^>]+http-equiv=["'']refresh["''][^>]+instruct-builder/'
+        $legacyRefresh.Success -and
+        $legacyRefresh.Value.Contains('/instruct-builder/')
     Test-Check "Legacy Agent Instruction Builder route resolves" $legacyBuilderResolves
 
     $builderGuide = Fetch-Page "$BASE/agent-builder-guide/"
@@ -452,7 +456,12 @@ if ($Section -eq 'all' -or $Section -eq 'redirects') {
         -not $builderGuide.Content.Contains('/agent-instructions/')
     Test-Check "Agent Builder Helper links to the live instruction builder" $guideLinksResolve
 
-    $builderScript = Fetch-Page "$BASE/js/agent-builder-guide.js"
+    $scriptVersion = if ($null -ne $builderGuide) {
+        [regex]::Match($builderGuide.Content, 'agent-builder-guide\.js\?v=([^"''\s>]+)').Groups[1].Value
+    }
+    $builderScript = if ($scriptVersion) {
+        Fetch-Page "$BASE/js/agent-builder-guide.js?v=$scriptVersion&verify=$bust"
+    }
     $exportLinkResolves = $null -ne $builderScript -and
         $builderScript.Content.Contains('/instruct-builder/') -and
         -not $builderScript.Content.Contains('/agent-instructions/')
