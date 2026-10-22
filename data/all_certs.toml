@@ -15106,3 +15106,56 @@ exam_validity = ""
 exam_prerequisites = "Reported to be open to people at Claude Partner Network organisations; check Anthropic's current eligibility rules. This practice bank does not establish eligibility."
 guided_url = "/guided/anthropic-ccar-f/"
 practice_url = "/guided/anthropic-ccar-f/practice/"
+
+[[cert]]
+slug = "cspp"
+vendor = "pmi"
+code = "CSPP"
+name = "Certified Sustainable Project Professional (CSPP)"
+tagline = "Practise sustainable project decisions across P5 impacts, PRiSM delivery, ESG reporting and project governance."
+exam_category = "PMI"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1046
+featured = false
+price_practice = 9
+exam_url = "https://www.gpm.org/for-individuals/certification/the-certified-sustainable-project-professional-cspp"
+exam_cost = ""
+exam_duration = 0
+exam_passing_score = "not a published fixed numeric percentage; consult PMI for current scoring"
+guided_url = "/guided/cspp/"
+
+
+# ═══════════════════════════════════════════════════
+# Keyed map — use (index site.Data.all_certs.cert_map "slug")
+# for single-page lookups (replaces guided_certs.toml)
+# ═══════════════════════════════════════════════════
+
+[cert_map."cspp"]
+vendor = "pmi"
+code = "CSPP"
+name = "Certified Sustainable Project Professional (CSPP)"
+tagline = "Practise sustainable project decisions across P5 impacts, PRiSM delivery, ESG reporting and project governance."
+exam_category = "PMI"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1046
+featured = false
+price_practice = 9
+exam_url = "https://www.gpm.org/for-individuals/certification/the-certified-sustainable-project-professional-cspp"
+exam_cost = ""
+exam_duration = 0
+exam_passing_score = "not a published fixed numeric percentage; consult PMI for current scoring"
+exam_questions_real = "100 on the certified-practitioner path (85 scored, 15 pretest) or 145 on the standard path (130 scored, 15 pretest)"
+exam_provider = "Project Management Institute (PMI) via Pearson VUE"
+exam_validity = "a three-year renewal cycle with 30 PDUs"
+exam_prerequisites = "The standard bundle requires a secondary diploma and 20 hours of qualifying education; the practitioner bundle requires a qualifying active project-management credential or project/program management master's degree and 12 hours. PMI's CSPP prep course or an authorized training partner is required before scheduling either exam."
+exam_question_types = ["Multiple-choice; this independent bank uses four single-answer options"]
+guided_url = "/guided/cspp/"
+practice_url = "/guided/cspp/practice/"
