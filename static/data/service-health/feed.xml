@@ -5,25 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Oct 2026 11:43:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 17:05:44 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Defender XDR] The Microsoft Defender portal isn't displaying affected products for some Common Vulnerabilities and Exposures (CVEs)</title>
+      <title>[Microsoft Defender XDR] The Microsoft Defender portal was not displaying affected products for some Common Vulnerabilities and Exposures (CVEs)</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1519662</link>
-      <description>[Microsoft Defender XDR] Microsoft Defender Vulnerability Management Admins cannot see certain CVE affected products for PHP2SHELL CVEs.</description>
+      <description>[Microsoft Defender XDR] Microsoft Defender Vulnerability Management Admins were unable to see certain CVE affected products for PHP2SHELL CVEs.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1519662</guid>
       <pubDate>Wed, 21 Oct 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] SIP devices can't make or receive calls</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1519335</link>
-      <description>[Microsoft Teams] Users may be unable to make or receive calls using SIP devices.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1519335</guid>
-      <pubDate>Wed, 21 Oct 2026 20:15:55 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] SIP devices can't make or receive calls</title>
@@ -33,6 +24,15 @@
       <category>falsePositive</category>
       <guid isPermaLink="false">TM1519312</guid>
       <pubDate>Wed, 21 Oct 2026 19:13:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] SIP devices can't make or receive calls</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1519335</link>
+      <description>[Microsoft Teams] Users may have been unable to make or receive calls using SIP devices.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1519335</guid>
+      <pubDate>Wed, 21 Oct 2026 18:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users' Microsoft 365 Copilot agents may intermittently disappear and then reappear in Copilot</title>
