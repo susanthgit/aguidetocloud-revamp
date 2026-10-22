@@ -42,7 +42,9 @@ import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 TOOL_VERSION = "1.0.0"
 # Bumped to 2 when the post hash became line-ending canonical: a schema-1
@@ -2066,49 +2068,126 @@ def external_links(text: str) -> list[str]:
     return sorted({u.rstrip(".,;") for u in md + href + src})
 
 
+class LinkDocument(HTMLParser):
+    """Destination identity and real anchor attributes, not guessed heading slugs."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.anchors: set[str] = set()
+        self.title_parts: list[str] = []
+        self.in_title = False
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get("id"):
+            self.anchors.add(attrs["id"])
+        if tag == "a" and attrs.get("name"):
+            self.anchors.add(attrs["name"])
+        if tag == "title":
+            self.in_title = True
+
+    def handle_endtag(self, tag):
+        if tag == "title":
+            self.in_title = False
+
+    def handle_data(self, data):
+        if self.in_title:
+            self.title_parts.append(data)
+
+    @property
+    def title(self):
+        return " ".join("".join(self.title_parts).split())
+
+
+def check_link(url: str, timeout: int) -> dict:
+    import urllib.error
+    import urllib.request
+
+    result = {"url": url, "final_url": None, "status": None, "title": "",
+              "fragment": "",
+              "fragment_status": "not_requested", "errors": []}
+    try:
+        result["fragment"] = unquote(urlsplit(url).fragment)
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "Mozilla/5.0 (compatible; aguidetocloud-linkcheck/1.1)"})
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            result["status"] = response.status
+            result["final_url"] = response.geturl()
+            if response.status != 200:
+                result["errors"].append(f"HTTP {response.status}")
+                return result
+            limit = 8 * 1024 * 1024
+            data = response.read(limit + 1)
+            if len(data) > limit:
+                result["errors"].append("response exceeds 8 MiB; destination not inspected")
+                return result
+            charset = response.headers.get_content_charset() or "utf-8"
+            document = LinkDocument()
+            document.feed(data.decode(charset, errors="replace"))
+            result["title"] = document.title
+            fragment = result["fragment"]
+            if fragment:
+                if ":~:" in fragment:
+                    result["fragment_status"] = "unverified_text_directive"
+                    result["errors"].append("browser text fragment needs manual verification")
+                elif fragment not in document.anchors:
+                    result["fragment_status"] = "missing"
+                    result["errors"].append(f"no destination anchor #{fragment}")
+                else:
+                    result["fragment_status"] = "present"
+    except urllib.error.HTTPError as error:
+        result["status"] = error.code
+        result["errors"].append(f"HTTP {error.code}; destination not inspected")
+    except (OSError, ValueError, LookupError) as error:
+        result["errors"].append(f"{type(error).__name__}: {error}")
+    return result
+
+
 def cmd_links(args) -> int:
-    """Check outbound links resolve.
+    """Check transport and fragments; record evidence for a separate source review.
 
     Network-bound, so this is deliberately NOT in the push gate - a flaky
     connection must never block a push. Run it before flipping draft: false.
 
-    It exists because link rot is invisible to every offline check here, and
-    because it is genuinely easy to cite a URL that was never real: of four
-    Learn pages a web search proposed for the August issue, three were 404.
+    HTTP 200 and a real anchor do not prove the destination supports a claim.
+    The final URL/title and numbered-section context make that review explicit.
     """
     import concurrent.futures as cf
-    import urllib.error
-    import urllib.request
-
-    ua = "Mozilla/5.0 (compatible; aguidetocloud-linkcheck/1.0)"
-
-    def check(url: str):
-        req = urllib.request.Request(url, headers={"User-Agent": ua})
-        try:
-            with urllib.request.urlopen(req, timeout=args.timeout) as r:
-                return url, r.status
-        except urllib.error.HTTPError as e:
-            return url, e.code
-        except Exception as e:
-            return url, f"ERR {type(e).__name__}"
 
     rc = 0
+    reports = []
     posts = [resolve_post(args.post)] if args.post else discover_posts()
     for post in posts:
         slug = slug_of(post)
-        urls = external_links(read(post))
-        bad = []
+        text = read(post)
+        urls = external_links(text)
+        contexts = {}
+        for section in parse_sections(text):
+            for url in section["source_urls"]:
+                contexts.setdefault(html.unescape(url), []).append(
+                    {"section": section["n"], "title": section["title"]})
+        urls = sorted({html.unescape(url) for url in urls})
         with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
-            for url, status in ex.map(check, urls):
-                if status != 200:
-                    bad.append((url, status))
+            results = list(ex.map(lambda url: check_link(url, args.timeout), urls))
+        for result in results:
+            result["sections"] = contexts.get(result["url"], [])
+        bad = [result for result in results if result["errors"]]
         if bad:
             rc = 1
-            print(f"  FAIL  {slug}: {len(bad)} of {len(urls)} link(s) not 200")
-            for url, status in sorted(bad, key=lambda b: str(b[1])):
-                print(f"          {status}  {url}")
+            print(f"  FAIL  {slug}: {len(bad)} of {len(urls)} destination(s) failed or unverified")
+            for result in bad:
+                print(f"          {'; '.join(result['errors'])}  {result['url']}")
         else:
-            print(f"  ok    {slug}: {len(urls)} link(s), all 200")
+            print(f"  ok    {slug}: {len(urls)} link(s), HTTP and requested anchors checked")
+        reports.append({"slug": slug, "post_sha256": sha256_textfile(post),
+                        "scope": "transport_and_fragments_only",
+                        "semantic_alignment": "NOT_CHECKED", "links": results})
+    if getattr(args, "report", None):
+        Path(args.report).write_text(
+            json.dumps(reports, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"report      : {args.report}")
+    print("Source-to-paragraph alignment requires reading each cited subsection; "
+          "HTTP/anchor success is not semantic approval.")
     return rc
 
 
@@ -2160,10 +2239,11 @@ def main() -> int:
                    help="advisory red-pixel measurements; never affects exit code")
     p.set_defaults(fn=cmd_annotations)
 
-    p = sub.add_parser("links", help="check outbound links resolve (network; not a push gate)")
+    p = sub.add_parser("links", help="check destinations and fragments (network; not a push gate)")
     p.add_argument("--post")
     p.add_argument("--timeout", type=int, default=30)
     p.add_argument("--workers", type=int, default=12)
+    p.add_argument("--report", help="save final URLs, titles and section context as JSON")
     p.set_defaults(fn=cmd_links)
 
     p = sub.add_parser("crosscheck",

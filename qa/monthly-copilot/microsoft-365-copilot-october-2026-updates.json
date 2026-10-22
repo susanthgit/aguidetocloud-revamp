@@ -2,17 +2,17 @@
  "schema": 2,
  "slug": "microsoft-365-copilot-october-2026-updates",
  "tool_version": "1.0.0",
- "generated_at": "2026-10-19T22:28:02.070049+00:00",
+ "generated_at": "2026-10-22T09:03:35.120234+00:00",
  "post": {
   "path": "content/blog/microsoft-365-copilot-october-2026-updates.md",
-  "sha256": "bed4f28b87e0818bf0181bc7bb0edc9673b877c1fb1c3968adf2f4c9e25ec5b7",
+  "sha256": "1906d4387640cde4b963f70d8d1e8d3c6621ffa9bbd54703c981fc2dfe30fbec",
   "sections": 81
  },
  "roadmap_snapshot": {
   "path": "static/data/roadmap/latest.json",
-  "generated_at": "2026-10-19T10:48:58.648658+00:00",
-  "item_count": 2077,
-  "sha256": "ba148b3c2ac724b3ec29707521b5936da8e2eb66eeaf4bfa29aa8c2f4017c1e9"
+  "generated_at": "2026-10-21T10:06:37.379869+00:00",
+  "item_count": 2092,
+  "sha256": "6349d619cbaef71613537c9d72e4d092e1295ade75ae89a5b40e573d66766f7e"
  },
  "sections": [
   {
@@ -286,11 +286,15 @@
   {
    "section": 29,
    "title": "Federated Copilot connectors are generally available",
-   "roadmap_ids": [],
-   "source_urls": 1,
+   "roadmap_ids": [
+    "570964"
+   ],
+   "source_urls": 2,
    "images": 2,
-   "disposition": "no_roadmap_row",
-   "reason": "No roadmap row. Searched all 1900 items in the local roadmap feed (generated 2026-10-08) by significant title tokens; 7 candidate(s) shared two or more significant title words; the closest were read and each describes a different capability or a different product surface. Announced via Learn release notes, Message Center, the launch post or Microsoft's September roundup."
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "570964": "In development"
+   }
   },
   {
    "section": 30,
@@ -616,7 +620,7 @@
    "section": 62,
    "title": "SharePoint HTML work gains comments and publishing",
    "roadmap_ids": [],
-   "source_urls": 1,
+   "source_urls": 2,
    "images": 1,
    "disposition": "date_explained",
    "reason": "SharePoint October roundup 4535423, fetched 18 October 2026, lists comment-based HTML edits and storing HTML in the pages library to render as a SharePoint page. Both are licence-included. No universal rollout completion is asserted."

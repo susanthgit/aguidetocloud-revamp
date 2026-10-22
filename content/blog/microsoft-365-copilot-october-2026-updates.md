@@ -4,7 +4,7 @@ list_title: "M365 Copilot — October Recap: 81 Updates"
 hub_id: "whats-new"
 description: "81 Copilot updates and notices: Office in Chat, Excel, legal skills, Notebooks, Studio apps and evaluations, knowledge bases and admin deadlines."
 date: 2026-10-19
-lastmod: 2026-10-19
+lastmod: 2026-10-22
 draft: false
 youtube_id: ""
 card_tag: "What's New"
@@ -439,7 +439,7 @@ Chat now sits inside Copilot Search. You can search, then ask follow-up question
 <p><img src="/images/blog/copilot-october-2026/15-search-answer.webp" alt="Search query asks for supplier-sourcing main points and sources. A Copilot answer card contains numbered citations, with SharePoint results and source counts alongside it. An answer within Search points to the answer card." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My Caldova demo search, showing an answer within Search rather than a separate Chat session. It does not demonstrate a follow-up exchange. Callout added by me.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 6 October: Seamless Search and Chat Integration](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot)
 
 ### 16. Email attachments show as pills in search results
 
@@ -460,7 +460,7 @@ When a search surfaces an email, its attachments appear as clickable pills on th
 <p><img src="/images/blog/copilot-october-2026/16-mail-attachments.webp" alt="Copilot Search scoped to Outlook Mail, with a matching email titled Three partner proposals attached, plus what is not in them. Three Word attachment pills appear beneath its preview. Attachments on the email result points to those pills." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My Caldova demo email result. These are attachment pills on the result, not filenames inside a generated answer. Callout added by me.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 23 September: email attachment pills in Search](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-1)
 
 ### 17. Outlook Mail results can be sorted by date
 
@@ -481,7 +481,7 @@ Microsoft's release notes describe sorting Outlook Mail results by date in ascen
 <p><img src="/images/blog/copilot-october-2026/17-mail-sort.webp" alt="Outlook Mail search for supplier with the Sort menu open. Most Relevant and Most Recent are offered; Most Recent is selected. Most Recent, not a date filter points to that selection. The first two visible emails are dated 19 October and 5 October 2026." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My actual menu: Most Relevant or Most Recent. The separate Past month chip filters the date range. Callout added by me.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 23 September: Outlook Mail sorting in Search](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-1)
 
 ### 18. Copilot can find meetings by topic or keyword
 
@@ -502,7 +502,7 @@ Copilot searches meetings by topic or keyword in the meeting body, chat and tran
 <p><img src="/images/blog/copilot-october-2026/18-meeting-search.webp" alt="Copilot Search answer reports one meeting related to supplier sourcing, dated 31 August 2026. A meeting citation card is open beside its title, with organiser details and listed outcomes below. A meeting found by topic points to the meeting result." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My Caldova demo result. The answer says the meeting was transcribed; this capture does not independently verify the transcript or the generated outcomes. Callout added by me.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [AI at Work Roadmap 559110](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559110)
+📖 [Release notes, 23 September: finding meetings by topics and keywords](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-1) · [AI at Work Roadmap 559110](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559110)
 
 ### 19. Notebooks get a new, lighter design in the Copilot app
 
@@ -544,7 +544,7 @@ Markdown, TXT and RTF references were covered in [August's issue](/blog/microsof
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's example shows PowerPoint editing inside a notebook, with Copilot alongside it. The announcement lists full Office editing and collaboration as available in Frontier. <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-notebooks--october-2026/4559105">Source: Microsoft</a>.</em></p>
 
-📖 [What's New in Notebooks, October 2026](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-notebooks--october-2026/4559105) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [What's New in Notebooks, October 2026](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-notebooks--october-2026/4559105) · [Release notes, 23 September: Copilot Notebooks](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-app)
 
 ### 20. Add references to a Notebook from Quick Access in Search
 
@@ -562,7 +562,7 @@ In Search, Quick Access items have a **…** menu. Choose **Add to > Notebook** 
 <li><strong>My take:</strong> A small shortcut. It removes the copy-and-paste step.</li>
 </ul>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [AI at Work Roadmap 510099](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=510099)
+📖 [Release notes, 23 September: Notebook references from Quick Access](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-app) · [AI at Work Roadmap 510099](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=510099)
 
 ### 21. New Copilot Pages will be stored in OneDrive
 
@@ -606,7 +606,7 @@ Buildings, rooms and desks added to the Places directory have profile cards, rea
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>A room-card example from Microsoft's Places documentation. It illustrates room details, not a new capture of the card opened from Copilot Chat. <a href="https://learn.microsoft.com/en-us/microsoft-365/places/end-user/building-bookable-object-cards">Source: Microsoft</a>.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [AI at Work Roadmap 553219](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=553219)
+📖 [Release notes, 23 September: building, room and desk profile cards](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-1) · [AI at Work Roadmap 553219](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=553219)
 
 ### 23. The Copilot app works with Apple CarPlay
 
@@ -650,7 +650,7 @@ Microsoft's 23 September release notes frame Cowork as "delegate an outcome, not
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft example from Microsoft Learn, not a feature test in my tenant.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new)
+📖 [Release notes, 23 September: delegate an outcome with Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-app) · [Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/)
 
 ---
 
@@ -678,7 +678,7 @@ Copilot's chat response now includes links that highlight where it changed the w
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My illustration of Microsoft's announced behaviour. Our demo created a sheet but did not expose a working navigation link, so I am not presenting that capture as proof.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 23 September: navigate to workbook changes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#excel)
 
 ### 26. Excel's Show Changes pane attributes edits to Copilot
 
@@ -700,7 +700,7 @@ On the Review tab, **Show Changes** now marks edits and suggestions made by Copi
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My capture shows an actual Changes record with Copilot attribution, not just Copilot claiming in chat that it edited the sheet. The demo user's name is redacted.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 23 September: Copilot usage in Show Changes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#excel)
 
 ### 27. Outlook triage grows: delete, move, copy, categorise, rules and folders
 
@@ -726,7 +726,7 @@ Beyond pin and flag, you can ask Copilot Chat in Outlook to delete, move, copy a
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>A separate Microsoft Support example shows four emails already pinned, with flag and summarise suggestions. These two images are not a matched before-and-after test.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 23 September: Outlook triage actions](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-1)
 
 ### 28. Planner gets a built-in Planner Agent chat
 
@@ -748,7 +748,7 @@ For users with a Microsoft Copilot licence, Planner basic plans have a Copilot b
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's Support example highlights the Copilot button at the bottom right of a basic plan. This shows where to open Planner Agent, not a completed chat or task update. <a href="https://support.microsoft.com/en-us/planner/copilot/chat-with-planner-agent-basic-plans">Source: Microsoft</a>.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [AI at Work Roadmap 560532](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560532)
+📖 [Release notes, 23 September: Planner Agent chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-1) · [AI at Work Roadmap 560532](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560532)
 
 ---
 
@@ -762,7 +762,7 @@ For users with a Microsoft Copilot licence, Planner basic plans have a Copilot b
 
 Federated connectors look up information in another service when you ask, using your identity and permissions. They use the Model Context Protocol (MCP), a standard way for an assistant to call a connected tool. Unlike synced connectors, they do not build a Microsoft 365 search index of the external data. Retrieved information still comes back to Copilot to help answer the question.
 
-Microsoft's Learn page also describes write actions starting to roll out in October, while the matching roadmap entry is still In development. Researcher remains read-only. Treat action support as dependent on the connector, Copilot app and rollout, not as part of every generally available connection. The approval example below comes from that documentation.
+Microsoft's Learn page also describes write actions starting to roll out in October, while Roadmap 570964 for write, update and delete actions is still In development. Researcher remains read-only. Treat action support as dependent on the connector, Copilot app and rollout, not as part of every generally available connection. The approval example below comes from that documentation.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Copilot can look up a current record without waiting for the next sync. You still need to review permissions, data handling and the partner's terms.</p>
@@ -782,7 +782,7 @@ Microsoft's Learn page also describes write actions starting to roll out in Octo
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft Learn's initial write-action approval example. Allow once applies to this action; other choices can remember approval for that tool. This does not show a completed write or prove availability in my tenant.</em></p>
 
-📖 [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview)
+📖 [Federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) · [AI at Work Roadmap 570964: write, update and delete actions](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=570964)
 
 ### 30. Connector admins get pre-setup guides and clearer errors
 
@@ -800,7 +800,7 @@ Pre-setup guides explain configuration before deployment. Settings can be edited
 <li><strong>My take:</strong> Fewer silent failures. I'd read the guide before building any new connector.</li>
 </ul>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [AI at Work Roadmap 502529](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=502529)
+📖 [Release notes, 23 September: connector setup, editability and errors](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-extensibility-1) · [AI at Work Roadmap 502529](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=502529)
 
 ### 31. Connector query strings and identity mapping can be edited
 
@@ -824,7 +824,7 @@ Check the connector's supported settings before relying on this. Microsoft's man
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My illustration, not a product screenshot or a tested configuration change. Microsoft's management guide explicitly lists editable query strings and user mapping for ServiceNow. <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/manage-connector">Source: Microsoft Learn</a>.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 6 October: query strings and identity mapping](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-extensibility)
 
 ---
 
@@ -852,7 +852,7 @@ The admin center has a **License Requests** page for Copilot licence requests, w
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's Message Center screenshot shows Billing > License requests, a Copilot licence request and the Buy and assign licenses action. Microsoft's original red outline is retained. <a href="https://mc.merill.net/message/MC1296475">Source: Microsoft</a>.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [AI at Work Roadmap 561206](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561206)
+📖 [Release notes, 23 September: dedicated License Requests page](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-admin-center) · [AI at Work Roadmap 561206](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561206)
 
 ### 33. Admins can add a policy link for blocked Copilot users
 
@@ -872,9 +872,9 @@ When the Copilot app is blocked by policy, you can show users a link to your com
 
 <p><img src="/images/blog/copilot-october-2026/official-33-blocked-policy-link.webp" alt="Official Microsoft screenshot. Copilot Chat was turned off for your organization heading, an admin-enable message and View info from your organization link above Find files and more, Get creative and Use your apps tiles. Callout: “Link to your organisation&#x27;s policy”." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's documentation shows the blocked-access screen and View info from your organization link. This is the user-facing message, not the admin configuration screen. <a href="https://learn.microsoft.com/en-us/copilot/manage#provide-company-policy-url">Source: Microsoft</a>.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's documentation shows the blocked-access screen and View info from your organization link. This is the user-facing message, not the admin configuration screen. <a href="https://learn.microsoft.com/en-us/copilot/manage#provide-a-company-policy-url">Source: Microsoft</a>.</em></p>
 
-📖 [Manage Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/manage#provide-company-policy-url)
+📖 [Manage Microsoft Copilot Chat: provide a company policy URL](https://learn.microsoft.com/en-us/copilot/manage#provide-a-company-policy-url)
 
 ### 34. A report on "Everyone" and "Everyone except external users"
 
@@ -896,7 +896,7 @@ The report **Sites and files shared via special SharePoint group** gives item-le
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's example shows separate reports for Everyone and Everyone except external users, each with a Download report button. The sample counts and dates are Microsoft's, not a scan of my tenant. <a href="https://learn.microsoft.com/en-us/sharepoint/data-access-governance-detailed-eeeu-everyone-permissions-report">Source: Microsoft</a>.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Release notes, 6 October: Everyone except external users permissions report](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-sharepoint)
 
 ### 35. Admins can delete all People Skills data
 
@@ -922,7 +922,7 @@ A new control permanently deletes the skills library and all confirmed, inferred
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's confirmation dialog warns that removal is permanent. No deletion was performed for this blog. <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/people-skills-manage-skills-library">Source: Microsoft</a>.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [AI at Work Roadmap 565905](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=565905)
+📖 [Release notes, 23 September: People Skills removal controls](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-copilot-1) · [AI at Work Roadmap 565905](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=565905)
 
 ### 36. Cowork adoption and impact appear in the dashboards
 
@@ -966,7 +966,7 @@ The Copilot usage snapshot Power BI report lets you track usage day by day. Dail
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's documentation example of the report card. The highlighted Data through date shows which day's data is available; this is not a capture from my tenant. The preview badge and example date belong to the source image.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [Usage snapshot report and data freshness](https://learn.microsoft.com/en-us/viva/insights/advanced/analyst/templates/copilot-latest-usage)
+📖 [Release notes, 23 September: Copilot usage snapshot](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#viva-insights-1) · [Usage snapshot report and data freshness](https://learn.microsoft.com/en-us/viva/insights/advanced/analyst/templates/copilot-latest-usage)
 
 ### 38. More Power BI filters in Copilot analytics
 
@@ -1012,7 +1012,7 @@ There is no separate topic-assignment toggle. Results appear in the existing **R
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My illustration, not a product screenshot or a tenant test. It explains the processing and where results appear; it does not simulate survey responses. <a href="https://learn.microsoft.com/en-us/viva/glint/reports/comments-report">Source: Microsoft Learn</a>.</em></p>
 
-📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [How Glint assigns topics](https://learn.microsoft.com/en-us/viva/glint/reports/comments-report)
+📖 [Release notes, 23 September: Glint comment topics](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#viva-glint) · [How Glint assigns topics](https://learn.microsoft.com/en-us/viva/glint/reports/comments-report)
 
 ### 40. Targeted release is retiring
 
@@ -1064,7 +1064,7 @@ Teams Phone Agent is an AI calling receptionist for organisations like bank bran
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: Teams Phone Agent](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 42. Record captures conversations in the Copilot mobile app
 
@@ -1088,7 +1088,7 @@ Record captures in-person conversations and voice notes, then gives you a transc
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: Record in the Copilot mobile app, under "Plugins, connectors, and Work IQ enhancements"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 43. Copilot in Teams and Outlook gets the new look, and you can call agents and skills inline
 
@@ -1112,7 +1112,7 @@ The full-screen Copilot and the side pane in Teams and Outlook now follow the wi
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: "New design and functionality for Copilot Chat"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 44. The Edge new tab page gets Copilot search, chat and suggested actions
 
@@ -1136,7 +1136,7 @@ Search, chat and web exploration share one box on the Edge new tab page, with Co
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107) · [AI at Work Roadmap 566703](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566703)
+📖 [September roundup: Edge new tab, under "New design and functionality for Copilot Chat"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107) · [AI at Work Roadmap 566703](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566703)
 
 ### 45. Copilot Chat matches scanned PDFs better
 
@@ -1160,7 +1160,7 @@ Chat now does a better job of matching search results from scanned PDFs, so info
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: scanned PDFs, under "New design and functionality for Copilot Chat"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 46. Copilot in Word, Excel and PowerPoint reaches Android
 
@@ -1184,7 +1184,7 @@ Copilot editing in the three apps reached Android in September. Microsoft says i
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: Office on Android, under "New design and functionality for Copilot Chat"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 47. Word shows citations and can arrange images and shapes
 
@@ -1214,7 +1214,7 @@ Two Word changes. Copilot responses show citations to the web and work content b
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: "Citations and image modifications for Copilot in Word"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 48. PowerPoint: admin-published Skills, Brand Kit Skills and long-running tasks
 
@@ -1250,7 +1250,7 @@ Admins can publish approved Skills to specific users, groups or the whole organi
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107) · [AI at Work Roadmap 569018](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=569018)
+📖 [September roundup: "Skills and connectors for Copilot in PowerPoint"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107) · [AI at Work Roadmap 569018](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=569018)
 
 ### 49. SharePoint apps can show interactive UI in Chat, and Work IQ gets SharePoint tools
 
@@ -1274,7 +1274,7 @@ Apps built with SharePoint Framework can show interactive UI components inside C
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: SharePoint UI and tools, under "Plugins, connectors, and Work IQ enhancements"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 50. Copilot in OneDrive is rebuilt, and Copilot Search becomes the default in SharePoint and OneDrive
 
@@ -1304,7 +1304,7 @@ Copilot in OneDrive now sits on the same foundation as Copilot in SharePoint and
 
 
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: Copilot in OneDrive and default Copilot Search in SharePoint and OneDrive](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ### 51. Targeted surveys in the Copilot Dashboard
 
@@ -1332,7 +1332,7 @@ Leaders can send Pulse surveys to dynamic lists built from Copilot adoption data
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft Learn's survey-results example. The scores are example data, not responses collected for this article.</em></p>
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107) · [AI at Work Roadmap 568072](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=568072)
+📖 [September roundup: "Targeted surveys in the Copilot Dashboard"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107) · [AI at Work Roadmap 568072](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=568072)
 
 ### 52. New connectors, plugins and agents from partners
 
@@ -1354,7 +1354,7 @@ Microsoft listed new partner connectors, plugins and agents by industry, includi
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My catalogue capture, cropped to remove unrelated navigation. It shows where partner cards appear, not the specific new industry connectors listed above or proof that a connection is configured.</em></p>
 
-📖 [Microsoft's September roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
+📖 [September roundup: partner list under "Plugins, connectors, and Work IQ enhancements"](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107)
 
 ---
 
@@ -1578,7 +1578,7 @@ You can ask Copilot in SharePoint to **split, merge or reorder PDF pages**. The 
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My capture shows Copilot reporting that it created a reordered copy and left the original unchanged. The resulting PDF's page order is not visible here, so this is response evidence rather than an independent output check. It does not demonstrate version restoration.</em></p>
 
-📖 [What's new in Copilot in SharePoint, October 2026](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423)
+📖 [SharePoint October roundup: "Split, merge, and reorder PDFs" and "Review and restore earlier file versions"](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423)
 
 
 ### 61. SharePoint images, Advanced Autofill and analytics use credits
@@ -1599,7 +1599,7 @@ The October post describes **Advanced Autofill as a faster processing queue** fo
 <li><strong>Before you try it:</strong> Review the spending policy and site-level enablement needed for real-time Autofill. Check existing policies too: they may include newly available services automatically.</li>
 </ul>
 
-📖 [What's new in Copilot in SharePoint, October 2026](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423) · [SharePoint licensing and setup](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)
+📖 [SharePoint October roundup: image tools, "Autofill metadata in near real-time" and content performance](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423) · [SharePoint licensing and setup](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)
 
 ### 62. SharePoint HTML work gains comments and publishing
 
@@ -1621,7 +1621,7 @@ The October post adds commenting and editing for HTML outputs, plus publishing a
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Microsoft's Support example shows a published HTML page inside SharePoint. It illustrates the published result, not the new commenting controls; the site, labels and figures are Microsoft's sample content. <a href="https://support.microsoft.com/en-us/sharepoint/create-edit-publish-html-pages">Source: Microsoft</a>.</em></p>
 
-📖 [What's new in Copilot in SharePoint, October 2026](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423)
+📖 [SharePoint October roundup: "Work with HTML in SharePoint"](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423) · [Create, edit and publish HTML pages](https://support.microsoft.com/en-us/sharepoint/create-edit-publish-html-pages)
 
 ### 63. SharePoint adds email, plugins and workflow notifications
 
@@ -1649,7 +1649,7 @@ These are separate from September's announcement that personal SharePoint skills
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>A crop of Microsoft's SharePoint example shows the Skills picker, site skills and a prompt in the conversation. It illustrates skill discovery, not a completed workflow or an email send. <a href="https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423">Source: Microsoft</a>.</em></p>
 
-📖 [What's new in Copilot in SharePoint, October 2026](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423)
+📖 [SharePoint October roundup: email, plugins, Teams workflows and "A chat experience that's always improving"](https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423)
 
 ### 64. Trust-aware controls separate untrusted content from instructions
 

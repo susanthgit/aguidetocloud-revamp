@@ -39,6 +39,14 @@ SUITE = HERE / "monthly-blog-qa.test.py"
 
 # (name, find, replace) - `replace` should disable the guard, not break syntax.
 MUTATIONS = [
+    ("HTTP200 cannot excuse a missing citation fragment",
+     'elif fragment not in document.anchors:', 'elif False:'),
+    ("citation fragments are URL-decoded before matching real ids",
+     'result["fragment"] = unquote(urlsplit(url).fragment)',
+     'result["fragment"] = urlsplit(url).fragment'),
+    ("shared citation retains every numbered section context",
+     'result["sections"] = contexts.get(result["url"], [])',
+     'result["sections"] = contexts.get(result["url"], [])[:1]'),
     ("LF normalisation in the post hash",
      'p.read_bytes().replace(b"\\r\\n", b"\\n")', 'p.read_bytes()'),
     ("image re-hash at verify time",

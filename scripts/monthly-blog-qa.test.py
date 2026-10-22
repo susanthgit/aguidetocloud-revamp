@@ -20,7 +20,9 @@ import re
 import sys
 import tempfile
 import types
+from email.message import Message
 from pathlib import Path
+from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location("mbq", HERE / "monthly-blog-qa.py")
@@ -1711,6 +1713,95 @@ else:
                                           "callout_texts": _rec["callout_texts"]})
             check("a manifest's texts satisfy the gate when the alt quotes them",
                   _e == [], f"{_e}")
+
+# ----------------------------------------- real destination/fragment evidence
+class LinkResponse:
+    def __init__(self, body, final_url="https://example.com/renamed"):
+        self.status = 200
+        self.body = body.encode("utf-8")
+        self.final_url = final_url
+        self.headers = Message()
+        self.headers["Content-Type"] = "text/html; charset=utf-8"
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        return False
+
+    def geturl(self):
+        return self.final_url
+
+    def read(self, size):
+        return self.body[:size]
+
+
+def destination(url, body, final_url="https://example.com/renamed"):
+    with patch("urllib.request.urlopen", return_value=LinkResponse(body, final_url)):
+        return mbq.check_link(url, 1)
+
+
+_link = destination("https://example.com/old#missing",
+                    "<title>A working page</title><h2 id=actual>Actual heading</h2>")
+check("HTTP 200 cannot certify a missing destination fragment",
+      _link["status"] == 200 and _link["fragment_status"] == "missing"
+      and bool(_link["errors"]), str(_link))
+_link = destination("https://example.com/old#actual",
+                    "<title>A &amp; B</title><h2 id=actual>Actual heading</h2>")
+check("unquoted actual heading ids are accepted",
+      not _link["errors"] and _link["fragment_status"] == "present", str(_link))
+check("redirect destination and decoded title are retained",
+      _link["final_url"] == "https://example.com/renamed" and _link["title"] == "A & B")
+_link = destination("https://example.com/old#caf%C3%A9",
+                    "<a name='café'></a>")
+check("URL-encoded legacy named anchors are accepted",
+      not _link["errors"] and _link["fragment_status"] == "present", str(_link))
+_link = destination("https://example.com/old#made-up-slug",
+                    "<h2>Made up slug</h2>")
+check("a plausible heading slug is not an actual HTML anchor",
+      bool(_link["errors"]) and _link["fragment_status"] == "missing", str(_link))
+_link = destination("https://example.com/old#:~:text=claim",
+                    "<p>claim</p>")
+check("browser text directives remain explicitly unverified",
+      bool(_link["errors"]) and _link["fragment_status"] == "unverified_text_directive")
+with patch("urllib.request.urlopen", side_effect=TimeoutError("fixture timeout")):
+    _link = mbq.check_link("https://example.com/timeout", 1)
+check("fetch uncertainty is a named failure, never a successful check",
+      _link["status"] is None and has(_link["errors"], "TimeoutError"))
+_link = mbq.check_link("https://[invalid", 1)
+check("malformed URLs produce explicit evidence instead of crashing the audit",
+      _link["status"] is None and has(_link["errors"], "ValueError"))
+_link = destination("https://example.com/large", "x" * (8 * 1024 * 1024 + 1))
+check("truncated source inspection cannot silently pass",
+      has(_link["errors"], "exceeds 8 MiB"))
+
+with tempfile.TemporaryDirectory() as td:
+    _post = Path(td) / "microsoft-365-copilot-october-2026-updates.md"
+    _post.write_text(post(
+        section(1, source="📖 [Feature one](https://example.com/shared)"),
+        section(2, source="📖 [Feature two](https://example.com/shared)")),
+        encoding="utf-8")
+    _report = Path(td) / "links.json"
+    with patch.object(mbq, "resolve_post", return_value=_post), \
+            patch("urllib.request.urlopen", return_value=LinkResponse(
+                "<title>Completely unrelated article</title>")), \
+            contextlib.redirect_stdout(io.StringIO()) as _output:
+        _rc = mbq.cmd_links(types.SimpleNamespace(
+            post=str(_post), workers=1, timeout=1, report=str(_report)))
+    _saved = json.loads(_report.read_text(encoding="utf-8"))[0]
+    check("one shared citation retains both section review obligations",
+          [r["section"] for r in _saved["links"][0]["sections"]] == [1, 2])
+    check("unrelated HTTP200 article is not claimed to have semantic approval",
+          _rc == 0 and _saved["semantic_alignment"] == "NOT_CHECKED"
+          and _saved["scope"] == "transport_and_fragments_only"
+          and "not semantic approval" in _output.getvalue())
+    with patch.object(mbq, "resolve_post", return_value=_post), \
+            patch("urllib.request.urlopen", return_value=LinkResponse(
+                "<title>Transport only</title>")), \
+            contextlib.redirect_stdout(io.StringIO()):
+        _rc = mbq.cmd_links(types.SimpleNamespace(
+            post=str(_post), workers=1, timeout=1))
+    check("existing links command remains usable without a report argument", _rc == 0)
 
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")
