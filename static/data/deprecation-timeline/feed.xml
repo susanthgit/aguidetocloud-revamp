@@ -5,12 +5,12 @@
     <link>https://www.aguidetocloud.com/deprecation-timeline/</link>
     <description>Microsoft 365 deprecation and retirement timeline — urgency-scored, filterable, with migration guidance.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Oct 2026 10:21:02 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 10:16:13 GMT</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/deprecation-timeline/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>📅 Azure Functions In-Process Model (.NET) End of Support — 2026-11-10</title>
       <link>https://azure.microsoft.com/updates/retirement-support-for-the-inprocess-model-for-net-apps-in-azure-functions-ends-10-november-2026/</link>
-      <description><![CDATA[🔴 19 days remaining — The in-process hosting model for .NET apps in Azure Functions reaches end of support. Functions continue to run but receive no patches.
+      <description><![CDATA[🔴 18 days remaining — The in-process hosting model for .NET apps in Azure Functions reaches end of support. Functions continue to run but receive no patches.
 
 Migration: Migrate to the isolated worker model for .NET Azure Functions.]]></description>
       <category>Azure</category>
@@ -20,7 +20,7 @@ Migration: Migrate to the isolated worker model for .NET Azure Functions.]]></de
     <item>
       <title>📅 .NET 8 LTS End of Support — 2026-11-10</title>
       <link>https://learn.microsoft.com/lifecycle/products/microsoft-net-and-net-core</link>
-      <description><![CDATA[🔴 19 days remaining — .NET 8 (Long Term Support) reaches end of support.
+      <description><![CDATA[🔴 18 days remaining — .NET 8 (Long Term Support) reaches end of support.
 
 Migration: Upgrade to .NET 10 (LTS).]]></description>
       <category>Azure</category>
@@ -30,7 +30,7 @@ Migration: Upgrade to .NET 10 (LTS).]]></description>
     <item>
       <title>📅 PowerShell 7.4 LTS End of Support — 2026-11-10</title>
       <link>https://learn.microsoft.com/lifecycle/products/powershell</link>
-      <description><![CDATA[🔴 19 days remaining — PowerShell 7.4 (Long Term Support) reaches end of support.
+      <description><![CDATA[🔴 18 days remaining — PowerShell 7.4 (Long Term Support) reaches end of support.
 
 Migration: Upgrade to PowerShell 7.6 (LTS) when available.]]></description>
       <category>Azure</category>
@@ -40,7 +40,7 @@ Migration: Upgrade to PowerShell 7.6 (LTS) when available.]]></description>
     <item>
       <title>📅 Windows 11 Enterprise and Education Version 23H2 End of Servicing — 2026-11-10</title>
       <link>https://learn.microsoft.com/lifecycle/products/windows-11-enterprise-and-education</link>
-      <description><![CDATA[🔴 19 days remaining — Windows 11 Enterprise and Education version 23H2 reaches end of servicing.
+      <description><![CDATA[🔴 18 days remaining — Windows 11 Enterprise and Education version 23H2 reaches end of servicing.
 
 Migration: Update to the latest Windows 11 feature update.]]></description>
       <category>Windows</category>
@@ -50,7 +50,7 @@ Migration: Update to the latest Windows 11 feature update.]]></description>
     <item>
       <title>⛔ Exchange Web Services (EWS) Full Retirement — All Exchange Online — 2027-04-01</title>
       <link>https://mc.merill.net/message/MC1227454</link>
-      <description><![CDATA[🟠 161 days remaining — Full and final retirement of EWS from Exchange Online. No EWS connections will be accepted from any application after this date.
+      <description><![CDATA[🟠 160 days remaining — Full and final retirement of EWS from Exchange Online. No EWS connections will be accepted from any application after this date.
 
 Migration: Complete migration of all EWS applications to Microsoft Graph API.]]></description>
       <category>Exchange</category>
