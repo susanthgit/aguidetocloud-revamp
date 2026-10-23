@@ -1,31 +1,18 @@
 {
-  "generated_at": "2026-10-22T21:29:56.395945+00:00",
+  "generated_at": "2026-10-23T00:37:19.632552+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 18,
+      "total_incidents": 19,
       "active_incidents": 3,
-      "avg_duration_minutes": 6169,
+      "avg_duration_minutes": 5830,
       "last_incident": "2026-10-21T18:00:00+00:00",
       "classifications": {
-        "advisory": 10,
+        "advisory": 11,
         "incident": 8
-      }
-    },
-    {
-      "service": "Microsoft Copilot (Microsoft 365)",
-      "short_name": "Copilot",
-      "icon": "🤖",
-      "total_incidents": 16,
-      "active_incidents": 1,
-      "avg_duration_minutes": 6733,
-      "last_incident": "2026-10-21T15:43:41.640000+00:00",
-      "classifications": {
-        "incident": 7,
-        "advisory": 9
       }
     },
     {
@@ -42,16 +29,29 @@
       }
     },
     {
+      "service": "Microsoft Copilot (Microsoft 365)",
+      "short_name": "Copilot",
+      "icon": "🤖",
+      "total_incidents": 14,
+      "active_incidents": 1,
+      "avg_duration_minutes": 7504,
+      "last_incident": "2026-10-21T00:00:00+00:00",
+      "classifications": {
+        "incident": 7,
+        "advisory": 7
+      }
+    },
+    {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 11,
+      "total_incidents": 12,
       "active_incidents": 1,
-      "avg_duration_minutes": 8723,
+      "avg_duration_minutes": 7964,
       "last_incident": "2026-10-12T08:15:00+00:00",
       "classifications": {
         "advisory": 5,
-        "incident": 6
+        "incident": 7
       }
     },
     {
@@ -196,12 +196,12 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 49,
+      "incident_count": 47,
       "services_affected": 13
     },
     {
       "month": "2026-09",
-      "incident_count": 53,
+      "incident_count": 55,
       "services_affected": 14
     }
   ]
