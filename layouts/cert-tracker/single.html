@@ -35,7 +35,7 @@
 
     <div class="zt-cert-badges">
       <span class="zt-cert-badge zt-cert-badge--{{ .Params.exam_level }}">
-        {{ if eq .Params.exam_level "beginner" }}Fundamentals{{ else if eq .Params.exam_level "intermediate" }}Associate{{ else }}Expert{{ end }}
+        {{ if eq .Params.exam_level "beginner" }}Fundamentals{{ else if in (slice "intermediate" "associate") .Params.exam_level }}Associate{{ else }}Expert{{ end }}
       </span>
       <span class="zt-cert-badge">{{ .Params.exam_category }}</span>
       {{ if and $vendorName (ne $vendorSlug "microsoft") }}<span class="zt-cert-badge">{{ $vendorName }}</span>{{ end }}
