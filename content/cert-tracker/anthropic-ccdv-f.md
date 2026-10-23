@@ -6,7 +6,7 @@ layout: "single"
 exam_code: "ANTHROPIC-CCDV-F"
 exam_title: "Claude Certified Developer - Foundations (CCDV-F)"
 exam_level: "beginner"
-exam_status: "planned"
+exam_status: "active"
 exam_category: "Anthropic"
 vendor: "anthropic"
 manual: true
