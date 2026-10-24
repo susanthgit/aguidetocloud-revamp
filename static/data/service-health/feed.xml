@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Oct 2026 23:05:54 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 04:29:00 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be seeing unexpected users when changing accounts in Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1523046</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be seeing unexpected users when changing accounts in Microsoft 365 Copilot Chat</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CW1523046</guid>
-      <pubDate>Fri, 23 Oct 2026 21:58:51 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have refresh delays</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1522731</link>
@@ -438,6 +429,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1489449</guid>
       <pubDate>Mon, 05 Oct 2026 12:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may be seeing unexpected users when changing accounts in Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1523046</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have seen unexpected users when changing accounts in Microsoft 365 Copilot Chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1523046</guid>
+      <pubDate>Mon, 05 Oct 2026 11:23:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Some users may experience intermittent audio and video degradation when using Microsoft Teams through VDI 2.0</title>
