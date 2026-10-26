@@ -1,8 +1,8 @@
 {
   "am-anthropic": {
-    "hash": "466f088b707d4a2f",
+    "hash": "6ff7da4d77d51041",
     "keywords": {
-      "claude": 677,
+      "claude": 695,
       "haiku": 15,
       "input": 32,
       "opus": 23,
@@ -10,12 +10,12 @@
       "per million tokens": 2,
       "sonnet": 17
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "ai-mapper",
     "url": "https://www.anthropic.com/pricing"
   },
   "am-azure-foundry": {
-    "hash": "be8c82e4fc7b0ca2",
+    "hash": "af02251af16c663a",
     "keywords": {
       "deployment": 13,
       "model": 23,
@@ -23,43 +23,43 @@
       "standard": 2,
       "token": 0
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "ai-mapper",
     "url": "https://azure.microsoft.com/pricing/details/ai-foundry/"
   },
   "am-azure-openai": {
-    "hash": "181d12691ffa3588",
+    "hash": "eaf0eb8eef5a984e",
     "keywords": {
       "fine-tuning": 4,
       "gpt-4": 96,
       "gpt-5": 100,
-      "input": 496,
+      "input": 498,
       "o1": 16,
       "o3": 30,
-      "output": 264,
+      "output": 265,
       "per 1m tokens": 2
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "ai-mapper",
     "url": "https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/"
   },
   "am-google-ai": {
-    "hash": "980b12d990f83bce",
+    "hash": "1e4555e89154b1e9",
     "keywords": {
       "context": 64,
-      "flash": 169,
-      "gemini": 981,
-      "input": 117,
-      "output": 122,
-      "per 1m": 86,
-      "pro": 443
+      "flash": 163,
+      "gemini": 967,
+      "input": 116,
+      "output": 119,
+      "per 1m": 85,
+      "pro": 436
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "ai-mapper",
     "url": "https://ai.google.dev/pricing"
   },
   "cc-aws-certs": {
-    "hash": "45d6b4dd9b1dd72e",
+    "hash": "e9c6ca39b2c2ef7c",
     "keywords": {
       "associate": 77,
       "cloud practitioner": 8,
@@ -68,12 +68,12 @@
       "solutions architect": 11,
       "specialty": 28
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "cert-compass",
     "url": "https://aws.amazon.com/certification/"
   },
   "cc-gcp-certs": {
-    "hash": "f4d74f94807262ed",
+    "hash": "4a7434114489f58e",
     "keywords": {
       "architect": 44,
       "associate": 5,
@@ -81,7 +81,7 @@
       "cloud engineer": 3,
       "professional": 19
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "cert-compass",
     "url": "https://cloud.google.com/learn/certification"
   },
@@ -96,27 +96,27 @@
       "model": 27,
       "plugin": 27
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "frontier-map",
     "url": "https://learn.microsoft.com/microsoft-365/copilot/cowork/whats-new"
   },
   "fm-frontier-features": {
-    "hash": "65e2da07b553258f",
+    "hash": "6455a534ac155859",
     "keywords": {
       "agentic": 0,
-      "cowork": 16,
+      "cowork": 15,
       "frontier": 161,
       "generally available": 2,
       "legal agent": 0,
       "researcher": 0,
       "scout": 0
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "frontier-map",
     "url": "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
   },
   "fm-frontier-support": {
-    "hash": "0dc266f7dfa9d815",
+    "hash": "3057641c2e920ddf",
     "keywords": {
       "agent": 35,
       "experimental": 2,
@@ -124,12 +124,12 @@
       "general availability": 0,
       "preview": 3
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "frontier-map",
     "url": "https://support.microsoft.com/en-us/Microsoft-365-Copilot/what-is-frontier"
   },
   "mm-model-choice": {
-    "hash": "ee389a6056f987fd",
+    "hash": "8d01c807d579e880",
     "keywords": {
       "anthropic": 15,
       "claude": 10,
@@ -140,12 +140,12 @@
       "reasoning": 4,
       "sonnet": 2
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "model-map",
     "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/24/expanding-model-choice-in-microsoft-365-copilot/"
   },
   "mm-overview": {
-    "hash": "ce6a78b271ef402b",
+    "hash": "50dd0bb44f44e3cf",
     "keywords": {
       "claude": 0,
       "gpt": 0,
@@ -154,7 +154,7 @@
       "reasoning": 2,
       "researcher": 0
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "model-map",
     "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview"
   },
@@ -167,21 +167,21 @@
       "openai": 8,
       "sub-processor": 0
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "model-map",
     "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy"
   },
   "mm-studio-models": {
-    "hash": "9a5f9fef2ca0ac78",
+    "hash": "d4e41ef93ad78b50",
     "keywords": {
       "anthropic": 2,
       "claude": 4,
       "deep reasoning": 1,
-      "gpt": 8,
-      "gpt-5": 5,
-      "model": 142
+      "gpt": 29,
+      "gpt-5": 13,
+      "model": 152
     },
-    "last_checked": "2026-10-19T08:33:50.222861+00:00",
+    "last_checked": "2026-10-26T08:36:20.378250+00:00",
     "tool": "model-map",
     "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model"
   }
