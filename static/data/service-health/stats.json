@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-10-26T12:51:11.458894+00:00",
+  "generated_at": "2026-10-26T19:53:27.124995+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 18,
+      "total_incidents": 19,
       "active_incidents": 3,
-      "avg_duration_minutes": 6169,
-      "last_incident": "2026-10-21T18:00:00+00:00",
+      "avg_duration_minutes": 5786,
+      "last_incident": "2026-10-26T15:01:00+00:00",
       "classifications": {
         "advisory": 10,
-        "incident": 8
+        "incident": 9
       }
     },
     {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 17,
+      "total_incidents": 15,
       "active_incidents": 5,
-      "avg_duration_minutes": 1082,
+      "avg_duration_minutes": 1014,
       "last_incident": "2026-10-23T19:29:31.007000+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 10,
         "incident": 5
       }
     },
@@ -55,19 +55,6 @@
       }
     },
     {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 7,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5254,
-      "last_incident": "2026-10-20T14:29:11+00:00",
-      "classifications": {
-        "advisory": 4,
-        "incident": 3
-      }
-    },
-    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -77,6 +64,19 @@
       "last_incident": "2026-10-19T07:05:00+00:00",
       "classifications": {
         "advisory": 7
+      }
+    },
+    {
+      "service": "Microsoft Viva",
+      "short_name": "Viva",
+      "icon": "🌱",
+      "total_incidents": 6,
+      "active_incidents": 0,
+      "avg_duration_minutes": 477,
+      "last_incident": "2026-10-26T14:45:04.210000+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 4
       }
     },
     {
@@ -93,16 +93,28 @@
       }
     },
     {
-      "service": "Microsoft Viva",
-      "short_name": "Viva",
-      "icon": "🌱",
-      "total_incidents": 5,
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 6,
       "active_incidents": 0,
-      "avg_duration_minutes": 549,
-      "last_incident": "2026-10-22T12:00:00+00:00",
+      "avg_duration_minutes": 6121,
+      "last_incident": "2026-10-20T14:29:11+00:00",
       "classifications": {
         "advisory": 4,
-        "incident": 1
+        "incident": 2
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 5,
+      "active_incidents": 1,
+      "avg_duration_minutes": 1011,
+      "last_incident": "2026-10-26T16:54:00+00:00",
+      "classifications": {
+        "advisory": 5
       }
     },
     {
@@ -116,18 +128,6 @@
       "classifications": {
         "incident": 2,
         "advisory": 3
-      }
-    },
-    {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1011,
-      "last_incident": "2026-10-21T21:00:00+00:00",
-      "classifications": {
-        "advisory": 4
       }
     },
     {
@@ -184,12 +184,12 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 49,
+      "incident_count": 52,
       "services_affected": 12
     },
     {
       "month": "2026-09",
-      "incident_count": 53,
+      "incident_count": 50,
       "services_affected": 14
     }
   ]

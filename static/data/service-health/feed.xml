@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Oct 2026 12:51:11 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 19:53:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Admins' Microsoft Defender XDR advanced hunting queries that contain a customer-defined function may fail</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1526431</link>
+      <description>[Microsoft Defender XDR] Admins' Microsoft Defender XDR advanced hunting queries that contain a customer-defined function may fail.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1526431</guid>
+      <pubDate>Mon, 26 Oct 2026 16:54:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to send or receive messages, upload images, or schedule meetings in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1526111</link>
+      <description>[Microsoft Teams] Users may have been unable to send or receive messages, upload images, or schedule meetings in Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">TM1526111</guid>
+      <pubDate>Mon, 26 Oct 2026 15:01:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Some users may be unable to access the group feed with Microsoft Viva Engage</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1526068</link>
+      <description>[Microsoft Viva] Users may have been unable to access the group feed with Viva Engage.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1526068</guid>
+      <pubDate>Mon, 26 Oct 2026 14:45:04 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have refresh delays</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1522731</link>
@@ -429,33 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1489449</guid>
       <pubDate>Mon, 05 Oct 2026 12:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be seeing unexpected users when changing accounts in Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1523046</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have seen unexpected users when changing accounts in Microsoft 365 Copilot Chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1523046</guid>
-      <pubDate>Mon, 05 Oct 2026 11:23:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may experience intermittent audio and video degradation when using Microsoft Teams through VDI 2.0</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1489450</link>
-      <description>[Microsoft Teams] Users may have experienced intermittent audio and video degradation when using Microsoft Teams through VDI 2.0</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1489450</guid>
-      <pubDate>Thu, 01 Oct 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may not receive responses from their Microsoft 365 Copilot agents within Microsoft PowerPoint</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1483845</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have not received responses from their Copilot agents within PowerPoint.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1483845</guid>
-      <pubDate>Wed, 30 Sep 2026 21:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
