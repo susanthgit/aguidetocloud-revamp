@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2026 12:02:44 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 17:56:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to load chat history or previously pinned chats, and can't pin chats in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1527498</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to load chat history or previously pinned chats, and can't pin chats in Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1527498</guid>
+      <pubDate>Tue, 27 Oct 2026 15:58:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may experience intermittent errors or failures when accessing Exchange Online through REST APIs</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1527500</link>
+      <description>[Exchange Online] Users may experience intermittent errors or failures when accessing Exchange Online through REST APIs.</description>
+      <category>Exchange Online</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">EX1527500</guid>
+      <pubDate>Tue, 27 Oct 2026 15:56:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to load their calendar in the Microsoft Teams web app</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1527410</link>
+      <description>[Microsoft Teams] Users may be unable to load their calendar in the Microsoft Teams web app.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1527410</guid>
+      <pubDate>Tue, 27 Oct 2026 14:04:37 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Admins' Microsoft Defender XDR advanced hunting queries that contain a customer-defined function may have failed</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1526431</link>
@@ -15,15 +42,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1526431</guid>
       <pubDate>Mon, 26 Oct 2026 16:54:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to send or receive messages, upload images, or schedule meetings in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1526111</link>
-      <description>[Microsoft Teams] Users may have been unable to send or receive messages, upload images, or schedule meetings in Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">TM1526111</guid>
-      <pubDate>Mon, 26 Oct 2026 15:01:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Some users may be unable to access the group feed with Microsoft Viva Engage</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1489051</guid>
       <pubDate>Mon, 05 Oct 2026 22:28:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Some users may be unable to search using the search box in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1488394</link>
-      <description>[SharePoint Online] Users may have been unable to search using the search box in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1488394</guid>
-      <pubDate>Mon, 05 Oct 2026 13:39:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Some users' Microsoft 365 apps may not appear in the App launcher in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1489449</link>
-      <description>[SharePoint Online] Users' Microsoft 365 apps may have not appeared in the App launcher in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1489449</guid>
-      <pubDate>Mon, 05 Oct 2026 12:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

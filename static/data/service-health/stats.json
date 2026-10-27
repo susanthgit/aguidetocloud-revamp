@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T12:02:44.033698+00:00",
+  "generated_at": "2026-10-27T17:56:03.348083+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -7,51 +7,51 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 19,
-      "active_incidents": 2,
-      "avg_duration_minutes": 8195,
-      "last_incident": "2026-10-26T15:01:00+00:00",
+      "active_incidents": 3,
+      "avg_duration_minutes": 8705,
+      "last_incident": "2026-10-27T14:04:37.850000+00:00",
       "classifications": {
-        "advisory": 10,
-        "incident": 9
-      }
-    },
-    {
-      "service": "Microsoft 365 suite",
-      "short_name": "M365 Suite",
-      "icon": "📦",
-      "total_incidents": 15,
-      "active_incidents": 5,
-      "avg_duration_minutes": 1014,
-      "last_incident": "2026-10-23T19:29:31.007000+00:00",
-      "classifications": {
-        "advisory": 10,
-        "incident": 5
+        "advisory": 11,
+        "incident": 8
       }
     },
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 14,
-      "active_incidents": 1,
+      "total_incidents": 15,
+      "active_incidents": 2,
       "avg_duration_minutes": 7504,
-      "last_incident": "2026-10-21T00:00:00+00:00",
+      "last_incident": "2026-10-27T15:58:45.783000+00:00",
       "classifications": {
-        "incident": 7,
-        "advisory": 7
+        "advisory": 8,
+        "incident": 7
+      }
+    },
+    {
+      "service": "Microsoft 365 suite",
+      "short_name": "M365 Suite",
+      "icon": "📦",
+      "total_incidents": 14,
+      "active_incidents": 5,
+      "avg_duration_minutes": 1103,
+      "last_incident": "2026-10-23T19:29:31.007000+00:00",
+      "classifications": {
+        "advisory": 9,
+        "incident": 5
       }
     },
     {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 11,
-      "active_incidents": 1,
+      "total_incidents": 12,
+      "active_incidents": 2,
       "avg_duration_minutes": 8723,
-      "last_incident": "2026-10-12T08:15:00+00:00",
+      "last_incident": "2026-10-27T15:56:24.433000+00:00",
       "classifications": {
-        "advisory": 5,
-        "incident": 6
+        "incident": 7,
+        "advisory": 5
       }
     },
     {
@@ -121,13 +121,13 @@
       "service": "Microsoft 365 apps",
       "short_name": "M365 Apps",
       "icon": "💼",
-      "total_incidents": 5,
+      "total_incidents": 4,
       "active_incidents": 0,
-      "avg_duration_minutes": 6625,
+      "avg_duration_minutes": 3390,
       "last_incident": "2026-10-19T06:30:00+00:00",
       "classifications": {
         "incident": 2,
-        "advisory": 3
+        "advisory": 2
       }
     },
     {
@@ -184,12 +184,12 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 52,
+      "incident_count": 54,
       "services_affected": 12
     },
     {
       "month": "2026-09",
-      "incident_count": 50,
+      "incident_count": 48,
       "services_affected": 14
     }
   ]
