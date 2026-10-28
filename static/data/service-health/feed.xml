@@ -5,34 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Oct 2026 16:34:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 22:30:20 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Defender XDR] Users may see delays populating data in the threat and vulnerability management tab in Microsoft Defender for Endpoint</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1528961</link>
-      <description>[Microsoft Defender XDR] Users may see delays populating data in the threat and vulnerability management tab in Microsoft Defender for Endpoint.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1528961</guid>
-      <pubDate>Wed, 28 Oct 2026 16:01:01 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Teams] Admins may be unable to access Best Practices content in the Microsoft Teams admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1528936</link>
-      <description>[Microsoft Teams] Admins may be unable to access Best Practices content in the Microsoft Teams admin center.</description>
+      <description>[Microsoft Teams] Admins may have been unable to access Best Practices content in the Microsoft Teams admin center.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1528936</guid>
       <pubDate>Wed, 28 Oct 2026 15:00:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Some users may see Azure Maps visuals are blank and aren't loading as expected in Microsoft Fabric</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1528889</link>
-      <description>[Power BI] Users may see that Azure Maps visuals are blank and aren't loading as expected in Microsoft Fabric.</description>
-      <category>Power BI</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">PB1528889</guid>
-      <pubDate>Wed, 28 Oct 2026 14:23:41 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may have been unable to access Microsoft Copilot across multiple Microsoft 365 applications</title>
@@ -48,7 +30,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1528420</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to open the SharePoint and Microsoft OneDrive file picker in Agent Builder within Microsoft Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1528420</guid>
       <pubDate>Wed, 28 Oct 2026 05:24:29 +0000</pubDate>
     </item>
@@ -60,6 +42,15 @@
       <category>investigating</category>
       <guid isPermaLink="false">CP1528078</guid>
       <pubDate>Wed, 28 Oct 2026 01:16:31 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Some users may see Azure Maps visuals are blank and aren't loading as expected in Microsoft Fabric</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1528889</link>
+      <description>[Power BI] Users may have seen that Azure Maps visuals were blank and weren't loading as expected in Microsoft Fabric.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1528889</guid>
+      <pubDate>Tue, 27 Oct 2026 17:20:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to load chat history or previously pinned chats, and can't pin chats in Microsoft 365 Copilot</title>
@@ -222,6 +213,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1514788</guid>
       <pubDate>Mon, 19 Oct 2026 07:05:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Users may see delays populating data in the threat and vulnerability management tab in Microsoft Defender for Endpoint</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1528961</link>
+      <description>[Microsoft Defender XDR] Users may have seen data updates in the threat and vulnerability management tab in Microsoft Defender for Endpoint.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1528961</guid>
+      <pubDate>Mon, 19 Oct 2026 07:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 apps] Some users may be unable to access or protect content using Azure Rights Management (ARM) across Microsoft 365 services </title>
