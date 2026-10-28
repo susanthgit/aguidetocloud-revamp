@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Oct 2026 01:16:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 08:22:16 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access Microsoft Copilot across multiple Microsoft 365 applications</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1528503</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Microsoft Copilot across multiple Microsoft 365 applications.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1528503</guid>
+      <pubDate>Wed, 28 Oct 2026 07:38:56 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to open the SharePoint and Microsoft OneDrive file picker in Agent Builder within Microsoft Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1528420</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to open the SharePoint and Microsoft OneDrive file picker in Agent Builder within Microsoft Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1528420</guid>
+      <pubDate>Wed, 28 Oct 2026 05:24:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may see an erroneous error when sharing agents in Microsoft Copilot Agent Builder</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1528078</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may see an erroneous error when sharing agents in Microsoft Copilot Agent Builder.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1528078</guid>
+      <pubDate>Wed, 28 Oct 2026 01:16:31 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to load chat history or previously pinned chats, and can't pin chats in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1527498</link>
@@ -429,33 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1489031</guid>
       <pubDate>Tue, 06 Oct 2026 04:38:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Some users may be unable to create or update Ontology artifacts in Microsoft Fabric</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1488968</link>
-      <description>[Power BI] Users may have been unable to create or update Ontology artifacts in Microsoft Fabric.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1488968</guid>
-      <pubDate>Mon, 05 Oct 2026 22:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins intermittently may be unable to access the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1488931</link>
-      <description>[Microsoft 365 suite] Admins intermittently may have been unable to access the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1488931</guid>
-      <pubDate>Mon, 05 Oct 2026 22:28:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins intermittently may be unable to access the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1489051</link>
-      <description>[Microsoft 365 suite] Admins intermittently may have been unable to access the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1489051</guid>
-      <pubDate>Mon, 05 Oct 2026 22:28:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
