@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2026 22:08:06 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 01:16:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to load chat history or previously pinned chats, and can't pin chats in Microsoft 365 Copilot</title>
@@ -17,11 +17,11 @@
       <pubDate>Tue, 27 Oct 2026 15:58:45 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online] Some users may experience intermittent errors or failures when accessing Exchange Online through REST APIs</title>
+      <title>[Exchange Online] Some users may see intermittent failures when accessing Exchange Online through Representational State Transfer (REST)</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1527500</link>
-      <description>[Exchange Online] Users may experience intermittent errors or failures when accessing Exchange Online through REST APIs.</description>
+      <description>[Exchange Online] Users may have experienced intermittent errors or failures when accessing Exchange Online through REST.</description>
       <category>Exchange Online</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1527500</guid>
       <pubDate>Tue, 27 Oct 2026 15:56:24 +0000</pubDate>
     </item>
@@ -30,7 +30,7 @@
       <link>https://www.aguidetocloud.com/service-health/#TM1527410</link>
       <description>[Microsoft Teams] Users may be unable to load their calendar in the Microsoft Teams web app.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">TM1527410</guid>
       <pubDate>Tue, 27 Oct 2026 14:04:37 +0000</pubDate>
     </item>
