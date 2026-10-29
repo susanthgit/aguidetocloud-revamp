@@ -11,6 +11,7 @@ exam_category: "Business"
 vendor: "scrumorg"
 manual: false
 guided_slug: "psm-i"
+supplemental: true
 ---
 
 ## About this study guide
