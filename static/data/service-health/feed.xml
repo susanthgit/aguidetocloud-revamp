@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2026 12:53:17 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 19:35:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1530567</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Copilot Chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1530567</guid>
+      <pubDate>Thu, 29 Oct 2026 17:19:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft OneDrive] Admins are unable to complete Microsoft OneDrive or SharePoint site migrations</title>
+      <link>https://www.aguidetocloud.com/service-health/#OD1530155</link>
+      <description>[Microsoft OneDrive] Admins are unable to complete OneDrive or SharePoint site migrations.</description>
+      <category>Microsoft OneDrive</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OD1530155</guid>
+      <pubDate>Wed, 28 Oct 2026 18:29:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Users may not be able to open email file attachments or see the "Open" option in the new Outlook desktop app</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1528992</link>
@@ -35,20 +53,11 @@
       <pubDate>Wed, 28 Oct 2026 07:38:56 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to open the SharePoint and Microsoft OneDrive file picker in Agent Builder within Microsoft Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1528420</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to open the SharePoint and Microsoft OneDrive file picker in Agent Builder within Microsoft Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1528420</guid>
-      <pubDate>Wed, 28 Oct 2026 05:24:29 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may see an erroneous error when sharing agents in Microsoft Copilot Agent Builder</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1528078</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may see an erroneous error when sharing agents in Microsoft Copilot Agent Builder.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1528078</guid>
       <pubDate>Wed, 28 Oct 2026 01:16:31 +0000</pubDate>
     </item>
@@ -78,6 +87,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1527500</guid>
       <pubDate>Tue, 27 Oct 2026 15:56:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to open the SharePoint and Microsoft OneDrive file picker in Agent Builder within Microsoft Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1528420</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users were unable to open the SharePoint and Microsoft OneDrive file picker in Agent Builder within Microsoft Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1528420</guid>
+      <pubDate>Tue, 27 Oct 2026 02:22:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins' Microsoft Defender XDR advanced hunting queries that contain a customer-defined function may have failed</title>
@@ -244,9 +262,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to create SharePoint knowledge agents using Microsoft 365 Copilot in SharePoint Online </title>
       <link>https://www.aguidetocloud.com/service-health/#CP1510883</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to create SharePoint knowledge agents using Microsoft 365 Copilot in SharePoint Online.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to create SharePoint knowledge agents using Microsoft 365 Copilot in SharePoint Online.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1510883</guid>
       <pubDate>Fri, 16 Oct 2026 15:46:18 +0000</pubDate>
     </item>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1506313</guid>
       <pubDate>Tue, 06 Oct 2026 23:17:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to interact with the Microsoft 365 Copilot voice experience</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1489980</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to interact with the Microsoft 365 Copilot voice experience.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1489980</guid>
-      <pubDate>Tue, 06 Oct 2026 23:07:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Users are unable to create or edit new meeting or broadcast events in Microsoft Viva Engage</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1489881</link>
-      <description>[Microsoft Viva] Users were unable to create or edit new meeting or broadcast events in Viva Engage.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1489881</guid>
-      <pubDate>Tue, 06 Oct 2026 21:09:18 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:53:17.017466+00:00",
+  "generated_at": "2026-10-29T19:35:06.666733+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 16,
-      "active_incidents": 4,
-      "avg_duration_minutes": 1871,
+      "total_incidents": 15,
+      "active_incidents": 2,
+      "avg_duration_minutes": 3431,
       "last_incident": "2026-10-28T07:38:56+00:00",
       "classifications": {
         "advisory": 8,
-        "incident": 8
+        "incident": 7
       }
     },
     {
@@ -45,12 +45,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 12,
+      "total_incidents": 11,
       "active_incidents": 3,
-      "avg_duration_minutes": 5373,
+      "avg_duration_minutes": 5398,
       "last_incident": "2026-10-23T19:29:31.007000+00:00",
       "classifications": {
-        "advisory": 8,
+        "advisory": 7,
         "incident": 4
       }
     },
@@ -64,6 +64,19 @@
       "last_incident": "2026-10-27T17:20:00+00:00",
       "classifications": {
         "advisory": 7
+      }
+    },
+    {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 6,
+      "active_incidents": 1,
+      "avg_duration_minutes": 7345,
+      "last_incident": "2026-10-29T17:19:12.283000+00:00",
+      "classifications": {
+        "incident": 3,
+        "advisory": 3
       }
     },
     {
@@ -102,19 +115,6 @@
       "classifications": {
         "incident": 4,
         "advisory": 2
-      }
-    },
-    {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 7345,
-      "last_incident": "2026-10-20T14:29:11+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 2
       }
     },
     {
@@ -169,6 +169,18 @@
       }
     },
     {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 1,
+      "active_incidents": 1,
+      "avg_duration_minutes": 0,
+      "last_incident": "2026-10-28T18:29:00+00:00",
+      "classifications": {
+        "incident": 1
+      }
+    },
+    {
       "service": "Planner",
       "short_name": "Planner",
       "icon": "📋",
@@ -184,12 +196,12 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 61,
-      "services_affected": 12
+      "incident_count": 63,
+      "services_affected": 13
     },
     {
       "month": "2026-09",
-      "incident_count": 41,
+      "incident_count": 39,
       "services_affected": 14
     }
   ]
