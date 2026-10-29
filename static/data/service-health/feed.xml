@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Oct 2026 22:30:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 05:39:40 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Users may not be able to open email file attachments or see the "Open" option in the new Outlook desktop app</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1528992</link>
+      <description>[Exchange Online] Users may not be able to open email file attachments or see the "Open" option in the new Outlook desktop app.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1528992</guid>
+      <pubDate>Wed, 28 Oct 2026 16:24:46 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Admins may be unable to access Best Practices content in the Microsoft Teams admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1528936</link>
@@ -48,7 +57,7 @@
       <link>https://www.aguidetocloud.com/service-health/#PB1528889</link>
       <description>[Power BI] Users may have seen that Azure Maps visuals were blank and weren't loading as expected in Microsoft Fabric.</description>
       <category>Power BI</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">PB1528889</guid>
       <pubDate>Tue, 27 Oct 2026 17:20:00 +0000</pubDate>
     </item>
@@ -71,15 +80,6 @@
       <pubDate>Tue, 27 Oct 2026 15:56:24 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Some users may be unable to load their calendar in the Microsoft Teams web app</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1527410</link>
-      <description>[Microsoft Teams] Users may be unable to load their calendar in the Microsoft Teams web app.</description>
-      <category>Microsoft Teams</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">TM1527410</guid>
-      <pubDate>Tue, 27 Oct 2026 14:04:37 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Defender XDR] Admins' Microsoft Defender XDR advanced hunting queries that contain a customer-defined function may have failed</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1526431</link>
       <description>[Microsoft Defender XDR] Admins' Microsoft Defender XDR advanced hunting queries that contain a customer-defined function may have failed.</description>
@@ -87,6 +87,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1526431</guid>
       <pubDate>Mon, 26 Oct 2026 16:54:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to send or receive messages, upload images, or schedule meetings in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1526111</link>
+      <description>[Microsoft Teams] Users may have been unable to send or receive messages, upload images, or schedule meetings in Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">TM1526111</guid>
+      <pubDate>Mon, 26 Oct 2026 15:01:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Some users may be unable to access the group feed with Microsoft Viva Engage</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1489881</guid>
       <pubDate>Tue, 06 Oct 2026 21:09:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may not see chart data when using standard light or dark themes on Power BI dashboards</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1489649</link>
-      <description>[Power BI] Users may not have seen chart data when using standard light or dark themes on Power BI dashboards.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1489649</guid>
-      <pubDate>Tue, 06 Oct 2026 19:32:12 +0000</pubDate>
     </item>
   </channel>
 </rss>

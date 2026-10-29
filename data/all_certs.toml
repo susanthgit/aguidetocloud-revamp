@@ -15299,6 +15299,58 @@ guided_url = "/guided/anthropic-ccar-p/"
 practice_url = "/guided/anthropic-ccar-p/practice/"
 
 [[cert]]
+slug = "ab-400"
+vendor = "microsoft"
+code = "AB-400"
+name = "Power Platform Developer Associate"
+tagline = "Extend Power Platform with code, Dataverse, integrations, and generative AI."
+exam_category = "Power Platform"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1049
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-400"
+exam_cost = ""
+exam_duration = 0
+exam_passing_score = "700 / 1000"
+guided_url = "/guided/ab-400/"
+
+
+# ═══════════════════════════════════════════════════
+# Keyed map — use (index site.Data.all_certs.cert_map "slug")
+# for single-page lookups (replaces guided_certs.toml)
+# ═══════════════════════════════════════════════════
+
+[cert_map."ab-400"]
+vendor = "microsoft"
+code = "AB-400"
+name = "Power Platform Developer Associate"
+tagline = "Extend Power Platform with code, Dataverse, integrations, and generative AI."
+exam_category = "Power Platform"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1049
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-400"
+exam_cost = ""
+exam_duration = 0
+exam_passing_score = "700 / 1000"
+exam_questions_real = ""
+exam_provider = ""
+exam_validity = "Renew annually (free via Microsoft Learn)"
+exam_prerequisites = "None"
+guided_url = "/guided/ab-400/"
+practice_url = "/guided/ab-400/practice/"
+
+[[cert]]
 slug = "mo-240"
 vendor = "microsoft"
 code = "MO-240"
