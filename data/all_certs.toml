@@ -15387,3 +15387,41 @@ exam_provider = "Certiport; confirm current availability through the official ce
 exam_validity = "60 months, as listed on the current Microsoft certification page."
 guided_url = "/guided/mo-240/"
 practice_url = "/guided/mo-240/practice/"
+
+[[cert]]
+slug = "mo-220"
+vendor = "microsoft"
+code = "MO-220"
+name = "Excel for Accounting Associate"
+tagline = "Independent MCQ learning companion with explanations and self-directed Excel exercises for a hands-on assessment."
+exam_category = "Microsoft 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1051
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/mos-excel-for-accounting-associate/"
+guided_url = "/guided/mo-220/"
+
+[cert_map."mo-220"]
+vendor = "microsoft"
+code = "MO-220"
+name = "Excel for Accounting Associate"
+tagline = "Independent MCQ learning companion with explanations and self-directed Excel exercises for a hands-on assessment."
+exam_category = "Microsoft 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1051
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/mos-excel-for-accounting-associate/"
+exam_provider = "Certiport; confirm current availability through the official certification page."
+exam_validity = "60 months, as listed on the current Microsoft certification page."
+guided_url = "/guided/mo-220/"
+practice_url = "/guided/mo-220/practice/"
