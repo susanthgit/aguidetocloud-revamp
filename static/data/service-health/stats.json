@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T19:35:06.666733+00:00",
+  "generated_at": "2026-10-29T23:55:02.796145+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -33,8 +33,8 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 12,
-      "active_incidents": 1,
-      "avg_duration_minutes": 7975,
+      "active_incidents": 0,
+      "avg_duration_minutes": 7451,
       "last_incident": "2026-10-28T16:24:46.900000+00:00",
       "classifications": {
         "advisory": 5,
@@ -46,12 +46,24 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 11,
-      "active_incidents": 3,
-      "avg_duration_minutes": 5398,
-      "last_incident": "2026-10-23T19:29:31.007000+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 5851,
+      "last_incident": "2026-10-23T00:00:00+00:00",
       "classifications": {
         "advisory": 7,
         "incident": 4
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 7,
+      "active_incidents": 1,
+      "avg_duration_minutes": 2986,
+      "last_incident": "2026-10-29T21:31:24.833000+00:00",
+      "classifications": {
+        "advisory": 7
       }
     },
     {
@@ -77,18 +89,6 @@
       "classifications": {
         "incident": 3,
         "advisory": 3
-      }
-    },
-    {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 6,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2986,
-      "last_incident": "2026-10-26T16:54:00+00:00",
-      "classifications": {
-        "advisory": 6
       }
     },
     {
@@ -134,12 +134,12 @@
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
-      "total_incidents": 3,
+      "total_incidents": 2,
       "active_incidents": 1,
-      "avg_duration_minutes": 24442,
+      "avg_duration_minutes": 40307,
       "last_incident": "2026-10-14T16:14:28.423000+00:00",
       "classifications": {
-        "advisory": 2,
+        "advisory": 1,
         "incident": 1
       }
     },
@@ -196,12 +196,12 @@
   "monthly": [
     {
       "month": "2026-10",
-      "incident_count": 63,
+      "incident_count": 64,
       "services_affected": 13
     },
     {
       "month": "2026-09",
-      "incident_count": 39,
+      "incident_count": 38,
       "services_affected": 14
     }
   ]

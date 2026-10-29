@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2026 19:35:07 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 23:55:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Users that have premium license for Microsoft Defender for Servers (DFS) P2 may not see baseline data</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1530894</link>
+      <description>[Microsoft Defender XDR] Users that have premium license for DFS P2 may not see baseline data in the Microsoft Defender portal.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1530894</guid>
+      <pubDate>Thu, 29 Oct 2026 21:31:24 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Microsoft 365 Copilot Chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1530567</link>
@@ -28,9 +37,9 @@
     <item>
       <title>[Exchange Online] Users may not be able to open email file attachments or see the "Open" option in the new Outlook desktop app</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1528992</link>
-      <description>[Exchange Online] Users may not be able to open email file attachments or see the "Open" option in the new Outlook desktop app.</description>
+      <description>[Exchange Online] Users may not have been able to open email file attachments or see the "Open" option in the new Outlook desktop app.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1528992</guid>
       <pubDate>Wed, 28 Oct 2026 16:24:46 +0000</pubDate>
     </item>
@@ -127,11 +136,11 @@
     <item>
       <title>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have refresh delays</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1522731</link>
-      <description>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have refresh delays. </description>
+      <description>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have seen refresh delays. </description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1522731</guid>
-      <pubDate>Fri, 23 Oct 2026 19:29:31 +0000</pubDate>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Users may be unable to import .XLSX files in Microsoft Viva Glint</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1506205</guid>
       <pubDate>Wed, 07 Oct 2026 01:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Admin may see status cards displaying "Unknown" instead of the expected summary counts in Intune admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1506313</link>
-      <description>[Microsoft Intune] Admin may have seen status cards displaying "Unknown" instead of the expected summary counts in Intune admin center.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1506313</guid>
-      <pubDate>Tue, 06 Oct 2026 23:17:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
