@@ -4244,7 +4244,7 @@ url = "/guided/dp-300/domain-5/log-shipping-hadr-ops/"
 
 [["dp-420"]]
 title = "Cosmos DB — The Big Picture"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 1
 is_free = true
@@ -4253,7 +4253,7 @@ url = "/guided/dp-420/domain-1/cosmos-db-big-picture/"
 
 [["dp-420"]]
 title = "Designing Your Data Model"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 2
 is_free = true
@@ -4262,7 +4262,7 @@ url = "/guided/dp-420/domain-1/design-data-model/"
 
 [["dp-420"]]
 title = "Partition Key Strategy"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 3
 is_free = true
@@ -4271,7 +4271,7 @@ url = "/guided/dp-420/domain-1/partition-key-strategy/"
 
 [["dp-420"]]
 title = "Synthetic and Hierarchical Partition Keys"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 4
 is_free = true
@@ -4280,7 +4280,7 @@ url = "/guided/dp-420/domain-1/synthetic-hierarchical-keys/"
 
 [["dp-420"]]
 title = "Relationships — Embedding vs Referencing"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 5
 is_free = true
@@ -4289,7 +4289,7 @@ url = "/guided/dp-420/domain-1/relationships-embedding-referencing/"
 
 [["dp-420"]]
 title = "SDK Connectivity and Client Configuration"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 6
 is_free = true
@@ -4298,7 +4298,7 @@ url = "/guided/dp-420/domain-1/sdk-connectivity/"
 
 [["dp-420"]]
 title = "SDK CRUD Operations and Transactions"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 7
 is_free = true
@@ -4307,7 +4307,7 @@ url = "/guided/dp-420/domain-1/sdk-crud-transactions/"
 
 [["dp-420"]]
 title = "SQL Queries in Cosmos DB"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 8
 is_free = true
@@ -4316,7 +4316,7 @@ url = "/guided/dp-420/domain-1/sql-queries/"
 
 [["dp-420"]]
 title = "SDK Query Pagination and LINQ"
-domain = "Design and Implement Data Models"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 9
 is_free = true
@@ -4324,81 +4324,81 @@ estimated_minutes = 14
 url = "/guided/dp-420/domain-1/sdk-query-pagination/"
 
 [["dp-420"]]
-title = "Server-Side Programming"
-domain = "Design and Implement Data Models"
+title = "Transactions in Practice"
+domain = "Design and develop database solutions"
 domain_number = 1
 order = 10
-is_free = true
-estimated_minutes = 16
-url = "/guided/dp-420/domain-1/server-side-programming/"
-
-[["dp-420"]]
-title = "Transactions in Practice"
-domain = "Design and Implement Data Models"
-domain_number = 1
-order = 11
 is_free = true
 estimated_minutes = 12
 url = "/guided/dp-420/domain-1/transactions-in-practice/"
 
 [["dp-420"]]
-title = "Global Replication and Failover"
-domain = "Design and Implement Data Distribution"
-domain_number = 2
-order = 12
-is_free = false
-estimated_minutes = 14
-url = "/guided/dp-420/domain-2/global-replication/"
-
-[["dp-420"]]
 title = "Consistency Levels: Five Choices, Real Trade-Offs"
-domain = "Design and Implement Data Distribution"
-domain_number = 2
-order = 13
+domain = "Design and develop database solutions"
+domain_number = 1
+order = 11
 is_free = false
 estimated_minutes = 18
 url = "/guided/dp-420/domain-2/consistency-levels/"
 
 [["dp-420"]]
-title = "Multi-Region Writes and Conflict Resolution"
-domain = "Design and Implement Data Distribution"
-domain_number = 2
-order = 14
-is_free = false
-estimated_minutes = 14
-url = "/guided/dp-420/domain-2/multi-region-writes/"
-
-[["dp-420"]]
 title = "Change Feed with Azure Functions and Processors"
-domain = "Integrate and Move Data"
-domain_number = 3
-order = 15
+domain = "Design and develop database solutions"
+domain_number = 1
+order = 12
 is_free = false
 estimated_minutes = 16
 url = "/guided/dp-420/domain-3/change-feed-processing/"
 
 [["dp-420"]]
-title = "Analytical Workloads: Synapse Link and Fabric Mirroring"
-domain = "Integrate and Move Data"
-domain_number = 3
+title = "Change Feed Patterns: Materialized Views and Estimator"
+domain = "Design and develop database solutions"
+domain_number = 1
+order = 13
+is_free = false
+estimated_minutes = 16
+url = "/guided/dp-420/domain-4/change-feed-patterns/"
+
+[["dp-420"]]
+title = "Change Feed Pull Mode and Container Copy Jobs"
+domain = "Design and develop database solutions"
+domain_number = 1
+order = 14
+is_free = true
+estimated_minutes = 18
+url = "/guided/dp-420/domain-1/change-feed-pull-and-copy-jobs/"
+
+[["dp-420"]]
+title = "AI-Assisted Cosmos DB Development with Agent Kit"
+domain = "Design and develop database solutions"
+domain_number = 1
+order = 15
+is_free = true
+estimated_minutes = 15
+url = "/guided/dp-420/domain-1/ai-assisted-development/"
+
+[["dp-420"]]
+title = "Global Replication and Failover"
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
 order = 16
 is_free = false
 estimated_minutes = 14
-url = "/guided/dp-420/domain-3/analytical-workloads/"
+url = "/guided/dp-420/domain-2/global-replication/"
 
 [["dp-420"]]
-title = "Data Movement: ADF, Kafka, and Spark Connectors"
-domain = "Integrate and Move Data"
-domain_number = 3
+title = "Multi-Region Writes and Conflict Resolution"
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
 order = 17
 is_free = false
 estimated_minutes = 14
-url = "/guided/dp-420/domain-3/data-movement/"
+url = "/guided/dp-420/domain-2/multi-region-writes/"
 
 [["dp-420"]]
 title = "Indexing Policies: Range, Spatial, and Composite"
-domain = "Optimize Query and Operation Performance"
-domain_number = 4
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
 order = 18
 is_free = false
 estimated_minutes = 16
@@ -4406,8 +4406,8 @@ url = "/guided/dp-420/domain-4/indexing-policies/"
 
 [["dp-420"]]
 title = "Request Units and Query Cost Optimization"
-domain = "Optimize Query and Operation Performance"
-domain_number = 4
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
 order = 19
 is_free = false
 estimated_minutes = 16
@@ -4415,84 +4415,111 @@ url = "/guided/dp-420/domain-4/request-units/"
 
 [["dp-420"]]
 title = "Integrated Cache and Dedicated Gateway"
-domain = "Optimize Query and Operation Performance"
-domain_number = 4
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
 order = 20
 is_free = false
 estimated_minutes = 12
 url = "/guided/dp-420/domain-4/integrated-cache/"
 
 [["dp-420"]]
-title = "Change Feed Patterns: Materialized Views and Estimator"
-domain = "Optimize Query and Operation Performance"
-domain_number = 4
-order = 21
-is_free = false
-estimated_minutes = 16
-url = "/guided/dp-420/domain-4/change-feed-patterns/"
-
-[["dp-420"]]
 title = "Monitoring: Metrics, Logs, and Alerts"
-domain = "Maintain an Azure Cosmos DB Solution"
-domain_number = 5
-order = 22
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
+order = 21
 is_free = false
 estimated_minutes = 16
 url = "/guided/dp-420/domain-5/monitoring-cosmos-db/"
 
 [["dp-420"]]
 title = "Backup and Restore: Periodic vs Continuous"
-domain = "Maintain an Azure Cosmos DB Solution"
-domain_number = 5
-order = 23
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
+order = 22
 is_free = false
 estimated_minutes = 14
 url = "/guided/dp-420/domain-5/backup-restore/"
 
 [["dp-420"]]
 title = "Network Security: Firewalls, VNets, and Private Endpoints"
-domain = "Maintain an Azure Cosmos DB Solution"
-domain_number = 5
-order = 24
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
+order = 23
 is_free = false
 estimated_minutes = 14
 url = "/guided/dp-420/domain-5/security-network/"
 
 [["dp-420"]]
 title = "Data Security: Encryption, Keys, and RBAC"
-domain = "Maintain an Azure Cosmos DB Solution"
-domain_number = 5
-order = 25
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
+order = 24
 is_free = false
 estimated_minutes = 16
 url = "/guided/dp-420/domain-5/security-data/"
 
 [["dp-420"]]
 title = "Cost Optimization: Throughput Modes and RU Strategy"
-domain = "Maintain an Azure Cosmos DB Solution"
-domain_number = 5
-order = 26
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
+order = 25
 is_free = false
 estimated_minutes = 16
 url = "/guided/dp-420/domain-5/cost-optimization/"
 
 [["dp-420"]]
-title = "DevOps: Infrastructure as Code and Deployments"
-domain = "Maintain an Azure Cosmos DB Solution"
-domain_number = 5
-order = 27
-is_free = false
-estimated_minutes = 16
-url = "/guided/dp-420/domain-5/devops-iac/"
+title = "Fleet Capacity, Data Masking and Partition Failover"
+domain = "Secure, optimize, and deploy database solutions"
+domain_number = 2
+order = 26
+is_free = true
+estimated_minutes = 24
+url = "/guided/dp-420/domain-2/fleet-masking-and-partition-failover/"
 
 [["dp-420"]]
-title = "Exam Strategy and Cross-Domain Review"
-domain = "Maintain an Azure Cosmos DB Solution"
-domain_number = 5
+title = "Vector and Full-Text Retrieval"
+domain = "Implement AI and analytics capabilities in database solutions"
+domain_number = 3
+order = 27
+is_free = true
+estimated_minutes = 24
+url = "/guided/dp-420/domain-3/vector-and-full-text-retrieval/"
+
+[["dp-420"]]
+title = "Hybrid Search and Grounded Answers"
+domain = "Implement AI and analytics capabilities in database solutions"
+domain_number = 3
 order = 28
-is_free = false
-estimated_minutes = 14
-url = "/guided/dp-420/domain-5/exam-prep-review/"
+is_free = true
+estimated_minutes = 20
+url = "/guided/dp-420/domain-3/hybrid-search-and-rag/"
+
+[["dp-420"]]
+title = "Durable Agent Memory and Conversation State"
+domain = "Implement AI and analytics capabilities in database solutions"
+domain_number = 3
+order = 29
+is_free = true
+estimated_minutes = 20
+url = "/guided/dp-420/domain-3/durable-agent-memory/"
+
+[["dp-420"]]
+title = "Operational Analytics with Microsoft Fabric"
+domain = "Implement AI and analytics capabilities in database solutions"
+domain_number = 3
+order = 30
+is_free = true
+estimated_minutes = 23
+url = "/guided/dp-420/domain-3/fabric-operational-analytics/"
+
+[["dp-420"]]
+title = "DP-420: Current Objectives and Final Review"
+domain = "Implement AI and analytics capabilities in database solutions"
+domain_number = 3
+order = 31
+is_free = true
+estimated_minutes = 16
+url = "/guided/dp-420/domain-3/current-exam-review/"
 
 [["dp-600"]]
 title = "Workspace Access Controls"
