@@ -314,7 +314,7 @@
 {{ if $guidedCert }}
 <div class="cert-floating-bar" id="cert-floating-bar">
   <a href="/guided/{{ $guidedSlug }}/practice/" class="cert-float-try">20 Free Questions</a>
-  <a href="/guided/{{ $guidedSlug }}/" class="cert-float-buy">Practice Exam ${{ $guidedCert.price_practice }} →</a>
+  <a href="/guided/{{ $guidedSlug }}/" class="cert-float-buy">{{ if .Params.supplemental }}MCQ Companion{{ else }}Practice Exam{{ end }} ${{ $guidedCert.price_practice }} →</a>
 </div>
 {{ end }}
 
