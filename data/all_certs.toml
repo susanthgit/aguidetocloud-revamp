@@ -15297,3 +15297,41 @@ exam_validity = ""
 exam_prerequisites = "None"
 guided_url = "/guided/anthropic-ccar-p/"
 practice_url = "/guided/anthropic-ccar-p/practice/"
+
+[[cert]]
+slug = "mo-240"
+vendor = "microsoft"
+code = "MO-240"
+name = "Excel for Operational Management Associate"
+tagline = "Independent MCQ learning companion with explanations and self-directed Excel exercises for a hands-on assessment."
+exam_category = "Business"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1050
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/mos-excel-for-operational-management-associate/"
+guided_url = "/guided/mo-240/"
+
+[cert_map."mo-240"]
+vendor = "microsoft"
+code = "MO-240"
+name = "Excel for Operational Management Associate"
+tagline = "Independent MCQ learning companion with explanations and self-directed Excel exercises for a hands-on assessment."
+exam_category = "Business"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1050
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/mos-excel-for-operational-management-associate/"
+exam_provider = "Certiport; confirm current availability through the official certification page."
+exam_validity = "60 months, as listed on the current Microsoft certification page."
+guided_url = "/guided/mo-240/"
+practice_url = "/guided/mo-240/practice/"
