@@ -15387,3 +15387,56 @@ exam_provider = "Certiport; confirm current availability through the official ce
 exam_validity = "60 months, as listed on the current Microsoft certification page."
 guided_url = "/guided/mo-240/"
 practice_url = "/guided/mo-240/practice/"
+
+[[cert]]
+slug = "psm-i"
+vendor = "scrumorg"
+code = "PSM-I"
+name = "PSM I Independent Study Practice"
+tagline = "Original scenario questions for applying Scrum accountabilities, events, artifacts and product-value principles."
+exam_category = "scrumorg"
+level = "intermediate"
+status = "planned"
+modules = 0
+questions = 250
+domains = 3
+order = 1039
+featured = false
+price_practice = 9
+exam_url = "https://www.scrum.org/"
+exam_cost = "US$200 per assessment attempt; verify current pricing with the provider."
+exam_duration = 60
+exam_passing_score = "85%"
+guided_url = "/guided/psm-i/"
+
+
+# ═══════════════════════════════════════════════════
+# Keyed map — use (index site.Data.all_certs.cert_map "slug")
+# for single-page lookups (replaces guided_certs.toml)
+# ═══════════════════════════════════════════════════
+
+[cert_map."psm-i"]
+vendor = "scrumorg"
+code = "PSM-I"
+name = "PSM I Independent Study Practice"
+tagline = "Original scenario questions for applying Scrum accountabilities, events, artifacts and product-value principles."
+exam_category = "scrumorg"
+level = "intermediate"
+status = "planned"
+modules = 0
+questions = 250
+domains = 3
+order = 1039
+featured = false
+price_practice = 9
+exam_url = "https://www.scrum.org/"
+exam_cost = "US$200 per assessment attempt; verify current pricing with the provider."
+exam_duration = 60
+exam_passing_score = "85%"
+exam_questions_real = "80 questions"
+exam_provider = "Advanced Development Methods, Inc., doing business as Scrum.org"
+exam_validity = "Lifetime; no renewal required."
+exam_prerequisites = "No Scrum.org course or prior certification is required. Check the provider's current registration and eligibility details."
+exam_question_types = ["Multiple choice", "Multiple answer", "True/False"]
+guided_url = "/guided/psm-i/"
+practice_url = "/guided/psm-i/practice/"

@@ -60,6 +60,12 @@
       The views and opinions expressed on this site are my own and do not represent the official positions of Microsoft. Always refer to <a href="https://learn.microsoft.com" target="_blank" rel="noopener noreferrer">official Microsoft documentation</a> for the latest information.
     </p>
 
+    {{ if eq .Params.vendor "scrumorg" }}
+    <p class="cosmos-footer__disclaimer">
+      Scrum.org and Professional Scrum Master are trademarks of Advanced Development Methods, Inc. This independent study resource is not affiliated with, endorsed by, or sponsored by the provider.
+    </p>
+    {{ end }}
+
     <p class="cosmos-footer__legal">
       This site uses analytics (Google Analytics &amp; Cloudflare Web Analytics) to improve content. <a href="https://www.aguidetocloud.com/privacy-policy/">Privacy Policy</a>
     </p>
