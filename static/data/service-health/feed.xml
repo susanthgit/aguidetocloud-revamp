@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:55:03 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 05:38:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Defender XDR] Users that have premium license for Microsoft Defender for Servers (DFS) P2 may not see baseline data</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1530894</link>
-      <description>[Microsoft Defender XDR] Users that have premium license for DFS P2 may not see baseline data in the Microsoft Defender portal.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1530894</guid>
-      <pubDate>Thu, 29 Oct 2026 21:31:24 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Microsoft 365 Copilot Chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1530567</link>
@@ -312,6 +303,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1508905</guid>
       <pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Users that have premium license for Microsoft Defender for Servers (DFS) P2 may not see baseline data</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1530894</link>
+      <description>[Microsoft Defender XDR] Users that have premium license for DFS P2 may not have seen baseline data in the Microsoft Defender portal.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1530894</guid>
+      <pubDate>Wed, 14 Oct 2026 14:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users were unable to see model selection options in Microsoft 365 Copilot chat</title>

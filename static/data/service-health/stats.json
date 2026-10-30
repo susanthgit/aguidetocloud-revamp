@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T23:55:02.796145+00:00",
+  "generated_at": "2026-10-30T05:38:47.043606+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -55,18 +55,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2986,
-      "last_incident": "2026-10-29T21:31:24.833000+00:00",
-      "classifications": {
-        "advisory": 7
-      }
-    },
-    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -74,6 +62,18 @@
       "active_incidents": 0,
       "avg_duration_minutes": 4493,
       "last_incident": "2026-10-27T17:20:00+00:00",
+      "classifications": {
+        "advisory": 7
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 7,
+      "active_incidents": 0,
+      "avg_duration_minutes": 5746,
+      "last_incident": "2026-10-26T16:54:00+00:00",
       "classifications": {
         "advisory": 7
       }
