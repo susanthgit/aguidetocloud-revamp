@@ -15560,3 +15560,45 @@ exam_provider = "Pearson VUE"
 exam_validity = "Annual renewal through a free Microsoft Learn assessment"
 guided_url = "/guided/ab-330/"
 practice_url = "/guided/ab-330/practice/"
+
+[[cert]]
+slug = "gh-700"
+vendor = "github"
+code = "GH-700"
+name = "GitHub Agentic AI Business Professional (beta)"
+tagline = "Use GitHub and Copilot to organize business work, build repeatable workflows, and keep people in control."
+exam_category = "GitHub"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 760
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/agentic-ai-business-professional/"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+guided_url = "/guided/gh-700/"
+
+[cert_map."gh-700"]
+vendor = "github"
+code = "GH-700"
+name = "GitHub Agentic AI Business Professional (beta)"
+tagline = "Use GitHub and Copilot to organize business work, build repeatable workflows, and keep people in control."
+exam_category = "GitHub"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 760
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/agentic-ai-business-professional/"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+exam_provider = "Pearson VUE"
+exam_prerequisites = "Experience using generative AI and managing business projects or processes; GitHub familiarity is helpful."
+guided_url = "/guided/gh-700/"
+practice_url = "/guided/gh-700/practice/"
