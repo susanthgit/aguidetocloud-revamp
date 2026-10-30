@@ -148,6 +148,7 @@ function getExamCategory(cert) {
   'servicenow': 'ServiceNow',
     'pmi': 'PMI',
     'anthropic': 'Anthropic',
+    'linuxfoundation': 'Linux Foundation',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }
