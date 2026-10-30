@@ -15518,3 +15518,45 @@ exam_validity = "Annual renewal through Microsoft Learn"
 exam_prerequisites = "Pass AZ-401 plus either GH-300 or AZ-104, per Microsoft's launch announcement."
 guided_url = "/guided/az-401/"
 practice_url = "/guided/az-401/practice/"
+
+[[cert]]
+slug = "ab-330"
+vendor = "microsoft"
+code = "AB-330"
+name = "Supply Chain Management AI Consultant Associate (beta)"
+tagline = "Practise Dynamics 365 supply chain configuration across six business processes."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "beta"
+modules = 0
+questions = 250
+domains = 6
+order = 1052
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/supply-chain-management-ai-consultant-associate/"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+guided_url = "/guided/ab-330/"
+
+[cert_map."ab-330"]
+vendor = "microsoft"
+code = "AB-330"
+name = "Supply Chain Management AI Consultant Associate (beta)"
+tagline = "Practise Dynamics 365 supply chain configuration across six business processes."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "beta"
+modules = 0
+questions = 250
+domains = 6
+order = 1052
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/supply-chain-management-ai-consultant-associate/"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+exam_provider = "Pearson VUE"
+exam_validity = "Annual renewal through a free Microsoft Learn assessment"
+guided_url = "/guided/ab-330/"
+practice_url = "/guided/ab-330/practice/"
