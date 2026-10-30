@@ -5,7 +5,7 @@ type: "cert-tracker"
 layout: "single"
 exam_code: "CCAAK"
 exam_title: "Confluent Certified Administrator for Apache Kafka"
-exam_level: "professional"
+exam_level: "intermediate"
 exam_status: "active"
 exam_category: "Confluent"
 vendor: "confluent"
@@ -19,7 +19,7 @@ CCAAK validates the skills needed to configure, deploy, monitor and support Apac
 
 This is not the Confluent Cloud operator track. A self-managed administrator controls broker configuration and deployment; a cloud operator works with the managed service's resources and controls. Shared Kafka concepts matter in both, but the tasks differ.
 
-**Before you buy:** this bank contains 250 original single-answer multiple-choice learning questions. Confluent's exam also includes matching and list-order questions; those interactions are not simulated here. This is independent preparation, not recalled exam content, an official Confluent product or a guarantee of passing.
+**Before you buy:** this bank contains 250 original single-answer multiple-choice learning questions. Confluent's exam also includes multiple-response, matching and list-order questions; those interactions are not simulated here. This is independent preparation, not recalled exam content, an official Confluent product or a guarantee of passing.
 
 ## Who Should Take This Exam?
 
@@ -31,11 +31,11 @@ Kafka administrators, platform engineers and SREs who are responsible for cluste
 |--------|-------|
 | Exam | Confluent Certified Administrator for Apache Kafka (CCAAK) |
 | Duration | 90 minutes |
-| Question types | Multiple choice, matching and list-order |
+| Question types | Multiple choice, multiple response, matching and list-order |
 | Delivery | Online proctored through Confluent |
 | Validity | Two years |
-| Question count and numeric pass score | Confirm the current exam guide and registration information |
-| Exam price | Confirm the current price at Confluent registration |
+| Question count and numeric pass score | Not publicly specified by Confluent |
+| Exam price | US$150; confirm the current price at Confluent registration |
 
 Use [Confluent's certification catalogue](https://www.confluent.io/certification/) and the [CCAAK registration page](https://training.confluent.io/learn/courses/1032/confluent-certified-administrator-for-apache-kafka-r) for current exam information.
 
