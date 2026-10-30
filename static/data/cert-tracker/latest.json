@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-10-30T05:04:35Z",
-  "exam_count": 61,
+  "generated_at": "2026-10-30T05:18:14Z",
+  "exam_count": 62,
   "categories": [
     "AI",
     "Azure",
     "Data",
     "Dynamics 365",
+    "GitHub",
     "Microsoft 365",
     "Power Platform",
     "Security"
@@ -2136,6 +2137,48 @@
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/supply-chain-management-ai-consultant-associate/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-330"
+    },
+    {
+      "code": "GH-700",
+      "title": "GitHub Certified: Agentic AI Business Professional",
+      "level": "intermediate",
+      "roles": [
+        "business-user"
+      ],
+      "products": [
+        "github"
+      ],
+      "category": "GitHub",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-10-13 21:27:00+00:00",
+      "skills_date": null,
+      "skill_areas": 4,
+      "total_objectives": 60,
+      "skills_at_a_glance": [
+        {
+          "area": "Use GitHub platform features",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Enhance productivity by using GitHub Copilot",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Design and implement agentic workflows and automations",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Perform human-in-the-loop tasks for agentic workflows",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/agentic-ai-business-professional/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-700"
     },
     {
       "code": "SC-500",
