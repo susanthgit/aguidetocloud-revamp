@@ -15646,3 +15646,55 @@ exam_prerequisites = "No formal prerequisites; JSON-RPC, LLM APIs and basic secu
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/cncf-mcpa/"
 practice_url = "/guided/cncf-mcpa/practice/"
+[[cert]]
+slug = "lfca"
+vendor = "linuxfoundation"
+code = "LFCA"
+name = "Guided Study Practice for LFCA"
+tagline = "Learn Linux and the IT fundamentals behind the LFCA certification"
+exam_category = "Linux Foundation"
+level = "beginner"
+status = "planned"
+modules = 0
+questions = 250
+domains = 6
+order = 420
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/certified-it-associate/"
+exam_cost = "See the official LFCA page for current pricing"
+exam_duration = 90
+exam_passing_score = "75%"
+guided_url = "/guided/lfca/"
+
+
+# ═══════════════════════════════════════════════════
+# Keyed map — use (index site.Data.all_certs.cert_map "slug")
+# for single-page lookups (replaces guided_certs.toml)
+# ═══════════════════════════════════════════════════
+
+[cert_map."lfca"]
+vendor = "linuxfoundation"
+code = "LFCA"
+name = "Guided Study Practice for LFCA"
+tagline = "Learn Linux and the IT fundamentals behind the LFCA certification"
+exam_category = "Linux Foundation"
+level = "beginner"
+status = "planned"
+modules = 0
+questions = 250
+domains = 6
+order = 420
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/certified-it-associate/"
+exam_cost = "See the official LFCA page for current pricing"
+exam_duration = 90
+exam_passing_score = "75%"
+exam_questions_real = "60"
+exam_provider = "The Linux Foundation / PSI"
+exam_validity = "2 years"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/lfca/"
+practice_url = "/guided/lfca/practice/"
