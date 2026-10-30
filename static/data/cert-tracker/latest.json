@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T03:10:08Z",
-  "exam_count": 60,
+  "generated_at": "2026-10-30T05:04:35Z",
+  "exam_count": 61,
   "categories": [
     "AI",
     "Azure",
@@ -2086,6 +2086,56 @@
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-210/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-210"
+    },
+    {
+      "code": "AB-330",
+      "title": "Implementing AI-Powered Supply Chain Operations with Dynamics 365 Supply Chain Management",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-10-15 20:38:00+00:00",
+      "skills_date": null,
+      "skill_areas": 6,
+      "total_objectives": 99,
+      "skills_at_a_glance": [
+        {
+          "area": "Implement the design to retire process",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Implement the forecast to plan process",
+          "weight": "1-5%"
+        },
+        {
+          "area": "Implement the inventory to deliver process",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement the order to cash process",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement the plan to produce process",
+          "weight": "1-5%"
+        },
+        {
+          "area": "Implement the source to pay process",
+          "weight": "30-35%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/supply-chain-management-ai-consultant-associate/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-330"
     },
     {
       "code": "SC-500",
