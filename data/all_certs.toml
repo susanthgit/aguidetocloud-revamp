@@ -15478,3 +15478,43 @@ exam_prerequisites = "No Scrum.org course or prior certification is required. Ch
 exam_question_types = ["Multiple choice", "Multiple answer", "True/False"]
 guided_url = "/guided/psm-i/"
 practice_url = "/guided/psm-i/practice/"
+
+[[cert]]
+slug = "az-401"
+vendor = "microsoft"
+code = "AZ-401"
+name = "Agentic DevOps Engineer Expert"
+tagline = "Practise AI-assisted DevOps across Azure DevOps and GitHub."
+exam_category = "Azure"
+level = "advanced"
+status = "beta"
+modules = 0
+questions = 250
+domains = 5
+order = 1052
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/agentic-devops-engineer-expert/"
+exam_passing_score = "700 / 1000"
+guided_url = "/guided/az-401/"
+
+[cert_map."az-401"]
+vendor = "microsoft"
+code = "AZ-401"
+name = "Agentic DevOps Engineer Expert"
+tagline = "Practise AI-assisted DevOps across Azure DevOps and GitHub."
+exam_category = "Azure"
+level = "advanced"
+status = "beta"
+modules = 0
+questions = 250
+domains = 5
+order = 1052
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/agentic-devops-engineer-expert/"
+exam_passing_score = "700 / 1000"
+exam_validity = "Annual renewal through Microsoft Learn"
+exam_prerequisites = "Pass AZ-401 plus either GH-300 or AZ-104, per Microsoft's launch announcement."
+guided_url = "/guided/az-401/"
+practice_url = "/guided/az-401/practice/"
