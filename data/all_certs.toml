@@ -15602,3 +15602,43 @@ exam_provider = "Pearson VUE"
 exam_prerequisites = "Experience using generative AI and managing business projects or processes; GitHub familiarity is helpful."
 guided_url = "/guided/gh-700/"
 practice_url = "/guided/gh-700/practice/"
+
+[[cert]]
+slug = "confluent-ccaak"
+vendor = "confluent"
+code = "CCAAK"
+name = "Confluent Certified Administrator for Apache Kafka (CCAAK)"
+tagline = "Configure, secure, monitor and troubleshoot self-managed Kafka clusters."
+exam_category = "Confluent"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 835
+featured = false
+price_practice = 9
+exam_url = "https://training.confluent.io/learn/courses/1032/confluent-certified-administrator-for-apache-kafka-r"
+exam_duration = 90
+guided_url = "/guided/confluent-ccaak/"
+
+[cert_map."confluent-ccaak"]
+vendor = "confluent"
+code = "CCAAK"
+name = "Confluent Certified Administrator for Apache Kafka (CCAAK)"
+tagline = "Configure, secure, monitor and troubleshoot self-managed Kafka clusters."
+exam_category = "Confluent"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 835
+featured = false
+price_practice = 9
+exam_url = "https://training.confluent.io/learn/courses/1032/confluent-certified-administrator-for-apache-kafka-r"
+exam_duration = 90
+exam_provider = "Confluent (online proctored)"
+exam_validity = "2 years"
+guided_url = "/guided/confluent-ccaak/"
+practice_url = "/guided/confluent-ccaak/practice/"
