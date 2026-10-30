@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-29T01:44:40Z",
-  "exam_count": 59,
+  "generated_at": "2026-10-30T03:10:08Z",
+  "exam_count": 60,
   "categories": [
     "AI",
     "Azure",
@@ -1911,6 +1911,54 @@
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-500/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-500"
+    },
+    {
+      "code": "AZ-401",
+      "title": "Designing and Implementing Microsoft Agentic DevOps Solutions",
+      "level": "advanced",
+      "roles": [
+        "devops-engineer"
+      ],
+      "products": [
+        "azure",
+        "azure-devops",
+        "github"
+      ],
+      "category": "Azure",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-10-13 19:39:00+00:00",
+      "skills_date": null,
+      "skill_areas": 5,
+      "total_objectives": 76,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and implement processes and communications",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Design and implement a source control strategy",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Design and implement build and release pipelines",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Design and implement a security and compliance plan",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement an instrumentation strategy",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-401/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-401"
     },
     {
       "code": "DP-750",
