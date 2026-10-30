@@ -283,3 +283,14 @@ official_url = "https://www.scrum.org/"
 cert_path_note = "This collection currently covers the Professional Scrum Master I assessment only. Check the provider's official site for current credentials and requirements."
 trademark_notice = "Scrum.org and Professional Scrum Master are trademarks of Advanced Development Methods, Inc. This independent study resource is not affiliated with, endorsed by, or sponsored by the provider."
 order = 28
+
+[[vendor]]
+slug = "linuxfoundation"
+name = "The Linux Foundation®"
+short_name = "Linux Foundation"
+accent = "#6366F1"
+logo_emoji = "$"
+official_url = "https://training.linuxfoundation.org/certification-catalog/"
+cert_path_note = "This independent collection currently covers LFCA, an entry-level multiple-choice certification. Performance-based credentials are separate."
+trademark_notice = "The Linux Foundation® is a registered trademark of The Linux Foundation. Linux® is a registered trademark of Linus Torvalds. This independent study resource is not affiliated with, endorsed by, or sponsored by either owner. Any terminal illustration shown is an original generic icon, not a provider logo."
+order = 29

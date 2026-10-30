@@ -17,11 +17,11 @@ lastmod: "2026-10-31"
 
 ## About this study guide
 
-The **Linux Foundation® Certified IT Associate (LFCA)** certification is for people starting an IT career. It checks foundational knowledge across Linux, system administration, cloud computing, security, DevOps and IT project management.
+The **Linux Foundation Certified IT Associate (LFCA)** certification, offered by **The Linux Foundation®**, is for people starting an IT career. It checks foundational knowledge across Linux, system administration, cloud computing, security, DevOps and IT project management.
 
 This is an independent Guided study resource. The questions and explanations are original, not official assessment items or a full exam simulation. The issuer publishes broad competencies rather than a detailed objective list; our technical examples interpret those competencies for study and do not claim complete exam coverage.
 
-The Linux Foundation is a registered trademark of The Linux Foundation. Linux is a registered trademark of Linus Torvalds. This resource is not affiliated with, endorsed by, or sponsored by either trademark owner. No official certification badge or provider logo is used.
+The Linux Foundation® is a registered trademark of The Linux Foundation. Linux® is a registered trademark of Linus Torvalds. This resource is not affiliated with, endorsed by, or sponsored by either trademark owner. No official certification badge or provider logo is used.
 
 ## Exam facts
 
