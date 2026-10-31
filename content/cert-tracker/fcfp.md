@@ -11,6 +11,7 @@ exam_category: "Linux Foundation"
 vendor: "linuxfoundation"
 manual: true
 guided_slug: "fcfp"
+supplemental: true
 lastmod: "2026-11-01"
 ---
 
