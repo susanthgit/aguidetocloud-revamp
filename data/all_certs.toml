@@ -15966,3 +15966,45 @@ exam_prerequisites = "No certification prerequisites published. Programme eligib
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/linux-foundation-code/"
 practice_url = "/guided/linux-foundation-code/practice/"
+
+[[cert]]
+slug = "linux-foundation-fsosd"
+vendor = "linuxfoundation"
+code = "FSOSD"
+name = "Guided Financial Services Open Source Study Practice"
+tagline = "Independent original study practice on financial-services open source."
+exam_category = "linuxfoundation"
+level = "entry"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1061
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/finos-open-source-developer-fsosd/"
+exam_duration = 90
+guided_url = "/guided/linux-foundation-fsosd/"
+
+[cert_map."linux-foundation-fsosd"]
+vendor = "linuxfoundation"
+code = "FSOSD"
+name = "Guided Financial Services Open Source Study Practice"
+tagline = "Independent original study practice on financial-services open source."
+exam_category = "linuxfoundation"
+level = "entry"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1061
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/finos-open-source-developer-fsosd/"
+exam_duration = 90
+exam_provider = "Online proctored exam"
+exam_validity = "2 years"
+exam_prerequisites = "No prerequisites stated on the current official page."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/linux-foundation-fsosd/"
+practice_url = "/guided/linux-foundation-fsosd/practice/"
