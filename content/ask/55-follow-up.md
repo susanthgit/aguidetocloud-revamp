@@ -1,16 +1,16 @@
 ---
 title: "#55 / follow-up"
-description: "Hi Alek — you were right to flag this. Thanks for testing the follow-up so carefully. I found two separate gaps. On the AI-103 page, “What to study next”…"
-date: 2026-10-15T17:38:38.000Z
-lastmod: 2026-10-17T09:57:12.000Z
+description: "Hi Alek, Thank you for coming back and checking again. You've helped me improve much more than a few labels, and I genuinely appreciate the care you put…"
+date: 2026-10-30T19:05:05.000Z
+lastmod: 2026-10-31T10:14:57.000Z
 slug: "55-follow-up"
-ask_number: 56
+ask_number: 58
 ask_category: "Bug Report"
 ask_asker: "alek"
-ask_discussion_url: "https://github.com/susanthgit/aguidetocloud-feedback/discussions/56"
-ask_question: "Hey Sush, no problem, I am pleased to help you out. After a quick check, I still can see something wrong. Here a few examples: - Study Guide AI-103: duplicated section \"What to study next\", the first of which is outdated, probably because no more maintained and to be dropped - Study tools Cert Compass Career Paths Role = AI / ML Engineer Microsoft - Study tools Cert Compass Closest Matches AI & ML Fundamentals Microsoft Regarding the Cert Compass, probably the cause is in \"Compare\", where the source cert list very likely is not refreshing :-) you know, I was a tester... ... I am more strict than Selenium !! :-) Cheers alek"
-ask_answer_count: 2
-ask_answer_plain: "Hi Alek — you were right to flag this. Thanks for testing the follow-up so carefully. I found two separate gaps. On the AI-103 page, “What to study next” was coming from both the generated content and the page template. Cert Compass had a separate certification catalog that wasn’t filtering retired certifications. So your hunch about Compare was close: it wasn’t just a list-refresh issue; retirement status wasn’t being applied consistently across career paths, closest matches, and comparisons. I’ve removed the duplicate source and added lifecycle filtering across Compass. The build, lifecycle checks, and browser QA are passing. I haven’t deployed it yet, so I’ll verify the live pages before calling it fixed. And yes—you’re stricter than Selenium. Thanks for catching it :-) Hi Alek — the fix is now live, and I've checked the published pages rather than just the local build this time. The AI-103 guide now has one \"What to Study Next\" section. Retired entries have also been removed across Cert Compass, including the AI / ML Engineer career path, Closest Matches and the Compare list you flagged. Where removing retired exams leaves no Microsoft entries in a path, that column is omitted rather than suggesting exams you can no longer take. I checked the other Compass tabs, comparison presets and saved-cert state too. I also changed the weekly page generator so it no longer recreates the duplicate section, and added regression checks for these cases. The changes had an independent review before deployment. My first fix didn't cover all the places those recommendations were coming from. You were right to come back, and I'm sorry it took a second report to get the scope right. Thank you again for the careful testing — Selenium has competition :-) Sush"
+ask_discussion_url: "https://github.com/susanthgit/aguidetocloud-feedback/discussions/58"
+ask_question: "Hello Susanth, sorry for my late feedback. While I acknowledge the effectiveness of the fix you have recently deployed, I am honestly puzzled by the fact that no MS cert show up anymore in Compare Security nor in Closest Match AI/ML, where I'm sure that AI-900 was there before the fix, and very likely should have been replaced by AI-901 after the fix. IMHO it has to be investigated. Furthermore, my eyes caught one more detail that seems inaccurate: the study time. Example: Study Guides › AI-103 ~5h 44m study time By roughly summing up the time displayed on MS Learn for each path, you should get something like approximately 30 hrs study time. I let you dig deeper in this dilemma Cheers alek"
+ask_answer_count: 1
+ask_answer_plain: "Hi Alek, Thank you for coming back and checking again. You've helped me improve much more than a few labels, and I genuinely appreciate the care you put into this. You were right on both points. My earlier fix removed retired exams without properly updating the current choices across the connected lists. The changes are now live. Microsoft is back in the Security comparison and AI matches, including AI-901 and the current role-based certifications. I've also checked the connected career paths and corrected other stale catalog entries. For AI-103, the roughly 5h44m figure estimates reading my 27 lessons—not completing Microsoft's training. I've made that distinction clear across the guides. Microsoft's four published learning paths currently total 29h36m, with practice and revision additional. I've added checks to the publication process for missing current choices, retired recommendations, stale catalog data, and misleading lesson-time labels. Honestly, I'm losing track of some of these dependencies. Maintaining the site alongside a full-time job is harder than I expected. That's my responsibility, not an excuse, but feedback from people like you helps me find and correct things I'd otherwise miss. I'm working toward a better-maintained site. Until then, reports like yours really help, and I don't want you having to catch the same problems repeatedly. Thank you again for sticking with me. Sush"
 sitemap:
   priority: 0.6
   changefreq: "monthly"
@@ -19,44 +19,40 @@ sitemap:
 
 ## The question
 
-Hey Sush,
-no problem, I am pleased to help you out.
+Hello Susanth,
 
-After a quick check, I still can see something wrong.
-Here a few examples:
+sorry for my late feedback.
 
-- Study Guide AI-103: duplicated section "What to study next", the first of which is outdated, probably because no more maintained and to be dropped
+While I acknowledge the effectiveness of the fix you have recently deployed, I am honestly puzzled by the fact that no MS cert show up anymore in Compare Security nor in Closest Match AI/ML, where I'm sure that AI-900 was there before the fix, and very likely should have been replaced by AI-901 after the fix.
+IMHO it has to be investigated.
 
-- Study tools > Cert Compass > Career Paths > Role = AI / ML Engineer > Microsoft
+Furthermore, my eyes caught one more detail that seems inaccurate: the study time.
+Example:  Study Guides  ›  AI-103  ~5h 44m study time
 
-- Study tools > Cert Compass > Closest Matches > AI & ML Fundamentals > Microsoft
-
-Regarding the Cert Compass, probably the cause is in "Compare", where the source cert list very likely is not refreshing
-
-:-) you know, I was a tester...
-	... I am more strict than Selenium !! :-)
+By roughly summing up the time displayed on MS Learn for each path, you should get something like approximately 30 hrs study time.
+I let you dig deeper in this dilemma
 
 Cheers
 alek
 
 ## The answer
 
-Hi Alek — you were right to flag this. Thanks for testing the follow-up so carefully.
+Hi Alek,
 
-I found two separate gaps. On the AI-103 page, “What to study next” was coming from both the generated content and the page template. Cert Compass had a separate certification catalog that wasn’t filtering retired certifications. So your hunch about Compare was close: it wasn’t just a list-refresh issue; retirement status wasn’t being applied consistently across career paths, closest matches, and comparisons.
+Thank you for coming back and checking again. You've helped me improve much more than a few labels, and I genuinely appreciate the care you put into this.
 
-I’ve removed the duplicate source and added lifecycle filtering across Compass. The build, lifecycle checks, and browser QA are passing. I haven’t deployed it yet, so I’ll verify the live pages before calling it fixed.
+You were right on both points. My earlier fix removed retired exams without properly updating the current choices across the connected lists.
 
-And yes—you’re stricter than Selenium. Thanks for catching it :-)
+The changes are now live. Microsoft is back in the Security comparison and AI matches, including AI-901 and the current role-based certifications. I've also checked the connected career paths and corrected other stale catalog entries.
 
-Hi Alek — the fix is now live, and I've checked the published pages rather than just the local build this time.
+For AI-103, the roughly 5h44m figure estimates reading my 27 lessons—not completing Microsoft's training. I've made that distinction clear across the guides. Microsoft's four published learning paths currently total **29h36m**, with practice and revision additional.
 
-The AI-103 guide now has one "What to Study Next" section. Retired entries have also been removed across Cert Compass, including the AI / ML Engineer career path, Closest Matches and the Compare list you flagged. Where removing retired exams leaves no Microsoft entries in a path, that column is omitted rather than suggesting exams you can no longer take.
+I've added checks to the publication process for missing current choices, retired recommendations, stale catalog data, and misleading lesson-time labels.
 
-I checked the other Compass tabs, comparison presets and saved-cert state too. I also changed the weekly page generator so it no longer recreates the duplicate section, and added regression checks for these cases. The changes had an independent review before deployment.
+Honestly, I'm losing track of some of these dependencies. Maintaining the site alongside a full-time job is harder than I expected. That's my responsibility, not an excuse, but feedback from people like you helps me find and correct things I'd otherwise miss.
 
-My first fix didn't cover all the places those recommendations were coming from. You were right to come back, and I'm sorry it took a second report to get the scope right.
+I'm working toward a better-maintained site. Until then, reports like yours really help, and I don't want you having to catch the same problems repeatedly.
 
-Thank you again for the careful testing — Selenium has competition :-)
+Thank you again for sticking with me.
 
 Sush
