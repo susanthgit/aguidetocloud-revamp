@@ -10,7 +10,7 @@ description = "Manage cloud infrastructure day-to-day — compute, storage, netw
 demand = "Very High"
 recommended_order = [
   { provider = "microsoft", certs = ["ms-az-900", "ms-az-104"] },
-  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-sysops-assoc"] },
+  { provider = "aws", certs = ["aws-cloud-practitioner", "aws-cloudops-assoc"] },
   { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-associate-cloud-engineer"] }
 ]
 if_only_one = "ms-az-104"
@@ -39,7 +39,7 @@ icon = "💻"
 description = "Build cloud-native applications — serverless, containers, APIs, and microservices."
 demand = "High"
 recommended_order = [
-  { provider = "microsoft", certs = ["ms-az-900"] },
+  { provider = "microsoft", certs = ["ms-az-900", "ms-ai-200"] },
   { provider = "aws", certs = ["aws-cloud-practitioner", "aws-developer-assoc"] },
   { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-cloud-developer"] }
 ]
@@ -54,13 +54,13 @@ icon = "🛡️"
 description = "Secure cloud workloads — identity, access control, data protection, compliance, and threat response."
 demand = "Very High"
 recommended_order = [
-  { provider = "microsoft", certs = ["ms-sc-900", "ms-sc-200"] },
+  { provider = "microsoft", certs = ["ms-sc-900", "ms-sc-500", "ms-sc-200"] },
   { provider = "aws", certs = ["aws-cloud-practitioner", "aws-security-specialty"] },
   { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-cloud-security", "gcp-prof-secops-engineer"] }
 ]
 if_only_one = ""
 if_only_one_reason = ""
-related_groups = ["security-fundamentals", "cloud-security", "security-operations"]
+related_groups = ["cloud-security", "security-operations"]
 
 [[paths]]
 id = "data-engineer"
@@ -69,13 +69,13 @@ icon = "📊"
 description = "Build data pipelines, manage data lakes, and enable analytics and ML at scale."
 demand = "High"
 recommended_order = [
-  { provider = "microsoft", certs = ["ms-dp-900"] },
+  { provider = "microsoft", certs = ["ms-dp-900", "ms-dp-700"] },
   { provider = "aws", certs = ["aws-cloud-practitioner", "aws-data-engineer-assoc"] },
   { provider = "gcp", certs = ["gcp-cloud-digital-leader", "gcp-prof-data-engineer"] }
 ]
 if_only_one = "gcp-prof-data-engineer"
 if_only_one_reason = "Google PDE is the gold standard for data engineering certs. BigQuery skills are highly transferable."
-related_groups = ["data-fundamentals", "data-engineering", "database"]
+related_groups = ["data-engineering", "database"]
 
 [[paths]]
 id = "devops-engineer"
@@ -96,11 +96,11 @@ related_groups = ["cloud-fundamentals", "cloud-admin", "devops"]
 id = "ai-ml-engineer"
 name = "AI / ML Engineer"
 icon = "🧠"
-description = "Build, train, deploy, and monitor machine learning models in production."
+description = "Build AI apps and agents, or train, deploy, and monitor machine learning models. The app-development and operations branches have different scopes; the order below is a suggested study sequence, not an official prerequisite."
 demand = "Very High"
 recommended_order = [
-  { provider = "microsoft", certs = [] },
-  { provider = "aws", certs = ["aws-ai-practitioner", "aws-ml-engineer-assoc", "aws-ml-specialty"] },
+  { provider = "microsoft", certs = ["ms-ai-901", "ms-ai-103", "ms-ai-300"] },
+  { provider = "aws", certs = ["aws-ai-practitioner", "aws-ml-engineer-assoc"] },
   { provider = "gcp", certs = ["gcp-genai-leader", "gcp-prof-ml-engineer"] }
 ]
 if_only_one = "gcp-prof-ml-engineer"

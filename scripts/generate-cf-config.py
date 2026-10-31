@@ -5,10 +5,12 @@ Part of the Cloudflare migration (Project Independence).
 
 Usage: python scripts/generate-cf-config.py
 Output: public/_redirects, public/_headers (run AFTER hugo --minify)
+Certification source/build consistency checks must pass before publishing.
 """
 
 import json
 import os
+import subprocess
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -98,6 +100,9 @@ def generate_headers(config):
 
 
 def main():
+    for gate in ("check-cert-lifecycle.mjs", "check-cert-lifecycle.selftest.mjs"):
+        subprocess.run(["node", os.path.join(SCRIPT_DIR, gate)], cwd=ROOT_DIR, check=True)
+
     config = load_swa_config()
 
     # Ensure public/ exists (should be created by hugo --minify first)

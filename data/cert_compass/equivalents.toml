@@ -22,9 +22,9 @@ description = "Entry-level AI/ML literacy. Proves you understand AI concepts, re
 icon = "🤖"
 role_match = "strong"
 level_match = "moderate"
-cert_ids = ["aws-ai-practitioner", "gcp-genai-leader"]
-comparison_notes = "AWS covers AI and ML practitioner skills. Google focuses on generative AI and business strategy. Their scopes differ, so choose based on the work you expect to do."
-recommendation = "Compare the AWS and Google exam scopes against your role and preferred platform."
+cert_ids = ["ms-ai-901", "aws-ai-practitioner", "gcp-genai-leader"]
+comparison_notes = "AI-901 includes Python and lightweight applications in Microsoft Foundry. AWS covers AI and ML practitioner skills. Google focuses on generative AI and business strategy. These are related starting points, not interchangeable exams."
+recommendation = "Compare each official skills outline with your role and preferred platform."
 
 [[groups]]
 id = "cloud-admin"
@@ -33,8 +33,8 @@ description = "Day-to-day cloud operations — managing resources, identities, s
 icon = "⚙️"
 role_match = "strong"
 level_match = "strong"
-cert_ids = ["ms-az-104", "aws-sysops-assoc", "gcp-associate-cloud-engineer"]
-comparison_notes = "Very close equivalents. All target the 'hands-on admin' role. Microsoft is cheapest ($165 vs $200 GCP). AWS has 3-year validity vs Microsoft's annual free renewal. Google's ACE is the most popular GCP cert."
+cert_ids = ["ms-az-104", "aws-cloudops-assoc", "gcp-associate-cloud-engineer"]
+comparison_notes = "All target hands-on cloud operations, with provider-specific scopes. AWS SOA-C03 is CloudOps Engineer, not the retired SysOps exam. AWS and Google credentials have three-year validity; Microsoft's role-based credentials use annual free renewal. Confirm fees on each official page."
 recommendation = "Get the cert for the cloud you administer daily. Multi-cloud? Start with your primary, then branch out."
 
 [[groups]]
@@ -44,7 +44,7 @@ description = "Designing cloud solutions — high availability, scalability, sec
 icon = "🏗️"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["ms-az-305", "aws-solutions-architect-assoc", "gcp-prof-cloud-architect"]
+cert_ids = ["ms-az-305", "aws-solutions-architect-assoc", "aws-solutions-architect-pro", "gcp-prof-cloud-architect"]
 comparison_notes = "Role match is strong but levels differ. Microsoft AZ-305 is Expert-track (requires AZ-104 prerequisite). AWS SAA is Associate-level. Google PCA is Professional. AWS SAA is the most popular cloud cert globally."
 recommendation = "For architects: AWS SAA is the fastest win. AZ-305 is the deepest. GCP PCA is the hardest."
 
@@ -55,8 +55,8 @@ description = "Building, deploying, and debugging cloud-native applications and 
 icon = "💻"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["aws-developer-assoc", "gcp-prof-cloud-developer"]
-comparison_notes = "Both certifications focus on building and operating cloud-native applications. Google Cloud's certification is Professional-level; AWS's is Associate-level."
+cert_ids = ["ms-ai-200", "aws-developer-assoc", "gcp-prof-cloud-developer"]
+comparison_notes = "AI-200 focuses on AI-enabled back-end services on Azure. AWS and Google cover cloud application development more broadly. These are related developer roles with different scopes and levels, not exact exam equivalents."
 recommendation = "Compare the exam scopes with your target platform and current experience."
 
 [[groups]]
@@ -77,8 +77,8 @@ description = "Designing and implementing security controls, identity management
 icon = "🛡️"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["aws-security-specialty", "gcp-prof-cloud-security"]
-comparison_notes = "Both certifications cover cloud security, but their levels and provider-specific scopes differ. Review each official exam outline before choosing."
+cert_ids = ["ms-sc-500", "aws-security-specialty", "gcp-prof-cloud-security"]
+comparison_notes = "SC-500 covers Azure and hybrid security, including AI workloads. AWS and Google cover security in their own clouds. Levels and provider-specific scopes differ; review each official exam outline before choosing."
 recommendation = "Choose the certification that matches the cloud platform and security responsibilities in your role."
 
 [[groups]]
@@ -99,8 +99,8 @@ description = "Designing data pipelines, managing data stores, and building anal
 icon = "📊"
 role_match = "strong"
 level_match = "moderate"
-cert_ids = ["aws-data-engineer-assoc", "gcp-prof-data-engineer"]
-comparison_notes = "Both certifications focus on building and operating data solutions in their respective cloud platforms. Google Cloud's certification is Professional-level; AWS's is Associate-level."
+cert_ids = ["ms-dp-700", "aws-data-engineer-assoc", "gcp-prof-data-engineer"]
+comparison_notes = "DP-700 covers data engineering in Microsoft Fabric, not all Azure data services. AWS and Google cover data solutions in their clouds. This is a role comparison, not an official equivalence or an automatic replacement for DP-203."
 recommendation = "Compare the exam scopes with your target platform and data-engineering responsibilities."
 
 [[groups]]
@@ -110,19 +110,19 @@ description = "Managing, optimising, and troubleshooting cloud database solution
 icon = "🗄️"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["ms-dp-300", "aws-database-specialty", "gcp-prof-database-engineer"]
-comparison_notes = "Microsoft DP-300 is Associate-level, SQL-focused. AWS DBS is Specialty ($300, covers all AWS DB services). Google PDBE is Professional. AWS covers the broadest range of database types."
-recommendation = "DP-300 if you're a SQL admin. AWS DBS for polyglot database skills."
+cert_ids = ["ms-dp-300", "gcp-prof-database-engineer"]
+comparison_notes = "Microsoft DP-300 is Associate-level and SQL-focused. Google PDBE is Professional-level. AWS Database Specialty retired in April 2024 and is not a current choice."
+recommendation = "Compare the Microsoft and Google outlines with the database platforms you administer."
 
 [[groups]]
 id = "ai-engineering"
 name = "AI / ML Engineer"
-description = "Building, training, deploying, and monitoring AI/ML models in production."
+description = "Building AI applications and operating machine learning or generative AI solutions in production."
 icon = "🧠"
 role_match = "strong"
 level_match = "mixed"
-cert_ids = ["aws-ml-engineer-assoc", "gcp-prof-ml-engineer"]
-comparison_notes = "Both certifications focus on production machine-learning work in their respective cloud platforms. Google Cloud's certification is Professional-level; AWS's is Associate-level."
+cert_ids = ["ms-ai-103", "ms-ai-300", "aws-ml-engineer-assoc", "gcp-prof-ml-engineer"]
+comparison_notes = "AI-103 focuses on AI apps and agents; AI-300 focuses on MLOps and generative AI operations. AWS and Google focus on machine-learning engineering. Choose the branch matching your work: these scopes are not interchangeable."
 recommendation = "Compare the exam scopes with your target platform and machine-learning responsibilities."
 
 [[groups]]

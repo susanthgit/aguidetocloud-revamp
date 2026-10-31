@@ -91,9 +91,11 @@
           <span class="cert-study-hero-num">{{ len $studyModules }}</span> modules
         </div>
         <span class="cert-study-hero-dot">·</span>
-        <div class="cert-study-hero-stat">
-          <span class="cert-study-hero-num">~{{ if gt $totalHours 0 }}{{ $totalHours }}h {{ end }}{{ if gt $remainMins 0 }}{{ $remainMins }}m{{ end }}</span> study time
+        {{ if gt $totalMinutes 0 }}
+        <div class="cert-study-hero-stat" title="Estimated reading time for this site's lessons only. Microsoft Learn paths, exercises, revision, and exam preparation take additional time.">
+          <span class="cert-study-hero-num">~{{ if gt $totalHours 0 }}{{ $totalHours }}h {{ end }}{{ if gt $remainMins 0 }}{{ $remainMins }}m{{ end }}</span> estimated lesson reading
         </div>
+        {{ end }}
         <span class="cert-study-hero-dot">·</span>
         <div class="cert-study-hero-stat" id="cert-study-progress-stat">
           <span class="cert-study-hero-num" id="cert-study-done-count">0</span> completed

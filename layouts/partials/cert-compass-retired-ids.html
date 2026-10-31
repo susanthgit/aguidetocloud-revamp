@@ -19,8 +19,10 @@
     {{- if eq $status "retired" -}}
       {{- $retired = merge $retired (dict .id true) -}}
     {{- end -}}
-  {{- else if eq .status "retired" -}}
-    {{- $retired = merge $retired (dict .id true) -}}
+  {{- else -}}
+    {{- if or (eq .status "retired") (and .retirement_date (lt .retirement_date $today)) -}}
+      {{- $retired = merge $retired (dict .id true) -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 {{- return $retired -}}

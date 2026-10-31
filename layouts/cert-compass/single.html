@@ -19,7 +19,8 @@
 {{- if $cert }}{{ range $providers }}{{ if eq .id $cert.provider }}{{ $provider = . }}{{ end }}{{ end }}{{ end -}}
 
 {{ if $cert }}
-{{ partial "tool-hero.html" (dict "Page" . "title" (printf "%s (%s)" $cert.name $cert.exam_code) "subtitle" (printf "%s · %s · $%d" (cond (eq $cert.provider "microsoft") "Microsoft Azure" (cond (eq $cert.provider "aws") "AWS" "Google Cloud")) $cert.level $cert.fee_usd) "accent" (cond (ne $provider false) $provider.hex "#6366F1")) }}
+{{ $fee := "—" }}{{ if isset $cert "fee_usd" }}{{ $fee = printf "$%d" $cert.fee_usd }}{{ end }}
+{{ partial "tool-hero.html" (dict "Page" . "title" (printf "%s (%s)" $cert.name $cert.exam_code) "subtitle" (printf "%s · %s · %s" (cond (eq $cert.provider "microsoft") "Microsoft" (cond (eq $cert.provider "aws") "AWS" "Google Cloud")) $cert.level $fee) "accent" (cond (ne $provider false) $provider.hex "#6366F1")) }}
 
 <div class="compass-page">
   <div style="max-width:800px;margin:0 auto">
@@ -28,9 +29,10 @@
       <p class="compass-card-desc">{{ $cert.description }}</p>
       <div class="compass-card-meta">
         <span><strong>Exam Code:</strong> {{ $cert.exam_code }}</span>
-        <span><strong>Fee:</strong> ${{ $cert.fee_usd }}</span>
-        <span><strong>Study:</strong> {{ $cert.study_hours_min }}–{{ $cert.study_hours_max }} hours</span>
-        <span><strong>Difficulty:</strong> {{ $cert.difficulty }}/5</span>
+        {{ with $cert.retirement_date }}<span><strong>Last exam day:</strong> {{ . }} — confirm availability on the official page</span>{{ end }}
+        <span><strong>Fee:</strong> {{ $fee }} — confirm current pricing on the official page</span>
+        <span><strong>Estimated prep:</strong> {{ if and (isset $cert "study_hours_min") (isset $cert "study_hours_max") }}{{ $cert.study_hours_min }}–{{ $cert.study_hours_max }} hours{{ else }}—{{ end }}</span>
+        <span><strong>Difficulty:</strong> {{ if isset $cert "difficulty" }}{{ $cert.difficulty }}/5{{ else }}—{{ end }}</span>
         <span><strong>Validity:</strong> {{ with $cert.validity_override }}{{ . }}{{ else }}{{ $cert.validity_years }} year{{ if ne $cert.validity_years 1 }}s{{ end }}{{ end }}</span>
         <span><strong>Focus:</strong> {{ delimit $cert.focus_areas ", " }}</span>
         {{ if $signal }}<span><strong>Demand:</strong> {{ $signal.demand_score }}/100 {{ if eq $signal.trending "up" }}↑{{ end }}</span>{{ end }}
@@ -58,7 +60,7 @@
             <div class="compass-match-cert-provider" style="color:{{ $pHex }}">{{ $pName }}</div>
             <div class="compass-match-cert-name" style="color:var(--text-primary)">{{ .name }}</div>
             <div class="compass-match-cert-code">{{ .exam_code }}</div>
-            <div class="compass-match-cert-stats"><span>${{ .fee_usd }}</span><span>{{ .study_hours_min }}–{{ .study_hours_max }}h</span></div>
+            <div class="compass-match-cert-stats"><span>{{ if isset . "fee_usd" }}${{ .fee_usd }}{{ else }}—{{ end }}</span><span>{{ if and (isset . "study_hours_min") (isset . "study_hours_max") }}{{ .study_hours_min }}–{{ .study_hours_max }}h{{ else }}—{{ end }}</span></div>
           </a>
           {{ end }}
         {{ end }}
@@ -98,8 +100,8 @@
   "@type": "Course",
   "name": {{ printf "%s (%s)" $cert.name $cert.exam_code | jsonify | safeJS }},
   "description": {{ $cert.description | jsonify | safeJS }},
-  "provider": { "@type": "Organization", "name": {{ if $provider }}{{ $provider.name | jsonify | safeJS }}{{ else }}"Cloud Provider"{{ end }} },
-  "offers": { "@type": "Offer", "price": {{ printf "%d" $cert.fee_usd | jsonify | safeJS }}, "priceCurrency": "USD" }
+  "provider": { "@type": "Organization", "name": {{ if $provider }}{{ $provider.name | jsonify | safeJS }}{{ else }}"Cloud Provider"{{ end }} }{{ if isset $cert "fee_usd" }},
+  "offers": { "@type": "Offer", "price": {{ printf "%d" $cert.fee_usd | jsonify | safeJS }}, "priceCurrency": "USD" }{{ end }}
 }
 </script>
 {{ else if index $retired $certId }}

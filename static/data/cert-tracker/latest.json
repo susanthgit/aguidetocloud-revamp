@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T05:18:14Z",
+  "generated_at": "2026-10-31T04:45:04Z",
   "exam_count": 62,
   "categories": [
     "AI",
@@ -1670,8 +1670,8 @@
         "azure"
       ],
       "category": "Azure",
-      "status": "retiring",
-      "retirement_date": "2026-09-30",
+      "status": "retired",
+      "retirement_date": "2026-08-31",
       "replacement": "SC-500",
       "replaces": "",
       "beta_since": "",
@@ -2192,11 +2192,11 @@
         "m365"
       ],
       "category": "Security",
-      "status": "beta",
+      "status": "active",
       "retirement_date": "",
       "replacement": "",
       "replaces": "AZ-500",
-      "beta_since": "2026-05",
+      "beta_since": "",
       "updated_at": "2026-07-31 19:59:00+00:00",
       "skills_date": null,
       "skill_areas": 4,
@@ -2220,7 +2220,7 @@
         }
       ],
       "has_changes": true,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-500/",
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/cloud-and-ai-security-engineer-associate/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-500"
     },
     {

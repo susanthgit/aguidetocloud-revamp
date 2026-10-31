@@ -10,7 +10,7 @@
     "m365"
   ],
   "category": "Security",
-  "status": "beta",
+  "status": "active",
   "updated_at": "2026-07-31 19:59:00+00:00",
   "skills_date": null,
   "skills_at_a_glance": [
@@ -357,13 +357,6 @@
       "category": "Security"
     },
     {
-      "code": "AZ-500",
-      "title": "Microsoft Azure Security Technologies",
-      "level": "intermediate",
-      "status": "retiring",
-      "category": "Azure"
-    },
-    {
       "code": "SC-100",
       "title": "Microsoft Cybersecurity Architect",
       "level": "advanced",
@@ -371,7 +364,7 @@
       "category": "Security"
     }
   ],
-  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-500/",
+  "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/cloud-and-ai-security-engineer-associate/",
   "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-500",
-  "practice_assessment_url": ""
+  "practice_assessment_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-500/practice/assessment?assessment-type=practice"
 }

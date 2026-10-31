@@ -24,6 +24,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runInNewContext } from 'node:vm';
+import TOML from '@iarna/toml';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PAGES_DIR = join(ROOT, 'content', 'cert-tracker');
@@ -240,11 +241,38 @@ if (existsSync(TRACKER_TEMPLATE)) {
 }
 
 if (existsSync(COMPASS_FILE) && latestData) {
-  const raw = readFileSync(COMPASS_FILE, 'utf8');
-  const compassCerts = raw.split(/^\[\[certs\]\]\s*$/m).slice(1).map(block => {
-    const value = name => block.match(new RegExp(`^${name}\\s*=\\s*"([^"]*)"`, 'm'))?.[1] || '';
-    return { id: value('id'), provider: value('provider'), exam_code: value('exam_code'), status: value('status') };
-  });
+  const compassDir = dirname(COMPASS_FILE);
+  const compassCerts = TOML.parse(readFileSync(COMPASS_FILE, 'utf8')).certs;
+  const groups = TOML.parse(readFileSync(join(compassDir, 'equivalents.toml'), 'utf8')).groups;
+  const paths = TOML.parse(readFileSync(join(compassDir, 'career_paths.toml'), 'utf8')).paths;
+  const topics = TOML.parse(readFileSync(join(compassDir, 'topics.toml'), 'utf8'));
+  const certIDs = new Set(compassCerts.map(cert => cert.id));
+  const groupMap = new Map(groups.map(group => [group.id, group]));
+  if (certIDs.size !== compassCerts.length) failures.push('duplicate Compass certification IDs');
+  const requireCert = (id, context) => {
+    if (!certIDs.has(id)) failures.push(`${context}: unknown certification ${id}`);
+  };
+  for (const group of groups) {
+    for (const id of group.cert_ids) requireCert(id, `group ${group.id}`);
+  }
+  for (const path of paths) {
+    for (const order of path.recommended_order) {
+      for (const id of order.certs) requireCert(id, `path ${path.id}`);
+    }
+    if (path.if_only_one) requireCert(path.if_only_one, `path ${path.id} single recommendation`);
+    for (const id of path.related_groups) {
+      if (!groupMap.has(id)) failures.push(`path ${path.id}: unknown group ${id}`);
+    }
+  }
+  const topicIDs = new Set(topics.topics.map(topic => topic.id));
+  for (const mapping of topics.cert_topics) {
+    requireCert(mapping.cert_id, 'topic mapping');
+    for (const id of mapping.topics) {
+      if (!topicIDs.has(id)) failures.push(`${mapping.cert_id}: unknown topic ${id}`);
+    }
+  }
+  const signals = TOML.parse(readFileSync(join(compassDir, 'market_signals.toml'), 'utf8')).signals;
+  for (const signal of signals) requireCert(signal.cert_id, 'market signal');
   const today = new Date().toISOString().slice(0, 10);
   const lifecycle = new Map((latestData.exams || []).map(exam => {
     const expired = exam.status === 'retiring' && exam.retirement_date && exam.retirement_date < today;
@@ -253,9 +281,45 @@ if (existsSync(COMPASS_FILE) && latestData) {
   const retired = compassCerts.filter(cert => {
     const status = cert.provider === 'microsoft'
       ? (lifecycle.get(cert.exam_code.toUpperCase()) || cert.status)
-      : cert.status;
+      : cert.retirement_date && cert.retirement_date < today ? 'retired' : cert.status;
     return status === 'retired';
   });
+  const retiredIDs = new Set(retired.map(cert => cert.id));
+  const currentIDs = ids => ids.filter(id => !retiredIDs.has(id));
+  const expectedPayloads = {
+    Providers: TOML.parse(readFileSync(join(compassDir, 'providers.toml'), 'utf8')).providers,
+    Certs: compassCerts.filter(cert => !retiredIDs.has(cert.id)),
+    Groups: groups.map(group => ({ ...group, cert_ids: currentIDs(group.cert_ids) })),
+    Paths: paths.map(path => ({
+      ...path,
+      recommended_order: path.recommended_order
+        .map(order => ({ ...order, certs: currentIDs(order.certs) }))
+        .filter(order => order.certs.length),
+      if_only_one: retiredIDs.has(path.if_only_one) ? '' : path.if_only_one,
+      if_only_one_reason: retiredIDs.has(path.if_only_one) ? '' : path.if_only_one_reason,
+    })),
+    Signals: signals.filter(signal => !retiredIDs.has(signal.cert_id)),
+    Quiz: TOML.parse(readFileSync(join(compassDir, 'quiz.toml'), 'utf8')).questions,
+    TopicDefs: topics.topics,
+    CertTopics: topics.cert_topics.filter(mapping => !retiredIDs.has(mapping.cert_id)),
+  };
+  const canonical = value => {
+    if (Array.isArray(value)) return value.map(canonical);
+    if (value && typeof value === 'object') {
+      return Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])]));
+    }
+    return value;
+  };
+  for (const cert of compassCerts.filter(cert => !retiredIDs.has(cert.id))) {
+    if (cert.match_group && !groupMap.get(cert.match_group)?.cert_ids.includes(cert.id)) {
+      failures.push(`${cert.id}: declared match group does not include this current certification`);
+    }
+    if (!topics.cert_topics.some(mapping => mapping.cert_id === cert.id)) {
+      failures.push(`${cert.id}: missing topic mapping`);
+    }
+    const detail = join(ROOT, 'content', 'cert-compass', cert.id, 'index.md');
+    if (!existsSync(detail)) failures.push(`${cert.id}: missing Compass detail route`);
+  }
 
   if (!existsSync(COMPASS_INDEX)) {
     failures.push(`missing built Cert Compass index: ${COMPASS_INDEX}`);
@@ -269,7 +333,7 @@ if (existsSync(COMPASS_FILE) && latestData) {
       failures.push(`could not read built Cert Compass data script: ${error.message}`);
       data = Object.create(null);
     }
-    for (const name of ['Certs', 'Groups', 'Paths', 'Signals', 'Quiz', 'TopicDefs', 'CertTopics']) {
+    for (const name of Object.keys(expectedPayloads)) {
       const payload = data[`__compass${name}`];
       if (!payload || typeof payload !== 'object') {
         failures.push(`built Cert Compass page is missing its ${name} data payload`);
@@ -277,9 +341,22 @@ if (existsSync(COMPASS_FILE) && latestData) {
       }
       try {
         payloads.set(name, payload);
-        const serialized = JSON.stringify(payload);
+        if (JSON.stringify(canonical(payload)) !== JSON.stringify(canonical(expectedPayloads[name]))) {
+          failures.push(`built Cert Compass ${name} differs from its lifecycle-filtered source; rebuild before pushing`);
+        }
+        const references = new Set();
+        const collect = value => {
+          if (typeof value === 'string') references.add(value);
+          else if (value && typeof value === 'object') {
+            for (const [key, child] of Object.entries(value)) {
+              references.add(key);
+              collect(child);
+            }
+          }
+        };
+        collect(payload);
         for (const cert of retired) {
-          if (serialized.includes(cert.id) || serialized.includes(cert.exam_code)) {
+          if (references.has(cert.id) || references.has(cert.exam_code)) {
             failures.push(`${cert.exam_code} (${cert.id}) remains in the built Cert Compass ${name} data`);
           }
         }
@@ -290,6 +367,58 @@ if (existsSync(COMPASS_FILE) && latestData) {
     const certPayload = payloads.get('Certs');
     if (certPayload && (!Array.isArray(certPayload) || !certPayload.some(cert => cert.id === 'ms-az-900'))) {
       failures.push('active AZ-900 is missing from the built Cert Compass catalog');
+    }
+    if (Array.isArray(certPayload)) {
+      const builtIDs = new Set(certPayload.map(cert => cert.id));
+      // Curated role coverage, not an automatic successor/equivalence rule.
+      const coverage = {
+        'ai-fundamentals': ['ms-ai-901'],
+        'ai-engineering': ['ms-ai-103', 'ms-ai-300'],
+        'cloud-security': ['ms-sc-500'],
+        developer: ['ms-ai-200'],
+        'data-engineering': ['ms-dp-700'],
+        'cloud-admin': ['aws-cloudops-assoc'],
+      };
+      const builtGroups = payloads.get('Groups') || [];
+      for (const [groupID, ids] of Object.entries(coverage)) {
+        const group = builtGroups.find(group => group.id === groupID);
+        for (const id of ids) {
+          if (!builtIDs.has(id) || !group?.cert_ids.includes(id)) {
+            failures.push(`${groupID}: missing current curated choice ${id} from catalog or matches`);
+          }
+        }
+      }
+      const builtPaths = payloads.get('Paths') || [];
+      for (const [pathID, ids] of Object.entries({
+        'ai-ml-engineer': ['ms-ai-901', 'ms-ai-103', 'ms-ai-300'],
+        'security-engineer': ['ms-sc-500'],
+        developer: ['ms-ai-200'],
+        'data-engineer': ['ms-dp-700'],
+        'cloud-admin': ['aws-cloudops-assoc'],
+      })) {
+        const path = builtPaths.find(path => path.id === pathID);
+        const pathIDs = new Set((path?.recommended_order || []).flatMap(order => order.certs));
+        for (const id of ids) {
+          if (!pathIDs.has(id)) failures.push(`${pathID}: missing current curated career choice ${id}`);
+        }
+      }
+      for (const cert of certPayload) {
+        const page = join(ROOT, 'public', 'cert-compass', cert.id, 'index.html');
+        if (!existsSync(page)) {
+          failures.push(`${cert.id}: current detail route was not built`);
+        }
+      }
+    }
+  }
+
+  const studyModules = TOML.parse(readFileSync(join(ROOT, 'data', 'study_modules.toml'), 'utf8'));
+  for (const [slug, modules] of Object.entries(studyModules)) {
+    if (!Array.isArray(modules) || !modules.length) continue;
+    const page = join(ROOT, 'public', 'cert-tracker', slug, 'index.html');
+    if (!existsSync(page)) continue;
+    const html = readFileSync(page, 'utf8');
+    if (!html.includes('estimated lesson reading') || /<\/span>\s*study time/.test(html)) {
+      failures.push(`${slug}: lesson-reading duration is missing or mislabelled as total study time`);
     }
   }
 

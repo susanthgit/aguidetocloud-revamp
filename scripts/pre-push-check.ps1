@@ -423,7 +423,7 @@ if (-not $certChanged) {
 Write-Host "`n[12/13] Cert lifecycle and recommendation truthfulness..." -NoNewline
 $lifecycleChanged = $changedFiles | Where-Object {
     $_ -match '^(content/cert-tracker/|content/cert-compass/|static/data/cert-tracker/|layouts/cert-tracker/|layouts/cert-compass/|data/cert_compass/)' -or
-    $_ -match '^(data/all_certs\.toml|static/js/cert-tracker\.js|static/js/cert-compass\.js|layouts/_default/baseof\.html|layouts/partials/cert-compass-retired-ids\.html|scripts/check-cert-lifecycle\.mjs)$'
+    $_ -match '^(data/all_certs\.toml|static/js/cert-tracker\.js|static/js/cert-compass\.js|layouts/_default/baseof\.html|layouts/_default/sitemap\.xml|layouts/partials/cert-compass-retired-ids\.html|scripts/check-cert-lifecycle(?:\.selftest)?\.mjs)$'
 }
 if (-not $lifecycleChanged) {
     Write-Host " ⏭ No cert-tracker changes (skip)" -ForegroundColor DarkGray
@@ -437,7 +437,14 @@ if (-not $lifecycleChanged) {
             Write-Host "  An exam that has gone GA must not still be advertised as beta." -ForegroundColor Yellow
             $failed = $true
         } else {
-            Write-Host " ✅ Lifecycle, single-renderer, Compass catalog, retired detail and sitemap checks pass" -ForegroundColor Green
+            $selftestOutput = & node (Join-Path $PSScriptRoot "check-cert-lifecycle.selftest.mjs") 2>&1
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host " ❌ Regression checks failed" -ForegroundColor Red
+                $selftestOutput | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+                $failed = $true
+            } else {
+                Write-Host " ✅ Lifecycle, single-renderer, Compass catalog, retired detail, sitemap and regression checks pass" -ForegroundColor Green
+            }
         }
     } else {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red

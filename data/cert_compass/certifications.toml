@@ -14,7 +14,7 @@
 # focus_areas = normalized cross-cloud taxonomy
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# MICROSOFT AZURE (15 key certs that have cross-cloud relevance)
+# MICROSOFT AZURE (curated cross-cloud role coverage)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 [[certs]]
@@ -39,6 +39,115 @@ tracker_slug = "az-900"
 guided_slug = "az-900"
 status = "active"
 last_verified = "2026-04-17"
+
+[[certs]]
+id = "ms-ai-901"
+name = "Azure AI Fundamentals"
+provider = "microsoft"
+exam_code = "AI-901"
+level = "Fundamentals"
+normalized_level = "foundational"
+focus_areas = ["ai-ml", "cloud-fundamentals"]
+validity_years = 0
+validity_override = "Never expires"
+prerequisites = []
+description = "AI concepts and practical foundations for building lightweight AI applications with Python and Microsoft Foundry."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/"
+match_group = "ai-fundamentals"
+tracker_slug = "ai-901"
+guided_slug = "ai-901"
+status = "active"
+last_verified = "2026-10-31"
+
+[[certs]]
+id = "ms-ai-103"
+name = "Azure AI Apps and Agents Developer Associate"
+provider = "microsoft"
+exam_code = "AI-103"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["ai-ml", "developer"]
+validity_years = 1
+prerequisites = []
+description = "Building and managing AI applications and agents with Python and Microsoft Foundry, including generative AI, vision, language, and information extraction."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/"
+match_group = "ai-engineering"
+tracker_slug = "ai-103"
+guided_slug = "ai-103"
+status = "active"
+last_verified = "2026-10-31"
+
+[[certs]]
+id = "ms-ai-200"
+name = "Azure AI Cloud Developer Associate"
+provider = "microsoft"
+exam_code = "AI-200"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["developer", "ai-ml"]
+validity_years = 1
+prerequisites = []
+description = "Developing AI-enabled back-end services on Azure using containers, data services, SDKs, messaging, monitoring, and security."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/"
+match_group = "developer"
+tracker_slug = "ai-200"
+guided_slug = "ai-200"
+status = "active"
+last_verified = "2026-10-31"
+
+[[certs]]
+id = "ms-ai-300"
+name = "Machine Learning Operations Engineer Associate"
+provider = "microsoft"
+exam_code = "AI-300"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["ai-ml", "devops"]
+validity_years = 1
+prerequisites = []
+description = "Training, deploying, evaluating, monitoring, and optimizing machine learning and generative AI solutions using Azure Machine Learning and Microsoft Foundry."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/operationalizing-machine-learning-and-generative-ai-solutions/"
+match_group = "ai-engineering"
+tracker_slug = "ai-300"
+guided_slug = "ai-300"
+status = "active"
+last_verified = "2026-10-31"
+
+[[certs]]
+id = "ms-sc-500"
+name = "Cloud and AI Security Engineer Associate"
+provider = "microsoft"
+exam_code = "SC-500"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["security"]
+validity_years = 1
+prerequisites = []
+description = "Securing identities, networks, applications, data, compute, and AI workloads across Azure and hybrid environments."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/cloud-and-ai-security-engineer-associate/"
+match_group = "cloud-security"
+tracker_slug = "sc-500"
+guided_slug = "sc-500"
+status = "active"
+last_verified = "2026-10-31"
+
+[[certs]]
+id = "ms-dp-700"
+name = "Fabric Data Engineer Associate"
+provider = "microsoft"
+exam_code = "DP-700"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["data-engineering"]
+validity_years = 1
+prerequisites = []
+description = "Ingesting and transforming data, managing analytics solutions, and monitoring and optimizing data engineering workloads in Microsoft Fabric."
+official_url = "https://learn.microsoft.com/en-us/credentials/certifications/fabric-data-engineer-associate/"
+match_group = "data-engineering"
+tracker_slug = "dp-700"
+guided_slug = "dp-700"
+status = "active"
+last_verified = "2026-10-31"
 
 [[certs]]
 id = "ms-ai-900"
@@ -80,7 +189,7 @@ validity_override = "Never expires"
 prerequisites = []
 description = "Foundational knowledge of core data concepts and Azure data services."
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-fundamentals/"
-match_group = "data-fundamentals"
+match_group = ""
 tracker_slug = "dp-900"
 guided_slug = "dp-900"
 status = "active"
@@ -103,7 +212,7 @@ validity_override = "Never expires"
 prerequisites = []
 description = "Foundational knowledge of security, compliance, and identity concepts across Microsoft services."
 official_url = "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/"
-match_group = "security-fundamentals"
+match_group = ""
 tracker_slug = "sc-900"
 guided_slug = "sc-900"
 status = "active"
@@ -445,6 +554,24 @@ status = "active"
 last_verified = "2026-04-17"
 
 [[certs]]
+id = "aws-cloudops-assoc"
+name = "CloudOps Engineer – Associate"
+provider = "aws"
+exam_code = "SOA-C03"
+level = "Associate"
+normalized_level = "associate"
+focus_areas = ["admin"]
+validity_years = 3
+prerequisites = []
+description = "Deploying, managing, and operating AWS workloads, including monitoring, security, networking, automation, and reliability. The current SOA-C03 credential is distinct from an already-earned SysOps Administrator badge."
+official_url = "https://aws.amazon.com/certification/certified-cloudops-engineer-associate/"
+match_group = "cloud-admin"
+tracker_slug = ""
+guided_slug = ""
+status = "active"
+last_verified = "2026-10-31"
+
+[[certs]]
 id = "aws-sysops-assoc"
 name = "SysOps Administrator – Associate"
 provider = "aws"
@@ -463,8 +590,9 @@ official_url = "https://aws.amazon.com/certification/certified-sysops-admin-asso
 match_group = "cloud-admin"
 tracker_slug = ""
 guided_slug = "aws-soa-c02"
-status = "active"
-last_verified = "2026-04-17"
+status = "retired"
+retirement_date = "2025-09-29"
+last_verified = "2026-10-31"
 
 [[certs]]
 id = "aws-data-engineer-assoc"
@@ -526,7 +654,7 @@ validity_years = 3
 prerequisites = ["aws-solutions-architect-assoc"]
 description = "Advanced architectural design, cost optimisation, migration, and multi-account strategies on AWS."
 official_url = "https://aws.amazon.com/certification/certified-solutions-architect-professional/"
-match_group = "architect-advanced"
+match_group = "architect"
 tracker_slug = ""
 guided_slug = "aws-sap-c02"
 status = "active"
@@ -558,7 +686,7 @@ last_verified = "2026-04-17"
 id = "aws-security-specialty"
 name = "Security – Specialty"
 provider = "aws"
-exam_code = "SCS-C02"
+exam_code = "SCS-C03"
 level = "Specialty"
 normalized_level = "specialty"
 focus_areas = ["security"]
@@ -572,9 +700,9 @@ description = "Specialised knowledge in securing AWS workloads, data protection,
 official_url = "https://aws.amazon.com/certification/certified-security-specialty/"
 match_group = "cloud-security"
 tracker_slug = ""
-guided_slug = "aws-scs-c02"
+guided_slug = ""
 status = "active"
-last_verified = "2026-04-17"
+last_verified = "2026-10-31"
 
 [[certs]]
 id = "aws-networking-specialty"
@@ -595,8 +723,9 @@ official_url = "https://aws.amazon.com/certification/certified-advanced-networki
 match_group = "networking"
 tracker_slug = ""
 guided_slug = "aws-ans-c01"
-status = "active"
-last_verified = "2026-04-17"
+status = "retiring"
+retirement_date = "2026-12-31"
+last_verified = "2026-10-31"
 
 [[certs]]
 id = "aws-database-specialty"
@@ -617,8 +746,9 @@ official_url = "https://aws.amazon.com/certification/certified-database-specialt
 match_group = "database"
 tracker_slug = ""
 guided_slug = "aws-dbs-c01"
-status = "active"
-last_verified = "2026-04-17"
+status = "retired"
+retirement_date = "2024-04-29"
+last_verified = "2026-10-31"
 
 [[certs]]
 id = "aws-ml-specialty"
@@ -639,8 +769,9 @@ official_url = "https://aws.amazon.com/certification/certified-machine-learning-
 match_group = "ai-engineering-advanced"
 tracker_slug = ""
 guided_slug = "aws-mls-c01"
-status = "active"
-last_verified = "2026-04-17"
+status = "retired"
+retirement_date = "2026-03-31"
+last_verified = "2026-10-31"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # GOOGLE CLOUD (12 certifications)
@@ -658,7 +789,7 @@ fee_usd = 99
 study_hours_min = 15
 study_hours_max = 30
 difficulty = 1
-validity_years = 2
+validity_years = 3
 prerequisites = []
 description = "Foundational knowledge of cloud concepts, Google Cloud products, and digital transformation."
 official_url = "https://cloud.google.com/learn/certification/cloud-digital-leader"
@@ -680,7 +811,7 @@ fee_usd = 99
 study_hours_min = 15
 study_hours_max = 30
 difficulty = 1
-validity_years = 2
+validity_years = 3
 prerequisites = []
 description = "Understanding of generative AI concepts, responsible AI, and Google Cloud AI capabilities for business leaders."
 official_url = "https://cloud.google.com/learn/certification/generative-ai-leader"
@@ -698,11 +829,11 @@ exam_code = "ACE"
 level = "Associate"
 normalized_level = "associate"
 focus_areas = ["admin", "architecture"]
-fee_usd = 200
+fee_usd = 125
 study_hours_min = 40
 study_hours_max = 80
 difficulty = 3
-validity_years = 2
+validity_years = 3
 prerequisites = []
 description = "Deploying and managing applications, configuring access, and monitoring Google Cloud projects."
 official_url = "https://cloud.google.com/learn/certification/cloud-engineer"

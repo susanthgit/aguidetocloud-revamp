@@ -119,6 +119,30 @@ description = "Cloud migration strategies, hybrid architectures, multi-cloud"
 # ── Microsoft ────────────────────────────────────────────────────────────
 
 [[cert_topics]]
+cert_id = "ms-ai-901"
+topics = ["ai-services", "ml-fundamentals", "app-development"]
+
+[[cert_topics]]
+cert_id = "ms-ai-103"
+topics = ["ai-services", "app-development", "monitoring", "security-controls"]
+
+[[cert_topics]]
+cert_id = "ms-ai-200"
+topics = ["containers", "databases", "app-development", "monitoring", "security-controls"]
+
+[[cert_topics]]
+cert_id = "ms-ai-300"
+topics = ["ml-fundamentals", "ml-ops", "monitoring", "iac", "cicd"]
+
+[[cert_topics]]
+cert_id = "ms-sc-500"
+topics = ["iam", "security-controls", "networking", "storage", "compute", "monitoring"]
+
+[[cert_topics]]
+cert_id = "ms-dp-700"
+topics = ["data-pipelines", "data-warehousing", "monitoring", "security-controls"]
+
+[[cert_topics]]
 cert_id = "ms-az-900"
 topics = ["compute", "storage", "networking", "iam", "governance", "security-controls"]
 
@@ -179,6 +203,10 @@ cert_id = "ms-sc-300"
 topics = ["iam", "security-controls", "governance"]
 
 # ── AWS ──────────────────────────────────────────────────────────────────
+
+[[cert_topics]]
+cert_id = "aws-cloudops-assoc"
+topics = ["compute", "storage", "networking", "iam", "monitoring", "iac", "containers"]
 
 [[cert_topics]]
 cert_id = "aws-cloud-practitioner"

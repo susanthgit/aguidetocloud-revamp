@@ -5,7 +5,9 @@
   'use strict';
 
   const PROVIDERS = window.__compassProviders || [];
-  const CERTS = window.__compassCerts || [];
+  const today = new Date().toISOString().slice(0, 10);
+  const CERTS = (window.__compassCerts || []).filter(c =>
+    c.status !== 'retired' && (!c.retirement_date || c.retirement_date >= today));
   const GROUPS = window.__compassGroups || [];
   const PATHS = window.__compassPaths || [];
   const SIGNALS = window.__compassSignals || [];
@@ -34,12 +36,34 @@
 
   function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
+  function knownNumber(n) { return typeof n === 'number' && Number.isFinite(n) && n >= 0; }
+  function feeText(n) { return knownNumber(n) ? '$' + n : '—'; }
+  function hasStudy(c) { return knownNumber(c.study_hours_min) && knownNumber(c.study_hours_max) && c.study_hours_min <= c.study_hours_max; }
+  function studyText(c) { return hasStudy(c) ? `${c.study_hours_min}–${c.study_hours_max}h` : '—'; }
+  function sumKnown(certs, value) {
+    const values = certs.map(value);
+    return values.every(knownNumber) ? values.reduce((sum, n) => sum + n, 0) : null;
+  }
+  function hoursText(n) { return knownNumber(n) ? '~' + Math.round(n) + 'h' : '—'; }
+
   // ── My Certs (localStorage) ───────────────────────────────────────────
   const MYCERTS_KEY = 'compass_mycerts_v1';
   let myCerts = new Set();
-  try { const s = localStorage.getItem(MYCERTS_KEY); if (s) myCerts = new Set(JSON.parse(s).filter(id => certMap[id])); } catch (e) {}
+  let savedCertIds = new Set();
+  try {
+    const s = localStorage.getItem(MYCERTS_KEY);
+    if (s) {
+      savedCertIds = new Set(JSON.parse(s).filter(id => typeof id === 'string'));
+      myCerts = new Set([...savedCertIds].filter(id => certMap[id]));
+    }
+  } catch (e) {}
 
-  function saveMyCerts() { try { localStorage.setItem(MYCERTS_KEY, JSON.stringify([...myCerts])); } catch (e) {} renderMyCertsBar(); renderDashboard(); }
+  function saveMyCerts() {
+    const historical = [...savedCertIds].filter(id => !certMap[id]);
+    savedCertIds = new Set([...historical, ...myCerts]);
+    try { localStorage.setItem(MYCERTS_KEY, JSON.stringify([...savedCertIds])); } catch (e) {}
+    renderMyCertsBar(); renderDashboard();
+  }
 
   function toggleMyCert(id) {
     if (myCerts.has(id)) myCerts.delete(id); else myCerts.add(id);
@@ -59,9 +83,10 @@
     }).join('');
   }
 
-  document.getElementById('mycerts-clear').addEventListener('click', () => { myCerts.clear(); saveMyCerts(); filterCerts(); });
+  document.getElementById('mycerts-clear').addEventListener('click', () => { myCerts.clear(); savedCertIds.clear(); saveMyCerts(); filterCerts(); });
 
   function diffDots(n) {
+    if (!knownNumber(n) || n < 1 || n > 5) return '—';
     let s = '';
     for (let i = 1; i <= 5; i++) s += `<span style="color:${i <= n ? 'var(--accent)' : 'var(--border)'}">●</span>`;
     return s;
@@ -132,9 +157,10 @@
           <div class="compass-card-info">
             <div class="compass-card-name">${esc(c.name)}</div>
             <div class="compass-card-code">${esc(c.exam_code)}</div>
+            ${c.retirement_date ? `<div class="compass-card-code">Last exam day: ${esc(c.retirement_date)}</div>` : ''}
             <div class="compass-card-badges">
               <span class="compass-badge compass-badge-level">${esc(c.normalized_level)}</span>
-              <span class="compass-badge compass-badge-fee">$${c.fee_usd}</span>
+              <span class="compass-badge compass-badge-fee">${feeText(c.fee_usd)}</span>
             </div>
           </div>
           <span class="compass-card-expand">▼</span>
@@ -143,7 +169,7 @@
           <p class="compass-card-desc">${esc(c.description)}</p>
           <div class="compass-card-meta">
             <span><strong>Provider:</strong> ${esc(providerName(c.provider))}</span>
-            <span><strong>Study:</strong> ${c.study_hours_min}–${c.study_hours_max}h</span>
+            <span><strong>Estimated prep:</strong> ${studyText(c)}</span>
             <span><strong>Validity:</strong> ${esc(validity)}</span>
             <span><strong>Difficulty:</strong> ${diffDots(c.difficulty)}</span>
             ${c.demand_score ? `<span><strong>Demand:</strong> ${c.demand_score} ${trendIcon}</span>` : ''}
@@ -209,8 +235,10 @@
     if (!pairs.length || pairs.every(p => p.pct === 0)) return '';
 
     const pairHtml = pairs.map(p => {
-      const avgStudy = Math.round(((p.a.study_hours_min + p.a.study_hours_max) / 2 + (p.b.study_hours_min + p.b.study_hours_max) / 2) / 2);
-      const savedHours = Math.round(avgStudy * p.pct / 100);
+      const avgStudy = hasStudy(p.a) && hasStudy(p.b)
+        ? Math.round(((p.a.study_hours_min + p.a.study_hours_max) / 2 + (p.b.study_hours_min + p.b.study_hours_max) / 2) / 2)
+        : null;
+      const savedHours = knownNumber(avgStudy) ? Math.round(avgStudy * p.pct / 100) : null;
       const barColor = p.pct >= 70 ? 'var(--success)' : p.pct >= 40 ? 'var(--warning)' : 'var(--error)';
       return `<div class="compass-skill-pair">
         <div class="compass-skill-pair-header">
@@ -260,8 +288,8 @@
           <div class="compass-match-cert-name">${esc(c.name)}${tracker}${guided}</div>
           <div class="compass-match-cert-code">${esc(c.exam_code)}</div>
           <div class="compass-match-cert-stats">
-            <span>$${c.fee_usd}</span>
-            <span>${c.study_hours_min}–${c.study_hours_max}h</span>
+            <span>${feeText(c.fee_usd)}</span>
+            <span>${studyText(c)}</span>
             <span>${diffDots(c.difficulty)}</span>
           </div>
         </div>`;
@@ -350,15 +378,15 @@
     empty.style.display = 'none'; content.style.display = '';
 
     const owned = [...myCerts].map(id => certMap[id]).filter(Boolean);
-    const totalCost = owned.reduce((s, c) => s + (c.fee_usd || 0), 0);
-    const totalHours = owned.reduce((s, c) => s + ((c.study_hours_min + c.study_hours_max) / 2), 0);
+    const totalCost = sumKnown(owned, c => c.fee_usd);
+    const totalHours = sumKnown(owned, c => hasStudy(c) ? (c.study_hours_min + c.study_hours_max) / 2 : null);
 
     // Stats bar
     document.getElementById('dash-stats').innerHTML = `
       <div class="compass-dash-stat"><span class="compass-dash-stat-num">${owned.length}</span><span class="compass-dash-stat-label">Certs Held</span></div>
       <div class="compass-dash-stat"><span class="compass-dash-stat-num">${new Set(owned.map(c=>c.provider)).size}</span><span class="compass-dash-stat-label">Providers</span></div>
-      <div class="compass-dash-stat"><span class="compass-dash-stat-num">$${totalCost}</span><span class="compass-dash-stat-label">Invested</span></div>
-      <div class="compass-dash-stat"><span class="compass-dash-stat-num">~${Math.round(totalHours)}h</span><span class="compass-dash-stat-label">Studied</span></div>
+      <div class="compass-dash-stat"><span class="compass-dash-stat-num">${feeText(totalCost)}</span><span class="compass-dash-stat-label">Catalog fee estimate</span></div>
+      <div class="compass-dash-stat"><span class="compass-dash-stat-num">${hoursText(totalHours)}</span><span class="compass-dash-stat-label">Estimated prep</span></div>
     `;
 
     // Progress rings per provider
@@ -393,7 +421,7 @@
       <div class="compass-dash-gap">
         <strong>${g.group.icon} ${esc(g.group.name)}</strong>
         <span style="color:var(--text-tertiary);font-size:0.78rem">You have: ${g.have.map(c => `<span style="color:var(--text-secondary)">${esc(c.exam_code)}</span>`).join(', ')}</span>
-        <span style="color:var(--text-tertiary);font-size:0.78rem">Missing: ${g.missing.map(c => `<span style="color:var(--text-secondary)">${esc(c.exam_code)} ($${c.fee_usd})</span>`).join(', ')}</span>
+        <span style="color:var(--text-tertiary);font-size:0.78rem">Missing: ${g.missing.map(c => `<span style="color:var(--text-secondary)">${esc(c.exam_code)} (${feeText(c.fee_usd)})</span>`).join(', ')}</span>
       </div>
     `).join('') : '<p style="color:var(--text-muted)">No cross-cloud gaps detected. Nice coverage!</p>';
 
@@ -415,19 +443,19 @@
       const c = s.cert;
       return `<div class="compass-dash-rec-card" style="border-left:3px solid ${providerColor(c.provider)}">
         <strong>${providerEmoji(c.provider)} ${esc(c.name)}</strong> <span class="compass-card-code">${esc(c.exam_code)}</span>
-        <div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.3rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100${c.trending === 'up' ? ' ↑' : ''}</div>
+        <div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.3rem">${feeText(c.fee_usd)} · ${studyText(c)} · Demand: ${c.demand_score || '?'}/100${c.trending === 'up' ? ' ↑' : ''}</div>
         ${c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent);font-size:0.75rem">Study guide available →</a>` : ''}
       </div>`;
     }).join('');
 
     // Investment
-    const salaryBoost = owned.reduce((s, c) => s + (c.salary_premium || 0), 0);
+    const salaryBoost = sumKnown(owned, c => c.salary_premium);
     document.getElementById('dash-investment').innerHTML = `
       <div class="compass-dash-invest-grid">
-        <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">$${totalCost}</span><span>Exam Fees Spent</span></div>
-        <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">~${Math.round(totalHours)}h</span><span>Study Hours</span></div>
-        <div class="compass-dash-invest-card" style="border-color:var(--success)"><span class="compass-dash-stat-num" style="color:var(--success)">+$${(salaryBoost/1000).toFixed(0)}K</span><span>Est. Salary Premium</span></div>
-        <div class="compass-dash-invest-card" style="border-color:var(--success)"><span class="compass-dash-stat-num" style="color:var(--success)">${salaryBoost > 0 ? ((salaryBoost / totalCost) * 100).toFixed(0) + '×' : '—'}</span><span>ROI (premium ÷ cost)</span></div>
+        <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">${feeText(totalCost)}</span><span>Catalog fee estimate</span></div>
+        <div class="compass-dash-invest-card"><span class="compass-dash-stat-num">${hoursText(totalHours)}</span><span>Estimated prep</span></div>
+        <div class="compass-dash-invest-card" style="border-color:var(--success)"><span class="compass-dash-stat-num" style="color:var(--success)">${knownNumber(salaryBoost) ? '+$' + (salaryBoost/1000).toFixed(0) + 'K' : '—'}</span><span>Est. Salary Premium</span></div>
+        <div class="compass-dash-invest-card" style="border-color:var(--success)"><span class="compass-dash-stat-num" style="color:var(--success)">${salaryBoost > 0 && knownNumber(totalCost) && totalCost > 0 ? (salaryBoost / totalCost).toFixed(1) + '×' : '—'}</span><span>ROI (premium ÷ cost)</span></div>
       </div>
     `;
   }
@@ -449,25 +477,27 @@
       const prov = providerMap[po.provider];
       if (!prov) return null;
       const certs = (po.certs || []).map(cid => certMap[cid]).filter(Boolean);
-      const totalFee = certs.reduce((s, c) => s + c.fee_usd, 0);
-      const totalHoursMin = certs.reduce((s, c) => s + c.study_hours_min, 0);
-      const totalHoursMax = certs.reduce((s, c) => s + c.study_hours_max, 0);
-      const renewalYearly = certs.reduce((s, c) => {
-        if (c.provider === 'microsoft') return s; // free renewal
-        return s + (c.fee_usd / (c.validity_years || 3));
-      }, 0);
-      const threeYearCost = totalFee + Math.round(renewalYearly * 2); // initial + 2 renewal cycles
-      return { prov, certs, totalFee, totalHoursMin, totalHoursMax, renewalYearly: Math.round(renewalYearly), threeYearCost };
+      const totalFee = sumKnown(certs, c => c.fee_usd);
+      const totalHoursMin = sumKnown(certs, c => hasStudy(c) ? c.study_hours_min : null);
+      const totalHoursMax = sumKnown(certs, c => hasStudy(c) ? c.study_hours_max : null);
+      const renewal = sumKnown(certs, c => {
+        if (c.provider === 'microsoft') return 0; // free renewal
+        return knownNumber(c.fee_usd) ? c.fee_usd / (c.validity_years || 3) : null;
+      });
+      const renewalYearly = knownNumber(renewal) ? Math.round(renewal) : null;
+      const threeYearCost = knownNumber(totalFee) && knownNumber(renewal)
+        ? totalFee + Math.round(renewal * 2) : null;
+      return { prov, certs, totalFee, totalHoursMin, totalHoursMax, renewalYearly, threeYearCost };
     }).filter(pc => pc && pc.certs.length);
 
     html += `<div class="compass-cost-compare"><table class="compass-compare-table">
       <thead><tr><th></th>${providerCosts.map(pc => `<th style="color:var(--text-primary)">${pc.prov.emoji} ${esc(pc.prov.name)}</th>`).join('')}</tr></thead>
       <tbody>
         <tr><td>Exams</td>${providerCosts.map(pc => `<td>${pc.certs.length}</td>`).join('')}</tr>
-        <tr><td>Exam Fees</td>${providerCosts.map(pc => `<td>$${pc.totalFee}</td>`).join('')}</tr>
-        <tr><td>Study Hours</td>${providerCosts.map(pc => `<td>${pc.totalHoursMin}–${pc.totalHoursMax}h</td>`).join('')}</tr>
-        <tr><td>Yearly Renewal</td>${providerCosts.map(pc => `<td>${pc.renewalYearly === 0 ? 'Free' : '$' + pc.renewalYearly + '/yr'}</td>`).join('')}</tr>
-        <tr style="font-weight:700"><td>3-Year Total</td>${providerCosts.map(pc => `<td style="color:var(--success)">$${pc.threeYearCost}</td>`).join('')}</tr>
+        <tr><td>Exam Fees</td>${providerCosts.map(pc => `<td>${feeText(pc.totalFee)}</td>`).join('')}</tr>
+        <tr><td>Estimated Prep</td>${providerCosts.map(pc => `<td>${studyText({study_hours_min: pc.totalHoursMin, study_hours_max: pc.totalHoursMax})}</td>`).join('')}</tr>
+        <tr><td>Yearly Renewal</td>${providerCosts.map(pc => `<td>${pc.renewalYearly === 0 ? 'Free' : knownNumber(pc.renewalYearly) ? '$' + pc.renewalYearly + '/yr' : '—'}</td>`).join('')}</tr>
+        <tr style="font-weight:700"><td>3-Year Total</td>${providerCosts.map(pc => `<td style="color:var(--success)">${feeText(pc.threeYearCost)}</td>`).join('')}</tr>
       </tbody>
     </table></div>`;
 
@@ -478,7 +508,7 @@
         const c = certMap[cid];
         if (!c) return '';
         const tracker = c.tracker_slug ? ` <a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent);font-size:0.72rem">[guide]</a>` : '';
-        return `<div class="compass-career-step" style="border-left:3px solid ${prov.hex}">${esc(c.name)}<br><span style="font-size:0.7rem;color:var(--text-muted)">${esc(c.exam_code)} · $${c.fee_usd}</span>${tracker}</div>`;
+        return `<div class="compass-career-step" style="border-left:3px solid ${prov.hex}">${esc(c.name)}<br><span style="font-size:0.7rem;color:var(--text-muted)">${esc(c.exam_code)} · ${feeText(c.fee_usd)}</span>${tracker}</div>`;
       }).filter(Boolean);
       if (!steps.length) return;
 
@@ -509,8 +539,8 @@
   const PRESETS = {
     fundamentals: { label: 'Cloud Fundamentals', ids: ['ms-az-900', 'aws-cloud-practitioner', 'gcp-cloud-digital-leader'] },
     architect: { label: 'Architecture', ids: ['ms-az-305', 'aws-solutions-architect-assoc', 'gcp-prof-cloud-architect'] },
-    security: { label: 'Security', ids: ['aws-security-specialty', 'gcp-prof-cloud-security'] },
-    data: { label: 'Data Engineering', ids: ['aws-data-engineer-assoc', 'gcp-prof-data-engineer'] },
+    security: { label: 'Security', ids: ['ms-sc-500', 'aws-security-specialty', 'gcp-prof-cloud-security'] },
+    data: { label: 'Data Engineering', ids: ['ms-dp-700', 'aws-data-engineer-assoc', 'gcp-prof-data-engineer'] },
     devops: { label: 'DevOps', ids: ['ms-az-400', 'aws-devops-pro', 'gcp-prof-cloud-devops'] }
   };
 
@@ -532,15 +562,15 @@
     const rows = [
       { label: 'Provider', fn: c => `<span style="color:var(--text-primary)">${esc(providerName(c.provider))}</span>` },
       { label: 'Level', fn: c => esc(c.level) },
-      { label: 'Exam Fee', fn: c => `$${c.fee_usd}` },
-      { label: 'Study Hours', fn: c => `${c.study_hours_min}–${c.study_hours_max}` },
+      { label: 'Exam Fee', fn: c => feeText(c.fee_usd) },
+      { label: 'Estimated Prep', fn: c => studyText(c) },
       { label: 'Difficulty', fn: c => diffDots(c.difficulty) },
       { label: 'Validity', fn: c => c.validity_override || (c.validity_years + ' year' + (c.validity_years !== 1 ? 's' : '')) },
       { label: 'Prerequisites', fn: c => (c.prerequisites && c.prerequisites.length) ? c.prerequisites.map(pid => { const p = certMap[pid]; return p ? esc(p.exam_code) : esc(pid); }).join(', ') : 'None' },
       { label: 'Focus Areas', fn: c => (c.focus_areas || []).map(f => esc(f.replace(/-/g, ' '))).join(', ') },
       { label: 'Official Page', fn: c => `<a href="${esc(c.official_url)}" target="_blank" rel="noopener noreferrer" style="color:var(--compass-accent)">View →</a>` },
       { label: 'Study Guide', fn: c => c.tracker_slug ? `<a href="/cert-tracker/${esc(c.tracker_slug)}/" style="color:var(--accent)">Available →</a>` : '<span style="color:var(--text-muted)">—</span>' },
-      { label: 'Practice Exam', fn: c => c.guided_slug ? `<a href="/guided/${esc(c.guided_slug)}/practice/" style="color:var(--accent)">200 Questions →</a>` : '<span style="color:var(--text-muted)">—</span>' }
+      { label: 'Practice Exam', fn: c => c.guided_slug ? `<a href="/guided/${esc(c.guided_slug)}/practice/" style="color:var(--accent)">Practice questions →</a>` : '<span style="color:var(--text-muted)">—</span>' }
     ];
 
     let html = '<table class="compass-compare-table"><thead><tr><th></th>';
@@ -665,8 +695,8 @@
       if (existing === 'associate' && (c.normalized_level === 'professional' || c.normalized_level === 'expert')) score += 10;
 
       // Budget/time fit
-      if (c.fee_usd <= maxUsd) score += 5;
-      if (c.study_hours_max <= maxHours) score += 10;
+      if (knownNumber(c.fee_usd) && c.fee_usd <= maxUsd) score += 5;
+      if (hasStudy(c) && c.study_hours_max <= maxHours) score += 10;
 
       // Trending bonus
       if (c.trending === 'up') score += 5;
@@ -697,7 +727,7 @@
             <span style="font-size:1.5rem">${medal}</span>
             <div>
               <strong>${providerEmoji(c.provider)} ${esc(c.name)}</strong> <span class="compass-card-code">${esc(c.exam_code)}</span>
-              <div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem">$${c.fee_usd} · ${c.study_hours_min}–${c.study_hours_max}h · Demand: ${c.demand_score || '?'}/100</div>
+              <div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem">${feeText(c.fee_usd)} · ${studyText(c)} · Demand: ${c.demand_score || '?'}/100</div>
             </div>
           </div>
           <p style="font-size:0.82rem;color:var(--text-secondary);margin:0.5rem 0 0">${esc(c.description)}</p>

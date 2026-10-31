@@ -1,8 +1,10 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- $retiredCompass := partial "cert-compass-retired-ids.html" . -}}
   {{- range .Data.Pages }}
-  {{- if not (or (in .RelPermalink "/tags/") (in .RelPermalink "/categories/") (in .RelPermalink "/admin/") (in .RelPermalink "/cc/") (eq .Params.robots "noindex, nofollow")) }}
+  {{- $retiredDetail := and (eq .Type "cert-compass") (index $retiredCompass (.Params.cert_id | default "")) -}}
+  {{- if not (or $retiredDetail (in .RelPermalink "/tags/") (in .RelPermalink "/categories/") (in .RelPermalink "/admin/") (in .RelPermalink "/cc/") (eq .Params.robots "noindex, nofollow")) }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- if not .Lastmod.IsZero }}

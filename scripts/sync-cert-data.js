@@ -20,7 +20,7 @@ const TOML = require('@iarna/toml');
 const { buildCertDescription } = require('./lib/cert-description');
 
 // ── Paths ──
-const GUIDED_CERTS_DIR = path.resolve(__dirname, '../../guided/src/content/certs');
+const GUIDED_CERTS_DIR = process.env.GUIDED_CERTS_DIR || path.resolve(__dirname, '../../guided/src/content/certs');
 const GUIDED_QUESTIONS_DIR = path.resolve(__dirname, '../../guided/src/data/questions');
 const HUGO_DATA_DIR = path.resolve(__dirname, '../data');
 const HUGO_CERT_CONTENT_DIR = path.resolve(__dirname, '../content/cert-tracker');
