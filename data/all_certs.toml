@@ -15642,3 +15642,47 @@ exam_provider = "Confluent (online proctored)"
 exam_validity = "2 years"
 guided_url = "/guided/confluent-ccaak/"
 practice_url = "/guided/confluent-ccaak/practice/"
+
+[[cert]]
+slug = "cncf-mcpa"
+vendor = "cncf"
+code = "MCPA"
+name = "Linux Foundation Model Context Protocol Associate"
+tagline = "Understand MCP architecture, execution, security and operational integrations."
+exam_category = "Linux Foundation"
+level = "beginner"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1053
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/model-context-protocol-associate-mcpa/"
+exam_cost = "$250 USD"
+exam_duration = 90
+guided_url = "/guided/cncf-mcpa/"
+
+[cert_map."cncf-mcpa"]
+vendor = "cncf"
+code = "MCPA"
+name = "Linux Foundation Model Context Protocol Associate"
+tagline = "Understand MCP architecture, execution, security and operational integrations."
+exam_category = "Linux Foundation"
+level = "beginner"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1053
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/model-context-protocol-associate-mcpa/"
+exam_cost = "$250 USD"
+exam_duration = 90
+exam_provider = "Linux Foundation / PSI"
+exam_validity = "2 years"
+exam_prerequisites = "No formal prerequisites; JSON-RPC, LLM APIs and basic security knowledge recommended."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/cncf-mcpa/"
+practice_url = "/guided/cncf-mcpa/practice/"
