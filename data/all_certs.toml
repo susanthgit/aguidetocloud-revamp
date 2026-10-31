@@ -15740,6 +15740,47 @@ guided_url = "/guided/lfca/"
 practice_url = "/guided/lfca/practice/"
 
 [[cert]]
+slug = "lfcs"
+vendor = "linuxfoundation"
+code = "LFCS"
+name = "LFCS Knowledge Companion"
+tagline = "Build the Linux knowledge behind LFCS hands-on administration."
+exam_category = "Linux Foundation"
+level = "intermediate"
+status = "live"
+modules = 0
+questions = 250
+domains = 5
+order = 421
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/"
+exam_duration = 120
+guided_url = "/guided/lfcs/"
+
+[cert_map."lfcs"]
+vendor = "linuxfoundation"
+code = "LFCS"
+name = "LFCS Knowledge Companion"
+tagline = "Build the Linux knowledge behind LFCS hands-on administration."
+exam_category = "Linux Foundation"
+level = "intermediate"
+status = "live"
+modules = 0
+questions = 250
+domains = 5
+order = 421
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/"
+exam_duration = 120
+exam_provider = "The Linux Foundation"
+exam_prerequisites = "None"
+exam_question_types = ["Performance-based command-line tasks"]
+guided_url = "/guided/lfcs/"
+practice_url = "/guided/lfcs/practice/"
+
+[[cert]]
 slug = "ptca"
 vendor = "linuxfoundation"
 code = "PTCA"
