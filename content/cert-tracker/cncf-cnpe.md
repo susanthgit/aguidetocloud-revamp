@@ -4,7 +4,7 @@ description: "Study CNPE's five platform engineering domains. Original MCQ learn
 type: "cert-tracker"
 layout: "single"
 exam_code: "CNPE"
-exam_title: "Certified Cloud Native Platform Engineer"
+exam_title: "Cloud Native Platform Engineering MCQ Companion"
 exam_level: "professional"
 exam_status: "active"
 exam_category: "CNCF"
