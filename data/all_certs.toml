@@ -9,6 +9,27 @@
 # ═══════════════════════════════════════════════════
 
 [[cert]]
+slug = "cncf-cnpa"
+vendor = "cncf"
+code = "CNPA"
+name = "Guided CNPA Platform Engineering Practice"
+tagline = "Original platform engineering scenarios covering design, developer experience, delivery, security, self-service APIs and meaningful measures. Unofficial practice; not affiliated with CNCF or The Linux Foundation."
+exam_category = "CNCF"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1066
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/certified-cloud-native-platform-engineering-associate-cnpa/"
+exam_cost = "$250 USD"
+exam_duration = 120
+exam_passing_score = "75%"
+guided_url = "/guided/cncf-cnpa/"
+
+[[cert]]
 slug = "gh-900"
 vendor = "github"
 code = "GH-900"
@@ -11512,6 +11533,32 @@ exam_prerequisites = "None"
 exam_question_types = ["Performance-based (CLI tasks)"]
 guided_url = "/guided/cncf-ckad/"
 practice_url = "/guided/cncf-ckad/practice/"
+
+[cert_map."cncf-cnpa"]
+vendor = "cncf"
+code = "CNPA"
+name = "Guided CNPA Platform Engineering Practice"
+tagline = "Original platform engineering scenarios covering design, developer experience, delivery, security, self-service APIs and meaningful measures. Unofficial practice; not affiliated with CNCF or The Linux Foundation."
+exam_category = "CNCF"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1066
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/certified-cloud-native-platform-engineering-associate-cnpa/"
+exam_cost = "$250 USD"
+exam_duration = 120
+exam_passing_score = "75%"
+exam_questions_real = "85"
+exam_provider = "Linux Foundation / PSI"
+exam_validity = "2 years"
+exam_prerequisites = "None required; basic cloud-native, delivery and Kubernetes concepts help."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/cncf-cnpa/"
+practice_url = "/guided/cncf-cnpa/practice/"
 
 [cert_map."cncf-cgoa"]
 vendor = "cncf"
