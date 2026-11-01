@@ -16055,3 +16055,47 @@ exam_prerequisites = "No prerequisites stated on the current official page."
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/linux-foundation-fsosd/"
 practice_url = "/guided/linux-foundation-fsosd/practice/"
+
+[[cert]]
+slug = "cncf-cnpe"
+vendor = "cncf"
+code = "CNPE"
+name = "Guided Cloud Native Platform Engineering Study Companion"
+tagline = "Conceptual CNPE study with original MCQs, not a hands-on exam simulator."
+exam_category = "CNCF"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1070
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/certified-cloud-native-platform-engineer-cnpe/"
+exam_cost = "$445 USD"
+exam_duration = 120
+guided_url = "/guided/cncf-cnpe/"
+
+[cert_map."cncf-cnpe"]
+vendor = "cncf"
+code = "CNPE"
+name = "Guided Cloud Native Platform Engineering Study Companion"
+tagline = "Conceptual CNPE study with original MCQs, not a hands-on exam simulator."
+exam_category = "CNCF"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1070
+featured = false
+price_practice = 9
+exam_url = "https://training.linuxfoundation.org/certification/certified-cloud-native-platform-engineer-cnpe/"
+exam_cost = "$445 USD"
+exam_duration = 120
+exam_provider = "The Linux Foundation / PSI"
+exam_validity = "2 years"
+exam_prerequisites = "No formal prerequisites; practical platform engineering experience is recommended."
+exam_question_types = ["Performance-based tasks using terminal and web interfaces"]
+guided_url = "/guided/cncf-cnpe/"
+practice_url = "/guided/cncf-cnpe/practice/"
