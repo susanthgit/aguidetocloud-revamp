@@ -10,8 +10,8 @@
   ],
   "category": "Data",
   "status": "beta",
-  "updated_at": "2026-09-18 21:09:00+00:00",
-  "skills_date": "October 19, 2026",
+  "updated_at": "2026-10-28 19:18:00+00:00",
+  "skills_date": "March 11, 2026",
   "skills_at_a_glance": [
     {
       "area": "Set up and configure an Azure Databricks environment",
@@ -78,7 +78,7 @@
         "Choose a slowly changing dimension (SCD) type",
         "Choose granularity on a column or table based on requirements",
         "Design and implement a temporal (history) table to record changes over time",
-        "Design and implement a clustering strategy, including liquid clustering and Z-ordering",
+        "Design and implement a clustering strategy, including liquid clustering, Z-ordering, and deletion vectors",
         "Choose between managed and unmanaged tables"
       ],
       "Ingest data into Unity Catalog": [
@@ -126,8 +126,8 @@
         "Apply version control best practices using Git",
         "Manage branching, pull requests, and conflict resolution",
         "Implement a testing strategy, including unit tests, integration tests, end-to-end tests, and user acceptance testing (UAT)",
-        "Configure and package Declarative Automation Bundles",
-        "Deploy a bundle by using the Databricks CLI",
+        "Configure and package Databricks Asset Bundles",
+        "Deploy a bundle by using the Azure Databricks command-line interface (CLI)",
         "Deploy a bundle by using REST APIs"
       ],
       "Monitor, troubleshoot, and optimize workloads in Azure Databricks": [

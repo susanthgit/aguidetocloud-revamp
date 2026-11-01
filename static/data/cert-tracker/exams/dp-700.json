@@ -10,8 +10,8 @@
   ],
   "category": "Data",
   "status": "active",
-  "updated_at": "2026-09-18 21:09:00+00:00",
-  "skills_date": "October 19, 2026",
+  "updated_at": "2026-10-31 01:16:00+00:00",
+  "skills_date": null,
   "skills_at_a_glance": [
     {
       "area": "Implement and manage an analytics solution",
@@ -27,12 +27,13 @@
     }
   ],
   "skills_detailed": {
+    "Languages": {},
     "Implement and manage an analytics solution (30–35%)": {
       "Configure Microsoft Fabric workspace settings": [
         "Configure Spark workspace settings",
         "Configure domain workspace settings",
         "Configure OneLake workspace settings",
-        "Configure Apache Airflow workspace settings"
+        "Configure data workflow workspace settings"
       ],
       "Implement lifecycle management in Fabric": [
         "Configure version control",
@@ -42,15 +43,13 @@
       "Configure security and governance": [
         "Implement workspace-level access controls",
         "Implement item-level access controls",
-        "Implement row-level, column-level, object-level, and folder/file-level access controls",
+        "Implement row-level, column-level, object-level, and file-level access controls",
         "Implement dynamic data masking",
         "Apply sensitivity labels to items",
-        "Endorse items",
-        "Implement and use Microsoft Fabric audit logs",
-        "Configure and implement OneLake security"
+        "Endorse items"
       ],
       "Orchestrate processes": [
-        "Choose between Dataflow gen 2, a pipeline and a notebook",
+        "Choose between a pipeline and a notebook",
         "Design and implement schedules and event-based triggers",
         "Implement orchestration patterns with notebooks and pipelines, including parameters and dynamic expressions"
       ]
@@ -63,8 +62,8 @@
       ],
       "Ingest and transform batch data": [
         "Choose an appropriate data store",
-        "Choose between Dataflows Gen2, notebooks, KQL, and T-SQL for data transformation",
-        "Create and manage OneLake shortcuts",
+        "Choose between dataflows, notebooks, and T-SQL for data transformation",
+        "Create and manage shortcuts to data",
         "Implement mirroring",
         "Ingest data by using pipelines",
         "Transform data by using PySpark, SQL, and KQL",
@@ -74,9 +73,7 @@
       ],
       "Ingest and transform streaming data": [
         "Choose an appropriate streaming engine",
-        "Choose between native tables and OneLake shortcuts in Real-Time Intelligence",
-        "Choose between Query acceleration for OneLake shortcuts and standard OneLake shortcuts in Real-Time Intelligence",
-        "Process data by using Eventstream",
+        "Process data by using eventstreams",
         "Process data by using Spark structured streaming",
         "Process data by using KQL",
         "Create windowing functions"
@@ -91,18 +88,17 @@
       ],
       "Identify and resolve errors": [
         "Identify and resolve pipeline errors",
-        "Identify and resolve Dataflow Gen2 errors",
+        "Identify and resolve dataflow errors",
         "Identify and resolve notebook errors",
-        "Identify and resolve Eventhouse errors",
-        "Identify and resolve Eventstream errors",
-        "Identify and resolve T-SQL errors",
-        "Identify and resolve OneLake shortcut errors"
+        "Identify and resolve eventhouse errors",
+        "Identify and resolve eventstream errors",
+        "Identify and resolve T-SQL errors"
       ],
       "Optimize performance": [
-        "Optimize a Lakehouse table",
+        "Optimize a lakehouse table",
         "Optimize a pipeline",
         "Optimize a data warehouse",
-        "Optimize Eventstream and Eventhouse",
+        "Optimize eventstreams and eventhouses",
         "Optimize Spark performance",
         "Optimize query performance"
       ]
