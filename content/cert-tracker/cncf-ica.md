@@ -11,6 +11,8 @@ exam_category: "CNCF"
 vendor: "cncf"
 manual: true
 guided_slug: "cncf-ica"
+supplemental: true
+buyer_caveat: "Knowledge validation only, not a hands-on exam simulator. Use alongside practical Istio 1.29 lab work. MCQ scores do not predict an ICA result."
 lastmod: "2026-11-01"
 faq_intro: "Common questions about ICA preparation and this independent learning bank."
 faq:
