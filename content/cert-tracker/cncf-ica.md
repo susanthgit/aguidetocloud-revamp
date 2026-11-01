@@ -65,9 +65,7 @@ Sources: [ICA certification and enrollment](https://training.linuxfoundation.org
 | Troubleshooting | 20% | 50 |
 | **Total** | **100%** | **250** |
 
-{{< tip >}}
-Traffic Management carries the largest weight. Practise tracing a request through route matches, subsets, gateways and destination policies rather than learning each YAML object in isolation.
-{{< /tip >}}
+> Traffic Management carries the largest weight. Practise tracing a request through route matches, subsets, gateways and destination policies rather than learning each YAML object in isolation.
 
 ## Practice Questions - 250 Original Learning Questions
 
