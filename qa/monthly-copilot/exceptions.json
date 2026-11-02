@@ -10,6 +10,12 @@
     "writing. Fix the post instead. This file is for history that is already live",
     "and not worth rewriting.",
     "",
+    "Roadmap exceptions require an exact section and roadmap_id. The entries",
+    "marked 2026-09-09 were verified against the feed snapshot at commit",
+    "22b0ab409a5ee1cbb15b54dc06f822a9b6dd4c64 and matching post section titles.",
+    "Presence in that snapshot does not establish status at publication or a",
+    "reason for absence from the current feed.",
+    "",
     "Codes: no-for-line | no-source-line | no-source-url | numbering",
     "       roadmap-not-in-feed | roadmap-link-mismatch | heading-separator"
   ],
@@ -18,7 +24,9 @@
     { "code": "heading-separator", "section": 1, "why": "Existing published category/item adjacency; recorded when the October layout guard was added. Do not rewrite this live issue as part of the October draft." },
     { "code": "heading-separator", "section": 25, "why": "Existing published category/item adjacency." },
     { "code": "heading-separator", "section": 38, "why": "Existing published category/item adjacency." },
-    { "code": "heading-separator", "section": 47, "why": "Existing published category/item adjacency." }
+    { "code": "heading-separator", "section": 47, "why": "Existing published category/item adjacency." },
+    { "code": "roadmap-not-in-feed", "section": 28, "roadmap_id": "560339", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 33, "roadmap_id": "496596", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." }
   ],
   "microsoft-365-copilot-september-2026-updates": [
     { "code": "heading-separator", "section": 1, "why": "Existing published category/item adjacency; recorded when the October layout guard was added. Do not rewrite this live issue as part of the October draft." },
@@ -28,18 +36,42 @@
     { "code": "heading-separator", "section": 49, "why": "Existing published category/item adjacency." },
     { "code": "heading-separator", "section": 54, "why": "Existing published category/item adjacency." },
     { "code": "heading-separator", "section": 59, "why": "Existing published category/item adjacency." },
-    { "code": "heading-separator", "section": 90, "why": "Existing published category/item adjacency." }
+    { "code": "heading-separator", "section": 90, "why": "Existing published category/item adjacency." },
+    { "code": "roadmap-not-in-feed", "section": 22, "roadmap_id": "560339", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 23, "roadmap_id": "490564", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." }
+  ],
+
+  "microsoft-365-copilot-january-2026-updates": [
+    { "code": "roadmap-not-in-feed", "section": 1, "roadmap_id": "399923", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 2, "roadmap_id": "483821", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 3, "roadmap_id": "506753", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 4, "roadmap_id": "532736", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 5, "roadmap_id": "516570", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 6, "roadmap_id": "415418", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 7, "roadmap_id": "494510", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 9, "roadmap_id": "501560", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 10, "roadmap_id": "501454", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 11, "roadmap_id": "501783", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 12, "roadmap_id": "502552", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 13, "roadmap_id": "506851", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 14, "roadmap_id": "498547", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 15, "roadmap_id": "494687", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 16, "roadmap_id": "499899", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 26, "roadmap_id": "500638", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." },
+    { "code": "roadmap-not-in-feed", "section": 30, "roadmap_id": "500375", "why": "Present in the 2026-09-09 feed snapshot; absent from the current feed." }
   ],
 
   "microsoft-365-copilot-may-2026-updates": [
     {
       "code": "roadmap-not-in-feed",
       "section": 33,
+      "roadmap_id": "531759",
       "why": "M365 Roadmap 531759 ('Scheduled Prompts for Agents') was cited when the issue was written and has since been withdrawn from Microsoft's published roadmap feed. Verified as a genuine withdrawal rather than a typo: the same id is cited independently in the July 2026 issue for the same named feature. The citation was accurate on the date of publication, so the live post is left as-is."
     },
     {
       "code": "roadmap-not-in-feed",
       "section": 47,
+      "roadmap_id": "660076",
       "why": "M365 Roadmap 660076 ('Create Charts on SharePoint Pages with AI') has been withdrawn from the published feed since this issue went out. Accurate when written; not worth rewriting a live post."
     }
   ],
@@ -48,6 +80,7 @@
     {
       "code": "roadmap-not-in-feed",
       "section": 17,
+      "roadmap_id": "531759",
       "why": "M365 Roadmap 531759 ('Scheduled prompts for agents') - the same withdrawn item recorded against May §33. Two independent citations of the same id for the same feature name is what rules out a typo."
     }
   ],

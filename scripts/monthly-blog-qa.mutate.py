@@ -39,6 +39,17 @@ SUITE = HERE / "monthly-blog-qa.test.py"
 
 # (name, find, replace) - `replace` should disable the guard, not break syntax.
 MUTATIONS = [
+    ("roadmap exceptions are bound to the exact ID",
+     'and e.get("roadmap_id") == roadmap_id',
+     'and isinstance(e.get("roadmap_id"), str)'),
+    ("roadmap exceptions require a historical non-draft issue",
+     '(warns if historical_roadmap_exception(post, text)\n'
+     '                 and excused(exc, slug, "roadmap-not-in-feed", s["n"], rid)',
+     '(warns if True\n'
+     '                 and excused(exc, slug, "roadmap-not-in-feed", s["n"], rid)'),
+    ("roadmap exception evidence cannot be invisible",
+     'and not blank_text(e.get("why"))):',
+     'and isinstance(e.get("why"), str) and e["why"].strip()):'),
     ("HTTP200 cannot excuse a missing citation fragment",
      'elif fragment not in document.anchors:', 'elif False:'),
     ("citation fragments are URL-decoded before matching real ids",

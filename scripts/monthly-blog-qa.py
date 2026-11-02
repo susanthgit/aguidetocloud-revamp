@@ -40,6 +40,7 @@ import html
 import json
 import re
 import sys
+import unicodedata
 from collections import Counter
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -104,11 +105,6 @@ REF_IMG_RE = re.compile(r"!\[(?P<refalt>[^\]]*)\]\[(?P<refid>[^\]]*)\]")
 COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 FENCE_RE = re.compile(r"^(?P<f>```+|~~~+)[^\n]*\n.*?^(?P=f)[^\n]*$", re.M | re.S)
 INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
-# A reason made only of zero-width characters reads as empty to every human
-# and as written evidence to str.strip(), which leaves them standing.
-INVISIBLE_RE = re.compile(r"[\s\u00a0\u200b-\u200f\u2028\u2029\ufeff]")
-
-
 def visible(text: str) -> str:
     """`text` with everything the rendered page never shows blanked out.
 
@@ -124,7 +120,8 @@ def visible(text: str) -> str:
 
 def blank_text(s) -> bool:
     """True when `s` carries no visible character at all."""
-    return not isinstance(s, str) or not INVISIBLE_RE.sub("", s)
+    return not isinstance(s, str) or not any(
+        not c.isspace() and unicodedata.category(c)[0] not in ("C", "M") for c in s)
 
 
 @functools.lru_cache(maxsize=4096)
@@ -521,7 +518,8 @@ def load_exceptions() -> dict:
     return json.loads(read(f))
 
 
-def excused(exc: dict, slug: str, code: str, n: int | None = None) -> bool:
+def excused(exc: dict, slug: str, code: str, n: int | None = None,
+            roadmap_id: str | None = None) -> bool:
     """Historical anomalies in already-published issues are excused by name.
 
     New invariants must not block unrelated work on old posts, but blanket
@@ -531,11 +529,41 @@ def excused(exc: dict, slug: str, code: str, n: int | None = None) -> bool:
     for e in exc.get(slug, []):
         if e.get("code") != code:
             continue
+        if code == "roadmap-not-in-feed":
+            if (is_int(n) and is_int(e.get("section")) and e["section"] == n
+                    and isinstance(roadmap_id, str)
+                    and re.fullmatch(r"\d{6}", roadmap_id)
+                    and e.get("roadmap_id") == roadmap_id
+                    and not blank_text(e.get("why"))):
+                return True
+            continue
         if "section" not in e:
             return True
         if n is not None and int(e["section"]) == n:
             return True
     return False
+
+
+def historical_roadmap_exception(post: Path, text: str) -> bool:
+    """Only an older, non-draft issue in the discovered corpus can be excepted."""
+    posts = discover_posts()
+    fm = frontmatter(text)
+    # Complex YAML can hide a draft key from a line-oriented check; fail closed.
+    if re.search(r"[{}\\]|^[ \t]*(?:\?|<<[ \t]*:|%|!|&|\*)", fm, re.M):
+        return False
+    top_level = [line for line in fm.splitlines()
+                 if line and not line[0].isspace() and not line.startswith("#")]
+    if not top_level or any(not re.match(r"^[A-Za-z0-9_-]+[ \t]*:", line)
+                            for line in top_level):
+        return False
+    if re.search(r"""^[ \t]+["']?draft["']?[ \t]*:|^["']draft["'][ \t]*:""",
+                 fm, re.M | re.I):
+        return False
+    draft_values = re.findall(r"^draft[ \t]*:[ \t]*([^\r\n]*)", fm, re.M | re.I)
+    published = (not draft_values or
+                 len(draft_values) == 1 and
+                 bool(re.fullmatch(r"false(?:[ \t]+#.*)?[ \t]*", draft_values[0], re.I)))
+    return bool(posts and post in posts and post != posts[-1] and fm and published)
 
 
 # --------------------------------------------------------------------- lint
@@ -632,13 +660,13 @@ def lint_post(post: Path, exc: dict,
             if not re.fullmatch(r"\d{6}", rid):
                 errs.append(f"{slug} §{s['n']}: malformed roadmap id {rid!r}")
             elif feed_ids is not None and rid not in feed_ids:
-                # Well-formed but absent. Usually a typo; occasionally a genuine
-                # Microsoft withdrawal, which is what exceptions.json records.
-                (warns if excused(exc, slug, "roadmap-not-in-feed", s["n"])
+                # The feed is a snapshot; absence alone does not establish cancellation.
+                (warns if historical_roadmap_exception(post, text)
+                 and excused(exc, slug, "roadmap-not-in-feed", s["n"], rid)
                  else errs).append(
                     f"{slug} §{s['n']}: roadmap id {rid} is not in the feed - "
-                    f"either it is a typo, or Microsoft withdrew the item and it "
-                    f"needs a 'roadmap-not-in-feed' entry in exceptions.json")
+                    f"check the citation and, for published historical issues, "
+                    f"document evidence in exceptions.json")
         for pair in s["roadmap_pairs"]:
             if pair["label"] and pair["url"] and set(pair["label"]) != set(pair["url"]):
                 (warns if excused(exc, slug, "roadmap-link-mismatch", s["n"])

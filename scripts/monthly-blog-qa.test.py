@@ -64,7 +64,8 @@ def post(*sections: str) -> str:
             "## Microsoft 365 apps\n\n<br />\n\n" + "\n".join(sections))
 
 
-def lint(text: str, feed=FEED, exc=None):
+def lint(text: str, feed=FEED, exc=None, *,
+         slug="microsoft-365-copilot-testmonth-2026-updates", latest=None):
     """Lint synthetic markdown inside a synthetic repo root.
 
     REPO is redirected so image resolution sees only the fixture below,
@@ -79,9 +80,11 @@ def lint(text: str, feed=FEED, exc=None):
         mbq.REPO = root
         try:
             # A slug absent from exceptions.json, so nothing is silently excused.
-            p = root / "microsoft-365-copilot-testmonth-2026-updates.md"
+            p = root / f"{slug}.md"
             p.write_text(text, encoding="utf-8")
-            return mbq.lint_post(p, exc or {}, feed)
+            posts = [p, root / f"{latest}.md"] if latest else [p]
+            with patch.object(mbq, "discover_posts", return_value=posts):
+                return mbq.lint_post(p, exc or {}, feed)
         finally:
             mbq.REPO = original
 
@@ -128,13 +131,61 @@ errs, _ = lint(post(section(
 check("absent roadmap id is an error", has(errs, "not in the feed"),
       "; ".join(errs) or "no error raised")
 
-# ... and is excusable by name, for items Microsoft genuinely withdrew.
-errs, warns = lint(
-    post(section(1, source=f"\U0001F4D6 [M365 Roadmap 999999]({ROADMAP}999999)")),
-    exc={"microsoft-365-copilot-testmonth-2026-updates": [
-        {"code": "roadmap-not-in-feed", "section": 1, "why": "withdrawn"}]})
-check("documented withdrawal downgrades to a warning",
+# Historical evidence may excuse exactly one post, section and ID.
+old = "microsoft-365-copilot-august-2026-updates"
+current = "microsoft-365-copilot-october-2026-updates"
+missing = f"\U0001F4D6 [M365 Roadmap 999999]({ROADMAP}999999)"
+historical = post(section(1, source=missing)).replace("draft: true", "draft: false")
+entry = {"code": "roadmap-not-in-feed", "section": 1,
+         "roadmap_id": "999999", "why": "documented historical evidence"}
+errs, warns = lint(historical, exc={old: [entry]}, slug=old, latest=current)
+check("documented historical ID downgrades to a warning",
       not errs and has(warns, "not in the feed"), "; ".join(errs))
+
+both = missing + f" \u00b7 [999998]({ROADMAP}999998)"
+errs, warns = lint(historical.replace(missing, both),
+                   exc={old: [entry]}, slug=old, latest=current)
+check("another missing ID in the same section remains an error",
+      has(errs, "999998") and has(warns, "999999"), "; ".join(errs))
+for name, changed in [
+    ("missing section", {k: v for k, v in entry.items() if k != "section"}),
+    ("wrong section", {**entry, "section": 2}),
+    ("boolean section", {**entry, "section": True}),
+    ("missing ID", {k: v for k, v in entry.items() if k != "roadmap_id"}),
+    ("wrong ID", {**entry, "roadmap_id": "999998"}),
+    ("malformed ID", {**entry, "roadmap_id": 999999}),
+    ("missing evidence", {**entry, "why": " "}),
+    ("invisible evidence", {**entry, "why": "\u200b"}),
+    ("word joiner evidence", {**entry, "why": "\u2060"}),
+    ("combining mark evidence", {**entry, "why": "\u0301"}),
+]:
+    errs, _ = lint(historical, exc={old: [changed]}, slug=old, latest=current)
+    check(f"{name} cannot excuse a roadmap ID", has(errs, "999999"), "; ".join(errs))
+errs, _ = lint(historical, exc={current: [entry]}, slug=old, latest=current)
+check("another post's exception cannot excuse the ID", has(errs, "999999"))
+errs, _ = lint(historical, exc={current: [entry]}, slug=current)
+check("current issue cannot gain a roadmap exception", has(errs, "999999"))
+errs, _ = lint(historical.replace("draft: false", "draft: true"),
+               exc={old: [entry]}, slug=old, latest=current)
+check("draft issue cannot gain a roadmap exception", has(errs, "999999"))
+for draft in ("draft: true # not published", "  draft: true", '"draft": true',
+              "  draft: false", '"draft": false',
+              "draft: null", "draft: false#comment", "draft: false\ndraft: true",
+              '"dra\\u0066t": true', "? draft\n: true",
+              "!!str draft: true", "&d draft: true"):
+    errs, _ = lint(historical.replace("draft: false", draft),
+                   exc={old: [entry]}, slug=old, latest=current)
+    check(f"ambiguous or draft frontmatter cannot excuse an ID: {draft!r}",
+          has(errs, "999999"))
+flow_draft = re.sub(r"\A---\n.*?\n---", "---\n{title: Draft, draft: true}\n---",
+                    historical, count=1, flags=re.S)
+errs, _ = lint(flow_draft, exc={old: [entry]}, slug=old, latest=current)
+check("flow-style YAML draft cannot gain a roadmap exception", has(errs, "999999"))
+for draft in ("draft: false # published", ""):
+    errs, warns = lint(historical.replace("draft: false", draft),
+                       exc={old: [entry]}, slug=old, latest=current)
+    check(f"published historical frontmatter allows an exact exception: {draft!r}",
+          not errs and has(warns, "999999"))
 
 # ------------------------------------------------------ label / url mismatch
 # A link whose visible text names one id while its href points at another.
