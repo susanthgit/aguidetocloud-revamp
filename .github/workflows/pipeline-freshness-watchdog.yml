@@ -1,6 +1,6 @@
 name: 🚦 Pipeline Freshness Watchdog
 
-# Probes the 5 live data endpoints (AI News, M365 Roadmap, Service Health,
+# Probes the 4 live data endpoints (M365 Roadmap, Service Health,
 # Cert Tracker, M365 Deprecation Timeline) and opens an issue if any
 # `generated_at` timestamp is older than its per-pipeline threshold.
 #
@@ -50,7 +50,6 @@ jobs:
           from datetime import datetime, timezone
 
           PIPELINES = [
-              ("AI News",        "https://www.aguidetocloud.com/data/ainews/latest.json",                12),
               ("M365 Roadmap",   "https://www.aguidetocloud.com/data/roadmap/latest.json",               48),
               ("Service Health", "https://www.aguidetocloud.com/data/service-health/latest.json",         6),
               ("Cert Tracker",   "https://www.aguidetocloud.com/data/cert-tracker/latest.json",         192),
@@ -230,7 +229,7 @@ jobs:
 
           ## Context
 
-          One or more of the 5 data pipelines has not refreshed its \`generated_at\` within the per-pipeline freshness threshold. Common causes:
+          One or more of the 4 data pipelines has not refreshed its \`generated_at\` within the per-pipeline freshness threshold. Common causes:
 
           1. **GitHub Actions quota exhausted on the pipeline repo** — verify the source repo's recent runs aren't failing in 3s with 0 billable_ms. Repos must be public for unlimited free Actions, OR the account must have a paid Actions allowance.
           2. **Upstream API change** — pipeline scripts (RSS feeds, Microsoft Learn scrapes, Microsoft API) may have started returning unexpected shapes; check the latest failed run in the pipeline repo.
@@ -240,7 +239,7 @@ jobs:
           ## Local probe
 
           \`\`\`bash
-          for p in ainews roadmap service-health cert-tracker deprecation-timeline; do
+          for p in roadmap service-health cert-tracker deprecation-timeline; do
             echo \"--- \$p ---\"
             curl -s \"https://www.aguidetocloud.com/data/\$p/latest.json\" | jq -r '.generated_at // .generated // \"no timestamp\"'
           done
