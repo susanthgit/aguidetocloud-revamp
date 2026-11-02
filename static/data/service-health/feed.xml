@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Nov 2026 05:55:01 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 15:39:46 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may show outdated data in the admin center</title>
@@ -44,9 +44,9 @@
       <pubDate>Thu, 29 Oct 2026 16:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft OneDrive] Admins are unable to complete Microsoft OneDrive or SharePoint site migrations</title>
+      <title>[Microsoft OneDrive] Admins were unable to complete Microsoft OneDrive or SharePoint site migrations</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1530155</link>
-      <description>[Microsoft OneDrive] Admins are unable to complete OneDrive or SharePoint site migrations.</description>
+      <description>[Microsoft OneDrive] Admins were unable to complete OneDrive or SharePoint site migrations.</description>
       <category>Microsoft OneDrive</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">OD1530155</guid>
