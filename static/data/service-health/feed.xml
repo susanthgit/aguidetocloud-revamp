@@ -5,16 +5,43 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Nov 2026 16:08:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 21:43:08 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 for the web] Some users may be unable to access Microsoft Word, PowerPoint, or Excel for the web</title>
+      <link>https://www.aguidetocloud.com/service-health/#OO1537414</link>
+      <description>[Microsoft 365 for the web] Users may be unable to access Microsoft Word, PowerPoint, or Excel for the web.</description>
+      <category>Microsoft 365 for the web</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">OO1537414</guid>
+      <pubDate>Tue, 03 Nov 2026 21:24:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] On-premises users may see inconsistent results when viewing the hybrid free/busy information for Exchange Online users</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1537187</link>
+      <description>[Exchange Online] On-premises users may see inconsistent results when viewing the hybrid free/busy information for Exchange Online users.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1537187</guid>
+      <pubDate>Tue, 03 Nov 2026 18:06:39 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams]  Some users may be unable to load their calendar in the Microsoft Teams web app</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1536687</link>
-      <description>[Microsoft Teams] Users may be unable to load their calendar in the Microsoft Teams web app.</description>
+      <description>[Microsoft Teams] Users may have been unable to load their calendar in the Microsoft Teams web app.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1536687</guid>
       <pubDate>Tue, 03 Nov 2026 10:58:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to download meeting transcripts in docx format from Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1537403</link>
+      <description>[Microsoft Teams] Users may have been unable to download meeting transcripts in docx format from Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1537403</guid>
+      <pubDate>Mon, 02 Nov 2026 12:42:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Admins couldn't download the Migration Manager agent from the SharePoint admin center</title>
@@ -28,19 +55,10 @@
     <item>
       <title>[Microsoft 365 suite] Some admins' Microsoft 365 Copilot and Copilot Chat usage reports may be delayed in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1535688</link>
-      <description>[Microsoft 365 suite] Admins' Copilot and Copilot Chat usage reports may be delayed by 24 hours in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins' Copilot and Copilot Chat usage reports were delayed by up to 24 hours in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1535688</guid>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some admins' Microsoft 365 Copilot and Copilot Chat usage reports may be delayed in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1535656</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins' Copilot and Copilot Chat usage reports may be delayed by 24 hours in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">CP1535656</guid>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -438,24 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1507859</guid>
       <pubDate>Mon, 12 Oct 2026 20:48:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Admins are unable to access the Exchange admin center (EAC)</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1500900</link>
-      <description>[Exchange Online] Admins are unable to access the EAC. </description>
-      <category>Exchange Online</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">EX1500900</guid>
-      <pubDate>Mon, 12 Oct 2026 08:15:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Users may have been unable to access or protect content using Azure Rights Management (ARM) in Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1500833</link>
-      <description>[Microsoft 365 apps] Users may have been unable to access or protect content using ARM in Microsoft 365 services.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OP1500833</guid>
-      <pubDate>Mon, 12 Oct 2026 07:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
