@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Nov 2026 02:15:51 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 12:01:35 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to access Microsoft Word, PowerPoint, or Excel for the web</title>
@@ -15,15 +15,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">OO1537414</guid>
       <pubDate>Tue, 03 Nov 2026 21:24:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] On-premises users may see inconsistent results when viewing the hybrid free/busy information for Exchange Online users</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1537187</link>
-      <description>[Exchange Online] On-premises users may see inconsistent results when viewing the hybrid free/busy information for Exchange Online users.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1537187</guid>
-      <pubDate>Tue, 03 Nov 2026 18:06:39 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams]  Some users may be unable to load their calendar in the Microsoft Teams web app</title>
@@ -186,6 +177,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1528420</guid>
       <pubDate>Tue, 27 Oct 2026 02:22:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] On-premises users may see inconsistent results when viewing the hybrid free/busy information for Exchange Online users</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1537187</link>
+      <description>[Exchange Online] On-premises users saw inconsistent results when they viewed the hybrid free/busy information for Exchange Online users.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1537187</guid>
+      <pubDate>Mon, 26 Oct 2026 19:41:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins' Microsoft Defender XDR advanced hunting queries that contain a customer-defined function may have failed</title>
