@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Nov 2026 12:01:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 19:41:50 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to access Microsoft Word, PowerPoint, or Excel for the web</title>
@@ -154,9 +154,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to load chat history or previously pinned chats, and can't pin chats in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1527498</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to load chat history or previously pinned chats, and can't pin chats in Copilot.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to load chat history or previously pinned chats, and couldn't pin chats in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1527498</guid>
       <pubDate>Tue, 27 Oct 2026 15:58:45 +0000</pubDate>
     </item>
