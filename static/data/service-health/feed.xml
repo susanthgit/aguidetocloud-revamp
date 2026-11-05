@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 00:51:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 09:23:29 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to access Microsoft Word, PowerPoint, or Excel for the web</title>
@@ -78,15 +78,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1531593</guid>
       <pubDate>Fri, 30 Oct 2026 07:52:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1530567</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Copilot Chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CW1530567</guid>
-      <pubDate>Thu, 29 Oct 2026 17:19:12 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] External users’ replies to encrypted email messages may not be delivered in Exchange Online</title>
@@ -384,6 +375,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MP1507695</guid>
       <pubDate>Wed, 14 Oct 2026 16:14:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1530567</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have been unable to view recent portions of their conversation history with Copilot Chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1530567</guid>
+      <pubDate>Wed, 14 Oct 2026 15:55:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Some users may encounter refresh failures when using the Dynamics 365 Business Central connector in Power BI</title>
