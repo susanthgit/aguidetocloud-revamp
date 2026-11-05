@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T19:41:49.899743+00:00",
+  "generated_at": "2026-11-05T00:51:10.337968+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -7,8 +7,8 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 20,
-      "active_incidents": 2,
-      "avg_duration_minutes": 7326,
+      "active_incidents": 1,
+      "avg_duration_minutes": 9732,
       "last_incident": "2026-11-03T10:58:09.880000+00:00",
       "classifications": {
         "advisory": 13,
@@ -212,12 +212,12 @@
     },
     {
       "month": "2026-10",
-      "incident_count": 70,
+      "incident_count": 69,
       "services_affected": 13
     },
     {
       "month": "2026-09",
-      "incident_count": 27,
+      "incident_count": 28,
       "services_affected": 13
     }
   ]
