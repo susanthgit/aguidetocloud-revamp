@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 23:35:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 06:31:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Users may not be able to access Class Notebooks in Microsoft OneNote</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1540560</link>
+      <description>[Microsoft 365 suite] Users may have not been able to access Class Notebooks in Microsoft OneNote.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1540560</guid>
+      <pubDate>Thu, 05 Nov 2026 23:36:40 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Cowork in the Microsoft Copilot 365 User Interface (UI)</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1540142</link>
@@ -14,6 +23,15 @@
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1540142</guid>
+      <pubDate>Thu, 05 Nov 2026 16:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users in Japan, Asia and Australia may be unable to access Cowork in the Microsoft Copilot 365 User Interface (UI)</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1540672</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users in Japan, Asia and Australia may have been unable to access Cowork in the Copilot UI.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1540672</guid>
       <pubDate>Thu, 05 Nov 2026 16:30:00 +0000</pubDate>
     </item>
     <item>
@@ -62,15 +80,6 @@
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may show outdated data in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1532211</link>
-      <description>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may show outdated data in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1532211</guid>
-      <pubDate>Fri, 30 Oct 2026 21:02:23 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to generate images in Microsoft 365 Copilot Create</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1535460</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable generate images in Copilot Create.</description>
@@ -87,6 +96,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1531593</guid>
       <pubDate>Fri, 30 Oct 2026 07:52:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may show outdated data in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1532211</link>
+      <description>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may show outdated data in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1532211</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] External users’ replies to encrypted email messages may not be delivered in Exchange Online</title>
@@ -156,7 +174,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1527498</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to load chat history or previously pinned chats, and couldn't pin chats in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1527498</guid>
       <pubDate>Tue, 27 Oct 2026 15:58:45 +0000</pubDate>
     </item>
@@ -438,24 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1505952</guid>
       <pubDate>Tue, 13 Oct 2026 07:40:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins may be unable to review Service health or Message center postings in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1506255</link>
-      <description>[Microsoft 365 suite] Admins may have been unable to review Service health or Message center postings in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1506255</guid>
-      <pubDate>Mon, 12 Oct 2026 21:54:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users' Microsoft Teams contact cards may not fully display Out of office text</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1504581</link>
-      <description>[Microsoft Teams] Users' Microsoft Teams contact cards may not fully display Out of office text.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1504581</guid>
-      <pubDate>Mon, 12 Oct 2026 21:18:48 +0000</pubDate>
     </item>
   </channel>
 </rss>
