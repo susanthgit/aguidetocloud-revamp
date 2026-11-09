@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 09:41:34 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 20:40:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1545775</link>
+      <description>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1545775</guid>
+      <pubDate>Mon, 09 Nov 2026 15:56:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1545193</link>
+      <description>[Exchange Online] Users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1545193</guid>
+      <pubDate>Mon, 09 Nov 2026 05:07:31 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users may not be able to access Class Notebooks in Microsoft OneNote</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1540560</link>
@@ -438,24 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1507178</guid>
       <pubDate>Wed, 14 Oct 2026 03:34:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may not receive meeting-started notifications on Android devices</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1508612</link>
-      <description>[Microsoft Teams] Users may have not received meeting-started notifications on Android devices.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1508612</guid>
-      <pubDate>Tue, 13 Oct 2026 23:03:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may be unable to access multiple Microsoft 365 services using Global Secure Access (GSA)</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1505952</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access multiple Microsoft 365 services using GSA. </description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1505952</guid>
-      <pubDate>Tue, 13 Oct 2026 07:40:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
