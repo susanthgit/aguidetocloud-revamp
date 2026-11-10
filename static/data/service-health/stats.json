@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T20:40:33.261524+00:00",
+  "generated_at": "2026-11-10T04:03:33.113400+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -9,7 +9,7 @@
       "total_incidents": 20,
       "active_incidents": 2,
       "avg_duration_minutes": 10270,
-      "last_incident": "2026-11-09T15:56:37.777000+00:00",
+      "last_incident": "2026-11-03T10:58:09.880000+00:00",
       "classifications": {
         "advisory": 14,
         "incident": 6
@@ -21,7 +21,7 @@
       "icon": "🤖",
       "total_incidents": 15,
       "active_incidents": 1,
-      "avg_duration_minutes": 3536,
+      "avg_duration_minutes": 3931,
       "last_incident": "2026-11-05T16:30:00+00:00",
       "classifications": {
         "advisory": 5,
@@ -207,12 +207,12 @@
   "monthly": [
     {
       "month": "2026-11",
-      "incident_count": 10,
+      "incident_count": 9,
       "services_affected": 6
     },
     {
       "month": "2026-10",
-      "incident_count": 69,
+      "incident_count": 70,
       "services_affected": 13
     },
     {

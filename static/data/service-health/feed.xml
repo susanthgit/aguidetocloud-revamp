@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 20:40:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 04:03:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1545775</link>
-      <description>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1545775</guid>
-      <pubDate>Mon, 09 Nov 2026 15:56:37 +0000</pubDate>
-    </item>
     <item>
       <title>[Exchange Online] Some users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1545193</link>
@@ -249,6 +240,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1526068</guid>
       <pubDate>Mon, 26 Oct 2026 14:45:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1545775</link>
+      <description>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1545775</guid>
+      <pubDate>Mon, 26 Oct 2026 12:53:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have refresh delays</title>
