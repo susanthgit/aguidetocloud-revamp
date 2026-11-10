@@ -10,7 +10,7 @@
     "windows-server"
   ],
   "category": "Azure",
-  "status": "retiring",
+  "status": "retired",
   "updated_at": "2026-09-30 20:12:00+00:00",
   "skills_date": "January 21, 2026",
   "skills_at_a_glance": [
@@ -183,13 +183,6 @@
   "change_log_official": [],
   "change_history": [],
   "related_exams": [
-    {
-      "code": "AZ-801",
-      "title": "Configuring Windows Server Hybrid Advanced Services",
-      "level": "intermediate",
-      "status": "retiring",
-      "category": "Azure"
-    },
     {
       "code": "AZ-104",
       "title": "Microsoft Azure Administrator",
