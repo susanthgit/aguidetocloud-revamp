@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Nov 2026 12:32:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:47:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 for the web] Some users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers</title>
+      <link>https://www.aguidetocloud.com/service-health/#OO1547737</link>
+      <description>[Microsoft 365 for the web] Users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers.</description>
+      <category>Microsoft 365 for the web</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OO1547737</guid>
+      <pubDate>Tue, 10 Nov 2026 19:40:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Admins may not be receiving new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1547527</link>
+      <description>[Microsoft 365 suite] Admins may not be receiving new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MO1547527</guid>
+      <pubDate>Tue, 10 Nov 2026 17:03:49 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Some users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1545193</link>
@@ -109,9 +127,9 @@
     <item>
       <title>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may show outdated data in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1532211</link>
-      <description>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may show outdated data in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Users' Microsoft 365 Apps usage reports may have shown outdated data in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1532211</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 +0000</pubDate>
     </item>
@@ -244,9 +262,9 @@
     <item>
       <title>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1545775</link>
-      <description>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams.</description>
+      <description>[Microsoft Teams] Users may have been unable to view previously deleted teams after restoration in Microsoft Teams.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1545775</guid>
       <pubDate>Mon, 26 Oct 2026 12:53:00 +0000</pubDate>
     </item>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1508905</guid>
       <pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users that have premium license for Microsoft Defender for Servers (DFS) P2 may not see baseline data</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1530894</link>
-      <description>[Microsoft Defender XDR] Users that have premium license for DFS P2 may not have seen baseline data in the Microsoft Defender portal.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1530894</guid>
-      <pubDate>Wed, 14 Oct 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users were unable to see model selection options in Microsoft 365 Copilot chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1507178</link>
-      <description>[Microsoft 365 Copilot Chat] Users were unable to see model selection options in Microsoft 365 Copilot chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CW1507178</guid>
-      <pubDate>Wed, 14 Oct 2026 03:34:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
