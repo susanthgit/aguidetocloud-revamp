@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Nov 2026 04:03:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 12:32:14 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1545193</link>
-      <description>[Exchange Online] Users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses.</description>
+      <description>[Exchange Online] Users may have been unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1545193</guid>
-      <pubDate>Mon, 09 Nov 2026 05:07:31 +0000</pubDate>
+      <pubDate>Fri, 06 Nov 2026 18:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may not be able to access Class Notebooks in Microsoft OneNote</title>
@@ -30,7 +30,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1540142</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Cowork in Copilot UI.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1540142</guid>
       <pubDate>Thu, 05 Nov 2026 16:30:00 +0000</pubDate>
     </item>
