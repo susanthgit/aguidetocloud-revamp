@@ -1,24 +1,24 @@
 ---
 title: "Microsoft 365 F5 Security + Compliance (2026)"
-description: "There is no Microsoft 365 F5 plan — F5 is an add-on for F1 and F3. What Security, Compliance, and the bundle each cover, and why the pricing is dated."
+description: "There is no Microsoft 365 F5 plan — F5 is an add-on for F1 and F3. What Security, Compliance, and the bundle each cover, and where to check current prices."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 F5 Security + Compliance"
 plan_id: "m365-f5-seccomp"
-price: 13
-price_note: "Add-on to F1 or F3 — 2021 list price"
+price_display: "Check Microsoft for the current price"
+price_note: "Add-on to F1 or F3. Current price not verified."
 tagline: "E5-grade security and compliance for frontline workers"
 plan_category: "Frontline"
 badge: ""
 ms_official: "https://www.microsoft.com/en-us/licensing/news/new_f5_security_and_compliance_offer_for_frontline_workers"
 m365maps: ""
-last_verified: "February 2021"
+last_verified: "November 2026"
 price_status: "historical"
 faq:
   - q: "Is there a Microsoft 365 F5 plan?"
     a: "No. Unlike E5, there is no F5 base plan. F5 exists only as add-ons that layer on top of a Microsoft 365 F1 or F3 licence — F5 Security, F5 Compliance, or the two bundled together."
   - q: "How much do the F5 add-ons cost?"
-    a: "Microsoft's published list prices are F5 Security $8, F5 Compliance $8, and the bundle $13 per user per month — but those come from the February 2021 announcement, which is the last time Microsoft published them publicly. F1 and F3 both rose in July 2026, so treat these as a starting point and confirm current figures with your reseller. All three are add-ons and require an F1 or F3 base licence."
+    a: "Current Microsoft prices for the frontline add-ons are not on Microsoft's licensing guidance page, and the 2021 figures may be out of date. Check the current price on Microsoft's pricing page or with your reseller. All three are add-ons and require an F1 or F3 base licence."
   - q: "What does F5 Security add?"
     a: "Advanced identity and threat protection for frontline seats — Entra ID P2 (including Privileged Identity Management and risk-based conditional access), Defender for Endpoint, and Defender for Office."
   - q: "What does F5 Compliance add?"
@@ -35,17 +35,19 @@ It doesn't. **F5 is an add-on**, not a base licence. You buy [F1 or F3](/licensi
 
 > **💡 Plain English:** E5 is a meal. F5 is a side you order with your F1 or F3.
 
+**Microsoft's current names:** the frontline add-ons are now called **Defender Suite FLW**, **Purview Suite FLW**, and **Defender + Purview Suite FLW**. These names are on [Microsoft's subscription suites guidance](https://www.microsoft.com/licensing/guidance/subscription-suites). Third-party guides link them to the F5 names used below. Microsoft's page doesn't state that link, so check the match on your own order form.
+
 ## The Three Options
 
-| Add-on | Price | What It Covers |
+| Add-on (Microsoft name) | Price | What It Covers |
 |--------|:-----:|---------------|
-| **F5 Security** | about $8/user/mo | Identity and threat protection |
-| **F5 Compliance** | about $8/user/mo | Data governance and eDiscovery |
-| **F5 Security + Compliance** | about $13/user/mo | Both — cheaper than buying them separately |
+| **Defender Suite FLW** (older name: F5 Security) | See Microsoft | Identity and threat protection |
+| **Purview Suite FLW** (older name: F5 Compliance) | See Microsoft | Data governance and eDiscovery |
+| **Defender + Purview Suite FLW** (older name: F5 Security + Compliance) | See Microsoft | Both |
 
-⚠️ **A note on these prices.** They come from Microsoft's [February 2021 announcement](https://www.microsoft.com/en-us/licensing/news/new_f5_security_and_compliance_offer_for_frontline_workers), which is the last time Microsoft published F5 add-on pricing publicly. F1 and F3 both went up in July 2026, so the F5 add-ons may well have moved too. Use these as a starting point for a conversation, not a quote.
+⚠️ **Prices.** Microsoft's 2021 announcement listed the F5 add-ons at $8 each and the bundle at $13 per user per month. Those are old figures. Current prices aren't on Microsoft's [licensing guidance page](https://www.microsoft.com/licensing/guidance/subscription-suites), so check Microsoft's pricing page or your reseller before you budget.
 
-Buying both separately is $16, so the bundle saves $3 per user per month. If you genuinely only need one side, buy that one.
+Compare the bundle with buying the two separately, using current Microsoft prices. If you only need one side, buy that one.
 
 ## What F5 Security Adds
 
@@ -83,7 +85,7 @@ No. Unlike [E5](/licensing/microsoft-365-e5/), there is no F5 base plan. F5 exis
 
 **2. How much do the F5 add-ons cost?**
 
-Microsoft's published list prices are F5 Security $8, F5 Compliance $8, and the bundle $13 per user per month — but those come from the February 2021 announcement, which is the last time Microsoft published them publicly. F1 and F3 both rose in July 2026, so treat these as a starting point and confirm current figures with your reseller. All three are add-ons and require an F1 or F3 base licence.
+Current Microsoft prices for the frontline add-ons are not on Microsoft's licensing guidance page, and the 2021 figures may be out of date. Check the current price on Microsoft's pricing page or with your reseller. All three are add-ons and require an F1 or F3 base licence.
 
 
 
