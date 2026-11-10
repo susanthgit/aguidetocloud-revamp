@@ -19,6 +19,8 @@ lastmod: 2026-11-10
 
 ## About NVIDIA NCP-AAI
 
+**Before buying:** This is independent single-answer study material, not official exam content. NVIDIA's webpage weights total 98% and differ from its linked guide. NeMo Agent Toolkit coverage is limited to existing or version-scoped workflows because NVIDIA has deprecated it.
+
 NCP-AAI covers the design, development and operation of AI agents. An agent does more than generate a response: it can choose a tool, inspect a result, keep state and decide what to do next. That makes familiar software problems harder. A retry can repeat a business action. A memory lookup can expose another user's information. A successful model response can still leave the overall task unfinished.
 
 This professional certification focuses on those system-level decisions. NVIDIA's published scope includes multi-agent coordination, planning and memory, retrieval, evaluation, production deployment, safeguards and human oversight.
