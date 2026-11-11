@@ -1,0 +1,343 @@
+{
+  "_README": "November images use canonical annotator manifest records; none are tenant captures.",
+  "slug": "microsoft-365-copilot-november-2026-updates",
+  "images": {
+    "created-10-audio-labels.webp": {
+      "disposition": "created_asset",
+      "reason": "Author-created explanation of the public notice; labelled as conceptual, not product UI or a tenant test.",
+      "output_sha256": "744e1f9498c5d9d534595f900c3ec3cc77cba2bc9171b8cdb008774dcd44b02c"
+    },
+    "created-27-markdown-word.webp": {
+      "disposition": "created_asset",
+      "reason": "Author-created explanation of Microsoft's public roundup; labelled as conceptual, not product UI or a tenant test.",
+      "output_sha256": "9b05b1ead8ad007a0adc7cad59b69d758d428ecc9d319aa228147629b10bbef9"
+    },
+    "created-40-workflow-credits.webp": {
+      "disposition": "created_asset",
+      "reason": "Author-created explanation of public workflow reporting; labelled as conceptual, with no invented credit data.",
+      "output_sha256": "849857b0641c6e73a379008936113b0f86d5a88a0a738e6aada8b9189f460a85"
+    },
+    "created-43-workforce-data.webp": {
+      "disposition": "created_asset",
+      "reason": "Author-created explanation of the public archive notice; labelled as conceptual, not product UI or a tenant test.",
+      "output_sha256": "910e7d16e475535f8a41e8ea2a9efdec9b45db1947f30446f965ad17d869b509"
+    },
+    "official-work-iq-sources.webp": {
+      "disposition": "annotated",
+      "spec": "nov-work-iq.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "f23992513e9c295c46621e7b0f97c42e002db6437d1c4003c103ff71d1dbe9a7",
+      "output_sha256": "60debc0e241e6fb226a268cdaef0aed1addedb1709bea689e8aaae92b3a2b1d3",
+      "callout_texts": ["Review selected sources"]
+    },
+    "official-databricks-knowledge.webp": {
+      "disposition": "annotated",
+      "spec": "nov-databricks-knowledge.spec.json",
+      "scale": 0.4,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "3c2c65239a702e681fe1ffbd3af6b2adef47b7b9c4bd9e2293e1efc710ce70e2",
+      "output_sha256": "507073e9a86f7606d98ad4cbf60f1465af6f22373de43e569a38576e8c1cec0c",
+      "callout_texts": ["Choose Databricks tables"]
+    },
+    "official-insights-feedback.webp": {
+      "disposition": "annotated",
+      "spec": "nov-insights-feedback.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "b666ca425dbcd6ea38a71ffd42f12f6f2ef9d05994fae921337df0eaccc6ca90",
+      "output_sha256": "9b10765ae87afce143a960d69ee2186ca5911ac471e426700e2444ea288d52ee",
+      "callout_texts": ["Ask about agent feedback"]
+    },
+    "official-workspace-office.webp": {
+      "disposition": "annotated",
+      "spec": "nov-workspace-office.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "117295c17d8e12eac319b6db489a0eb20d5922d9603f4031a05210540c5a8de8",
+      "output_sha256": "5f65ff2bed2b9489a016bbad1ba312915e240e0b7b828c6eb0785f659d41d6a1",
+      "callout_texts": ["Edit an Office file here"]
+    },
+    "official-onenote-windows-capture.webp": {
+      "disposition": "annotated",
+      "spec": "nov-onenote-windows.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "26821d72bdfa47112eace2a5918ce91886925ccc937c3b0443b58d6fd76a24c5",
+      "output_sha256": "3a976f67e92fd152888fcb88d87eb8d6b97e77f6c060791067a571b4654f75e4",
+      "callout_texts": ["Start a new capture"]
+    },
+    "official-excel-canvas.webp": {
+      "disposition": "annotated",
+      "spec": "nov-excel-canvas.spec.json",
+      "scale": 0.65,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "5b8c1d1451682e3e515ad89b8070d05ea5dc12adf2ff282c620211b21ccc2934",
+      "output_sha256": "d4f681e060690cb5091d905727bf40412af239469be30931f6f153f1aee64dee",
+      "callout_texts": ["Explore workbook data visually"]
+    },
+    "official-excel-accounting.webp": {
+      "disposition": "annotated",
+      "spec": "nov-accounting-demo.spec.json",
+      "scale": 0.65,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "8bcb9d282415d6b901e6f5f40a85857866eb4e0e806252644c5f7ba7383ce965",
+      "output_sha256": "5d4e5cc31016ca5d7a04fd53a31fb8a5f39894e3a8eb84862eb9b7db8cdce240",
+      "callout_texts": ["Review the reconciliation"]
+    },
+    "official-dlp-cowork.webp": {
+      "disposition": "annotated",
+      "spec": "nov-dlp-cowork.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "7bcf7d71c4101c590d718aadce28f5fc981d5ba768650b8412eb3205ff34dd29",
+      "output_sha256": "cab8b76a8f29b9460c354564f49e4cbb8c3bab3e46da0e276640a77fca44e92b",
+      "callout_texts": ["The policy limits this request"]
+    },
+    "official-queues-copilot.webp": {
+      "disposition": "annotated",
+      "spec": "nov-queues-copilot.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "064143b975ca8ef8e88af4629a07edbc7bd09a4473d5fe320fc002ea05ff3e8b",
+      "output_sha256": "52215f42ef16fa585f9987ea234ffbcba856afd518420395015142f2e3d81031",
+      "callout_texts": ["Ask about the call"]
+    },
+    "official-queues-recap.webp": {
+      "disposition": "annotated",
+      "spec": "nov-queues-recap.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "fb729f33092581f85277d82884dd02ce740dda7fc1c0ccc199c01416f36491d8",
+      "output_sha256": "2007ac24329d5805cb10495d02a3091f95fed9f1d0137a1ca2fbd159946c7a1b",
+      "callout_texts": ["Read the AI call summary"]
+    },
+    "official-onedrive-gallery.webp": {
+      "disposition": "annotated",
+      "spec": "nov-onedrive-gallery.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "02b08952c3315c6d6187d3f7b43e1dff91ec9cd04e37103a58d6a6f276eedd02",
+      "output_sha256": "ba25a0fb4cadee9e1ac01335d4ad10818a345f574bf4e5d5072cb93273334956",
+      "callout_texts": [
+        "Choose a prompt category"
+      ]
+    },
+    "official-agents-report.webp": {
+      "disposition": "annotated",
+      "spec": "nov-agents-report.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 2,
+      "source_sha256": "0eca96665c2aafc89e34bd684b12c29ff96ad85776787bb233ee8eb8d71f2b48",
+      "output_sha256": "2bc7e6e2af775188b549887e9201eebcc79bce20a2be3dbc2085fef1ebb1fe9b",
+      "callout_texts": ["Licensed and unlicensed"]
+    },
+    "official-brandkit-unpublish.webp": {
+      "disposition": "annotated_at_capture",
+      "reason": "Microsoft's source image already outlines Unpublish in black; retained without a second annotation.",
+      "output_sha256": "229febf542a1073cb24abfdf3f6259ccf7d64aeed2a92f5c15b1e3ec867156e2"
+    },
+    "official-brandkit-build.webp": {
+      "disposition": "annotated",
+      "spec": "nov-brandkit-build.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "4b0222fbbb4f7ca5e93da7504701e1065ec680a98788d8bce439cc7a980f9ccc",
+      "output_sha256": "2cd08ba9359dd987b55f40ac4402ed5ed08d3ae7e424cabf1393fb98b136cb3c",
+      "callout_texts": ["Add brand assets"]
+    },
+    "official-powerpoint-skill-review.webp": {
+      "disposition": "annotated",
+      "spec": "nov-powerpoint-skill.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "1f8f8069a1a8dbf74f9274d6c0bb32b031b1e59821d1abf71dadeec11ff1847c",
+      "output_sha256": "c92d25fc6de00f365df0e1417d95d977ad4327b7ce71eef22282faaf60b471d7",
+      "callout_texts": ["Review instructions"]
+    },
+    "official-teach-unit-plan.webp": {
+      "disposition": "annotated",
+      "spec": "nov-teach-learn.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 0,
+      "source_sha256": "8e375bd5def07e15892be6cd59d24a9c3d9ad94c7db63c4dce4050d2a689ca81",
+      "output_sha256": "96d71c3374c3880fc45db14f72639465355a97008faa2ec07ebba10ca2238fbd",
+      "callout_texts": ["Navigate the weeks"]
+    },
+    "official-role-plugins.webp": {
+      "disposition": "annotated",
+      "spec": "nov-role-plugins.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "3652baab42cf966668e8946ea9d62d28492e8fe299ff5498c5755e809c50851b",
+      "output_sha256": "fcb4e92d5cfd71cfddd81ade0267f8480c809035a2cbabc8eaa1f5513e70164d",
+      "callout_texts": ["Choose a role-based plugin"]
+    },
+    "official-template-assessment.webp": {
+      "disposition": "annotated",
+      "spec": "nov-template-assessment.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "abcaf9c9570af257e5b8383b32995a0453d4c0184a63aade21e4258391a0b538",
+      "output_sha256": "c01e27d6cfcb791b8d047026dfa0f814a80460fdc04e0b50a4580accdcf8b2dd",
+      "callout_texts": ["Review suggestions"]
+    },
+    "official-agent-account-preview.webp": {
+      "disposition": "annotated",
+      "spec": "nov-agent-account.spec.json",
+      "scale": 2.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "60a1be19dbff41f548062f82ab5b86d9c1d904e03af923ce57f00915d46c9496",
+      "output_sha256": "a303e65020035a1bcbf4d693398b8e0b9936b1b32e51b85bd5dc5a7a7da1241b",
+      "callout_texts": ["Agent account preview"]
+    },
+    "official-studio-mcp.webp": {
+      "disposition": "annotated",
+      "spec": "nov-studio-mcp.spec.json",
+      "scale": 2.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "fbbcc221301ffa3e936524449e5ad571c0ccce0addf3191647f9c3e869edf45e",
+      "output_sha256": "d4531cd0cbaf054475c35c83441cc2fd362e5ce57521aab8582acaef7c04d9ec",
+      "callout_texts": ["Find the Studio server"]
+    },
+    "official-a2a-agent.webp": {
+      "disposition": "annotated",
+      "spec": "nov-a2a.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "2a4eaac1db31cc5967b717e125698ae28513f141e87f9e4fc7d01a7e470eaf42",
+      "output_sha256": "bdf40c57f78353fb1742ae1e87cc08a69992d6e6a1bc8a7e8c48262c056c8108",
+      "callout_texts": ["Review the handoff"]
+    },
+    "official-write-approval-options.webp": {
+      "disposition": "annotated",
+      "spec": "nov-approval-options.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "c3d8dfec550f33b5700d91e8a2dd44e01248f33d88a104f52789206aac4aad83",
+      "output_sha256": "7ebeabf0891ee37c6fded8bb06fa3fbab0a755525db877a01f1b0ce374053c72",
+      "callout_texts": ["Choose when to approve"]
+    },
+    "official-write-approval-detail.webp": {
+      "disposition": "annotated",
+      "spec": "nov-approval-detail.spec.json",
+      "scale": 2.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "a762cae02e68d0c1a82c62dd3302880a52a17ffd18a467e2e85e67998cd2db36",
+      "output_sha256": "558c6305d34b6b3585867fb6a7798053050afa4a6ff7e23cddb94ebc6e64586f",
+      "callout_texts": ["Choose the approval scope"]
+    },
+    "official-access-guidance-cowork.webp": {
+      "disposition": "annotated",
+      "spec": "nov-guidance-annotate.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 2,
+      "source_sha256": "47b0e9f6e4063cda25f375009eca2ab4e9712dfa26241b54b292ab2e7c2e69f0",
+      "output_sha256": "5308185ab89790ea57816e07683d98352ce058f39e7b8f7300f051046d833046",
+      "callout_texts": ["Link to your guidance"]
+    },
+    "official-power-platform-admin-plugin.webp": {
+      "disposition": "annotated",
+      "spec": "nov-power-platform-plugin.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "9c7b8a0eca3f7f0ae1c078bf18c3d1498f759323b461b2e0d3acc2e24f5f8aee",
+      "output_sha256": "5a1c20070eef6cda6a47442a0ef48be9d68247be50def12f905f68768c781a73",
+      "callout_texts": ["Preview governance plugin"]
+    },
+    "official-project-context.webp": {
+      "disposition": "annotated",
+      "spec": "nov-projects-workspaces.spec.json",
+      "scale": 0.4,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "6a5c410f8b54f12eeccdfa6de4ab2b5a44d1cc2149fde6913e2e6c5f79569487",
+      "output_sha256": "3ecf687655e39c09de21a41d751a9ff40680db1c69faaa4136a9e28740b12c73",
+      "callout_texts": ["Context and outputs"]
+    },
+    "official-cowork-reference-history.webp": {
+      "disposition": "annotated",
+      "spec": "nov-cowork-history.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "1fcf5273ec994a96335f71dd53230b6d9e88150abf3af359bd159018e4c22041",
+      "output_sha256": "c6ccccd89ff5f5be0e02e0ba81f8708a871e030db0f10fb548847b3bb95c8f33",
+      "callout_texts": ["Choose an earlier chat"]
+    },
+    "official-workspace-collaboration.webp": {
+      "disposition": "annotated",
+      "spec": "nov-projects-workspaces.spec.json",
+      "scale": 0.5,
+      "callouts": 1,
+      "boxes": 3,
+      "source_sha256": "16721e59aaedd66855b2b3ed76d8443cb4e3d472596c3e5c621cb6225379c0c2",
+      "output_sha256": "3905a4181793375242f0b7139eb487e58a30b04b875ee852cfbc24f46a5d7559",
+      "callout_texts": ["See teammates' cursors"]
+    },
+    "official-planner-plugin.webp": {
+      "disposition": "annotated",
+      "spec": "nov-planner.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "141d03d05f4a05d4fdf648a30d3e524e7044ba3b5ff794c2b33b36e9ff13c48a",
+      "output_sha256": "95b85e6b48d80acd6d6f7772dc03b09df49a1cd7c4e0bf3838aa2f1d2f3c0fae",
+      "callout_texts": ["Install Planner plugin"]
+    },
+    "official-planner-tasks.webp": {
+      "disposition": "annotated",
+      "spec": "nov-planner.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "add4ef1926720a3aa0be543d8cfee6089c73b4e08ac8ed6cb1f12f7c11da1b0c",
+      "output_sha256": "3a6404631b547ae1aba58c313bc2f2976dc3a3632cbb65f1eba213e66303d93b",
+      "callout_texts": ["Review your tasks"]
+    },
+    "official-interactive-slide.webp": {
+      "disposition": "annotated",
+      "spec": "nov-interactive-slide.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "cf6cf2320b8551f189a073385c030cb6839157fe0595e6440fdb5416d51abe41",
+      "output_sha256": "3d49c2f42796dea20405b9c109b5938750802e8f8952b1692e334fb42acc0b85",
+      "callout_texts": ["Explore slide controls"]
+    },
+    "official-edge-sidepane.webp": {
+      "disposition": "annotated",
+      "spec": "nov-edge.spec.json",
+      "scale": 1.0,
+      "callouts": 1,
+      "boxes": 1,
+      "source_sha256": "de8531dcb9d3dc69f6f65e00a1217b0a49e2ef5fb4e6bcc1287c3844f7f2ba63",
+      "output_sha256": "869da424d98badc85211b0af2f6c5dedc8c301d737c7e2a817e61179a50ff9e4",
+      "callout_texts": ["Copilot side pane"]
+    }
+  }
+}

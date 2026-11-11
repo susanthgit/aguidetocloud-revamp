@@ -1,0 +1,182 @@
+{
+  "1": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October Copilot roundup announces an Autopilot Frontier rollout in November, while MC1479277 updated 9 November says rollout timing and admin controls will follow. The section states this conflict and does not assert completed rollout."
+  },
+  "2": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 9 November launch says connector write actions are generally available in Chat and Cowork. Roadmap 570964, modified 30 October, reports October GA for federated connectors in Chat but says every write needs confirmation. The later launch and Learn confirmation guide describe per-tool remembered approval, so the roadmap's broader approval wording is not used to substantiate those choices."
+  },
+  "3": {
+    "disposition": "date_explained",
+    "reason": "MC1546354 published 9 November revises the usage-based access-request schedule: setting from mid-November, optional guidance URL from mid-December, discoverability at end January 2027 or end February for deferred release. The section describes plans rather than observed availability."
+  },
+  "4": {
+    "disposition": "date_explained",
+    "reason": "Azure Databricks October release notes place Copilot Studio integration GA on 7 October. The separate setup article requires Managed MCP Servers preview for Genie Agent connections; the section does not transfer this GA status to the Cowork plugin."
+  },
+  "5": {
+    "disposition": "not_applicable",
+    "reason": "This section reports a three-article Power Platform governance guidance series, not a feature launch. Microsoft Learn separately calls the Power Platform Admin in Cowork plugin preview and describes its access requirements."
+  },
+  "6": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says Projects rolled out in Cowork in October and is rolling out in Copilot Chat in November. The section describes those separate stages, not universal availability."
+  },
+  "7": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup describes a combined Chat and Cowork history with search and filters and announces worldwide rollout in November after Frontier. October's issue already covered Home, Plugins and Automations; the section is limited to the later history detail and rollout."
+  },
+  "8": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup describes existing notebooks becoming shared Workspaces and says the change rolled out to Frontier in October. It does not establish that all tenants have changed over."
+  },
+  "9": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup describes Office file editing in Workspaces as Frontier in October with worldwide rollout in January. The section adds that announced rollout detail to the prior issue and does not assert completion."
+  },
+  "10": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup describes Workspace Audio Overview additions rolling out to Frontier in October and worldwide in November. MC1492959 distinguishes labels on OneDrive-saved audio from audio remaining in the notebook."
+  },
+  "12": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says role-based Cowork plugins rolled out in October; the section labels this catch-up and qualifies availability by plugin and organisation."
+  },
+  "13": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup describes Planner in Cowork at Frontier in October. MC1540339 says worldwide rollout began late October and was expected to finish late November; the section does not claim tenant-level completion."
+  },
+  "14": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup groups OneNote and Planner for Frontier in October and worldwide rollout in November; the November Cowork notes qualify OneNote editing as availability-dependent. The section does not claim tenant-level completion."
+  },
+  "15": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says the Cowork task catalog rolled out in October; this section is labelled catch-up."
+  },
+  "16": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says referencing previous Copilot Chat conversations and Cowork tasks rolled out in October; this section is labelled catch-up."
+  },
+  "18": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October Copilot roundup says Accounting skills in Excel rolled out to Frontier in October and would roll out worldwide in November. These are the source's announced rollout stages, not confirmation for a particular tenant."
+  },
+  "19": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October Copilot roundup says Excel interactive canvas reached Insiders in October and planned worldwide rollout in November. Roadmap 569424 instead records September GA and Rolling out. The section discloses the unresolved discrepancy rather than treating either date as completion."
+  },
+  "20": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says its Sonnet 5.5 PowerPoint design update rolled out in October; this section is labelled catch-up and distinguishes the PowerPoint detail from the prior model-option coverage."
+  },
+  "21": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says simplified PowerPoint Brand Kit setup rolled out in October; this section is labelled catch-up."
+  },
+  "22": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says the PowerPoint Brand Kit publish and unpublish flow rolled out in October; this section is labelled catch-up."
+  },
+  "23": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says interactive PowerPoint slides rolled out in October. Microsoft Support supplies separate platform, interaction and licence qualifications; the section is labelled catch-up."
+  },
+  "24": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says the PowerPoint template assessment skill rolled out in October; this section is labelled catch-up."
+  },
+  "25": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says the PowerPoint Record a skill feature rolled out in October; the section distinguishes it from earlier Excel coverage."
+  },
+  "26": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says document-specific formatting and design in Word rolled out in October; this section is labelled catch-up."
+  },
+  "27": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says Word Markdown support rolled out in October and specifies web conversion; this section is labelled catch-up."
+  },
+  "28": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says the updated Copilot in Edge experience rolled out in October; this section is labelled catch-up and distinguishes the side pane from the earlier new-tab update."
+  },
+  "29": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says intelligent call recaps in the Queues app rolled out in September; the section labels it September catch-up rather than a November launch."
+  },
+  "30": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says Copilot Chat in shared Queues call history rolled out in September. Roadmap 568933 describes the same call-recap Chat experience and lists September GA; the section labels this September catch-up."
+  },
+  "31": {
+    "disposition": "date_explained",
+    "reason": "Microsoft announced the Copilot Studio harness rename on 28 October, with product terminology changing over the following weeks. The section describes the rename, not a new capability or completed global rollout."
+  },
+  "32": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's Copilot Studio October roundup, published 4 November, describes Studio skills in Cowork through Frontier. The section is labelled October catch-up and retains the Frontier qualification."
+  },
+  "33": {
+    "disposition": "date_explained",
+    "reason": "Microsoft Learn's Copilot Studio MCP guidance was updated 19 October and Microsoft's 4 November Studio roundup describes the server in its October update. The section does not claim a GA date."
+  },
+  "34": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 4 November Studio roundup reports general availability of the conversation-based connector configuration for the Microsoft Copilot harness and custom web agents using the Standard harness; the section retains that scope."
+  },
+  "35": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 4 November Studio roundup calls Copilot Studio agent accounts a private preview through Frontier. The section retains the private-preview and licence limitations."
+  },
+  "36": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 4 November Studio roundup and the October-updated Learn guidance call the customer conversation harness preview. The section does not assert GA."
+  },
+  "37": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 4 November Studio roundup and Learn guidance updated 23 October report Work IQ in Copilot Studio generally available; the section separately identifies preview workloads."
+  },
+  "38": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 4 November Studio roundup describes A2A support in the Microsoft Copilot harness as part of October updates, and Learn documents setup. A separate GA date has not been established and is not asserted."
+  },
+  "39": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 4 November Studio roundup reports workflow coauthoring among its October enhancements reaching general availability. The section is labelled catch-up."
+  },
+  "40": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 4 November Studio roundup describes October workflow reporting for Copilot Credits consumed per run and node; the section distinguishes this from September's build-and-test credit coverage without asserting GA."
+  },
+  "42": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup describes Insights Agent feedback and ratings as a Frontier early-access preview and says it rolled out in October; the section retains the preview and access qualifications."
+  },
+  "43": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's October roundup announces November rollout, but Learn and the 6 November Message Center archive describe Workforce Insights as preview. The section discloses the difference and describes the endpoint retirement as a notice, not observed completion."
+  },
+  "44": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup reports Purview DLP expansion to Cowork as October public preview; detailed Learn guidance supplies distinct rule and coverage limitations."
+  },
+  "45": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 3 November US Government article describes feature availability separately for GCC, GCC High and DoD; the section bounds its comparison to that source date rather than claiming rollout completion in each tenant."
+  },
+  "46": {
+    "disposition": "date_explained",
+    "reason": "Microsoft's 30 October roundup says Copilot memory retention configuration rolled out in October, while Learn updated 3 November says retention policies and labels do not apply. The section discloses the unresolved conflict rather than asserting a rollout outcome."
+  },
+  "49": {
+    "disposition": "date_explained",
+    "reason": "MC1405506 updated 6 November moves planned Windows Capture worldwide rollout from the end of October to the end of November. Microsoft Support describes current Office Insiders Beta availability and gives conflicting audio-retention guidance; the section distinguishes the plan, source conflict, and unverified tenant state."
+  },
+  "50": {
+    "disposition": "date_explained",
+    "reason": "The 4 November Copilot release notes describe authoritative SharePoint source management in the Microsoft 365 admin center. Public archive MC1526676 describes a planned late-September rollout, so the section labels it catch-up and distinguishes the earlier PowerShell and CSOM documentation."
+  }
+}

@@ -1,0 +1,788 @@
+{
+ "schema": 2,
+ "slug": "microsoft-365-copilot-november-2026-updates",
+ "tool_version": "1.0.0",
+ "generated_at": "2026-11-11T18:22:58.529022+00:00",
+ "post": {
+  "path": "content/blog/microsoft-365-copilot-november-2026-updates.md",
+  "sha256": "80a2f1d8ea5757403522f102a35c7d62b64db7d4af71839ba0d38f1da5eeccc9",
+  "sections": 50
+ },
+ "roadmap_snapshot": {
+  "path": "static/data/roadmap/latest.json",
+  "generated_at": "2026-11-10T13:35:04.588571+00:00",
+  "item_count": 2288,
+  "sha256": "a84f45223c53af0ef917d6348deb7b76ed5a551964a99270f2099c59d085bd04"
+ },
+ "sections": [
+  {
+   "section": 1,
+   "title": "Autopilot moves toward Frontier",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October Copilot roundup announces an Autopilot Frontier rollout in November, while MC1479277 updated 9 November says rollout timing and admin controls will follow. The section states this conflict and does not assert completed rollout."
+  },
+  {
+   "section": 2,
+   "title": "Connector write actions reach general availability",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 2,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 9 November launch says connector write actions are generally available in Chat and Cowork. Roadmap 570964, modified 30 October, reports October GA for federated connectors in Chat but says every write needs confirmation. The later launch and Learn confirmation guide describe per-tool remembered approval, so the roadmap's broader approval wording is not used to substantiate those choices."
+  },
+  {
+   "section": 3,
+   "title": "Access-request dates change for Cowork, Code and Autopilot",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "MC1546354 published 9 November revises the usage-based access-request schedule: setting from mid-November, optional guidance URL from mid-December, discoverability at end January 2027 or end February for deferred release. The section describes plans rather than observed availability."
+  },
+  {
+   "section": 4,
+   "title": "Azure Databricks data connects to Copilot Studio",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Azure Databricks October release notes place Copilot Studio integration GA on 7 October. The separate setup article requires Managed MCP Servers preview for Genie Agent connections; the section does not transfer this GA status to the Cowork plugin."
+  },
+  {
+   "section": 5,
+   "title": "Power Platform guidance adds a Cowork governance series",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "not_applicable",
+   "reason": "This section reports a three-article Power Platform governance guidance series, not a feature launch. Microsoft Learn separately calls the Power Platform Admin in Cowork plugin preview and describes its access requirements."
+  },
+  {
+   "section": 6,
+   "title": "Projects keep related work together",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says Projects rolled out in Cowork in October and is rolling out in Copilot Chat in November. The section describes those separate stages, not universal availability."
+  },
+  {
+   "section": 7,
+   "title": "Chat and Cowork get a combined history",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup describes a combined Chat and Cowork history with search and filters and announces worldwide rollout in November after Frontier. October's issue already covered Home, Plugins and Automations; the section is limited to the later history detail and rollout."
+  },
+  {
+   "section": 8,
+   "title": "Copilot Notebooks are becoming Workspaces",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup describes existing notebooks becoming shared Workspaces and says the change rolled out to Frontier in October. It does not establish that all tenants have changed over."
+  },
+  {
+   "section": 9,
+   "title": "Office editing in Workspaces has a wider rollout date",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup describes Office file editing in Workspaces as Frontier in October with worldwide rollout in January. The section adds that announced rollout detail to the prior issue and does not assert completion."
+  },
+  {
+   "section": 10,
+   "title": "Workspace audio: rollout and sensitivity labels",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup describes Workspace Audio Overview additions rolling out to Frontier in October and worldwide in November. MC1492959 distinguishes labels on OneDrive-saved audio from audio remaining in the notebook."
+  },
+  {
+   "section": 11,
+   "title": "Workspaces accept more image and table files",
+   "roadmap_ids": [
+    "569210",
+    "569211"
+   ],
+   "source_urls": 3,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "569210": "Launched",
+    "569211": "Launched"
+   }
+  },
+  {
+   "section": 12,
+   "title": "Cowork gets plugins for different roles",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says role-based Cowork plugins rolled out in October; the section labels this catch-up and qualifies availability by plugin and organisation."
+  },
+  {
+   "section": 13,
+   "title": "Planner is coming into Cowork",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 2,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup describes Planner in Cowork at Frontier in October. MC1540339 says worldwide rollout began late October and was expected to finish late November; the section does not claim tenant-level completion."
+  },
+  {
+   "section": 14,
+   "title": "Cowork can use OneNote notebooks",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup groups OneNote and Planner for Frontier in October and worldwide rollout in November; the November Cowork notes qualify OneNote editing as availability-dependent. The section does not claim tenant-level completion."
+  },
+  {
+   "section": 15,
+   "title": "Cowork suggests tasks to get you started",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says the Cowork task catalog rolled out in October; this section is labelled catch-up."
+  },
+  {
+   "section": 16,
+   "title": "Bring an earlier chat or task into Cowork",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says referencing previous Copilot Chat conversations and Cowork tasks rolled out in October; this section is labelled catch-up."
+  },
+  {
+   "section": 17,
+   "title": "OneDrive adds a Prompt Gallery",
+   "roadmap_ids": [
+    "571308"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "571308": "Launched"
+   }
+  },
+  {
+   "section": 18,
+   "title": "Accounting skills arrive in Excel",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October Copilot roundup says Accounting skills in Excel rolled out to Frontier in October and would roll out worldwide in November. These are the source's announced rollout stages, not confirmation for a particular tenant."
+  },
+  {
+   "section": 19,
+   "title": "Excel's interactive canvas has a wider rollout date",
+   "roadmap_ids": [
+    "569424"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "569424": "Rolling out"
+   }
+  },
+  {
+   "section": 20,
+   "title": "PowerPoint gets a model update for presentation design",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says its Sonnet 5.5 PowerPoint design update rolled out in October; this section is labelled catch-up and distinguishes the PowerPoint detail from the prior model-option coverage."
+  },
+  {
+   "section": 21,
+   "title": "Brand Kit setup becomes simpler",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says simplified PowerPoint Brand Kit setup rolled out in October; this section is labelled catch-up."
+  },
+  {
+   "section": 22,
+   "title": "Publish or unpublish an official Brand Kit",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says the PowerPoint Brand Kit publish and unpublish flow rolled out in October; this section is labelled catch-up."
+  },
+  {
+   "section": 23,
+   "title": "PowerPoint can create an interactive slide",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says interactive PowerPoint slides rolled out in October. Microsoft Support supplies separate platform, interaction and licence qualifications; the section is labelled catch-up."
+  },
+  {
+   "section": 24,
+   "title": "A skill checks PowerPoint templates before publication",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says the PowerPoint template assessment skill rolled out in October; this section is labelled catch-up."
+  },
+  {
+   "section": 25,
+   "title": "Record a repeatable PowerPoint skill",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says the PowerPoint Record a skill feature rolled out in October; the section distinguishes it from earlier Excel coverage."
+  },
+  {
+   "section": 26,
+   "title": "Word adds document-specific formatting and design",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says document-specific formatting and design in Word rolled out in October; this section is labelled catch-up."
+  },
+  {
+   "section": 27,
+   "title": "Markdown and Word work together more easily",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says Word Markdown support rolled out in October and specifies web conversion; this section is labelled catch-up."
+  },
+  {
+   "section": 28,
+   "title": "Copilot in Edge gets a simpler side pane",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says the updated Copilot in Edge experience rolled out in October; this section is labelled catch-up and distinguishes the side pane from the earlier new-tab update."
+  },
+  {
+   "section": 29,
+   "title": "Queues app adds intelligent call recaps",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says intelligent call recaps in the Queues app rolled out in September; the section labels it September catch-up rather than a November launch."
+  },
+  {
+   "section": 30,
+   "title": "Ask Copilot about a recorded queue call",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says Copilot Chat in shared Queues call history rolled out in September. Roadmap 568933 describes the same call-recap Chat experience and lists September GA; the section labels this September catch-up."
+  },
+  {
+   "section": 31,
+   "title": "The GitHub Copilot harness has a new name",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft announced the Copilot Studio harness rename on 28 October, with product terminology changing over the following weeks. The section describes the rename, not a new capability or completed global rollout."
+  },
+  {
+   "section": 32,
+   "title": "Build Copilot Studio solutions from Cowork",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's Copilot Studio October roundup, published 4 November, describes Studio skills in Cowork through Frontier. The section is labelled October catch-up and retains the Frontier qualification."
+  },
+  {
+   "section": 33,
+   "title": "A Copilot Studio MCP server connects development tools",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft Learn's Copilot Studio MCP guidance was updated 19 October and Microsoft's 4 November Studio roundup describes the server in its October update. The section does not claim a GA date."
+  },
+  {
+   "section": 34,
+   "title": "Connector setup in the conversation reaches GA",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 4 November Studio roundup reports general availability of the conversation-based connector configuration for the Microsoft Copilot harness and custom web agents using the Standard harness; the section retains that scope."
+  },
+  {
+   "section": 35,
+   "title": "Give a Studio agent its own account",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 4 November Studio roundup calls Copilot Studio agent accounts a private preview through Frontier. The section retains the private-preview and licence limitations."
+  },
+  {
+   "section": 36,
+   "title": "A new harness focuses on customer conversations",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 4 November Studio roundup and the October-updated Learn guidance call the customer conversation harness preview. The section does not assert GA."
+  },
+  {
+   "section": 37,
+   "title": "Work IQ in Copilot Studio reaches GA",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 4 November Studio roundup and Learn guidance updated 23 October report Work IQ in Copilot Studio generally available; the section separately identifies preview workloads."
+  },
+  {
+   "section": 38,
+   "title": "Connect a specialist agent using A2A",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 4 November Studio roundup describes A2A support in the Microsoft Copilot harness as part of October updates, and Learn documents setup. A separate GA date has not been established and is not asserted."
+  },
+  {
+   "section": 39,
+   "title": "More than one maker can work on a workflow",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 4 November Studio roundup reports workflow coauthoring among its October enhancements reaching general availability. The section is labelled catch-up."
+  },
+  {
+   "section": 40,
+   "title": "See credit use inside workflow runs",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 4 November Studio roundup describes October workflow reporting for Copilot Credits consumed per run and node; the section distinguishes this from September's build-and-test credit coverage without asserting GA."
+  },
+  {
+   "section": 41,
+   "title": "A closer look at agent usage",
+   "roadmap_ids": [
+    "497999"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "497999": "Launched"
+   }
+  },
+  {
+   "section": 42,
+   "title": "Ask the Insights Agent about adoption and feedback",
+   "roadmap_ids": [],
+   "source_urls": 4,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup describes Insights Agent feedback and ratings as a Frontier early-access preview and says it rolled out in October; the section retains the preview and access qualifications."
+  },
+  {
+   "section": 43,
+   "title": "Workforce Insights changes where custom data comes from",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's October roundup announces November rollout, but Learn and the 6 November Message Center archive describe Workforce Insights as preview. The section discloses the difference and describes the endpoint retirement as a notice, not observed completion."
+  },
+  {
+   "section": 44,
+   "title": "Purview DLP extends to Cowork",
+   "roadmap_ids": [],
+   "source_urls": 6,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup reports Purview DLP expansion to Cowork as October public preview; detailed Learn guidance supplies distinct rule and coverage limitations."
+  },
+  {
+   "section": 45,
+   "title": "US Government cloud availability: check the service",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 3 November US Government article describes feature availability separately for GCC, GCC High and DoD; the section bounds its comparison to that source date rather than claiming rollout completion in each tenant."
+  },
+  {
+   "section": 46,
+   "title": "Copilot memory retention: Microsoft's guidance conflicts",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "Microsoft's 30 October roundup says Copilot memory retention configuration rolled out in October, while Learn updated 3 November says retention policies and labels do not apply. The section discloses the unresolved conflict rather than asserting a rollout outcome."
+  },
+  {
+   "section": 47,
+   "title": "App Blocks bring interactive previews into Chat",
+   "roadmap_ids": [
+    "577743"
+   ],
+   "source_urls": 3,
+   "images": 0,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "577743": "Rolling out"
+   }
+  },
+  {
+   "section": 48,
+   "title": "Teach helps educators plan a whole unit",
+   "roadmap_ids": [
+    "577392"
+   ],
+   "source_urls": 5,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "577392": "Launched"
+   }
+  },
+  {
+   "section": 49,
+   "title": "Windows Capture gets a later rollout date",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "date_explained",
+   "reason": "MC1405506 updated 6 November moves planned Windows Capture worldwide rollout from the end of October to the end of November. Microsoft Support describes current Office Insiders Beta availability and gives conflicting audio-retention guidance; the section distinguishes the plan, source conflict, and unverified tenant state."
+  },
+  {
+   "section": 50,
+   "title": "Manage authoritative sources from the admin center",
+   "roadmap_ids": [],
+   "source_urls": 4,
+   "images": 0,
+   "disposition": "date_explained",
+   "reason": "The 4 November Copilot release notes describe authoritative SharePoint source management in the Microsoft 365 admin center. Public archive MC1526676 describes a planned late-September rollout, so the section labels it catch-up and distinguishes the earlier PowerShell and CSOM documentation."
+  }
+ ],
+ "images": [
+  {
+   "section": 2,
+   "src": "/images/blog/copilot-november-2026/official-write-approval-options.webp",
+   "alt": "Microsoft's Zava create-issue confirmation in Copilot Chat. A red outline surrounds Cancel, Allow once and the open menu showing Allow for conversation and Always allow. A callout says Choose when to approve. Profile images have been masked.",
+   "exists": true,
+   "sha256": "7ebeabf0891ee37c6fded8bb06fa3fbab0a755525db877a01f1b0ce374053c72",
+   "observed": true
+  },
+  {
+   "section": 2,
+   "src": "/images/blog/copilot-november-2026/official-write-approval-detail.webp",
+   "alt": "Enlarged crop of Microsoft's approval menu, showing Cancel, Allow once, Allow for conversation and Always allow, outlined in red. A callout says Choose the approval scope.",
+   "exists": true,
+   "sha256": "558c6305d34b6b3585867fb6a7798053050afa4a6ff7e23cddb94ebc6e64586f",
+   "observed": true
+  },
+  {
+   "section": 3,
+   "src": "/images/blog/copilot-november-2026/official-access-guidance-cowork.webp",
+   "alt": "Microsoft's proposed Cowork information screen, with red boxes highlighting the Your organisation's guidance link and a callout saying Link to your guidance. The example is an informational experience, not a grant of access.",
+   "exists": true,
+   "sha256": "5308185ab89790ea57816e07683d98352ce058f39e7b8f7300f051046d833046",
+   "observed": true
+  },
+  {
+   "section": 4,
+   "src": "/images/blog/copilot-november-2026/official-databricks-knowledge.webp",
+   "alt": "Microsoft Learn's Copilot Studio example shows an Azure Databricks knowledge source with two tables selected. A callout says Choose Databricks tables; account details are masked.",
+   "exists": true,
+   "sha256": "507073e9a86f7606d98ad4cbf60f1465af6f22373de43e569a38576e8c1cec0c",
+   "observed": true
+  },
+  {
+   "section": 5,
+   "src": "/images/blog/copilot-november-2026/official-power-platform-admin-plugin.webp",
+   "alt": "Microsoft's Cowork Customize screen with a red outline around the Power Platform Admin preview plugin and its Connect button. A callout says Preview governance plugin.",
+   "exists": true,
+   "sha256": "5a1c20070eef6cda6a47442a0ef48be9d68247be50def12f905f68768c781a73",
+   "observed": true
+  },
+  {
+   "section": 6,
+   "src": "/images/blog/copilot-november-2026/official-project-context.webp",
+   "alt": "Microsoft's Project Research example with a red box around its Outputs and Project context tabs. A callout says Context and outputs; the profile image and name are masked.",
+   "exists": true,
+   "sha256": "3ecf687655e39c09de21a41d751a9ff40680db1c69faaa4136a9e28740b12c73",
+   "observed": true
+  },
+  {
+   "section": 8,
+   "src": "/images/blog/copilot-november-2026/official-workspace-collaboration.webp",
+   "alt": "Microsoft's Workspace example showing a strategy brief and multiple coloured collaborator cursors highlighted in red. A callout says See teammates' cursors.",
+   "exists": true,
+   "sha256": "3905a4181793375242f0b7139eb487e58a30b04b875ee852cfbc24f46a5d7559",
+   "observed": true
+  },
+  {
+   "section": 9,
+   "src": "/images/blog/copilot-november-2026/official-workspace-office.webp",
+   "alt": "Microsoft's Workspace example shows a PowerPoint editing area beside a content list. A callout says Edit an Office file here; profile avatars are masked.",
+   "exists": true,
+   "sha256": "5f65ff2bed2b9489a016bbad1ba312915e240e0b7b828c6eb0785f659d41d6a1",
+   "observed": true
+  },
+  {
+   "section": 10,
+   "src": "/images/blog/copilot-november-2026/created-10-audio-labels.webp",
+   "alt": "Conceptual illustration contrasts an audio overview saved to OneDrive, which inherits the most restrictive label from labelled sources, with audio that remains in a notebook and is not yet sensitivity labelled.",
+   "exists": true,
+   "sha256": "744e1f9498c5d9d534595f900c3ec3cc77cba2bc9171b8cdb008774dcd44b02c",
+   "observed": true
+  },
+  {
+   "section": 12,
+   "src": "/images/blog/copilot-november-2026/official-role-plugins.webp",
+   "alt": "Microsoft's Roles and Industry example with a red outline around the Sales, Legal, Service and Education for Cowork plugin cards. A callout says Choose a role-based plugin.",
+   "exists": true,
+   "sha256": "fcb4e92d5cfd71cfddd81ade0267f8480c809035a2cbabc8eaa1f5513e70164d",
+   "observed": true
+  },
+  {
+   "section": 13,
+   "src": "/images/blog/copilot-november-2026/official-planner-plugin.webp",
+   "alt": "Microsoft's Planner plugin example with the Install button outlined in red and a callout saying Install Planner plugin.",
+   "exists": true,
+   "sha256": "95b85e6b48d80acd6d6f7772dc03b09df49a1cd7c4e0bf3838aa2f1d2f3c0fae",
+   "observed": true
+  },
+  {
+   "section": 13,
+   "src": "/images/blog/copilot-november-2026/official-planner-tasks.webp",
+   "alt": "Microsoft's example of a Planner task table, with three assigned tasks outlined in red and a callout saying Review your tasks.",
+   "exists": true,
+   "sha256": "3a6404631b547ae1aba58c313bc2f2976dc3a3632cbb65f1eba213e66303d93b",
+   "observed": true
+  },
+  {
+   "section": 16,
+   "src": "/images/blog/copilot-november-2026/official-cowork-reference-history.webp",
+   "alt": "Microsoft's Cowork context picker, with a red outline around the Copilot tab and earlier conversations listed underneath. A callout says Choose an earlier chat.",
+   "exists": true,
+   "sha256": "c6ccccd89ff5f5be0e02e0ba81f8708a871e030db0f10fb548847b3bb95c8f33",
+   "observed": true
+  },
+  {
+   "section": 17,
+   "src": "/images/blog/copilot-november-2026/official-onedrive-gallery.webp",
+   "alt": "Microsoft's OneDrive Prompt Gallery example. A red outline surrounds All, Find, Create, Collaborate and Analyze, with Create selected. A callout reading Choose a prompt category points to the category row.",
+   "exists": true,
+   "sha256": "ba25a0fb4cadee9e1ac01335d4ad10818a345f574bf4e5d5072cb93273334956",
+   "observed": true
+  },
+  {
+   "section": 18,
+   "src": "/images/blog/copilot-november-2026/official-excel-accounting.webp",
+   "alt": "A frame from Microsoft's Excel accounting skills demonstration shows a reconciliation workbook with open exceptions and a Copilot summary. A callout says Review the reconciliation. The profile picture is masked.",
+   "exists": true,
+   "sha256": "5d4e5cc31016ca5d7a04fd53a31fb8a5f39894e3a8eb84862eb9b7db8cdce240",
+   "observed": true
+  },
+  {
+   "section": 19,
+   "src": "/images/blog/copilot-november-2026/official-excel-canvas.webp",
+   "alt": "A frame from Microsoft's interactive canvas demonstration shows a travel budget dashboard in Excel alongside the Copilot pane. A callout says Explore workbook data visually. The profile picture is masked.",
+   "exists": true,
+   "sha256": "d4f681e060690cb5091d905727bf40412af239469be30931f6f153f1aee64dee",
+   "observed": true
+  },
+  {
+   "section": 21,
+   "src": "/images/blog/copilot-november-2026/official-brandkit-build.webp",
+   "alt": "Microsoft's Brand Kit build screen, with a red outline around the Templates, Colors and Images asset cards and a callout saying Add brand assets.",
+   "exists": true,
+   "sha256": "2cd08ba9359dd987b55f40ac4402ed5ed08d3ae7e424cabf1393fb98b136cb3c",
+   "observed": true
+  },
+  {
+   "section": 22,
+   "src": "/images/blog/copilot-november-2026/official-brandkit-unpublish.webp",
+   "alt": "Microsoft's Brand Kit options menu, with Unpublish outlined in black above Duplicate and Delete.",
+   "exists": true,
+   "sha256": "229febf542a1073cb24abfdf3f6259ccf7d64aeed2a92f5c15b1e3ec867156e2",
+   "observed": true
+  },
+  {
+   "section": 23,
+   "src": "/images/blog/copilot-november-2026/official-interactive-slide.webp",
+   "alt": "Microsoft's example financial dashboard slide, with a red outline around Revenue, Profitability and Cash flow controls and a callout saying Explore slide controls.",
+   "exists": true,
+   "sha256": "3d49c2f42796dea20405b9c109b5938750802e8f8952b1692e334fb42acc0b85",
+   "observed": true
+  },
+  {
+   "section": 24,
+   "src": "/images/blog/copilot-november-2026/official-template-assessment.webp",
+   "alt": "Microsoft's template assessment example, with a red outline around a recommendation to replace loose text boxes with placeholders and its explanation. A callout says Review suggestions.",
+   "exists": true,
+   "sha256": "c01e27d6cfcb791b8d047026dfa0f814a80460fdc04e0b50a4580accdcf8b2dd",
+   "observed": true
+  },
+  {
+   "section": 25,
+   "src": "/images/blog/copilot-november-2026/official-powerpoint-skill-review.webp",
+   "alt": "Microsoft's Upload recorded skill dialog, with a red outline around the generated instructions to review before uploading. A callout says Review instructions.",
+   "exists": true,
+   "sha256": "c92d25fc6de00f365df0e1417d95d977ad4327b7ce71eef22282faaf60b471d7",
+   "observed": true
+  },
+  {
+   "section": 27,
+   "src": "/images/blog/copilot-november-2026/created-27-markdown-word.webp",
+   "alt": "Conceptual illustration summarises Markdown shortcuts in Word, copying and pasting between Word and Markdown, and .md and .docx conversion on the web. It advises checking the result.",
+   "exists": true,
+   "sha256": "9b05b1ead8ad007a0adc7cad59b69d758d428ecc9d319aa228147629b10bbef9",
+   "observed": true
+  },
+  {
+   "section": 28,
+   "src": "/images/blog/copilot-november-2026/official-edge-sidepane.webp",
+   "alt": "Microsoft's example of the Edge Copilot side pane, outlined in red, with sample prompts and the message box. A callout says Copilot side pane. The profile and greeting have been masked.",
+   "exists": true,
+   "sha256": "869da424d98badc85211b0af2f6c5dedc8c301d737c7e2a817e61179a50ff9e4",
+   "observed": true
+  },
+  {
+   "section": 29,
+   "src": "/images/blog/copilot-november-2026/official-queues-recap.webp",
+   "alt": "Microsoft's Queues call recap example shows the Recap tab and an AI summary. A callout says Read the AI call summary. Example identities and phone numbers are masked.",
+   "exists": true,
+   "sha256": "2007ac24329d5805cb10495d02a3091f95fed9f1d0137a1ca2fbd159946c7a1b",
+   "observed": true
+  },
+  {
+   "section": 30,
+   "src": "/images/blog/copilot-november-2026/official-queues-copilot.webp",
+   "alt": "Microsoft's Queues call recap example shows the Copilot side pane with suggested questions. A callout says Ask about the call. Example identities and phone numbers are masked.",
+   "exists": true,
+   "sha256": "52215f42ef16fa585f9987ea234ffbcba856afd518420395015142f2e3d81031",
+   "observed": true
+  },
+  {
+   "section": 33,
+   "src": "/images/blog/copilot-november-2026/official-studio-mcp.webp",
+   "alt": "A cropped Microsoft example of the Copilot Studio MCP server search result, with a red outline around its card and Install control. A callout says Find the Studio server.",
+   "exists": true,
+   "sha256": "d4531cd0cbaf054475c35c83441cc2fd362e5ce57521aab8582acaef7c04d9ec",
+   "observed": true
+  },
+  {
+   "section": 35,
+   "src": "/images/blog/copilot-november-2026/official-agent-account-preview.webp",
+   "alt": "Microsoft's agent-account preview dialog, with a red outline around the preview heading and account details masked. A callout says Agent account preview.",
+   "exists": true,
+   "sha256": "a303e65020035a1bcbf4d693398b8e0b9936b1b32e51b85bd5dc5a7a7da1241b",
+   "observed": true
+  },
+  {
+   "section": 37,
+   "src": "/images/blog/copilot-november-2026/official-work-iq-sources.webp",
+   "alt": "Microsoft's Work IQ tool example shows selected Microsoft 365 sources and Business apps marked preview. A callout says Review selected sources.",
+   "exists": true,
+   "sha256": "60debc0e241e6fb226a268cdaef0aed1addedb1709bea689e8aaae92b3a2b1d3",
+   "observed": true
+  },
+  {
+   "section": 38,
+   "src": "/images/blog/copilot-november-2026/official-a2a-agent.webp",
+   "alt": "Microsoft's example of a proposed request to a Travel Brief Agent, with a red outline around the agent description and Confirm and Cancel buttons below. A callout says Review the handoff.",
+   "exists": true,
+   "sha256": "bdf40c57f78353fb1742ae1e87cc08a69992d6e6a1bc8a7e8c48262c056c8108",
+   "observed": true
+  },
+  {
+   "section": 40,
+   "src": "/images/blog/copilot-november-2026/created-40-workflow-credits.webp",
+   "alt": "Conceptual illustration shows looking at a completed workflow run, reviewing its credit consumption, then investigating individual nodes. It notes that consumption is not proof of savings.",
+   "exists": true,
+   "sha256": "849857b0641c6e73a379008936113b0f86d5a88a0a738e6aada8b9189f460a85",
+   "observed": true
+  },
+  {
+   "section": 41,
+   "src": "/images/blog/copilot-november-2026/official-agents-report.webp",
+   "alt": "Cropped Microsoft Learn report example, with red boxes around separate licensed and unlicensed active-user metrics and a callout saying Licensed and unlicensed.",
+   "exists": true,
+   "sha256": "2bc7e6e2af775188b549887e9201eebcc79bce20a2be3dbc2085fef1ebb1fe9b",
+   "observed": true
+  },
+  {
+   "section": 42,
+   "src": "/images/blog/copilot-november-2026/official-insights-feedback.webp",
+   "alt": "Microsoft's Insights Agent V2 example summarises feedback on a fictional agent, with a red callout saying Ask about agent feedback.",
+   "exists": true,
+   "sha256": "9b10765ae87afce143a960d69ee2186ca5911ac471e426700e2444ea288d52ee",
+   "observed": true
+  },
+  {
+   "section": 43,
+   "src": "/images/blog/copilot-november-2026/created-43-workforce-data.webp",
+   "alt": "Conceptual illustration shows the Workforce Insights endpoint retirement, selection of the Microsoft 365 profile endpoint, and the difference between custom public attributes and non-public attributes that need private preview.",
+   "exists": true,
+   "sha256": "910e7d16e475535f8a41e8ea2a9efdec9b45db1947f30446f965ad17d869b509",
+   "observed": true
+  },
+  {
+   "section": 44,
+   "src": "/images/blog/copilot-november-2026/official-dlp-cowork.webp",
+   "alt": "A cropped Microsoft Cowork example shows a request that could not be fully completed because of an organisation's policies. A callout says The policy limits this request. The example's sensitive number is masked.",
+   "exists": true,
+   "sha256": "cab8b76a8f29b9460c354564f49e4cbb8c3bab3e46da0e276640a77fca44e92b",
+   "observed": true
+  },
+  {
+   "section": 48,
+   "src": "/images/blog/copilot-november-2026/official-teach-unit-plan.webp",
+   "alt": "Microsoft's Unit Plans example shows an overview, standards, a lesson and a weekly navigation list. A callout says Navigate the weeks.",
+   "exists": true,
+   "sha256": "96d71c3374c3880fc45db14f72639465355a97008faa2ec07ebba10ca2238fbd",
+   "observed": true
+  },
+  {
+   "section": 49,
+   "src": "/images/blog/copilot-november-2026/official-onenote-windows-capture.webp",
+   "alt": "Microsoft's OneNote system-tray menu shows New Capture, highlighted with a red callout saying Start a new capture.",
+   "exists": true,
+   "sha256": "3a976f67e92fd152888fcb88d87eb8d6b97e77f6c060791067a571b4654f75e4",
+   "observed": true
+  }
+ ],
+ "unresolved_sections": [],
+ "unobserved_images": [],
+ "state": "pass"
+}
