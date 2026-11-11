@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Nov 2026 09:17:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 17:51:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Intune] Some users' Microsoft Intune enrolled Windows devices may experience device check-in delays of up to eight hours</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1549049</link>
+      <description>[Microsoft Intune] Users' Microsoft Intune enrolled Windows devices may experience device check-in delays of up to eight hours.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">IT1549049</guid>
+      <pubDate>Wed, 11 Nov 2026 16:34:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may intermittently receive no response when submitting queries in Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1548957</link>
+      <description>[Microsoft 365 Copilot Chat] Users may intermittently receive no response when submitting queries in Copilot Chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1548957</guid>
+      <pubDate>Wed, 11 Nov 2026 14:39:26 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers</title>
       <link>https://www.aguidetocloud.com/service-health/#OO1547737</link>
@@ -105,6 +123,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1535688</guid>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users are unable to view reporting metrics for Amplify Campaigns in SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1548842</link>
+      <description>[SharePoint Online] Users are unable to view reporting metrics for Amplify Campaigns in SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1548842</guid>
+      <pubDate>Sat, 31 Oct 2026 10:28:13 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to generate images in Microsoft 365 Copilot Create</title>
@@ -429,33 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1509890</guid>
       <pubDate>Fri, 16 Oct 2026 02:15:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Admins may encounter delays in accessing audit log data results in Microsoft Purview Audit</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1507695</link>
-      <description>[Microsoft Purview] Admins may encounter delays in accessing audit log data results in Microsoft Purview Audit.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MP1507695</guid>
-      <pubDate>Wed, 14 Oct 2026 16:14:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be unable to view recent portions of their conversation history with Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1530567</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have been unable to view recent portions of their conversation history with Copilot Chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CW1530567</guid>
-      <pubDate>Wed, 14 Oct 2026 15:55:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Some users may encounter refresh failures when using the Dynamics 365 Business Central connector in Power BI</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1508905</link>
-      <description>[Power BI] Users may have encountered refresh failures when using the Dynamics 365 Business Central connector in Power BI.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1508905</guid>
-      <pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
