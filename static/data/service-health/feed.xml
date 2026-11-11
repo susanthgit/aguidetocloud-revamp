@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Nov 2026 01:54:12 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 09:17:13 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Intune] Users may not be able to check-in or enroll with Microsoft Intune</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1547988</link>
-      <description>[Microsoft Intune] Users may not be able to check-in or enroll with Microsoft Intune.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">IT1547988</guid>
-      <pubDate>Tue, 10 Nov 2026 23:46:32 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers</title>
       <link>https://www.aguidetocloud.com/service-health/#OO1547737</link>
@@ -28,11 +19,11 @@
     <item>
       <title>[Microsoft 365 suite] Admins may not be receiving new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1547527</link>
-      <description>[Microsoft 365 suite] Admins may not be receiving new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins may not have received new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1547527</guid>
-      <pubDate>Tue, 10 Nov 2026 17:03:49 +0000</pubDate>
+      <pubDate>Tue, 10 Nov 2026 16:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses</title>
@@ -456,6 +447,15 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1530567</guid>
       <pubDate>Wed, 14 Oct 2026 15:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Some users may encounter refresh failures when using the Dynamics 365 Business Central connector in Power BI</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1508905</link>
+      <description>[Power BI] Users may have encountered refresh failures when using the Dynamics 365 Business Central connector in Power BI.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1508905</guid>
+      <pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

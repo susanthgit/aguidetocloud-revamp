@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-11T01:54:11.336053+00:00",
+  "generated_at": "2026-11-11T09:17:13.617553+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 19,
+      "total_incidents": 20,
       "active_incidents": 0,
-      "avg_duration_minutes": 11064,
+      "avg_duration_minutes": 12847,
       "last_incident": "2026-11-03T10:58:09.880000+00:00",
       "classifications": {
-        "advisory": 13,
+        "advisory": 14,
         "incident": 6
       }
     },
@@ -33,9 +33,9 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 14,
-      "active_incidents": 4,
-      "avg_duration_minutes": 6362,
-      "last_incident": "2026-11-10T17:03:49.123000+00:00",
+      "active_incidents": 3,
+      "avg_duration_minutes": 5935,
+      "last_incident": "2026-11-10T16:00:00+00:00",
       "classifications": {
         "advisory": 11,
         "incident": 3
@@ -131,19 +131,6 @@
       }
     },
     {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5033,
-      "last_incident": "2026-11-10T23:46:32+00:00",
-      "classifications": {
-        "incident": 2,
-        "advisory": 1
-      }
-    },
-    {
       "service": "Microsoft 365 for the web",
       "short_name": "M365 Web",
       "icon": "🌐",
@@ -151,6 +138,19 @@
       "active_incidents": 1,
       "avg_duration_minutes": 70,
       "last_incident": "2026-11-10T19:40:50.190000+00:00",
+      "classifications": {
+        "advisory": 1,
+        "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 5033,
+      "last_incident": "2026-10-06T23:17:00+00:00",
       "classifications": {
         "advisory": 1,
         "incident": 1
@@ -208,8 +208,8 @@
   "monthly": [
     {
       "month": "2026-11",
-      "incident_count": 12,
-      "services_affected": 7
+      "incident_count": 11,
+      "services_affected": 6
     },
     {
       "month": "2026-10",
@@ -218,7 +218,7 @@
     },
     {
       "month": "2026-09",
-      "incident_count": 20,
+      "incident_count": 21,
       "services_affected": 11
     }
   ]
