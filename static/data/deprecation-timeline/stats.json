@@ -1,27 +1,23 @@
 {
-  "generated": "2026-11-10T13:38:38.415906+00:00",
+  "generated": "2026-11-11T12:50:41.922993+00:00",
   "total": 52,
-  "active": 5,
-  "passed": 47,
-  "action_required": 5,
+  "active": 1,
+  "passed": 51,
+  "action_required": 1,
   "urgency": {
-    "critical": 4,
     "warning": 1
   },
   "categories": {
-    "azure": 3,
-    "windows": 1,
     "exchange": 1
   },
   "types": {
-    "end-of-support": 4,
     "retirement": 1
   },
   "next_deadline": {
-    "title": "Azure Functions In-Process Model (.NET) End of Support",
-    "deadline": "2026-11-10",
-    "days_remaining": 0,
-    "urgency": "critical"
+    "title": "Exchange Web Services (EWS) Full Retirement — All Exchange Online",
+    "deadline": "2027-04-01",
+    "days_remaining": 141,
+    "urgency": "warning"
   },
   "category_meta": {
     "sharepoint": {
