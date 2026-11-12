@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 00:34:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 09:43:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 apps] Users may have been unable to utilize the Side Pane in Microsoft Word and received an error message</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1549991</link>
+      <description>[Microsoft 365 apps] Users may have been unable to utilize the Side Pane in Microsoft Word and received an error message.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">OP1549991</guid>
+      <pubDate>Thu, 12 Nov 2026 04:57:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Users may be unable to install applications on Windows devices through Microsoft Intune</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1549677</link>
+      <description>[Microsoft Intune] Users may have been unable to install applications on Windows devices through Microsoft Intune.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">IT1549677</guid>
+      <pubDate>Thu, 12 Nov 2026 01:27:26 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Intune] Users may experience delays installing Volume Purchase Program (VPP) apps in Microsoft Intune for iOS and Mac</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1549289</link>
@@ -17,9 +35,9 @@
       <pubDate>Wed, 11 Nov 2026 18:57:04 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Intune] Some users' Microsoft Intune enrolled Windows devices may experience device check-in delays of up to eight hours</title>
+      <title>[Microsoft Intune] Some users may see delays receiving policies, apps, and other changes on Windows devices enrolled in Microsoft Intune</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1549049</link>
-      <description>[Microsoft Intune] Users' Microsoft Intune enrolled Windows devices may experience device check-in delays of up to eight hours.</description>
+      <description>[Microsoft Intune] Users may see delays receiving policies, apps, and other changes on Windows devices enrolled in Microsoft Intune.</description>
       <category>Microsoft Intune</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">IT1549049</guid>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1528961</guid>
       <pubDate>Mon, 19 Oct 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Some users may be unable to access or protect content using Azure Rights Management (ARM) across Microsoft 365 services </title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1514821</link>
-      <description>[Microsoft 365 apps] Users may be unable to access or protect content using ARM across Microsoft 365 services. </description>
-      <category>Microsoft 365 apps</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">OP1514821</guid>
-      <pubDate>Mon, 19 Oct 2026 06:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to create SharePoint knowledge agents using Microsoft 365 Copilot in SharePoint Online </title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1510883</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to create SharePoint knowledge agents using Microsoft 365 Copilot in SharePoint Online.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1510883</guid>
-      <pubDate>Fri, 16 Oct 2026 15:46:18 +0000</pubDate>
     </item>
   </channel>
 </rss>
