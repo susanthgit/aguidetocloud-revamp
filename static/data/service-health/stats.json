@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-12T18:13:15.104071+00:00",
+  "generated_at": "2026-11-12T23:35:18.649994+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 18,
+      "total_incidents": 17,
       "active_incidents": 0,
-      "avg_duration_minutes": 10668,
+      "avg_duration_minutes": 10437,
       "last_incident": "2026-11-12T14:45:00+00:00",
       "classifications": {
         "incident": 6,
-        "advisory": 12
+        "advisory": 11
       }
     },
     {
@@ -32,13 +32,13 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 13,
-      "active_incidents": 3,
+      "total_incidents": 14,
+      "active_incidents": 4,
       "avg_duration_minutes": 6415,
-      "last_incident": "2026-11-10T16:00:00+00:00",
+      "last_incident": "2026-11-12T18:26:10.493000+00:00",
       "classifications": {
-        "advisory": 10,
-        "incident": 3
+        "incident": 4,
+        "advisory": 10
       }
     },
     {
@@ -97,12 +97,12 @@
       "short_name": "Intune",
       "icon": "📱",
       "total_incidents": 5,
-      "active_incidents": 2,
-      "avg_duration_minutes": 3366,
+      "active_incidents": 1,
+      "avg_duration_minutes": 2697,
       "last_incident": "2026-11-12T01:27:26.050000+00:00",
       "classifications": {
-        "advisory": 3,
-        "incident": 2
+        "incident": 2,
+        "advisory": 3
       }
     },
     {
@@ -169,6 +169,18 @@
       }
     },
     {
+      "service": "Dynamics 365 Apps",
+      "short_name": "Dynamics",
+      "icon": "🏢",
+      "total_incidents": 1,
+      "active_incidents": 1,
+      "avg_duration_minutes": 0,
+      "last_incident": "2026-11-12T17:00:00+00:00",
+      "classifications": {
+        "incident": 1
+      }
+    },
+    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -191,25 +203,13 @@
       "classifications": {
         "incident": 1
       }
-    },
-    {
-      "service": "Planner",
-      "short_name": "Planner",
-      "icon": "📋",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 13384,
-      "last_incident": "2026-09-28T11:00:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
     }
   ],
   "monthly": [
     {
       "month": "2026-11",
-      "incident_count": 18,
-      "services_affected": 9
+      "incident_count": 20,
+      "services_affected": 10
     },
     {
       "month": "2026-10",
@@ -218,8 +218,8 @@
     },
     {
       "month": "2026-09",
-      "incident_count": 14,
-      "services_affected": 9
+      "incident_count": 12,
+      "services_affected": 8
     }
   ]
 }
