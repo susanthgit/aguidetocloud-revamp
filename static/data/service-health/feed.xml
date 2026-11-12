@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 09:43:51 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 18:13:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to access or use Microsoft Teams functionality</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1550488</link>
+      <description>[Microsoft Teams] Some users may have experienced issues when accessing or using Microsoft Teams functionality.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1550488</guid>
+      <pubDate>Thu, 12 Nov 2026 14:45:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 apps] Users may have been unable to utilize the Side Pane in Microsoft Word and received an error message</title>
       <link>https://www.aguidetocloud.com/service-health/#OP1549991</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1514788</guid>
       <pubDate>Mon, 19 Oct 2026 07:05:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users may see delays populating data in the threat and vulnerability management tab in Microsoft Defender for Endpoint</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1528961</link>
-      <description>[Microsoft Defender XDR] Users may have seen data updates in the threat and vulnerability management tab in Microsoft Defender for Endpoint.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1528961</guid>
-      <pubDate>Mon, 19 Oct 2026 07:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
