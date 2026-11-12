@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Nov 2026 17:51:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 00:34:43 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Intune] Users may experience delays installing Volume Purchase Program (VPP) apps in Microsoft Intune for iOS and Mac</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1549289</link>
+      <description>[Microsoft Intune] Users may experience delays installing VPP apps in Microsoft Intune for iOS and Mac.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">IT1549289</guid>
+      <pubDate>Wed, 11 Nov 2026 18:57:04 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Intune] Some users' Microsoft Intune enrolled Windows devices may experience device check-in delays of up to eight hours</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1549049</link>
@@ -19,9 +28,9 @@
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may intermittently receive no response when submitting queries in Microsoft 365 Copilot Chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1548957</link>
-      <description>[Microsoft 365 Copilot Chat] Users may intermittently receive no response when submitting queries in Copilot Chat.</description>
+      <description>[Microsoft 365 Copilot Chat] Users may have intermittently received no response when submitting queries in Copilot Chat.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CW1548957</guid>
       <pubDate>Wed, 11 Nov 2026 14:39:26 +0000</pubDate>
     </item>
@@ -78,6 +87,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1540672</guid>
       <pubDate>Thu, 05 Nov 2026 16:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may not see free/busy info shared between organizations using cross-tenant access policy in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1542065</link>
+      <description>[Exchange Online] Users may not see free/busy info shared between organizations using cross-tenant access policy in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1542065</guid>
+      <pubDate>Wed, 04 Nov 2026 16:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to access Microsoft Word, PowerPoint, or Excel for the web</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1510883</guid>
       <pubDate>Fri, 16 Oct 2026 15:46:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may not see options to select GPT models in Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1515501</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may not have seen options to select GPT models in Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1515501</guid>
-      <pubDate>Fri, 16 Oct 2026 07:23:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users' calls may fail in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1509890</link>
-      <description>[Microsoft Teams] Users' calls may have failed in Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1509890</guid>
-      <pubDate>Fri, 16 Oct 2026 02:15:48 +0000</pubDate>
     </item>
   </channel>
 </rss>
