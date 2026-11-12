@@ -32,7 +32,7 @@ intro_note: "← what changed this month, in plain English"
 founder_note: |
   Microsoft's October roundup arrived after my October cut-off. I am bringing the changes into this issue with their original timing, instead of calling every one a November launch.
 
-  The dates below describe what Microsoft announced. Your tenant may receive an update later, and I have not tested these features in a tenant for this issue.
+  The dates below describe what Microsoft announced. Your tenant may receive an update later. Screenshots added on 12 November show selected screens, not completed feature tests; each caption explains the limit.
 ---
 
 November brings connector actions that can make changes, new ways to work with Copilot Studio agents, and a few important dates for administrators. There is also October catch-up: Microsoft's roundup arrived after I finished the last issue.
@@ -88,6 +88,10 @@ There is a timing wrinkle: the October roundup gives November for the Frontier r
 <li><strong>Picture this:</strong> A person could give it an ongoing goal to help prepare a recurring update, rather than starting from scratch each time.</li>
 <li><strong>My take:</strong> I would watch your tenant's Message Center and check the spending controls before planning a pilot. I have not tested Autopilot for this issue.</li>
 </ul>
+
+<p><img src="/images/blog/copilot-november-2026/supplied-01-autopilot.webp" alt="Supplied overview image shows the Autopilot tab, Overview, Routines and Plugins. A red outline and callout say Autopilot overview. The personal greeting and session list are removed; the prompt has not been submitted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Overview image supplied on 12 November, cropped and annotated with the greeting masked. Its original source is unverified. It shows the navigation, not a completed Autopilot task or proof of tenant availability.</em></p>
 
 📖 [Microsoft's October roundup: Autopilot](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528#community-4568528-home) · [Message Center archive: MC1479277](https://mc.merill.net/message/MC1479277)
 
@@ -235,6 +239,10 @@ I would think of this as a better way to find work you already started. Seeing a
 
 <blockquote class="callout callout-tip"><p><strong>Why this matters:</strong> A shared history gives you one place to look for an earlier Chat conversation or Cowork task.</p></blockquote>
 
+<p><img src="/images/blog/copilot-november-2026/supplied-07-history.webp" alt="Cropped supplied screenshot shows Recent and the All, Chat and Cowork filters, outlined in red. A callout says One history, with filters. Conversation titles and the sidebar are excluded." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Screenshot supplied on 12 November, tightly cropped to the history filters and annotated. Private history is outside the crop; this view does not test opening or filtering a conversation.</em></p>
+
 📖 [Microsoft's October roundup: Home navigation](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528#community-4568528-home)
 
 ### 8. Copilot Notebooks are becoming Workspaces
@@ -311,6 +319,10 @@ This is separate from the Markdown, TXT and RTF Notebook references covered in t
 
 <blockquote class="callout callout-tip"><p><strong>Why this matters:</strong> More of the material a team already has can sit alongside its documents as context.</p></blockquote>
 
+<p><img src="/images/blog/copilot-november-2026/supplied-11-png-reference.webp" alt="Enlarged crop of a supplied content-list row shows Pasted image.png outlined in red. A callout says PNG reference listed. No CSV or TSV file is shown." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Screenshot supplied on 12 November, cropped and enlarged. It shows a PNG in the reference list, not whether Copilot interpreted it correctly. CSV and TSV support comes from Microsoft's announcement, not this capture.</em></p>
+
 📖 [Microsoft's October roundup: Workspace references](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528#community-4568528-notebooks) · [Roadmap 569211: JPG and PNG in Notebooks](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=569211) · [Roadmap 569210: CSV and TSV in Notebooks](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=569210)
 
 ### 12. Cowork gets plugins for different roles
@@ -367,6 +379,10 @@ Microsoft's October roundup groups OneNote and Planner together for a November w
 
 <blockquote class="callout callout-tip"><p><strong>Why this matters:</strong> Notes can become context for a delegated task, while changes to those notes remain a separate decision.</p></blockquote>
 
+<p><img src="/images/blog/copilot-november-2026/supplied-14-onenote-search.webp" alt="Supplied Cowork screenshot shows Preparing to work with OneNote notebooks followed by a searching step. A red callout says Searching, not a finished summary. No completed answer or edit is visible." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Screenshot supplied on 12 November, cropped, enlarged and annotated. This is the preparation and searching stage only. It does not confirm that Cowork read the notebook, produced a summary or changed a page.</em></p>
+
 📖 [Cowork release notes: OneNote support](https://learn.microsoft.com/en-us/copilot/cowork/whats-new#november-2026) · [Microsoft's October roundup: OneNote and Planner](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528)
 
 ### 15. Cowork suggests tasks to get you started
@@ -380,6 +396,10 @@ For example, someone preparing a marketing update could start from a suggested t
 I like this as a starting point, especially for someone who knows the result they need but is not sure how to describe the steps. A suggested task is not a substitute for checking the output.
 
 <blockquote class="callout callout-tip"><p><strong>Why this matters:</strong> A useful example can make it easier to begin a delegated task.</p></blockquote>
+
+<p><img src="/images/blog/copilot-november-2026/created-15-task-catalog.webp" alt="Conceptual illustration titled A starting point for a Cowork task shows three steps: Choose a suggested task, Provide the information and Review the result. It explicitly says it is not product UI or a tenant test, and is not a map of the menus." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My conceptual illustration of Microsoft's description, not a screenshot or navigation guide. I could not confirm the task catalog's entry point in the supplied experience.</em></p>
 
 📖 [Microsoft's October roundup: Cowork task catalog](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528)
 
@@ -861,6 +881,10 @@ Feedback sharing is **off by default** in Microsoft's Message Center notice. An 
 
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em><a href="https://blogs.windows.com/japan/2026/11/06/explore-user-feedback-with-microsoft-365-insights-agent/">Microsoft's feedback example</a>, cropped with my red callout. It is not a capture from my tenant.</em></p>
 
+<p><img src="/images/blog/copilot-november-2026/supplied-42-feedback-controls.webp" alt="Supplied Agent feedback sharing screen shows No agents selected, with All agents and Selected agents below. A red outline surrounds No agents and a callout says Feedback sharing is off here." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Screenshot supplied on 12 November, cropped and annotated. No agents is selected in this view; your organisation's setting may differ. The image does not show a setting being changed or feedback being returned.</em></p>
+
 📖 [Microsoft Learn: feedback access and returned comments](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/insights-agent-overview#available-feedback-and-ratings) · [Microsoft Learn: aggregate retention metric](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/insights-agent-overview#available-metrics) · [Microsoft Learn: feedback-sharing controls](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-settings#agent-feedback-sharing) · [Message Center archive: MC1520901 feedback sharing](https://mc.merill.net/message/MC1520901)
 
 ### 43. Workforce Insights changes where custom data comes from
@@ -979,6 +1003,10 @@ The Message Center notice says this affects both Copilot Chat Basic and Microsof
 <li><strong>My take:</strong> I would still check the inputs and calculations before using the output for a decision. A convenient preview does not verify its answers.</li>
 </ul>
 
+<p><img src="/images/blog/copilot-november-2026/supplied-47-calculator.webp" alt="Supplied Chat screenshot shows a meeting-cost calculator with attendee, duration and hourly-rate controls and an example total. The screenshot labels the numbers as illustrative NZD values, not actual salary data. A red callout says Illustrative values only." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Screenshot supplied on 12 November, cropped and annotated. The example uses illustrative values, not actual salaries or a savings claim. This static image does not verify the controls, calculations or whether this particular result uses App Blocks; it does not resolve rollout completion.</em></p>
+
 📖 [Message Center archive: MC1545695 App Blocks](https://mc.merill.net/message/MC1545695) · [AI at Work Roadmap 577743](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=577743) · [Microsoft: Copilot UX components in SPFx 1.24](https://devblogs.microsoft.com/microsoft365dev/copilot-ux-components-are-generally-available-bring-interactive-experiences-into-copilot/)
 
 ### 48. Teach helps educators plan a whole unit
@@ -1047,6 +1075,10 @@ The older SharePoint documentation still describes PowerShell and CSOM; the sour
 
 <blockquote class="callout callout-tip"><p><strong>Why this matters:</strong> The admin center provides an interface for managing authoritative sources in Copilot Search without starting with a script.</p></blockquote>
 
+<p><img src="/images/blog/copilot-november-2026/supplied-50-authoritative-content.webp" alt="Supplied Copilot Search admin screenshot shows the Authoritative content tab, an empty site list, Add content, Import and Export controls, and an Add authoritative content pane. Red callouts say Add, import or export sites and Find a SharePoint site." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Screenshot supplied on 12 November, cropped and annotated. The list is empty and the site-selection pane is open; no site was added in this image. Visible controls do not establish which roles can use them, so the permissions conflict above remains unresolved.</em></p>
+
 📖 [Microsoft 365 Copilot release notes: admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes#microsoft-365-admin-center) · [Message Center archive: authoritative source management](https://mc.merill.net/message/MC1526676) · [Microsoft Learn: SharePoint authoritative sites](https://learn.microsoft.com/en-us/sharepoint/sharepoint-authoritative-sites) · [Microsoft Learn: Global Reader role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-reader)
 
 ---
@@ -1061,7 +1093,7 @@ The older SharePoint documentation still describes PowerShell and CSOM; the sour
 
 **Studio and Power Platform remain part of the series.** This is a Copilot-focused selection, not an inventory of every Power Platform release.
 
-**About the images and testing.** The screenshots are Microsoft's examples, cropped or annotated where noted; they are not captures from my tenant. I have not tested these features in a tenant for this issue.
+**About the images and testing.** Images are labelled individually: Microsoft's published examples, screenshots supplied on 12 November, and my conceptual illustrations. Private context is cropped out or masked where needed, and red callouts draw attention to the relevant controls. The supplied images are later observations, not part of the frozen research cut-off or completed end-to-end feature tests. Their captions state what is visible and what remains unverified; the Autopilot overview's original source is not established.
 
 ---
 

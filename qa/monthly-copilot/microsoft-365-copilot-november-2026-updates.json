@@ -2,17 +2,17 @@
  "schema": 2,
  "slug": "microsoft-365-copilot-november-2026-updates",
  "tool_version": "1.0.0",
- "generated_at": "2026-11-11T18:22:58.529022+00:00",
+ "generated_at": "2026-11-12T03:31:06.655037+00:00",
  "post": {
   "path": "content/blog/microsoft-365-copilot-november-2026-updates.md",
-  "sha256": "80a2f1d8ea5757403522f102a35c7d62b64db7d4af71839ba0d38f1da5eeccc9",
+  "sha256": "9c295257500b0a426fcf210199332676f52e8110d9c85c690195b27eee05cfbc",
   "sections": 50
  },
  "roadmap_snapshot": {
   "path": "static/data/roadmap/latest.json",
-  "generated_at": "2026-11-10T13:35:04.588571+00:00",
-  "item_count": 2288,
-  "sha256": "a84f45223c53af0ef917d6348deb7b76ed5a551964a99270f2099c59d085bd04"
+  "generated_at": "2026-11-11T12:47:08.583574+00:00",
+  "item_count": 2294,
+  "sha256": "00bd804db2caa250ed5003006eed3d33cb184b1aaf852a55984f1705065365fc"
  },
  "sections": [
   {
@@ -20,7 +20,7 @@
    "title": "Autopilot moves toward Frontier",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Microsoft's 30 October Copilot roundup announces an Autopilot Frontier rollout in November, while MC1479277 updated 9 November says rollout timing and admin controls will follow. The section states this conflict and does not assert completed rollout."
   },
@@ -74,7 +74,7 @@
    "title": "Chat and Cowork get a combined history",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Microsoft's 30 October roundup describes a combined Chat and Cowork history with search and filters and announces worldwide rollout in November after Frontier. October's issue already covered Home, Plugins and Automations; the section is limited to the later history detail and rollout."
   },
@@ -113,7 +113,7 @@
     "569211"
    ],
    "source_urls": 3,
-   "images": 0,
+   "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
     "569210": "Launched",
@@ -143,7 +143,7 @@
    "title": "Cowork can use OneNote notebooks",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Microsoft's 30 October roundup groups OneNote and Planner for Frontier in October and worldwide rollout in November; the November Cowork notes qualify OneNote editing as availability-dependent. The section does not claim tenant-level completion."
   },
@@ -152,7 +152,7 @@
    "title": "Cowork suggests tasks to get you started",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "Microsoft's 30 October roundup says the Cowork task catalog rolled out in October; this section is labelled catch-up."
   },
@@ -407,7 +407,7 @@
    "title": "Ask the Insights Agent about adoption and feedback",
    "roadmap_ids": [],
    "source_urls": 4,
-   "images": 1,
+   "images": 2,
    "disposition": "date_explained",
    "reason": "Microsoft's 30 October roundup describes Insights Agent feedback and ratings as a Frontier early-access preview and says it rolled out in October; the section retains the preview and access qualifications."
   },
@@ -454,7 +454,7 @@
     "577743"
    ],
    "source_urls": 3,
-   "images": 0,
+   "images": 1,
    "disposition": "roadmap_id",
    "roadmap_status": {
     "577743": "Rolling out"
@@ -487,12 +487,20 @@
    "title": "Manage authoritative sources from the admin center",
    "roadmap_ids": [],
    "source_urls": 4,
-   "images": 0,
+   "images": 1,
    "disposition": "date_explained",
    "reason": "The 4 November Copilot release notes describe authoritative SharePoint source management in the Microsoft 365 admin center. Public archive MC1526676 describes a planned late-September rollout, so the section labels it catch-up and distinguishes the earlier PowerShell and CSOM documentation."
   }
  ],
  "images": [
+  {
+   "section": 1,
+   "src": "/images/blog/copilot-november-2026/supplied-01-autopilot.webp",
+   "alt": "Supplied overview image shows the Autopilot tab, Overview, Routines and Plugins. A red outline and callout say Autopilot overview. The personal greeting and session list are removed; the prompt has not been submitted.",
+   "exists": true,
+   "sha256": "b4a546711bfb87218b57f12654c59c5aec2832c8e1380852e5d11be61a8bd4a4",
+   "observed": true
+  },
   {
    "section": 2,
    "src": "/images/blog/copilot-november-2026/official-write-approval-options.webp",
@@ -542,6 +550,14 @@
    "observed": true
   },
   {
+   "section": 7,
+   "src": "/images/blog/copilot-november-2026/supplied-07-history.webp",
+   "alt": "Cropped supplied screenshot shows Recent and the All, Chat and Cowork filters, outlined in red. A callout says One history, with filters. Conversation titles and the sidebar are excluded.",
+   "exists": true,
+   "sha256": "a565f8ded64979e93988197ffcce9a09c12d3aac68ebcec3268729dbaca7147a",
+   "observed": true
+  },
+  {
    "section": 8,
    "src": "/images/blog/copilot-november-2026/official-workspace-collaboration.webp",
    "alt": "Microsoft's Workspace example showing a strategy brief and multiple coloured collaborator cursors highlighted in red. A callout says See teammates' cursors.",
@@ -566,6 +582,14 @@
    "observed": true
   },
   {
+   "section": 11,
+   "src": "/images/blog/copilot-november-2026/supplied-11-png-reference.webp",
+   "alt": "Enlarged crop of a supplied content-list row shows Pasted image.png outlined in red. A callout says PNG reference listed. No CSV or TSV file is shown.",
+   "exists": true,
+   "sha256": "b0ccd1b85ff2437eaf9e3d3d323d5bbab82e6e177f1c043dd8f357bfe4a5f40a",
+   "observed": true
+  },
+  {
    "section": 12,
    "src": "/images/blog/copilot-november-2026/official-role-plugins.webp",
    "alt": "Microsoft's Roles and Industry example with a red outline around the Sales, Legal, Service and Education for Cowork plugin cards. A callout says Choose a role-based plugin.",
@@ -587,6 +611,22 @@
    "alt": "Microsoft's example of a Planner task table, with three assigned tasks outlined in red and a callout saying Review your tasks.",
    "exists": true,
    "sha256": "3a6404631b547ae1aba58c313bc2f2976dc3a3632cbb65f1eba213e66303d93b",
+   "observed": true
+  },
+  {
+   "section": 14,
+   "src": "/images/blog/copilot-november-2026/supplied-14-onenote-search.webp",
+   "alt": "Supplied Cowork screenshot shows Preparing to work with OneNote notebooks followed by a searching step. A red callout says Searching, not a finished summary. No completed answer or edit is visible.",
+   "exists": true,
+   "sha256": "0a1f5c25b44f066835745deb42104aa13095fccf8596bc28d4ff08b0652eeefa",
+   "observed": true
+  },
+  {
+   "section": 15,
+   "src": "/images/blog/copilot-november-2026/created-15-task-catalog.webp",
+   "alt": "Conceptual illustration titled A starting point for a Cowork task shows three steps: Choose a suggested task, Provide the information and Review the result. It explicitly says it is not product UI or a tenant test, and is not a map of the menus.",
+   "exists": true,
+   "sha256": "35b3b474c9d1d614686adb6a4ade72a1a00a82c80c95535751ae7319c0044093",
    "observed": true
   },
   {
@@ -750,6 +790,14 @@
    "observed": true
   },
   {
+   "section": 42,
+   "src": "/images/blog/copilot-november-2026/supplied-42-feedback-controls.webp",
+   "alt": "Supplied Agent feedback sharing screen shows No agents selected, with All agents and Selected agents below. A red outline surrounds No agents and a callout says Feedback sharing is off here.",
+   "exists": true,
+   "sha256": "8bed3f954f440b0943ba73019b30c76b7980c1dd8871f55e468dff56ba56644d",
+   "observed": true
+  },
+  {
    "section": 43,
    "src": "/images/blog/copilot-november-2026/created-43-workforce-data.webp",
    "alt": "Conceptual illustration shows the Workforce Insights endpoint retirement, selection of the Microsoft 365 profile endpoint, and the difference between custom public attributes and non-public attributes that need private preview.",
@@ -766,6 +814,14 @@
    "observed": true
   },
   {
+   "section": 47,
+   "src": "/images/blog/copilot-november-2026/supplied-47-calculator.webp",
+   "alt": "Supplied Chat screenshot shows a meeting-cost calculator with attendee, duration and hourly-rate controls and an example total. The screenshot labels the numbers as illustrative NZD values, not actual salary data. A red callout says Illustrative values only.",
+   "exists": true,
+   "sha256": "b211d9cf524a5580f8011dda1c0364bb4433c4ac3aac1b5861273df2334026fc",
+   "observed": true
+  },
+  {
    "section": 48,
    "src": "/images/blog/copilot-november-2026/official-teach-unit-plan.webp",
    "alt": "Microsoft's Unit Plans example shows an overview, standards, a lesson and a weekly navigation list. A callout says Navigate the weeks.",
@@ -779,6 +835,14 @@
    "alt": "Microsoft's OneNote system-tray menu shows New Capture, highlighted with a red callout saying Start a new capture.",
    "exists": true,
    "sha256": "3a976f67e92fd152888fcb88d87eb8d6b97e77f6c060791067a571b4654f75e4",
+   "observed": true
+  },
+  {
+   "section": 50,
+   "src": "/images/blog/copilot-november-2026/supplied-50-authoritative-content.webp",
+   "alt": "Supplied Copilot Search admin screenshot shows the Authoritative content tab, an empty site list, Add content, Import and Export controls, and an Add authoritative content pane. Red callouts say Add, import or export sites and Find a SharePoint site.",
+   "exists": true,
+   "sha256": "6d55b476cb9235107f94da5a8c91a24d825d271c822dc855c8a80f6777745d6a",
    "observed": true
   }
  ],

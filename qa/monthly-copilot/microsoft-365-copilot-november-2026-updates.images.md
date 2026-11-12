@@ -322,3 +322,131 @@
 **Observed while viewing:** Excel shows a travel-budget dashboard with team and month filters, figures and charts, and a Copilot pane describing the created view. A callout says “Explore workbook data visually”; the profile picture is masked.
 
 **Verdict:** MATCH: a frame at 28 seconds from [Microsoft's Interactive Canvas demonstration](https://medius.microsoft.com/Embed/video-nc/66c05bb9-763f-4e68-b6ba-745b2842a1d8), not a capture from my tenant or proof of rollout completion. Source frame SHA256 `5b8c1d1451682e3e515ad89b8070d05ea5dc12adf2ff282c620211b21ccc2934`. Arial Bold is the approved local-draft font substitute.
+
+## Screenshot update - 12 November 2026
+
+These supplied views postdate the frozen 11 November research cut-off. They show selected screens, not completed feature tests. Private context is excluded or masked. The source of the supplied Autopilot overview is not independently established.
+
+## §1 — supplied-01-autopilot.webp
+
+**File:** `supplied-01-autopilot.webp`
+**SHA256:** `b4a546711bfb87218b57f12654c59c5aec2832c8e1380852e5d11be61a8bd4a4`
+
+**Observed while viewing:** Autopilot tab outlined; Overview, Routines, Plugins and unsubmitted supplier-review prompt; greeting area painted white; session titles excluded. Red callout reads Autopilot overview.
+
+**Verdict:** MATCH for overview only; source UNKNOWN, no rollout/task proof. Caption discloses this.
+
+## §7 — supplied-07-history.webp
+
+**File:** `supplied-07-history.webp`
+**SHA256:** `a565f8ded64979e93988197ffcce9a09c12d3aac68ebcec3268729dbaca7147a`
+
+**Observed while viewing:** Recent heading, All selected, Chat and Cowork filters, search/filter icons. No sidebar or conversation rows. Red callout reads One history, with filters.
+
+**Verdict:** MATCH; private history completely outside the crop. No filtering test inferred.
+
+## §11 — supplied-11-png-reference.webp
+
+**File:** `supplied-11-png-reference.webp`
+**SHA256:** `b0ccd1b85ff2437eaf9e3d3d323d5bbab82e6e177f1c043dd8f357bfe4a5f40a`
+
+**Observed while viewing:** Final tighter crop contains only Pasted image.png row and ellipsis, red outline, PNG reference listed callout with leader above the row.
+
+**Verdict:** MATCH for listed PNG only; no CSV/TSV or interpreted-content claim.
+
+## §14 — supplied-14-onenote-search.webp
+
+**File:** `supplied-14-onenote-search.webp`
+**SHA256:** `0a1f5c25b44f066835745deb42104aa13095fccf8596bc28d4ff08b0652eeefa`
+
+**Observed while viewing:** Preparing to work with OneNote notebooks followed by searching; Calendar, Email, Files and Teams chips. Callout reads Searching, not a finished summary. Leader stays at left of text.
+
+**Verdict:** PARTIAL ACCEPTED by user; caption explicitly excludes completed read/summary/edit.
+
+## §42 — supplied-42-feedback-controls.webp
+
+**File:** `supplied-42-feedback-controls.webp`
+**SHA256:** `8bed3f954f440b0943ba73019b30c76b7980c1dd8871f55e468dff56ba56644d`
+
+**Observed while viewing:** Agent feedback sharing, No agents radio selected, All agents and Selected agents below; red outline and Feedback sharing is off here callout.
+
+**Verdict:** MATCH; point-in-time selection only, not a settings change or returned feedback.
+
+## §47 — supplied-47-calculator.webp
+
+**File:** `supplied-47-calculator.webp`
+**SHA256:** `b211d9cf524a5580f8011dda1c0364bb4433c4ac3aac1b5861273df2334026fc`
+
+**Observed while viewing:** Request asks for example values only; calculator has attendees 8, minutes 60, hourly rate 100, example total 800. Text says illustrative NZD values, not actual salary data. Callout reads Illustrative values only.
+
+**Verdict:** MATCH as supplied static example, NOT verified App Blocks identity, functional controls, salary/ROI data or rollout proof.
+
+## §50 — supplied-50-authoritative-content.webp
+
+**File:** `supplied-50-authoritative-content.webp`
+**SHA256:** `6d55b476cb9235107f94da5a8c91a24d825d271c822dc855c8a80f6777745d6a`
+
+**Observed while viewing:** Copilot Search / Authoritative content, empty table, Add content/Import/Export, open Add authoritative content pane and empty SharePoint search. Two clear lower callouts.
+
+**Verdict:** MATCH for visible controls only; no addition, role permission or list-identity proof.
+
+## §15 — created-15-task-catalog.webp
+
+**File:** `created-15-task-catalog.webp`
+**SHA256:** `35b3b474c9d1d614686adb6a4ade72a1a00a82c80c95535751ae7319c0044093`
+
+**Observed while viewing:** Ivory three-step graphic: choose suggested task, provide information, review result. Prominent conceptual/not product UI/tenant test and not menu-map labels.
+
+**Verdict:** MATCH for clearly labelled conceptual explanation; no red UI callout needed.
+
+## Final all-image review - 12 November screenshot update
+
+All 44 article images and the OG were personally viewed again. Unchanged official/conceptual assets were retained without redundant annotation.
+
+| Section | Image | Observed while viewing | Verdict |
+|---|---|---|---|
+| 1 | supplied-01-autopilot.webp | Autopilot tab outlined; Overview, Routines, Plugins and unsubmitted supplier-review prompt; greeting area painted white; session titles excluded. Red callout reads Autopilot overview. | MATCH for overview only; source UNKNOWN, no rollout/task proof. Caption discloses this. |
+| 7 | supplied-07-history.webp | Recent heading, All selected, Chat and Cowork filters, search/filter icons. No sidebar or conversation rows. Red callout reads One history, with filters. | MATCH; private history completely outside the crop. No filtering test inferred. |
+| 11 | supplied-11-png-reference.webp | Final tighter crop contains only Pasted image.png row and ellipsis, red outline, PNG reference listed callout with leader above the row. | MATCH for listed PNG only; no CSV/TSV or interpreted-content claim. |
+| 14 | supplied-14-onenote-search.webp | Preparing to work with OneNote notebooks followed by searching; Calendar, Email, Files and Teams chips. Callout reads Searching, not a finished summary. Leader stays at left of text. | PARTIAL ACCEPTED by user; caption explicitly excludes completed read/summary/edit. |
+| 15 | created-15-task-catalog.webp | Ivory three-step graphic: choose suggested task, provide information, review result. Prominent conceptual/not product UI/tenant test and not menu-map labels. | MATCH for clearly labelled conceptual explanation; no red UI callout needed. |
+| 42 | supplied-42-feedback-controls.webp | Agent feedback sharing, No agents radio selected, All agents and Selected agents below; red outline and Feedback sharing is off here callout. | MATCH; point-in-time selection only, not a settings change or returned feedback. |
+| 47 | supplied-47-calculator.webp | Request asks for example values only; calculator has attendees 8, minutes 60, hourly rate 100, example total 800. Text says illustrative NZD values, not actual salary data. Callout reads Illustrative values only. | MATCH as supplied static example, NOT verified App Blocks identity, functional controls, salary/ROI data or rollout proof. |
+| 50 | supplied-50-authoritative-content.webp | Copilot Search / Authoritative content, empty table, Add content/Import/Export, open Add authoritative content pane and empty SharePoint search. Two clear lower callouts. | MATCH for visible controls only; no addition, role permission or list-identity proof. |
+| 2 | official-write-approval-options.webp | Zava create-issue confirmation, Cancel/Allow once/open menu with conversation/always choices, outlined; Choose when to approve callout. | MATCH, official example; no completed write inferred. |
+| 2 | official-write-approval-detail.webp | Enlarged approval menu with same four choices; Choose the approval scope callout below. | MATCH; readable detail complements the full frame. |
+| 3 | official-access-guidance-cowork.webp | Proposed Cowork information card, organisation guidance link outlined across two lines; Link to your guidance callout. | MATCH as proposed official access guidance, not access grant. |
+| 4 | official-databricks-knowledge.webp | Copilot Studio Databricks knowledge source, two checked tables, Add to agent; Choose Databricks tables callout. | MATCH; official selection example, not Cowork plugin or executed connection. |
+| 5 | official-power-platform-admin-plugin.webp | Customize / Plugins, Power Platform Admin (Preview), Connect button outlined; Preview governance plugin callout. | MATCH; preview and connection context retained. |
+| 6 | official-project-context.webp | Project Research view, Outputs and Project context tabs outlined; Context and outputs callout; official sample project items. | MATCH; public Microsoft example, not supplied private history. |
+| 8 | official-workspace-collaboration.webp | Strategy Brief Draft with three coloured cursor labels outlined and See teammates' cursors callout; official sample collaborators. | MATCH; collaboration rather than a local tenant test. |
+| 9 | official-workspace-office.webp | Fabrikam Pulse content list beside PowerPoint editing ribbon and two Arches slides; Office area outlined and Edit an Office file here callout. | MATCH; cropped official example, avatars absent. |
+| 10 | created-10-audio-labels.webp | Ivory conceptual graphic contrasts labelled sources, saved-to-OneDrive inherited label, and notebook audio not yet labelled; conceptual disclaimer visible. | MATCH; destination distinction preserved. |
+| 12 | official-role-plugins.webp | Roles and Industry cards for Sales, Legal, Service and Education; Choose a role-based plugin callout. | MATCH; no claim that every role is installed. |
+| 13 | official-planner-plugin.webp | Planner Plugin description and Install button outlined, Install Planner plugin callout, official example banner. | MATCH for plugin entry, not completed installation. |
+| 13 | official-planner-tasks.webp | Three fictional assigned tasks, priority/due/status columns, all Not started, Review your tasks callout. | MATCH for returned task-list example, not executed changes. |
+| 16 | official-cowork-reference-history.webp | Prompt references earlier sample chats; Copilot picker tab outlined, Choose an earlier chat callout; earlier conversations listed. | MATCH; correct Copilot tab, not Teams Chats tab. |
+| 17 | official-onedrive-gallery.webp | OneDrive Prompt Gallery with All/Find/Create/Collaborate/Analyze and prompt cards; category row outlined with Choose a prompt category callout. | MATCH; original official artwork not double-annotated. |
+| 18 | official-excel-accounting.webp | Excel reconciliation sheet showing Open Exceptions beside Copilot response; Review the reconciliation callout points to sheet/pane edge. | MATCH as official example; no finance result independently validated. |
+| 19 | official-excel-canvas.webp | Excel travel budget dashboard with filters and bar charts embedded inside workbook; Explore workbook data visually callout. | MATCH as official visual-canvas example, not real user spending. |
+| 21 | official-brandkit-build.webp | Brand Kit build screen: Templates, Colors and Images cards outlined, Add brand assets callout; Icons, Design Instructions and Fonts below. | MATCH for simplified setup, no publication implied. |
+| 22 | official-brandkit-unpublish.webp | Tight menu crop shows Unpublish, Duplicate, Delete with existing black outline around Unpublish. | MATCH; existing official highlight retained, no redundant red annotation. |
+| 23 | official-interactive-slide.webp | Adventure Works fictional financial dashboard, Revenue/Profitability/Cash flow tabs outlined, Explore slide controls callout. | MATCH as official slide example, no tested interaction or real finance claim. |
+| 24 | official-template-assessment.webp | Template assessment pane, expanded placeholders suggestion, Review suggestions callout at outline edge. | MATCH for assessment recommendations, not automatically corrected template. |
+| 25 | official-powerpoint-skill-review.webp | Upload recorded skill dialog, restyle-table name, generated instructions outlined, Upload/Cancel below; Review instructions callout. | MATCH for pre-upload review, not completed upload. |
+| 27 | created-27-markdown-word.webp | Conceptual Write / Copy and paste / Convert on the web cards, explicit not-UI disclaimer and check-output reminder. | MATCH for labelled conceptual explanation. |
+| 28 | official-edge-sidepane.webp | Edge side pane with menu/shield/ellipsis/close and three suggested prompts; Copilot side pane callout and perimeter outline. | MATCH as interface layout, no policy or completed task claim. |
+| 29 | official-queues-recap.webp | Queues call details, Recap/AI summary tabs and sample notes; caller/name/number regions covered; Read the AI call summary callout. | MATCH; masked official call example. |
+| 30 | official-queues-copilot.webp | Queues Recap view with Copilot conversation pane on right, Ask about the call callout; caller identities covered. | MATCH; recorded-call conversation interface, no live-call transcription assertion. |
+| 33 | official-studio-mcp.webp | Search result card Copilot Studio with Install dropdown and Find the Studio server callout. | MATCH as MCP entry, not installed/authenticated server. |
+| 35 | official-agent-account-preview.webp | Give it an agent account with an M365 identity [Preview], sample agent card, Add account button; Agent account preview callout. | MATCH; preview label retained, no account creation implied. |
+| 37 | official-work-iq-sources.webp | Sources list shows SharePoint, Outlook mail and Calendar checked, Business apps (preview) unchecked; Review selected sources callout. | MATCH; source selection example, preview distinction visible. |
+| 38 | official-a2a-agent.webp | Travel brief handoff description above Confirm and Cancel, outlined with Review the handoff callout. | MATCH as proposed handoff, not completed travel advice or autonomous action. |
+| 40 | created-40-workflow-credits.webp | Conceptual Workflow/Run/Nodes cards and Consumption is not proof of savings reminder. | MATCH; no invented credit totals or ROI. |
+| 41 | official-agents-report.webp | Active users (licensed) 908 and (unlicensed) 230 cards outlined; Licensed and unlicensed callout. | MATCH as official example totals, not this user's tenant. |
+| 42 | official-insights-feedback.webp | Insights Agent V2 (Frontier) response to feedback question on fictional Contoso HR Agent, themed feedback bullets, Ask about agent feedback callout. | MATCH as official response example, distinct from supplied settings screen. |
+| 43 | created-43-workforce-data.webp | Conceptual old-endpoint retirement, explicitly select profile endpoint, public/non-public attribute distinction and governance reminder. | MATCH; no product UI or actual upload implied. |
+| 44 | official-dlp-cowork.webp | Cowork response says request could not be fully completed due to organisation policies; prompt's identifier value covered; The policy limits this request callout. | MATCH; one policy response, not universal security guarantee. |
+| 48 | official-teach-unit-plan.webp | Energy in Living Systems unit, Overview/standards/lesson content and Week 1–3 navigation; Navigate the weeks callout. | MATCH as official unit-plan structure, no confirmed current tenant access. |
+| 49 | official-onenote-windows-capture.webp | OneNote system-tray menu with New Capture outlined and Start a new capture callout; taskbar app icons. | MATCH as official Windows menu example, not Cowork notebook search or local test. |
+| OG | microsoft-365-copilot-november-2026-updates.jpg | White notebook-style card, What's New in Copilot — November 2026 headline, calendar glyph, purple accent and aguidetocloud.com. | MATCH; title/month/brand correct and readable. |
