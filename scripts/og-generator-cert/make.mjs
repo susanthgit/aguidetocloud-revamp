@@ -287,13 +287,14 @@ function discoverPractice() {
       continue;
     }
     const slug = f.replace(/\.toml$/, '');
-    const examCode = parsed.code || slug.toUpperCase();
+    const examCode = parsed.display_code || parsed.code || slug.toUpperCase();
     all.push({
       slug,
       hero:    examCode,
       family:  familyFromCode(examCode),
       vendor:  parsed.vendor || '',
       status:  parsed.status || '',
+      subtitle: parsed.buyer_caveat ? 'MCQ LEARNING COMPANION' : CFG.subtitle,
     });
   }
   // Filter to live only
@@ -326,7 +327,8 @@ async function main() {
   const t0 = Date.now();
 
   for (const c of certs) {
-    const key = hashOf({ hero: c.hero, subtitle: CFG.subtitle, family: c.family });
+    const subtitle = c.subtitle || CFG.subtitle;
+    const key = hashOf({ hero: c.hero, subtitle, family: c.family });
     const out = path.join(CFG.outDir, `${c.slug}.jpg`);
 
     if (!FORCE_ALL && cache[c.slug] === key && fs.existsSync(out)) {
@@ -339,7 +341,7 @@ async function main() {
       continue;
     }
 
-    const node = layoutV3({ hero: c.hero, subtitle: CFG.subtitle, family: c.family });
+    const node = layoutV3({ hero: c.hero, subtitle, family: c.family });
     const { jpgBytes } = await renderJpg(node, out);
     cache[c.slug] = key;
     console.log(`  ✓  ${c.slug.padEnd(34)}  ${c.hero.padEnd(14)}  [${c.family.padEnd(7)}]  ${(jpgBytes / 1024).toFixed(0)} KB`);
