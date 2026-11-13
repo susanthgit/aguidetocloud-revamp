@@ -11,6 +11,8 @@ exam_category: "NVIDIA"
 vendor: "nvidia"
 manual: false
 guided_slug: "nvidia-ncp-ari"
+supplemental: true
+buyer_caveat: "Original single-answer knowledge checks, not official exam items. Excludes the two unrelated OpenUSD bullets in Domain 5; not complete published-objective coverage."
 date: "2026-11-13"
 lastmod: "2026-11-13"
 faq_intro: "Practical questions about NCP-ARI and this independent practice bank."
@@ -62,18 +64,18 @@ NVIDIA recommends **2+ years of enterprise data center operations experience**, 
 
 ## Exam Domains & Weights
 
-These are NVIDIA's published weights, checked on **13 November 2026**. Practice counts are drill volume, not a prediction of the real exam's distribution.
+These are NVIDIA's published weights, checked on **13 November 2026**. Domain labels are shortened for readability. Practice counts are drill volume, not a prediction of the real exam's distribution.
 
-| Domain | Official weight | Practice questions |
-|---|---:|---:|
-| AI Infrastructure Basics for Data Centers | 20% | 50 |
-| Pre-Deployment Planning and Site Assessment for AI Data Centers | 11% | 28 |
-| Rack Infrastructure Preparation for AI Platforms | 10% | 25 |
-| High-Density Cabling Installation for AI Clusters | 30% | 75 |
-| Cable Support Systems and Weight Management | 7% | 18 |
-| Testing, Verification, and Documentation for AI Cabling | 12% | 29 |
-| Safety, Standards, and Compliance for Data Centers | 10% | 25 |
-| **Total** | **100%** | **250** |
+| Domain | Weight / questions |
+|---|---|
+| AI infrastructure basics | 20% / 50 questions |
+| Pre-deployment planning | 11% / 28 questions |
+| Rack preparation | 10% / 25 questions |
+| High-density cabling | 30% / 75 questions |
+| Cable supports and weight | 7% / 18 questions |
+| Testing and documentation | 12% / 29 questions |
+| Safety and compliance | 10% / 25 questions |
+| **Total** | **100% / 250 questions** |
 
 The bank follows the physical rack-and-cabling scope. It does not substitute logical fabric routing, Kubernetes administration or model-training questions for physical-installation objectives. The two Domain 5 exclusions are explained above.
 
@@ -81,7 +83,7 @@ The bank follows the physical rack-and-cabling scope. It does not substitute log
 
 [Try the NCP-ARI practice exam](/guided/nvidia-ncp-ari/practice/) with **20 free questions**. Full access costs **US$9 for one year**, separate from NVIDIA's certification exam fee.
 
-Each question includes an explanation, wrong-answer rationales, a hint and a technical reference. Study mode helps with weak areas; timed practice checks decision-making under time pressure. This bank uses single-answer knowledge checks and does not claim to match the live exam's exact item-type mix.
+Each question includes an explanation, wrong-answer rationales, a hint and a technical reference. Study mode helps with weak areas; spaced-repetition flashcards support revision. This bank is untimed revision material, not an exam simulation. It uses single-answer knowledge checks and does not claim to match the live exam's exact item-type mix.
 
 ## NVIDIA Certification Path
 
