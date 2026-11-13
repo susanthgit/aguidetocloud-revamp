@@ -5,7 +5,7 @@ type: "cert-tracker"
 layout: "single"
 exam_code: "NCP-GENL"
 exam_title: "NVIDIA-Certified Professional: Generative AI LLMs"
-exam_level: "advanced"
+exam_level: "intermediate"
 exam_status: "active"
 exam_category: "NVIDIA"
 vendor: "nvidia"
@@ -32,7 +32,7 @@ Our [250-question practice bank](/guided/nvidia-ncp-genl/) uses original hypothe
 | Detail | NVIDIA's published information |
 |---|---|
 | Code | NCP-GENL |
-| Level | Professional |
+| Level | Professional; NVIDIA describes it as an intermediate-level credential |
 | Duration | 120 minutes |
 | Questions | 60-70 |
 | Delivery | Online, remotely proctored through Certiverse |
