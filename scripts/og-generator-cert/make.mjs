@@ -294,7 +294,7 @@ function discoverPractice() {
       family:  familyFromCode(examCode),
       vendor:  parsed.vendor || '',
       status:  parsed.status || '',
-      subtitle: parsed.buyer_caveat ? 'MCQ LEARNING COMPANION' : CFG.subtitle,
+      subtitle: slug === 'nvidia-ncp-aio' ? 'MCQ LEARNING COMPANION' : CFG.subtitle,
     });
   }
   // Filter to live only
