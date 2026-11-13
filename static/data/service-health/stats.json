@@ -1,20 +1,7 @@
 {
-  "generated_at": "2026-11-12T23:35:18.649994+00:00",
+  "generated_at": "2026-11-13T06:32:03.733612+00:00",
   "total_incidents_tracked": 102,
   "services": [
-    {
-      "service": "Microsoft Teams",
-      "short_name": "Teams",
-      "icon": "💬",
-      "total_incidents": 17,
-      "active_incidents": 0,
-      "avg_duration_minutes": 10437,
-      "last_incident": "2026-11-12T14:45:00+00:00",
-      "classifications": {
-        "incident": 6,
-        "advisory": 11
-      }
-    },
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
@@ -26,6 +13,19 @@
       "classifications": {
         "advisory": 5,
         "incident": 10
+      }
+    },
+    {
+      "service": "Microsoft Teams",
+      "short_name": "Teams",
+      "icon": "💬",
+      "total_incidents": 15,
+      "active_incidents": 0,
+      "avg_duration_minutes": 7518,
+      "last_incident": "2026-11-12T14:45:00+00:00",
+      "classifications": {
+        "incident": 6,
+        "advisory": 9
       }
     },
     {
@@ -144,13 +144,26 @@
       }
     },
     {
+      "service": "Dynamics 365 Apps",
+      "short_name": "Dynamics",
+      "icon": "🏢",
+      "total_incidents": 2,
+      "active_incidents": 1,
+      "avg_duration_minutes": 477,
+      "last_incident": "2026-11-12T17:30:00+00:00",
+      "classifications": {
+        "advisory": 1,
+        "incident": 1
+      }
+    },
+    {
       "service": "Microsoft 365 for the web",
       "short_name": "M365 Web",
       "icon": "🌐",
       "total_incidents": 2,
       "active_incidents": 1,
       "avg_duration_minutes": 70,
-      "last_incident": "2026-11-10T19:40:50.190000+00:00",
+      "last_incident": "2026-11-10T09:57:00+00:00",
       "classifications": {
         "advisory": 1,
         "incident": 1
@@ -169,15 +182,15 @@
       }
     },
     {
-      "service": "Dynamics 365 Apps",
-      "short_name": "Dynamics",
-      "icon": "🏢",
+      "service": "Power Apps",
+      "short_name": "Power Apps",
+      "icon": "⚡",
       "total_incidents": 1,
       "active_incidents": 1,
       "avg_duration_minutes": 0,
-      "last_incident": "2026-11-12T17:00:00+00:00",
+      "last_incident": "2026-11-12T17:30:00+00:00",
       "classifications": {
-        "incident": 1
+        "advisory": 1
       }
     },
     {
@@ -208,8 +221,8 @@
   "monthly": [
     {
       "month": "2026-11",
-      "incident_count": 20,
-      "services_affected": 10
+      "incident_count": 22,
+      "services_affected": 11
     },
     {
       "month": "2026-10",
@@ -218,8 +231,8 @@
     },
     {
       "month": "2026-09",
-      "incident_count": 12,
-      "services_affected": 8
+      "incident_count": 10,
+      "services_affected": 7
     }
   ]
 }

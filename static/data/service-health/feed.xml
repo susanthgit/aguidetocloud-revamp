@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 23:35:19 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 06:32:04 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services</title>
@@ -17,11 +17,29 @@
       <pubDate>Thu, 12 Nov 2026 18:26:10 +0000</pubDate>
     </item>
     <item>
+      <title>[Dynamics 365 Apps] Field Service mobile app users experience intermittent sign-in failures</title>
+      <link>https://www.aguidetocloud.com/service-health/#CR1551339</link>
+      <description>[Dynamics 365 Apps] Field Service mobile app users experience intermittent sign-in failures.</description>
+      <category>Dynamics 365 Apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CR1551339</guid>
+      <pubDate>Thu, 12 Nov 2026 17:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power Apps] Power Apps mobile app users experience intermittent sign-in failures</title>
+      <link>https://www.aguidetocloud.com/service-health/#MX1551341</link>
+      <description>[Power Apps] Power Apps mobile app users experience intermittent sign-in failures.</description>
+      <category>Power Apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MX1551341</guid>
+      <pubDate>Thu, 12 Nov 2026 17:30:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Dynamics 365 Apps] Agents are unable to access Dynamics 365 Contact Center </title>
       <link>https://www.aguidetocloud.com/service-health/#CR1550885</link>
-      <description>[Dynamics 365 Apps] Agents are unable to access Dynamics 365 Contact Center.</description>
+      <description>[Dynamics 365 Apps] Agents were unable to access Dynamics 365 Contact Center.</description>
       <category>Dynamics 365 Apps</category>
-      <category>restoringService</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CR1550885</guid>
       <pubDate>Thu, 12 Nov 2026 17:00:00 +0000</pubDate>
     </item>
@@ -80,15 +98,6 @@
       <pubDate>Wed, 11 Nov 2026 08:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 for the web] Some users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers</title>
-      <link>https://www.aguidetocloud.com/service-health/#OO1547737</link>
-      <description>[Microsoft 365 for the web] Users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers.</description>
-      <category>Microsoft 365 for the web</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">OO1547737</guid>
-      <pubDate>Tue, 10 Nov 2026 19:40:50 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft 365 suite] Admins may not be receiving new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1547527</link>
       <description>[Microsoft 365 suite] Admins may not have received new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center.</description>
@@ -96,6 +105,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1547527</guid>
       <pubDate>Tue, 10 Nov 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 for the web] Some users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers</title>
+      <link>https://www.aguidetocloud.com/service-health/#OO1547737</link>
+      <description>[Microsoft 365 for the web] Users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers.</description>
+      <category>Microsoft 365 for the web</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OO1547737</guid>
+      <pubDate>Tue, 10 Nov 2026 09:57:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1517097</guid>
       <pubDate>Tue, 20 Oct 2026 14:29:11 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users and admins couldn't view or manage device group configurations through the Microsoft Defender portal</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1515549</link>
-      <description>[Microsoft 365 suite] Users and admins couldn't view or manage device group configurations through the Microsoft Defender portal.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1515549</guid>
-      <pubDate>Mon, 19 Oct 2026 18:35:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may be unable to join town hall meetings in Microsoft Teams and are redirected to a registration page</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1514781</link>
-      <description>[Microsoft Teams] Users may have been unable to join town hall meetings in Microsoft Teams and were redirected to a registration page.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1514781</guid>
-      <pubDate>Mon, 19 Oct 2026 07:56:42 +0000</pubDate>
     </item>
   </channel>
 </rss>
