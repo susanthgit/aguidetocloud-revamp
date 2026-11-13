@@ -2,9 +2,9 @@
 title: "What's New in Microsoft 365 Copilot: November 2026"
 list_title: "M365 Copilot — November Recap: 50 Updates"
 hub_id: "whats-new"
-description: "A first look at November Copilot changes, October catch-up, connector actions and Copilot Studio."
+description: "50 Microsoft 365 Copilot updates, connector actions, Copilot Studio and admin changes, researched through 11 November 2026."
 date: 2026-11-12
-lastmod: 2026-11-12
+lastmod: 2026-11-13
 draft: false
 card_tag: "What's New"
 tag_class: "ai"
@@ -17,7 +17,7 @@ tags:
   - news
 faq:
   - question: "What period does this issue cover?"
-    answer: "Research closed on 11 November 2026, 15:40 New Zealand daylight time. Earlier catch-up and later source checks are labelled separately."
+    answer: "This issue brings together updates and material changes not covered in the previous recap. Research closed on 11 November 2026, 15:40 New Zealand daylight time; later source checks are identified separately."
   - question: "Does this issue cover Ignite announcements?"
     answer: "No. Microsoft Ignite is on 17–20 November, after this issue's research cut-off."
   - question: "Does a connector write action always need a fresh approval?"
@@ -28,14 +28,14 @@ faq:
     answer: "The integration described here connects Azure Databricks data to agents built in Copilot Studio. It is not a claim about Cowork plugin availability."
 layout: "notebook"
 stamp: "monthly recap"
-intro_note: "← what changed this month, in plain English"
+intro_note: "← updates since the previous issue, in plain English"
 founder_note: |
-  Microsoft's October roundup arrived after my October cut-off. I am bringing the changes into this issue with their original timing, instead of calling every one a November launch.
+  I keep Microsoft's original announcement and rollout dates with each update, so you can see when a change was announced and what stage it has reached.
 
-  The dates below describe what Microsoft announced. Your tenant may receive an update later. Screenshots added on 12 November show selected screens, not completed feature tests; each caption explains the limit.
+  The dates in this issue describe what Microsoft announced. Your tenant may receive an update later. Screenshots added on 12 November show selected screens, not completed feature tests; each caption explains the limit.
 ---
 
-November brings connector actions that can make changes, new ways to work with Copilot Studio agents, and a few important dates for administrators. There is also October catch-up: Microsoft's roundup arrived after I finished the last issue.
+This issue brings together updates and material changes not covered in the previous recap. The highlights include connector actions, new ways to work with Copilot Studio agents, and important dates for administrators.
 
 **Research cut-off:** 11 November 2026, 15:40 New Zealand daylight time. Microsoft Ignite takes place on 17–20 November, after this cut-off.
 
@@ -67,7 +67,7 @@ Three labels help make sense of this issue. **Frontier** is Microsoft's early-ac
 - **Before 18 November:** if you use the Workforce Insights endpoint for custom organisational data, review the [endpoint retirement notice in the Message Center archive](https://mc.merill.net/message/MC1542066) and the access rules for its replacement.
 - Check spending policies and available Copilot Credits for usage-billed experiences; see [the access-request update](#3-access-request-dates-change-for-cowork-code-and-autopilot). A visible entry point is not the same as an access grant.
 
-## November rollout updates
+## Access and rollout updates {#november-rollout-updates}
 
 <br />
 
@@ -151,7 +151,7 @@ The distinction matters: showing an entry point does **not** enable the service 
 
 📖 [Message Center archive: MC1546354 revised access-request timeline](https://mc.merill.net/message/MC1546354)
 
-## Earlier catch-up: September and October
+## Copilot apps and connected work {#earlier-catch-up-september-and-october}
 
 <br />
 
@@ -207,7 +207,7 @@ One prompt in Microsoft's library asks which apps and flows have an owner who ha
 
 ### 6. Projects keep related work together
 
-*For: Copilot Chat and Cowork · October catch-up · Chat rollout announced for November*
+*For: Copilot Chat and Cowork · Chat rollout announced for November*
 
 A project is a place to bring related conversations, Cowork tasks, instructions and files together. Instead of explaining the background from the beginning each time, you can start a new piece of work with the project's available context. An **Outputs** view gathers files produced by its tasks. Microsoft's Cowork guidance says projects are **private to the individual creator**; adding a file to a project's context does not guarantee every task can use it.
 
@@ -227,7 +227,7 @@ Microsoft says Projects rolled out in Cowork in October and is rolling out in Co
 
 ### 7. Chat and Cowork get a combined history
 
-*For: Copilot app users · October catch-up · worldwide rollout announced for November*
+*For: Copilot app users · worldwide rollout announced for November*
 
 Microsoft's later October roundup describes a **combined Chat and Cowork conversation history** with search and filters. It says the updated navigation rolled out to Frontier in October and would roll out worldwide in November.
 
@@ -247,7 +247,7 @@ I would think of this as a better way to find work you already started. Seeing a
 
 ### 8. Copilot Notebooks are becoming Workspaces
 
-*For: Copilot app · October catch-up · Frontier rollout described for October*
+*For: Copilot app · Frontier rollout described for October*
 
 Microsoft describes Copilot Workspaces as the next step for Copilot Notebooks: a shared place for a team to bring context, people and working files together. The announced experience includes seeing teammates' live cursors as they work across documents.
 
@@ -267,7 +267,7 @@ The October issue covered the lighter Notebook design. The move to a shared Work
 
 ### 9. Office editing in Workspaces has a wider rollout date
 
-*For: Copilot Workspaces · October catch-up · Frontier first; worldwide rollout announced for January 2027*
+*For: Copilot Workspaces · Frontier first; worldwide rollout announced for January 2027*
 
 In October I covered Office editing inside Notebooks and files alongside the Copilot conversation. Microsoft's later roundup adds a rollout detail for creating, editing and collaborating on Word, Excel and PowerPoint files **inside a Workspace**: Frontier in October, with worldwide rollout planned for January.
 
@@ -285,7 +285,7 @@ That January date is Microsoft's announced timing, not a guarantee that every or
 
 ### 10. Workspace audio: rollout and sensitivity labels
 
-*For: Copilot Workspaces · October catch-up · Frontier first; worldwide rollout announced for November*
+*For: Copilot Workspaces · Frontier first; worldwide rollout announced for November*
 
 In October I covered the planned audio episodes, extra reference types and **Critique and Debate** format. Microsoft's later roundup describes a Frontier rollout in October, while the updated Message Center notice says worldwide rollout was planned to begin in early November and finish by late November. That is a schedule, not proof it has finished.
 
@@ -307,7 +307,7 @@ The Support page gives only a November update month, not a day. I could not conf
 
 ### 11. Workspaces accept more image and table files
 
-*For: Copilot Workspaces · October catch-up · Microsoft reports rollout in October*
+*For: Copilot Workspaces · Microsoft reports rollout in October*
 
 Microsoft lists JPG and PNG images, plus CSV and TSV files, as additional Workspace references. A reference is material you add to give Copilot useful context for a piece of work.
 
@@ -327,7 +327,7 @@ This is separate from the Markdown, TXT and RTF Notebook references covered in t
 
 ### 12. Cowork gets plugins for different roles
 
-*For: Cowork users · October catch-up · availability depends on the plugin and tenant*
+*For: Cowork users · availability depends on the plugin and tenant*
 
 Microsoft describes role-based plugins for Sales, Service, Education, Legal and Finance. These contain skills for common kinds of work and appear under **Roles & Industry**.
 
@@ -347,7 +347,7 @@ Microsoft's roundup says the role-based plugins rolled out in October. Check the
 
 ### 13. Planner is coming into Cowork
 
-*For: Planner and Cowork users · October catch-up · Frontier first; worldwide rollout reported from late October*
+*For: Planner and Cowork users · Frontier first; worldwide rollout reported from late October*
 
 The Planner plugin lets Cowork work with plans and related items. Microsoft describes viewing, creating and updating plans, buckets, goals and tasks through natural language, with approval for changes.
 
@@ -369,7 +369,7 @@ Microsoft's November Message Center notice says users need a Microsoft 365 Copil
 
 ### 14. Cowork can use OneNote notebooks
 
-*For: Cowork and OneNote users · October catch-up · availability and editing depend on rollout*
+*For: Cowork and OneNote users · availability and editing depend on rollout*
 
 OneNote support lets Cowork read notebooks. Microsoft also describes updating pages with your approval **when editing is available**. That distinction matters: being able to read a notebook does not prove that editing is enabled for your tenant.
 
@@ -387,7 +387,7 @@ Microsoft's October roundup groups OneNote and Planner together for a November w
 
 ### 15. Cowork suggests tasks to get you started
 
-*For: Cowork users · October catch-up · Microsoft reports rollout in October*
+*For: Cowork users · Microsoft reports rollout in October*
 
 The task catalog offers suggested tasks for areas such as sales, marketing, customer service and finance. Pick a task, provide the information it asks for, and Cowork can take it from there.
 
@@ -405,7 +405,7 @@ I like this as a starting point, especially for someone who knows the result the
 
 ### 16. Bring an earlier chat or task into Cowork
 
-*For: Cowork users · October catch-up · Microsoft reports rollout in October*
+*For: Cowork users · Microsoft reports rollout in October*
 
 You can add a previous Copilot Chat conversation or Cowork task as context for a new Cowork request. That gives the new task a way to use earlier decisions or outputs without you retyping the whole conversation.
 
@@ -423,7 +423,7 @@ Imagine exploring options for a staff event in Chat, then asking Cowork to prepa
 
 ### 17. OneDrive adds a Prompt Gallery
 
-*For: Copilot in OneDrive · October catch-up · Microsoft reports rollout in October*
+*For: Copilot in OneDrive · Microsoft reports rollout in October*
 
 The Prompt Gallery provides suggested prompts for file-related work. Microsoft describes categories including **Create**, **Analyze**, **Find** and **Collaborate**.
 
@@ -443,7 +443,7 @@ Microsoft's guidance describes Copilot in OneDrive for Business on the web and s
 
 ### 18. Accounting skills arrive in Excel
 
-*For: Excel and accounting teams · October catch-up · Frontier first; worldwide rollout announced for November*
+*For: Excel and accounting teams · Frontier first; worldwide rollout announced for November*
 
 Microsoft describes accounting skills that can help with account reconciliation, journal entries and financial analysis inside Excel. The roundup says the skills reached Frontier in October and are rolling out worldwide in November.
 
@@ -461,7 +461,7 @@ Imagine an accountant asking Copilot for help reviewing a reconciliation in a wo
 
 ### 19. Excel's interactive canvas has a wider rollout date
 
-*For: Excel users · October catch-up · Insiders first; worldwide rollout announced for November*
+*For: Excel users · Insiders first; worldwide rollout announced for November*
 
 The interactive canvas turns workbook data into a view of visuals, metrics and insights that can be adjusted through conversation. Microsoft says the canvas updates when the underlying workbook data changes.
 
@@ -481,7 +481,7 @@ There is a date discrepancy: Microsoft's roadmap entry for Excel canvas lists Se
 
 ### 20. PowerPoint gets a model update for presentation design
 
-*For: eligible PowerPoint users · October catch-up · Microsoft reports rollout in October*
+*For: eligible PowerPoint users · Microsoft reports rollout in October*
 
 Microsoft says Claude Sonnet 5.5 brings a stronger design perspective to PowerPoint, including slide layouts, visual hierarchy and applying templates more consistently. The roundup does not say that every presentation automatically uses it.
 
@@ -497,7 +497,7 @@ October's issue covered Sonnet 5.5 as a model option. This is the specific Power
 
 ### 21. Brand Kit setup becomes simpler
 
-*For: PowerPoint brand managers · October catch-up · Microsoft reports rollout in October*
+*For: PowerPoint brand managers · Microsoft reports rollout in October*
 
 A Brand Kit brings approved assets such as an organisation's visual identity into presentation creation. Microsoft says the setup has been simplified, with a more straightforward way to manage assets and configure a kit.
 
@@ -515,7 +515,7 @@ Microsoft's Brand Kit guidance lists a Microsoft Copilot Premium licence and the
 
 ### 22. Publish or unpublish an official Brand Kit
 
-*For: PowerPoint brand managers · October catch-up · Microsoft reports rollout in October*
+*For: PowerPoint brand managers · Microsoft reports rollout in October*
 
 Brand managers can publish an official Brand Kit when it is ready, and unpublish it when it should no longer be available. That gives the person maintaining the kit a way to control its availability rather than leaving an unfinished or outdated version in circulation.
 
@@ -533,7 +533,7 @@ Microsoft says unpublishing hides the kit from viewers without deleting it or re
 
 ### 23. PowerPoint can create an interactive slide
 
-*For: eligible PowerPoint users · October catch-up · Microsoft reports rollout in October*
+*For: eligible PowerPoint users · Microsoft reports rollout in October*
 
 Microsoft says you can create an interactive slide from a prompt or existing content. Its examples include timelines, comparisons, business processes and dashboard-style insights.
 
@@ -551,7 +551,7 @@ Microsoft says creation is available to eligible users who already have access t
 
 ### 24. A skill checks PowerPoint templates before publication
 
-*For: PowerPoint Brand Kit owners · October catch-up · Microsoft reports rollout in October*
+*For: PowerPoint Brand Kit owners · Microsoft reports rollout in October*
 
 The template assessment skill looks for issues that could affect presentations generated from a PowerPoint template. Microsoft says it provides recommendations to address those issues before the related Brand Kit is published.
 
@@ -569,7 +569,7 @@ Microsoft says the assessment runs when a new template is uploaded and can be ru
 
 ### 25. Record a repeatable PowerPoint skill
 
-*For: PowerPoint users · October catch-up · Microsoft reports rollout in October*
+*For: PowerPoint users · Microsoft reports rollout in October*
 
 Microsoft describes **Record a skill** as a way to capture a presentation task you do repeatedly, save it as a skill and use it again. Copilot availability depends on your subscription and organisation's settings.
 
@@ -589,7 +589,7 @@ This is the PowerPoint recorder. October's issue also mentioned a skill recorder
 
 ### 26. Word adds document-specific formatting and design
 
-*For: Word users · October catch-up · Microsoft reports rollout in October*
+*For: Word users · Microsoft reports rollout in October*
 
 Microsoft says Copilot in Word can tailor structure, layout and formatting to the kind of document being created.
 
@@ -601,7 +601,7 @@ For example, the first draft of a briefing note may need a different structure f
 
 ### 27. Markdown and Word work together more easily
 
-*For: Word users · October catch-up · Microsoft reports rollout in October*
+*For: Word users · Microsoft reports rollout in October*
 
 Markdown is a simple way to write formatted text using plain characters. Microsoft says Word supports Markdown shortcuts while writing, copying and pasting between Word and Markdown while retaining formatting, and converting between `.md` and `.docx` files on the web.
 
@@ -619,7 +619,7 @@ For example, someone could start notes in a Markdown-based tool and bring them i
 
 ### 28. Copilot in Edge gets a simpler side pane
 
-*For: Microsoft Edge users · October catch-up · Microsoft reports rollout in October*
+*For: Microsoft Edge users · Microsoft reports rollout in October*
 
 Microsoft describes an updated Copilot icon across Edge entry points and a more streamlined side pane. This is a change to the experience, not a new claim that your organisation's existing controls have been changed.
 
@@ -635,13 +635,13 @@ For example, someone used to opening Copilot from Edge may notice a different ic
 
 ### 29. Queues app adds intelligent call recaps
 
-*For: Teams Phone Queues app users · September catch-up*
+*For: Teams Phone Queues app users · Microsoft reports rollout in September*
 
 Microsoft describes intelligent recaps for recorded queue calls. The recap can include summary notes, discussion points and follow-up actions. Users open the call record in the Queues app's call history and select **Recap**. Microsoft says the Queues app is available by default when the organisation has both Teams Premium and Teams Phone licences; users also need authorisation.
 
 For example, someone taking over a customer issue could read the recap of an earlier queue call before following up. They should check the underlying record where available and apply their organisation's recording and retention requirements.
 
-Microsoft's October roundup says this rolled out in September, so I am treating it as catch-up rather than a November launch.
+Microsoft's October roundup reports a September rollout.
 
 <blockquote class="callout callout-tip"><p><strong>Why this matters:</strong> A colleague can get oriented more quickly before continuing a conversation.</p></blockquote>
 
@@ -653,7 +653,7 @@ Microsoft's October roundup says this rolled out in September, so I am treating 
 
 ### 30. Ask Copilot about a recorded queue call
 
-*For: Teams Phone Queues app · Windows and Mac · September rollout; October release-note catch-up*
+*For: Teams Phone Queues app · Windows and Mac · September rollout reported in October release notes*
 
 After a recorded queue call, an eligible user can open its call record, go to the **Recap** tab and use the Copilot Chat side pane to ask questions about the call. Microsoft's Queues guidance lists Teams Premium and Teams Phone for the organisation; the Message Center notice says the Copilot chat experience in call recap also requires a Microsoft 365 Copilot licence.
 
@@ -671,7 +671,7 @@ If the side pane is missing, I would check the user's Queues authorisation and l
 
 📖 [Microsoft 365 Copilot release notes: Queues app](https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes#october-27-2026) · [Microsoft Support: Queues access](https://support.microsoft.com/en-us/teams/calls-devices/use-the-queues-app-for-microsoft-teams) · [Message Center archive: MC1461160 Copilot licensing](https://mc.merill.net/message/MC1461160)
 
-## Copilot Studio: October catch-up
+## Copilot Studio and agents {#copilot-studio-october-catch-up}
 
 <br />
 
@@ -691,9 +691,9 @@ If you are comparing this with September's issue, that is why the earlier articl
 
 ### 32. Build Copilot Studio solutions from Cowork
 
-*For: makers using Cowork · Frontier · October catch-up*
+*For: makers using Cowork · Frontier*
 
-Microsoft describes Copilot Studio skills in Cowork that help makers create agents, apps and workflows from a natural-language description. The skills can use relevant files and conversation context as a starting point, with further refinement in Cowork or Copilot Studio.
+In its October Copilot Studio roundup, Microsoft describes skills in Cowork that help makers create agents, apps and workflows from a natural-language description. The skills can use relevant files and conversation context as a starting point, with further refinement in Cowork or Copilot Studio.
 
 Imagine an HR team describing its onboarding process and providing its existing guidance. A maker could use that context to start designing a tracking app, a workflow and an agent. The maker still needs to test the result and work within the organisation's governance.
 
@@ -705,9 +705,9 @@ Microsoft lists this as a Frontier capability for users with a Microsoft 365 lic
 
 ### 33. A Copilot Studio MCP server connects development tools
 
-*For: Copilot Studio makers and developers · October catch-up*
+*For: Copilot Studio makers and developers*
 
-Microsoft has documented a Copilot Studio MCP server. MCP is a way for a compatible tool to connect to capabilities and context elsewhere. Here, it lets a supported client work with Copilot Studio resources instead of requiring every step to happen in the browser.
+Microsoft's October Copilot Studio roundup describes a Copilot Studio MCP server. MCP is a way for a compatible tool to connect to capabilities and context elsewhere. Here, it lets a supported client work with Copilot Studio resources instead of requiring every step to happen in the browser.
 
 For example, a maker could ask a compatible client to find an existing agent, inspect its configuration or help prepare a draft. The available operations depend on the connected tool, the selected environment and the maker's permissions.
 
@@ -725,7 +725,7 @@ I would start in a development environment, confirm which environment and accoun
 
 ### 34. Connector setup in the conversation reaches GA
 
-*For: Copilot Studio makers · October catch-up · Microsoft reports general availability for specified harnesses*
+*For: Copilot Studio makers · Microsoft reports general availability for specified harnesses*
 
 In [September's issue](/blog/microsoft-365-copilot-september-2026-updates/#84-setting-up-connectors-by-conversation) I covered a planned way to set up a connection without leaving the conversation. Microsoft's later Copilot Studio roundup says the focused connection experience is now generally available for agents using the Microsoft Copilot harness and for custom web agents using the Standard harness.
 
@@ -791,7 +791,7 @@ Work IQ in this harness uses usage-based billing; Microsoft says a separate Work
 
 ### 38. Connect a specialist agent using A2A
 
-*For: Copilot Studio makers · October catch-up · Microsoft Copilot harness*
+*For: Copilot Studio makers · Microsoft Copilot harness*
 
 Agent2Agent, or **A2A**, is a protocol that lets one agent communicate with another. Microsoft documents connecting an A2A-compatible remote agent so a Copilot Studio agent can delegate a task to it.
 
@@ -813,7 +813,7 @@ Before connecting a specialist, I would check who operates it, what information 
 
 ### 39. More than one maker can work on a workflow
 
-*For: Copilot Studio workflow makers · October catch-up · Microsoft reports general availability*
+*For: Copilot Studio workflow makers · Microsoft reports general availability*
 
 Microsoft says workflow coauthoring is generally available: makers can share a workflow and assign multiple authors to develop and maintain it together.
 
@@ -825,7 +825,7 @@ For example, one person might understand a business approval process while anoth
 
 ### 40. See credit use inside workflow runs
 
-*For: Copilot Studio makers · October catch-up*
+*For: Copilot Studio makers*
 
 Microsoft describes credit reporting for individual workflow runs and nodes. A node is a step in the workflow; looking at the individual steps can help a maker understand where consumption occurs.
 
@@ -867,7 +867,7 @@ There is a status mismatch: the item appears in generally available release note
 
 ### 42. Ask the Insights Agent about adoption and feedback
 
-*For: agent owners and Microsoft 365 administrators · October catch-up · feedback is Frontier preview*
+*For: agent owners and Microsoft 365 administrators · feedback is Frontier preview*
 
 The **Insights Agent** answers questions in Copilot Chat about aggregate agent usage, such as weekly active users and adoption trends. Microsoft's October roundup also describes a Frontier preview in which an agent owner can review ratings and written feedback for agents they own.
 
@@ -961,7 +961,7 @@ That distinction matters more than a single “government cloud” label. These 
 
 ### 46. Copilot memory retention: Microsoft's guidance conflicts
 
-*For: compliance administrators · October catch-up · status unclear*
+*For: compliance administrators · status unclear*
 
 Microsoft's October roundup says admins can configure **retention for saved Copilot memories** in Purview Data Lifecycle Management, and describes the feature as rolled out in October.
 
@@ -1011,7 +1011,7 @@ The Message Center notice says this affects both Copilot Chat Basic and Microsof
 
 ### 48. Teach helps educators plan a whole unit
 
-*For: educators using Teach in Microsoft Copilot · October catch-up · rollout status to confirm*
+*For: educators using Teach in Microsoft Copilot · rollout status to confirm*
 
 Microsoft's education update describes **Unit Plans in Teach**: a way to bring standards, learning goals, pacing, lessons and assessments together across a teaching unit. An educator can set the length and weekly schedule, use their materials and standards as context, then review and adjust the proposed sequence.
 
@@ -1063,7 +1063,7 @@ Before using Capture, obtain the participants' consent and follow your organisat
 
 ### 50. Manage authoritative sources from the admin center
 
-*For: Microsoft 365 administrators · September catch-up · release notes report general availability*
+*For: Microsoft 365 administrators · release notes report general availability*
 
 In September I covered how admins could mark SharePoint sites as authoritative using PowerShell or CSOM. Microsoft's 4 November release notes describe an **admin center interface** for managing authoritative SharePoint sites in Copilot Search: go to **Copilot → Search → Authoritative content**. A public archive of Microsoft's notice also describes adding and removing sites and importing or exporting a list, with a limit of 100 sites.
 
@@ -1087,7 +1087,7 @@ The older SharePoint documentation still describes PowerShell and CSOM; the sour
 
 **The research cut-off is 11 November, 15:40 New Zealand daylight time.** I used public Microsoft release notes, product posts and documentation, plus publicly archived Message Center notices. Section 4 identifies a release-notes page updated after the cut-off, section 10 identifies a Support page whose update day is unknown, and section 49 labels a later same-day Support check separately. Check the original Message Center in your own tenant for changes and applicability.
 
-**Earlier updates are labelled.** Microsoft's October roundup arrived after the October issue's cut-off, so this issue catches up on changes that were not already covered. Follow-ups are included when there is a material change, such as the revised Windows Capture timing.
+**What is included.** Updates not covered in the previous recap and follow-ups with a material change, such as the revised Windows Capture timing. Microsoft's original announcement and rollout dates remain in the sections.
 
 **Roadmap dates are not tenant evidence.** I checked both newly created roadmap records and records with planned availability in the period. A date or a “Launched” label does not prove a feature has reached every tenant. Where Microsoft sources disagree, I have kept the uncertainty in the relevant section.
 
