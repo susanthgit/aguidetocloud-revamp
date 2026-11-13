@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2026 16:14:11 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 21:58:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Admins may see Windows and Android devices appear as unmonitored in the Pro Management Portal (PMP) in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1551945</link>
+      <description>[Microsoft Teams] Admins may see Windows and Android devices appear as unmonitored in the PMP in Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1551945</guid>
+      <pubDate>Fri, 13 Nov 2026 19:05:35 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1550821</link>
@@ -28,7 +37,7 @@
     <item>
       <title>[Power Apps] Power Apps mobile app users experience intermittent sign-in failures</title>
       <link>https://www.aguidetocloud.com/service-health/#MX1551341</link>
-      <description>[Power Apps] Power Apps mobile app users experience intermittent sign-in failures.</description>
+      <description>[Power Apps] Power Apps mobile app users experienced intermittent sign-in failures.</description>
       <category>Power Apps</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MX1551341</guid>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1517145</guid>
       <pubDate>Tue, 20 Oct 2026 14:54:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may not receive responses from Microsoft 365 Copilot Chat in the web and desktop apps</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1517097</link>
-      <description>[Microsoft 365 Copilot Chat] Users may not have received responses from Copilot Chat in the web and desktop apps.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1517097</guid>
-      <pubDate>Tue, 20 Oct 2026 14:29:11 +0000</pubDate>
     </item>
   </channel>
 </rss>
