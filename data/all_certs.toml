@@ -16287,3 +16287,50 @@ exam_prerequisites = "NVIDIA recommends 2-3 years of operational experience mana
 exam_question_types = ["Multiple choice", "Hands-on lab exercises"]
 guided_url = "/guided/nvidia-ncp-aio/"
 practice_url = "/guided/nvidia-ncp-aio/practice/"
+
+[[cert]]
+slug = "nvidia-ncp-genl"
+vendor = "nvidia"
+code = "NVIDIA-NCP-GENL"
+name = "NVIDIA-Certified Professional: Generative AI LLMs (NCP-GENL)"
+tagline = "Work through professional LLM decisions, from training data and fine-tuning to GPU efficiency, serving and reliable operation."
+exam_category = "NVIDIA"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 10
+order = 881
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/generative-ai-llm-professional/"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "Not published; NVIDIA reports pass/fail"
+guided_url = "/guided/nvidia-ncp-genl/"
+
+
+[cert_map."nvidia-ncp-genl"]
+vendor = "nvidia"
+code = "NVIDIA-NCP-GENL"
+name = "NVIDIA-Certified Professional: Generative AI LLMs (NCP-GENL)"
+tagline = "Work through professional LLM decisions, from training data and fine-tuning to GPU efficiency, serving and reliable operation."
+exam_category = "NVIDIA"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 10
+order = 881
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/generative-ai-llm-professional/"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "Not published; NVIDIA reports pass/fail"
+exam_questions_real = "60-70"
+exam_provider = "Certiverse (online remote-proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "NVIDIA recommends 2-3 years of practical AI/ML experience with LLMs, including transformers, prompt engineering, distributed parallelism and parameter-efficient fine-tuning. Check current vendor requirements before registering."
+guided_url = "/guided/nvidia-ncp-genl/"
+practice_url = "/guided/nvidia-ncp-genl/practice/"
