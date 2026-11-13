@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T06:32:03.733612+00:00",
+  "generated_at": "2026-11-13T16:14:11.089354+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -59,12 +59,12 @@
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2058,
+      "active_incidents": 0,
+      "avg_duration_minutes": 4435,
       "last_incident": "2026-11-02T09:07:00+00:00",
       "classifications": {
-        "incident": 4,
-        "advisory": 3
+        "advisory": 4,
+        "incident": 3
       }
     },
     {
@@ -148,8 +148,8 @@
       "short_name": "Dynamics",
       "icon": "🏢",
       "total_incidents": 2,
-      "active_incidents": 1,
-      "avg_duration_minutes": 477,
+      "active_incidents": 0,
+      "avg_duration_minutes": 808,
       "last_incident": "2026-11-12T17:30:00+00:00",
       "classifications": {
         "advisory": 1,
@@ -161,8 +161,8 @@
       "short_name": "M365 Web",
       "icon": "🌐",
       "total_incidents": 2,
-      "active_incidents": 1,
-      "avg_duration_minutes": 70,
+      "active_incidents": 0,
+      "avg_duration_minutes": 1926,
       "last_incident": "2026-11-10T09:57:00+00:00",
       "classifications": {
         "advisory": 1,
@@ -182,18 +182,6 @@
       }
     },
     {
-      "service": "Power Apps",
-      "short_name": "Power Apps",
-      "icon": "⚡",
-      "total_incidents": 1,
-      "active_incidents": 1,
-      "avg_duration_minutes": 0,
-      "last_incident": "2026-11-12T17:30:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
-    },
-    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -201,6 +189,18 @@
       "active_incidents": 1,
       "avg_duration_minutes": 0,
       "last_incident": "2026-10-14T16:14:28.423000+00:00",
+      "classifications": {
+        "advisory": 1
+      }
+    },
+    {
+      "service": "Power Apps",
+      "short_name": "Power Apps",
+      "icon": "⚡",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 1140,
+      "last_incident": "2026-11-12T17:30:00+00:00",
       "classifications": {
         "advisory": 1
       }

@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2026 06:32:04 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 16:14:11 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services</title>
@@ -19,9 +19,9 @@
     <item>
       <title>[Dynamics 365 Apps] Field Service mobile app users experience intermittent sign-in failures</title>
       <link>https://www.aguidetocloud.com/service-health/#CR1551339</link>
-      <description>[Dynamics 365 Apps] Field Service mobile app users experience intermittent sign-in failures.</description>
+      <description>[Dynamics 365 Apps] Field Service mobile app users experienced intermittent sign-in failures.</description>
       <category>Dynamics 365 Apps</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CR1551339</guid>
       <pubDate>Thu, 12 Nov 2026 17:30:00 +0000</pubDate>
     </item>
@@ -30,7 +30,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MX1551341</link>
       <description>[Power Apps] Power Apps mobile app users experience intermittent sign-in failures.</description>
       <category>Power Apps</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MX1551341</guid>
       <pubDate>Thu, 12 Nov 2026 17:30:00 +0000</pubDate>
     </item>
@@ -109,9 +109,9 @@
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers</title>
       <link>https://www.aguidetocloud.com/service-health/#OO1547737</link>
-      <description>[Microsoft 365 for the web] Users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers.</description>
+      <description>[Microsoft 365 for the web] Users may have been unable to upload audio files using the Transcribe feature in Word for the web using some browsers.</description>
       <category>Microsoft 365 for the web</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OO1547737</guid>
       <pubDate>Tue, 10 Nov 2026 09:57:00 +0000</pubDate>
     </item>
@@ -206,11 +206,11 @@
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[SharePoint Online] Users are unable to view reporting metrics for Amplify Campaigns in SharePoint Online</title>
+      <title>[SharePoint Online] Users were unable to view reporting metrics for Amplify Campaigns in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1548842</link>
-      <description>[SharePoint Online] Users are unable to view reporting metrics for Amplify Campaigns in SharePoint Online.</description>
+      <description>[SharePoint Online] Users were unable to view reporting metrics for Amplify Campaigns in SharePoint Online.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1548842</guid>
       <pubDate>Sat, 31 Oct 2026 10:28:13 +0000</pubDate>
     </item>
