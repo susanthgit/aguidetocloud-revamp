@@ -35,7 +35,7 @@ faq:
 
 NCP-AIO validates day-to-day AI infrastructure operations: installing and provisioning clusters, administering schedulers and Kubernetes, monitoring GPU systems, and troubleshooting the container, fabric and storage layers that workloads depend on.
 
-Our planned [250-question knowledge bank](/guided/nvidia-ncp-aio/) uses original scenarios across NVIDIA's four published domains. It is not official NVIDIA exam content, is not affiliated with or endorsed by NVIDIA, and does not reproduce NVIDIA sample questions. The first 20 questions will be available as a free preview; full access is **US$9 for one year** when released.
+Our [250-question knowledge bank](/guided/nvidia-ncp-aio/) uses original scenarios across NVIDIA's four published domains. It is not official NVIDIA exam content, is not affiliated with or endorsed by NVIDIA, and does not reproduce NVIDIA sample questions. The first 20 questions are a free preview; full access is **US$9 for one year**.
 
 ## Exam Quick Facts
 
