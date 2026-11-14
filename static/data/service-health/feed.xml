@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Nov 2026 02:20:33 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 11:24:40 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Admins may see Windows and Android devices appear as unmonitored in the Pro Management Portal (PMP) in Microsoft Teams</title>
@@ -15,15 +15,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1551945</guid>
       <pubDate>Fri, 13 Nov 2026 19:05:35 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1550821</link>
-      <description>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services. </description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1550821</guid>
-      <pubDate>Thu, 12 Nov 2026 18:26:10 +0000</pubDate>
     </item>
     <item>
       <title>[Dynamics 365 Apps] Field Service mobile app users experience intermittent sign-in failures</title>
@@ -60,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1550488</guid>
       <pubDate>Thu, 12 Nov 2026 14:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1550821</link>
+      <description>[Microsoft 365 suite] Users may have been unable to connect to multiple Microsoft 365 services. </description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1550821</guid>
+      <pubDate>Thu, 12 Nov 2026 10:05:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 apps] Users may have been unable to utilize the Side Pane in Microsoft Word and received an error message</title>
