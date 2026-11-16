@@ -16381,3 +16381,46 @@ exam_prerequisites = "NVIDIA recommends 2+ years of enterprise data center opera
 exam_question_types = ["Choice questions; exact item-type distribution not published on the English exam page"]
 guided_url = "/guided/nvidia-ncp-ari/"
 practice_url = "/guided/nvidia-ncp-ari/practice/"
+
+[[cert]]
+slug = "juniper-jncia-dc"
+vendor = "juniper"
+code = "JNCIA-DC"
+name = "Juniper Networks Certified Associate Data Center (JNCIA-DC)"
+tagline = "Associate-level Juniper data center networking: architectures, switching, routing and high availability on Junos OS"
+exam_category = "Juniper"
+level = "intermediate"
+status = "planned"
+modules = 0
+questions = 250
+domains = 5
+order = 218
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14349"
+exam_duration = 90
+guided_url = "/guided/juniper-jncia-dc/"
+
+[cert_map."juniper-jncia-dc"]
+vendor = "juniper"
+code = "JNCIA-DC"
+name = "Juniper Networks Certified Associate Data Center (JNCIA-DC)"
+tagline = "Associate-level Juniper data center networking: architectures, switching, routing and high availability on Junos OS"
+exam_category = "Juniper"
+level = "intermediate"
+status = "planned"
+modules = 0
+questions = 250
+domains = 5
+order = 218
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14349"
+exam_duration = 90
+exam_questions_real = "65"
+exam_provider = "Pearson VUE; schedule through Alpine CertMetrics"
+exam_validity = "3 years"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/juniper-jncia-dc/"
+practice_url = "/guided/juniper-jncia-dc/practice/"
