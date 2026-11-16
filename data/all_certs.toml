@@ -16475,3 +16475,50 @@ exam_prerequisites = "JNCIA-DC certification required"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/juniper-jncis-dc/"
 practice_url = "/guided/juniper-jncis-dc/practice/"
+
+[[cert]]
+slug = "juniper-jncis-devops"
+vendor = "juniper"
+code = "JNCIS-DEVOPS"
+name = "Juniper Networks Certified Specialist - Automation and DevOps (JNCIS-DevOps)"
+tagline = "Junos platform automation, gRPC and telemetry, Ansible, automation scripts, and YANG for JN0-423"
+exam_category = "Juniper"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1071
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14347"
+exam_cost = "Check current pricing with Pearson VUE"
+exam_duration = 90
+exam_passing_score = ""
+guided_url = "/guided/juniper-jncis-devops/"
+
+[cert_map."juniper-jncis-devops"]
+vendor = "juniper"
+code = "JNCIS-DEVOPS"
+name = "Juniper Networks Certified Specialist - Automation and DevOps (JNCIS-DevOps)"
+tagline = "Junos platform automation, gRPC and telemetry, Ansible, automation scripts, and YANG for JN0-423"
+exam_category = "Juniper"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1071
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14347"
+exam_cost = "Check current pricing with Pearson VUE"
+exam_duration = 90
+exam_passing_score = ""
+exam_questions_real = "65"
+exam_provider = "Pearson VUE"
+exam_validity = "3 years"
+exam_prerequisites = "JNCIA-DevOps certification; written exams may be taken in any order, but certification prerequisites must be fulfilled."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/juniper-jncis-devops/"
+practice_url = "/guided/juniper-jncis-devops/practice/"
