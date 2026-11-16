@@ -16428,3 +16428,50 @@ exam_prerequisites = "An ISACA-approved qualifying designation"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/isaca-aair/"
 practice_url = "/guided/isaca-aair/practice/"
+
+[[cert]]
+slug = "juniper-jncis-dc"
+vendor = "juniper"
+code = "JNCIS-DC"
+name = "Juniper Networks Certified Specialist Data Center (JNCIS-DC)"
+tagline = "Study data center fabrics and Juniper Apstra for the JN0-481 exam."
+exam_category = "Juniper"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1300
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14350"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = ""
+guided_url = "/guided/juniper-jncis-dc/"
+
+[cert_map."juniper-jncis-dc"]
+vendor = "juniper"
+code = "JNCIS-DC"
+name = "Juniper Networks Certified Specialist Data Center (JNCIS-DC)"
+tagline = "Study data center fabrics and Juniper Apstra for the JN0-481 exam."
+exam_category = "Juniper"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1300
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14350"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = ""
+exam_questions_real = "65"
+exam_provider = "Pearson VUE"
+exam_validity = "3 years"
+exam_prerequisites = "JNCIA-DC certification required"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/juniper-jncis-dc/"
+practice_url = "/guided/juniper-jncis-dc/practice/"
