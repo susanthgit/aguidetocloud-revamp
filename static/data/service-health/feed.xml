@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2026 09:31:50 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 20:22:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Admins may see Windows and Android devices appear as unmonitored in the Pro Management Portal (PMP) in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1551945</link>
-      <description>[Microsoft Teams] Admins may see Windows and Android devices appear as unmonitored in the PMP in Microsoft Teams.</description>
+      <description>[Microsoft Teams] Admins may have seen Windows and Android devices appear as unmonitored in the PMP in Microsoft Teams.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1551945</guid>
       <pubDate>Fri, 13 Nov 2026 19:05:35 +0000</pubDate>
     </item>
