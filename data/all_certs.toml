@@ -16424,3 +16424,144 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/juniper-jncia-dc/"
 practice_url = "/guided/juniper-jncia-dc/practice/"
+
+[[cert]]
+slug = "isaca-aair"
+vendor = "isaca"
+code = "AAIR"
+name = "ISACA Advanced in AI Risk (AAIR)"
+tagline = "Assess and manage enterprise AI risk across the AI lifecycle"
+exam_category = "ISACA"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 999
+featured = false
+price_practice = 9
+exam_url = "https://www.isaca.org/credentialing/aair"
+exam_cost = "$459 USD (member) / $599 USD (non-member)"
+exam_duration = 150
+exam_passing_score = "450 / 800"
+guided_url = "/guided/isaca-aair/"
+
+[cert_map."isaca-aair"]
+vendor = "isaca"
+code = "AAIR"
+name = "ISACA Advanced in AI Risk (AAIR)"
+tagline = "Assess and manage enterprise AI risk across the AI lifecycle"
+exam_category = "ISACA"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 999
+featured = false
+price_practice = 9
+exam_url = "https://www.isaca.org/credentialing/aair"
+exam_cost = "$459 USD (member) / $599 USD (non-member)"
+exam_duration = 150
+exam_passing_score = "450 / 800"
+exam_questions_real = "90"
+exam_provider = "PSI"
+exam_validity = "CPE maintenance required"
+exam_prerequisites = "An ISACA-approved qualifying designation"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/isaca-aair/"
+practice_url = "/guided/isaca-aair/practice/"
+
+[[cert]]
+slug = "juniper-jncis-dc"
+vendor = "juniper"
+code = "JNCIS-DC"
+name = "Juniper Networks Certified Specialist Data Center (JNCIS-DC)"
+tagline = "Study data center fabrics and Juniper Apstra for the JN0-481 exam."
+exam_category = "Juniper"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1300
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14350"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = ""
+guided_url = "/guided/juniper-jncis-dc/"
+
+[cert_map."juniper-jncis-dc"]
+vendor = "juniper"
+code = "JNCIS-DC"
+name = "Juniper Networks Certified Specialist Data Center (JNCIS-DC)"
+tagline = "Study data center fabrics and Juniper Apstra for the JN0-481 exam."
+exam_category = "Juniper"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1300
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14350"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = ""
+exam_questions_real = "65"
+exam_provider = "Pearson VUE"
+exam_validity = "3 years"
+exam_prerequisites = "JNCIA-DC certification required"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/juniper-jncis-dc/"
+practice_url = "/guided/juniper-jncis-dc/practice/"
+
+[[cert]]
+slug = "juniper-jncis-devops"
+vendor = "juniper"
+code = "JNCIS-DEVOPS"
+name = "Juniper Networks Certified Specialist - Automation and DevOps (JNCIS-DevOps)"
+tagline = "Junos platform automation, gRPC and telemetry, Ansible, automation scripts, and YANG for JN0-423"
+exam_category = "Juniper"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1071
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14347"
+exam_cost = "Check current pricing with Pearson VUE"
+exam_duration = 90
+exam_passing_score = ""
+guided_url = "/guided/juniper-jncis-devops/"
+
+[cert_map."juniper-jncis-devops"]
+vendor = "juniper"
+code = "JNCIS-DEVOPS"
+name = "Juniper Networks Certified Specialist - Automation and DevOps (JNCIS-DevOps)"
+tagline = "Junos platform automation, gRPC and telemetry, Ansible, automation scripts, and YANG for JN0-423"
+exam_category = "Juniper"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1071
+featured = false
+price_practice = 9
+exam_url = "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14347"
+exam_cost = "Check current pricing with Pearson VUE"
+exam_duration = 90
+exam_passing_score = ""
+exam_questions_real = "65"
+exam_provider = "Pearson VUE"
+exam_validity = "3 years"
+exam_prerequisites = "JNCIA-DevOps certification; written exams may be taken in any order, but certification prerequisites must be fulfilled."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/juniper-jncis-devops/"
+practice_url = "/guided/juniper-jncis-devops/practice/"

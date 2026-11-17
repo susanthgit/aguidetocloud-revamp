@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T01:57:39.955774+00:00",
+  "generated_at": "2026-11-17T04:26:40.650943+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -7,8 +7,8 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 16,
-      "active_incidents": 1,
-      "avg_duration_minutes": 7518,
+      "active_incidents": 0,
+      "avg_duration_minutes": 7317,
       "last_incident": "2026-11-13T19:05:35.070000+00:00",
       "classifications": {
         "advisory": 10,
@@ -46,12 +46,12 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 11,
-      "active_incidents": 1,
-      "avg_duration_minutes": 10247,
+      "active_incidents": 0,
+      "avg_duration_minutes": 10913,
       "last_incident": "2026-11-06T18:00:00+00:00",
       "classifications": {
-        "advisory": 5,
-        "incident": 6
+        "incident": 6,
+        "advisory": 5
       }
     },
     {
