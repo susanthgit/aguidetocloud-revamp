@@ -32,7 +32,7 @@ The exam is intended for data center networking professionals with introductory 
 | Questions | 65 |
 | Format | Multiple choice |
 | Software | Junos OS 24.2 |
-| Scheduling | Alpine CertMetrics |
+| Exam delivery | Pearson VUE |
 | Validity | Three years |
 
 Check the [official JNCIA-DC exam page](https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=14349) for current exam details.
