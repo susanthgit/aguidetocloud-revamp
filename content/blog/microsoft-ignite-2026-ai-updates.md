@@ -235,7 +235,6 @@ There are two billing distinctions: the daily **Today Brief** refresh is include
 <details>
 <summary>Watch official videos (1)</summary>
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://medius.microsoft.com/Embed/video-nc/8f3c44a2-14e8-404e-9ea3-15aafd489c4d" title="Today Brief in Outlook" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://medius.microsoft.com/Embed/video-nc/8f3c44a2-14e8-404e-9ea3-15aafd489c4d">Today Brief in Outlook</a>. Frontier private-preview design; Brief and Feed billing differ as explained above. <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/office-at-ignite-2026-from-apps-to-agentic-system-of-work/4572226">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -263,7 +262,6 @@ Projects serve a related but different job: grouping your chats, Cowork tasks, i
 <details>
 <summary>Watch official videos (1)</summary>
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://medius.microsoft.com/Embed/video-nc/ae8b6624-a54c-488f-961e-5c07016592d3" title="Workspaces" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://medius.microsoft.com/Embed/video-nc/ae8b6624-a54c-488f-961e-5c07016592d3">Workspaces</a>. Frontier Workspace demonstration. <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/office-at-ignite-2026-from-apps-to-agentic-system-of-work/4572226">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -306,11 +304,7 @@ For a request tracker, the runtime hosts the application. An **optional Fabric d
 
 **Status:** Runtime **GA, rollout beginning**; Fabric integration **preview**. [Runtime launch](https://techcommunity.microsoft.com/blog/copilot-managed-runtime-blog/copilot-managed-runtime-is-now-generally-available-with-additional-new-preview-f/4571846) · [Fabric integration requirements and current limits](https://learn.microsoft.com/en-us/microsoft-365/copilot-managed-runtime/backend-integration/fabric-integration).
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;">
-<iframe src="https://medius.microsoft.com/Embed/video-nc/e24fb5e0-b370-473b-b7a2-8847f356fdf0" title="Microsoft official demo: Copilot Managed Runtime architecture" loading="lazy" allow="fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe>
-</div>
-
-*Official Microsoft video: [Copilot Managed Runtime architecture](https://techcommunity.microsoft.com/blog/copilot-managed-runtime-blog/copilot-managed-runtime-is-now-generally-available-with-additional-new-preview-f/4571846).*
+<p>Official Microsoft video: <a href="https://medius.microsoft.com/Embed/video-nc/e24fb5e0-b370-473b-b7a2-8847f356fdf0">Watch Copilot Managed Runtime architecture</a>. <a href="https://techcommunity.microsoft.com/blog/copilot-managed-runtime-blog/copilot-managed-runtime-is-now-generally-available-with-additional-new-preview-f/4571846">Read the product announcement</a>.</p>
 
 <!-- ignite-reviewed-media:managed-runtime -->
 <details open>
@@ -326,10 +320,8 @@ For a request tracker, the runtime hosts the application. An **optional Fabric d
 <details>
 <summary>Watch official videos (2)</summary>
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://medius.microsoft.com/Embed/video-nc/ed46d25a-8c6b-4237-9f10-7a16c8b4bbc6" title="Copilot Managed Runtime: build anywhere" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://medius.microsoft.com/Embed/video-nc/ed46d25a-8c6b-4237-9f10-7a16c8b4bbc6">Copilot Managed Runtime: build anywhere</a>. Official product illustration; release stages above apply. <a href="https://techcommunity.microsoft.com/blog/copilot-managed-runtime-blog/copilot-managed-runtime-is-now-generally-available-with-additional-new-preview-f/4571846">Read the product announcement or documentation</a>.</p>
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://medius.microsoft.com/Embed/video-nc/0678b5de-ee3a-42d3-a6cc-4dc832d5b869" title="Copilot Managed Runtime: a sample showfloor app" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://medius.microsoft.com/Embed/video-nc/0678b5de-ee3a-42d3-a6cc-4dc832d5b869">Copilot Managed Runtime: a sample showfloor app</a>. A sample app with simulated crowd data, not a real event-operations result. <a href="https://techcommunity.microsoft.com/blog/copilot-managed-runtime-blog/copilot-managed-runtime-is-now-generally-available-with-additional-new-preview-f/4571846">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -379,12 +371,7 @@ Imagine a procurement agent presenting supplier options in a thread, showing wha
 
 **Status:** Agentic Users, threaded replies, plans/steps and HTML widgets **public preview**. Group/channel streaming and extended Markdown are **available now**. Socket mode is **public preview for newly created development/test agents only**; production still needs an HTTPS endpoint. [Teams developer announcement and feature-level stages](https://devblogs.microsoft.com/microsoft365dev/new-capabilities-for-building-digital-teammates-in-microsoft-teams/).
 
-<video controls preload="none" playsinline style="width:100%;height:auto;margin:var(--space-4) 0;" aria-label="Microsoft Teams official demonstration of an agent plan, threaded reply and interactive supplier-capacity widget">
-<source src="https://devblogs.microsoft.com/microsoft365dev/wp-content/uploads/sites/73/2026/11/plan.html_.thread_zoomedit.2.mp4" type="video/mp4" />
-Your browser does not support this video.
-</video>
-
-*Official Microsoft Teams demonstration using a fictional supplier scenario, not a tenant capture. [Watch in the Teams announcement](https://devblogs.microsoft.com/microsoft365dev/new-capabilities-for-building-digital-teammates-in-microsoft-teams/).*
+<p><a href="https://devblogs.microsoft.com/microsoft365dev/wp-content/uploads/sites/73/2026/11/plan.html_.thread_zoomedit.2.mp4">Watch the official Microsoft Teams demonstration</a> using a fictional supplier scenario, not a tenant capture. <a href="https://devblogs.microsoft.com/microsoft365dev/new-capabilities-for-building-digital-teammates-in-microsoft-teams/">Read the Teams announcement</a>.</p>
 
 <!-- ignite-reviewed-media:teams-digital-teammates -->
 <details open>
@@ -412,7 +399,6 @@ For the ERP plugin, Learn specifies **Microsoft 365 Copilot, a qualifying financ
 <details>
 <summary>Watch official videos (1)</summary>
 
-<video controls preload="none" aria-label="Dynamics 365 in Copilot: sales-skills overview" style="width:100%;height:auto;"><source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307252-bizapps-0x1080-6439k" /><a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307252-bizapps-0x1080-6439k">Watch Dynamics 365 in Copilot: sales-skills overview</a></video>
 <p>Official video: <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307252-bizapps-0x1080-6439k">Dynamics 365 in Copilot: sales-skills overview</a>. Overview, not a Salesforce plugin demonstration or proof of a CRM writeback. <a href="https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2026/11/17/microsoft-ignite-2026-introducing-dynamics-365-in-copilot/">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -670,7 +656,6 @@ The harness is the part that manages an agent's work across steps. This official
 <details>
 <summary>Watch official videos (1)</summary>
 
-<video controls preload="none" aria-label="Microsoft Foundry overview" style="width:100%;height:auto;"><source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307367-microsoftfoundry2-0x1080-6439k" /><a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307367-microsoftfoundry2-0x1080-6439k">Watch Microsoft Foundry overview</a></video>
 <p>Official video: <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307367-microsoftfoundry2-0x1080-6439k">Microsoft Foundry overview</a>. Official product illustration; release stages above apply. <a href="https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -739,10 +724,8 @@ For example, a team could ask for a small fix in an Azure DevOps repository with
 <details>
 <summary>Watch official videos (2)</summary>
 
-<video controls preload="none" aria-label="Work with Azure DevOps repositories in the GitHub Copilot app" style="width:100%;height:auto;"><source src="https://github.com/user-attachments/assets/2f1f59ed-a889-46df-8a8d-720cec4a08f9%20" /><a href="https://github.com/user-attachments/assets/2f1f59ed-a889-46df-8a8d-720cec4a08f9%20">Watch Work with Azure DevOps repositories in the GitHub Copilot app</a></video>
 <p>Official video: <a href="https://github.com/user-attachments/assets/2f1f59ed-a889-46df-8a8d-720cec4a08f9%20">Work with Azure DevOps repositories in the GitHub Copilot app</a>. Preview. A proposed test fix is not a validated build. <a href="https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/">Read the product announcement or documentation</a>.</p>
 
-<video controls preload="none" aria-label="Let Copilot work in your browser" style="width:100%;height:auto;"><source src="https://github.com/user-attachments/assets/4fd64f98-4caf-4045-a64d-6d58ff37486f" /><a href="https://github.com/user-attachments/assets/4fd64f98-4caf-4045-a64d-6d58ff37486f">Watch Let Copilot work in your browser</a></video>
 <p>Official video: <a href="https://github.com/user-attachments/assets/4fd64f98-4caf-4045-a64d-6d58ff37486f">Let Copilot work in your browser</a>. Preview. Browser interaction does not remove review and approval requirements. <a href="https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -775,7 +758,6 @@ For example, after changing a document-review skill, rerun the same checks to se
 <details>
 <summary>Watch official videos (1)</summary>
 
-<video controls preload="none" aria-label="GitHub Copilot Evals setup" style="width:100%;height:auto;"><source src="https://github.com/user-attachments/assets/6e98f7df-128b-4932-b799-2a2c1372a9f9" /><a href="https://github.com/user-attachments/assets/6e98f7df-128b-4932-b799-2a2c1372a9f9">Watch GitHub Copilot Evals setup</a></video>
 <p>Official video: <a href="https://github.com/user-attachments/assets/6e98f7df-128b-4932-b799-2a2c1372a9f9">GitHub Copilot Evals setup</a>. Public-preview setup example; no evaluation was run here. <a href="https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -1132,8 +1114,7 @@ For example, an administrator could first investigate which sites an agent can r
 <details>
 <summary>Watch official videos (1)</summary>
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://learn-video.azurefd.net/vod/player?id=061be5d6-b8a6-4100-ac10-e145721653ec" title="Overview of the SharePoint Admin Agent" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
-<p>Official video: <a href="https://learn-video.azurefd.net/vod/player?id=061be5d6-b8a6-4100-ac10-e145721653ec">Overview of the SharePoint Admin Agent</a>. Product explainer; current announcement stages and prerequisites above apply. <a href="https://learn.microsoft.com/en-us/sharepoint/content-governance-agent">Read the product announcement or documentation</a>.</p>
+<p>Official video: <a href="https://learn.microsoft.com/en-us/sharepoint/content-governance-agent#what-is-the-sharepoint-admin-agent">Overview of the SharePoint Admin Agent</a>. Product explainer; current announcement stages and prerequisites above apply. <a href="https://learn.microsoft.com/en-us/sharepoint/content-governance-agent">Read the product announcement or documentation</a>.</p>
 </details>
 
 ### 44. FinOps starts with who can spend, on what and under which policy {#agent-value}
@@ -1181,8 +1162,7 @@ For example, a pilot group could get access to specified services under an owned
 <details>
 <summary>Watch official videos (2)</summary>
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://learn-video.azurefd.net/vod/player?id=ca87eab0-ba09-4d17-8f27-2da6c0b513f2" title="Microsoft Copilot Cost management" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
-<p>Official video: <a href="https://learn-video.azurefd.net/vod/player?id=ca87eab0-ba09-4d17-8f27-2da6c0b513f2">Microsoft Copilot Cost management</a>. The explainer focuses on Cowork and Work IQ; Ignite’s broader coverage is described separately above. <a href="https://learn.microsoft.com/en-us/copilot/plan/usage-based-billing-overview-copilot-credits">Read the product announcement or documentation</a>.</p>
+<p>Official video: <a href="https://learn.microsoft.com/en-us/copilot/plan/usage-based-billing-overview-copilot-credits#watch-microsoft-copilot-cost-management">Microsoft Copilot Cost management</a>. The explainer focuses on Cowork and Work IQ; Ignite’s broader coverage is described separately above. <a href="https://learn.microsoft.com/en-us/copilot/plan/usage-based-billing-overview-copilot-credits">Read the product announcement or documentation</a>.</p>
 
 <div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://www.youtube-nocookie.com/embed/uA1ZaQpIh3Q" title="Optimize your AI spend with Microsoft Agent 365" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://www.youtube-nocookie.com/embed/uA1ZaQpIh3Q">Optimize your AI spend with Microsoft Agent 365</a>. Spending-policy demonstration, not the separate Business Analytics app or a final invoice. <a href="https://techcommunity.microsoft.com/blog/ai-finops-blog/introducing-microsoft-agent-365-business-analytics-turn-ai-investment-into-busin/4574149">Read the product announcement or documentation</a>.</p>
@@ -1337,7 +1317,6 @@ Access depends on the appropriate **GDAP/delegated relationships**, roles and el
 <details>
 <summary>Watch official videos (1)</summary>
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://medius.microsoft.com/Embed/video-nc/43dcafae-9c6b-4f3d-8fb2-beb73199aa45" title="Multi-Tenant Management" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://medius.microsoft.com/Embed/video-nc/43dcafae-9c6b-4f3d-8fb2-beb73199aa45">Multi-Tenant Management</a>. Multi-tenant feature stages above still apply. <a href="https://techcommunity.microsoft.com/blog/microsoft_365blog/multi-tenant-management-tenants-agents-and-ai-spend-in-one-place/4573372">Read the product announcement or documentation</a>.</p>
 </details>
 
@@ -1459,10 +1438,8 @@ The **AI Transparency Initiative** is a standards effort, not a newly shipped en
 <details>
 <summary>Watch official videos (2)</summary>
 
-<video controls preload="none" aria-label="Microsoft Perception: playbook overview" style="width:100%;height:auto;"><source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307173-perceptionignite2026-0x1080-6439k" /><a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307173-perceptionignite2026-0x1080-6439k">Watch Microsoft Perception: playbook overview</a></video>
 <p>Official video: <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307173-perceptionignite2026-0x1080-6439k">Microsoft Perception: playbook overview</a>. The platform and individual playbooks do not all share one release stage. <a href="https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/">Read the product announcement or documentation</a>.</p>
 
-<video controls preload="none" aria-label="Microsoft Perception: Protect web app playbook" style="width:100%;height:auto;"><source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307173-demo2-0x1080-6439k" /><a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307173-demo2-0x1080-6439k">Watch Microsoft Perception: Protect web app playbook</a></video>
 <p>Official video: <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307173-demo2-0x1080-6439k">Microsoft Perception: Protect web app playbook</a>. Preview playbook demonstration, not a security test conducted here. <a href="https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/">Read the product announcement or documentation</a>.</p>
 </details>
 
