@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Nov 2026 23:28:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 07:16:01 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users aren't able to upload new skills in Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1558072</link>
+      <description>[Microsoft 365 Copilot Chat] Users weren't able to upload new skills in Microsoft 365 Copilot Chat</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1558072</guid>
+      <pubDate>Tue, 17 Nov 2026 23:41:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)]  Some users aren't able to upload new skills in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1558065</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users weren't able to upload new skills in Microsoft 365 Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1558065</guid>
+      <pubDate>Tue, 17 Nov 2026 23:26:59 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Admins may see Windows and Android devices appear as unmonitored in the Pro Management Portal (PMP) in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1551945</link>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1519553</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may not receive responses from Microsoft 365 Copilot in the web and desktop apps</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1517145</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may not have received responses from Copilot in the web and desktop apps.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1517145</guid>
-      <pubDate>Tue, 20 Oct 2026 14:54:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may not receive responses from Microsoft 365 Copilot Chat in the web and desktop apps</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1517097</link>
-      <description>[Microsoft 365 Copilot Chat] Users may not have received responses from Copilot Chat in the web and desktop apps.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1517097</guid>
-      <pubDate>Tue, 20 Oct 2026 14:29:11 +0000</pubDate>
     </item>
   </channel>
 </rss>
