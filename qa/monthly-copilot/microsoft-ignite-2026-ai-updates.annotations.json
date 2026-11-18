@@ -1,0 +1,452 @@
+{
+  "_README": "85 unmodified official assets and three privacy-cropped official derivatives. The derivative records bind source and output bytes to the accompanying crop recipe. No added annotation callouts are claimed. Further annotation/zoom polishing is deferred.",
+  "slug": "microsoft-ignite-2026-ai-updates",
+  "images": {
+    "official-033-github-code-review.png": {
+      "disposition": "official_derivative",
+      "reason": "Cropped out credential-like example code while preserving the review finding and its qualification that detection does not verify a live credential. Final crop personally inspected; no callouts added.",
+      "source_sha256": "691755bb19812c4ad9bfc7aaab6717f05a69620bb37a0f63b41c7a9fe7a4382a",
+      "output_sha256": "c338ee31edfeb1c573f952d77ab8413f3ae340f9ee3779252a6d9629fa4d1ab8",
+      "spec": "microsoft-ignite-2026-ai-updates.crops.json"
+    },
+    "official-048-agent-investigation.png": {
+      "disposition": "official_derivative",
+      "reason": "Cropped browser tabs and session-like address chrome from the official Agent 365 plugin demonstration. The inventory, risk/status/action columns and plugin remain visible. Final crop personally inspected; no callouts added.",
+      "source_sha256": "5040ca4efb5a9683c96597e44587134e8d3bd55374cb9ff16afd958a2e3ad692",
+      "output_sha256": "1e4e31a8ab04ad387b134f439d3a1a3e8496e84896c28abf1b77316d3d32aaf2",
+      "spec": "microsoft-ignite-2026-ai-updates.crops.json"
+    },
+    "official-086-purview.png": {
+      "disposition": "official_derivative",
+      "reason": "Cropped browser/session chrome from Microsoft's synthetic-data DLP demonstration, retaining the stopped agent and policy toast. FFmpeg chroma alignment removes one extra edge pixel. Final crop personally inspected; no callouts added.",
+      "source_sha256": "958d2c97574160c71ab5a7c3694ef47a988ac26e16b4cf1ea10964089c8ea95b",
+      "output_sha256": "fc5c14cad2fa797fe6c1350a82611d5d6299a585821238208acb375926fabed6",
+      "spec": "microsoft-ignite-2026-ai-updates.crops.json"
+    },
+    "chat-to-cowork.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Microsoft's unmodified chat-to-Cowork illustration already identifies both choices; adding our callouts would alter official artwork.",
+      "output_sha256": "d019fd29e5021094d25b39aac4a392da70ad53fba0b5207274e3266cc2d339e0"
+    },
+    "office.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Microsoft's unmodified Office animation contains changing product UI; static callouts would misidentify controls across frames.",
+      "output_sha256": "9a13b3f9e93e60da1f8395ad6a436eee2d2409d34026ced728a3da3f0ad31b71"
+    },
+    "today.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Microsoft's unmodified Today animation illustrates suggested-work cards; no added callouts or tenant-capture claim.",
+      "output_sha256": "1c59f8852edf20ff9bd09897fa76feaa0fe53ac4bdc806f3ee1f7e6bbd6b8ade"
+    },
+    "workspaces.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Microsoft's unmodified Workspace illustration already shows its activity, conversation and content regions; retained without our overlays.",
+      "output_sha256": "d177178a81f2f968259131d1b787ab837985fe37d7f6f80265cec0dd53765592"
+    },
+    "projects.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Microsoft's unmodified Projects illustration retains the original tab labels and prompt; no additional annotation is needed to distinguish it from Workspaces.",
+      "output_sha256": "c0ddd3229a0e5918acf8424161f3571acb65bc11d032b6c5733061f3d64c8988"
+    },
+    "autopilot.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Microsoft's unmodified Autopilot illustration retains its Frontier badge and conversation; no overlay should imply a completed real-world action.",
+      "output_sha256": "c3dd8260e3225940a4db935d84f7c7303107b03630ef378dcd15f69bc4f203e7"
+    },
+    "work-iq-1.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Microsoft's unmodified labeled Work IQ concept diagram is explanatory artwork, not a screenshot requiring control callouts.",
+      "output_sha256": "dfca62cdea5b48cf9812d866cfd6860031490c9b36ba9d053186bc1c548cf614"
+    },
+    "official-001-home.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "89c1c4aeb64c7cb19eeca511a4e8485c67e12dba150dd7f38a098267cfd5a6b3"
+    },
+    "official-002-cowork-auto.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "5908f59c5e87d437f94903294fe767c052b0677396b76224db4699ee3adc1640"
+    },
+    "official-004-office.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "2f4543d5d0700cfc5c522c74438686dedb0c62022fe4cb9db96a294af9b07a68"
+    },
+    "official-005-office.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "d86da60172e93da14c93b386d16349a834c3b1f3079c210713ee5877318ea707"
+    },
+    "official-006-office.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "6793120388a080dde36ae6698fba55df66b6d04c5b62a75b151ce0ed70965a51"
+    },
+    "official-007-office.jpg": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "ed80d244a71375220bb43557e179af809a91f4186310df572c6084b51ca8bb10"
+    },
+    "official-008-office.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "3aaf50706e471442c6f81940abceb722166fbd9148d17670b18b5f990237623f"
+    },
+    "official-009-onenote-office.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "38b2b730126769ce8a493432f7a6ebe4933776d1581cb0dcf77f8b37416cb634"
+    },
+    "official-010-copilot-pages.jpg": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "225e4b78ea8d80ed5f0e415e755f6ef75a03f77ed74950bd7a880f69fcdd9d4d"
+    },
+    "official-011-cowork-auto.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "277428e8d6a48730db841226d88043ae2525a6dd6bfca4f2047043aa36ce8e7a"
+    },
+    "official-012-cowork-auto.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "2d37a87101d557d411912143cb1c09092d5a452006643cfd80d0aef4868f1df6"
+    },
+    "official-013-agent-business-analytics.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "2951864aaa7de0bf28a200eb5d62ee99768fd9ee4054a9209e8a24a33d0dca7b"
+    },
+    "official-014-managed-runtime.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "ce8edaf04ea7cf177952d3146c7ff9269f7e8a0b2e7e91e40a31ca7f49c2258d"
+    },
+    "official-015-copilot-studio.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "aba7e767747b8163c1a1d818d9ec77d8071fabb5705e9c4e1469a163c039e0a2"
+    },
+    "official-016-teams-digital-teammates.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "da36c53dc97a0ec59d9171de098d0fa2b8446ccd380ce2e7204283b71dce4db3"
+    },
+    "official-017-work-iq.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "7ed74d9f96dffcf1b24eae7931c770360abcbfe08eeadae3fbdb22da82d65342"
+    },
+    "official-018-work-iq.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "db33014e18fccc82b13d6838d46a57a1e2b3be76d46d514bdd38c010e51fa452"
+    },
+    "official-020-work-iq.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "9f711a11f07c3f4439891b4a2b0f8579778d20a11186e143c486064b65408ab7"
+    },
+    "official-022-workforce-intelligence.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "8a897544f34878a41dc3f09809b266639f5d9f506aadc5c42efae91144cb50bc"
+    },
+    "official-023-workforce-intelligence.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "ff248e7131201b50a73893b0b7d3c6520a416854408b1bc0e3b7a1844db8a444"
+    },
+    "official-024-workforce-intelligence.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "73d5710c699bbb415fab0639e24a88f93c69cfa8715fcc6d156320a3e8ac7b69"
+    },
+    "official-025-web-iq.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "3820e60183da62517284fbaf734082c893be37bb7aeda906aafbde5bb2aa6115"
+    },
+    "official-026-web-iq.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "efb73da5a13bfc44949a591eea855abb3aef8dc190dbb10aafffdd4093cb1265"
+    },
+    "official-027-foundry-improvement.webp": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "8e35d1cbf75150f2da597306a0947b7c5b8394dd305f6cf2b9daced553dea554"
+    },
+    "official-028-foundry-improvement.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "fc86a723b7afe86ebeaff6e1290200fb0d9108db3c98ecfc2753a5e217fb278a"
+    },
+    "official-029-foundry-improvement.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "dd5cd99e4bf9df1ebce052afba189aaf33db5603d9f4230ee88c4f7b01172686"
+    },
+    "official-030-github-code-review.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "6a1ade32c9bfa2c5c5d075f92efde2efbd315a27de14423d3b16d6cac65e2fc2"
+    },
+    "official-031-github-code-review.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "2dfda0ecbb418ab6bce1773281387f6ccae9d25a6557ea66082be1914eb7ac0c"
+    },
+    "official-032-github-code-review.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "af00d9a55e6624e001c4eb46bc1489d2fc285fabef933c4b040150c7e518ae41"
+    },
+    "official-034-azure-operations.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "a4068e97a810cfa2fb432cc6b3803e102dc0392abc2a957c942d4ff6d6e1cdba"
+    },
+    "official-035-azure-catalyst.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "4ac5b313751d88a0eb7bc040d7d24e1cb1fe7f89ff4c285a570d761a4b383bfb"
+    },
+    "official-036-azure-catalyst.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "1340431f6178a0a300795f248a70348cf01cddd2fa61c031f5edf1a8d3a5668e"
+    },
+    "official-038-agent-connected-platforms.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "5aaeb555b49f212c278fa8081cf80d8b289d33663287841825bbf40e1464a6b2"
+    },
+    "official-039-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "9e2cf051d31a6f02394d28a04f6805c8c2c8b990e12172c32daaf422b1ab6080"
+    },
+    "official-040-identity.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "6affb72961950f5bc40a5866f7ffb2d0e76e4a07e96a47c853f601bfebae13f9"
+    },
+    "official-041-agent-investigation.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "6b3fcb08db4b413dc077f28901e72f98ad4a65402faa8e87f121164cf64d6838"
+    },
+    "official-042-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "e3990d0660ec68fc7c02e51f681429f54292fbc487d15f841ebad27ea6b3f147"
+    },
+    "official-043-agent-investigation.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "3d0316828e735c0a19421a04c157254793bb2ef7487e56968241b3a461afead5"
+    },
+    "official-045-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "acf3f554783ded514d50ff50fabf37e4a0809406067f92c9163fdb9f8f0e821e"
+    },
+    "official-046-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "3491c323ea7f73fd4ad0a23b34b47eeb3aa84cf0929c7e8334b40c8a4b1a4fda"
+    },
+    "official-047-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "b1c9d5bf7edf2e8e49e0d9b93de46a05bb4c1f5efdbbf8d567528260496b8965"
+    },
+    "official-049-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "1e70b056560a1e17d2bf6e0819fd57ed00dd7eeaef68a3910c8eaaa02e9abadb"
+    },
+    "official-050-it-admin-mcp.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "057169927f5a67f2367d24532ac52d551be6e1d0ebd82b5d1e17295007429e05"
+    },
+    "official-051-agent-business-analytics.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "b1a293cdfd696e4b0989951e5b4e90a311828095c8f3ec7c1f7ecdb8438c8544"
+    },
+    "official-054-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "dab8e26671a083fb0de88db991a9fc43d801398dabceb16bc64193ab55c103b6"
+    },
+    "official-055-agent-value.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "ba1ff9270aa808e85fcededc79afa66799d8fca50ba29e6a32b040190b22e484"
+    },
+    "official-056-sharepoint-agent-governance.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "cc64ac5eed1fd8240dd7f99049dfb03c817061c6581d4ac4950f769e185ea05f"
+    },
+    "official-057-sharepoint-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "4bfec89b2ddce19a232cca40f729945a80536d6a4675a1ce2c2e20fb05b10e50"
+    },
+    "official-058-sharepoint-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "a9d6cc1f3813cce0b52730e19914e58ab5f010596dcaf79a0a7ee95a5cfc2f30"
+    },
+    "official-059-sharepoint-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "6040dde03058c8326bd11965c77a356271c5d83eaf22728c2518d8bd0d6bcd0a"
+    },
+    "official-060-sharepoint-agent-governance.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "f37e7011ad2f572187b3930ee2f0b6e274d754c3c926476b2a18c20176315032"
+    },
+    "official-061-sharepoint-agent-governance.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "ab2a84c4e046cd123fc08d133c7a5eb31d068c846ddad64229fe0b12149d1ce5"
+    },
+    "official-062-sharepoint-agent-governance.gif": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "103fa3f480bd62c32ada511a22ad20190c03f58609f1c33ffa544091c1f8185e"
+    },
+    "official-063-agent-business-analytics.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "57ad603d221e3f17704e2dca87684979919aa3d1f431f857c42d9cd61577d301"
+    },
+    "official-065-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "2d1b93376be85e142c190871eb3247d5ca3c8794321e1eea2470607c0dfc6938"
+    },
+    "official-067-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "f944cdbd7b4c9af24b90bdba8466aff2949f6b7d1567b2303fc98ffaa7aed419"
+    },
+    "official-069-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "22c996ae9e136cfcbe8ddc88126c3902f7c1a4f914d32151933f846fea120272"
+    },
+    "official-071-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "0e64ac692845553d04b8c62cfd74acf88424024fe515bd1b28f4647ac5ea0151"
+    },
+    "official-072-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "96e05a205dbda52aa5bb830310a89852536c10d41a3d01ebc8886581641bc40a"
+    },
+    "official-073-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "c2270b1fbd8ff919c2af7a3765fa3d75a2fa93d9722b808f355de3660166d2ce"
+    },
+    "official-074-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "b1bd9b5440d46266b77f925e64bd85074ce0878f62857f28cbff0e20bf1596e6"
+    },
+    "official-076-agent-finops-reporting.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "45b26eeedb7f2c5680dcf717d62811babacd63c1402a1cd4aecd98ed90bebb91"
+    },
+    "official-077-multi-tenant-ai.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "1841309c1430286442a19f55b9527725c926206ab67ad6a3a257a8d68f553003"
+    },
+    "official-078-multi-tenant-ai.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "a146e9043f73d8c0544b21df1e135c488ad858ac96c3525c3d7759dbc2ab3fdf"
+    },
+    "official-079-multi-tenant-ai.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "75d9c1d2ef2bd34db605215b7e69f92f472b3504d709c5b23595f564ddfcb600"
+    },
+    "official-080-multi-tenant-ai.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "5269279319219cda0a064538ff99053da286076e79c8ec9680dd828ae4378738"
+    },
+    "official-081-multi-tenant-ai.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "d0d92e21954aabd028c85dbc134b450d61aca88eb8c11753c960dfe1ddda407b"
+    },
+    "official-082-purview.jpg": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "b04f8767bc2a961b3c4c5d9ad829b29b84ee73f91046c47f48bfeaa178505991"
+    },
+    "official-083-purview.jpg": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "7aa9f3928aa1d14518c6c0bf8f89839b61517f743113524110589f232d17b1f0"
+    },
+    "official-084-purview.jpg": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "7b3cd89b7bdeb818e9a73f6e10ccc2ec857ecfdc6d1de8fdfb270e4958e13a08"
+    },
+    "official-085-purview.jpg": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "dca385df48d49170457cb28305f2f17f269b225a8a1ddfc7541fe466d3122884"
+    },
+    "official-088-endpoint-management.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "193a0a08a89923dff659dcc7f8ec6294269b535c0097dee2156128d5be1df0bb"
+    },
+    "official-089-endpoint-management.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "a22dba5395ff99c830c96c814ff75ffb2240ed2fbaed4dc2c24076b55ed33fed"
+    },
+    "official-090-intune-remediation.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "3ad2a94e5951d64a57e08e142eb52c824f69c2811ebac88eb3f113c576389373"
+    },
+    "official-091-intune-remediation.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "e7703bb2e4736364bdac81a82ae958f2f60f60d4b5632a0df6b5f79161f94447"
+    },
+    "official-092-intune-remediation.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "ce9411c3bd6e99493f2ea2907bdb9a1c6055986a68fec7b5e8a0abd64c30f3b3"
+    },
+    "official-100-cosmos-agent-memory.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "fe601508b21b3d766b55113996b59b4eaf198927cbfe81771e1b5243d4e0b157"
+    },
+    "official-101-cosmos-agent-memory.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Official product artwork retained without added overlays for local review. Any further annotation is pending; provenance does not establish redistribution permission.",
+      "output_sha256": "2b686495a38984702e2d98d60798d4d83b89d86aa8cc99097578e27a8db9e5fc"
+    }
+  }
+}

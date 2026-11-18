@@ -223,7 +223,13 @@ MUTATIONS = [
      '            if isinstance(src, str) and src == out_sha:',
      '            if False:'),
     ("an exempt image needs a written reason",
-     '        elif blank_text(v.get("reason")):', '        elif False:'),
+     '        if d != "annotated" and blank_text(v.get("reason")):', '        if False:'),
+    ("an official derivative needs transformation provenance",
+     '        if d in {"annotated", "official_derivative"}:',
+     '        if d == "annotated":'),
+    ("an official derivative is checked against its actual bytes",
+     '        if kind in {"annotated", "official_derivative"}:',
+     '        if kind == "annotated":'),
     # The callout_texts backstop. Worth mutating precisely because the gate
     # went green the moment it was added - the real post already satisfied it,
     # so a green run proves nothing about whether the check runs at all.

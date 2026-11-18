@@ -984,6 +984,7 @@ ANNOTATION_KINDS = {
     "annotated_at_capture": "callout was baked in by the capture tool",
     "created_asset":        "diagram we authored; there is nothing to call out",
     "microsoft_artwork":    "Microsoft's own artwork, reproduced unmodified",
+    "official_derivative":  "official artwork cropped or redacted without added callouts",
 }
 
 # The two kinds that carry an annotation WE are responsible for describing.
@@ -1180,22 +1181,22 @@ def load_annotations(slug: str) -> tuple[dict, list[str]]:
         # machine provenance, which is stronger. A reason is what an EXEMPTION
         # needs, because "we chose not to annotate this" is a judgement call
         # that only a sentence can carry.
-        if d == "annotated":
+        if d in {"annotated", "official_derivative"}:
             src, out_sha = v.get("source_sha256"), v.get("output_sha256")
             for label, val in (("source_sha256", src), ("output_sha256", out_sha)):
                 if not (isinstance(val, str) and HEX64_RE.fullmatch(val)):
                     fail(f"needs a 64-character hex {label} - the record has "
                          "to name the bytes it is describing")
             if blank_text(v.get("spec")):
-                fail("needs a 'spec' naming the annotation recipe that "
+                fail("needs a 'spec' naming the transformation recipe that "
                      "produced it")
             # If the annotator ran and drew nothing, input and output are the
             # same file. Recording that as 'annotated' certifies an untouched
             # screenshot.
             if isinstance(src, str) and src == out_sha:
                 fail("has source_sha256 == output_sha256, so the annotation "
-                     "pass changed nothing - it is not annotated")
-        elif blank_text(v.get("reason")):
+                     "pass changed nothing")
+        if d != "annotated" and blank_text(v.get("reason")):
             fail(f"is '{d}' and needs a written reason saying why it carries "
                  "no callouts of ours")
 
@@ -1349,15 +1350,15 @@ def annotation_findings(post: Path, imgs: list[dict]) -> tuple[list[str], str]:
         # something - replace or recolour an image and its claim to be
         # annotated stops being true until someone re-records it, exactly as a
         # changed hash reopens a Rule #8 observation.
-        if kind == "annotated":
+        if kind in {"annotated", "official_derivative"}:
             if not r["sha256"]:
                 # image_rows leaves sha256 empty for anything not readable on
                 # disk, which includes remote <img> that lint deliberately
                 # allows. Skipping the check there meant a record could claim
                 # to be annotated, carry invented hashes, and never be tested.
-                errs.append(f"§{r['section']} {name}: classified 'annotated' "
+                errs.append(f"§{r['section']} {name}: classified '{kind}' "
                             "but the file cannot be read from disk, so its "
-                            "recorded hash cannot be checked - annotated "
+                            "recorded hash cannot be checked - transformed "
                             "images must be local files")
             elif rec.get("output_sha256") != r["sha256"]:
                 errs.append(f"§{r['section']} {name}: the file on disk is not "

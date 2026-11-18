@@ -1608,6 +1608,29 @@ _e, _s = annots(record={"disposition": "annotated", "source_sha256": "a" * 64,
 check("a record describing bytes that are no longer on disk fails",
       has(_e, "not the file this record describes"), f"{_e}")
 
+# Privacy derivatives need byte provenance, not an invented annotation claim.
+_crop = {"disposition": "official_derivative",
+         "reason": "Cropped browser session chrome; no callouts added.",
+         "spec": "privacy-crop.json", "callouts": 0}
+_e, _s = annots(alt="Official product screenshot with browser chrome cropped.",
+                record_extra=_crop)
+check("an official crop with matching provenance needs no annotation alt",
+      _e == [] and "official_derivative 1" in _s, f"{_e} / {_s}")
+for _field in ["source_sha256", "output_sha256", "spec", "reason"]:
+    _e, _s = annots(record_extra={**_crop, _field: ""})
+    check(f"an official crop requires {_field}", _s == "INVALID SIDECAR",
+          f"{_e} / {_s}")
+_e, _s = annots(record_extra={**_crop, "output_sha256": "c" * 64})
+check("an official crop fails when its bytes change",
+      has(_e, "not the file this record describes"), f"{_e}")
+_e, _s = annots(src="https://example.com/example.webp", record_extra=_crop)
+check("an official crop needs locally verifiable output bytes",
+      has(_e, "cannot be read from disk"), f"{_e}")
+_e, _s = annots(record={**_crop, "source_sha256": "a" * 64,
+                        "output_sha256": "a" * 64})
+check("an official derivative cannot claim unchanged source bytes",
+      has(_e, "changed nothing"), f"{_e}")
+
 # Coverage, both ways. Completeness is the whole reason the sidecar exists.
 _e, _s = annots(record=False)
 check("an image in the post with no sidecar entry fails",
@@ -1722,7 +1745,17 @@ else:
                 {"kind": "box", "bbox": [100, 300, 400, 380]}]}]}
         _sf = _d / "s.json"
         _sf.write_text(json.dumps(_spec), encoding="utf-8")
-        _r = _sp.run([sys.executable, str(_ANNOTATOR), str(_sf)],
+        _cmd = [sys.executable, str(_ANNOTATOR), str(_sf)]
+        if sys.platform == "darwin":
+            # This tests manifest behavior, not Windows font installation.
+            _cmd = [sys.executable, "-c",
+                    "import runpy, sys; "
+                    "ns = runpy.run_path(sys.argv[1]); "
+                    "ns['_FONTS']['bold'] = "
+                    "'/System/Library/Fonts/Supplemental/Arial Bold.ttf'; "
+                    "ns['run_spec'](sys.argv[2])",
+                    str(_ANNOTATOR), str(_sf)]
+        _r = _sp.run(_cmd,
                      capture_output=True, text=True)
         _mf = _d / "s.manifest.json"
         check("running a spec writes a manifest beside it",

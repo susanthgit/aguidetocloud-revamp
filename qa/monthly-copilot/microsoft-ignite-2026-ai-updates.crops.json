@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "description": "Reproducible privacy-crop provenance; rectangles are x, y, width, height in original pixels. These are crops, not added callout annotations.",
+  "images": {
+    "official-033-github-code-review.png": {
+      "source_url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/",
+      "source_sha256": "691755bb19812c4ad9bfc7aaab6717f05a69620bb37a0f63b41c7a9fe7a4382a",
+      "output_sha256": "c338ee31edfeb1c573f952d77ab8413f3ae340f9ee3779252a6d9629fa4d1ab8",
+      "crop": [0, 440, 2784, 625],
+      "processor": "ffmpeg crop filter, PNG output"
+    },
+    "official-048-agent-investigation.png": {
+      "source_url": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
+      "source_sha256": "5040ca4efb5a9683c96597e44587134e8d3bd55374cb9ff16afd958a2e3ad692",
+      "output_sha256": "1e4e31a8ab04ad387b134f439d3a1a3e8496e84896c28abf1b77316d3d32aaf2",
+      "crop": [0, 80, 900, 406],
+      "processor": "ffmpeg crop filter, PNG output"
+    },
+    "official-086-purview.png": {
+      "source_url": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/secure-the-data-that-fuels-ai-with-microsoft-purview/4573266",
+      "source_sha256": "958d2c97574160c71ab5a7c3694ef47a988ac26e16b4cf1ea10964089c8ea95b",
+      "output_sha256": "fc5c14cad2fa797fe6c1350a82611d5d6299a585821238208acb375926fabed6",
+      "crop": [0, 200, 1806, 816],
+      "processor": "ffmpeg crop filter, PNG output; even-dimension chroma alignment"
+    }
+  }
+}
