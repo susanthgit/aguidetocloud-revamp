@@ -58,13 +58,17 @@ Release stages below follow Microsoft's announcements, not observed tenant acces
 
 *For: People trying to stay on top of mail, meetings and follow-ups.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Today collects what needs your attention and prepares next steps for review.</li>
+<li><strong>Picture this:</strong> You start the morning with a decision to make, the Teams thread behind it and a draft reply ready to check.</li>
+<li><strong>My take:</strong> The win is less morning triage, not handing over the final decision. Check whether you need the daily Brief or the credit-billed Feed.</li>
+</ul>
+
 Today brings priorities from mail, calendar, Teams and meetings into Copilot and Outlook. It can prepare drafts and proposed actions for review, rather than waiting for a prompt each time.
 
 A hypothetical morning might show a decision waiting on you, the relevant conversation and a draft reply. **Prepared is not the same as approved.** That review point is the part I would keep front and centre.
 
 There are two billing distinctions: the daily **Today Brief** refresh is included with a Microsoft 365 Copilot licence; recurring **Today Feed** updates during the day require Copilot Credits.
-
-**Why it matters:** I like this because the morning triage is often the work. If Today can put a decision, the source thread and a draft in front of me, I can spend my time deciding what to do. I still want the final say before anything goes out.
 
 **Status:** **Frontier private preview**; Microsoft says the design may change.
 
@@ -91,11 +95,15 @@ There are two billing distinctions: the daily **Today Brief** refresh is include
 
 *For: Windows users and the admins piloting AI on their PCs.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> With permission, Copilot on supported Copilot+ PCs will be able to work with local files and run read-only diagnostics.</li>
+<li><strong>Picture this:</strong> Ask it to find the slides scattered across a test folder before trying a move or rename.</li>
+<li><strong>My take:</strong> I’d try this on a spare folder first. The local capabilities are coming, not available on every Windows PC today.</li>
+</ul>
+
 Microsoft is showing local file operations and read-only PC diagnostics, with more work routed between on-device and cloud models. People who opt in can also reach Copilot from the new Windows Search, rather than opening a separate app first.
 
 For example, you might ask for files to be organized or for help understanding a PC problem. A read-only diagnostic scan is different from permission to change the machine.
-
-**Why it matters:** This is the Windows change I’d try first. A messy Downloads folder is an easy test: can Copilot find the right files without making me hunt for them? I’d try that on a spare folder before asking it to move anything important.
 
 **Status:** **Preview/coming soon**, with the Windows post specifying Copilot+ PCs for the local capabilities. Opt-in, policy and hardware requirements apply. The sources do not justify assuming every Windows PC has them today.
 
@@ -119,9 +127,13 @@ For example, you might ask for files to be organized or for help understanding a
 
 *For: Teams that keep rebuilding the same tracker, dashboard or simple internal tool.*
 
-The new part at Ignite is general availability, not the first announcement. Describe the app you want in Cowork, or turn the result of a Cowork task into an app. You can review it, then publish and share it with colleagues. Published apps run in your tenant on Copilot Managed Runtime, where IT can see and manage them in the Microsoft 365 admin center. The [separate Fabric storage integration](#managed-runtime) is still in preview.
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Cowork can turn a recurring task into a shared app instead of another one-off file.</li>
+<li><strong>Picture this:</strong> Replace the Friday spreadsheet rebuild with a tracker your team can update in one place.</li>
+<li><strong>My take:</strong> I’d pick a process that already has an owner and test sharing before making the app the default.</li>
+</ul>
 
-**Why it matters:** I’d start with a tracker someone rebuilds every Friday. A shared app gives the team one place to update it instead of another copy to reconcile. I’d name an owner and test sharing before making it the team’s default.
+The new part at Ignite is general availability, not the first announcement. Describe the app you want in Cowork, or turn the result of a Cowork task into an app. You can review it, then publish and share it with colleagues. Published apps run in your tenant on Copilot Managed Runtime, where IT can see and manage them in the Microsoft 365 admin center. The [separate Fabric storage integration](#managed-runtime) is still in preview.
 
 **Status:** Cowork app building is **GA**; Microsoft announced the managed runtime as **GA and beginning tenant rollout**.
 
@@ -133,6 +145,12 @@ The new part at Ignite is general availability, not the first announcement. Desc
 
 *For: People delegating more complicated work to Cowork.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Cowork Auto uses Microsoft-Decision-1.1 to decide how much reasoning each step needs. You can still choose effort yourself.</li>
+<li><strong>Picture this:</strong> A quick lookup can stay simple; comparing three proposals may call for several parallel checks.</li>
+<li><strong>My take:</strong> I’d leave routine routing to Auto in a Frontier pilot, then check the evidence before using the combined answer.</li>
+</ul>
+
 Auto in Cowork uses Microsoft-Decision-1.1 to choose how much reasoning each step needs. You can still set the effort yourself. Microsoft describes dividing complicated work among subagents, selecting models for those parts, then bringing the results together.
 
 For example, a comparison of several proposals may need more work than a short email draft. The aim is to avoid making the user choose a model and effort level for every step. That is a routing feature, not a promise that every answer is correct or cheaper.
@@ -140,8 +158,6 @@ For example, a comparison of several proposals may need more work than a short e
 There is a second handover: **proactive recommendations** use Work IQ signals from email, meetings and Teams to suggest a task worth delegating. These are Frontier, separate from the GA Chat-to-Cowork recommendation in Home. A suggestion to prepare for a meeting is not permission to send its follow-up.
 
 Planner and Viva Engage plugins are also GA. Planner already appeared in our November issue; the change here is Microsoft's explicit GA confirmation, not its first announcement.
-
-**Why it matters:** I don’t want to pick a model before I know how hard the job is. Auto can make that first call, while I keep manual control and check the evidence before using the result.
 
 **Status:** Auto improvements and proactive recommendations **Frontier**; Planner/Viva Engage plugins **GA**. Cowork in GCC **begins rolling out in November**, not across every government cloud. Browser actions have their own licensing and stages [below](#edge).
 
@@ -171,6 +187,12 @@ Planner and Viva Engage plugins are also GA. Planner already appeared in our Nov
 
 *For: People exploring ongoing delegated work, and the admins governing it.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Autopilot keeps working on an ongoing goal after you leave the chat.</li>
+<li><strong>Picture this:</strong> Give it a weekly follow-up goal and review the commitments it brings back to you.</li>
+<li><strong>My take:</strong> I’d start with one narrow job and check what needs approval, how to stop it and who pays for usage.</li>
+</ul>
+
 Autopilot is a proactive personal agent with its own identity, memory and tools. The change since our November issue's unresolved timing is Microsoft's Ignite confirmation that the **Frontier rollout is starting**, with access and activity tracking from Home.
 
 For example, you could delegate a bounded follow-up process, then inspect what it did and where it needs input. My first question would be “What may it do without asking?” before “How much can it automate?”
@@ -178,8 +200,6 @@ For example, you could delegate a bounded follow-up process, then inspect what i
 Automations, separately GA, is the Home view for managing scheduled and ongoing Chat and Cowork tasks. It is not another name for Autopilot.
 
 Microsoft's current FAQ lists Copilot and Agent 365 entitlements, a usage-based billing policy and administrator enablement after access is granted. Autopilot work consumes Copilot Credits.
-
-**Why it matters:** The difference for me is continuity: an agent can keep a weekly follow-up moving after I close the chat. I’d start with one narrow job and check what it can do, what needs approval and how to stop it.
 
 **Status:** Autopilot **rolling out in Frontier**, not universal availability.
 
@@ -194,11 +214,15 @@ Microsoft's current FAQ lists Copilot and Agent 365 entitlements, a usage-based 
 
 *For: People making documents, spreadsheets and presentations.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> You can create and edit Word, Excel and PowerPoint files inside Copilot and coauthor them with your team.</li>
+<li><strong>Picture this:</strong> Ask for a supplier tracker, then edit the actual workbook with a colleague rather than copying a table out of chat.</li>
+<li><strong>My take:</strong> The useful bit is the working file. Check its formulas and sharing before it becomes the version everyone uses.</li>
+</ul>
+
 Office in Chat and Cowork is now GA. You can create editable Word, Excel and PowerPoint files inside the Copilot app, edit them directly or with prompts, and coauthor with colleagues. Files are saved in OneDrive.
 
 Imagine asking for a supplier tracker, then editing the actual workbook with your team rather than copying a table out of chat. The benefit is the **working file**, not just a convincing-looking answer. You still need to check formulas, facts and sharing before relying on it.
-
-**Why it matters:** This is the one I can explain without saying AI. You go from a conversation to a file you and your team can actually edit. I’d still check the workbook’s formulas before it becomes the version everyone uses.
 
 **Status:** **GA**.
 
@@ -248,13 +272,17 @@ The [SharePoint and OneDrive Ignite post](https://techcommunity.microsoft.com/bl
 
 *For: Managed service providers and organisations with several Microsoft 365 tenants.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> One admin view can show agents and AI spend across eligible connected tenants. Switching is GA; the management features are preview.</li>
+<li><strong>Picture this:</strong> Spot a spend increase in one subsidiary, then drill into that tenant before changing anything.</li>
+<li><strong>My take:</strong> I’d use the view to narrow the investigation, not assume shared visibility gives me new permissions.</li>
+</ul>
+
 The **All tenants** view in the Microsoft 365 admin center brings authorised tenants together. Tenant switching is GA. Cross-tenant agent management, AI cost management and desired-state configuration are public previews.
 
 For example, a partner could compare agent availability across eligible customer tenants and reuse a spending-policy template instead of rebuilding it repeatedly. An enterprise could check configuration drift across subsidiaries. Central visibility does not remove tenant boundaries or grant access to another tenant.
 
 Access depends on the appropriate **GDAP/delegated relationships**, roles and eligibility. Supported functionality also varies by licensing, geography and rollout.
-
-**Why it matters:** If one subsidiary’s AI spend jumps, I’d rather start from one view and drill into that tenant than merge exports by hand. Shared visibility helps; the tenants and their permissions are still separate.
 
 **Status:** Switching **GA**; agent, cost and configuration management **public preview**.
 
@@ -304,11 +332,15 @@ Access depends on the appropriate **GDAP/delegated relationships**, roles and el
 
 *For: People using Microsoft Copilot for work.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Chat can suggest handing a bigger job to Cowork and carry relevant context over if you accept.</li>
+<li><strong>Picture this:</strong> Ask what's on your calendar in Chat, then hand the work of proposing a new schedule to Cowork.</li>
+<li><strong>My take:</strong> I'd use the handoff when the question has turned into work. I don't want to explain the task twice.</li>
+</ul>
+
 Home was announced in September, and our November issue already covered Home and combined history. Ignite confirms Chat and Cowork together at GA and adds the useful handover: Auto can recommend Cowork when a question becomes a larger task. **You choose whether to switch**, and relevant chat context goes with it.
 
 For example, “What meetings do I have?” can stay a question. “Review next week's conflicts and propose a better schedule” is a task you might hand over. I like the distinction: ask for an answer, or delegate an outcome, without starting again in another conversation.
-
-**Why it matters:** I’d use Chat for the quick answer and Cowork for the work that has to go somewhere. Carrying the context over means less re-explaining.
 
 **Status:** Home is rolling out worldwide; Chat and Cowork together, including the recommendation handover, are **GA**.
 
@@ -333,11 +365,15 @@ For example, “What meetings do I have?” can stay a question. “Review next 
 
 *For: People creating reports, briefs and interactive content with colleagues.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Interactive Pages give a team an editable place to keep working on Copilot's output.</li>
+<li><strong>Picture this:</strong> Turn research into a shared launch brief instead of copying the same answer into several chats.</li>
+<li><strong>My take:</strong> I’d name someone to verify what refreshes and where the numbers come from.</li>
+</ul>
+
 Pages give Copilot's output a working canvas. Microsoft describes editable reports, dashboards and animations, with agents updating data in the background. You can collaborate directly or ask Copilot to refine the content.
 
 Imagine turning research into a project brief, then updating it with your team rather than passing around separate chat responses. I would still check the sources and what is refreshing. A page that updates is not automatically a page that is right.
-
-**Why it matters:** A brief your team can edit is easier to maintain than a chat answer copied into three places. I’d still assign someone to check what the Page refreshes.
 
 **Status:** **Frontier Public**, not GA. This is the interactive Pages announcement, not a claim that every earlier Pages capability has just launched.
 
@@ -357,11 +393,15 @@ Imagine turning research into a project brief, then updating it with your team r
 
 *For: People whose meeting notes need to become a document, spreadsheet or presentation.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Copilot in OneNote can turn notes into an editable Office first draft.</li>
+<li><strong>Picture this:</strong> Ask for an Excel timeline after several planning meetings.</li>
+<li><strong>My take:</strong> I'd check owners, dates and decisions. A rough note shouldn't become a commitment just because it is in a workbook.</li>
+</ul>
+
 Copilot in OneNote can synthesize notes into Word, Excel and PowerPoint files. That is different from the Cowork notebook-reading support and Windows Capture covered in our November issue.
 
 For example, after several planning meetings, you could ask for a project timeline in Excel or an FAQ in Word. The useful handover is from collected notes to an editable first draft. Check that the output preserves decisions, owners and dates rather than treating every note as an agreed action.
-
-**Why it matters:** Turning the notebook into an editable first draft saves the retyping. It doesn’t turn tentative notes into agreed decisions.
 
 **Status:** **Frontier Public**.
 
@@ -381,11 +421,15 @@ For example, after several planning meetings, you could ask for a project timeli
 
 *For: Teams with work that lasts longer than one chat.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Workspaces keep team context and files together. Projects organise your related Copilot activity.</li>
+<li><strong>Picture this:</strong> Share a launch Workspace with the team but keep your individual research in a Project.</li>
+<li><strong>My take:</strong> I’d choose based on who needs the context, and check Workspace availability separately from Projects.</li>
+</ul>
+
 Copilot Workspaces evolve Notebooks into a shared place for context, people and working files. Suggested next steps, activity and live presence help a team see what changed and what remains open. This continues our November coverage: Workspaces remain Frontier, not GA, and the separate Office-in-Home announcement does not make every Workspace editing capability generally available.
 
 Projects serve a related but different job: grouping your chats, Cowork tasks, instructions, sources and outputs. A launch team might share a Workspace, while you keep your own research conversations in a Project. Projects are not newly invented at Ignite; this shows how the pieces now fit in Home.
-
-**Why it matters:** I’d put team decisions in a Workspace and keep my own research in a Project. The people who need the context decide which one fits.
 
 **Status:** Workspaces in **Frontier**; Projects **GA**.
 
@@ -412,11 +456,15 @@ Projects serve a related but different job: grouping your chats, Cowork tasks, i
 
 *For: People building internal trackers, dashboards and small applications.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Copilot Code turns a written brief into an application. December GA is a target, not a launch at this cutoff.</li>
+<li><strong>Picture this:</strong> Sketch a small request tracker before deciding how it would be hosted and supported.</li>
+<li><strong>My take:</strong> I’d try a bounded prototype and avoid scheduling a production handover around the target date.</li>
+</ul>
+
 Copilot Code turns natural-language requirements into applications using the technology behind GitHub Copilot. Supported apps can be published through Copilot Managed Runtime.
 
 A team might build a request tracker instead of passing a spreadsheet around. The important distinction is **building an app versus approving it for production**: access, data handling and maintenance still need an owner.
-
-**Why it matters:** A team can sketch a tool close to the work it supports. I’d wait for the actual rollout before planning a production handover around Code.
 
 **Status:** **Frontier** on Windows, web, iOS and Android; **GA planned for December**. The local sandbox is available on Windows and coming to macOS. Do not read the runtime's GA announcement as Code already being GA.
 
@@ -426,11 +474,15 @@ A team might build a request tracker instead of passing a spreadsheet around. Th
 
 *For: Makers, developers and Microsoft 365 administrators.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> The runtime hosts supported published apps. Persistent storage through the new Fabric integration is a separate preview.</li>
+<li><strong>Picture this:</strong> For a request tracker, the runtime runs the app; a connected database holds the requests.</li>
+<li><strong>My take:</strong> I’d decide what records really need to persist before selecting a backend.</li>
+</ul>
+
 Copilot Managed Runtime supplies Microsoft-managed hosting, execution and lifecycle controls, regardless of which supported tool created the app. It is now GA and beginning its tenant rollout.
 
 For a request tracker, the runtime hosts the application. An **optional Fabric database integration** stores its records. Those are different components and different release stages: that integration is **Frontier public preview**, with a Fabric licence and Copilot Credits billing required. Current Learn documentation limits the integration to a database backend; broader backend services are not all available through it today.
-
-**Why it matters:** The hosting decision no longer has to dictate where you build. I’d check what the runtime governs and which storage option the app actually needs.
 
 **Status:** Runtime **GA, rollout beginning**; Fabric integration **preview**.
 
@@ -460,6 +512,12 @@ For a request tracker, the runtime hosts the application. An **optional Fabric d
 
 *For: Developers building agents that participate in Teams conversations.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Supported Teams agents can have their own identity and show the steps in their work.</li>
+<li><strong>Picture this:</strong> A procurement agent could post a supplier comparison and leave the decision with a person.</li>
+<li><strong>My take:</strong> I’d check who owns the agent and which Teams development route supports it.</li>
+</ul>
+
 Agentic Users give suitable agents their own Entra identity, an accountable owner and attributed activity. Threaded replies separate tasks in one-to-one agent chats; plans and steps show progress; HTML widgets let people interact with results.
 
 This is the **Teams SDK route**, not the December public-preview expansion of [Copilot Studio's Agent Account authoring experience](#copilot-studio).
@@ -486,6 +544,12 @@ Imagine a procurement agent presenting supplier options in a thread, showing wha
 
 *For: Sales, customer-service, finance and operations teams.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Dynamics plugins bring selected sales, service and purchasing tasks into Copilot.</li>
+<li><strong>Picture this:</strong> Prepare a supplier review using ERP records and the relevant correspondence.</li>
+<li><strong>My take:</strong> I'd verify the ERP role and billing prerequisites before inviting someone into a pilot.</li>
+</ul>
+
 The updated Sales plugin adds account planning, meeting preparation and deal insights. Customer Service and the ERP apps plugin are also GA. The ERP skills cover work such as requisitions, quotes and purchase orders.
 
 Imagine preparing a supplier review with ERP records beside relevant correspondence, rather than manually gathering each piece. Existing application roles still matter.
@@ -507,6 +571,12 @@ For the ERP plugin, Learn specifies **Microsoft 365 Copilot, a qualifying financ
 
 *For: Teams that need agents to follow shared business guidance.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> A plugin can bundle tools and instructions so an agent knows how your team wants a job done.</li>
+<li><strong>Picture this:</strong> A purchasing plugin could point staff to the approved policy and review process.</li>
+<li><strong>My take:</strong> I’d agree on the real process with the team before asking anyone to package it.</li>
+</ul>
+
 Tools expose an action. Skills describe a task. Business plugins package those capabilities, while the new managed guidance can tell an agent which instructions, context and authoritative sources to use for a scenario.
 
 Imagine a procurement plugin that points to the approved policy and review process rather than leaving every employee to recreate the instructions. My take: the useful work is agreeing on that process before packaging it.
@@ -518,6 +588,12 @@ Imagine a procurement plugin that points to the approved policy and review proce
 ## 17. Work IQ brings your organisation's own definitions into people questions {#workforce-intelligence}
 
 *For: Leaders, HR teams and administrators responsible for organisational data.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Work IQ can use your organisation's definitions when answering questions about people and teams.</li>
+<li><strong>Picture this:</strong> A leader could explore skills across teams before proposing a training plan.</li>
+<li><strong>My take:</strong> I'd check population definitions and data quality before interpreting counts.</li>
+</ul>
 
 “How many people are in this team?” is not always a simple lookup. Contractors, reporting lines and your definition of headcount all matter. Work IQ's people and organisational context brings authoritative data, calculations and company-specific definitions into those questions.
 
@@ -559,6 +635,12 @@ Microsoft labels the availability table **rollout through December**. Better ans
 
 *For: Agent builders and administrators connecting work data.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Work IQ adds ways to find work context and call supported tools. Reading and acting are separate permissions.</li>
+<li><strong>Picture this:</strong> An agent could gather account context and then ask to update a supported record.</li>
+<li><strong>My take:</strong> I’d test read access first and check the narrower action policies before enabling writes.</li>
+</ul>
+
 The Work IQ update combines richer retrieval, reusable context and tools that can act on work systems. The detailed product post distinguishes **preview ERP grounding, preview event listening and preview enterprise controls** from the generally available foundation.
 
 For example, an agent might assemble context for a customer review, then request permission to update a supported record. Read and action permissions are distinct; a tenant-level ceiling and narrower agent policies are worth checking before enabling writes.
@@ -598,6 +680,12 @@ One concrete addition is **SharePoint tools**, announced on **3 November** and h
 
 *For: Browser administrators and teams automating web workflows.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Doing browser work, recording repeatable steps and managing how browsing runs are different features with different stages.</li>
+<li><strong>Picture this:</strong> Pilot a repeatable internal web task on one approved site before considering recorded skills.</li>
+<li><strong>My take:</strong> I’d review the allowed sites and sensitive actions before handing over a workflow.</li>
+</ul>
+
 There are three different announcements here. **Cowork agentic browsing is GA**, allowing multistep web tasks from the side pane, new tab page or web. It requires a **Microsoft 365 Copilot licence and usage-based billing**.
 
 **Skills recorder**, planned for **preview by year end**, turns a demonstrated workflow into a reusable Cowork skill. **Managed agent browsing**, separately in **preview with Microsoft 365 E5**, gives supported agents dedicated windows and identities under organisational policies. Do not read the GA browser-actions label as GA for the recorder or every third-party agent.
@@ -632,6 +720,12 @@ Imagine a repeatable internal web task. Recording it is only the first step; you
 
 *For: People working across browser tabs and internal web applications.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Edge can reshape a page for your view and is adding an interactive brief from open tabs.</li>
+<li><strong>Picture this:</strong> Create a brief from several project tabs for a colleague to read later.</li>
+<li><strong>My take:</strong> I'd treat the brief as a snapshot and page remix as a personal view, not a change to the original site.</li>
+</ul>
+
 | Experience | Practical use | Announced stage |
 |---|---|---|
 | Remix | Change a page's presentation locally without changing the underlying website | GA |
@@ -663,6 +757,12 @@ Imagine briefing a colleague from several open project tabs. The interactive bri
 
 *For: People building agents and workflows in Copilot Studio.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Studio's public preview gives developers a local route for working on agents and workflows.</li>
+<li><strong>Picture this:</strong> Edit a workflow locally and put the change through team review before publishing it.</li>
+<li><strong>My take:</strong> I'd test one small project first so the local and browser versions are easy to compare.</li>
+</ul>
+
 Local development of Copilot Studio agents and workflows, followed by CLI publication to the runtime, enters public preview. Code Agents are a different, early-access path requiring acceptance.
 
 For example, a developer can work locally on a workflow while the organization retains a managed publication path. That does not turn every locally written agent into a supported production app.
@@ -670,8 +770,6 @@ For example, a developer can work locally on a workflow while the organization r
 The Microsoft Copilot harness in Studio is GA, but was already described before Ignite. Agent Accounts were covered as a private Frontier preview in our November issue; the **public-preview expansion is planned for December**.
 
 **A memory boundary worth checking:** the current Agent Accounts preview uses shared memory even in one-to-one chats. Learn warns that summaries can appear in responses to people without access to the original material, and that users cannot opt out of shared memory during this preview. That is a reason to use approved test content and review the design before delegating a shared process.
-
-**Why it matters:** A team can review changes before publishing from Studio. I’d start with a small project so the browser and local workflows stay easy to compare.
 
 **Status:** Local agents/workflows **public preview**; Code Agents **early access**; Agent Accounts **December public-preview plan**.
 
@@ -691,11 +789,15 @@ The Microsoft Copilot harness in Studio is GA, but was already described before 
 
 *For: Copilot Studio builders connecting tools that need more than a text response.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> A supported tool can return an interactive panel inside a Studio conversation.</li>
+<li><strong>Picture this:</strong> An agent could show a supplier comparison with controls to explore the results.</li>
+<li><strong>My take:</strong> I'd test which clients render it, who can use it and what fallback readers get.</li>
+</ul>
+
 Model Context Protocol (MCP) is a standard way for an agent to call a supported tool. Microsoft's guidance dated **16 November** describes MCP Apps: a server can return an interactive interface, such as a project-status panel, inside the conversation. Connecting a server alone is not enough; its tool must declare and supply the interface.
 
 For example, an agent could show a supplier-comparison panel and let someone explore the results without opening another application. This is different from November's **Copilot Studio MCP server**, which lets another agent work with Studio. Here, Studio is displaying a tool's interface.
-
-**Why it matters:** An interactive control can keep a simple task in the conversation. I’d test permissions and the fallback before relying on it.
 
 **Status:** Supported in Microsoft 365 Copilot and **Copilot Studio preview chat**, **not Teams or web chat**. File downloads and end-to-end cancellation are not supported. Check the host's supported capabilities before designing around it; closing a panel is not proof that its operation stopped.
 
@@ -704,6 +806,12 @@ For example, an agent could show a supplier-comparison panel and let someone exp
 ## 23. Windows 365 for Agents broadens computer-use options {#windows-agents}
 
 *For: Builders automating legacy applications without suitable APIs.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> An agent can use a managed Cloud PC for supported computer-use work.</li>
+<li><strong>Picture this:</strong> Try a supervised task in an older application that doesn't offer a suitable API.</li>
+<li><strong>My take:</strong> I'd verify the harness, app permissions and stop conditions before moving beyond a pilot.</li>
+</ul>
 
 Windows 365 for Agents provides governed Cloud PCs for computer-use tasks and is now eligible for Copilot Credits. The Studio Standard harness path is available; other integrations arrive later.
 
@@ -718,6 +826,12 @@ For example, an agent might complete an approved task in an old application. A m
 ## 24. Agent 365 expands governance beyond the agent itself {#agent-governance}
 
 *For: Administrators responsible for agents, plugins, skills and tools.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Agent 365 makes it easier to see agents and the tools they can reach. Some of the new controls are still preview.</li>
+<li><strong>Picture this:</strong> Review a purchasing agent and the tools behind it before giving it a wider audience.</li>
+<li><strong>My take:</strong> I’d check the tools as carefully as the agent. One approval doesn't prove every connection is safe.</li>
+</ul>
 
 Think of Agent 365 as the front desk for the agent estate: who owns each agent, which tools it reaches, what it has done and where it needs attention.
 
@@ -779,6 +893,12 @@ The licensing change is narrower than “Agent 365 is now free”: qualifying Mi
 
 *For: Organisations building agents across Microsoft and other platforms.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Supported external agents can appear in the registry and get an Entra identity through connected platforms.</li>
+<li><strong>Picture this:</strong> Bring one supported third-party agent into the registry and inspect which activity is actually visible.</li>
+<li><strong>My take:</strong> I’d verify coverage platform by platform. An inventory entry is not proof every control works there.</li>
+</ul>
+
 Connected platforms bring supported agents into the same registry without requiring changes to their code. The Ignite additions extend **Microsoft Entra Agent ID** to more connected agents, with a guided setup wizard and secretless authentication for supported connections.
 
 Microsoft lists platforms including Salesforce Agentforce, Amazon AgentCore, Google Vertex AI, Databricks and Snowflake, with support **rolling out through December**. Identity, activity detail and available controls vary by platform. An agent appearing in the registry is not proof that every control works identically everywhere. This is not the [Copilotforce sales integration](#salesforce); it is an identity/governance connection. [Local-agent identity](#identity) is another part of that story.
@@ -802,6 +922,12 @@ For example, an IT team could investigate the owner and access of a data-team ag
 ## 26. Agent 365 brings investigations into your tools and Cowork {#agent-investigation}
 
 *For: Administrators, developers and SRE teams investigating what an agent did.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Supported trace exports and the Cowork plugin give admins two different ways to investigate agent activity.</li>
+<li><strong>Picture this:</strong> Follow a failed tool call in a dashboard, or ask Cowork to surface agents that need review.</li>
+<li><strong>My take:</strong> I'd set access and retention before exporting logs, and review any proposed governance action.</li>
+</ul>
 
 **Export Agent Activity** is announced as a way to continuously sync agent traces into your own Azure Monitor and Application Insights. Administrators can filter by agent or platform and choose whether prompts and responses are included.
 
@@ -836,6 +962,12 @@ Separately, the **Agent 365 plugin for Cowork** lets administrators inspect the 
 ## 27. SharePoint adds content-level agent controls and a recovery preview {#sharepoint-agent-governance}
 
 *For: SharePoint administrators preparing content for agents and planning recovery.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> SharePoint adds agent access controls and is previewing ways to help recover content.</li>
+<li><strong>Picture this:</strong> Review the sites an agent can reach, then test a recovery scenario on approved sample files.</li>
+<li><strong>My take:</strong> I'd keep the existing recovery plan. A preview is something to test, not a fallback to assume.</li>
+</ul>
 
 The SharePoint Admin Agent adds skills for permissions, lifecycle, storage, catalog and Multi-Geo work. The Ignite post also separates current controls from December plans and restricted previews:
 
@@ -904,6 +1036,12 @@ For example, an administrator could first investigate which sites an agent can r
 
 *For: IT, finance and business owners funding AI usage.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Cost management connects eligible AI usage to who can spend and which policy applies.</li>
+<li><strong>Picture this:</strong> A budget owner could review a pilot group's consumption before granting more capacity.</li>
+<li><strong>My take:</strong> I’d agree who owns the budget and test which policy limits are enforced before widening access.</li>
+</ul>
+
 FinOps is the routine of planning and checking technology spending with IT, finance and the people using the services. For AI, that means more than counting licences: usage-based tasks consume **Copilot Credits**, Microsoft's usage unit for supported services.
 
 | Question | Where to look |
@@ -957,6 +1095,12 @@ For example, a pilot group could get access to specified services under an owned
 
 *For: Business leaders, finance and IT comparing AI usage, cost and useful outcomes.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Business Analytics estimates the time and value AI may have helped deliver. It doesn't measure savings directly.</li>
+<li><strong>Picture this:</strong> Compare assisted hours for a recurring reporting task with how long the team actually takes.</li>
+<li><strong>My take:</strong> I’d check the assumptions and launch licence threshold before taking the numbers into a finance meeting.</li>
+</ul>
+
 **Agent 365 Business Analytics is a separate Frontier app**, not simply another tab in the credit-management dashboard. It connects service usage, spend, business use cases and estimated assistance.
 
 | Capability | Announced timing |
@@ -999,6 +1143,12 @@ Imagine comparing the estimated assistance for proposal preparation with actual 
 ## 30. Forecasts and exports connect AI spending to a finance review {#agent-finops-reporting}
 
 *For: Finance, reporting and data teams building a repeatable AI-spend review.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Forecasts help test what might happen. Exports help analyse data. Neither changes a live spending policy.</li>
+<li><strong>Picture this:</strong> Compare a higher-usage scenario with the current forecast, then review the actual policy separately.</li>
+<li><strong>My take:</strong> I'd label forecasts as estimates and check scope and permissions before sharing reports.</li>
+</ul>
 
 Business Analytics adds cost forecasts, service/model breakdowns and what-if comparisons. Think of these as planning views, not controls: **changing a forecast scenario or a budget target used in reports does not change live access, model routing or an enforced spending policy**. The cost-forecast page also excludes Copilot subscription licence cost. [Forecast scope and the difference between scenarios and policies](https://learn.microsoft.com/a365-business-analytics/cost-forecast).
 
@@ -1064,6 +1214,12 @@ There is also a **Microsoft Graph beta Cost Management API** for credit usage an
 
 *For: Organizations using Salesforce alongside Microsoft 365 and Fabric.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> The Salesforce announcement spans sales skills in Copilot, an agent experience in Teams and connections with Fabric.</li>
+<li><strong>Picture this:</strong> A seller could use a supported sales skill to prepare a deal brief, then check the CRM record.</li>
+<li><strong>My take:</strong> I'd check each integration and data direction separately. One launch label doesn't cover them all.</li>
+</ul>
+
 **Copilotforce is the Microsoft–Salesforce partnership announced at Ignite**, not another name for Dynamics 365's Sales plugin or Microsoft's cross-CRM Copilot for sales. Its integrations bring Salesforce customer context together with Microsoft 365 work context.
 
 Salesforce in Copilot offers **38+ prebuilt sales skills** through authenticated Salesforce MCP access. Work IQ adds relevant Teams, Outlook, SharePoint and OneDrive context. A seller could review a deal, prepare a meeting brief or draft a follow-up, then confirm a supported CRM update.
@@ -1087,6 +1243,12 @@ The two data directions do **not** share one GA label. Supported CRM writebacks 
 
 *For: Organizations and partners planning CRM or ERP migrations.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Activate already has a GA CRM migration path. The SAP ECC work is a separate private preview.</li>
+<li><strong>Picture this:</strong> An ERP team could use discovery to list customisations before deciding what to migrate.</li>
+<li><strong>My take:</strong> I’d treat the output as input to the migration assessment, not an approved migration plan.</li>
+</ul>
+
 Activate for CRM is GA for the Salesforce-to-Dynamics path. The enterprise resource planning (ERP) expansion starts with SAP ECC discovery, requirements analysis, configuration and data migration in **private preview**.
 
 For example, a project team could use discovery to identify customizations and dependencies before deciding what to move or redesign. The team's validation is part of the process; this is not a promise of a one-click migration.
@@ -1098,6 +1260,12 @@ For example, a project team could use discovery to identify customizations and d
 ## 33. Contact Center Intelligence reaches GA {#contact-center}
 
 *For: Customer-service teams that are not replacing their contact-centre platform.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Contact Center Intelligence adds voice and digital agents to supported existing contact-centre systems.</li>
+<li><strong>Picture this:</strong> Pilot a narrowly defined enquiry and hand it to a person when it falls outside the agreed scope.</li>
+<li><strong>My take:</strong> I'd test compatibility and real handovers before expanding the queue.</li>
+</ul>
 
 Microsoft Contact Center Intelligence layers voice and digital agents onto existing contact-centre infrastructure. The Ignite announcement marks it generally available, following the earlier product introduction.
 
@@ -1113,6 +1281,12 @@ A service team might add an agent to a defined part of an existing customer jour
 
 *For: Anyone trying to understand how Microsoft's AI pieces fit.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Microsoft IQ groups several sources of context. Each component still has its own access rules.</li>
+<li><strong>Picture this:</strong> A supplier review could use company conversations, an approved spend metric and current public information.</li>
+<li><strong>My take:</strong> I’d map each question to the source that owns the answer before checking licences.</li>
+</ul>
+
 Microsoft IQ was already introduced in our [Build recap](/blog/microsoft-build-2026-recap/). Ignite extends its connections and reusable business guidance rather than inventing the umbrella again. Think of it as four kinds of context: **Work IQ** understands work and collaboration; **Fabric IQ** supplies business definitions and data; **Foundry IQ** brings organizational knowledge; **Web IQ** brings current external information.
 
 For a supplier decision, those could mean the conversation, the approved spend metric, the policy documents and current external information. They solve different parts of the question.
@@ -1124,6 +1298,12 @@ For a supplier decision, those could mean the conversation, the approved spend m
 ## 35. Informatica brings data definitions, quality and lineage into Microsoft AI {#informatica-context}
 
 *For: Data teams and business users who need to know what a dataset means and where it came from.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Informatica can supply definitions, quality signals and data lineage to supported Microsoft AI experiences.</li>
+<li><strong>Picture this:</strong> Before analysing a customer segment, check how it was defined and where its data came from.</li>
+<li><strong>My take:</strong> I'd use the catalogue to investigate the evidence, not as a substitute for checking it.</li>
+</ul>
 
 Separate from [Copilotforce's sales workflows](#salesforce), Salesforce's Informatica collaboration adds another layer of context: business definitions, data-quality indicators and lineage, the history of how data moved and changed. Its Copilot integration brings that information into natural-language questions. Foundry's expanded Headless MCP capabilities expose supported governance, identity and administration tools to builders without requiring Informatica's own user interface.
 
@@ -1138,6 +1318,12 @@ Fabric scanning also expands to **notebooks and data pipelines**. The Foundry MC
 ## 36. Web IQ opens current web grounding to Azure customers {#web-iq}
 
 *For: Builders whose agents need information beyond their training and company data.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Web IQ lets supported Azure apps retrieve current public information rather than rely only on what a model remembers.</li>
+<li><strong>Picture this:</strong> A travel assistant could check current weather and place information before answering.</li>
+<li><strong>My take:</strong> I’d inspect the sources for freshness and relevance before trusting the answer.</li>
+</ul>
 
 Web IQ is broadly available to Azure customers. Its **Auto retrieval mode** combines web, news, images, video, places and weather retrieval. Auto Advanced can refine a query and retrieve again; Scopes lets organizations include or exclude web sources.
 
@@ -1169,6 +1355,12 @@ For health-related retrieval, **health-aware source ranking is GA**. It prioriti
 
 *For: Developers choosing coding, image, speech and security models.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Microsoft announced different models for different jobs, with different ways to access them.</li>
+<li><strong>Picture this:</strong> Test the image model on your usual editing task instead of assuming a coding benchmark tells you how it will do.</li>
+<li><strong>My take:</strong> I’d compare models on the work we actually need and check the release stage for that model and service.</li>
+</ul>
+
 The MAI announcements span Code 2 and Code 2 Flash for coding, Image 2.7 and its Flash variant for image work, Realtime 1 for live speech, Cyber 2 Flash for code security, and transcription used by Dragon Copilot. These are not one model with one access policy.
 
 For example, an image-editing workflow and a code-security scanner need different evaluations. I would compare each on the actual task, including failure handling, rather than pick from a single leaderboard.
@@ -1190,6 +1382,12 @@ Foundry's wider model announcement is not limited to MAI. Model router expands m
 
 *For: Builders routing tasks or classifying work.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Decision-1.1 helps software pick a next step from allowed options rather than write the final answer.</li>
+<li><strong>Picture this:</strong> Sort a request into answer now, research further or ask a person.</li>
+<li><strong>My take:</strong> I'd decide what happens when the model is unsure and keep permission checks outside the model.</li>
+</ul>
+
 Microsoft-Decision-1.1 is a model for choosing among permitted options, with confidence signals and the ability to decline to choose when unsure. It adds image input and is available through Foundry, OpenRouter and Vercel.
 
 Think of sorting an incoming request into “answer”, “research” or “ask a person”, rather than generating the final response itself. The application still has to enforce which actions are allowed.
@@ -1202,6 +1400,12 @@ Think of sorting an incoming request into “answer”, “research” or “ask
 
 *For: Developers embedding agent capabilities into applications.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Version 2.0 updates the developer toolkit for putting Copilot capabilities inside an application.</li>
+<li><strong>Picture this:</strong> Add an assistant to an existing internal tool instead of sending staff to a separate chat.</li>
+<li><strong>My take:</strong> I'd test identity and tenant separation as part of the application, not assume the SDK handles them end to end.</li>
+</ul>
+
 The SDK already featured in our Build recap. **Version 2.0** brings a native Rust runtime and the updated Copilot harness, with support across six programming languages and an emphasis on multi-tenant, high-scale applications. This is a version upgrade, not the SDK's first availability.
 
 For example, a developer can put an agent inside an existing business application rather than send everyone to a separate chat interface. SDK availability does not remove that application's identity, tenancy or testing responsibilities.
@@ -1213,6 +1417,12 @@ For example, a developer can put an agent inside an existing business applicatio
 ## 40. The GitHub Copilot app reaches Azure DevOps and existing browser sessions {#github-copilot-app}
 
 *For: Development teams using Azure DevOps or GitHub Enterprise Server.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> The Copilot app can work with an Azure DevOps repo without moving it to GitHub.</li>
+<li><strong>Picture this:</strong> Start a small documentation change on a branch and have someone review the pull request.</li>
+<li><strong>My take:</strong> I’d preserve the existing branch checks and human review when trying it.</li>
+</ul>
 
 The app's Azure DevOps integration can take a repository from a branch and code changes to a pull request. Optional agent merge can address CI failures and finish the request once the repository's checks and policies pass.
 
@@ -1235,6 +1445,12 @@ For example, a team could ask for a small fix in an Azure DevOps repository with
 
 *For: Administrators and developers deciding how terminal-based Copilot access should work.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Entra sign-in is one step. Which service you use and how it is billed depend on the entitlement path.</li>
+<li><strong>Picture this:</strong> Compare an eligible Microsoft 365 Copilot setup with a GitHub Enterprise Managed User setup before choosing a pilot.</li>
+<li><strong>My take:</strong> I'd verify the billing path with the admin before calling the two options interchangeable.</li>
+</ul>
+
 Entra authentication can connect an eligible GitHub Enterprise Managed User account, use an eligible Microsoft 365 Copilot entitlement, or both. Those are different service and billing paths:
 
 | Route | Requirements and boundary |
@@ -1251,6 +1467,12 @@ For example, an administrator could evaluate the Microsoft 365 route without tre
 ## 42. GitHub Copilot Evals tests whether a customization actually helps {#github-evals}
 
 *For: People maintaining Copilot skills, custom agents and MCP tools.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Evals reruns the same tasks against criteria you set so you can test a change rather than judge one answer.</li>
+<li><strong>Picture this:</strong> Change a document-review skill and see whether it still spots the same missing headings over several runs.</li>
+<li><strong>My take:</strong> I'd define success first. A single good answer doesn't prove an improvement.</li>
+</ul>
 
 Evals lets you define a realistic task, state what a good result looks like and compare repeat runs after a change. It uses Vally as its evaluation engine. Each run needs approval.
 
@@ -1270,6 +1492,12 @@ For example, after changing a document-review skill, rerun the same checks to se
 ## 43. Copilot code review reaches Azure Repos and adds deeper checks {#github-code-review}
 
 *For: Developers and reviewers using GitHub or Azure DevOps repositories.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Azure Repos review is GA, while several deeper checks have separate preview rules.</li>
+<li><strong>Picture this:</strong> Ask for a second pass on an Azure Repos pull request before a reviewer decides whether to merge it.</li>
+<li><strong>My take:</strong> I'd keep human review and existing checks, especially when a feature is still in preview.</li>
+</ul>
 
 Copilot code review for **Azure Repos is GA**. This is a review service, separate from the Copilot app creating a pull request or Evals testing a custom agent.
 
@@ -1313,6 +1541,12 @@ For example, a team keeping its code in Azure DevOps could request an additional
 
 *For: Identity and access administrators.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Entra adds ways to identify agents, govern access and manage the account over its lifetime.</li>
+<li><strong>Picture this:</strong> Before granting an agent access, name its sponsor and decide what happens when it is retired.</li>
+<li><strong>My take:</strong> I'd make ownership and removal part of setup, rather than revisit them at the end.</li>
+</ul>
+
 New agent controls include identity for discovered local agents, policy plans and more targeted access. Some dynamic-permission and dynamic-control capabilities remain limited preview. Automated lifecycle management of agent identities is GA.
 
 For example, an agent needs a human sponsor, an access boundary and a retirement path, not just a successful first sign-in. Think about all three before granting it a business process.
@@ -1337,6 +1571,12 @@ The wider security work also covers on-premises Exchange, SharePoint and Skype f
 
 *For: Identity and endpoint administrators evaluating administration through an AI assistant.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> A supported admin assistant can reach selected management tools through a governed connection.</li>
+<li><strong>Picture this:</strong> Start by querying a supported setting in a test tenant and confirm that the result matches the admin centre.</li>
+<li><strong>My take:</strong> I’d start read-only and verify the delegated role before considering any change.</li>
+</ul>
+
 **Microsoft MCP Server for IT Admins is GA**. It is a tool connection for administrators. The separate MCP firewall controls which tools agents may reach; Agent 365's Cowork plugin is another distinct experience.
 
 An administrator could ask about supported Entra configuration, then review a proposed change. The current implementation guide distinguishes Entra read/manage operations from **read-only Intune support, excluding reporting**. Writes require explicit confirmation through a compatible MCP client; connecting a tool is not approval for every future change.
@@ -1360,6 +1600,12 @@ I would start with read-only checks and verify the supported operations and perm
 ## 46. Purview separates today's labeling updates from January protection plans {#purview}
 
 *For: Information-protection and data loss prevention (DLP) administrators.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Some classification and labelling changes are available now. Other protections are planned for January.</li>
+<li><strong>Picture this:</strong> Check which label controls you can test today before writing a pilot plan for grounding protection.</li>
+<li><strong>My take:</strong> I’d track each control separately rather than tell users it all arrived at Ignite.</li>
+</ul>
 
 Microsoft is improving classification and planning protection based on sensitive information types, including material used to ground Copilot. The product announcement separates current improvements from the January wave:
 
@@ -1410,6 +1656,12 @@ The January plans are not controls to assume in this month's rollout. The produc
 
 *For: Security operations and exposure-management teams.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Microsoft Perception lets security teams coordinate agent work around playbooks.</li>
+<li><strong>Picture this:</strong> Use a sample alert to see what the playbook gathers and when it hands off to an analyst.</li>
+<li><strong>My take:</strong> I'd test the handoff and evidence trail before relying on the automation.</li>
+</ul>
+
 Microsoft Perception, previously Project Perception, is GA. It brings together red agents that test, blue agents that investigate and green agents that remediate, with playbooks coordinating the work.
 
 Imagine a suspicious alert becoming an investigation and a proposed response, rather than three manually assembled handovers. Your team still sets the guardrails and approves high-impact actions.
@@ -1439,6 +1691,12 @@ The **AI Transparency Initiative** is a standards effort, not a newly shipped en
 
 *For: Teams using Microsoft Defender and Sentinel.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Microsoft announced separate changes for security operations and vulnerability protection, with different release stages.</li>
+<li><strong>Picture this:</strong> A security team could verify what it can use for alert triage now and track the shielding rollout separately.</li>
+<li><strong>My take:</strong> I'd keep the rollout dates separate so a pilot doesn't depend on a feature that isn't available.</li>
+</ul>
+
 The Integrated Security Operations Center (ISOC) brings core security information and event management (SIEM), investigation and threat-protection experiences together. Vulnerability shielding is a separate preview for applying temporary protection while a permanent fix is prepared.
 
 For example, a supported shielding action might reduce exposure during the gap before patching. **Temporary protection is not a substitute for the patch.**
@@ -1450,6 +1708,12 @@ For example, a supported shielding action might reduce exposure during the gap b
 ## 49. MDASH extends the code-security preview {#mdash}
 
 *For: Application-security teams evaluating automated code review.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> MDASH expands Microsoft's preview for AI-assisted code security review.</li>
+<li><strong>Picture this:</strong> An eligible security team could assess whether the service helps prioritise code findings for review.</li>
+<li><strong>My take:</strong> I'd judge whether the findings are useful to defenders, not assume entry into the preview or broad model access.</li>
+</ul>
 
 Codename MDASH expands its preview to larger repositories and additional security models, producing candidate vulnerability findings and proposed fixes that teams can review. Its findings can also guide the Web App Pen Test Agent.
 
@@ -1463,6 +1727,12 @@ For example, a team could use it to identify candidate vulnerabilities, then val
 
 *For: Endpoint security teams allowing local coding and desktop agents.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Defender adds protection for supported local AI agents while they run.</li>
+<li><strong>Picture this:</strong> In a controlled pilot, check which lab agent activity becomes visible to the security team.</li>
+<li><strong>My take:</strong> I'd confirm the supported agent and platform first. Visibility isn't proof of full coverage.</li>
+</ul>
+
 Defender extends protection to supported local agents on Windows, with agent-native integration for some products and network-based coverage for others. Audit and Block modes give administrators different rollout choices.
 
 For example, a team could begin by observing a supported coding agent before deciding what to block. The coverage depends on the named agent and integration; “local agent protection” does not mean every tool or interaction is covered.
@@ -1474,6 +1744,12 @@ For example, a team could begin by observing a supported coding agent before dec
 ## 51. Endpoint controls are part of the AI rollout, not an afterthought {#endpoint-management}
 
 *For: Windows, Intune and security administrators.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Endpoint management gives IT ways to set boundaries for AI on managed devices.</li>
+<li><strong>Picture this:</strong> Try a containment policy on a small device group before considering a broad rollout.</li>
+<li><strong>My take:</strong> I’d check which agent and device combinations the policy applies to, then verify the resulting behaviour.</li>
+</ul>
 
 The announcements extend policy and containment for supported local agents. New process-container controls are preview; learning and permissive modes are GA, helping teams understand normal behaviour before enforcing restrictions. Baseline protection aims to maintain critical device settings, while new experience controls give IT time to evaluate upcoming Windows experiences before introducing them.
 
@@ -1505,6 +1781,12 @@ Microsoft also describes app protection for AI apps that integrate the **Intune 
 ## 52. Intune connects an investigation to a remediation plan {#intune-remediation}
 
 *For: Endpoint teams investigating risk and deploying fixes.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> The Intune experience can turn findings from an investigation into a remediation plan for review.</li>
+<li><strong>Picture this:</strong> After looking into a device issue, review the proposed scope and plan before approving a change.</li>
+<li><strong>My take:</strong> I’d keep the approval and rollback steps explicit, especially in a limited preview.</li>
+</ul>
 
 The **Vulnerability Remediation Agent** combines Defender vulnerability information with Intune device/app context to build and execute remediation playbooks. The separate **Perception experience in Intune** accepts a plain-language question, plans an investigation across supported sources and explains its steps with citations.
 
@@ -1539,6 +1821,12 @@ For example, an administrator could investigate an affected application, inspect
 
 *For: Developers with suitable Windows hardware.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> GitHub Copilot Fusion can route supported coding work to local models on eligible hardware in preview.</li>
+<li><strong>Picture this:</strong> Compare an everyday coding task on a supported developer PC with the existing cloud workflow.</li>
+<li><strong>My take:</strong> I’d check the hardware and client first, then compare quality and responsiveness on work that matters.</li>
+</ul>
+
 Hybrid routing can send coding work to local models on supported hardware, alongside cloud models. The Windows announcement names the GitHub Copilot app, CLI and VS Code.
 
 A developer working on an appropriate machine could evaluate a local model for a bounded coding task. Local execution is a placement choice, not a blanket claim that the whole application has no cloud traffic.
@@ -1551,6 +1839,12 @@ A developer working on an appropriate machine could evaluate a local model for a
 
 *For: IT and developers evaluating where model execution belongs.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Some Cloud PC experiences are being extended to let compatible models run there rather than on a physical desk PC.</li>
+<li><strong>Picture this:</strong> Check whether a supported virtual workstation can handle a team’s intended model and workload.</li>
+<li><strong>My take:</strong> I'd separate the model compatibility check from the preview and hardware requirements.</li>
+</ul>
+
 The Book of News marks compatible local-model execution on appropriately sized Windows 365 Cloud PCs GA, using Foundry Local. “Local” here means inside that Cloud PC, not necessarily on the physical laptop in front of you.
 
 For example, a developer could use a sized Cloud PC for model evaluation without upgrading their laptop. Hardware sizing and model compatibility still determine whether the experiment is practical.
@@ -1562,6 +1856,12 @@ For example, a developer could use a sized Cloud PC for model evaluation without
 ## 55. Windows Server 2028 previews another AI execution location {#windows-server}
 
 *For: Infrastructure teams considering on-premises inference.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Windows Server 2028 is another possible place to run supported AI workloads, currently in preview.</li>
+<li><strong>Picture this:</strong> Use a test server to evaluate one supported model before planning a production move.</li>
+<li><strong>My take:</strong> I'd check the hardware support and preview limits before making a capacity decision.</li>
+</ul>
 
 Windows Server 2028 enters preview, with work toward running inference across local server fleets. That extends the placement conversation from laptop and Cloud PC to infrastructure an organization manages directly.
 
@@ -1576,6 +1876,12 @@ Imagine a team evaluating inference close to a locally managed dataset instead o
 ## 56. Azure Copilot expands from advice into operational work {#azure-operations}
 
 *For: Azure administrators, platform teams and site reliability engineers (SREs).*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Azure Copilot is adding supported operational tasks beyond answering questions about Azure.</li>
+<li><strong>Picture this:</strong> Ask for help investigating a test resource and review the proposed action before authorising it.</li>
+<li><strong>My take:</strong> I'd start with a narrow scope and verify what the operator can change.</li>
+</ul>
 
 The deployment agent is GA. Azure Copilot spaces and custom skills are public preview, helping teams supply reusable context and instructions. New SRE Agent enterprise controls are public preview; Monitor health models are GA.
 
@@ -1600,6 +1906,12 @@ SRE Agent also expands collaboration through Teams, other agents and multicloud 
 ## 57. Azure Catalyst connects application and data modernization {#azure-catalyst}
 
 *For: Teams moving or modernizing existing workloads.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Catalyst helps teams assess and convert parts of a legacy application and its data dependencies.</li>
+<li><strong>Picture this:</strong> Review which database dependencies need redesign before moving an Oracle-backed app.</li>
+<li><strong>My take:</strong> I’d treat the assessment as a migration planning aid. Run the application tests before trusting the conversion.</li>
+</ul>
 
 Azure Catalyst joins assessment, planning and execution across applications and data, connecting Azure Migrate with GitHub Copilot modernization. Rulebooks and bring-your-own-model support are GA; many new workload-specific capabilities are preview.
 
@@ -1636,6 +1948,12 @@ One concrete addition is **AI-assisted Oracle application conversion**, alongsid
 
 *For: Database teams and builders of data-backed agents.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> The database announcements cover both new services and features for retrieval, development and operations.</li>
+<li><strong>Picture this:</strong> Choose a retrieval feature to improve search, or evaluate an operations agent for a separate database task.</li>
+<li><strong>My take:</strong> I’d check each feature’s stage rather than assume it is GA because the database is.</li>
+</ul>
+
 The useful distinctions are at capability level:
 
 | Change | What it helps with | Stage |
@@ -1665,6 +1983,12 @@ A database agent might explain a performance issue and propose a fix. I would wa
 ## 59. Cosmos adds managed agent access, visual retrieval and memory tools {#cosmos-agent-memory}
 
 *For: Builders whose agents need to find information and keep useful context between tasks.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Cosmos adds ways for supported agents to access data, retrieve context and carry memory.</li>
+<li><strong>Picture this:</strong> A team could test whether an agent finds the right product record before letting it use that context elsewhere.</li>
+<li><strong>My take:</strong> I’d test access and the quality of retrieval separately from how memory is stored.</li>
+</ul>
 
 These are three different building blocks, not one “memory” switch:
 
@@ -1702,6 +2026,12 @@ Cosmos service setup still applies even when you use generated vectors elsewhere
 
 *For: Platform engineers who need more infrastructure control.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Azure is adding different ways to run agent workloads, including Foundry and preview paths in AKS.</li>
+<li><strong>Picture this:</strong> Compare a managed Foundry deployment with an AKS option when the team already operates Kubernetes.</li>
+<li><strong>My take:</strong> I’d pick the option the team can operate and check preview support before moving production work.</li>
+</ul>
+
 Microsoft is previewing deployment of open-weight models and agents from Foundry into customer Azure Kubernetes Service (AKS) clusters. Agent Grid adds centralized interaction policies; Agent Sandbox for AKS adds VM-level isolation for agent-written code; Flex nodes extend clusters to customer servers.
 
 For example, a team with specific region or infrastructure requirements could keep a familiar Foundry workflow while controlling more of the deployment. That extra control also brings more operational responsibility.
@@ -1719,6 +2049,12 @@ Confidential AI infrastructure also gets three **preview** paths: VR72 multi-GPU
 ## 61. Foundry closes the loop between production evidence and improvement {#foundry-improvement}
 
 *For: Teams running agents beyond a demonstration.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Foundry connects evaluation and production evidence so a team can test how to improve an agent.</li>
+<li><strong>Picture this:</strong> Review a recurring failed answer, change one setting and rerun the same evaluation.</li>
+<li><strong>My take:</strong> I’d protect a baseline first. A change that lowers estimated cost is only useful if quality holds up.</li>
+</ul>
 
 Foundry's improvement loop is straightforward: establish a baseline, identify problems, optimize, then validate. Multi-turn evaluation and Insights are GA. New annotation, golden-dataset and optimizer extensions are preview.
 
@@ -1767,6 +2103,12 @@ The harness is the part that manages an agent's work across steps. This official
 
 *For: Teams with evidence that prompting and retrieval are not enough.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Managed and Programmed Training are preview options with different levels of control.</li>
+<li><strong>Picture this:</strong> Compare a simpler managed experiment with a programmed approach when the team needs more control over the training process.</li>
+<li><strong>My take:</strong> I’d start with a clear quality target and verify model eligibility before choosing either route.</li>
+</ul>
+
 Managed Training is the renamed managed fine-tuning path. Programmed Training gives developers Python-level control over training recipes on serverless GPUs.
 
 For example, a team classifying specialist maintenance notes might compare a tuned smaller model with its existing baseline. The decision should come from its own held-out evaluation, not another customer's savings figure.
@@ -1779,6 +2121,12 @@ For example, a team classifying specialist maintenance notes might compare a tun
 
 *For: Builders grounding agents in documents and organizational knowledge.*
 
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Foundry IQ adds preview ways to map relationships and retrieve information. Some source integrations have different release stages.</li>
+<li><strong>Picture this:</strong> Test whether a knowledge graph helps answer a question that spans related policies and documents.</li>
+<li><strong>My take:</strong> I’d test source permissions and answer quality together, and check the release stage of the exact feature.</li>
+</ul>
+
 Knowledge graphs and Microsoft Retriever 1 enter public preview. The aim is to preserve useful relationships across information, not just retrieve isolated chunks of text.
 
 For example, an engineering agent might need to connect a component, its specification and the procedure that applies to it. A better relationship map is useful only if the underlying material and access configuration are right.
@@ -1790,6 +2138,12 @@ For example, an engineering agent might need to connect a component, its specifi
 ## 64. Fabric moves from answering about data to building data apps {#fabric-apps}
 
 *For: BI teams, app builders and people working with governed business metrics.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> Fabric can support data-backed apps as well as answering questions about data.</li>
+<li><strong>Picture this:</strong> Build a small operations view around an approved dataset before replacing a reporting workflow.</li>
+<li><strong>My take:</strong> I’d validate who can see and update the underlying records, and keep the app release separate from preview integrations.</li>
+</ul>
 
 Fabric IQ brings semantic-model definitions and business context into more experiences. Rayfin, Fabric's connected application backend, and Fabric apps are GA, combining application backend capabilities with Fabric data and governance. Power BI Pro customers also get a **preview** path for building custom data apps from semantic models.
 
