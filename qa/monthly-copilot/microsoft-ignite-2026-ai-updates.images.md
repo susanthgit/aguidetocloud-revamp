@@ -12,6 +12,15 @@ Local only. Rights remain UNKNOWN; annotation is a later pass. Original seven as
 
 Day 2 local draft: the two new Microsoft Learn assets below were opened at their original dimensions and are unchanged from the public files. No tenant capture or new annotation is claimed.
 
+## §3 — cowork-team-task-planner.webp
+SHA256: `5466cb7a7d8aa3473dafd1cff0d14c12d27950408355bcfd1c2f4cf7628ec412`
+
+**Observed:** The Team Task Planner preview shows a weekly task board, status totals, “Stored in this browser” and a top-right Publish button with a red callout.
+
+**Verdict:** MATCH to a mock-data app preview only. User supplied and approved the capture for this update on 19 November; the pixels do not establish which authoring mode ran or whether publishing, sharing or server persistence occurred.
+
+**Team Task Planner recipe:** Crop `(638, 0, 1780, 478)` from the 1780 × 625 capture; extend with 80 px on top. Mask the sample assignees and company reference in final coordinates `(139,315,214,382)`, `(31,393,83,411)`, `(142,423,194,442)`, `(250,409,287,428)`, `(355,393,409,412)`, `(509,386,550,408)`, `(506,481,544,500)`, `(295,503,326,521)`. Use `annotate_lib.callout` at `(827,12)` targeting `(1002,99)`, size 24, then export RGB WebP quality 92 without metadata.
+
 **Product blog media, 19 November:** Five focused public derivatives, each opened at its final crop. Pillow RGB WebP quality 92; boxes are `(left, top, right, bottom)`. The Code crop was composited onto white before export. Only Teams came from playback bytes; the Windows and redaction images are video previews.
 
 ## §2 — windows-demo-diagnostics.webp

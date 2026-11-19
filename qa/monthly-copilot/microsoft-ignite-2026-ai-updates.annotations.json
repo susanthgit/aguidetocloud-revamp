@@ -1,7 +1,15 @@
 {
-  "_README": "87 unmodified official assets, 13 cropped official derivatives, and one annotated demo capture. Transformation records bind source and output bytes to their recipes.",
+  "_README": "87 unmodified official assets, 13 cropped official derivatives, and two annotated demo captures. Transformation records bind source and output bytes to their recipes.",
   "slug": "microsoft-ignite-2026-ai-updates",
   "images": {
+    "cowork-team-task-planner.webp": {
+      "disposition": "annotated",
+      "source_sha256": "072ec2eab4a6e9184d0d9a6b1947f3d0dfcd1e458442bcaf9f7d572f539416af",
+      "output_sha256": "5466cb7a7d8aa3473dafd1cff0d14c12d27950408355bcfd1c2f4cf7628ec412",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Team Task Planner",
+      "callouts": 1,
+      "callout_texts": ["Publish button"]
+    },
     "windows-demo-diagnostics.webp": {
       "disposition": "official_derivative",
       "reason": "Public Windows video preview cropped to the diagnostics response.",

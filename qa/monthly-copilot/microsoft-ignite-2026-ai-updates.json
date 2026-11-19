@@ -2,10 +2,10 @@
  "schema": 2,
  "slug": "microsoft-ignite-2026-ai-updates",
  "tool_version": "1.0.0",
- "generated_at": "2026-11-19T06:29:41.298760+00:00",
+ "generated_at": "2026-11-19T08:30:24.907575+00:00",
  "post": {
   "path": "content/blog/microsoft-ignite-2026-ai-updates.md",
-  "sha256": "3e76f893168dff1b6fc4e9b9dc3147b4d497e679ff057961cd8fc66d359fb546",
+  "sha256": "cbc6db8322155a685d63d8b71123ca82e716d3349dae0da849546a2b8bbb53e9",
   "sections": 65
  },
  "roadmap_snapshot": {
@@ -38,7 +38,7 @@
    "title": "Build an app in Cowork that your team can keep using {#cowork-apps}",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "not_applicable",
    "reason": "Event announcement for Cowork app building GA, based on the official product post rather than a monthly roadmap ID: https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-copilot-cowork-at-ignite-2026/4572242."
   },
@@ -616,6 +616,14 @@
    "alt": "Copilot lists Bluetooth and audio endpoint checks, then suggests that audio may be going to a different output device.",
    "exists": true,
    "sha256": "f21438dd40b171f76fdde7b69ce27fd0675e725b782507d877607e545c66628a",
+   "observed": true
+  },
+  {
+   "section": 3,
+   "src": "/images/blog/ignite-2026/cowork-team-task-planner.webp",
+   "alt": "Mock-data Team Task Planner in demo preview, with the Publish button called out and a Stored in this browser indicator.",
+   "exists": true,
+   "sha256": "5466cb7a7d8aa3473dafd1cff0d14c12d27950408355bcfd1c2f4cf7628ec412",
    "observed": true
   },
   {

@@ -30,7 +30,7 @@ faq:
   - question: "Does Microsoft IQ mean every integration is generally available or included?"
     answer: "No. Microsoft IQ connects Work IQ, Fabric IQ, Foundry IQ and Web IQ, but the availability, licensing and consumption rules of individual integrations still apply. For example, Work IQ ERP grounding and some governance controls are preview, as is the Fabric database integration with Copilot Managed Runtime."
   - question: "Are the images and demos tenant tests?"
-    answer: "Most visuals are from Microsoft's public announcements or documentation. The Dynamics 365 Sales picker screenshot is from a demo environment and shows skill discovery, not a completed sales task. Examples in the text are hypothetical."
+    answer: "Most visuals are from Microsoft's public announcements or documentation. The Team Task Planner shows a demo app preview with mock data; the Dynamics 365 Sales picker shows skill discovery, not a completed sales task. Examples in the text are hypothetical."
 layout: "notebook"
 stamp: "ignite 2026 · through day 2"
 intro_note: "↗ what changed, who it helps, and what is actually available"
@@ -147,6 +147,16 @@ There is a separate **Power Apps model-driven app builder** on the roadmap. It t
 **Status:** Cowork app building is **GA**; Microsoft announced the managed runtime as **GA and beginning tenant rollout**.
 
 📖 [Cowork app building at Ignite](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-copilot-cowork-at-ignite-2026/4572242) · [The runtime launch and Cowork sample app](https://techcommunity.microsoft.com/blog/copilot-managed-runtime-blog/copilot-managed-runtime-is-now-generally-available-with-additional-new-preview-f/4571846).
+
+<!-- ignite-reviewed-media:cowork-apps -->
+<details open>
+<summary>View the sample Team Task Planner</summary>
+
+<figure>
+<img src="/images/blog/ignite-2026/cowork-team-task-planner.webp" alt="Mock-data Team Task Planner in demo preview, with the Publish button called out and a Stored in this browser indicator." width="1142" height="558" loading="lazy" decoding="async" />
+<figcaption>Demo preview with mock tasks. The Publish button is visible, but this screenshot does not show publishing or sharing. The preview says its sample data is stored in this browser.</figcaption>
+</figure>
+</details>
 
 <p>Official video: <a href="https://medius.microsoft.com/Embed/video-nc/0678b5de-ee3a-42d3-a6cc-4dc832d5b869">Watch Microsoft's sample Cowork show-floor app</a>. It uses simulated event data; the demo’s Fabric storage is a separate preview.</p>
 
