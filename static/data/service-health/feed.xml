@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Nov 2026 10:13:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 18:58:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Teams] Some users may experience delays or failures receiving chat messages in Microsoft Teams desktop app</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1560260</link>
-      <description>[Microsoft Teams] Users may experience delays or failures receiving chat messages in Microsoft Teams desktop app. </description>
-      <category>Microsoft Teams</category>
+      <title>[Exchange Online] Admins' mail-enabled security groups created through the admin center UI may be provisioned incorrectly</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1558755</link>
+      <description>[Exchange Online] Admins' mail-enabled security groups created through the admin center UI may be provisioned incorrectly.</description>
+      <category>Exchange Online</category>
       <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1560260</guid>
-      <pubDate>Thu, 19 Nov 2026 10:06:33 +0000</pubDate>
+      <guid isPermaLink="false">EX1558755</guid>
+      <pubDate>Wed, 18 Nov 2026 06:44:06 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users aren't able to upload new skills in Microsoft 365 Copilot Chat</title>
@@ -71,6 +71,15 @@
       <pubDate>Thu, 12 Nov 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1550821</link>
+      <description>[Microsoft 365 suite] Users may have been unable to connect to multiple Microsoft 365 services. </description>
+      <category>Microsoft 365 suite</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">MO1550821</guid>
+      <pubDate>Thu, 12 Nov 2026 16:20:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Teams] Some users may be unable to access or use Microsoft Teams functionality</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1550488</link>
       <description>[Microsoft Teams] Some users may have experienced issues when accessing or using Microsoft Teams functionality.</description>
@@ -78,15 +87,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">TM1550488</guid>
       <pubDate>Thu, 12 Nov 2026 14:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may be unable to connect to multiple Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1550821</link>
-      <description>[Microsoft 365 suite] Users may have been unable to connect to multiple Microsoft 365 services. </description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1550821</guid>
-      <pubDate>Thu, 12 Nov 2026 10:05:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 apps] Users may have been unable to utilize the Side Pane in Microsoft Word and received an error message</title>
@@ -141,6 +141,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1547527</guid>
       <pubDate>Tue, 10 Nov 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may have experienced delays or failures receiving chat messages in Microsoft Teams desktop client </title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1560260</link>
+      <description>[Microsoft Teams] Users may have experienced delays or failures receiving chat messages in Microsoft Teams desktop client. </description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1560260</guid>
+      <pubDate>Tue, 10 Nov 2026 13:16:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 for the web] Some users may be unable to upload audio files using the Transcribe feature in Word for the web using some browsers</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1519166</guid>
       <pubDate>Wed, 21 Oct 2026 14:01:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may be unable to perform migrations </title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1518858</link>
-      <description>[SharePoint Online] Users may have been unable to perform migrations using the Migration Manager Platform (MMP) API.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1518858</guid>
-      <pubDate>Wed, 21 Oct 2026 10:10:45 +0000</pubDate>
     </item>
   </channel>
 </rss>
