@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Nov 2026 00:17:14 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 10:13:13 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may experience delays or failures receiving chat messages in Microsoft Teams desktop app</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1560260</link>
+      <description>[Microsoft Teams] Users may experience delays or failures receiving chat messages in Microsoft Teams desktop app. </description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1560260</guid>
+      <pubDate>Thu, 19 Nov 2026 10:06:33 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users aren't able to upload new skills in Microsoft 365 Copilot Chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1558072</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1518858</guid>
       <pubDate>Wed, 21 Oct 2026 10:10:45 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins may see delayed Microsoft 365 Copilot usage and Copilot Chat usage data in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1519553</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen delayed Copilot usage and Copilot Chat usage data in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1519553</guid>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
