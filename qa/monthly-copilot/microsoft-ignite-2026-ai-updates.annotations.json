@@ -1,7 +1,95 @@
 {
-  "_README": "85 unmodified official assets and three privacy-cropped official derivatives. The derivative records bind source and output bytes to the accompanying crop recipe. No added annotation callouts are claimed. Further annotation/zoom polishing is deferred.",
+  "_README": "87 unmodified official assets, 13 cropped official derivatives, and one annotated demo capture. Transformation records bind source and output bytes to their recipes.",
   "slug": "microsoft-ignite-2026-ai-updates",
   "images": {
+    "windows-demo-diagnostics.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Windows video preview cropped to the diagnostics response.",
+      "source_sha256": "f07c3366a722f0e8f7d8f38d56a71c60eac2d51aa599f5d014db7950d899516a",
+      "output_sha256": "f21438dd40b171f76fdde7b69ce27fd0675e725b782507d877607e545c66628a",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Product blog media"
+    },
+    "copilot-code-sharing.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Copilot Code product artwork cropped to the sharing dialog.",
+      "source_sha256": "1bc8adeb92e35a4230f1ac03b009bb702fc1296a0cd636179d6144e7c5746a7c",
+      "output_sha256": "6013582f3e8cf9a87ef7b7d664ae1af5f66014a0e60c4a57fa89e7e8dec9eb32",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Product blog media"
+    },
+    "teams-demo-supplier.webp": {
+      "disposition": "official_derivative",
+      "reason": "Frame extracted from the public Teams demo at 0:22 and cropped to the agent reply.",
+      "source_sha256": "161c4e9d55a6575b33cb44dd3365b6b87f47e110ee47561a550875cccbe5a3bc",
+      "output_sha256": "bd2393e1c31b6e11b99b7d2688582e63120b401b798bc9c71fc417b5433de419",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Product blog media"
+    },
+    "edge-demo-redaction.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Edge video preview cropped to the already blurred compensation fields.",
+      "source_sha256": "1469d7876517437abb946f54bf15a5ec5c458971106f8a4ddfbb485356e77bea",
+      "output_sha256": "847dc8f11adb769c6132f79ba0b100f80f519c5010c9aeb33ef6944d34d77b34",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Product blog media"
+    },
+    "edge-admin-ai-insights.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Edge team screenshot cropped to the tenant-filtered recommendation card.",
+      "source_sha256": "261c3258b6625fd41c48541455e5025997da69d90e39de8ae8054a82199f894f",
+      "output_sha256": "4103c1854c1351fe9971e3f55b75f690582e5f8429cf7b078d038b852ead83ee",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Product blog media"
+    },
+    "edge-demo-cowork.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Microsoft video preview image cropped to the web form and Cowork progress pane, excluding the identity row.",
+      "source_sha256": "5f31128c6b94e048120bc20ea829d6ba186a329ff9ada544f5546797d062f910",
+      "output_sha256": "29a010bf8230fb5104f9bdc5f7bec03122aef5d3abb265ecb6fe99dd4b36302a",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Edge preview crops"
+    },
+    "edge-demo-recorder.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Microsoft video preview image cropped to the sample workflow and review pane.",
+      "source_sha256": "6d2a492a905b0b27d778d068cf8a03c512ab7950e5ab842cdf9394387e136313",
+      "output_sha256": "e914c0f44ce8b9eb762b137e5366c701d057210c9d0732b90f7123e8190ed430",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Edge preview crops"
+    },
+    "edge-demo-remix.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Microsoft video preview image cropped to the Remix browser menu, excluding the profile and invoice totals.",
+      "source_sha256": "70748a9f3e553e4c45721a2b3461397fa96538143734080a6aa958308396ba48",
+      "output_sha256": "82e42a4f2a63f09832bd476290b6a6749f327af8f90c339ac107bc6611902882",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Edge preview crops"
+    },
+    "edge-demo-brief.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Microsoft video preview image cropped to the Edge side pane, excluding the sample document and address bar.",
+      "source_sha256": "4b4c65ed8330af8062b2e252ee4306b50c6817b3f99dc0da4a2a1c8c9a9e580a",
+      "output_sha256": "778e29cb4b7e05809f4603cf3289cbc13e504739c9ff8e78a917baea6eb14fe2",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Edge preview crops"
+    },
+    "edge-demo-writing.webp": {
+      "disposition": "official_derivative",
+      "reason": "Public Microsoft video preview image cropped to the sample input form and writing indicator.",
+      "source_sha256": "8fd6498460675e325456fcd3326100174d63278088d311d1e7ba9b2f9e9bfadc",
+      "output_sha256": "9d987b61e61e6eca6bd3a70fdcaab7292b2530b7a2cb9776170727c00e777950",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Edge preview crops"
+    },
+    "dynamics-sales-skill-picker.webp": {
+      "disposition": "annotated",
+      "source_sha256": "f1ce842e5c2669cf5bbe0d2314fdda6d1506140ba2855e5515b4582ae1badcd2",
+      "output_sha256": "2d84844c37f2c40f528242ab0fc4b07af54ebcd49093e6c4a5ff23ab66abbeed",
+      "spec": "microsoft-ignite-2026-ai-updates.images.md, Dynamics 365 Sales picker",
+      "callouts": 1,
+      "callout_texts": ["Dynamics 365 Sales"]
+    },
+    "day2-canvas.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Unmodified Microsoft Learn screenshot; the original already marks the relevant question and answer.",
+      "output_sha256": "99ac6876afe382c7bdbac43fccc2fd26875459277f225a3592cef5006376b95f"
+    },
+    "day2-work-iq.png": {
+      "disposition": "microsoft_artwork",
+      "reason": "Unmodified Microsoft Learn architecture diagram with built-in labels; no added callouts.",
+      "output_sha256": "d36883d6f9e8b310e9118e0204dd97e89a03e43290af91440e025784db6d24d6"
+    },
     "official-033-github-code-review.png": {
       "disposition": "official_derivative",
       "reason": "Cropped out credential-like example code while preserving the review finding and its qualification that detection does not verify a live credential. Final crop personally inspected; no callouts added.",

@@ -10,6 +10,105 @@ Further annotation/zoom polishing remains deferred.
 
 Local only. Rights remain UNKNOWN; annotation is a later pass. Original seven assets retain their prior byte-identical observations; new static images and representative animation frames were personally opened. Three final crops were separately opened. Representative animation review is first/middle/last, not every frame.
 
+Day 2 local draft: the two new Microsoft Learn assets below were opened at their original dimensions and are unchanged from the public files. No tenant capture or new annotation is claimed.
+
+**Product blog media, 19 November:** Five focused public derivatives, each opened at its final crop. Pillow RGB WebP quality 92; boxes are `(left, top, right, bottom)`. The Code crop was composited onto white before export. Only Teams came from playback bytes; the Windows and redaction images are video previews.
+
+## §2 — windows-demo-diagnostics.webp
+SHA256: `f21438dd40b171f76fdde7b69ce27fd0675e725b782507d877607e545c66628a`
+
+**Observed:** Hybrid Intelligence lists Bluetooth and audio endpoint checks; the reply identifies a likely output-routing problem and notes a diagnostic limit.
+
+**Verdict:** MATCH to likely-cause diagnosis, not automatic repair. [Preview source](https://i.ytimg.com/vi/1TVVgqdlWOg/maxresdefault.jpg); crop `(402, 120, 1064, 507)` excludes profile and recent history.
+
+## §12 — copilot-code-sharing.webp
+SHA256: `6013582f3e8cf9a87ef7b7d664ae1af5f66014a0e60c4a57fa89e7e8dec9eb32`
+
+**Observed:** Share Weekly dashboard dialog warns that people need connected data access; Manage access and Copy link are visible.
+
+**Verdict:** MATCH to sharing controls, not publication, data access testing or sensitivity labelling. [Official artwork](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/4930150_HowItWorks-KeepitOrShareIt?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3200&hei=1800&qlt=100&fmt=png-alpha&fit=constrain); crop `(1312, 474, 2358, 1332)`.
+
+## §14 — teams-demo-supplier.webp
+SHA256: `bd2393e1c31b6e11b99b7d2688582e63120b401b798bc9c71fc417b5433de419`
+
+**Observed:** Supplier Analyst posts an AI-generated fictional shortlist with conditions and uncertainty; “5 steps completed” is visible.
+
+**Verdict:** MATCH to a threaded recommendation, not an order or supplier approval. [Public MP4](https://devblogs.microsoft.com/microsoft365dev/wp-content/uploads/sites/73/2026/11/plan.html_.thread_zoomedit.2.mp4); FFmpeg seek 22 seconds, first frame to PNG (SHA256 `774e00eed8e3112836e545d793492b35f727ff2c0c2f02464d827ad8de2ce5ba`), then crop `(776, 26, 1489, 695)`.
+
+## §19 — edge-demo-redaction.webp
+SHA256: `847dc8f11adb769c6132f79ba0b100f80f519c5010c9aeb33ef6944d34d77b34`
+
+**Observed:** Compensation panel shows blurred annual salary and direct-deposit fields with reveal icons.
+
+**Verdict:** MATCH to on-screen redaction, not policy setup. [Preview source](https://i.ytimg.com/vi/ggTo0XJ_nBs/maxresdefault.jpg); crop `(475, 409, 968, 549)` excludes the sample identity, address and browser chrome.
+
+## §19 — edge-admin-ai-insights.webp
+SHA256: `4103c1854c1351fe9971e3f55b75f690582e5f8429cf7b078d038b852ead83ee`
+
+**Observed:** For your organization is selected; a sample Edge version recommendation includes an affected-device count and Review in Security insights.
+
+**Verdict:** MATCH to a recommendation, not a rollout or actual environment health. [Official Edge screenshot](https://winblogs.thesourcemediaassets.com/sites/33/2026/11/ai-insights-edge.jpg); crop `(317, 420, 1677, 893)`.
+
+## §15 — dynamics-sales-skill-picker.webp
+SHA256: `2d84844c37f2c40f528242ab0fc4b07af54ebcd49093e6c4a5ff23ab66abbeed`
+
+**Observed:** Copilot shows `@d365-sales` in the composer and the Plugins & Agents picker below. A red Dynamics 365 Sales callout points to the `d365-sales` row. Pipeline Prioritizer and Deal Catch-up are listed; no brief, CRM record or completed action is visible.
+
+**Verdict:** MATCH for skill discovery only. User-provided demo screenshot approved for the blog draft on 19 November; not a universal availability test.
+
+**Dynamics 365 Sales picker recipe:** Extend the 970 × 625 RGB capture by 130 px of white on the left with `annotate_lib.extend`. Draw `annotate_lib.callout` at `(18, 287)` targeting `(268, 314)`, text `Dynamics 365 Sales`, size 22 and padding 12. Export WebP at quality 92.
+
+**Edge preview crops:** Use the public `maxresdefault.jpg` images directly linked from the [Microsoft Edge announcement](https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/). Crop in Pillow using `(left, top, right, bottom)` and export WebP at quality 92. These are video preview images, not timestamped playback captures. All five final crops were opened and reviewed.
+
+## §19 — edge-demo-cowork.webp
+SHA256: `29a010bf8230fb5104f9bdc5f7bec03122aef5d3abb265ecb6fe99dd4b36302a`
+
+**Observed:** A vacation form sits beside a Copilot pane listing an entry step, one approved action and in-progress activity.
+
+**Verdict:** MATCH to browsing in progress, not the final submission. [Source](https://i.ytimg.com/vi/-oSn_uaNILs/maxresdefault.jpg); crop `(0, 153, 1134, 679)`.
+
+## §19 — edge-demo-recorder.webp
+SHA256: `e914c0f44ce8b9eb762b137e5366c701d057210c9d0732b90f7123e8190ed430`
+
+**Observed:** Copilot asks the user to confirm the proposed skill; “Looks good. Save skill.” is still in the composer.
+
+**Verdict:** MATCH to the review step, not a saved skill. [Source](https://i.ytimg.com/vi/pEnuYGyqdUY/maxresdefault.jpg); crop `(289, 0, 1135, 693)`.
+
+## §20 — edge-demo-remix.webp
+SHA256: `82e42a4f2a63f09832bd476290b6a6749f327af8f90c339ac107bc6611902882`
+
+**Observed:** The Remix menu shows an active page remix, a toggle and a Create button.
+
+**Verdict:** MATCH to local Remix controls. [Source](https://i.ytimg.com/vi/Yh4xwjzNicQ/maxresdefault.jpg); crop `(394, 55, 885, 342)`.
+
+## §20 — edge-demo-brief.webp
+SHA256: `778e29cb4b7e05809f4603cf3289cbc13e504739c9ff8e78a917baea6eb14fe2`
+
+**Observed:** The side pane lists planned steps including checking tabs, analysing content and delivering a web page.
+
+**Verdict:** MATCH to interactive brief planning, not the finished brief or a save to OneDrive. [Source](https://i.ytimg.com/vi/OKISxyWcqE4/maxresdefault.jpg); crop `(923, 108, 1175, 574)`.
+
+## §20 — edge-demo-writing.webp
+SHA256: `9d987b61e61e6eca6bd3a70fdcaab7292b2530b7a2cb9776170727c00e777950`
+
+**Observed:** A Generating indicator overlays a text field in a sample expense form.
+
+**Verdict:** MATCH to in-form assistance; it does not show the generated text or how it was grounded. [Source](https://i.ytimg.com/vi/nxx8UrxDpCQ/maxresdefault.jpg); crop `(609, 0, 1177, 602)`.
+
+## §18 — day2-work-iq.png
+SHA256: `d36883d6f9e8b310e9118e0204dd97e89a03e43290af91440e025784db6d24d6`
+
+**Observed:** Copilot, Copilot Cowork and Copilot Studio appear above a Work IQ label and rows for Microsoft 365 productivity data and Dynamics 365/Power Platform business data.
+
+**Verdict:** MATCH as a conceptual diagram, not a feature screenshot or proof of permissions. [Microsoft Learn source](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/business-applications-work-iq).
+
+## §34 — day2-canvas.png
+SHA256: `99ac6876afe382c7bdbac43fccc2fd26875459277f225a3592cef5006376b95f`
+
+**Observed:** Two Copilot panes show a prompt about accounts in Redmond and the answer “There are 2 accounts in Redmond.” The red boxes and arrow come from the source image.
+
+**Verdict:** MATCH to the read-only example in the canvas app documentation, not proof of November rollout. [Microsoft Learn source](https://learn.microsoft.com/en-us/power-apps/user/use-microsoft-365-copilot-canvas-apps).
+
 ## §1 — today.gif
 SHA256: `1c59f8852edf20ff9bd09897fa76feaa0fe53ac4bdc806f3ee1f7e6bbd6b8ade`
 
@@ -444,182 +543,182 @@ SHA256: `45b26eeedb7f2c5680dcf717d62811babacd63c1402a1cd4aecd98ed90bebb91`
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §36 — official-025-web-iq.gif
+## §37 — official-025-web-iq.gif
 SHA256: `3820e60183da62517284fbaf734082c893be37bb7aeda906aafbde5bb2aa6115`
 
 **Observed:** Animated retrieval diagram frame connects AI Think to web, image and video retrieval inside a Web retrieval box.
 
 **Verdict:** MATCH to the bounded section illustration; First/middle/last representative frames personally inspected; not every frame. Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §36 — official-026-web-iq.png
+## §37 — official-026-web-iq.png
 SHA256: `efb73da5a13bfc44949a591eea855abb3aef8dc190dbb10aafffdd4093cb1265`
 
 **Observed:** Web IQ diagram connects web, news, images, video, commerce, places, weather and licensed content, with a bring-your-own-licence footnote.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §43 — official-030-github-code-review.png
+## §44 — official-030-github-code-review.png
 SHA256: `6a1ade32c9bfa2c5c5d075f92efde2efbd315a27de14423d3b16d6cac65e2fc2`
 
 **Observed:** Pull-request Copilot review menu shows Adaptive Preview, Lite, Balanced and Max Preview effort choices.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §43 — official-031-github-code-review.png
+## §44 — official-031-github-code-review.png
 SHA256: `2dfda0ecbb418ab6bce1773281387f6ccae9d25a6557ea66082be1914eb7ac0c`
 
 **Observed:** Copilot code-review settings show Default review effort and Maximum review effort, with Adaptive selected and preview badges.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §43 — official-032-github-code-review.png
+## §44 — official-032-github-code-review.png
 SHA256: `af00d9a55e6624e001c4eb46bc1489d2fc285fabef933c4b040150c7e518ae41`
 
 **Observed:** Copilot review comment flags an outdated function signature, cites another repository, proposes a replacement object and labels the finding High.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §43 — official-033-github-code-review.png
+## §44 — official-033-github-code-review.png
 SHA256: `c338ee31edfeb1c573f952d77ab8413f3ae340f9ee3779252a6d9629fa4d1ab8`
 
 **Observed:** Cropped review comment says Possible secret in code, recommends credential handling, and notes that detection does not verify whether a value is live. No example credential or source-code diff remains.
 
 **Verdict:** MATCH to the bounded section illustration; final crop personally inspected;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §44 — official-040-identity.png
+## §45 — official-040-identity.png
 SHA256: `6affb72961950f5bc40a5866f7ffb2d0e76e4a07e96a47c853f601bfebae13f9`
 
 **Observed:** GitHub Copilot CLI instance details panel shows Medium risk, an Entra agent identifier and Windows workstation details beside the agents inventory.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §45 — official-050-it-admin-mcp.png
+## §46 — official-050-it-admin-mcp.png
 SHA256: `057169927f5a67f2367d24532ac52d551be6e1d0ebd82b5d1e17295007429e05`
 
 **Observed:** Entra admin center MCP policies Edit rule screen shows a server condition, a tool selector, the tools/call method and a Block action; it is a network/tool-access policy screen, not an Intune containment screen.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §46 — official-082-purview.jpg
+## §47 — official-082-purview.jpg
 SHA256: `b04f8767bc2a961b3c4c5d9ad829b29b84ee73f91046c47f48bfeaa178505991`
 
 **Observed:** Create a classifier dialog offers Exact data match, Trainable classifier, Sensitive info type and Document fingerprinting; some time estimates say TBD.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §46 — official-083-purview.jpg
+## §47 — official-083-purview.jpg
 SHA256: `7aa9f3928aa1d14518c6c0bf8f89839b61517f743113524110589f232d17b1f0`
 
 **Observed:** Purview auto-labeling creation dialog offers apply, remove or Auto-apply to default SPO only; the underlying policy list is dimmed.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §46 — official-084-purview.jpg
+## §47 — official-084-purview.jpg
 SHA256: `7b3cd89b7bdeb818e9a73f6e10ccc2ec857ecfdc6d1de8fdfb270e4958e13a08`
 
 **Observed:** Purview custom Copilot policy wizard shows a Block only action and sensitive-information-type conditions including ABA Routing Number.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §46 — official-085-purview.jpg
+## §47 — official-085-purview.jpg
 SHA256: `dca385df48d49170457cb28305f2f17f269b225a8a1ddfc7541fe466d3122884`
 
 **Observed:** Copilot refuses to summarise a demo merger document because the organisation blocked processing some content types.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §46 — official-086-purview.png
+## §47 — official-086-purview.png
 SHA256: `fc5c14cad2fa797fe6c1350a82611d5d6299a585821238208acb375926fabed6`
 
 **Observed:** Cropped Windows demo shows an agent terminal stopping on a policy block and a Data Loss Prevention toast; browser address/session chrome is absent.
 
 **Verdict:** MATCH to the bounded section illustration; final crop personally inspected;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §51 — official-088-endpoint-management.png
+## §52 — official-088-endpoint-management.png
 SHA256: `193a0a08a89923dff659dcc7f8ec6294269b535c0097dee2156128d5be1df0bb`
 
 **Observed:** Intune software-compliance policy lists restricted ChatGPT Desktop and a discovery rule using its package full name.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §51 — official-089-endpoint-management.png
+## §52 — official-089-endpoint-management.png
 SHA256: `a22dba5395ff99c830c96c814ff75ffb2240ed2fbaed4dc2c24076b55ed33fed`
 
 **Observed:** Intune Agent containment Preview profile targets GitHub Copilot CLI and sets allowed or denied filesystem directories, network access and permissive-mode blocking.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §52 — official-090-intune-remediation.png
+## §53 — official-090-intune-remediation.png
 SHA256: `3ad2a94e5951d64a57e08e142eb52c824f69c2811ebac88eb3f113c576389373`
 
 **Observed:** Intune Perception displays a vulnerability remediation plan with application choice, supersedence, staged groups and an Approve plan and start remediation button; it is not evidence that deployment ran.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §52 — official-091-intune-remediation.png
+## §53 — official-091-intune-remediation.png
 SHA256: `e7703bb2e4736364bdac81a82ae958f2f60f60d4b5632a0df6b5f79161f94447`
 
 **Observed:** Intune Perception explains a risky-user query and explicitly reports incomplete retrieval: its result is partial rather than a full count.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §52 — official-092-intune-remediation.png
+## §53 — official-092-intune-remediation.png
 SHA256: `ce9411c3bd6e99493f2ea2907bdb9a1c6055986a68fec7b5e8a0abd64c30f3b3`
 
 **Observed:** Intune Perception custom report has a device-platform table and Windows-version column chart.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §56 — official-034-azure-operations.png
+## §57 — official-034-azure-operations.png
 SHA256: `a4068e97a810cfa2fb432cc6b3803e102dc0392abc2a957c942d4ff6d6e1cdba`
 
 **Observed:** Agentic operations diagram stacks Experiences and tools, Intelligence engine and Resource estate across public, hybrid, multicloud, edge and IoT.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §57 — official-035-azure-catalyst.png
+## §58 — official-035-azure-catalyst.png
 SHA256: `4ac5b313751d88a0eb7bc040d7d24e1cb1fe7f89ff4c285a570d761a4b383bfb`
 
 **Observed:** Oracle-to-PostgreSQL application assessment report lists architecture, migration impact, readiness and conversion criteria, with a sanitized-evidence notice.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §57 — official-036-azure-catalyst.png
+## §58 — official-036-azure-catalyst.png
 SHA256: `1340431f6178a0a300795f248a70348cf01cddd2fa61c031f5edf1a8d3a5668e`
 
 **Observed:** Oracle-to-PostgreSQL conversion report lists validation and test sections and explicitly says Runtime validation needed.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §59 — official-100-cosmos-agent-memory.png
+## §60 — official-100-cosmos-agent-memory.png
 SHA256: `fe601508b21b3d766b55113996b59b4eaf198927cbfe81771e1b5243d4e0b157`
 
 **Observed:** Cosmos design diagram runs from Workload through AI-assisted design and human Review into several database structures.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §59 — official-101-cosmos-agent-memory.png
+## §60 — official-101-cosmos-agent-memory.png
 SHA256: `2b686495a38984702e2d98d60798d4d83b89d86aa8cc99097578e27a8db9e5fc`
 
 **Observed:** Diagram connects an AI client to Managed MCP and then Azure Cosmos DB with bidirectional arrows.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §61 — official-027-foundry-improvement.webp
+## §62 — official-027-foundry-improvement.webp
 SHA256: `8e35d1cbf75150f2da597306a0947b7c5b8394dd305f6cf2b9daced553dea554`
 
 **Observed:** Foundry continuous-improvement infographic has an illustrative percentage curve above Establish, Identify, Optimize and Validate stages with separate GA/Preview badges.
 
 **Verdict:** MATCH to the bounded section illustration;  Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §61 — official-028-foundry-improvement.gif
+## §62 — official-028-foundry-improvement.gif
 SHA256: `fc86a723b7afe86ebeaff6e1290200fb0d9108db3c98ecfc2753a5e217fb278a`
 
 **Observed:** Foundry Reduce cost Preview optimizer setup offers Auto or Choose targets, with loan-officer agent version selected.
 
 **Verdict:** MATCH to the bounded section illustration; First/middle/last representative frames personally inspected; not every frame. Local-review only, not a tenant test, annotation approval or rights clearance.
 
-## §61 — official-029-foundry-improvement.png
+## §62 — official-029-foundry-improvement.png
 SHA256: `dd5cd99e4bf9df1ebce052afba189aaf33db5603d9f4230ee88c4f7b01172686`
 
 **Observed:** Foundry evaluator-creation screen offers Rubric, Prompt and Code, auto-generated rubric, quality dimensions and a pass-score threshold; this is evaluation rather than a training console.

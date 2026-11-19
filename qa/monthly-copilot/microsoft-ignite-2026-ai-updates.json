@@ -2,11 +2,11 @@
  "schema": 2,
  "slug": "microsoft-ignite-2026-ai-updates",
  "tool_version": "1.0.0",
- "generated_at": "2026-11-19T03:41:19.797213+00:00",
+ "generated_at": "2026-11-19T06:29:41.298760+00:00",
  "post": {
   "path": "content/blog/microsoft-ignite-2026-ai-updates.md",
-  "sha256": "a0a25de8250b3c5549edbf21f6b1e86a8c6b70fb5a862cc00a4fab4b1a4695cf",
-  "sections": 64
+  "sha256": "3e76f893168dff1b6fc4e9b9dc3147b4d497e679ff057961cd8fc66d359fb546",
+  "sections": 65
  },
  "roadmap_snapshot": {
   "path": "static/data/roadmap/latest.json",
@@ -29,7 +29,7 @@
    "title": "Copilot on Windows gets local context and actions on Copilot+ PCs {#windows-local}",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 1,
    "disposition": "not_applicable",
    "reason": "Event announcement: Copilot on Windows gains more local context and actions. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/. This roadmap disposition is not citation-semantic or publication approval."
   },
@@ -118,8 +118,8 @@
    "section": 12,
    "title": "Copilot Code has a December GA target {#copilot-code}",
    "roadmap_ids": [],
-   "source_urls": 1,
-   "images": 0,
+   "source_urls": 2,
+   "images": 1,
    "disposition": "not_applicable",
    "reason": "Event announcement: Copilot Code has a December GA target. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://news.microsoft.com/events/ignite/2026/book-of-news/. This roadmap disposition is not citation-semantic or publication approval."
   },
@@ -137,7 +137,7 @@
    "title": "Teams agents can have their own identity and show their work {#teams-digital-teammates}",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 1,
+   "images": 2,
    "disposition": "not_applicable",
    "reason": "Event announcement: Teams agents can have their own identity and show their work. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://devblogs.microsoft.com/microsoft365dev/new-capabilities-for-building-digital-teammates-in-microsoft-teams/. This roadmap disposition is not citation-semantic or publication approval."
   },
@@ -146,7 +146,7 @@
    "title": "Dynamics 365 plugins bring business tasks into Copilot {#dynamics-plugins}",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 1,
    "disposition": "not_applicable",
    "reason": "Event announcement: Dynamics 365 plugins bring business tasks into Copilot. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2026/11/17/microsoft-ignite-2026-introducing-dynamics-365-in-copilot/. This roadmap disposition is not citation-semantic or publication approval."
   },
@@ -173,7 +173,7 @@
    "title": "Work IQ adds richer context, actions and finer controls {#work-iq}",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 4,
+   "images": 5,
    "disposition": "not_applicable",
    "reason": "Event announcement: Work IQ adds richer context, actions and finer controls. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/spblog/introducing-sharepoint-tools-in-work-iq/4569917. This roadmap disposition is not citation-semantic or publication approval."
   },
@@ -182,7 +182,7 @@
    "title": "Edge separates browser actions, recorded skills and managed browsing {#edge}",
    "roadmap_ids": [],
    "source_urls": 2,
-   "images": 0,
+   "images": 4,
    "disposition": "not_applicable",
    "reason": "Event announcement: Edge separates browser actions, recorded skills and managed browsing. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/. This roadmap disposition is not citation-semantic or publication approval."
   },
@@ -191,7 +191,7 @@
    "title": "Edge adds simpler ways to reshape pages and brief from tabs {#edge-everyday-ai}",
    "roadmap_ids": [],
    "source_urls": 1,
-   "images": 0,
+   "images": 3,
    "disposition": "not_applicable",
    "reason": "Event announcement: Edge adds simpler ways to reshape pages and brief from tabs. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/. This roadmap disposition is not citation-semantic or publication approval."
   },
@@ -289,7 +289,7 @@
    "section": 31,
    "title": "Copilotforce connects Salesforce with Copilot, Teams and Fabric {#salesforce}",
    "roadmap_ids": [],
-   "source_urls": 2,
+   "source_urls": 3,
    "images": 0,
    "disposition": "not_applicable",
    "reason": "Event announcement: Copilotforce connects Salesforce with Copilot, Teams and Fabric. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://news.microsoft.com/source/2026/11/17/microsoft-and-salesforce-announce-copilotforce-bringing-trusted-customer-context-and-action-into-microsoft-ai-experiences/. This roadmap disposition is not citation-semantic or publication approval."
@@ -314,6 +314,15 @@
   },
   {
    "section": 34,
+   "title": "Copilot in Power Apps canvas apps gets a November GA window {#power-apps-canvas}",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "not_applicable",
+   "reason": "Day 2 product announcement gives November GA timing for canvas Copilot; Microsoft Learn still labels it preview, and this draft does not claim tenant rollout or treat a roadmap date as GA proof. Primary reference: https://www.microsoft.com/en-us/power-platform/blog/2026/11/18/turn-ai-ambition-into-real-business-value-with-power-platform/."
+  },
+  {
+   "section": 35,
    "title": "Microsoft IQ joins the context layers, not all the licences {#microsoft-iq}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -322,7 +331,7 @@
    "reason": "Event announcement: Microsoft IQ joins the context layers, not all the licences. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://azure.microsoft.com/en-us/blog/introducing-the-new-microsoft-iq-putting-your-organizations-intelligence-to-work-in-every-agent/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 35,
+   "section": 36,
    "title": "Informatica brings data definitions, quality and lineage into Microsoft AI {#informatica-context}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -331,7 +340,7 @@
    "reason": "Event announcement: Informatica brings data definitions, quality and lineage into Microsoft AI. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://www.salesforce.com/news/stories/informatica-trusted-enterprise-data-microsoft-collaboration/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 36,
+   "section": 37,
    "title": "Web IQ opens current web grounding to Azure customers {#web-iq}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -340,7 +349,7 @@
    "reason": "Event announcement: Web IQ opens current web grounding to Azure customers. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://blogs.bing.com/webiq/2026/11/web-iq-is-now-broadly-available-build-better-agents-that-keep-up-with-the-world/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 37,
+   "section": 38,
    "title": "New MAI models target specific jobs {#mai-models}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -349,7 +358,7 @@
    "reason": "Event announcement: New MAI models target specific jobs. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://microsoft.ai/news/microsoft-ignite-2026/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 38,
+   "section": 39,
    "title": "Decision-1.1 chooses a next step rather than writing a long answer {#decision-model}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -358,7 +367,7 @@
    "reason": "Event announcement: Decision-1.1 chooses a next step rather than writing a long answer. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://commandline.microsoft.com/microsoft-decision-model-ga/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 39,
+   "section": 40,
    "title": "Copilot SDK 2.0 updates the application-building foundation {#copilot-sdk}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -367,7 +376,7 @@
    "reason": "Event announcement: Copilot SDK 2.0 updates the application-building foundation. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://news.microsoft.com/events/ignite/2026/book-of-news/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 40,
+   "section": 41,
    "title": "The GitHub Copilot app reaches Azure DevOps and existing browser sessions {#github-copilot-app}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -376,7 +385,7 @@
    "reason": "Event announcement: The GitHub Copilot app reaches Azure DevOps and existing browser sessions. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 41,
+   "section": 42,
    "title": "Entra sign-in gives Copilot CLI two different licensing paths {#github-cli-entra}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -385,7 +394,7 @@
    "reason": "Event announcement: Entra sign-in gives Copilot CLI two different licensing paths. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 42,
+   "section": 43,
    "title": "GitHub Copilot Evals tests whether a customization actually helps {#github-evals}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -394,7 +403,7 @@
    "reason": "Event announcement: GitHub Copilot Evals tests whether a customization actually helps. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 43,
+   "section": 44,
    "title": "Copilot code review reaches Azure Repos and adds deeper checks {#github-code-review}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -403,7 +412,7 @@
    "reason": "Event announcement: Copilot code review reaches Azure Repos and adds deeper checks. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 44,
+   "section": 45,
    "title": "Entra adds agent identity, access and lifecycle controls {#identity}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -412,7 +421,7 @@
    "reason": "Event announcement: Entra adds agent identity, access and lifecycle controls. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay-ahead-/4556456. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 45,
+   "section": 46,
    "title": "The IT-admin MCP server connects an assistant to supported admin work {#it-admin-mcp}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -421,7 +430,7 @@
    "reason": "Event announcement: The IT-admin MCP server connects an assistant to supported admin work. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay-ahead-/4556456. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 46,
+   "section": 47,
    "title": "Purview separates today's labeling updates from January protection plans {#purview}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -430,7 +439,7 @@
    "reason": "Event announcement: Purview separates today's labeling updates from January protection plans. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/microsoft-security-blog/secure-the-data-that-fuels-ai-with-microsoft-purview/4573266. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 47,
+   "section": 48,
    "title": "Microsoft Perception coordinates security agents through playbooks {#perception}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -439,7 +448,7 @@
    "reason": "Event announcement: Microsoft Perception coordinates security agents through playbooks. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 48,
+   "section": 49,
    "title": "Defender's integrated SOC and vulnerability shielding have different stages {#security-operations}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -448,7 +457,7 @@
    "reason": "Event announcement: Defender's integrated SOC and vulnerability shielding have different stages. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://news.microsoft.com/events/ignite/2026/book-of-news/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 49,
+   "section": 50,
    "title": "MDASH extends the code-security preview {#mdash}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -457,7 +466,7 @@
    "reason": "Event announcement: MDASH extends the code-security preview. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/#defend-with-agents. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 50,
+   "section": 51,
    "title": "Defender adds runtime protection for supported local AI agents {#local-agent-protection}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -466,7 +475,7 @@
    "reason": "Event announcement: Defender adds runtime protection for supported local AI agents. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://news.microsoft.com/events/ignite/2026/book-of-news/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 51,
+   "section": 52,
    "title": "Endpoint controls are part of the AI rollout, not an afterthought {#endpoint-management}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -475,7 +484,7 @@
    "reason": "Event announcement: Endpoint controls are part of the AI rollout, not an afterthought. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/microsoftintuneblog/what%E2%80%99s-new-in-microsoft-intune-at-ignite/4570003. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 52,
+   "section": 53,
    "title": "Intune connects an investigation to a remediation plan {#intune-remediation}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -484,7 +493,7 @@
    "reason": "Event announcement: Intune connects an investigation to a remediation plan. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/microsoftintuneblog/what%E2%80%99s-new-in-microsoft-intune-at-ignite/4570003. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 53,
+   "section": 54,
    "title": "GitHub Copilot Fusion can use supported local models {#windows-fusion}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -493,16 +502,16 @@
    "reason": "Event announcement: GitHub Copilot Fusion can use supported local models. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 54,
+   "section": 55,
    "title": "A Cloud PC can run a compatible model, too {#cloud-pcs}",
    "roadmap_ids": [],
-   "source_urls": 1,
+   "source_urls": 3,
    "images": 0,
    "disposition": "not_applicable",
    "reason": "Event announcement: A Cloud PC can run a compatible model, too. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://news.microsoft.com/events/ignite/2026/book-of-news/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 55,
+   "section": 56,
    "title": "Windows Server 2028 previews another AI execution location {#windows-server}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -511,7 +520,7 @@
    "reason": "Event announcement: Windows Server 2028 previews another AI execution location. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/WindowsServerNewsandBestPractices/windows-server-2028-a-trusted-foundation-for-an-evolving-enterprise/4574112. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 56,
+   "section": 57,
    "title": "Azure Copilot expands from advice into operational work {#azure-operations}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -520,7 +529,7 @@
    "reason": "Event announcement: Azure Copilot expands from advice into operational work. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/azureinfrastructureblog/advancing-agentic-operations-on-azure-at-ignite-2026/4573831. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 57,
+   "section": 58,
    "title": "Azure Catalyst connects application and data modernization {#azure-catalyst}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -529,7 +538,7 @@
    "reason": "Event announcement: Azure Catalyst connects application and data modernization. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/adforpostgresql/complete-oracle-to-postgresql-migration-move-your-schema-data-and-application-co/4573626. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 58,
+   "section": 59,
    "title": "The data announcements help agents retrieve and operate, not just chat {#ai-data}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -538,7 +547,7 @@
    "reason": "Event announcement: The data announcements help agents retrieve and operate, not just chat. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/AzureSQLBlog/whats-new-in-databases-at-microsoft-ignite-2026-ai-ready-data-for-apps-and-agent/4570764. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 59,
+   "section": 60,
    "title": "Cosmos adds managed agent access, visual retrieval and memory tools {#cosmos-agent-memory}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -547,7 +556,7 @@
    "reason": "Event announcement: Cosmos adds managed agent access, visual retrieval and memory tools. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://devblogs.microsoft.com/cosmosdb/whats-new-azure-cosmos-db-ignite-2026/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 60,
+   "section": 61,
    "title": "Agent infrastructure extends from managed Foundry into AKS {#azure-infrastructure}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -556,7 +565,7 @@
    "reason": "Event announcement: Agent infrastructure extends from managed Foundry into AKS. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://azure.microsoft.com/en-us/blog/microsoft-ignite-2026-whats-new-in-azure-the-platform-purpose-built-for-ai/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 61,
+   "section": 62,
    "title": "Foundry closes the loop between production evidence and improvement {#foundry-improvement}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -565,7 +574,7 @@
    "reason": "Event announcement: Foundry closes the loop between production evidence and improvement. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 62,
+   "section": 63,
    "title": "Managed and Programmed Training offer different levels of control {#foundry-training}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -574,7 +583,7 @@
    "reason": "Event announcement: Managed and Programmed Training offer different levels of control. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 63,
+   "section": 64,
    "title": "Foundry IQ adds knowledge graphs and a new retriever {#foundry-iq}",
    "roadmap_ids": [],
    "source_urls": 1,
@@ -583,7 +592,7 @@
    "reason": "Event announcement: Foundry IQ adds knowledge graphs and a new retriever. Release evidence is the linked official product announcement/Book, rather than a monthly roadmap-ID entry. Primary reference: https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/foundry-iq-introducing-knowledge-graphs-engineered-for-agents/4572683. This roadmap disposition is not citation-semantic or publication approval."
   },
   {
-   "section": 64,
+   "section": 65,
    "title": "Fabric moves from answering about data to building data apps {#fabric-apps}",
    "roadmap_ids": [],
    "source_urls": 2,
@@ -599,6 +608,14 @@
    "alt": "Official Today preview animation showing priority cards, a schedule and a source conversation for a launch-storyboard decision.",
    "exists": true,
    "sha256": "1c59f8852edf20ff9bd09897fa76feaa0fe53ac4bdc806f3ee1f7e6bbd6b8ade",
+   "observed": true
+  },
+  {
+   "section": 2,
+   "src": "/images/blog/ignite-2026/windows-demo-diagnostics.webp",
+   "alt": "Copilot lists Bluetooth and audio endpoint checks, then suggests that audio may be going to a different output device.",
+   "exists": true,
+   "sha256": "f21438dd40b171f76fdde7b69ce27fd0675e725b782507d877607e545c66628a",
    "observed": true
   },
   {
@@ -770,6 +787,14 @@
    "observed": true
   },
   {
+   "section": 12,
+   "src": "/images/blog/ignite-2026/copilot-code-sharing.webp",
+   "alt": "Weekly dashboard sharing dialog says people need access to connected data sources and shows Manage access and Copy link controls.",
+   "exists": true,
+   "sha256": "6013582f3e8cf9a87ef7b7d664ae1af5f66014a0e60c4a57fa89e7e8dec9eb32",
+   "observed": true
+  },
+  {
    "section": 13,
    "src": "/images/blog/ignite-2026/official-014-managed-runtime.png",
    "alt": "App-data persistence prompt offers Fabric with Rayfin, SharePoint Lists, keeping data local, or describing another option.",
@@ -783,6 +808,22 @@
    "alt": "Supplier Analyst Teams profile is explicitly marked AI agent, with a demo email, organisation and reporting-manager area.",
    "exists": true,
    "sha256": "da36c53dc97a0ec59d9171de098d0fa2b8446ccd380ce2e7204283b71dce4db3",
+   "observed": true
+  },
+  {
+   "section": 14,
+   "src": "/images/blog/ignite-2026/teams-demo-supplier.webp",
+   "alt": "In a Teams reply, Supplier Analyst recommends a fictional supplier with conditions and uncertainty, above a five steps completed control.",
+   "exists": true,
+   "sha256": "bd2393e1c31b6e11b99b7d2688582e63120b401b798bc9c71fc417b5433de419",
+   "observed": true
+  },
+  {
+   "section": 15,
+   "src": "/images/blog/ignite-2026/dynamics-sales-skill-picker.webp",
+   "alt": "Copilot\u2019s Plugins &amp; Agents picker with a red Dynamics 365 Sales callout pointing to d365-sales. Pipeline Prioritizer and Deal Catch-up are listed below.",
+   "exists": true,
+   "sha256": "2d84844c37f2c40f528242ab0fc4b07af54ebcd49093e6c4a5ff23ab66abbeed",
    "observed": true
   },
   {
@@ -819,6 +860,14 @@
   },
   {
    "section": 18,
+   "src": "/images/blog/ignite-2026/day2-work-iq.png",
+   "alt": "Microsoft diagram showing Copilot, Cowork and Copilot Studio above Work IQ, with Microsoft 365 productivity data alongside Dynamics 365 and Power Platform business data.",
+   "exists": true,
+   "sha256": "d36883d6f9e8b310e9118e0204dd97e89a03e43290af91440e025784db6d24d6",
+   "observed": true
+  },
+  {
+   "section": 18,
    "src": "/images/blog/ignite-2026/official-017-work-iq.png",
    "alt": "SharePoint diagram connects Copilot, Cowork, Studio, Microsoft 365 apps and third-party agents through Work IQ to content capabilities and governance.",
    "exists": true,
@@ -839,6 +888,62 @@
    "alt": "Work IQ API architecture diagram connects agents over A2A, MCP and REST to Chat, Context, Tools and Workspaces, then organisational-intelligence icons.",
    "exists": true,
    "sha256": "9f711a11f07c3f4439891b4a2b0f8579778d20a11186e143c486064b65408ab7",
+   "observed": true
+  },
+  {
+   "section": 19,
+   "src": "/images/blog/ignite-2026/edge-demo-cowork.webp",
+   "alt": "The Cowork side pane lists a vacation entry step and an approved action beside a web form.",
+   "exists": true,
+   "sha256": "29a010bf8230fb5104f9bdc5f7bec03122aef5d3abb265ecb6fe99dd4b36302a",
+   "observed": true
+  },
+  {
+   "section": 19,
+   "src": "/images/blog/ignite-2026/edge-demo-recorder.webp",
+   "alt": "Copilot asks the user to review a proposed skill, with a save request typed but not sent.",
+   "exists": true,
+   "sha256": "e914c0f44ce8b9eb762b137e5366c701d057210c9d0732b90f7123e8190ed430",
+   "observed": true
+  },
+  {
+   "section": 19,
+   "src": "/images/blog/ignite-2026/edge-demo-redaction.webp",
+   "alt": "A fictional compensation record shows blurred salary and direct-deposit fields with reveal icons.",
+   "exists": true,
+   "sha256": "847dc8f11adb769c6132f79ba0b100f80f519c5010c9aeb33ef6944d34d77b34",
+   "observed": true
+  },
+  {
+   "section": 19,
+   "src": "/images/blog/ignite-2026/edge-admin-ai-insights.webp",
+   "alt": "Edge management shows a For your organization filter and a sample browser update recommendation with a Review in Security insights button.",
+   "exists": true,
+   "sha256": "4103c1854c1351fe9971e3f55b75f690582e5f8429cf7b078d038b852ead83ee",
+   "observed": true
+  },
+  {
+   "section": 20,
+   "src": "/images/blog/ignite-2026/edge-demo-remix.webp",
+   "alt": "The Edge Remix menu shows an active page remix, its on-off toggle and a Create button.",
+   "exists": true,
+   "sha256": "82e42a4f2a63f09832bd476290b6a6749f327af8f90c339ac107bc6611902882",
+   "observed": true
+  },
+  {
+   "section": 20,
+   "src": "/images/blog/ignite-2026/edge-demo-brief.webp",
+   "alt": "The Edge side pane lists planned steps for creating an interactive brief from open tabs.",
+   "exists": true,
+   "sha256": "778e29cb4b7e05809f4603cf3289cbc13e504739c9ff8e78a917baea6eb14fe2",
+   "observed": true
+  },
+  {
+   "section": 20,
+   "src": "/images/blog/ignite-2026/edge-demo-writing.webp",
+   "alt": "A Generating indicator appears over a text field in a sample expense form.",
+   "exists": true,
+   "sha256": "9d987b61e61e6eca6bd3a70fdcaab7292b2530b7a2cb9776170727c00e777950",
    "observed": true
   },
   {
@@ -1090,7 +1195,15 @@
    "observed": true
   },
   {
-   "section": 36,
+   "section": 34,
+   "src": "/images/blog/ignite-2026/day2-canvas.png",
+   "alt": "Copilot pane in a canvas app shows a question about accounts in Redmond and the answer that there are two accounts.",
+   "exists": true,
+   "sha256": "99ac6876afe382c7bdbac43fccc2fd26875459277f225a3592cef5006376b95f",
+   "observed": true
+  },
+  {
+   "section": 37,
    "src": "/images/blog/ignite-2026/official-025-web-iq.gif",
    "alt": "Animated retrieval diagram frame connects AI Think to web, image and video retrieval inside a Web retrieval box.",
    "exists": true,
@@ -1098,7 +1211,7 @@
    "observed": true
   },
   {
-   "section": 36,
+   "section": 37,
    "src": "/images/blog/ignite-2026/official-026-web-iq.png",
    "alt": "Web IQ diagram connects web, news, images, video, commerce, places, weather and licensed content, with a bring-your-own-licence footnote.",
    "exists": true,
@@ -1106,7 +1219,7 @@
    "observed": true
   },
   {
-   "section": 43,
+   "section": 44,
    "src": "/images/blog/ignite-2026/official-030-github-code-review.png",
    "alt": "Pull-request Copilot review menu shows Adaptive Preview, Lite, Balanced and Max Preview effort choices.",
    "exists": true,
@@ -1114,7 +1227,7 @@
    "observed": true
   },
   {
-   "section": 43,
+   "section": 44,
    "src": "/images/blog/ignite-2026/official-031-github-code-review.png",
    "alt": "Copilot code-review settings show Default review effort and Maximum review effort, with Adaptive selected and preview badges.",
    "exists": true,
@@ -1122,7 +1235,7 @@
    "observed": true
   },
   {
-   "section": 43,
+   "section": 44,
    "src": "/images/blog/ignite-2026/official-032-github-code-review.png",
    "alt": "Copilot review comment flags an outdated function signature, cites another repository, proposes a replacement object and labels the finding High.",
    "exists": true,
@@ -1130,7 +1243,7 @@
    "observed": true
   },
   {
-   "section": 43,
+   "section": 44,
    "src": "/images/blog/ignite-2026/official-033-github-code-review.png",
    "alt": "Cropped review comment says Possible secret in code, recommends credential handling, and notes that detection does not verify whether a value is live. No example credential or source-code diff remains.",
    "exists": true,
@@ -1138,7 +1251,7 @@
    "observed": true
   },
   {
-   "section": 44,
+   "section": 45,
    "src": "/images/blog/ignite-2026/official-040-identity.png",
    "alt": "GitHub Copilot CLI instance details panel shows Medium risk, an Entra agent identifier and Windows workstation details beside the agents inventory.",
    "exists": true,
@@ -1146,7 +1259,7 @@
    "observed": true
   },
   {
-   "section": 45,
+   "section": 46,
    "src": "/images/blog/ignite-2026/official-050-it-admin-mcp.png",
    "alt": "Entra admin center MCP policies Edit rule screen shows a server condition, a tool selector, the tools/call method and a Block action; it is a network/tool-access policy screen, not an Intune containment screen.",
    "exists": true,
@@ -1154,7 +1267,7 @@
    "observed": true
   },
   {
-   "section": 46,
+   "section": 47,
    "src": "/images/blog/ignite-2026/official-082-purview.jpg",
    "alt": "Create a classifier dialog offers Exact data match, Trainable classifier, Sensitive info type and Document fingerprinting; some time estimates say TBD.",
    "exists": true,
@@ -1162,7 +1275,7 @@
    "observed": true
   },
   {
-   "section": 46,
+   "section": 47,
    "src": "/images/blog/ignite-2026/official-083-purview.jpg",
    "alt": "Purview auto-labeling creation dialog offers apply, remove or Auto-apply to default SPO only; the underlying policy list is dimmed.",
    "exists": true,
@@ -1170,7 +1283,7 @@
    "observed": true
   },
   {
-   "section": 46,
+   "section": 47,
    "src": "/images/blog/ignite-2026/official-084-purview.jpg",
    "alt": "Purview custom Copilot policy wizard shows a Block only action and sensitive-information-type conditions including ABA Routing Number.",
    "exists": true,
@@ -1178,7 +1291,7 @@
    "observed": true
   },
   {
-   "section": 46,
+   "section": 47,
    "src": "/images/blog/ignite-2026/official-085-purview.jpg",
    "alt": "Copilot refuses to summarise a demo merger document because the organisation blocked processing some content types.",
    "exists": true,
@@ -1186,7 +1299,7 @@
    "observed": true
   },
   {
-   "section": 46,
+   "section": 47,
    "src": "/images/blog/ignite-2026/official-086-purview.png",
    "alt": "Cropped Windows demo shows an agent terminal stopping on a policy block and a Data Loss Prevention toast; browser address/session chrome is absent.",
    "exists": true,
@@ -1194,7 +1307,7 @@
    "observed": true
   },
   {
-   "section": 51,
+   "section": 52,
    "src": "/images/blog/ignite-2026/official-088-endpoint-management.png",
    "alt": "Intune software-compliance policy lists restricted ChatGPT Desktop and a discovery rule using its package full name.",
    "exists": true,
@@ -1202,7 +1315,7 @@
    "observed": true
   },
   {
-   "section": 51,
+   "section": 52,
    "src": "/images/blog/ignite-2026/official-089-endpoint-management.png",
    "alt": "Intune Agent containment Preview profile targets GitHub Copilot CLI and sets allowed or denied filesystem directories, network access and permissive-mode blocking.",
    "exists": true,
@@ -1210,7 +1323,7 @@
    "observed": true
   },
   {
-   "section": 52,
+   "section": 53,
    "src": "/images/blog/ignite-2026/official-090-intune-remediation.png",
    "alt": "Intune Perception displays a vulnerability remediation plan with application choice, supersedence, staged groups and an Approve plan and start remediation button; it is not evidence that deployment ran.",
    "exists": true,
@@ -1218,7 +1331,7 @@
    "observed": true
   },
   {
-   "section": 52,
+   "section": 53,
    "src": "/images/blog/ignite-2026/official-091-intune-remediation.png",
    "alt": "Intune Perception explains a risky-user query and explicitly reports incomplete retrieval: its result is partial rather than a full count.",
    "exists": true,
@@ -1226,7 +1339,7 @@
    "observed": true
   },
   {
-   "section": 52,
+   "section": 53,
    "src": "/images/blog/ignite-2026/official-092-intune-remediation.png",
    "alt": "Intune Perception custom report has a device-platform table and Windows-version column chart.",
    "exists": true,
@@ -1234,7 +1347,7 @@
    "observed": true
   },
   {
-   "section": 56,
+   "section": 57,
    "src": "/images/blog/ignite-2026/official-034-azure-operations.png",
    "alt": "Agentic operations diagram stacks Experiences and tools, Intelligence engine and Resource estate across public, hybrid, multicloud, edge and IoT.",
    "exists": true,
@@ -1242,7 +1355,7 @@
    "observed": true
   },
   {
-   "section": 57,
+   "section": 58,
    "src": "/images/blog/ignite-2026/official-035-azure-catalyst.png",
    "alt": "Oracle-to-PostgreSQL application assessment report lists architecture, migration impact, readiness and conversion criteria, with a sanitized-evidence notice.",
    "exists": true,
@@ -1250,7 +1363,7 @@
    "observed": true
   },
   {
-   "section": 57,
+   "section": 58,
    "src": "/images/blog/ignite-2026/official-036-azure-catalyst.png",
    "alt": "Oracle-to-PostgreSQL conversion report lists validation and test sections and explicitly says Runtime validation needed.",
    "exists": true,
@@ -1258,7 +1371,7 @@
    "observed": true
   },
   {
-   "section": 59,
+   "section": 60,
    "src": "/images/blog/ignite-2026/official-100-cosmos-agent-memory.png",
    "alt": "Cosmos design diagram runs from Workload through AI-assisted design and human Review into several database structures.",
    "exists": true,
@@ -1266,7 +1379,7 @@
    "observed": true
   },
   {
-   "section": 59,
+   "section": 60,
    "src": "/images/blog/ignite-2026/official-101-cosmos-agent-memory.png",
    "alt": "Diagram connects an AI client to Managed MCP and then Azure Cosmos DB with bidirectional arrows.",
    "exists": true,
@@ -1274,7 +1387,7 @@
    "observed": true
   },
   {
-   "section": 61,
+   "section": 62,
    "src": "/images/blog/ignite-2026/official-027-foundry-improvement.webp",
    "alt": "Foundry continuous-improvement infographic has an illustrative percentage curve above Establish, Identify, Optimize and Validate stages with separate GA/Preview badges.",
    "exists": true,
@@ -1282,7 +1395,7 @@
    "observed": true
   },
   {
-   "section": 61,
+   "section": 62,
    "src": "/images/blog/ignite-2026/official-028-foundry-improvement.gif",
    "alt": "Foundry Reduce cost Preview optimizer setup offers Auto or Choose targets, with loan-officer agent version selected.",
    "exists": true,
@@ -1290,7 +1403,7 @@
    "observed": true
   },
   {
-   "section": 61,
+   "section": 62,
    "src": "/images/blog/ignite-2026/official-029-foundry-improvement.png",
    "alt": "Foundry evaluator-creation screen offers Rubric, Prompt and Code, auto-generated rubric, quality dimensions and a pass-score threshold; this is evaluation rather than a training console.",
    "exists": true,

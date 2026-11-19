@@ -4,7 +4,7 @@ list_title: "Microsoft Ignite 2026 — AI, Copilot and Agents"
 hub_id: "whats-new"
 description: "Microsoft Ignite 2026 AI updates explained: Copilot, Agent 365, FinOps, Microsoft IQ, Foundry and Windows, with release stages and official demos."
 date: 2026-11-18
-lastmod: 2026-11-18
+lastmod: 2026-11-19
 draft: false
 card_tag: "What's New"
 tag_class: "ai"
@@ -24,15 +24,15 @@ faq:
   - question: "What are the main AI announcements at Microsoft Ignite 2026?"
     answer: "The opening announcements connect Copilot and Office, Microsoft IQ business context, Foundry agent improvement, Agent 365 governance, AI cost management and Windows hybrid AI. Home is rolling out; Office in Copilot is GA. Business Analytics is Frontier, with separate licensing and estimated-value boundaries. Today is a Frontier private preview and Copilot Code GA is planned for December."
   - question: "When is Microsoft Ignite 2026, and what does this recap cover?"
-    answer: "Microsoft Ignite runs 17–20 November 2026 in San Francisco and online. This article covers public AI announcements checked through 18 November 2026 at 14:17 NZDT, equivalent to 01:17 UTC. It is an opening-announcements snapshot, not a completed four-day event recap."
+    answer: "Microsoft Ignite runs 17–20 November 2026 in San Francisco and online. This article covers the opening announcements and selected Day 2 public updates, not the full event."
   - question: "Are Copilot Code, Today and Autopilot generally available?"
     answer: "Not all three. At this cutoff, Copilot Code is in Frontier with GA planned for December. Today is a Frontier private preview. Autopilot is beginning its Frontier rollout. None of those labels means every Microsoft 365 Copilot customer already has access."
   - question: "Does Microsoft IQ mean every integration is generally available or included?"
     answer: "No. Microsoft IQ connects Work IQ, Fabric IQ, Foundry IQ and Web IQ, but the availability, licensing and consumption rules of individual integrations still apply. For example, Work IQ ERP grounding and some governance controls are preview, as is the Fabric database integration with Copilot Managed Runtime."
   - question: "Are the images and demos tenant tests?"
-    answer: "No. The product screenshots, animations and videos in this article come from Microsoft's official announcements. They illustrate Microsoft's announced experiences, not tests performed in my tenant. Examples in the text are hypothetical."
+    answer: "Most visuals are from Microsoft's public announcements or documentation. The Dynamics 365 Sales picker screenshot is from a demo environment and shows skill discovery, not a completed sales task. Examples in the text are hypothetical."
 layout: "notebook"
-stamp: "ignite 2026 · opening announcements"
+stamp: "ignite 2026 · through day 2"
 intro_note: "↗ what changed, who it helps, and what is actually available"
 founder_note: |
   The useful question after a keynote is not “How many things were announced?” It is “Which part changes the work I do?”
@@ -44,13 +44,13 @@ sitemap:
   priority: 0.7
 ---
 
-**Coverage checked through 18 November 2026, 14:17 NZDT / 01:17 UTC.** [Microsoft Ignite runs 17–20 November](https://news.microsoft.com/events/ignite/2026/book-of-news/), so this is the opening-announcements snapshot, not the finished event recap.
-
-Source details and official media were rechecked later on **18 November**. Those later checks do not turn a planned release into an available feature or extend this into a recap of the remaining event days.
+**Day 2 update · 19 November NZDT (18 November in San Francisco).** This covers the opening announcements plus selected Day 2 updates. [Microsoft Ignite runs 17–20 November](https://news.microsoft.com/events/ignite/2026/book-of-news/), so this is not the finished event recap.
 
 The [November Copilot issue](/blog/microsoft-365-copilot-november-2026-updates/) covered the changes since our previous issue. This event article goes wider: Copilot, business applications, Microsoft IQ, Foundry, Azure, security and Windows. Where a product was announced earlier, the important bit here is the **new capability or release-stage change**, not a second launch.
 
 **My Ignite favourites:** [Today](#today) · [Copilot on Windows](#windows-local) · [Cowork apps](#cowork-apps) · [Cowork Auto effort](#cowork-auto) · [Autopilot](#autopilot) · [Office in Copilot](#office) · [Multi-tenant agent and spend management](#multi-tenant-ai).
+
+**Looking for Salesforce?** [Copilotforce: Salesforce in Microsoft Copilot, Teams and Fabric](#salesforce). **New in this pass:** [Copilot in Power Apps canvas apps](#power-apps-canvas).
 
 Release stages below follow Microsoft's announcements, not observed tenant access. **GA does not mean rollout has finished everywhere; Frontier is Copilot's early-access programme, not general access.** Licensing, billing, region, administrator settings and supported hardware still apply.
 
@@ -103,21 +103,28 @@ There are two billing distinctions: the daily **Today Brief** refresh is include
 
 Microsoft is showing local file operations and read-only PC diagnostics, with more work routed between on-device and cloud models. People who opt in can also reach Copilot from the new Windows Search, rather than opening a separate app first.
 
-For example, you might ask for files to be organized or for help understanding a PC problem. A read-only diagnostic scan is different from permission to change the machine.
+Microsoft lists finding, organising, moving, copying and renaming local files. For diagnostics, imagine asking why your Bluetooth headphones are connected but silent. Copilot can suggest a likely cause after a read-only scan; you still decide whether to change the audio output.
 
 **Status:** **Preview/coming soon**, with the Windows post specifying Copilot+ PCs for the local capabilities. Opt-in, policy and hardware requirements apply. The sources do not justify assuming every Windows PC has them today.
 
 📖 [Windows announcement and local capability limits](https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/).
 
-<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;">
-<iframe src="https://www.youtube-nocookie.com/embed/R6WkUkvIcC8" title="Windows at Work: File management with Copilot and Windows Hybrid Intelligence" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe>
-</div>
+<!-- ignite-reviewed-media:windows-local -->
+<details open>
+<summary>View Microsoft’s diagnostics preview image (1)</summary>
 
-*Official Windows demo: [File management with Copilot](https://www.youtube.com/watch?v=R6WkUkvIcC8).*
+<figure>
+<img src="/images/blog/ignite-2026/windows-demo-diagnostics.webp" alt="Copilot lists Bluetooth and audio endpoint checks, then suggests that audio may be going to a different output device." width="662" height="387" loading="lazy" decoding="async" />
+<figcaption>Cropped video preview image from <a href="https://www.youtube.com/watch?v=1TVVgqdlWOg">Microsoft’s Windows diagnostics demo</a>. It shows a likely cause and suggested steps, not an automatic repair.</figcaption>
+</figure>
+</details>
 
 <!-- ignite-reviewed-video:windows-local -->
 <details open>
-<summary>Watch official videos (1)</summary>
+<summary>Watch official videos (2)</summary>
+
+<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://www.youtube-nocookie.com/embed/R6WkUkvIcC8" title="Windows at Work: File management with Copilot and Windows Hybrid Intelligence" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
+<p>Official video: <a href="https://www.youtube.com/watch?v=R6WkUkvIcC8">File management with Copilot</a>.</p>
 
 <div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://www.youtube-nocookie.com/embed/1TVVgqdlWOg" title="Demo: PC Troubleshooting with Copilot and Windows Hybrid Intelligence" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://www.youtube.com/watch?v=1TVVgqdlWOg">Demo: PC Troubleshooting with Copilot and Windows Hybrid Intelligence</a>. Preview/coming-soon illustration with hardware and policy requirements, not a repair performed here. <a href="https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/">Read the product announcement or documentation</a>.</p>
@@ -134,6 +141,8 @@ For example, you might ask for files to be organized or for help understanding a
 </ul>
 
 The new part at Ignite is general availability, not the first announcement. Describe the app you want in Cowork, or turn the result of a Cowork task into an app. You can review it, then publish and share it with colleagues. Published apps run in your tenant on Copilot Managed Runtime, where IT can see and manage them in the Microsoft 365 admin center. The [separate Fabric storage integration](#managed-runtime) is still in preview.
+
+There is a separate **Power Apps model-driven app builder** on the roadmap. It turns a request into an app specification and build plan for review before creating Power Apps and Dataverse components. The roadmap lists **November preview and January 2027 GA as targets**; the GA announcement above does not cover this skill. [Power Apps roadmap 579979](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=579979).
 
 **Status:** Cowork app building is **GA**; Microsoft announced the managed runtime as **GA and beginning tenant rollout**.
 
@@ -464,11 +473,21 @@ Projects serve a related but different job: grouping your chats, Cowork tasks, i
 
 Copilot Code turns natural-language requirements into applications using the technology behind GitHub Copilot. Supported apps can be published through Copilot Managed Runtime.
 
-A team might build a request tracker instead of passing a spreadsheet around. The important distinction is **building an app versus approving it for production**: access, data handling and maintenance still need an owner.
+A team might build a request tracker instead of passing a spreadsheet around. The important distinction is **building an app versus approving it for production**: access, data handling and maintenance still need an owner. Sharing the app does not give people access to its connected data sources.
 
 **Status:** **Frontier** on Windows, web, iOS and Android; **GA planned for December**. The local sandbox is available on Windows and coming to macOS. Do not read the runtime's GA announcement as Code already being GA.
 
-📖 [Copilot Code timing and platforms](https://news.microsoft.com/events/ignite/2026/book-of-news/).
+📖 [Copilot Code timing and platforms](https://news.microsoft.com/events/ignite/2026/book-of-news/) · [Microsoft Learn: how app sharing and data access differ](https://learn.microsoft.com/en-us/copilot/code/use-code#share-your-app).
+
+<!-- ignite-reviewed-media:copilot-code -->
+<details open>
+<summary>View Microsoft’s Copilot Code sharing example (1)</summary>
+
+<figure>
+<img src="/images/blog/ignite-2026/copilot-code-sharing.webp" alt="Weekly dashboard sharing dialog says people need access to connected data sources and shows Manage access and Copy link controls." width="1046" height="858" loading="lazy" decoding="async" />
+<figcaption>Microsoft’s <a href="https://www.microsoft.com/en-us/copilot/features/code">Copilot Code product example</a> shows the reminder about connected data sources. It does not show app publication or a sensitivity label.</figcaption>
+</figure>
+</details>
 
 ## 13. Copilot Managed Runtime becomes the place to run those apps {#managed-runtime}
 
@@ -532,11 +551,16 @@ Imagine a procurement agent presenting supplier options in a thread, showing wha
 
 <!-- ignite-reviewed-media:teams-digital-teammates -->
 <details open>
-<summary>View official images and animations (1)</summary>
+<summary>View official images and demo stills (2)</summary>
 
 <figure>
 <img src="/images/blog/ignite-2026/official-016-teams-digital-teammates.webp" alt="Supplier Analyst Teams profile is explicitly marked AI agent, with a demo email, organisation and reporting-manager area." width="372" height="493" loading="lazy" decoding="async" />
 <figcaption>Supplier Analyst Teams profile is explicitly marked AI agent, with a demo email, organisation and reporting-manager area. Official demo persona, not a colleague or agent deployed in this tenant. Source: <a href="https://devblogs.microsoft.com/microsoft365dev/new-capabilities-for-building-digital-teammates-in-microsoft-teams/">official product announcement or documentation</a>.</figcaption>
+</figure>
+
+<figure>
+<img src="/images/blog/ignite-2026/teams-demo-supplier.webp" alt="In a Teams reply, Supplier Analyst recommends a fictional supplier with conditions and uncertainty, above a five steps completed control." width="713" height="669" loading="lazy" decoding="async" />
+<figcaption>Frame at 0:22 from <a href="https://devblogs.microsoft.com/microsoft365dev/wp-content/uploads/sites/73/2026/11/plan.html_.thread_zoomedit.2.mp4">Microsoft’s Teams demo</a>. The agent makes a conditional recommendation; it does not approve an order.</figcaption>
 </figure>
 </details>
 
@@ -561,6 +585,14 @@ For the ERP plugin, Learn specifies **Microsoft 365 Copilot, a qualifying financ
 📖 [Dynamics plugins and capabilities](https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2026/11/17/microsoft-ignite-2026-introducing-dynamics-365-in-copilot/) · [ERP prerequisites, supported versions and access controls](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/enable-copilot-cowork-erp).
 
 <!-- ignite-reviewed-video:dynamics-plugins -->
+<details open>
+<summary>View Dynamics 365 Sales skill picker</summary>
+<figure>
+<img src="/images/blog/ignite-2026/dynamics-sales-skill-picker.webp" alt="Copilot’s Plugins &amp; Agents picker with a red Dynamics 365 Sales callout pointing to d365-sales. Pipeline Prioritizer and Deal Catch-up are listed below." width="1100" height="625" loading="lazy" decoding="async" />
+<figcaption>Demo screenshot: typing <code>@d365-sales</code> surfaces the Dynamics 365 Sales skill and related skills. This shows where to find them, not a generated brief or a CRM update.</figcaption>
+</figure>
+</details>
+
 <details open>
 <summary>Watch official videos (1)</summary>
 
@@ -647,6 +679,8 @@ For example, an agent might assemble context for a customer review, then request
 
 One concrete addition is **SharePoint tools**, announced on **3 November** and highlighted again at Ignite. The public preview exposes more than 60 operations, including lists, files, approvals and version history. An agent could create a working issue tracker rather than return instructions for making one. The preview needs tenant enablement, app consent and allowed paths; `WorkIQ.Read` covers reading, while actions also need `WorkIQ.Act`. Existing `WorkIQAgent.Ask` consent alone does not expose these SharePoint paths. Usage is billed in **Copilot Credits, independently of a Microsoft 365 Copilot seat**. [SharePoint tools, permissions and billing](https://techcommunity.microsoft.com/blog/spblog/introducing-sharepoint-tools-in-work-iq/4569917).
 
+The Day 2 Power Platform post gives another useful example: authorised agents can reuse context and capabilities from existing business apps rather than recreate them. **Business Applications in Work IQ was already announced in public preview in October**, so this is more detail, not a new Ignite launch. Microsoft Learn also notes that the former **Dataverse intelligence** setting is now called **Work IQ** in the Power Platform admin center. [October preview announcement](https://www.microsoft.com/en-us/power-platform/blog/2026/10/23/dataverse-and-workiq-ppcc-2026/) · [Business Applications in Work IQ documentation](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/business-applications-work-iq).
+
 **Status:** Mixed **GA and preview**. For third-party platforms, the Work IQ product post says the ChatGPT Business/Enterprise plugin is available and the Anthropic plugin is **coming soon**. Use that narrower timing rather than assume both are available from the umbrella announcement. API usage also has consumption rules separate from a Copilot seat.
 
 📖 [Work IQ feature-level announcement](https://techcommunity.microsoft.com/blog/microsoft_365blog/whats-new-in-work-iq-at-ignite-2026-agents-that-get-work-done/4572219) · [Work IQ access, policy and billing documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/).
@@ -658,7 +692,12 @@ One concrete addition is **SharePoint tools**, announced on **3 November** and h
 
 <!-- ignite-reviewed-media:work-iq -->
 <details open>
-<summary>View official images and animations (3)</summary>
+<summary>View official images and animations (4)</summary>
+
+<figure>
+<img src="/images/blog/ignite-2026/day2-work-iq.png" alt="Microsoft diagram showing Copilot, Cowork and Copilot Studio above Work IQ, with Microsoft 365 productivity data alongside Dynamics 365 and Power Platform business data." width="1125" height="426" loading="lazy" decoding="async" />
+<figcaption>Microsoft’s diagram shows where productivity and business data fit. It does not show which data an individual agent can access. Source: <a href="https://learn.microsoft.com/en-us/power-apps/maker/data-platform/business-applications-work-iq">Microsoft Learn</a>.</figcaption>
+</figure>
 
 <figure>
 <img src="/images/blog/ignite-2026/official-017-work-iq.png" alt="SharePoint diagram connects Copilot, Cowork, Studio, Microsoft 365 apps and third-party agents through Work IQ to content capabilities and governance." width="1183" height="665" loading="lazy" decoding="async" />
@@ -694,11 +733,33 @@ Imagine a repeatable internal web task. Recording it is only the first step; you
 
 **Status:** **Mixed GA, preview and planned preview**, as above. Cowork hands sign-ins/payments back to the person and asks before sensitive actions. Extension safety **GA**; extension leak control, the Sentinel connector and Global Secure Access integration **preview**.
 
+Three other controls are worth separating. **Protected session (preview)** gives Copilot an isolated chat for supported protected web content under existing policies. **Redaction leak control (preview with Microsoft 365 E5)** blurs supported values on pages protected by data loss prevention. A service-desk worker could reveal one field when needed instead of leaving it visible throughout the call. **AI insights in Edge management (preview, no additional licence required)** turns release notes into recommendations for your tenant. I’d check the affected devices and policies before acting on a recommendation.
+
 📖 [Edge's separate AI experiences and prerequisites](https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/) · [Security-integration stages](https://news.microsoft.com/events/ignite/2026/book-of-news/).
 
 <!-- ignite-reviewed-video:edge -->
 <details open>
-<summary>Watch official videos (5)</summary>
+<summary>View Microsoft demo stills and admin examples (4)</summary>
+<figure>
+<img src="/images/blog/ignite-2026/edge-demo-cowork.webp" alt="The Cowork side pane lists a vacation entry step and an approved action beside a web form." width="1134" height="526" loading="lazy" decoding="async" />
+<figcaption>Cowork browsing in progress in <a href="https://www.youtube.com/watch?v=-oSn_uaNILs">Microsoft’s Edge demo</a>. Cropped from the video preview image; it does not show the final submission.</figcaption>
+</figure>
+<figure>
+<img src="/images/blog/ignite-2026/edge-demo-recorder.webp" alt="Copilot asks the user to review a proposed skill, with a save request typed but not sent." width="846" height="693" loading="lazy" decoding="async" />
+<figcaption>Review before saving a skill in <a href="https://www.youtube.com/watch?v=pEnuYGyqdUY">Microsoft’s Skills recorder demo</a>. Cropped from the video preview image; the recorder preview is planned by year end.</figcaption>
+</figure>
+<figure>
+<img src="/images/blog/ignite-2026/edge-demo-redaction.webp" alt="A fictional compensation record shows blurred salary and direct-deposit fields with reveal icons." width="493" height="140" loading="lazy" decoding="async" />
+<figcaption>Cropped video preview image from <a href="https://www.youtube.com/watch?v=ggTo0XJ_nBs">Microsoft’s redaction demo</a>. It shows hidden values, not the policy configuration.</figcaption>
+</figure>
+<figure>
+<img src="/images/blog/ignite-2026/edge-admin-ai-insights.webp" alt="Edge management shows a For your organization filter and a sample browser update recommendation with a Review in Security insights button." width="1360" height="473" loading="lazy" decoding="async" />
+<figcaption>Microsoft’s <a href="https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/">Edge management screenshot</a> shows a filtered recommendation. The device count is sample data.</figcaption>
+</figure>
+</details>
+
+<details open>
+<summary>Watch official videos (6)</summary>
 
 <div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://www.youtube-nocookie.com/embed/-oSn_uaNILs" title="Edge for Business demo: Cowork" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://www.youtube-nocookie.com/embed/-oSn_uaNILs">Edge for Business demo: Cowork</a>. GA browser actions; licence and usage-based billing requirements above apply. <a href="https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/">Read the product announcement or documentation</a>.</p>
@@ -714,6 +775,9 @@ Imagine a repeatable internal web task. Recording it is only the first step; you
 
 <div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://www.youtube-nocookie.com/embed/Gj9wIWbvAcs" title="Edge for Business demo: Entra Global Secure Access" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
 <p>Official video: <a href="https://www.youtube-nocookie.com/embed/Gj9wIWbvAcs">Edge for Business demo: Entra Global Secure Access</a>. Global Secure Access integration is preview; no private connectivity was tested here. <a href="https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/">Read the product announcement or documentation</a>.</p>
+
+<div style="aspect-ratio:16/9;width:100%;margin:var(--space-4) 0;"><iframe src="https://www.youtube-nocookie.com/embed/ggTo0XJ_nBs" title="Edge for Business demo: on-screen redaction" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe></div>
+<p>Official video: <a href="https://www.youtube.com/watch?v=ggTo0XJ_nBs">Edge for Business on-screen redaction demo</a>.</p>
 </details>
 
 ## 20. Edge adds simpler ways to reshape pages and brief from tabs {#edge-everyday-ai}
@@ -740,6 +804,22 @@ Imagine briefing a colleague from several open project tabs. The interactive bri
 📖 [Everyday browser AI and capability-specific requirements](https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/).
 
 <!-- ignite-reviewed-video:edge-everyday-ai -->
+<details open>
+<summary>View Microsoft demo stills (3)</summary>
+<figure>
+<img src="/images/blog/ignite-2026/edge-demo-remix.webp" alt="The Edge Remix menu shows an active page remix, its on-off toggle and a Create button." width="491" height="287" loading="lazy" decoding="async" />
+<figcaption>A local page remix can be switched on or off. Cropped from the preview image for <a href="https://www.youtube.com/watch?v=Yh4xwjzNicQ">Microsoft’s Remix demo</a>.</figcaption>
+</figure>
+<figure>
+<img src="/images/blog/ignite-2026/edge-demo-brief.webp" alt="The Edge side pane lists planned steps for creating an interactive brief from open tabs." width="252" height="466" loading="lazy" decoding="async" />
+<figcaption>The planning step, not the finished brief. Cropped from the preview image for <a href="https://www.youtube.com/watch?v=OKISxyWcqE4">Microsoft’s interactive brief demo</a>.</figcaption>
+</figure>
+<figure>
+<img src="/images/blog/ignite-2026/edge-demo-writing.webp" alt="A Generating indicator appears over a text field in a sample expense form." width="568" height="602" loading="lazy" decoding="async" />
+<figcaption>Writing assistance inside a sample form. Cropped from the preview image for <a href="https://www.youtube.com/watch?v=nxx8UrxDpCQ">Microsoft’s writing assistance demo</a>.</figcaption>
+</figure>
+</details>
+
 <details open>
 <summary>Watch official videos (3)</summary>
 
@@ -1216,8 +1296,8 @@ There is also a **Microsoft Graph beta Cost Management API** for credit usage an
 
 <ul class="plain-block">
 <li><strong>In plain words:</strong> The Salesforce announcement spans sales skills in Copilot, an agent experience in Teams and connections with Fabric.</li>
-<li><strong>Picture this:</strong> A seller could use a supported sales skill to prepare a deal brief, then check the CRM record.</li>
-<li><strong>My take:</strong> I'd check each integration and data direction separately. One launch label doesn't cover them all.</li>
+<li><strong>Picture this:</strong> After a renewal call, a seller could use Call Follow-Up to draft an email and propose a Salesforce activity, then check and confirm the supported CRM update.</li>
+<li><strong>My take:</strong> Start with meeting prep or deal review. Test what a seller can see before turning on workflows that write back to CRM.</li>
 </ul>
 
 **Copilotforce is the Microsoft–Salesforce partnership announced at Ignite**, not another name for Dynamics 365's Sales plugin or Microsoft's cross-CRM Copilot for sales. Its integrations bring Salesforce customer context together with Microsoft 365 work context.
@@ -1237,7 +1317,7 @@ The two data directions do **not** share one GA label. Supported CRM writebacks 
 
 **Status:** **Mixed public preview, pilot and GA**, as above.
 
-📖 [Microsoft's joint Copilotforce announcement](https://news.microsoft.com/source/2026/11/17/microsoft-and-salesforce-announce-copilotforce-bringing-trusted-customer-context-and-action-into-microsoft-ai-experiences/) · [Salesforce's product detail and availability roadmap](https://www.salesforce.com/news/stories/copilotforce-announcement/).
+📖 [Microsoft's joint Copilotforce announcement](https://news.microsoft.com/source/2026/11/17/microsoft-and-salesforce-announce-copilotforce-bringing-trusted-customer-context-and-action-into-microsoft-ai-experiences/) · [Salesforce's product detail and availability roadmap](https://www.salesforce.com/news/stories/copilotforce-announcement/) · [Sales Cloud in Microsoft Copilot on Salesforce AgentExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=plugin-salesforce-in-microsoft-copilot).
 
 ## 32. Dynamics 365 Activate extends into ERP assessment {#activate}
 
@@ -1275,9 +1355,35 @@ A service team might add an agent to a defined part of an existing customer jour
 
 📖 [Contact Center Intelligence GA announcement](https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2026/11/17/microsoft-ignite-2026-introducing-dynamics-365-in-copilot/).
 
+## 34. Copilot in Power Apps canvas apps gets a November GA window {#power-apps-canvas}
+
+*For: Power Apps makers, Power Platform admins and people using existing canvas apps.*
+
+<ul class="plain-block">
+<li><strong>In plain words:</strong> People can ask questions about supported app data without leaving the canvas app they already use.</li>
+<li><strong>Picture this:</strong> In an equipment checkout app, a coordinator could ask which laptops are due back this week instead of clicking through every record.</li>
+<li><strong>My take:</strong> Start with one common, read-only question in an existing app. Check what two users with different permissions can see before adding custom actions.</li>
+</ul>
+
+Microsoft’s Day 2 Power Platform post says Copilot in canvas apps reaches **general availability in November 2026**. The equivalent experience for **model-driven apps went GA in April**. This is Copilot *inside* an existing app, not the Cowork feature that builds a new app.
+
+Microsoft Learn still labels the canvas experience **preview**. Its setup guide calls for a Microsoft 365 Copilot licence, environment and app enablement, and supported data. The default experience is read-only; changes require a configured agent. If you have the older embedded Copilot control, use Microsoft’s migration guidance rather than assume the two experiences are interchangeable.
+
+**Status:** **November GA announced**; the exact rollout date and access in individual environments are not confirmed here.
+
+📖 [Microsoft’s Day 2 Power Platform announcement](https://www.microsoft.com/en-us/power-platform/blog/2026/11/18/turn-ai-ambition-into-real-business-value-with-power-platform/) · [Canvas app setup and limitations](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/microsoft-365-copilot-canvas-app) · [Guidance for the older Copilot control](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/add-ai-copilot).
+
+<details open>
+<summary>View official canvas app screenshot</summary>
+<figure>
+<img src="/images/blog/ignite-2026/day2-canvas.png" alt="Copilot pane in a canvas app shows a question about accounts in Redmond and the answer that there are two accounts." width="553" height="529" loading="lazy" decoding="async" />
+<figcaption>Microsoft Learn’s preview screenshot shows a read-only question and answer. It is not proof of rollout. Source: <a href="https://learn.microsoft.com/en-us/power-apps/user/use-microsoft-365-copilot-canvas-apps">canvas app user guide</a>.</figcaption>
+</figure>
+</details>
+
 <span id="context"></span>
 
-## 34. Microsoft IQ joins the context layers, not all the licences {#microsoft-iq}
+## 35. Microsoft IQ joins the context layers, not all the licences {#microsoft-iq}
 
 *For: Anyone trying to understand how Microsoft's AI pieces fit.*
 
@@ -1295,7 +1401,7 @@ For a supplier decision, those could mean the conversation, the approved spend m
 
 📖 [Microsoft IQ announcement](https://azure.microsoft.com/en-us/blog/introducing-the-new-microsoft-iq-putting-your-organizations-intelligence-to-work-in-every-agent/).
 
-## 35. Informatica brings data definitions, quality and lineage into Microsoft AI {#informatica-context}
+## 36. Informatica brings data definitions, quality and lineage into Microsoft AI {#informatica-context}
 
 *For: Data teams and business users who need to know what a dataset means and where it came from.*
 
@@ -1315,7 +1421,7 @@ Fabric scanning also expands to **notebooks and data pipelines**. The Foundry MC
 
 📖 [Informatica/Salesforce announcement and capability-level availability](https://www.salesforce.com/news/stories/informatica-trusted-enterprise-data-microsoft-collaboration/).
 
-## 36. Web IQ opens current web grounding to Azure customers {#web-iq}
+## 37. Web IQ opens current web grounding to Azure customers {#web-iq}
 
 *For: Builders whose agents need information beyond their training and company data.*
 
@@ -1351,7 +1457,7 @@ For health-related retrieval, **health-aware source ranking is GA**. It prioriti
 </details>
 
 
-## 37. New MAI models target specific jobs {#mai-models}
+## 38. New MAI models target specific jobs {#mai-models}
 
 *For: Developers choosing coding, image, speech and security models.*
 
@@ -1378,7 +1484,7 @@ For example, an image-editing workflow and a code-security scanner need differen
 
 Foundry's wider model announcement is not limited to MAI. Model router expands model choice and adds AI Gateway integration; the sources give different pool counts, so the important check is which models your project's router supports. Video models from fal and Baseten's model-serving integration are **preview**. **Managed Compute is GA**, supplying dedicated, hourly GPU infrastructure managed by Foundry for supported open and custom models. That gives teams a choice between shared serverless access and dedicated capacity without managing the GPU cluster themselves. [Foundry routing, partner models and Managed Compute details](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/from-model-choice-to-your-durable-advantage-build-ai-that-keeps-improving/4573609) · [fal video-model preview stage](https://news.microsoft.com/events/ignite/2026/book-of-news/).
 
-## 38. Decision-1.1 chooses a next step rather than writing a long answer {#decision-model}
+## 39. Decision-1.1 chooses a next step rather than writing a long answer {#decision-model}
 
 *For: Builders routing tasks or classifying work.*
 
@@ -1396,7 +1502,7 @@ Think of sorting an incoming request into “answer”, “research” or “ask
 
 📖 [Decision-1.1 announcement](https://commandline.microsoft.com/microsoft-decision-model-ga/).
 
-## 39. Copilot SDK 2.0 updates the application-building foundation {#copilot-sdk}
+## 40. Copilot SDK 2.0 updates the application-building foundation {#copilot-sdk}
 
 *For: Developers embedding agent capabilities into applications.*
 
@@ -1414,7 +1520,7 @@ For example, a developer can put an agent inside an existing business applicatio
 
 📖 [Copilot SDK 2.0 in the official Book of News](https://news.microsoft.com/events/ignite/2026/book-of-news/).
 
-## 40. The GitHub Copilot app reaches Azure DevOps and existing browser sessions {#github-copilot-app}
+## 41. The GitHub Copilot app reaches Azure DevOps and existing browser sessions {#github-copilot-app}
 
 *For: Development teams using Azure DevOps or GitHub Enterprise Server.*
 
@@ -1441,7 +1547,7 @@ For example, a team could ask for a small fix in an Azure DevOps repository with
 <p>Official video: <a href="https://github.com/user-attachments/assets/4fd64f98-4caf-4045-a64d-6d58ff37486f">Let Copilot work in your browser</a>. Preview. Browser interaction does not remove review and approval requirements. <a href="https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/">Read the product announcement or documentation</a>.</p>
 </details>
 
-## 41. Entra sign-in gives Copilot CLI two different licensing paths {#github-cli-entra}
+## 42. Entra sign-in gives Copilot CLI two different licensing paths {#github-cli-entra}
 
 *For: Administrators and developers deciding how terminal-based Copilot access should work.*
 
@@ -1464,7 +1570,7 @@ For example, an administrator could evaluate the Microsoft 365 route without tre
 
 📖 [Entra sign-in, platforms and both entitlement paths](https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview/).
 
-## 42. GitHub Copilot Evals tests whether a customization actually helps {#github-evals}
+## 43. GitHub Copilot Evals tests whether a customization actually helps {#github-evals}
 
 *For: People maintaining Copilot skills, custom agents and MCP tools.*
 
@@ -1489,7 +1595,7 @@ For example, after changing a document-review skill, rerun the same checks to se
 <p>Official video: <a href="https://github.com/user-attachments/assets/6e98f7df-128b-4932-b799-2a2c1372a9f9">GitHub Copilot Evals setup</a>. Public-preview setup example; no evaluation was run here. <a href="https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/">Read the product announcement or documentation</a>.</p>
 </details>
 
-## 43. Copilot code review reaches Azure Repos and adds deeper checks {#github-code-review}
+## 44. Copilot code review reaches Azure Repos and adds deeper checks {#github-code-review}
 
 *For: Developers and reviewers using GitHub or Azure DevOps repositories.*
 
@@ -1537,7 +1643,7 @@ For example, a team keeping its code in Azure DevOps could request an additional
 
 <span id="secure"></span>
 
-## 44. Entra adds agent identity, access and lifecycle controls {#identity}
+## 45. Entra adds agent identity, access and lifecycle controls {#identity}
 
 *For: Identity and access administrators.*
 
@@ -1567,7 +1673,7 @@ The wider security work also covers on-premises Exchange, SharePoint and Skype f
 </figure>
 </details>
 
-## 45. The IT-admin MCP server connects an assistant to supported admin work {#it-admin-mcp}
+## 46. The IT-admin MCP server connects an assistant to supported admin work {#it-admin-mcp}
 
 *For: Identity and endpoint administrators evaluating administration through an AI assistant.*
 
@@ -1597,7 +1703,7 @@ I would start with read-only checks and verify the supported operations and perm
 </figure>
 </details>
 
-## 46. Purview separates today's labeling updates from January protection plans {#purview}
+## 47. Purview separates today's labeling updates from January protection plans {#purview}
 
 *For: Information-protection and data loss prevention (DLP) administrators.*
 
@@ -1652,7 +1758,7 @@ The January plans are not controls to assume in this month's rollout. The produc
 </figure>
 </details>
 
-## 47. Microsoft Perception coordinates security agents through playbooks {#perception}
+## 48. Microsoft Perception coordinates security agents through playbooks {#perception}
 
 *For: Security operations and exposure-management teams.*
 
@@ -1687,7 +1793,7 @@ The **AI Transparency Initiative** is a standards effort, not a newly shipped en
 <p>Official video: <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307173-demo2-0x1080-6439k">Microsoft Perception: Protect web app playbook</a>. Preview playbook demonstration, not a security test conducted here. <a href="https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/">Read the product announcement or documentation</a>.</p>
 </details>
 
-## 48. Defender's integrated SOC and vulnerability shielding have different stages {#security-operations}
+## 49. Defender's integrated SOC and vulnerability shielding have different stages {#security-operations}
 
 *For: Teams using Microsoft Defender and Sentinel.*
 
@@ -1705,7 +1811,7 @@ For example, a supported shielding action might reduce exposure during the gap b
 
 📖 [ISOC, retention and threat-intelligence release stages](https://news.microsoft.com/events/ignite/2026/book-of-news/) · [How vulnerability shielding is intended to work](https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/#secure-your-foundations).
 
-## 49. MDASH extends the code-security preview {#mdash}
+## 50. MDASH extends the code-security preview {#mdash}
 
 *For: Application-security teams evaluating automated code review.*
 
@@ -1723,7 +1829,7 @@ For example, a team could use it to identify candidate vulnerabilities, then val
 
 📖 [MDASH expansion and access conditions](https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/#defend-with-agents).
 
-## 50. Defender adds runtime protection for supported local AI agents {#local-agent-protection}
+## 51. Defender adds runtime protection for supported local AI agents {#local-agent-protection}
 
 *For: Endpoint security teams allowing local coding and desktop agents.*
 
@@ -1741,7 +1847,7 @@ For example, a team could begin by observing a supported coding agent before dec
 
 📖 [Local-agent protection and coverage types](https://news.microsoft.com/events/ignite/2026/book-of-news/).
 
-## 51. Endpoint controls are part of the AI rollout, not an afterthought {#endpoint-management}
+## 52. Endpoint controls are part of the AI rollout, not an afterthought {#endpoint-management}
 
 *For: Windows, Intune and security administrators.*
 
@@ -1778,7 +1884,7 @@ Microsoft also describes app protection for AI apps that integrate the **Intune 
 </figure>
 </details>
 
-## 52. Intune connects an investigation to a remediation plan {#intune-remediation}
+## 53. Intune connects an investigation to a remediation plan {#intune-remediation}
 
 *For: Endpoint teams investigating risk and deploying fixes.*
 
@@ -1817,7 +1923,7 @@ For example, an administrator could investigate an affected application, inspect
 </details>
 
 
-## 53. GitHub Copilot Fusion can use supported local models {#windows-fusion}
+## 54. GitHub Copilot Fusion can use supported local models {#windows-fusion}
 
 *For: Developers with suitable Windows hardware.*
 
@@ -1835,7 +1941,7 @@ A developer working on an appropriate machine could evaluate a local model for a
 
 📖 [Windows hybrid developer announcement](https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/).
 
-## 54. A Cloud PC can run a compatible model, too {#cloud-pcs}
+## 55. A Cloud PC can run a compatible model, too {#cloud-pcs}
 
 *For: IT and developers evaluating where model execution belongs.*
 
@@ -1849,11 +1955,13 @@ The Book of News marks compatible local-model execution on appropriately sized W
 
 For example, a developer could use a sized Cloud PC for model evaluation without upgrading their laptop. Hardware sizing and model compatibility still determine whether the experiment is practical.
 
+**Direct Stream** is the name Microsoft gave the streaming technology already behind Windows 365 and Azure Virtual Desktop. It is not a new switch for IT to enable. The upcoming GPU streaming enhancements are separate. If people report dropped sessions, IT can use the **GA Cloud PC monitoring and reporting tools** in Intune, or try the **public-preview Windows 365 admin assistant** to investigate connection history and suggest a likely cause. I’d verify its recommendation before changing anything.
+
 **Status:** Cloud PC model execution **GA**. Windows 365 admin assistant **preview**; Windows Server 2025 with AVD Hybrid **private preview**. Enhanced NVIDIA GPU streaming is a **separate early-2027 preview**, not the same GA claim.
 
-📖 [Windows 365 and hybrid execution distinctions](https://news.microsoft.com/events/ignite/2026/book-of-news/).
+📖 [Windows 365 and hybrid execution distinctions](https://news.microsoft.com/events/ignite/2026/book-of-news/) · [Windows 365 team: Direct Stream and monitoring](https://techcommunity.microsoft.com/blog/windows-itpro-blog/windows-365-at-ignite-2026-introducing-new-cloud-pc-capabilities-for-people-agen/4570006) · [Microsoft Learn: Admin Assistant availability and limits](https://learn.microsoft.com/en-us/windows-365/enterprise/admin-assistant).
 
-## 55. Windows Server 2028 previews another AI execution location {#windows-server}
+## 56. Windows Server 2028 previews another AI execution location {#windows-server}
 
 *For: Infrastructure teams considering on-premises inference.*
 
@@ -1873,7 +1981,7 @@ Imagine a team evaluating inference close to a locally managed dataset instead o
 
 <span id="operate"></span>
 
-## 56. Azure Copilot expands from advice into operational work {#azure-operations}
+## 57. Azure Copilot expands from advice into operational work {#azure-operations}
 
 *For: Azure administrators, platform teams and site reliability engineers (SREs).*
 
@@ -1903,7 +2011,7 @@ SRE Agent also expands collaboration through Teams, other agents and multicloud 
 </figure>
 </details>
 
-## 57. Azure Catalyst connects application and data modernization {#azure-catalyst}
+## 58. Azure Catalyst connects application and data modernization {#azure-catalyst}
 
 *For: Teams moving or modernizing existing workloads.*
 
@@ -1944,7 +2052,7 @@ One concrete addition is **AI-assisted Oracle application conversion**, alongsid
 </figure>
 </details>
 
-## 58. The data announcements help agents retrieve and operate, not just chat {#ai-data}
+## 59. The data announcements help agents retrieve and operate, not just chat {#ai-data}
 
 *For: Database teams and builders of data-backed agents.*
 
@@ -1980,7 +2088,7 @@ A database agent might explain a performance issue and propose a fix. I would wa
 <p>Official video: <a href="https://www.youtube-nocookie.com/embed/6xNqWkvILMQ">Azure HorizonDB + VS Code: Your AI App Development Workspace</a>. Official product illustration; release stages above apply. <a href="https://techcommunity.microsoft.com/blog/azuresqlblog/whats-new-in-databases-at-microsoft-ignite-2026-ai-ready-data-for-apps-and-agent/4570764">Read the product announcement or documentation</a>.</p>
 </details>
 
-## 59. Cosmos adds managed agent access, visual retrieval and memory tools {#cosmos-agent-memory}
+## 60. Cosmos adds managed agent access, visual retrieval and memory tools {#cosmos-agent-memory}
 
 *For: Builders whose agents need to find information and keep useful context between tasks.*
 
@@ -2022,7 +2130,7 @@ Cosmos service setup still applies even when you use generated vectors elsewhere
 </figure>
 </details>
 
-## 60. Agent infrastructure extends from managed Foundry into AKS {#azure-infrastructure}
+## 61. Agent infrastructure extends from managed Foundry into AKS {#azure-infrastructure}
 
 *For: Platform engineers who need more infrastructure control.*
 
@@ -2046,7 +2154,7 @@ Confidential AI infrastructure also gets three **preview** paths: VR72 multi-GPU
 
 <span id="build"></span>
 
-## 61. Foundry closes the loop between production evidence and improvement {#foundry-improvement}
+## 62. Foundry closes the loop between production evidence and improvement {#foundry-improvement}
 
 *For: Teams running agents beyond a demonstration.*
 
@@ -2099,7 +2207,7 @@ The harness is the part that manages an agent's work across steps. This official
 <p>Official video: <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1307367-microsoftfoundry2-0x1080-6439k">Microsoft Foundry overview</a>. Official product illustration; release stages above apply. <a href="https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/">Read the product announcement or documentation</a>.</p>
 </details>
 
-## 62. Managed and Programmed Training offer different levels of control {#foundry-training}
+## 63. Managed and Programmed Training offer different levels of control {#foundry-training}
 
 *For: Teams with evidence that prompting and retrieval are not enough.*
 
@@ -2117,7 +2225,7 @@ For example, a team classifying specialist maintenance notes might compare a tun
 
 📖 [Foundry training announcement](https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/) · [Programmed Training public-preview details](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/from-model-choice-to-your-durable-advantage-build-ai-that-keeps-improving/4573609).
 
-## 63. Foundry IQ adds knowledge graphs and a new retriever {#foundry-iq}
+## 64. Foundry IQ adds knowledge graphs and a new retriever {#foundry-iq}
 
 *For: Builders grounding agents in documents and organizational knowledge.*
 
@@ -2135,7 +2243,7 @@ For example, an engineering agent might need to connect a component, its specifi
 
 📖 [Foundry IQ product announcement](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/foundry-iq-introducing-knowledge-graphs-engineered-for-agents/4572683).
 
-## 64. Fabric moves from answering about data to building data apps {#fabric-apps}
+## 65. Fabric moves from answering about data to building data apps {#fabric-apps}
 
 *For: BI teams, app builders and people working with governed business metrics.*
 
