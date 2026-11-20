@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 09:57:15 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:33:59 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users' published copilot agent may not appear in the Teams Admin Center after a product app is published</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1561240</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users' published copilot agent may not appear in the Teams Admin Center after a product app is published.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1561240</guid>
+      <pubDate>Fri, 20 Nov 2026 05:11:39 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Admins' mail-enabled security groups created through the admin center UI may be provisioned incorrectly</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1558755</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1519335</guid>
       <pubDate>Wed, 21 Oct 2026 18:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Users may be unable to access the group feed in Microsoft Viva Engage</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1519166</link>
-      <description>[Microsoft Viva] Users may have been unable to access the group feed with Microsoft Viva Engage.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1519166</guid>
-      <pubDate>Wed, 21 Oct 2026 14:01:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
