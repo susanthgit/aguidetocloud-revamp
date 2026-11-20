@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Nov 2026 18:58:33 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 01:45:11 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Admins' mail-enabled security groups created through the admin center UI may be provisioned incorrectly</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1558755</link>
-      <description>[Exchange Online] Admins' mail-enabled security groups created through the admin center UI may be provisioned incorrectly.</description>
+      <description>[Exchange Online] Admins' mail-enabled security groups created through the admin center UI may have been provisioned incorrectly.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1558755</guid>
-      <pubDate>Wed, 18 Nov 2026 06:44:06 +0000</pubDate>
+      <pubDate>Thu, 19 Nov 2026 22:47:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users aren't able to upload new skills in Microsoft 365 Copilot Chat</title>
