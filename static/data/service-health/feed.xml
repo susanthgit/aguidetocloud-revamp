@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:33:59 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 01:26:36 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' published copilot agent may not appear in the Teams Admin Center after a product app is published</title>
@@ -24,6 +24,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1558755</guid>
       <pubDate>Thu, 19 Nov 2026 22:47:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may be unable to open or upload attachments in the new Outlook client</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1561765</link>
+      <description>[Exchange Online] Users may be unable to open or upload attachments or view inline images in the new Outlook client.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1561765</guid>
+      <pubDate>Thu, 19 Nov 2026 20:49:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users aren't able to upload new skills in Microsoft 365 Copilot Chat</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1519662</guid>
       <pubDate>Wed, 21 Oct 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] SIP devices can't make or receive calls</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1519335</link>
-      <description>[Microsoft Teams] Users may have been unable to make or receive calls using SIP devices.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1519335</guid>
-      <pubDate>Wed, 21 Oct 2026 18:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
