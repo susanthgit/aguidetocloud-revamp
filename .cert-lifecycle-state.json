@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-11-20T09:39:34.139Z",
+  "lastRun": "2026-11-21T09:12:04.041Z",
   "certs": {
     "ab-900": {
       "hash": "a669d15506f52877",
@@ -10,7 +10,7 @@
       "skills": [
         "Identify the core features and objects of Microsoft 365 services"
       ],
-      "lastSeenOK": "2026-11-20T09:34:51.049Z",
+      "lastSeenOK": "2026-11-21T09:07:22.762Z",
       "consecutive404": 0
     },
     "ai-901": {
@@ -23,7 +23,7 @@
         "Identify AI concepts and capabilities|40-45%",
         "Implement AI solutions by using Microsoft Foundry|55-60%"
       ],
-      "lastSeenOK": "2026-11-20T09:34:56.294Z",
+      "lastSeenOK": "2026-11-21T09:07:27.878Z",
       "consecutive404": 0
     },
     "az-900": {
@@ -37,13 +37,13 @@
         "Describe Azure management and governance",
         "Describe cloud concepts"
       ],
-      "lastSeenOK": "2026-11-20T09:35:01.821Z",
+      "lastSeenOK": "2026-11-21T09:07:33.099Z",
       "consecutive404": 0
     },
     "dp-800": {
-      "consecutive404": 167,
+      "consecutive404": 168,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:35:07.110Z"
+      "lastFailAt": "2026-11-21T09:07:38.208Z"
     },
     "dp-900": {
       "hash": "415d31d0b0df72d0",
@@ -57,7 +57,7 @@
         "Describe core data concepts",
         "Identify considerations for relational data on Azure"
       ],
-      "lastSeenOK": "2026-11-20T09:35:12.534Z",
+      "lastSeenOK": "2026-11-21T09:07:43.427Z",
       "consecutive404": 0
     },
     "ms-700": {
@@ -72,7 +72,7 @@
         "Manage teams, channels, chats, and apps",
         "Monitor, report on, and troubleshoot Teams"
       ],
-      "lastSeenOK": "2026-11-20T09:35:17.904Z",
+      "lastSeenOK": "2026-11-21T09:07:48.912Z",
       "consecutive404": 0
     },
     "sc-900": {
@@ -87,7 +87,7 @@
         "Describe the capabilities of Microsoft security solutions",
         "Describe the concepts of security, compliance, and identity"
       ],
-      "lastSeenOK": "2026-11-20T09:35:23.321Z",
+      "lastSeenOK": "2026-11-21T09:07:54.322Z",
       "consecutive404": 0
     },
     "dp-300": {
@@ -103,7 +103,7 @@
         "Plan and configure a high availability and disaster recovery (HA/DR) environment",
         "Plan and implement data platform resources"
       ],
-      "lastSeenOK": "2026-11-20T09:35:28.925Z",
+      "lastSeenOK": "2026-11-21T09:07:59.678Z",
       "consecutive404": 0
     },
     "pl-900": {
@@ -118,7 +118,7 @@
         "Develop tailored business solutions.",
         "Manage the Microsoft Power Platform environment"
       ],
-      "lastSeenOK": "2026-11-20T09:35:34.564Z",
+      "lastSeenOK": "2026-11-21T09:08:04.958Z",
       "consecutive404": 0
     },
     "ab-730": {
@@ -131,13 +131,13 @@
         "Manage business content and collaboration by using Microsoft 365 Copilot",
         "Manage prompts and chats by using Microsoft 365 Copilot"
       ],
-      "lastSeenOK": "2026-11-20T09:35:40.084Z",
+      "lastSeenOK": "2026-11-21T09:08:10.394Z",
       "consecutive404": 0
     },
     "ab-620": {
-      "consecutive404": 167,
+      "consecutive404": 168,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:35:45.253Z"
+      "lastFailAt": "2026-11-21T09:08:15.495Z"
     },
     "ab-731": {
       "hash": "b09ecbc059749cdc",
@@ -150,7 +150,7 @@
         "Identify benefits, capabilities, and opportunities for Microsoft’s AI apps and services",
         "Identify the business value of generative AI solutions"
       ],
-      "lastSeenOK": "2026-11-20T09:35:55.867Z",
+      "lastSeenOK": "2026-11-21T09:08:26.082Z",
       "consecutive404": 0
     },
     "ai-103": {
@@ -166,7 +166,7 @@
         "Implement text analysis solutions",
         "Plan and manage an Azure AI solution"
       ],
-      "lastSeenOK": "2026-11-20T09:36:17.079Z",
+      "lastSeenOK": "2026-11-21T09:08:47.682Z",
       "consecutive404": 0
     },
     "az-120": {
@@ -181,7 +181,7 @@
         "Maintain SAP workloads on Azure",
         "Migrate SAP workloads to Azure"
       ],
-      "lastSeenOK": "2026-11-20T09:36:22.544Z",
+      "lastSeenOK": "2026-11-21T09:08:53.123Z",
       "consecutive404": 0
     },
     "ai-200": {
@@ -195,7 +195,7 @@
         "Develop containerized solutions on Azure",
         "Secure, monitor, troubleshoot Azure solutions"
       ],
-      "lastSeenOK": "2026-11-20T09:36:27.926Z",
+      "lastSeenOK": "2026-11-21T09:08:58.367Z",
       "consecutive404": 0
     },
     "ai-300": {
@@ -210,7 +210,7 @@
         "Implement generative AI quality assurance and observability",
         "Implement machine learning model lifecycle and operations"
       ],
-      "lastSeenOK": "2026-11-20T09:36:33.267Z",
+      "lastSeenOK": "2026-11-21T09:09:04.309Z",
       "consecutive404": 0
     },
     "az-104": {
@@ -226,7 +226,7 @@
         "Manage Azure identities and governance",
         "Monitor and maintain Azure resources"
       ],
-      "lastSeenOK": "2026-11-20T09:36:38.779Z",
+      "lastSeenOK": "2026-11-21T09:09:10.002Z",
       "consecutive404": 0
     },
     "az-140": {
@@ -241,7 +241,7 @@
         "Plan and implement identity and security",
         "Plan and implement user environments and apps"
       ],
-      "lastSeenOK": "2026-11-20T09:36:44.187Z",
+      "lastSeenOK": "2026-11-21T09:09:15.341Z",
       "consecutive404": 0
     },
     "az-700": {
@@ -257,7 +257,7 @@
         "Design and implement private access to Azure services",
         "Design, implement, and manage connectivity services"
       ],
-      "lastSeenOK": "2026-11-20T09:36:49.728Z",
+      "lastSeenOK": "2026-11-21T09:09:20.591Z",
       "consecutive404": 0
     },
     "dp-600": {
@@ -271,7 +271,7 @@
         "Maintain a data analytics solution",
         "Secure and maintain analytics assets"
       ],
-      "lastSeenOK": "2026-11-20T09:36:55.279Z",
+      "lastSeenOK": "2026-11-21T09:09:25.894Z",
       "consecutive404": 0
     },
     "dp-700": {
@@ -284,13 +284,13 @@
         "Implement and manage an analytics solution",
         "Monitor and optimize an analytics solution"
       ],
-      "lastSeenOK": "2026-11-20T09:37:00.688Z",
+      "lastSeenOK": "2026-11-21T09:09:31.281Z",
       "consecutive404": 0
     },
     "dp-750": {
-      "consecutive404": 167,
+      "consecutive404": 168,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:37:05.818Z"
+      "lastFailAt": "2026-11-21T09:09:36.395Z"
     },
     "md-102": {
       "hash": "043276f964bf5de7",
@@ -302,7 +302,7 @@
         "Manage and maintain devices",
         "Manage and secure applications"
       ],
-      "lastSeenOK": "2026-11-20T09:37:11.061Z",
+      "lastSeenOK": "2026-11-21T09:09:41.721Z",
       "consecutive404": 0
     },
     "pl-300": {
@@ -314,7 +314,7 @@
       "skills": [
         "Manage and secure Power BI"
       ],
-      "lastSeenOK": "2026-11-20T09:37:16.465Z",
+      "lastSeenOK": "2026-11-21T09:09:46.931Z",
       "consecutive404": 0
     },
     "pl-400": {
@@ -329,7 +329,7 @@
         "Create and configure Power Apps (10—15%)",
         "Develop integrations (5—10%)"
       ],
-      "lastSeenOK": "2026-11-20T09:37:21.585Z",
+      "lastSeenOK": "2026-11-21T09:09:52.065Z",
       "consecutive404": 0
     },
     "sc-200": {
@@ -341,7 +341,7 @@
       "skills": [
         "Manage a security operations environment"
       ],
-      "lastSeenOK": "2026-11-20T09:37:26.921Z",
+      "lastSeenOK": "2026-11-21T09:09:57.513Z",
       "consecutive404": 0
     },
     "sc-300": {
@@ -356,13 +356,13 @@
         "Plan and implement identity governance",
         "Plan and implement workload identities"
       ],
-      "lastSeenOK": "2026-11-20T09:37:32.416Z",
+      "lastSeenOK": "2026-11-21T09:10:03.020Z",
       "consecutive404": 0
     },
     "sc-500": {
-      "consecutive404": 167,
+      "consecutive404": 168,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:37:37.586Z"
+      "lastFailAt": "2026-11-21T09:10:08.142Z"
     },
     "sc-401": {
       "hash": "9e8e0f1cd3c80676",
@@ -375,7 +375,7 @@
         "Implement information protection",
         "Manage risks, alerts, and activities"
       ],
-      "lastSeenOK": "2026-11-20T09:37:42.806Z",
+      "lastSeenOK": "2026-11-21T09:10:13.382Z",
       "consecutive404": 0
     },
     "ab-100": {
@@ -389,7 +389,7 @@
         "Design AI-powered business solutions|30–35%",
         "Plan AI-powered business solutions|35–40%"
       ],
-      "lastSeenOK": "2026-11-20T09:37:47.932Z",
+      "lastSeenOK": "2026-11-21T09:10:18.507Z",
       "consecutive404": 0
     },
     "mb-800": {
@@ -402,7 +402,7 @@
         "Configure financials",
         "Configure sales and purchasing"
       ],
-      "lastSeenOK": "2026-11-20T09:37:53.310Z",
+      "lastSeenOK": "2026-11-21T09:10:23.921Z",
       "consecutive404": 0
     },
     "mb-500": {
@@ -424,7 +424,7 @@
         "Monitor performance.",
         "Plan architecture and solution design"
       ],
-      "lastSeenOK": "2026-11-20T09:37:58.694Z",
+      "lastSeenOK": "2026-11-21T09:10:29.240Z",
       "consecutive404": 0
     },
     "az-305": {
@@ -439,7 +439,7 @@
         "Design identity, governance, and monitoring solutions|25–30%",
         "Design infrastructure solutions|30–35%"
       ],
-      "lastSeenOK": "2026-11-20T09:38:03.826Z",
+      "lastSeenOK": "2026-11-21T09:10:34.402Z",
       "consecutive404": 0
     },
     "az-400": {
@@ -455,7 +455,7 @@
         "Develop a security and compliance plan|10–15%",
         "Implement an instrumentation strategy|5–10%"
       ],
-      "lastSeenOK": "2026-11-20T09:38:08.963Z",
+      "lastSeenOK": "2026-11-21T09:10:39.539Z",
       "consecutive404": 0
     },
     "ms-102": {
@@ -471,7 +471,7 @@
         "Manage security and threats by using Microsoft Defender XDR|35–40%",
         "Work with architects and other administrators responsible for workloads, infrastructure, identity, security, compliance, endpoints, and applications."
       ],
-      "lastSeenOK": "2026-11-20T09:38:14.112Z",
+      "lastSeenOK": "2026-11-21T09:10:44.675Z",
       "consecutive404": 0
     },
     "sc-100": {
@@ -486,7 +486,7 @@
         "Design security solutions for infrastructure|25–30%",
         "Design solutions that align with security best practices and priorities|20–25%"
       ],
-      "lastSeenOK": "2026-11-20T09:38:19.327Z",
+      "lastSeenOK": "2026-11-21T09:10:49.793Z",
       "consecutive404": 0
     },
     "dp-420": {
@@ -500,7 +500,7 @@
         "Implement AI and Analytics capabilities in database solutions",
         "Secure, optimize, and deploy database solutions"
       ],
-      "lastSeenOK": "2026-11-20T09:38:25.096Z",
+      "lastSeenOK": "2026-11-21T09:10:55.176Z",
       "consecutive404": 0
     },
     "ms-721": {
@@ -515,7 +515,7 @@
         "Configure and manage Teams meetings, webinars, and town halls",
         "Plan and design collaboration communications systems"
       ],
-      "lastSeenOK": "2026-11-20T09:38:35.650Z",
+      "lastSeenOK": "2026-11-21T09:11:05.637Z",
       "consecutive404": 0
     },
     "az-802": {
@@ -533,7 +533,7 @@
         "Monitor and troubleshoot Windows Server environments|15–20%",
         "Secure Windows Server infrastructure|10–15%"
       ],
-      "lastSeenOK": "2026-11-20T09:38:30.293Z",
+      "lastSeenOK": "2026-11-21T09:11:00.295Z",
       "consecutive404": 0
     },
     "ab-210": {
@@ -549,7 +549,7 @@
         "Develop deals by using intelligent opportunity research",
         "Implement collaboration features."
       ],
-      "lastSeenOK": "2026-11-20T09:36:06.505Z",
+      "lastSeenOK": "2026-11-21T09:08:36.980Z",
       "consecutive404": 0
     },
     "ai-500": {
@@ -564,7 +564,7 @@
         "Evaluate, optimize, and monitor multi-agent solutions|20–25%",
         "Secure, govern, and deploy multi-agent solutions|20–25%"
       ],
-      "lastSeenOK": "2026-11-20T09:38:40.786Z",
+      "lastSeenOK": "2026-11-21T09:11:10.778Z",
       "consecutive404": 0
     },
     "ab-250": {
@@ -581,23 +581,22 @@
         "Implement channels",
         "Manage analytics for the Dynamics 365 Contact Center"
       ],
-      "lastSeenOK": "2026-11-20T09:36:11.805Z",
+      "lastSeenOK": "2026-11-21T09:08:42.311Z",
       "consecutive404": 0
     },
     "mb-820": {
-      "hash": "13873ed1267dc1c9",
+      "hash": "44e93ccc9c852551",
       "title": "Microsoft Certified: Dynamics 365 Business Central Developer Associate - Certifications | Microsoft Learn",
       "retirementDate": null,
       "isBeta": false,
       "examLastUpdatedText": null,
       "skills": [
-        "Describe Business Central",
-        "Develop by using AL",
-        "Develop by using AL objects",
-        "Integrate Business Central with other applications",
-        "Work with development tools"
+        "Design Business Central solutions",
+        "Develop objects by using AL",
+        "Develop user experiences and logic by using AL",
+        "Integrate Business Central with other applications"
       ],
-      "lastSeenOK": "2026-11-20T09:38:46.236Z",
+      "lastSeenOK": "2026-11-21T09:11:16.095Z",
       "consecutive404": 0
     },
     "mb-310": {
@@ -613,7 +612,7 @@
         "Manage budgeting",
         "Manage fixed assets"
       ],
-      "lastSeenOK": "2026-11-20T09:38:51.592Z",
+      "lastSeenOK": "2026-11-21T09:11:21.546Z",
       "consecutive404": 0
     },
     "mb-330": {
@@ -631,7 +630,7 @@
         "Implement product information management",
         "Implement warehouse management and transportation management"
       ],
-      "lastSeenOK": "2026-11-20T09:38:56.918Z",
+      "lastSeenOK": "2026-11-21T09:11:27.489Z",
       "consecutive404": 0
     },
     "mb-230": {
@@ -644,13 +643,13 @@
         "Configure representative experience and routing",
         "Manage cases in Customer Service"
       ],
-      "lastSeenOK": "2026-11-20T09:39:02.345Z",
+      "lastSeenOK": "2026-11-21T09:11:32.860Z",
       "consecutive404": 0
     },
     "ab-410": {
-      "consecutive404": 86,
+      "consecutive404": 87,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:35:50.476Z"
+      "lastFailAt": "2026-11-21T09:08:20.670Z"
     },
     "ab-650": {
       "hash": "5912401b7db0a605",
@@ -662,7 +661,7 @@
         "Configure and manage Microsoft 365 tenants and workloads",
         "Manage and secure AI services in Microsoft 365"
       ],
-      "lastSeenOK": "2026-11-20T09:36:01.096Z",
+      "lastSeenOK": "2026-11-21T09:08:31.584Z",
       "consecutive404": 0
     },
     "62-193": {
@@ -674,7 +673,7 @@
       "skills": [
         "Use ICT to be an effective educator"
       ],
-      "lastSeenOK": "2026-11-20T09:39:08.047Z",
+      "lastSeenOK": "2026-11-21T09:11:38.118Z",
       "consecutive404": 0
     },
     "ab-400": {
@@ -689,18 +688,18 @@
         "Develop integrations",
         "Implement Power Apps improvements"
       ],
-      "lastSeenOK": "2026-11-20T09:39:13.483Z",
+      "lastSeenOK": "2026-11-21T09:11:43.422Z",
       "consecutive404": 0
     },
     "mo-240": {
-      "consecutive404": 23,
+      "consecutive404": 24,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:39:18.601Z"
+      "lastFailAt": "2026-11-21T09:11:48.574Z"
     },
     "mo-220": {
-      "consecutive404": 22,
+      "consecutive404": 23,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:39:23.811Z"
+      "lastFailAt": "2026-11-21T09:11:53.714Z"
     },
     "az-401": {
       "hash": "59002818111bf681",
@@ -715,13 +714,13 @@
         "Design and implement processes and communications|15–20%",
         "Implement an instrumentation strategy|15–20%"
       ],
-      "lastSeenOK": "2026-11-20T09:39:29.006Z",
+      "lastSeenOK": "2026-11-21T09:11:58.868Z",
       "consecutive404": 0
     },
     "ab-330": {
-      "consecutive404": 22,
+      "consecutive404": 23,
       "lastFailStatus": 404,
-      "lastFailAt": "2026-11-20T09:39:34.139Z"
+      "lastFailAt": "2026-11-21T09:12:04.041Z"
     }
   }
 }
