@@ -10,154 +10,157 @@
   ],
   "category": "Dynamics 365",
   "status": "active",
-  "updated_at": "2025-12-05 03:46:00+00:00",
-  "skills_date": "June 10, 2025",
+  "updated_at": "2026-11-20 21:29:00+00:00",
+  "skills_date": "November 20, 2026",
   "skills_at_a_glance": [
     {
-      "area": "Describe Business Central",
-      "weight": "10-15%"
+      "area": "Design Business Central solutions",
+      "weight": "5-10%"
     },
     {
       "area": "Install, develop, and deploy for Business Central",
       "weight": "10-15%"
     },
     {
-      "area": "Develop by using AL objects",
-      "weight": "35-40%"
+      "area": "Develop objects by using AL",
+      "weight": "30-35%"
     },
     {
-      "area": "Develop by using AL",
+      "area": "Develop user experiences and logic by using AL",
       "weight": "15-20%"
     },
     {
-      "area": "Work with development tools",
+      "area": "Test and monitor AL code",
       "weight": "10-15%"
     },
     {
       "area": "Integrate Business Central with other applications",
-      "weight": "10-15%"
+      "weight": "15-20%"
     }
   ],
   "skills_detailed": {
-    "Describe Business Central (10–15%)": {
-      "Describe the Business Central architecture": [
-        "Describe the components and capabilities of Business Central",
-        "Describe the core solution and extensions approach for Business Central",
-        "Describe the update lifecycle for customizations of Business Central",
+    "Design Business Central solutions (5–10%)": {
+      "Assess the Business Central architecture": [
+        "Extend the Business Central core solution",
+        "Plan the update lifecycle for customizations of Business Central",
         "Differentiate Business Central online and Business Central on-premises features"
       ],
-      "Describe Business Central apps": [
-        "Differentiate between the base app and the system app",
-        "Describe the functionality of apps",
-        "Describe the process of bringing an app to AppSource"
+      "Analyze Business Central apps": [
+        "Differentiate between the base application and system applications",
+        "Differentiate between types of apps, including connect, add-on, library, and dependency applications",
+        "Validate an app for Microsoft Marketplace submission"
       ]
     },
     "Install, develop, and deploy for Business Central (10–15%)": {
-      "Install and configure a Business Central development environment": [
-        "Describe the development environment for Business Central",
+      "Configure and manage a Business Central development environment": [
         "Install and configure the development environment",
         "Manage configuration files for an AL extension",
-        "Manage multiple AL extensions in one workspace"
+        "Manage AL extensions within a workspace",
+        "Manage namespaces and cross-app dependencies",
+        "Enable code analysis"
       ],
-      "Create, debug, and deploy an extension in Business Central": [
-        "Debug an extension with Visual Studio Code",
+      "Create, debug, and deploy an extension": [
+        "Debug an extension by using Visual Studio Code",
         "Deploy an extension",
-        "Create or modify a Business Central extension in Visual Studio Code",
+        "Create or modify an extension",
         "Manage multilanguage development",
-        "Maintain extensions"
+        "Maintain extensions",
+        "Implement debug configuration, including snapshot and attach"
       ]
     },
-    "Develop by using AL objects (35–40%)": {
-      "Build and extend tables and pages in Business Central": [
+    "Develop objects by using AL (30–35%)": {
+      "Build and extend tables and pages": [
         "Develop Role Center pages",
-        "Identify different page types",
         "Build and extend page objects",
         "Build and extend tables",
-        "Build and extend enums"
+        "Build and extend enums",
+        "Develop control add-ins"
       ],
       "Build and extend reports": [
         "Substitute a report",
         "Create a report layout",
         "Create document reports",
         "Design the data model of a report",
-        "Implement multilanguage in reports",
-        "Use report triggers, functions, and processing-only reports",
-        "Develop the report request page"
-      ],
-      "Design and create an XMLport": [
-        "Configure different XMLport properties",
-        "Configure nodes and their properties",
-        "Use XMLports in AL code"
+        "Implement multilanguage reports",
+        "Create report triggers, functions, and processing-only reports",
+        "Develop the report request page",
+        "Extend reports by using report extension objects"
       ],
       "Develop codeunits": [
         "Create and access codeunits",
-        "Use events and triggers",
+        "Create events and triggers",
         "Implement interfaces",
-        "Create installation and upgrade codeunits"
+        "Create installation and upgrade codeunits",
+        "Create and manage scheduled tasks"
       ],
-      "Create entitlement and permission set objects": [
+      "Create and manage entitlement and permission set objects": [
         "Create and extend permission sets",
-        "Override entitlements with inherent permissions",
+        "Override entitlements by using inherent permissions",
         "Troubleshoot permission sets"
       ],
-      "Create queries in Business Central": [
+      "Create and manage queries": [
         "Link and join data items",
-        "Apply filters in query objects",
-        "Use queries instead of record variables",
-        "Aggregate data in query objects",
-        "Use a query to create a report"
+        "Apply filters to query objects",
+        "Retrieve data from multiple tables by using queries",
+        "Aggregate data by using query objects",
+        "Use a query to create a report",
+        "Create query objects"
       ]
     },
-    "Develop by using AL (15–20%)": {
+    "Develop user experiences and logic by using AL (15–20%)": {
       "Customize the UI experience, and implement onboarding techniques": [
-        "Create profiles in AL",
-        "Use and create views in AL",
+        "Create profiles",
+        "Use and create views",
         "Develop the UI by using the user assistance model",
-        "Integrate assisted setup",
-        "Create teaching tips and in-app tours to onboard users",
-        "Create an onboarding checklist"
+        "Integrate assisted setup"
       ],
-      "Describe the essential development standards": [
-        "Implement the data process model in Business Central",
-        "Define the different functional table types and characteristics",
-        "Use document standards in Business Central",
+      "Implement essential development standards": [
+        "Implement the data process model",
+        "Differentiate functional table types and characteristics",
+        "Apply document patterns",
         "Implement master data standards and design patterns"
       ],
-      "Use AL to extend Business Central": [
+      "Extend Business Central by using AL": [
         "Create custom procedures",
-        "Use data types in code",
+        "Declare data types",
         "Manage files",
         "Manipulate data by using code",
-        "Describe the basics of the AL",
-        "Use the different types of expressions",
-        "Use AL built-in functions and AL statements",
-        "Work with variables and define them in AL code",
+        "Implement the basics of AL programming",
+        "Implement built-in functions",
+        "Declare variables",
         "Manage errors",
-        "Use access modifiers to limit access"
+        "Limit access by using access modifiers",
+        "Implement statements"
       ]
     },
-    "Work with development tools (10–15%)": {
+    "Test and monitor AL code (10–15%)": {
       "Implement semiautomated test processes, and run standard Business Central tests": [
-        "Test applications in Business Central",
+        "Test applications",
         "Install and run the Test Toolkit",
         "Develop test codeunits and procedures"
       ],
       "Manage and analyze telemetry": [
         "Monitor and analyze telemetry",
         "Configure telemetry",
-        "Create custom telemetry signals"
+        "Create custom telemetry events"
       ]
     },
-    "Integrate Business Central with other applications (10–15%)": {
-      "Access Representational State Transfer (REST) services from within Business Central": [
-        "Use the different HTTP classes and their functions",
+    "Integrate Business Central with other applications (15–20%)": {
+      "Access external REST services": [
+        "Apply HTTP classes and their functions",
         "Get data from and send data to an external REST service",
-        "Use and read JSON"
+        "Create and parse JSON files"
       ],
-      "Implement APIs": [
-        "Create and work with APIs",
+      "Implement APIs by using AL": [
+        "Develop APIs",
         "Create and manage OData bound and unbound actions",
-        "Use Read Scale-Out to improve performance"
+        "Improve API performance by using Read Scale-Out",
+        "Protect sensitive data by using Isolated Storage"
+      ],
+      "Build Copilot capability by using AL": [
+        "Build Copilot capability",
+        "Build Copilot user experiences",
+        "Create agents"
       ]
     }
   },

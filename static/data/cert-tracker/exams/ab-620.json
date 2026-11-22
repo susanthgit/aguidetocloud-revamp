@@ -10,89 +10,79 @@
   ],
   "category": "AI",
   "status": "beta",
-  "updated_at": "2026-10-21 22:54:00+00:00",
-  "skills_date": null,
+  "updated_at": "2026-11-19 02:08:00+00:00",
+  "skills_date": "December 18, 2026",
   "skills_at_a_glance": [
     {
       "area": "Plan and configure agent solutions",
-      "weight": "30-35%"
+      "weight": "50-55%"
     },
     {
       "area": "Integrate and extend agents in Copilot Studio",
-      "weight": "40-45%"
+      "weight": "20-25%"
     },
     {
       "area": "Test and manage agents",
-      "weight": "20-25%"
+      "weight": "25-30%"
     }
   ],
   "skills_detailed": {
-    "Plan and configure agent solutions (30–35%)": {
+    "Plan and configure agent solutions (50–55%)": {
       "Plan an agent solution": [
         "Plan integration with enterprise systems",
         "Plan identity strategy",
         "Plan channels and deployment",
         "Plan responsible AI strategy",
         "Evaluate security and governance considerations",
-        "Plan reuseable agent components",
+        "Plan reusable agent components",
         "Design agents for internal or external audiences"
       ],
-      "Create and monitor agent flows in Copilot Studio": [
-        "Create an agent flow",
-        "Create a human-in-the-loop agent flow",
+      "Create and configure workflows": [
+        "Create a workflow",
+        "Create a human-in-the-loop workflow",
         "Configure actions and connectors",
-        "Monitor agent flows",
+        "Monitor workflow runs",
         "Add input and output parameters",
-        "Implement error handling in agent flows"
+        "Implement error handling in workflows"
       ],
-      "Configure topics": [
-        "Add agent flows to a topic",
-        "Configure agent response formatting",
-        "Add tools to a topic",
-        "Configure advanced agent responses with custom prompts",
-        "Configure advanced agent responses with custom knowledge sources",
-        "Configure advanced agent responses with API and Send HTTP requests",
-        "Configure generative answers node",
-        "Configure adaptive cards",
-        "Manage variables"
+      "Create and manage skills": [
+        "Create a new skill",
+        "Upload a skill",
+        "Reference tools and connected agents from within skill instructions"
+      ],
+      "Configure agent identity, instructions, and behavior": [
+        "Reference skills, tools, and connected agents from within agent instructions",
+        "Configure safety and access settings",
+        "Enable and manage memory for user-specific context",
+        "Select and configure AI models"
       ]
     },
-    "Integrate and extend agents in Copilot Studio (40–45%)": {
-      "Connect to enterprise knowledge sources": [
+    "Integrate and extend agents in Copilot Studio (20–25%)": {
+      "Extend agents by using tools and enterprise data": [
         "Connect to Copilot connectors",
-        "Connect to Microsoft Power Platform connectors",
-        "Connect to Azure AI Search"
+        "Configure MCP servers as tools",
+        "Configure connectors as tools",
+        "Configure workflows as tools",
+        "Connect to Foundry IQ",
+        "Connect to Fabric IQ"
       ],
-      "Add tools to agents": [
-        "Configure and monitor computer use for an agent",
-        "Configure MCP tools",
-        "Add a tool by using an existing custom connector",
-        "Add REST APIs to an agent"
-      ],
-      "Configure multi-agent collaboration from Copilot Studio": [
+      "Configure multi-agent collaboration in Copilot Studio": [
         "Design multi-agent solutions in Copilot Studio",
-        "Integrate a Foundry agent",
-        "Integrate an existing agent in Copilot Studio",
-        "Integrate a Fabric data agent",
-        "Create a multi-agent solution by using A2A protocol"
-      ],
-      "Integrate agents with Azure": [
-        "Configure generative answers by using Azure AI Search with Foundry",
-        "Configure custom prompts to use the Foundry model catalog",
-        "Monitor agents by using Application Insights"
+        "Integrate an existing Copilot Studio agent"
       ]
     },
-    "Test and manage agents (20–25%)": {
+    "Test and manage agents (25–30%)": {
       "Evaluate agent performance": [
         "Create a test set",
         "Choose an evaluation method",
-        "Review test results"
+        "Review test results",
+        "Evaluate AI model candidates for an agent"
       ],
       "Implement application lifecycle management (ALM) for agents in Copilot Studio": [
         "Create a solution",
         "Add existing agents to a solution",
         "Create and use environment variables",
-        "Implement and extend Microsoft Power Platform Pipelines"
+        "Implement and extend Pipelines in Microsoft Power Platform"
       ]
     }
   },

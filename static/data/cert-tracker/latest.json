@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T12:33:32Z",
+  "generated_at": "2026-11-22T13:07:32Z",
   "exam_count": 62,
   "categories": [
     "AI",
@@ -518,7 +518,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-11-05 22:08:00+00:00",
+      "updated_at": "2026-11-16 23:28:00+00:00",
       "skills_date": "July 27, 2026",
       "skill_areas": 5,
       "total_objectives": 86,
@@ -693,26 +693,22 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-11-05 22:08:00+00:00",
-      "skills_date": null,
-      "skill_areas": 4,
-      "total_objectives": 57,
+      "updated_at": "2026-11-17 14:52:00+00:00",
+      "skills_date": "October 19, 2026",
+      "skill_areas": 3,
+      "total_objectives": 41,
       "skills_at_a_glance": [
         {
-          "area": "Plan, implement, and manage a solution for data analytics",
-          "weight": "10-15%"
+          "area": "Maintain a data analytics solution",
+          "weight": "25-30%"
         },
         {
-          "area": "Prepare and serve data",
-          "weight": "40-45%"
+          "area": "Prepare data",
+          "weight": "45-50%"
         },
         {
           "area": "Implement and manage semantic models",
-          "weight": "20-25%"
-        },
-        {
-          "area": "Explore and analyze data",
-          "weight": "20-25%"
+          "weight": "25-30%"
         }
       ],
       "has_changes": true,
@@ -861,7 +857,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-02-09 23:06:00+00:00",
+      "updated_at": "2026-11-20 21:29:00+00:00",
       "skills_date": "March 11, 2026",
       "skill_areas": 3,
       "total_objectives": 50,
@@ -899,14 +895,14 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-08-26 22:01:00+00:00",
-      "skills_date": "August 14, 2026",
+      "updated_at": "2026-11-20 21:29:00+00:00",
+      "skills_date": "July 25, 2025",
       "skill_areas": 5,
-      "total_objectives": 96,
+      "total_objectives": 108,
       "skills_at_a_glance": [
         {
           "area": "Implement financial management",
-          "weight": "35-40%"
+          "weight": "40-45%"
         },
         {
           "area": "Implement accounts receivable, credit, collections, and subscription billing",
@@ -945,7 +941,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-11-13 22:38:00+00:00",
+      "updated_at": "2026-11-20 21:29:00+00:00",
       "skills_date": "October 21, 2026",
       "skill_areas": 5,
       "total_objectives": 101,
@@ -991,22 +987,22 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2025-12-31 16:52:00+00:00",
-      "skills_date": "January 30, 2026",
+      "updated_at": "2026-11-19 02:08:00+00:00",
+      "skills_date": "December 18, 2026",
       "skill_areas": 7,
-      "total_objectives": 89,
+      "total_objectives": 81,
       "skills_at_a_glance": [
         {
           "area": "Plan the architecture and solution design",
-          "weight": "5-10%"
+          "weight": "10-15%"
         },
         {
           "area": "Apply developer tools",
-          "weight": "5-10%"
+          "weight": "10-15%"
         },
         {
           "area": "Design and develop AOT elements",
-          "weight": "15-20%"
+          "weight": "10-15%"
         },
         {
           "area": "Develop and test code",
@@ -1014,7 +1010,7 @@
         },
         {
           "area": "Implement reporting",
-          "weight": "10-15%"
+          "weight": "5-10%"
         },
         {
           "area": "Integrate and manage data solutions",
@@ -1045,8 +1041,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-05-29 22:10:00+00:00",
-      "skills_date": "June 30, 2026",
+      "updated_at": "2026-11-19 02:08:00+00:00",
+      "skills_date": "December 18, 2026",
       "skill_areas": 4,
       "total_objectives": 123,
       "skills_at_a_glance": [
@@ -1087,34 +1083,34 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2025-12-05 03:46:00+00:00",
-      "skills_date": "June 10, 2025",
+      "updated_at": "2026-11-20 21:29:00+00:00",
+      "skills_date": "November 20, 2026",
       "skill_areas": 6,
-      "total_objectives": 75,
+      "total_objectives": 78,
       "skills_at_a_glance": [
         {
-          "area": "Describe Business Central",
-          "weight": "10-15%"
+          "area": "Design Business Central solutions",
+          "weight": "5-10%"
         },
         {
           "area": "Install, develop, and deploy for Business Central",
           "weight": "10-15%"
         },
         {
-          "area": "Develop by using AL objects",
-          "weight": "35-40%"
+          "area": "Develop objects by using AL",
+          "weight": "30-35%"
         },
         {
-          "area": "Develop by using AL",
+          "area": "Develop user experiences and logic by using AL",
           "weight": "15-20%"
         },
         {
-          "area": "Work with development tools",
+          "area": "Test and monitor AL code",
           "weight": "10-15%"
         },
         {
           "area": "Integrate Business Central with other applications",
-          "weight": "10-15%"
+          "weight": "15-20%"
         }
       ],
       "has_changes": false,
@@ -1138,7 +1134,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-09-25 22:18:00+00:00",
+      "updated_at": "2026-11-20 21:29:00+00:00",
       "skills_date": "October 27, 2026",
       "skill_areas": 5,
       "total_objectives": 83,
@@ -1184,7 +1180,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-08-14 19:42:00+00:00",
+      "updated_at": "2026-11-20 21:29:00+00:00",
       "skills_date": "April 28, 2026",
       "skill_areas": 4,
       "total_objectives": 54,
@@ -1227,7 +1223,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-09-25 22:18:00+00:00",
+      "updated_at": "2026-11-20 21:29:00+00:00",
       "skills_date": "October 27, 2026",
       "skill_areas": 4,
       "total_objectives": 97,
@@ -1270,7 +1266,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-09-28 23:35:00+00:00",
+      "updated_at": "2026-11-20 21:29:00+00:00",
       "skills_date": "October 29, 2026",
       "skill_areas": 4,
       "total_objectives": 173,
@@ -1312,7 +1308,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-07-24 20:27:00+00:00",
+      "updated_at": "2026-11-19 02:08:00+00:00",
       "skills_date": "July 24, 2026",
       "skill_areas": 5,
       "total_objectives": 37,
@@ -1486,7 +1482,7 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-09-21 20:22:00+00:00",
+      "updated_at": "2026-11-20 21:29:00+00:00",
       "skills_date": "October 21, 2026",
       "skill_areas": 4,
       "total_objectives": 58,
@@ -1722,22 +1718,22 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "2026-04",
-      "updated_at": "2026-10-21 22:54:00+00:00",
-      "skills_date": null,
+      "updated_at": "2026-11-19 02:08:00+00:00",
+      "skills_date": "December 18, 2026",
       "skill_areas": 3,
-      "total_objectives": 44,
+      "total_objectives": 36,
       "skills_at_a_glance": [
         {
           "area": "Plan and configure agent solutions",
-          "weight": "30-35%"
+          "weight": "50-55%"
         },
         {
           "area": "Integrate and extend agents in Copilot Studio",
-          "weight": "40-45%"
+          "weight": "20-25%"
         },
         {
           "area": "Test and manage agents",
-          "weight": "20-25%"
+          "weight": "25-30%"
         }
       ],
       "has_changes": false,
@@ -1969,10 +1965,10 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-10-21 22:54:00+00:00",
-      "skills_date": null,
+      "updated_at": "2026-11-19 02:08:00+00:00",
+      "skills_date": "December 18, 2026",
       "skill_areas": 5,
-      "total_objectives": 46,
+      "total_objectives": 42,
       "skills_at_a_glance": [
         {
           "area": "Configure Dynamics 365 Sales core features for AI",
@@ -1980,7 +1976,7 @@
         },
         {
           "area": "Optimize AI-driven sales",
-          "weight": "20-25%"
+          "weight": "25-30%"
         },
         {
           "area": "Qualify and prioritize leads by using AI",
@@ -1988,11 +1984,11 @@
         },
         {
           "area": "Develop deals by using intelligent opportunity research",
-          "weight": "25-30%"
+          "weight": "15-20%"
         },
         {
           "area": "Extend and enhance Sales",
-          "weight": "10-15%"
+          "weight": "15-20%"
         }
       ],
       "has_changes": false,

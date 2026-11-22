@@ -10,20 +10,20 @@
   ],
   "category": "Dynamics 365",
   "status": "active",
-  "updated_at": "2025-12-31 16:52:00+00:00",
-  "skills_date": "January 30, 2026",
+  "updated_at": "2026-11-19 02:08:00+00:00",
+  "skills_date": "December 18, 2026",
   "skills_at_a_glance": [
     {
       "area": "Plan the architecture and solution design",
-      "weight": "5-10%"
+      "weight": "10-15%"
     },
     {
       "area": "Apply developer tools",
-      "weight": "5-10%"
+      "weight": "10-15%"
     },
     {
       "area": "Design and develop AOT elements",
-      "weight": "15-20%"
+      "weight": "10-15%"
     },
     {
       "area": "Develop and test code",
@@ -31,7 +31,7 @@
     },
     {
       "area": "Implement reporting",
-      "weight": "10-15%"
+      "weight": "5-10%"
     },
     {
       "area": "Integrate and manage data solutions",
@@ -43,81 +43,80 @@
     }
   ],
   "skills_detailed": {
-    "Plan the architecture and solution design (5–10%)": {
+    "Plan the architecture and solution design (10–15%)": {
       "Plan for the major components of finance and operations apps": [
         "Differentiate between the cloud and on-premises versions of finance and operations apps",
-        "Extend the functionality of finance and operations apps into the Microsoft ecosystem"
+        "Differentiate AI development tools used to extend finance and operations apps"
       ],
       "Implement application lifecycle management (ALM)": [
         "Manage environments by using Lifecycle Services tools and components",
-        "Research and resolve issues by using Issue Search",
         "Perform activities that require asset libraries",
         "Manage package deployments between environments",
-        "Manage Unified Developer Experience (UDE) developer environments in Power Platform admin center",
-        "Manage environments by using the Implementation portal"
+        "Manage UDE developer environments in Power Platform admin center",
+        "Manage environments by using the Implementation Portal"
       ]
     },
-    "Apply developer tools (5–10%)": {
+    "Apply developer tools (10–15%)": {
       "Customize finance and operations apps by using Visual Studio": [
         "Create and manage extension models",
         "Manage metadata by using Application Explorer",
-        "Synchronize data dictionary changes with the application database",
+        "Synchronize and troubleshoot data dictionary changes with the application database",
         "Create elements by using element designers",
         "Perform debugging activities"
       ],
-      "Manage source code and artifacts by using Microsoft Azure DevOps version control": [
+      "Manage source code and artifacts by using Microsoft Azure DevOps and GitHub version control": [
         "Create, check out, review, and check in code",
         "Maintain project artifacts",
-        "Branch and merge code",
-        "Compare code and resolve version conflicts",
-        "Choose a version control system",
-        "Implement continuous integration and continuous delivery (CI/CD)"
+        "Compare code and resolve version conflicts"
       ]
     },
-    "Design and develop AOT elements (15–20%)": {
+    "Design and develop AOT elements (10–15%)": {
       "Create and extend UI elements": [
         "Create and extend forms",
         "Create and extend menus and menu items",
-        "Create and use label files"
+        "Create and use label files",
+        "Create custom controls and style sheets",
+        "Create and extend operational workspaces"
       ],
       "Create and extend the data model": [
         "Create and extend tables",
         "Create and extend views, queries, and maps",
-        "Create and extend data entities"
-      ],
-      "Create classes and extend AOT elements": [
-        "Create and extend classes",
-        "Add event handler methods to a class",
-        "Add attributes or modifiers to a class"
+        "Create and extend data entities",
+        "Differentiate between tables, maps, views, queries, and data entities"
       ]
     },
     "Develop and test code (20–25%)": {
       "Develop X++ code": [
         "Implement common structured programming constructs of X++",
         "Create, read, update, and delete (CRUD) data",
+        "Implement transaction scope, including by using exception handling",
         "Implement global functions in X++",
-        "Resolve best practice warnings"
+        "Resolve best practice warnings",
+        "Assess the extensibility of code and apply design patterns"
       ],
-      "Develop object-oriented code": [
+      "Develop object-oriented code and implement code extensions": [
+        "Create and extend classes",
+        "Add methods to a class",
+        "Add attributes or modifiers to a class",
         "Implement variable scoping",
         "Implement inheritance and abstraction concept",
-        "Implement query objects and the QueryBuilder class",
         "Implement attribute classes",
         "Implement Chain of Command (CoC)",
-        "Assess the extensibility of code and avoid breaking changes",
         "Implement event handler classes and delegates"
       ],
       "Implement finance and operations app framework functionality": [
         "Implement the SysOperation framework",
-        "Implement the workflow framework",
-        "Implement the SysExtensionSerializer framework"
+        "Implement the SysExtensionSerializer framework",
+        "Implement query objects and the QueryBuilder class",
+        "Implement the batch framework",
+        "Implement the workflow framework"
       ],
       "Perform testing": [
         "Create unit tests by using the SysTest framework and Task recorder",
         "Run unit tests in Test Explorer"
       ]
     },
-    "Implement reporting (10–15%)": {
+    "Implement reporting (5–10%)": {
       "Select reporting tools in finance and operations apps": [
         "Create and modify report data sources and supporting classes",
         "Implement reporting security requirements",
@@ -126,14 +125,7 @@
       "Design, create, and revise Dynamics 365 reports": [
         "Determine when to use a specific reporting tool or platform",
         "Create, modify, and deploy reports in finance and operations apps by using SSRS",
-        "Create and modify finance and operations apps reports by using Power BI",
-        "Create and modify finance and operations apps reports by using Microsoft Excel",
-        "Create and modify finance and operations apps reports by using Electronic reporting"
-      ],
-      "Design, create, and revise Dynamics 365 workspaces": [
-        "Design and implement key performance indicators (KPIs)",
-        "Create drill-through workspace elements",
-        "Implement Power BI visualizations"
+        "Create and modify finance and operations apps reports by using Microsoft Excel"
       ]
     },
     "Integrate and manage data solutions (15–20%)": {
@@ -144,32 +136,30 @@
       ],
       "Implement data integration concepts and solutions": [
         "Consume external web services by using RESTful APIs and Simple Object Access Protocol (SOAP)",
-        "Implement Electronic reporting integrations",
         "Implement custom services",
         "Implement Batch OData API"
       ],
       "Implement data management": [
+        "Set up a data project, including entity sequencing and recurring data jobs",
+        "Generate and modify field mapping between source, staging, and target",
         "Import and export data using entities between finance and operations apps and other systems",
         "Import and export data using composite and aggregate data entities",
         "Monitor the status and availability of entities",
-        "Enable change tracking for entities",
-        "Set up a data project, including entity sequencing and recurring data jobs",
-        "Generate and modify field mapping between source, staging, and target"
+        "Enable change tracking for entities"
       ],
       "Integrate with Microsoft Power Platform, Microsoft 365, and Azure": [
         "Integrate Microsoft Dataverse with finance and operations apps by using dual-write",
         "Integrate Microsoft Dataverse with finance and operations apps by using virtual entities",
-        "Integrate Power Platform with finance and operations apps",
+        "Integrate Microsoft Power Platform with finance and operations apps",
         "Integrate finance and operations apps with Microsoft Excel by using OData",
-        "Implement business events",
         "Implement Azure Key Vault"
       ]
     },
     "Implement security and optimize performance (10–15%)": {
       "Implement security policies and requirements": [
-        "Create and extend duties and roles",
         "Create privileges and add permissions",
-        "Enforce security policies",
+        "Create and extend duties and roles",
+        "Implement security policies",
         "Implement Extensible Data Security (XDS) policies"
       ],
       "Apply fundamental performance optimization techniques": [
@@ -177,15 +167,13 @@
         "Implement global cache and singleton",
         "Create and modify temporary tables for optimization purposes",
         "Assess when to use set-based queries or row-based queries",
-        "Modify queries to optimize performance",
-        "Modify variable scope to optimize performance",
-        "Analyze and optimize concurrency"
+        "Modify queries to optimize performance"
       ],
       "Optimize performance": [
+        "Create and modify indexes for tables and views",
         "Capture traces, and analyze traces by using Trace Parser",
-        "Optimize performance for data entities, data source queries, batch processes, and reports",
-        "Implement Async and Sandbox frameworks",
-        "Create and modify indexes for tables and views"
+        "Optimize performance for data entities, data source queries, and reports",
+        "Implement Async and Sandbox frameworks"
       ]
     }
   },

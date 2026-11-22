@@ -10,8 +10,8 @@
   ],
   "category": "Dynamics 365",
   "status": "beta",
-  "updated_at": "2026-10-21 22:54:00+00:00",
-  "skills_date": null,
+  "updated_at": "2026-11-19 02:08:00+00:00",
+  "skills_date": "December 18, 2026",
   "skills_at_a_glance": [
     {
       "area": "Configure Dynamics 365 Sales core features for AI",
@@ -19,7 +19,7 @@
     },
     {
       "area": "Optimize AI-driven sales",
-      "weight": "20-25%"
+      "weight": "25-30%"
     },
     {
       "area": "Qualify and prioritize leads by using AI",
@@ -27,11 +27,11 @@
     },
     {
       "area": "Develop deals by using intelligent opportunity research",
-      "weight": "25-30%"
+      "weight": "15-20%"
     },
     {
       "area": "Extend and enhance Sales",
-      "weight": "10-15%"
+      "weight": "15-20%"
     }
   ],
   "skills_detailed": {
@@ -43,14 +43,14 @@
         "Configure the timeline",
         "Evaluate options for importing and exporting data",
         "Examine the Sales security model",
-        "Configure Microsoft 365 functionality, including Microsoft Teams, SharePoint, Outlook, and OneDrive"
+        "Configure Microsoft 365 functionality, including Microsoft Teams, SharePoint, OneNote, Outlook, and OneDrive"
       ],
       "Create and manage the product catalog": [
         "Configure products and product families",
         "Create and manage price lists, including currencies"
       ]
     },
-    "Optimize AI-driven sales (20–25%)": {
+    "Optimize AI-driven sales (25–30%)": {
       "Design an AI-first sales strategy": [
         "Augment seller workflows by using Copilot and agents",
         "Design the sales data model in Dataverse",
@@ -63,8 +63,8 @@
       ],
       "Configure AI-powered intelligence and insights features": [
         "Configure the Sales accelerator",
-        "Configure work assignment and distribution",
-        "Set up conversational intelligence",
+        "Configure work assignment",
+        "Set up Conversation Intelligence",
         "Configure predictive scoring",
         "Set up relationship intelligence",
         "Configure Copilot features, including record summarization",
@@ -84,18 +84,12 @@
         "Monitor the Sales Qualification Agent"
       ]
     },
-    "Develop deals by using intelligent opportunity research (25–30%)": {
+    "Develop deals by using intelligent opportunity research (15–20%)": {
       "Optimize opportunity management": [
-        "Coordinate opportunity management with the Sales Close Agent",
-        "Add Opportunity Products, and configure pricing",
+        "Coordinate sales outreach and prospect management with the Sales Development Agent",
+        "Add Opportunity Products and configure pricing",
         "Configure the opportunity pipeline view",
         "Set up and configure the Sales Opportunity Agent"
-      ],
-      "Automate deal closing by using the Sales Close Agent": [
-        "Set up and configure the Sales Close Agent",
-        "Interpret the actions of the Sales Close Agent",
-        "Monitor the Sales Close Agent",
-        "Collaborate with the Sales Close Agent"
       ],
       "Gather intelligence on sales deals by using the Sales Research Agent": [
         "Evaluate use cases for the Sales Research Agent",
@@ -103,7 +97,7 @@
         "Analyze sales performance by using research canvas"
       ]
     },
-    "Extend and enhance Sales (10–15%)": {
+    "Extend and enhance Sales (15–20%)": {
       "Configure supporting apps and services": [
         "Deploy and configure the Sales mobile app",
         "Set up Teams calling",

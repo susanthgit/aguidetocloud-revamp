@@ -10,8 +10,8 @@
   ],
   "category": "Dynamics 365",
   "status": "active",
-  "updated_at": "2026-05-29 22:10:00+00:00",
-  "skills_date": "June 30, 2026",
+  "updated_at": "2026-11-19 02:08:00+00:00",
+  "skills_date": "December 18, 2026",
   "skills_at_a_glance": [
     {
       "area": "Set up Business Central",
@@ -186,10 +186,10 @@
         "Apply ledger entries and undo applied entries",
         "Reverse posted journals",
         "Perform bank account reconciliation",
-        "Process recurring transactions by using the recurring journals",
+        "Process recurring transactions by using recurring journals",
         "Use general ledger allocations",
         "Adjust currency exchange rates",
-        "Correct posted dimensions using the Dimension Correction Tool",
+        "Correct posted dimensions using the Dimension Correction feature",
         "Revalue general ledger account balances"
       ],
       "Process fixed asset transactions": [
