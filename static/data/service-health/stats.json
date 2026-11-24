@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-24T02:52:38.670799+00:00",
+  "generated_at": "2026-11-24T14:46:35.306622+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 17,
+      "total_incidents": 18,
       "active_incidents": 0,
-      "avg_duration_minutes": 9526,
+      "avg_duration_minutes": 9434,
       "last_incident": "2026-11-13T19:05:35.070000+00:00",
       "classifications": {
-        "advisory": 11,
+        "advisory": 12,
         "incident": 6
       }
     },
@@ -21,8 +21,8 @@
       "icon": "🤖",
       "total_incidents": 15,
       "active_incidents": 1,
-      "avg_duration_minutes": 7165,
-      "last_incident": "2026-11-20T05:11:39.200000+00:00",
+      "avg_duration_minutes": 8680,
+      "last_incident": "2026-11-17T23:26:59.090000+00:00",
       "classifications": {
         "advisory": 7,
         "incident": 8
@@ -32,12 +32,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 14,
-      "active_incidents": 4,
+      "total_incidents": 13,
+      "active_incidents": 3,
       "avg_duration_minutes": 2944,
       "last_incident": "2026-11-22T00:00:00+00:00",
       "classifications": {
-        "advisory": 10,
+        "advisory": 9,
         "incident": 4
       }
     },

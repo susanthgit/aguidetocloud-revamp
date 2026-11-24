@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Nov 2026 02:52:39 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 14:46:35 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admins may notice delays with certain reports in multiple Microsoft 365 operated by 21Vianet and Teams admin centers</title>
@@ -15,15 +15,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1565800</guid>
       <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins may not see published Microsoft 365 Copilot agents in the Teams admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1561240</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may not see published Microsoft 365 Copilot agents in the Teams admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1561240</guid>
-      <pubDate>Fri, 20 Nov 2026 05:11:39 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Admins' mail-enabled security groups created through the admin center UI may be provisioned incorrectly</title>
@@ -249,6 +240,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1536687</guid>
       <pubDate>Tue, 03 Nov 2026 10:58:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Admins may not see published Microsoft 365 Copilot agents in the Teams admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1561240</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may not have seen published Copilot agents in the Teams admin center.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1561240</guid>
+      <pubDate>Tue, 03 Nov 2026 09:28:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to download meeting transcripts in docx format from Microsoft Teams</title>
