@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Nov 2026 00:36:25 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 11:11:23 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admins may notice delays with certain reports in the Microsoft 365 and Microsoft Teams admin centers</title>
@@ -30,7 +30,7 @@
       <link>https://www.aguidetocloud.com/service-health/#EX1561765</link>
       <description>[Exchange Online] Users may have been to open or upload attachments or view inline images in the new Outlook client.</description>
       <category>Exchange Online</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">EX1561765</guid>
       <pubDate>Thu, 19 Nov 2026 20:49:00 +0000</pubDate>
     </item>
