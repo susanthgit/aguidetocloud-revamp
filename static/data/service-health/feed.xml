@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Nov 2026 14:46:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 00:36:25 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft 365 suite] Admins may notice delays with certain reports in multiple Microsoft 365 operated by 21Vianet and Teams admin centers</title>
+      <title>[Microsoft 365 suite] Admins may notice delays with certain reports in the Microsoft 365 and Microsoft Teams admin centers</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1565800</link>
-      <description>[Microsoft 365 suite] Admins may notice delays with certain reports in multiple Microsoft 365 operated by 21Vianet and Teams admin centers.</description>
+      <description>[Microsoft 365 suite] Admins may have noticed delays with certain reports in the Microsoft 365 and Microsoft Teams admin centers.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1565800</guid>
       <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
     </item>
@@ -51,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1558065</guid>
       <pubDate>Tue, 17 Nov 2026 23:26:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users may be unable to view organization information in multiple Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1557494</link>
+      <description>[Microsoft 365 suite] Users may be unable to view organization information in multiple Microsoft 365 services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1557494</guid>
+      <pubDate>Tue, 17 Nov 2026 15:45:18 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Admins may see Windows and Android devices appear as unmonitored in the Pro Management Portal (PMP) in Microsoft Teams</title>
@@ -150,6 +159,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1549289</guid>
       <pubDate>Wed, 11 Nov 2026 08:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may not see Public Switched Telephone Network (PSTN) contact names shown on inbound Microsoft Teams call banners</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1567135</link>
+      <description>[Microsoft Teams] Users may not see Public Switched Telephone Network (PSTN) contact names shown on inbound Microsoft Teams call banners.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1567135</guid>
+      <pubDate>Tue, 10 Nov 2026 20:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may not be receiving new Microsoft Copilot low latency adoption reports from the Microsoft 365 admin center</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1526068</guid>
       <pubDate>Mon, 26 Oct 2026 14:45:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to view previously deleted teams after restoration in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1545775</link>
-      <description>[Microsoft Teams] Users may have been unable to view previously deleted teams after restoration in Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1545775</guid>
-      <pubDate>Mon, 26 Oct 2026 12:53:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have refresh delays</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1522731</link>
-      <description>[Microsoft 365 suite] Admin usage reports for Microsoft 365 apps and Exchange Online may have seen refresh delays. </description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1522731</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
