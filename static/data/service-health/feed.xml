@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Nov 2026 13:49:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 22:56:59 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admins may notice delays with certain reports in the Microsoft 365 and Microsoft Teams admin centers</title>
@@ -195,6 +195,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">OO1547737</guid>
       <pubDate>Tue, 10 Nov 2026 09:57:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may be unable to send calendar invitations in Exchange Online </title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1569272</link>
+      <description>[Exchange Online] Users may be unable to send calendar invitations in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1569272</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be intermittently unable to send email messages to Outlook.com, Hotmail.com, or Live.com email addresses</title>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">TM1526111</guid>
       <pubDate>Mon, 26 Oct 2026 15:01:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Some users may be unable to access the group feed with Microsoft Viva Engage</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1526068</link>
-      <description>[Microsoft Viva] Users may have been unable to access the group feed with Viva Engage.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1526068</guid>
-      <pubDate>Mon, 26 Oct 2026 14:45:04 +0000</pubDate>
     </item>
   </channel>
 </rss>
